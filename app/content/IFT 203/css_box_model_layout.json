@@ -333,7 +333,7 @@
       ],
       "question": "Name the four concentric components of the CSS Box Model from inside out.",
       "answer": "1. Content, 2. Padding, 3. Border, 4. Margin.",
-      "explanation": "Core definition from IFT 203 Week 6.",
+      "explanation": "The W3C CSS Box Model consists of four concentric rectangular layers from inside out: 1) Content (text/media dimensions defined by width and height); 2) Padding (transparent clearance area around content inside the border); 3) Border (visible boundary stroke wrapping padding and content); and 4) Margin (transparent buffer clearing external surrounding elements). (W3C CSS Box Model Level 3).",
       "why_wrong": {},
       "source": "IFT 203 Week 6 Slides"
     },
@@ -397,7 +397,7 @@
       ],
       "question": "Contrast `display: none` with `visibility: hidden`.",
       "answer": "`display: none` removes the element completely from document layout (no space allocated).\n`visibility: hidden` hides the element visually, but preserves its exact width, height, and blank space in the layout.",
-      "explanation": "Commonly examined CSS layout property distinction.",
+      "explanation": "In CSS layout, 'display: none' removes the element entirely from the document flow as if it did not exist, causing surrounding elements to collapse into its space. In contrast, 'visibility: hidden' hides the element visually while preserving its exact physical dimensions and layout footprint on the page. (MDN Web Docs; W3C CSS Display).",
       "why_wrong": {},
       "source": "IFT 203 Week 6 Slides"
     },
@@ -445,7 +445,7 @@
       ],
       "question": "Write the three lines of CSS required to perfectly center content inside a container using Flexbox.",
       "answer": "```css\ndisplay: flex;\njustify-content: center;\nalign-items: center;\n```",
-      "explanation": "The modern industry standard for two-axis centering.",
+      "explanation": "The modern CSS Flexbox two-axis centering technique requires three declarations on the parent container: 1) 'display: flex;' (creates flex formatting context); 2) 'justify-content: center;' (centers flex items along the primary horizontal axis); and 3) 'align-items: center;' (centers items along the perpendicular cross axis). Alternatively, CSS Grid uses 'display: grid; place-items: center;'. (W3C CSS Flexible Box Layout).",
       "why_wrong": {},
       "source": "IFT 203 Week 6 Slides"
     }

@@ -190,7 +190,7 @@
           ],
           "question": "Name the four concentric components of the CSS Box Model from inside out.",
           "answer": "1. Content, 2. Padding, 3. Border, 4. Margin.",
-          "explanation": "Core definition from IFT 203 Week 6.",
+          "explanation": "The W3C CSS Box Model consists of four concentric rectangular layers from inside out: 1) Content (text/media dimensions defined by width and height); 2) Padding (transparent clearance area around content inside the border); 3) Border (visible boundary stroke wrapping padding and content); and 4) Margin (transparent buffer clearing external surrounding elements). (W3C CSS Box Model Level 3).",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides",
           "topic_slug": "css_box_model_layout"
@@ -224,7 +224,7 @@
           ],
           "question": "Contrast `display: none` with `visibility: hidden`.",
           "answer": "`display: none` removes the element completely from document layout (no space allocated).\n`visibility: hidden` hides the element visually, but preserves its exact width, height, and blank space in the layout.",
-          "explanation": "Commonly examined CSS layout property distinction.",
+          "explanation": "In CSS layout, 'display: none' removes the element entirely from the document flow as if it did not exist, causing surrounding elements to collapse into its space. In contrast, 'visibility: hidden' hides the element visually while preserving its exact physical dimensions and layout footprint on the page. (MDN Web Docs; W3C CSS Display).",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides",
           "topic_slug": "css_box_model_layout"
@@ -794,7 +794,7 @@
           ],
           "question": "How do you make a group of `<input type=\"radio\">` buttons mutually exclusive?",
           "answer": "By giving all radio buttons in that group the EXACT same `name` attribute (e.g., `name=\"level\"`). The browser then permits only one option to be checked at a time.",
-          "explanation": "Common student bug when creating forms.",
+          "explanation": "To create a mutually exclusive radio button group, all '<input type=\"radio\">' elements in the group must share the exact same 'name' attribute value. The browser will then permit only one radio button in that group to be checked at any given time. (W3C HTML5 Specification).",
           "why_wrong": {},
           "source": "IFT 203 Week 5 Slides",
           "topic_slug": "html_forms_tables_media"
@@ -828,7 +828,7 @@
           ],
           "question": "Why is the `alt` attribute mandatory on all `<img>` tags?",
           "answer": "1. Accessibility: Screen readers read the alt text aloud to visually impaired users.\n2. Fallback: Displays description if the image file fails to load.\n3. SEO: Enables search engine web crawlers to index image content.",
-          "explanation": "Core W3C accessibility rule.",
+          "explanation": "The 'alt' (alternative text) attribute on '<img>' elements is mandatory under WCAG guidelines: screen readers read it aloud to visually impaired users, web crawlers use it for search engine indexing, and browsers display it as a fallback if the image asset fails to load. Empty 'alt=\"\"' is reserved only for purely decorative images. (WCAG 2.1 Principle 1: Perceivable).",
           "why_wrong": {},
           "source": "IFT 203 Week 4 & 5 Slides",
           "topic_slug": "html_forms_tables_media"
@@ -1396,7 +1396,7 @@
           ],
           "question": "Write the three lines of CSS required to perfectly center content inside a container using Flexbox.",
           "answer": "```css\ndisplay: flex;\njustify-content: center;\nalign-items: center;\n```",
-          "explanation": "The modern industry standard for two-axis centering.",
+          "explanation": "The modern CSS Flexbox two-axis centering technique requires three declarations on the parent container: 1) 'display: flex;' (creates flex formatting context); 2) 'justify-content: center;' (centers flex items along the primary horizontal axis); and 3) 'align-items: center;' (centers items along the perpendicular cross axis). Alternatively, CSS Grid uses 'display: grid; place-items: center;'. (W3C CSS Flexible Box Layout).",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides",
           "topic_slug": "css_box_model_layout"
@@ -1608,7 +1608,7 @@
           ],
           "question": "What is the 4-tier specificity tuple (a, b, c, d)?",
           "answer": "a = Inline styles (1000)\nb = ID selectors (100)\nc = Class, attribute, and pseudo-class selectors (10)\nd = Element and pseudo-element selectors (1)\nEvaluated left to right; higher tier always wins.",
-          "explanation": "The standard W3C specificity scoring metric.",
+          "explanation": "W3C CSS Specificity is evaluated as a 4-tier tuple (a, b, c, d): a = inline styles (style attribute, 1,0,0,0); b = ID selectors (#nav, 0,1,0,0); c = class selectors, attribute selectors, and pseudo-classes (.btn, [type='text'], :hover, 0,0,1,0); d = type/element selectors and pseudo-elements (div, p, ::before, 0,0,0,1). The universal selector (*) and combinators have zero specificity (0,0,0,0). (W3C CSS Selectors Level 4).",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides; W3C Specificity",
           "topic_slug": "css_selectors_typography"
@@ -1642,7 +1642,7 @@
           ],
           "question": "What does `!important` do in CSS, and why should it be avoided?",
           "answer": "It overrides all normal specificity and cascade rules. It should be avoided because it breaks the natural cascade, makes debugging CSS nightmares, and forces other developers to use even more `!important` declarations.",
-          "explanation": "Recognized architectural anti-pattern in frontend development.",
+          "explanation": "The '!important' declaration in CSS overrides all standard cascade specificity calculations within that declaration's origin. It should be strictly avoided in application stylesheets because it breaks the natural cascade, forces subsequent developers to write even more '!important' rules, and creates maintainability nightmares. (MDN Web Docs).",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides; MDN Specificity",
           "topic_slug": "css_selectors_typography"
@@ -1854,7 +1854,7 @@
           ],
           "question": "What is the purpose of the `<label for=\"xyz\">` element?",
           "answer": "It binds a text label to an input with `id=\"xyz\"`. It enhances accessibility for screen readers and allows users to click the text label to focus or toggle the input control.",
-          "explanation": "Foundational accessibility practice.",
+          "explanation": "The '<label for=\"element-id\">' element provides a programmatic association between a descriptive text label and a form control. Clicking the label focuses or toggles the input (vital for small mobile touch targets on checkboxes/radios), and screen readers announce the label text when the input receives focus. (W3C Web Content Accessibility Guidelines - WCAG 2.1).",
           "why_wrong": {},
           "source": "IFT 203 Week 5 Slides",
           "topic_slug": "html_forms_tables_media"
@@ -1871,7 +1871,7 @@
           ],
           "question": "What is the key difference between `readonly` and `disabled` on form inputs during submission?",
           "answer": "A `readonly` field cannot be modified by the user, but its value IS submitted to the server. A `disabled` field is grayed out and its value is NOT submitted to the server.",
-          "explanation": "Frequent exam question regarding form data submission.",
+          "explanation": "The fundamental difference between form control states: A 'readonly' input prevents user editing but its value IS submitted with the form payload during submission. A 'disabled' input is greyed out, cannot be focused or modified, and its value is strictly EXCLUDED from the submitted form data payload. (W3C HTML5 Form Submission).",
           "why_wrong": {},
           "source": "IFT 203 Week 5 Slides",
           "topic_slug": "html_forms_tables_media"
@@ -1888,7 +1888,7 @@
           ],
           "question": "Why should `<a href=\"...\" target=\"_blank\">` always be paired with `rel=\"noopener noreferrer\"`?",
           "answer": "For security: without it, the newly opened external page can access your page's JavaScript execution context via `window.opener` and redirect your users to a malicious phishing site (known as reverse tabnabbing).",
-          "explanation": "Important modern web security best practice.",
+          "explanation": "When opening links in a new tab via 'target=\"_blank\"', modern web security requires adding 'rel=\"noopener noreferrer\"'. Without 'noopener', the target page gains access to the originating window's 'window.opener' object, enabling malicious reverse tabnabbing phishing attacks. (MDN Web Security; OWASP Foundation).",
           "why_wrong": {},
           "source": "MDN Web Security; IFT 203 Lecture Notes",
           "topic_slug": "html_forms_tables_media"
@@ -2122,7 +2122,7 @@
           ],
           "question": "What is Semantic HTML, and why is it preferred over `<div>` tags?",
           "answer": "Using tags that describe the meaning of the content (e.g., `<article>`, `<nav>`, `<header>`) rather than generic containers. It makes pages accessible to screen readers, understandable to search engine crawlers, and easier to maintain.",
-          "explanation": "Foundational principle of modern web engineering.",
+          "explanation": "Semantic HTML means using HTML markup tags according to their inherent meaning and purpose (e.g. '<nav>', '<main>', '<article>', '<header>', '<footer>') rather than generic presentational wrappers ('<div>', '<span>'). It enhances accessibility for screen readers, improves search engine indexing (SEO), and provides clean document structure for team maintainability. (W3C HTML5 Semantics).",
           "why_wrong": {},
           "source": "IFT 203 Slide 3; Week 5 Slides",
           "topic_slug": "html_structure_semantics"
@@ -2139,7 +2139,7 @@
           ],
           "question": "What is the purpose of `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">`?",
           "answer": "It informs mobile browsers to set the screen width of the viewport to the actual physical width of the device and sets the initial zoom level to 100%, enabling responsive mobile CSS rendering without auto-zooming out.",
-          "explanation": "Mandatory for all modern mobile-responsive web development.",
+          "explanation": "The viewport meta tag '<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">' instructs mobile browser rendering engines to set the logical layout viewport width equal to the physical screen width of the device and establish a 1:1 initial zoom scale, preventing mobile browsers from defaulting to a zoomed-out 980px desktop view. (W3C Responsive Web Design).",
           "why_wrong": {},
           "source": "IFT 203 Slide 3",
           "topic_slug": "html_structure_semantics"

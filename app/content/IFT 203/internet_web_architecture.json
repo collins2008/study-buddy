@@ -359,7 +359,7 @@
       ],
       "question": "Explain the difference between a Web Browser and a Search Engine.",
       "answer": "A Web Browser is software installed on your local computer/phone (e.g., Chrome, Edge) that retrieves and displays web pages. A Search Engine is an online website/service (e.g., Google, Bing) that indexes web pages and helps users find information.",
-      "explanation": "Explicit exam hint in lecturer notebook notes.",
+      "explanation": "A Web Browser (client-side user agent) requests resources over HTTP/HTTPS, parses HTML/CSS/JS, executes scripts, and renders visual web pages to the user. A Web Server (host daemon like Nginx or Apache) listens on network ports (80/443), handles incoming HTTP requests, enforces security/authentication, executes backend scripts, and serves static or dynamic response documents. (RFC 7230).",
       "why_wrong": {},
       "source": "IFT 203 Slide 2; Lecturer Notebook Hints"
     },
@@ -423,7 +423,7 @@
       ],
       "question": "Name the five major components of a standard URL.",
       "answer": "1. Protocol/Scheme (e.g., https://), 2. Domain/Host (e.g., www.nileuniversity.edu.ng), 3. Port (e.g., :443), 4. Path to resource (e.g., /portal/login), and 5. Query string parameters (e.g., ?user=student).",
-      "explanation": "Governed by RFC 3986 URI specification.",
+      "explanation": "Under RFC 3986, a Uniform Resource Identifier (URI/URL) consists of five primary components: 1) Scheme/Protocol (http, https); 2) Authority (host domain and optional port, e.g. example.com:8080); 3) Path (/courses/ift203); 4) Query string (?id=12&sort=asc); and 5) Fragment identifier (#section3).",
       "why_wrong": {},
       "source": "IFT 203 Slide 2"
     },
@@ -455,7 +455,7 @@
       ],
       "question": "Distinguish between Front-End and Back-End web development.",
       "answer": "Front-End: Client-side development creating the visual interface, structure, and interactivity running inside the user's browser (HTML, CSS, JS).\nBack-End: Server-side development handling business logic, authentication, and database storage (Python, PHP, Node.js, SQL).",
-      "explanation": "Explicit exam hint in lecturer notebook notes.",
+      "explanation": "Front-End development focuses on client-side code executed directly inside the user's browser (HTML, CSS, JavaScript, responsive UI, accessibility, client routing). Back-End development focuses on server-side architecture (databases, API microservices, server routing, business logic, session security, encryption, and third-party integrations). (Nile Course Syllabus).",
       "why_wrong": {},
       "source": "IFT 203 Slide 2; Lecturer Notebook Hints"
     }

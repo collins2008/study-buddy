@@ -32,7 +32,9 @@
           "answer": 0,
           "explanation": "As tested in Nile Exam Q9 and Q53: Principle #3 of the Agile Manifesto states: 'Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.' Working software is the primary measure of project progress.",
           "why_wrong": {
-            "1": "Agile explicitly values 'responding to change over following a plan.'"
+            "1": "Agile explicitly values 'responding to change over following a plan.'",
+            "2": "Option 2 ('Prioritizing extensive documentation over human interaction') is incorrect. The valid principle is represented by Option 0 ('Delivering working software quickly and frequently'). In software engineering theory, Prioritizing extensive documentation over human interaction represents a common misconception or invalid design practice.",
+            "3": "Option 3 ('Avoiding direct customer collaboration to prevent scope changes') is incorrect. The valid principle is represented by Option 0 ('Delivering working software quickly and frequently'). In software engineering theory, Avoiding direct customer collaboration to prevent scope changes represents a common misconception or invalid design practice."
           },
           "marking_points": [
             "Identifies rapid, frequent delivery of working software as primary measure of progress"
@@ -65,7 +67,10 @@
           "why_wrong": {
             "Software that is legally prohibited from commercial use...": "Most open-source licenses explicitly permit commercial enterprise use.",
             "Software that has no copyright licenses...": "Open source relies heavily on copyright law to enforce its licensing terms (copyleft or permissive).",
-            "Software written exclusively by university students...": "Global industry leaders (Linux, Python, React, PostgreSQL) are built by professional global communities."
+            "Software written exclusively by university students...": "Global industry leaders (Linux, Python, React, PostgreSQL) are built by professional global communities.",
+            "1": "Option 1 ('Software that is legally prohibited from being used for commercial purposes') is incorrect. The valid principle is represented by Option 0 ('Collaborative development where source code is publicly available for inspection and modification'). In software engineering theory, Software that is legally prohibited from being used for commercial purposes represents a common misconception or invalid design practice.",
+            "2": "Option 2 ('Software that has no copyright licenses of any kind') is incorrect. The valid principle is represented by Option 0 ('Collaborative development where source code is publicly available for inspection and modification'). In software engineering theory, Software that has no copyright licenses of any kind represents a common misconception or invalid design practice.",
+            "3": "Option 3 ('Software written exclusively by university undergraduate students') is incorrect. The valid principle is represented by Option 0 ('Collaborative development where source code is publicly available for inspection and modification'). In software engineering theory, Software written exclusively by university undergraduate students represents a common misconception or invalid design practice."
           },
           "marking_points": [
             "Public availability of source code",
@@ -98,7 +103,10 @@
           "why_wrong": {
             "The Scrum Master, who dictates software features...": "Scrum Masters facilitate team health and process; they do not own business requirements.",
             "Any individual developer...": "Developers cannot accept arbitrary scope changes mid-sprint without Product Owner approval.",
-            "The database administrator": "A technical role, not a project scope authority."
+            "The database administrator": "A technical role, not a project scope authority.",
+            "1": "Option 1 ('The Scrum Master, who dictates software features to developers.') is incorrect. The valid principle is represented by Option 0 ('The Product Owner, who owns the Product Backlog and balances business priorities with team capacity.'). In software engineering theory, The Scrum Master, who dictates software features to developers. represents a common misconception or invalid design practice.",
+            "2": "Option 2 ('Any individual developer working on the project.') is incorrect. The valid principle is represented by Option 0 ('The Product Owner, who owns the Product Backlog and balances business priorities with team capacity.'). In software engineering theory, Any individual developer working on the project. represents a common misconception or invalid design practice.",
+            "3": "Option 3 ('The database administrator.') is incorrect. The valid principle is represented by Option 0 ('The Product Owner, who owns the Product Backlog and balances business priorities with team capacity.'). In software engineering theory, The database administrator. represents a common misconception or invalid design practice."
           },
           "marking_points": [
             "Product Owner has sole authority over Product Backlog prioritization"
@@ -130,7 +138,10 @@
           "why_wrong": {
             "To punish developers who finish work early": "Kanban fosters collaboration, not disciplinary penalties.",
             "To limit developers to 2 hours a day": "WIP limits govern task inventory, not working hours.",
-            "To limit website users": "WIP limits apply to internal engineering tasks on the board, not web traffic."
+            "To limit website users": "WIP limits apply to internal engineering tasks on the board, not web traffic.",
+            "1": "Option 1 ('To punish developers who finish their work early.') is incorrect. The valid principle is represented by Option 0 ('To prevent multitasking and expose process bottlenecks, ensuring work items flow smoothly to completion rather than piling up half-finished.'). In software engineering theory, To punish developers who finish their work early. represents a common misconception or invalid design practice.",
+            "2": "Option 2 ('To prevent developers from working more than 2 hours a day.') is incorrect. The valid principle is represented by Option 0 ('To prevent multitasking and expose process bottlenecks, ensuring work items flow smoothly to completion rather than piling up half-finished.'). In software engineering theory, To prevent developers from working more than 2 hours a day. represents a common misconception or invalid design practice.",
+            "3": "Option 3 ('To limit the total number of users allowed to access the website.') is incorrect. The valid principle is represented by Option 0 ('To prevent multitasking and expose process bottlenecks, ensuring work items flow smoothly to completion rather than piling up half-finished.'). In software engineering theory, To limit the total number of users allowed to access the website. represents a common misconception or invalid design practice."
           },
           "marking_points": [
             "Prevents task hoarding/multitasking",
@@ -154,7 +165,7 @@
           "question": "What are the four core value statements of the Agile Manifesto?",
           "options": [],
           "answer": "1. Individuals and interactions over processes and tools\n2. Working software over comprehensive documentation\n3. Customer collaboration over contract negotiation\n4. Responding to change over following a plan",
-          "explanation": "Foundational philosophy published in 2001.",
+          "explanation": "The Agile Manifesto (formulated in 2001) prioritizes: 1) Individuals and interactions over processes and tools; 2) Working software over comprehensive documentation; 3) Customer collaboration over contract negotiation; and 4) Responding to change over following a plan. (Sommerville, Ch 3.1).",
           "why_wrong": {},
           "marking_points": [
             "Recalls all four value pairs"
@@ -177,7 +188,7 @@
           "question": "What are the four formal Scrum events/ceremonies within a Sprint?",
           "options": [],
           "answer": "1. Sprint Planning\n2. Daily Scrum (Standup)\n3. Sprint Review (Demo to stakeholders)\n4. Sprint Retrospective (Team process reflection)",
-          "explanation": "Core inspect-and-adapt milestones.",
+          "explanation": "The five formal Scrum events for inspection and adaptation are: 1) The Sprint (container event, 1-4 weeks); 2) Sprint Planning (defines sprint goal and backlog); 3) Daily Scrum (15-minute developer synchronization); 4) Sprint Review (inspects increment with stakeholders); and 5) Sprint Retrospective (inspects process and team improvements). (Scrum Guide).",
           "why_wrong": {},
           "marking_points": [
             "Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective"
@@ -200,7 +211,7 @@
           "question": "What does the TDD 'Red-Green-Refactor' cycle mean?",
           "options": [],
           "answer": "- RED: Write a failing unit test first.\n- GREEN: Write the minimal production code needed to pass the test.\n- REFACTOR: Clean up and optimize the code without altering external behavior.",
-          "explanation": "Core engineering discipline of Extreme Programming.",
+          "explanation": "Test-Driven Development (TDD) follows the strict 'Red-Green-Refactor' cycle: 1) Write an automated unit test that fails (Red); 2) Write the minimum production code necessary to pass the test (Green); and 3) Refactor code for clarity and design while keeping tests green. (Beck, TDD by Example; Sommerville, Ch 3.3).",
           "why_wrong": {},
           "marking_points": [
             "Red: failing test",
@@ -259,7 +270,10 @@
           "why_wrong": {
             "The Scrum Master should fire the developers...": "The developers are properly defending their agreed sprint commitment.",
             "The team should abolish sprints...": "Abandoning process structure creates total chaos.",
-            "The developers should work 20-hour overtime...": "Violates the Agile principle of sustainable development pace."
+            "The developers should work 20-hour overtime...": "Violates the Agile principle of sustainable development pace.",
+            "1": "Option 1 ('The Scrum Master should immediately fire the developers for not complying with the doctor's wishes.') is incorrect. In software engineering, Option 0 ('The Product Owner is violating Sprint stability: the Scrum Master must coach the Product Owner to place new feature requests onto the Product Backlog for prioritization in the NEXT sprint planning, leaving the current Sprint Goal intact.') represents the verified standard practice.",
+            "2": "Option 2 ('The team should abolish 2-week sprints and switch to daily deployments with zero planning.') is incorrect. In software engineering, Option 0 ('The Product Owner is violating Sprint stability: the Scrum Master must coach the Product Owner to place new feature requests onto the Product Backlog for prioritization in the NEXT sprint planning, leaving the current Sprint Goal intact.') represents the verified standard practice.",
+            "3": "Option 3 ('The developers should work 20-hour overtime shifts to satisfy both the sprint backlog and the new requests.') is incorrect. In software engineering, Option 0 ('The Product Owner is violating Sprint stability: the Scrum Master must coach the Product Owner to place new feature requests onto the Product Backlog for prioritization in the NEXT sprint planning, leaving the current Sprint Goal intact.') represents the verified standard practice."
           },
           "marking_points": [
             "Identifies violation of Sprint commitment and scope stability",
@@ -294,7 +308,10 @@
           "why_wrong": {
             "Pair programming produces 400% more code...": "Pairing produces more concise, less bloated code, not more raw volume.",
             "The CFO is right; only used when running out of computers...": "Pairing is an intentional quality discipline, not a hardware shortage workaround.",
-            "Pair programming eliminates the need to compile code...": "Absurd technical assertion."
+            "Pair programming eliminates the need to compile code...": "Absurd technical assertion.",
+            "1": "Option 1 ('Pair programming actually produces 400% more lines of code per hour.') is incorrect. In software engineering, Option 0 ('Pair programming incurs only ~15% additional development time while reducing defect density by 15-50%, drastically reducing post-release bug fixing costs which are 10-100x more expensive in production.') represents the verified standard practice.",
+            "2": "Option 2 ('The CFO is right; pair programming is only used when an office runs out of computers.') is incorrect. In software engineering, Option 0 ('Pair programming incurs only ~15% additional development time while reducing defect density by 15-50%, drastically reducing post-release bug fixing costs which are 10-100x more expensive in production.') represents the verified standard practice.",
+            "3": "Option 3 ('Pair programming eliminates the need to compile code.') is incorrect. In software engineering, Option 0 ('Pair programming incurs only ~15% additional development time while reducing defect density by 15-50%, drastically reducing post-release bug fixing costs which are 10-100x more expensive in production.') represents the verified standard practice."
           },
           "marking_points": [
             "Quantifies modest ~15% time overhead",
@@ -1103,10 +1120,12 @@
             "Exclusively pair programming"
           ],
           "answer": 0,
-          "explanation": "As tested in Nile Exam Question 3: Barry Boehm's Spiral Model is fundamentally a risk-driven process model. Unlike linear or purely agile models, every single 360-degree spiral loop explicitly begins with setting objectives and mandates an in-depth risk analysis step to identify and resolve technical, financial, or operational risks before engineering proceeds.",
+          "explanation": "As tested in Nile Final Exam Question 11 and lecturer notes, SCM and version management provide systematic tracking, branch management, auditing, and change control for software artifacts throughout development, preventing concurrent overwrites and maintaining reproducible baselines.",
           "why_wrong": {
-            "1": "The Spiral Model produces formal documentation, milestone reviews, and management checkpoints at each loop.",
-            "3": "Pair programming is a practice of Extreme Programming (XP), not the Spiral Model."
+            "0": "Profit and loss statements belong to financial accounting, not software configuration management.",
+            "2": "SCM manages change history; it does not replace testing or verification.",
+            "3": "SCM tools support developers; they do not replace system architects.",
+            "1": "Option 1 ('Elimination of all documentation') is incorrect. In software engineering, Option 0 ('Risk assessment and management at every iteration') represents the verified standard practice."
           },
           "marking_points": [
             "Identifies risk assessment/management as defining feature"
@@ -1136,11 +1155,12 @@
             "Simplifying the compiler optimization process"
           ],
           "answer": 0,
-          "explanation": "The primary objective of building a prototype is to clarify ambiguous user requirements, validate user interface workflows, and resolve stakeholder misunderstandings early in the development lifecycle before committing major resources to production engineering.",
+          "explanation": "In COCOMO, projects are classified into Organic (small, experienced teams with flexible constraints), Semi-detached (intermediate complexity), and Embedded (rigid hardware/software constraints, strict regulatory standards, e.g., avionics or medical devices). Embedded projects exhibit much higher exponent factors (b=1.20 vs b=1.05) representing steep diseconomies of scale.",
           "why_wrong": {
-            "1": "Prototypes are typically throwaway or preliminary models, not hardened production-ready systems.",
-            "2": "Testing remains mandatory; prototypes do not eliminate formal verification and validation.",
-            "3": "Compilers optimize binaries independently of development process models."
+            "0": "Small web apps built with flexible requirements represent the Organic mode.",
+            "2": "Embedded projects often use Ada, C, or C++ and involve complex embedded systems, not pure HTML/CSS.",
+            "3": "Embedded systems require the most stringent, rigorous verification and project management.",
+            "1": "Option 1 ('Rapid delivery of the final production system') is incorrect. In software engineering, Option 0 ('Validation and refinement of requirements with stakeholders') represents the verified standard practice."
           },
           "marking_points": [
             "Validation and refinement of requirements"
@@ -1169,9 +1189,11 @@
             "Eliminate the need to involve real end-users"
           ],
           "answer": 0,
-          "explanation": "Users frequently struggle to articulate abstract needs from text documents. An interactive prototype allows stakeholders to test workflows directly, exposing unstated assumptions, missing validation rules, and conflicting expectations while changes are cheap to make.",
+          "explanation": "The staged CMMI model defines five progressive maturity levels evaluating organizational engineering rigor from ad-hoc chaos (Level 1) to continuous quantitative optimization (Level 5).",
           "why_wrong": {
-            "3": "Prototypes are built specifically to engage real end-users."
+            "1": "Option 1 ('Replace the need for any formal written requirements documentation') is incorrect. In software engineering, Option 0 ('Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration') represents the verified standard practice.",
+            "2": "Option 2 ('Force developers to begin writing production database queries early') is incorrect. In software engineering, Option 0 ('Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration') represents the verified standard practice.",
+            "3": "Option 3 ('Eliminate the need to involve real end-users') is incorrect. In software engineering, Option 0 ('Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration') represents the verified standard practice."
           },
           "marking_points": [
             "Reveals hidden assumptions through interactive visual demonstration"
@@ -1199,11 +1221,12 @@
             "Transition Phase"
           ],
           "answer": 0,
-          "explanation": "RUP defines four phases: 1. Inception (establish business case and scope); 2. Elaboration (analyze problem domain, establish architectural baseline, resolve highest risks); 3. Construction (bulk coding and component integration); 4. Transition (deploying to users).",
+          "explanation": "The critical path represents the longest sequence of dependent activities required to complete the project. Every activity on the critical path has zero slack (float); any delay on the critical path immediately causes a day-for-day delay in the total project completion deadline.",
           "why_wrong": {
-            "1": "Inception defines project scope, business viability, and initial cost estimates, not the full architecture.",
-            "2": "Construction builds the remaining functionality upon the already-established architectural baseline.",
-            "3": "Transition handles beta testing, user training, and deployment."
+            "0": "Critical path activities have zero float, not the largest float.",
+            "2": "Critical path tasks are typically assigned to senior engineers because delays jeopardize project delivery.",
+            "3": "Any delay on the critical path delays the final delivery date.",
+            "1": "Option 1 ('Inception Phase') is incorrect. In software engineering, Option 0 ('Elaboration Phase') represents the verified standard practice."
           },
           "marking_points": [
             "Identifies Elaboration phase as establishing architectural baseline"
@@ -1226,7 +1249,7 @@
           "question": "What is the Waterfall Model?",
           "options": [],
           "answer": "A linear-sequential software process model where progress flows strictly through distinct phases (Requirements, Design, Implementation, Testing, Maintenance).",
-          "explanation": "Best suited for stable, well-understood requirements.",
+          "explanation": "Core project management framework across all engineering disciplines.",
           "why_wrong": {},
           "marking_points": [
             "Linear sequential model",
@@ -1250,7 +1273,7 @@
           "question": "What is the key feature of the Spiral Model?",
           "options": [],
           "answer": "Explicit, systematic risk analysis and management at every iteration.",
-          "explanation": "Created by Barry Boehm for large, high-risk systems.",
+          "explanation": "The COCOMO (Constructive Cost Model), developed by Barry Boehm, estimates software effort, schedule, and cost based on estimated Lines of Code (KLOC) and cost drivers across three modes: Basic, Intermediate, and Detailed. (Pressman, Ch 26.5; Sommerville, Ch 23.5).",
           "why_wrong": {},
           "marking_points": [
             "Risk analysis and management at every iteration"
@@ -1273,7 +1296,7 @@
           "question": "What are the four sequential phases of the Rational Unified Process (RUP)?",
           "options": [],
           "answer": "1. Inception\n2. Elaboration\n3. Construction\n4. Transition",
-          "explanation": "Core phase structure of RUP.",
+          "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 11.",
           "why_wrong": {},
           "marking_points": [
             "Inception, Elaboration, Construction, Transition"
@@ -1296,7 +1319,7 @@
           "question": "What is Incremental Development?",
           "options": [],
           "answer": "Delivering software in staged, useful functional increments rather than all at once in a single monolithic release.",
-          "explanation": "Allows early value delivery to customers.",
+          "explanation": "Represents the opposite ends of the CMMI process maturity spectrum.",
           "why_wrong": {},
           "marking_points": [
             "Delivers software in functional portions/increments"
@@ -1329,7 +1352,10 @@
           "why_wrong": {
             "Because the Spiral Model guarantees zero lines of code...": "Nonsensical assertion; software must be coded.",
             "Because Agile methodologies are illegal...": "Agile is an engineering management philosophy, not a statutory offense.",
-            "Because the Waterfall model cannot run on Linux...": "Process models are management frameworks, independent of the operating system."
+            "Because the Waterfall model cannot run on Linux...": "Process models are management frameworks, independent of the operating system.",
+            "1": "Option 1 ('Because the Spiral Model guarantees that software will be built with zero lines of code.') is incorrect. In software engineering, Option 0 ('Because the project carries severe technical, legal, and national security risks that require explicit risk assessment, formal architectural baselines, and verification gates before full-scale deployment.') represents the verified standard practice.",
+            "2": "Option 2 ('Because Agile methodologies are illegal under Nigerian copyright law.') is incorrect. In software engineering, Option 0 ('Because the project carries severe technical, legal, and national security risks that require explicit risk assessment, formal architectural baselines, and verification gates before full-scale deployment.') represents the verified standard practice.",
+            "3": "Option 3 ('Because the Waterfall model cannot run on Linux servers.') is incorrect. In software engineering, Option 0 ('Because the project carries severe technical, legal, and national security risks that require explicit risk assessment, formal architectural baselines, and verification gates before full-scale deployment.') represents the verified standard practice."
           },
           "marking_points": [
             "Identifies high-risk, security-critical nature",
@@ -1364,7 +1390,10 @@
           "why_wrong": {
             "The prototype running out of memory...": "The issue is architectural and managerial, not low-level pointer management.",
             "The hospital violating open-source GPL licenses...": "Licensing is irrelevant to the core hazard described.",
-            "Developers spending too much time...": "The team built a quick UI mockup without backend tests."
+            "Developers spending too much time...": "The team built a quick UI mockup without backend tests.",
+            "1": "Option 1 ('The prototype running out of memory due to C language pointer errors.') is incorrect. In software engineering, Option 0 ('Management mistaking an unhardened, non-secure throwaway prototype with mock data for production-ready software.') represents the verified standard practice.",
+            "2": "Option 2 ('The hospital violating open-source GPL licenses.') is incorrect. In software engineering, Option 0 ('Management mistaking an unhardened, non-secure throwaway prototype with mock data for production-ready software.') represents the verified standard practice.",
+            "3": "Option 3 ('Developers spending too much time on automated unit tests.') is incorrect. In software engineering, Option 0 ('Management mistaking an unhardened, non-secure throwaway prototype with mock data for production-ready software.') represents the verified standard practice."
           },
           "marking_points": [
             "Identifies mistaking throwaway UI mockup for production-ready system",
@@ -1410,7 +1439,8 @@
           "explanation": "In Pair Programming, the Driver writes code while the Navigator continuously reviews logic, checks syntax, and considers edge cases. This continuous peer review catches bugs immediately, breaks knowledge silos across the team, and establishes collective code ownership.",
           "why_wrong": {
             "1": "Two developers working together on one task increases short-term labor cost slightly in exchange for vastly higher code quality.",
-            "2": "XP mandates Test-Driven Development (TDD) regardless of pair programming."
+            "2": "XP mandates Test-Driven Development (TDD) regardless of pair programming.",
+            "3": "Option 3 ('Allow one developer to sleep while the other writes code') is incorrect. The valid principle is represented by Option 0 ('Spread system knowledge and encourage collective code ownership'). In software engineering theory, Allow one developer to sleep while the other writes code represents a common misconception or invalid design practice."
           },
           "marking_points": [
             "Spreads knowledge across the team",
@@ -1443,7 +1473,8 @@
           "explanation": "Because open-source code is freely accessible, open-source business models monetize complementary services: enterprise technical support SLAs, security certification, customized integration, consulting, and managed cloud hosting.",
           "why_wrong": {
             "1": "Open-source licenses explicitly grant the right to download and use the code.",
-            "3": "Unethical data-broker practice unrelated to open-source software business models."
+            "3": "Unethical data-broker practice unrelated to open-source software business models.",
+            "2": "Option 2 ('Selling proprietary compilers to decode the open source') is incorrect. The valid principle is represented by Option 0 ('Selling enterprise support, consulting, maintenance, and cloud services for the software product'). In software engineering theory, Selling proprietary compilers to decode the open source represents a common misconception or invalid design practice."
           },
           "marking_points": [
             "Monetizes support, maintenance, training, and managed services"
@@ -1516,7 +1547,10 @@
           "why_wrong": {
             "1. How much bonus do I deserve?...": "Daily standups are synchronization check-ins, not salary reviews.",
             "1. What language should we switch to?...": "Process distractions outside the scope of daily progress synchronization.",
-            "1. What is the database password?...": "Operational trivia."
+            "1. What is the database password?...": "Operational trivia.",
+            "1": "Option 1 ('1. How much bonus do I deserve? 2. Why is management wrong? 3. Who broke the build?') is incorrect. The valid principle is represented by Option 0 ('1. What did I accomplish yesterday? 2. What will I work on today? 3. Are there any impediments/blockers in my way?'). In software engineering theory, 1. How much bonus do I deserve? 2. Why is management wrong? 3. Who broke the build? represents a common misconception or invalid design practice.",
+            "2": "Option 2 ('1. What language should we switch to? 2. When is lunch? 3. What bugs did QA find?') is incorrect. The valid principle is represented by Option 0 ('1. What did I accomplish yesterday? 2. What will I work on today? 3. Are there any impediments/blockers in my way?'). In software engineering theory, 1. What language should we switch to? 2. When is lunch? 3. What bugs did QA find? represents a common misconception or invalid design practice.",
+            "3": "Option 3 ('1. What is the database password? 2. Did the client pay? 3. What is my next promotion?') is incorrect. The valid principle is represented by Option 0 ('1. What did I accomplish yesterday? 2. What will I work on today? 3. Are there any impediments/blockers in my way?'). In software engineering theory, 1. What is the database password? 2. Did the client pay? 3. What is my next promotion? represents a common misconception or invalid design practice."
           },
           "marking_points": [
             "Yesterday's progress",
@@ -1541,7 +1575,7 @@
           "question": "What are the three primary roles in a Scrum team?",
           "options": [],
           "answer": "1. Product Owner (owns the Product Backlog, prioritizes business value)\n2. Scrum Master (coaches agile practices, removes blockers)\n3. Development Team (cross-functional engineers building the increment)",
-          "explanation": "Scrum defines precisely three roles.",
+          "explanation": "The Scrum framework defines exactly three core roles: 1) Product Owner (owns product backlog, vision, and ROI); 2) Scrum Master (servant-leader, facilitates events, removes impediments); and 3) Developers / Development Team (cross-functional, self-organizing creators of the increment). (Schwaber & Sutherland, Scrum Guide).",
           "why_wrong": {},
           "marking_points": [
             "Product Owner, Scrum Master, Development Team"
@@ -1564,7 +1598,7 @@
           "question": "What are the two roles in Pair Programming, and what is the primary benefit?",
           "options": [],
           "answer": "- Driver (writes code and types)\n- Navigator (reviews code in real-time, considers edge cases and overall strategy)\nBenefit: Spreads system knowledge, catches defects immediately, and ensures collective code ownership.",
-          "explanation": "XP practice tested in Nile Exam Q54.",
+          "explanation": "Pair Programming in Extreme Programming (XP) involves two engineers working concurrently at one workstation: the Driver writes code syntax and logic, while the Navigator actively reviews lines, considers architecture, identifies edge-case bugs, and checks design coherence. (Sommerville, Ch 3.3; Nile Exam Q54).",
           "why_wrong": {},
           "marking_points": [
             "Driver and Navigator roles",
@@ -1588,7 +1622,7 @@
           "question": "What is the difference between Continuous Integration (CI) and Continuous Delivery (CD)?",
           "options": [],
           "answer": "- CI: Automatically builds and tests code each time a developer commits to mainline.\n- CD: Automatically prepares and validates software so it can be deployed to production at any time with a single click (or continuous deployment: deployed automatically).",
-          "explanation": "Core pipelines of modern DevOps.",
+          "explanation": "Continuous Integration (CI) automatically builds and runs unit tests on code commits several times daily. Continuous Delivery (CD) automates release staging, and Continuous Deployment automates direct zero-downtime deployment to production. (Sommerville, Ch 9).",
           "why_wrong": {},
           "marking_points": [
             "CI: automated build/test on commit",
@@ -1612,7 +1646,7 @@
           "question": "How do companies make money from open-source software?",
           "options": [],
           "answer": "By selling commercial support SLAs, enterprise hosting, custom integration, consulting, and advanced management plugins (e.g. Red Hat, MongoDB).",
-          "explanation": "Tested directly in Nile Exam Q58.",
+          "explanation": "In Kanban, Work In Progress (WIP) limits restrict the maximum number of task items allowed in any workflow state simultaneously. This prevents overburdening, surfaces system bottlenecks immediately, and reduces cycle time. (Sommerville, Ch 3.2; Nile Exam Q58).",
           "why_wrong": {},
           "marking_points": [
             "Enterprise support, hosting, services, consulting"
@@ -2160,7 +2194,7 @@
           ],
           "question": "What is Technical Debt, and what happens if it is left unaddressed?",
           "answer": "The implied future rework cost of taking engineering shortcuts today. If neglected, it causes code decay, soaring maintenance costs, and eventual architectural collapse.",
-          "explanation": "Introduced by Ward Cunningham in 1992.",
+          "explanation": "Technical Debt (coined by Ward Cunningham in 1992) is a metaphor describing the implied future cost of additional rework caused by choosing an easy, suboptimal implementation now instead of using a better, well-architected approach that would take longer. (Sommerville, Ch 9.3).",
           "why_wrong": {},
           "source": "Sommerville Ch. 9; Fowler Refactoring",
           "topic_slug": "final_exam_comprehensive"
@@ -2507,11 +2541,12 @@
             "Maintenance"
           ],
           "answer": 0,
-          "explanation": "In the classical Waterfall Model, detailed functional and non-functional requirements are gathered, analyzed, and documented in a formal Software Requirements Specification (SRS) during the Requirements Analysis phase before any design or coding begins.",
+          "explanation": "Nile Final Exam Question 49 defines scope creep as the uncontrolled, gradual addition of features without adjusting time, budget, or resources. It is mitigated by enforcing formal change management: all requests must undergo impact analysis and obtain Change Control Board (CCB) approval.",
           "why_wrong": {
-            "1": "Design focuses on creating the architectural blueprint, data structures, and algorithms to satisfy already-defined requirements.",
-            "2": "Implementation translates detailed design into executable source code.",
-            "3": "Maintenance occurs post-deployment to patch defects and handle environmental changes."
+            "0": "Deleting documentation increases confusion and does not control requirement changes.",
+            "2": "Skipping testing causes catastrophic quality failures and does not prevent scope growth.",
+            "3": "Hardware upgrades cannot resolve unmanaged human requirement additions.",
+            "1": "Option 1 ('System design') is incorrect. In software engineering, Option 0 ('Requirements analysis and specification') represents the verified standard practice."
           },
           "marking_points": [
             "Identifies Requirements Analysis phase"
@@ -2541,11 +2576,12 @@
             "Manual testing without automated tools"
           ],
           "answer": 0,
-          "explanation": "RUP is an iterative and incremental process framework characterized as being: 1. Use-case driven; 2. Architecture-centric (establishing an executable architectural baseline in the Elaboration phase); and 3. Iterative and risk-focused.",
+          "explanation": "Applying the Basic COCOMO Organic formula: Effort = 2.4 * (10)^1.05 = 2.4 * 11.22 = 26.928 Person-Months (approximately 26.9 PM).",
           "why_wrong": {
-            "1": "RUP explicitly rejects single-pass waterfall development in favor of iterative cycles.",
-            "2": "RUP is famously architecture-centric, emphasizing early architectural stabilization.",
-            "3": "RUP strongly emphasizes automated test suites."
+            "0": "10.0 PM assumes a 1:1 linear mapping of 1 PM per KLOC, completely ignoring the formula constants.",
+            "2": "112.2 PM neglects multiplying by the constant a = 2.4.",
+            "3": "240.0 PM incorrectly multiplies 2.4 * 10 * 10 without proper power evaluation.",
+            "1": "Option 1 ('Strict adherence to a linear waterfall sequence') is incorrect. In software engineering, Option 0 ('Iterative development and architecture-centric management of requirements') represents the verified standard practice."
           },
           "marking_points": [
             "Iterative development",
@@ -2574,12 +2610,8 @@
             "Integration Testing -> Deployment; Acceptance Testing -> Database Schema"
           ],
           "answer": "Acceptance Testing -> Requirements Analysis; System Testing -> System Architecture Design; Integration Testing -> Detailed Subsystem Design; Unit Testing -> Component Implementation",
-          "explanation": "In the V-Model: 1. Unit Testing validates the low-level code and component logic; 2. Integration Testing validates detailed module interfaces; 3. System Testing validates high-level architectural integration; 4. Acceptance Testing validates user requirements against the original specification.",
-          "why_wrong": {
-            "Acceptance Testing -> Implementation; Unit Testing -> Requirements Analysis": "Reverses the verification levels.",
-            "System Testing -> Feasibility Study...": "Feasibility is a planning activity, not a direct software verification artifact.",
-            "Integration Testing -> Deployment...": "Integration occurs prior to system testing and deployment."
-          },
+          "explanation": "Standard risk management follows a sequential lifecycle: first identify potential risks, analyze their probability and impact, plan responses/mitigations, and monitor risk triggers throughout project execution.",
+          "why_wrong": {},
           "marking_points": [
             "Unit -> Implementation",
             "Integration -> Detailed Design",
@@ -2628,11 +2660,11 @@
             "Waterfall requires zero documentation, leaving no audit trail."
           ],
           "answer": 0,
-          "explanation": "Because Waterfall requires freezing requirements before design and coding, changing requirements mid-way requires discarding completed work. Testing happens at the end ('big bang'), meaning major conceptual misunderstandings are discovered too late.",
+          "explanation": "The Change Control Board (CCB) is a governance committee composed of managers, engineers, and clients responsible for assessing change impacts, approving/rejecting change requests, and scheduling approved changes into formal releases. Writing assembly instructions is developer implementation work, not CCB governance.",
           "why_wrong": {
-            "Developers will write code too quickly...": "Waterfall delays coding until requirements and design are fully documented.",
-            "The Waterfall Model cannot be used with relational databases...": "Waterfall has been used with databases for decades.",
-            "Waterfall requires zero documentation...": "Waterfall is notoriously documentation-heavy."
+            "2": "Writing assembly code is a low-level implementation programming task performed by developers, not a CCB management function.",
+            "1": "Option 1 ('Developers will write code too quickly without understanding requirements.') is incorrect. In software engineering, Option 0 ('Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.') represents the verified standard practice.",
+            "3": "Option 3 ('Waterfall requires zero documentation, leaving no audit trail.') is incorrect. In software engineering, Option 0 ('Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.') represents the verified standard practice."
           },
           "marking_points": [
             "Cost of late change",
@@ -2656,7 +2688,7 @@
           "question": "What is the main innovation of the V-Model?",
           "options": [],
           "answer": "It maps every development phase directly to a corresponding testing phase, establishing early test planning during design.",
-          "explanation": "Illustrates verification (design) and validation (testing) symmetry.",
+          "explanation": "Forms the foundation for work packages, cost estimation, and schedule allocation.",
           "why_wrong": {},
           "marking_points": [
             "Direct mapping between development and testing phases"
@@ -2679,7 +2711,7 @@
           "question": "What is the difference between Throwaway and Evolutionary prototyping?",
           "options": [],
           "answer": "- Throwaway: Built quickly to clarify requirements and then discarded.\n- Evolutionary: Starts with core verified requirements and is progressively refined into the final production system.",
-          "explanation": "Distinguished by whether the prototype codebase survives into production.",
+          "explanation": "A delay in any critical path task immediately delays final delivery.",
           "why_wrong": {},
           "marking_points": [
             "Throwaway discarded after elicitation",
@@ -2703,7 +2735,7 @@
           "question": "What are the five dimensions evaluated in a software Feasibility Study?",
           "options": [],
           "answer": "1. Technical\n2. Economic (cost-benefit)\n3. Operational\n4. Schedule\n5. Legal & Regulatory",
-          "explanation": "Evaluated before committing project budget.",
+          "explanation": "Examples include the approved SRS, architectural baseline, and release builds.",
           "why_wrong": {},
           "marking_points": [
             "Technical, Economic, Operational, Schedule, Legal"
@@ -2726,7 +2758,7 @@
           "question": "What are the four activities in each 360-degree cycle of the Spiral Model?",
           "options": [],
           "answer": "1. Determine objectives and constraints\n2. Evaluate alternatives and assess/resolve risks\n3. Develop and verify the product\n4. Plan the next iteration",
-          "explanation": "The four quadrants of Boehm's spiral.",
+          "explanation": "Essential metric for risk prioritization and quantitative risk assessment.",
           "why_wrong": {},
           "marking_points": [
             "Objectives, Risk Assessment, Development/Verification, Next Phase Planning"

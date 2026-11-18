@@ -148,8 +148,9 @@
           "answer": 1,
           "explanation": "'++x' is a pre-increment operator. It increments the value of 'x' from 2 to 3 first, and then supplies the updated value 3 to printf.",
           "why_wrong": {
-            "0": "Pre-increment adds 1 to x, it does not subtract.",
-            "2": "Pre-increment inside printf is standard, valid C syntax."
+            "0": "2 is returned by post-increment (x++), but pre-increment (++x) increments before yielding the value.",
+            "2": "Pre-increment adds 1 to x, it does not decrement.",
+            "3": "Pre-increment inside printf is completely valid C syntax."
           },
           "source": "COS 201 Midterm Type B, Q3; Deitel Ch 3.12",
           "verified": true,
@@ -352,7 +353,7 @@
             "Explains that visual indentation does not change compiler grammar binding",
             "Explains that explicit braces { } strictly control block scope and eliminate ambiguity"
           ],
-          "explanation": "A cornerstone concept in control flow design.",
+          "explanation": "The 'dangling else' ambiguity arises in nested 'if' statements when an 'else' clause is written without explicit compound statement braces. In C grammar (ANSI/ISO C99 Section 6.8.4.1), an 'else' unconditionally associates with the closest preceding unmatched 'if' within the same block scope, regardless of the programmer's visual indentation. If the outer condition fails, the inner block is bypassed completely. Enclosing inner selection statements inside curly braces '{ ... }' explicitly delineates block scope, forcing the compiler to bind the 'else' to the intended outer 'if' and preventing silent logic defects.",
           "why_wrong": {},
           "source": "Deitel Ch 3.6",
           "verified": true,
@@ -580,7 +581,7 @@
             "States that the address of the variable (&x) must be passed to simulate pass-by-reference",
             "Explains that the function receives a pointer and dereferences it (*ptr) to modify caller memory"
           ],
-          "explanation": "Foundational understanding bridging functions to pointer mechanics.",
+          "explanation": "C is strictly 'pass-by-value': when any argument is passed to a function, the runtime makes an independent copy of the value and places it into the callee's parameter stack frame. Modifications to parameters inside the function alter only the local copy, not the caller's variable. To simulate 'pass-by-reference' (allowing a function to mutate caller variables), programmers pass the address of the variable using the address-of operator (&var). The receiving function declares a pointer parameter (type *ptr) and dereferences it (*ptr = value) to directly access and overwrite the caller's memory location in place.",
           "why_wrong": {},
           "source": "Deitel Ch 5.5, Ch 7.4",
           "verified": true,
@@ -986,7 +987,7 @@
             "strcat(dest, src)": "Appends source string to the end of destination string",
             "strcmp(s1, s2)": "Lexicographically compares two strings (0 if identical)"
           },
-          "explanation": "These four functions constitute the core string manipulation library in C.",
+          "explanation": "The standard `<string.h>` library provides fundamental operations on null-terminated character sequences: 'strlen(s)' traverses memory until encountering the null terminator '\\0' and returns the character count (excluding '\\0'); 'strcpy(dest, src)' copies characters including the null terminator into a pre-allocated destination buffer; 'strcat(dest, src)' appends 'src' to the end of 'dest', overwriting the original null terminator of 'dest' and appending a new one; and 'strcmp(s1, s2)' performs lexicographical comparison returning 0 if equal, negative if s1 < s2, and positive if s1 > s2.",
           "why_wrong": {},
           "source": "Deitel C How to Program, Chapter 8",
           "verified": true,
@@ -1033,8 +1034,10 @@
           "answer": 1,
           "explanation": "The prefix increment operator (++x) increments the value of x from 2 to 3 first, and then evaluates to the new incremented value (3), which is passed to printf.",
           "why_wrong": {
-            "0": "Confusion with decrement operator (--x).",
-            "1": "The syntax is completely valid C."
+            "0": "2 would be the result if post-increment (x++) was used instead of pre-increment (++x).",
+            "1": "The syntax is completely valid C.",
+            "2": "Pre-increment adds 1 to x (2+1=3), it does not subtract.",
+            "3": "Pre-increment within a printf call is standard, valid C syntax."
           },
           "marking_points": [
             "Applies prefix increment semantics: increment before evaluation"
@@ -1100,9 +1103,10 @@
           "answer": 0,
           "explanation": "Both 'a' and 'b' are integers. In C, integer division (5 / 2) truncates the fractional portion, yielding the integer 2. No floating-point promotion occurs.",
           "why_wrong": {
-            "1": "Mathematical division result; C integer division does NOT produce floating-point numbers.",
+            "1": "2.5 is the mathematical result, but integer division in C truncates the fractional part, yielding 2.",
             "0": "Rounds up instead of truncating towards zero.",
-            "2": "Valid integer division."
+            "2": "C integer division truncates towards zero; it does not round up to 3.",
+            "3": "Dividing two integers using '/' is completely valid standard C syntax."
           },
           "marking_points": [
             "Applies integer division truncation rule"
@@ -1202,8 +1206,9 @@
           "answer": 0,
           "explanation": "In the expression (x || 1), x is 0 (false) but the right operand is 1 (true). For logical OR (||), if either operand is non-zero, the overall condition evaluates to 1 (true), executing the 'if' branch.",
           "why_wrong": {
-            "3": "The code prints 'True', not the numeric truth value.",
-            "2": "The code prints the string literal 'True', not an integer."
+            "3": "The code prints the string literal 'True', not numeric 1.",
+            "2": "The code prints the string literal 'True', not numeric 0.",
+            "1": "The logical OR (||) expression (0 || 1) evaluates to 1 (true), so the if-branch executes."
           },
           "marking_points": [
             "Evaluates (0 || 1) as true (1) and prints 'True'"
@@ -1269,9 +1274,10 @@
           "answer": 1,
           "explanation": "Condition (x < y) evaluates (1 < 2), which is true (1). Because condition is true, the first expression (y) is evaluated and returned. y has value 2.",
           "why_wrong": {
-            "2": "Value of x; this would be returned if x < y were false.",
+            "2": "The ternary operator returns the chosen operand (y = 2), not boolean 0.",
             "1": "Confuses result with boolean evaluation.",
-            "3": "Valid ternary conditional invocation."
+            "3": "The ternary conditional expression inside printf is valid standard C syntax.",
+            "0": "1 is the value of x; this would only be returned if the condition (x < y) were false."
           },
           "marking_points": [
             "Evaluates condition (1 < 2) as true and selects y=2"
@@ -1443,7 +1449,9 @@
           "explanation": "In C, when both operands of the division operator '/' are integers, integer division is performed. The fractional part is truncated (discarded), yielding 2. It does not produce a floating-point result or round up to 3.",
           "why_wrong": {
             "1": "2.5 is the mathematical result, but integer division in C truncates all decimals.",
-            "0": "Dividing two non-zero integers is completely valid C syntax."
+            "0": "Dividing two non-zero integers is completely valid C syntax.",
+            "2": "C integer division truncates towards zero; it never rounds up.",
+            "3": "Dividing two integers is valid standard C syntax."
           },
           "source": "COS 201 Midterm Type B, Q7; Deitel Ch 2.5",
           "verified": true,
@@ -1472,9 +1480,10 @@
           "answer": 1,
           "explanation": "The condition 'x > y' (2 > 3) is false (0). The ternary operator selects the expression after the colon ':', which is 'y' (3). Thus 3 is printed.",
           "why_wrong": {
-            "0": "2 is 'x', which is only selected if x > y is true.",
-            "2": "The ternary evaluates to the chosen operand's value, not boolean 0.",
-            "1": "Using ternary expressions inside printf arguments is fully standard C."
+            "0": "2 is 'x', which is only selected if x > y is true (2 > 3 is false).",
+            "2": "The ternary evaluates to the chosen operand's value (3), not boolean 0.",
+            "1": "Using ternary expressions inside printf arguments is fully standard C.",
+            "3": "Using ternary expressions inside printf arguments is fully standard C."
           },
           "source": "COS 201 Midterm Type B, Q25; Deitel Ch 3.5",
           "verified": true,
@@ -1679,8 +1688,9 @@
           "answer": 0,
           "explanation": "The loop runs for i = 0, 1, 2:\n- i = 0: x = 0 + 0 = 0\n- i = 1: x = 0 + 1 = 1\n- i = 2: x = 1 + 2 = 3\nWhen i becomes 3, '3 < 3' is false. printf outputs 3.",
           "why_wrong": {
-            "1": "6 would be the result if i <= 3 was used (0 + 1 + 2 + 3 = 6).",
-            "3": "x is updated in iterations 1 and 2, so it does not remain 0."
+            "1": "Only adds the final iteration value i=2 without accumulating previous iterations (0+1).",
+            "3": "x is updated in iterations 1 and 2, so it does not remain 0.",
+            "2": "6 would be the result if i <= 3 was used (0 + 1 + 2 + 3 = 6)."
           },
           "source": "COS 201 Midterm Type B, Q17; Deitel Ch 4.3",
           "verified": true,
@@ -1734,7 +1744,7 @@
             "continue",
             "continue;"
           ],
-          "explanation": "'continue' skips to the next iteration of the enclosing loop.",
+          "explanation": "The 'continue' statement immediately terminates only the current iteration of the innermost enclosing loop ('for', 'while', or 'do-while'). In a 'while' or 'do-while' loop, control transfers directly to the loop condition evaluation. In a 'for' loop, control transfers directly to the iteration/increment expression (e.g. 'i++') before the loop test condition is evaluated.",
           "why_wrong": {},
           "source": "Deitel Ch 4.9",
           "verified": true,
@@ -1762,7 +1772,7 @@
             "Prints result formatted as 'Factorial: %d\\n'",
             "Returns 0 from main"
           ],
-          "explanation": "Standard accumulator multiplication loop.",
+          "explanation": "Factorial computation requires multiplying sequential integers from 1 up to N (5! = 1 * 2 * 3 * 4 * 5 = 120). The accumulator variable 'fact' must be initialized to 1 (not 0, which would zero-out the product). The for loop header 'for (int i = 1; i <= 5; i++) fact *= i;' executes 5 iterations, producing the final product 120.",
           "why_wrong": {},
           "source": "Deitel Ch 4.4",
           "verified": true,
@@ -1861,7 +1871,7 @@
               "right": "Enables compiler signature and parameter type verification"
             }
           ],
-          "explanation": "Summarizes C scope and storage duration rules.",
+          "explanation": "In C, storage class and declaration placement dictate memory duration and accessibility: Local auto variables possess block scope and automatic storage duration (created on the call stack at function entry and destroyed upon exit); Local static variables have block scope but static storage duration (retaining their values across multiple calls in the data segment); Global variables defined outside any function have file scope and static storage duration across the entire translation unit; and Register variables suggest placement in high-speed CPU registers without addressable memory locations (& operator prohibited).",
           "why_wrong": {},
           "source": "Deitel Ch 5.11, 5.12",
           "verified": true,
@@ -1888,7 +1898,7 @@
             "Returns result from power function",
             "Main prints 'Result: 16\\n'"
           ],
-          "explanation": "Standard function design and implementation.",
+          "explanation": "The iterative power function initializes a result accumulator to 1, then loops 'exp' times multiplying 'result *= base'. This algorithm runs in O(exp) linear time complexity and O(1) auxiliary space, correctly handling exp = 0 by returning 1 (since any non-zero number to power 0 equals 1). Both parameters are passed by value, leaving caller arguments unmodified.",
           "why_wrong": {},
           "source": "Deitel Ch 5.4",
           "verified": true,
@@ -2314,8 +2324,10 @@
           "answer": 2,
           "explanation": "C arrays are 0-indexed: arr[0] is 1, arr[1] is 2, and arr[2] is 3. Accessing arr[2] prints 3.",
           "why_wrong": {
-            "0": "arr[1] is 2.",
-            "2": "arr[2] is completely within the 3-element bounds (indices 0, 1, 2)."
+            "0": "arr[0] is 1; in C, array indexing is 0-based.",
+            "2": "arr[2] is completely within the 3-element bounds (indices 0, 1, 2).",
+            "1": "arr[1] is 2, not arr[2].",
+            "3": "arr[2] is completely within the bounds of a 3-element array (valid indices are 0, 1, and 2)."
           },
           "marking_points": [
             "Applies 0-based array indexing to retrieve third element at index 2"
@@ -2347,9 +2359,10 @@
           "answer": 1,
           "explanation": "The loop executes for i = 0, 1, 2. When i=0: x += 0 (x=0). When i=1: x += 1 (x=1). When i=2: x += 2 (x=3). Loop terminates when i=3. The final value printed is 3.",
           "why_wrong": {
-            "3": "Assumes only the last value of i is stored into x instead of being accumulated.",
-            "0": "Stops accumulation early.",
-            "1": "Assumes the loop did not execute or x remained unmutated."
+            "3": "Assumes the loop body was not executed or x remained unmutated.",
+            "0": "x accumulates i across iterations: x = 0 + 0 + 1 + 2 = 3. 2 stops the summation early.",
+            "1": "Assumes the loop did not execute or x remained unmutated.",
+            "2": "Only accounts for the first non-zero iteration (i=1), omitting i=2."
           },
           "marking_points": [
             "Traces accumulation: 0 + 0 + 1 + 2 = 3"
@@ -2415,9 +2428,10 @@
           "answer": 1,
           "explanation": "Condition (x > y) is (2 > 3), which is false (0). When the condition is false, the ternary operator evaluates and returns the expression after the colon (:), which is y (3).",
           "why_wrong": {
-            "2": "Value of x; this would be returned if (x > y) were true.",
-            "0": "Confuses the result with the Boolean truth value (0) of the comparison.",
-            "1": "Valid inline ternary operator in printf."
+            "2": "The ternary operator returns the evaluated expression (y = 3), not the boolean condition result.",
+            "0": "2 is the value of x; this would only be evaluated if (x > y) were true (2 > 3 is false).",
+            "1": "Valid inline ternary operator in printf.",
+            "3": "Using a ternary expression inside a printf call is standard, valid C syntax."
           },
           "marking_points": [
             "Evaluates condition (2 > 3) as false and returns y (3)"
@@ -2483,8 +2497,9 @@
           "answer": 1,
           "explanation": "In the logical AND expression (x && y), x is 1 (true) and y is 0 (false). Because logical AND requires both operands to be non-zero to be true, (1 && 0) evaluates to 0 (false). The 'else' branch executes, printing 'No'.",
           "why_wrong": {
-            "3": "Prints string literal 'No', not numeric result.",
-            "2": "Prints string literal 'No', not integer."
+            "3": "The code prints the string literal 'No', not numeric 0.",
+            "2": "The code prints the string literal 'No', not numeric 1.",
+            "0": "The logical AND (&&) expression (1 && 0) evaluates to 0 (false), so the else-branch executes."
           },
           "marking_points": [
             "Evaluates logical AND (1 && 0) as false, printing 'No'"

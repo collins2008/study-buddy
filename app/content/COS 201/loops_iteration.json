@@ -148,8 +148,9 @@
       "answer": 0,
       "explanation": "The loop runs for i = 0, 1, 2:\n- i = 0: x = 0 + 0 = 0\n- i = 1: x = 0 + 1 = 1\n- i = 2: x = 1 + 2 = 3\nWhen i becomes 3, '3 < 3' is false. printf outputs 3.",
       "why_wrong": {
-        "1": "6 would be the result if i <= 3 was used (0 + 1 + 2 + 3 = 6).",
-        "3": "x is updated in iterations 1 and 2, so it does not remain 0."
+        "1": "Only adds the final iteration value i=2 without accumulating previous iterations (0+1).",
+        "3": "x is updated in iterations 1 and 2, so it does not remain 0.",
+        "2": "6 would be the result if i <= 3 was used (0 + 1 + 2 + 3 = 6)."
       },
       "source": "COS 201 Midterm Type B, Q17; Deitel Ch 4.3",
       "verified": true,
@@ -440,7 +441,7 @@
         "continue",
         "continue;"
       ],
-      "explanation": "'continue' skips to the next iteration of the enclosing loop.",
+      "explanation": "The 'continue' statement immediately terminates only the current iteration of the innermost enclosing loop ('for', 'while', or 'do-while'). In a 'while' or 'do-while' loop, control transfers directly to the loop condition evaluation. In a 'for' loop, control transfers directly to the iteration/increment expression (e.g. 'i++') before the loop test condition is evaluated.",
       "why_wrong": {},
       "source": "Deitel Ch 4.9",
       "verified": true,
@@ -498,7 +499,7 @@
           "right": "Transfers control to the statement past the loop"
         }
       ],
-      "explanation": "Summarizes standard C loop execution characteristics.",
+      "explanation": "C provides three distinct loop constructs: 'for' is ideal for counter-controlled definite iteration where initialization, condition, and increment are centralized in the header; 'while' is an entry-controlled (pre-test) loop executing 0 or more times, checking the condition prior to entering the body; and 'do-while' is an exit-controlled (post-test) loop guaranteed to execute at least once (1 or more times) because the evaluation condition is tested after the body executes.",
       "why_wrong": {},
       "source": "Deitel Ch 3, Ch 4",
       "verified": true,
@@ -549,7 +550,7 @@
         "Prints result formatted as 'Factorial: %d\\n'",
         "Returns 0 from main"
       ],
-      "explanation": "Standard accumulator multiplication loop.",
+      "explanation": "Factorial computation requires multiplying sequential integers from 1 up to N (5! = 1 * 2 * 3 * 4 * 5 = 120). The accumulator variable 'fact' must be initialized to 1 (not 0, which would zero-out the product). The for loop header 'for (int i = 1; i <= 5; i++) fact *= i;' executes 5 iterations, producing the final product 120.",
       "why_wrong": {},
       "source": "Deitel Ch 4.4",
       "verified": true,
@@ -573,7 +574,7 @@
         "Highlights that do-while guarantees at least one execution",
         "Gives a concrete example such as menu prompting or user input validation"
       ],
-      "explanation": "A standard university examination question on control structures.",
+      "explanation": "A programmer should choose 'do-while' instead of 'while' whenever the body of the loop MUST execute at least once before testing the loop exit condition. Classic real-world exam examples include: (1) Interactive menu-driven console applications where the menu options must be displayed to the user before reading their choice; (2) User input validation prompts (e.g. asking for a positive number or password) where the prompt and read must happen first, repeating only if the input fails validation; and (3) Network retry handshakes where an initial connection attempt is mandatory before testing connection success.",
       "why_wrong": {},
       "source": "Deitel Ch 4.8",
       "verified": true,
@@ -591,7 +592,7 @@
       ],
       "question": "What is the minimum number of times a while loop can execute?",
       "answer": "Zero (0) times, if the condition is initially false.",
-      "explanation": "Because it is a pre-test loop."
+      "explanation": "The 'while' loop is a pre-test (entry-controlled) loop: its continuation condition is evaluated BEFORE the loop body executes. If the condition is false initially, the body executes zero times. (Deitel, Ch 4.3)."
     },
     {
       "id": "cos201-lp-fc02",
@@ -605,7 +606,7 @@
       ],
       "question": "What is the minimum number of times a do-while loop can execute?",
       "answer": "One (1) time, because the condition is checked after the body runs.",
-      "explanation": "Post-test loop guarantee."
+      "explanation": "The 'do-while' loop is a post-test (exit-controlled) loop: its condition is evaluated AFTER the loop body executes. Therefore, the body is guaranteed to execute at least once regardless of whether the condition is true or false. (Deitel, Ch 4.6)."
     },
     {
       "id": "cos201-lp-fc03",
@@ -619,7 +620,7 @@
       ],
       "question": "What does the 'break' statement do inside a loop?",
       "answer": "Immediately terminates the loop and jumps to the first statement following the loop.",
-      "explanation": "Exits the loop structure."
+      "explanation": "The 'break' statement terminates loop execution immediately and jumps to the statement following the loop. The 'continue' statement skips the remaining statements in the current iteration and jumps directly to the next iteration's increment or condition test. (Deitel, Ch 4.8)."
     },
     {
       "id": "cos201-lp-fc04",
@@ -647,7 +648,7 @@
       ],
       "question": "What is a sentinel value in C programming?",
       "answer": "A special dummy value used to indicate the end of data entry in indefinite repetition (e.g. -1 to stop input).",
-      "explanation": "Also known as a signal value or flag."
+      "explanation": "A sentinel value (also called a dummy or flag value) is a distinct data value used to indicate the end of input data. It must be carefully chosen so that it cannot be confused with any legitimate input data value (e.g. -1 for positive test scores). (Deitel, Ch 3.8)."
     },
     {
       "id": "cos201-lp-fc06",
@@ -661,7 +662,7 @@
       ],
       "question": "Can parts of a for loop header be omitted? (e.g. for (;;))",
       "answer": "Yes. An empty condition in 'for (;;)' is treated by C as permanently true, creating an infinite loop.",
-      "explanation": "Requires an internal break or return to exit."
+      "explanation": "The construct 'for(;;)' or 'while(1)' creates an intentional infinite loop. The loop relies on an internal selection statement containing a 'break' or 'return' to terminate when an exit condition is reached. (Deitel, Ch 4.4)."
     },
     {
       "id": "cos201-lp-fc07",
@@ -675,7 +676,7 @@
       ],
       "question": "What is an off-by-one error in a counter-controlled loop?",
       "answer": "A bug where the loop executes one iteration too many or too few (e.g. using '<=' instead of '<').",
-      "explanation": "A common boundary logic mistake."
+      "explanation": "An off-by-one error (OBOE) is a common boundary logic bug where a loop iterates one time too many or one time too few (e.g., using '<=' instead of '<' on a 0-indexed array of length N, which reads beyond the array bounds). (Deitel, Ch 4.5)."
     },
     {
       "id": "cos201-lp-fc08",
@@ -689,7 +690,7 @@
       ],
       "question": "What punctuation mark MUST terminate a do-while loop header?",
       "answer": "A semicolon (;) right after the closing parenthesis: while (condition);",
-      "explanation": "Omitting the semicolon causes a compilation error."
+      "explanation": "In C, a 'do-while' loop must terminate with a closing semicolon after the condition: 'do { ... } while (condition);'. Omitting this semicolon results in a compilation syntax error. (Deitel, Ch 4.6)."
     }
   ],
   "case_studies": [

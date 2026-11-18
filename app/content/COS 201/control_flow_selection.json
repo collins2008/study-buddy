@@ -410,7 +410,7 @@
         "break",
         "break;"
       ],
-      "explanation": "'break' causes control to exit the switch structure immediately.",
+      "explanation": "The 'break' keyword forces an immediate exit from the switch statement body, transferring execution control to the first statement following the enclosing switch block. Without 'break', execution falls through sequentially to subsequent cases.",
       "why_wrong": {},
       "source": "Deitel Ch 4.7",
       "verified": true,
@@ -468,7 +468,7 @@
           "right": "Terminates execution within a switch case or loop immediately"
         }
       ],
-      "explanation": "Summarizes the selection constructs defined in the C language standard.",
+      "explanation": "In C, selection structures evaluate boolean expressions to determine control transfer: 'if' provides single-selection executing code only when true; 'if-else' provides double-selection choosing between two mutually exclusive execution paths; 'switch' provides multi-selection dispatching execution to integral constant case labels; and the ternary operator (?:) provides inline conditional evaluation returning an expression value.",
       "why_wrong": {},
       "source": "Deitel Ch 3, Ch 4",
       "verified": true,
@@ -542,7 +542,7 @@
         "Explains that visual indentation does not change compiler grammar binding",
         "Explains that explicit braces { } strictly control block scope and eliminate ambiguity"
       ],
-      "explanation": "A cornerstone concept in control flow design.",
+      "explanation": "The 'dangling else' ambiguity arises in nested 'if' statements when an 'else' clause is written without explicit compound statement braces. In C grammar (ANSI/ISO C99 Section 6.8.4.1), an 'else' unconditionally associates with the closest preceding unmatched 'if' within the same block scope, regardless of the programmer's visual indentation. If the outer condition fails, the inner block is bypassed completely. Enclosing inner selection statements inside curly braces '{ ... }' explicitly delineates block scope, forcing the compiler to bind the 'else' to the intended outer 'if' and preventing silent logic defects.",
       "why_wrong": {},
       "source": "Deitel Ch 3.6",
       "verified": true,
@@ -560,7 +560,7 @@
       ],
       "question": "What is the difference between single-selection, double-selection, and multiple-selection in C?",
       "answer": "Single-selection (if) performs or skips an action. Double-selection (if-else) chooses between two actions. Multiple-selection (switch or if-else if) chooses among three or more actions.",
-      "explanation": "Deitel Ch 3.3."
+      "explanation": "In C, 'if' is a single-selection statement (executing an action if condition is true), 'if-else' is a double-selection statement (choosing between two paths), and 'switch' is a multi-selection statement (selecting from multiple actions based on an integral value). (Deitel & Deitel, Ch 3.3)."
     },
     {
       "id": "cos201-cf-fc02",
@@ -574,7 +574,7 @@
       ],
       "question": "What numeric values in C represent false and true in conditional tests?",
       "answer": "0 represents false. ANY non-zero value (positive or negative) represents true.",
-      "explanation": "E.g. if (-1) evaluates as true."
+      "explanation": "In C, any non-zero numeric value (positive or negative, e.g. -1, 42, 0.5) evaluates as logical TRUE, while strictly zero (0, 0.0, '\\0', NULL) evaluates as FALSE. (Deitel, Ch 3.4)."
     },
     {
       "id": "cos201-cf-fc03",
@@ -588,7 +588,7 @@
       ],
       "question": "Can a float or double variable be used in a C switch statement?",
       "answer": "No. The switch controlling expression MUST evaluate to an integer type (int, char, enum).",
-      "explanation": "Floating-point types are illegal in C switch statements."
+      "explanation": "The switch expression and all case labels MUST evaluate to integer types (int, char, enum, short, long). Floating-point types (float, double) and string literals are strictly illegal in C switch statements and cause compile-time syntax errors. (Deitel, Ch 4.7)."
     },
     {
       "id": "cos201-cf-fc04",
@@ -616,7 +616,7 @@
       ],
       "question": "To which 'if' does an 'else' associate in nested if statements without braces?",
       "answer": "To the nearest preceding unmatched 'if'.",
-      "explanation": "The dangling else rule in C grammar."
+      "explanation": "The classic dangling-else ambiguity is resolved in C by binding an 'else' to the closest preceding unmatched 'if' within the same block, irrespective of source indentation. Always use curly braces to make nesting unambiguous. (Deitel, Ch 3.6)."
     },
     {
       "id": "cos201-cf-fc06",
@@ -630,7 +630,7 @@
       ],
       "question": "Is the 'default' case mandatory in a switch statement?",
       "answer": "No, it is optional. If omitted and no case matches, the switch does nothing.",
-      "explanation": "It provides a catch-all safety path."
+      "explanation": "The 'default' case in a switch provides a deterministic fallback catch-all path when none of the explicit case constants match the tested expression. It is defensive programming to always include a default case. (Deitel, Ch 4.7)."
     },
     {
       "id": "cos201-cf-fc07",
@@ -644,7 +644,7 @@
       ],
       "question": "Can case labels in a switch statement contain variables? (e.g. case x:)",
       "answer": "No. Case labels MUST be constant integer expressions known at compile-time.",
-      "explanation": "Variables cause a compilation error."
+      "explanation": "Case labels in C switch statements must be compile-time constant integer expressions (e.g., 'case 5:' or 'case 'A':'). Using variable identifiers or non-constant expressions causes a compilation error: 'case label does not reduce to an integer constant'. (Deitel, Ch 4.7)."
     },
     {
       "id": "cos201-cf-fc08",
@@ -658,7 +658,7 @@
       ],
       "question": "What is the danger of writing 'if (score >= 50);' with a trailing semicolon?",
       "answer": "The semicolon terminates the if-body as a null statement, causing the subsequent indented block to execute unconditionally.",
-      "explanation": "A common syntax trap."
+      "explanation": "Placing a semicolon directly after the header of an if, while, or for statement (e.g. 'if (x > 0);') forms a null statement. The controlled body becomes empty, and the subsequent indented block executes unconditionally regardless of the test condition. (Deitel, Ch 3.5)."
     }
   ],
   "case_studies": [

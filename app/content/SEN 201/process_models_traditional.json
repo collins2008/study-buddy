@@ -60,7 +60,8 @@
       "explanation": "As tested in Nile Exam Question 3: Barry Boehm's Spiral Model is fundamentally a risk-driven process model. Unlike linear or purely agile models, every single 360-degree spiral loop explicitly begins with setting objectives and mandates an in-depth risk analysis step to identify and resolve technical, financial, or operational risks before engineering proceeds.",
       "why_wrong": {
         "1": "The Spiral Model produces formal documentation, milestone reviews, and management checkpoints at each loop.",
-        "3": "Pair programming is a practice of Extreme Programming (XP), not the Spiral Model."
+        "3": "Pair programming is a practice of Extreme Programming (XP), not the Spiral Model.",
+        "2": "Option 2 ('Strict sequential phase completion without review') is incorrect. The valid principle is represented by Option 0 ('Risk assessment and management at every iteration'). In software engineering theory, Strict sequential phase completion without review represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Identifies risk assessment/management as defining feature"
@@ -189,7 +190,9 @@
       "answer": 0,
       "explanation": "Users frequently struggle to articulate abstract needs from text documents. An interactive prototype allows stakeholders to test workflows directly, exposing unstated assumptions, missing validation rules, and conflicting expectations while changes are cheap to make.",
       "why_wrong": {
-        "3": "Prototypes are built specifically to engage real end-users."
+        "3": "Prototypes are built specifically to engage real end-users.",
+        "1": "Option 1 ('Replace the need for any formal written requirements documentation') is incorrect. The valid principle is represented by Option 0 ('Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration'). In software engineering theory, Replace the need for any formal written requirements documentation represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('Force developers to begin writing production database queries early') is incorrect. The valid principle is represented by Option 0 ('Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration'). In software engineering theory, Force developers to begin writing production database queries early represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Reveals hidden assumptions through interactive visual demonstration"
@@ -304,7 +307,10 @@
       "why_wrong": {
         "Developers will write code too quickly...": "Waterfall delays coding until requirements and design are fully documented.",
         "The Waterfall Model cannot be used with relational databases...": "Waterfall has been used with databases for decades.",
-        "Waterfall requires zero documentation...": "Waterfall is notoriously documentation-heavy."
+        "Waterfall requires zero documentation...": "Waterfall is notoriously documentation-heavy.",
+        "1": "Option 1 ('Developers will write code too quickly without understanding requirements.') is incorrect. The valid principle is represented by Option 0 ('Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.'). In software engineering theory, Developers will write code too quickly without understanding requirements. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('The Waterfall Model cannot be used with relational databases.') is incorrect. The valid principle is represented by Option 0 ('Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.'). In software engineering theory, The Waterfall Model cannot be used with relational databases. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('Waterfall requires zero documentation, leaving no audit trail.') is incorrect. The valid principle is represented by Option 0 ('Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.'). In software engineering theory, Waterfall requires zero documentation, leaving no audit trail. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Cost of late change",
@@ -327,7 +333,7 @@
       "question": "What is the Waterfall Model?",
       "options": [],
       "answer": "A linear-sequential software process model where progress flows strictly through distinct phases (Requirements, Design, Implementation, Testing, Maintenance).",
-      "explanation": "Best suited for stable, well-understood requirements.",
+      "explanation": "The Waterfall model is a linear-sequential process model where each phase (Requirements, Analysis, Design, Implementation, Testing, Maintenance) must be completed, reviewed, and signed off before the next phase begins. It is best suited for stable, well-understood requirements in critical systems. (Sommerville, Ch 2.1).",
       "why_wrong": {},
       "marking_points": [
         "Linear sequential model",
@@ -350,7 +356,7 @@
       "question": "What is the main innovation of the V-Model?",
       "options": [],
       "answer": "It maps every development phase directly to a corresponding testing phase, establishing early test planning during design.",
-      "explanation": "Illustrates verification (design) and validation (testing) symmetry.",
+      "explanation": "The V-Model (Verification and Validation model) extends the Waterfall lifecycle by bending the phases upward to map every design stage directly to its corresponding testing level: Requirements to Acceptance Testing, System Architecture to System Testing, Detailed Design to Integration Testing, and Module Coding to Unit Testing. (Pressman, Ch 4.2).",
       "why_wrong": {},
       "marking_points": [
         "Direct mapping between development and testing phases"
@@ -417,7 +423,7 @@
       "question": "What are the four sequential phases of the Rational Unified Process (RUP)?",
       "options": [],
       "answer": "1. Inception\n2. Elaboration\n3. Construction\n4. Transition",
-      "explanation": "Core phase structure of RUP.",
+      "explanation": "The Rational Unified Process (RUP) is an iterative, architecture-centric, use-case-driven software framework organized into four sequential phases: Inception (scope and business case), Elaboration (architecture and risk mitigation), Construction (system coding and integration), and Transition (deployment and user acceptance). (Sommerville, Ch 2.4).",
       "why_wrong": {},
       "marking_points": [
         "Inception, Elaboration, Construction, Transition"
@@ -439,7 +445,7 @@
       "question": "What are the five dimensions evaluated in a software Feasibility Study?",
       "options": [],
       "answer": "1. Technical\n2. Economic (cost-benefit)\n3. Operational\n4. Schedule\n5. Legal & Regulatory",
-      "explanation": "Evaluated before committing project budget.",
+      "explanation": "A Feasibility Study evaluates a proposed software project across technical feasibility (can we build it?), economic feasibility (cost-benefit ROI), legal feasibility (compliance, licensing), and operational feasibility (will it be adopted?) before committing financial resources. (Sommerville, Ch 4.2).",
       "why_wrong": {},
       "marking_points": [
         "Technical, Economic, Operational, Schedule, Legal"
@@ -461,7 +467,7 @@
       "question": "What is Incremental Development?",
       "options": [],
       "answer": "Delivering software in staged, useful functional increments rather than all at once in a single monolithic release.",
-      "explanation": "Allows early value delivery to customers.",
+      "explanation": "Incremental development interleaves specification, development, and validation activities. The system is delivered in manageable increments, allowing customers to gain early business value, provide real feedback, and lower the financial risk of total system failure. (Sommerville, Ch 2.1).",
       "why_wrong": {},
       "marking_points": [
         "Delivers software in functional portions/increments"
@@ -483,7 +489,7 @@
       "question": "What are the four activities in each 360-degree cycle of the Spiral Model?",
       "options": [],
       "answer": "1. Determine objectives and constraints\n2. Evaluate alternatives and assess/resolve risks\n3. Develop and verify the product\n4. Plan the next iteration",
-      "explanation": "The four quadrants of Boehm's spiral.",
+      "explanation": "Boehm's Spiral Model is an iterative, risk-driven process model organized into four repeating quadrants: 1) Determine objectives and constraints; 2) Identify and resolve risks; 3) Develop and verify the next-level product; and 4) Plan the next iteration. (Boehm, 1988; Sommerville, Ch 2.1).",
       "why_wrong": {},
       "marking_points": [
         "Objectives, Risk Assessment, Development/Verification, Next Phase Planning"

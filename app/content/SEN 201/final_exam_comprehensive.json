@@ -454,7 +454,7 @@
       ],
       "question": "What is Technical Debt, and what happens if it is left unaddressed?",
       "answer": "The implied future rework cost of taking engineering shortcuts today. If neglected, it causes code decay, soaring maintenance costs, and eventual architectural collapse.",
-      "explanation": "Introduced by Ward Cunningham in 1992.",
+      "explanation": "Technical Debt (coined by Ward Cunningham in 1992) is a metaphor describing the implied future cost of additional rework caused by choosing an easy, suboptimal implementation now instead of using a better, well-architected approach that would take longer. (Sommerville, Ch 9.3).",
       "why_wrong": {},
       "source": "Sommerville Ch. 9; Fowler Refactoring"
     }

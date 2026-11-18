@@ -333,7 +333,9 @@
       "explanation": "By definition in the ISO C Standard, sizeof(char) is ALWAYS exactly 1. All other data type sizes in C are expressed as multiples of the size of char.",
       "why_wrong": {
         "0": "4 is typical for int or float, not char.",
-        "3": "While int and pointer sizes are architecture-dependent, sizeof(char) is strictly guaranteed by the standard to be 1."
+        "3": "While int and pointer sizes are architecture-dependent, sizeof(char) is strictly guaranteed by ISO C to be 1 on all architectures.",
+        "1": "A char is defined by ISO C to be exactly 1 byte (sizeof(char) == 1 by definition). It is never 2 bytes.",
+        "2": "4 bytes is typical for an int or float on modern 32/64-bit systems, not char."
       },
       "source": "Deitel Ch 14.5; ISO C Standard 6.5.3.4",
       "verified": true,
@@ -858,7 +860,7 @@
       ],
       "front": "What are the rules for a valid C identifier?",
       "back": "Consists of letters, digits, and underscores (_). Must NOT begin with a digit. Must NOT be a C keyword. Case-sensitive.",
-      "explanation": "E.g. '_count1' is valid, '1count' is invalid.",
+      "explanation": "C identifiers must begin with an alphabetic letter (a-z, A-Z) or an underscore (_), followed by letters, digits (0-9), or underscores. An identifier cannot begin with a digit (e.g. '1count' is illegal; '_count1' is valid) and cannot be a C reserved keyword. (Deitel, Ch 2.4).",
       "question": "What are the rules for a valid C identifier?",
       "answer": "Consists of letters, digits, and underscores (_). Must NOT begin with a digit. Must NOT be a C keyword. Case-sensitive."
     },
@@ -874,7 +876,7 @@
       ],
       "front": "What happens if you place a semicolon after a #define directive? (e.g. #define PI 3.14;)",
       "back": "The semicolon becomes part of the replacement text, causing unexpected syntax errors in expressions (e.g. x = PI * 2 becomes x = 3.14; * 2).",
-      "explanation": "Preprocessor macros do not use semicolons.",
+      "explanation": "The '#define' preprocessor directive performs literal text substitution before compilation begins; it does not take a semicolon at the end of the line (e.g. '#define PI 3.14159'). The 'const' qualifier creates a typed, read-only memory variable evaluated by the C compiler. (Deitel, Ch 6.4).",
       "question": "What happens if you place a semicolon after a #define directive? (e.g. #define PI 3.14;)",
       "answer": "The semicolon becomes part of the replacement text, causing unexpected syntax errors in expressions (e.g. x = PI * 2 becomes x = 3.14; * 2)."
     },
@@ -890,7 +892,7 @@
       ],
       "front": "What is the difference between float and double in C?",
       "back": "Float is single-precision (~6 decimal digits, typically 4 bytes, %f). Double is double-precision (~15 decimal digits, typically 8 bytes, %lf in scanf).",
-      "explanation": "Double provides higher precision and wider exponent range.",
+      "explanation": "In standard C (IEEE 754), 'float' is single-precision (typically 32 bits, ~7 decimal digits of precision), whereas 'double' is double-precision (typically 64 bits, ~15-17 decimal digits of precision with a much wider exponent range). (Deitel, Ch 3.9).",
       "question": "What is the difference between float and double in C?",
       "answer": "Float is single-precision (~6 decimal digits, typically 4 bytes, %f). Double is double-precision (~15 decimal digits, typically 8 bytes, %lf in scanf)."
     },
@@ -922,7 +924,7 @@
       ],
       "front": "What is the effect of the 'unsigned' modifier on an integer?",
       "back": "It restricts the variable to non-negative numbers, doubling the positive range (e.g. 0 to 4,294,967,295 for 32-bit int) and uses format specifier %u.",
-      "explanation": "The sign bit is treated as a magnitude bit.",
+      "explanation": "The 'unsigned' type specifier instructs the compiler to treat the most significant bit as a magnitude bit rather than a two's-complement sign bit. This doubles the maximum positive range of the integer while preventing negative values (e.g., 0 to 65,535 for 16-bit unsigned vs -32,768 to +32,767 for signed). (Deitel, Ch 5.12).",
       "question": "What is the effect of the 'unsigned' modifier on an integer?",
       "answer": "It restricts the variable to non-negative numbers, doubling the positive range (e.g. 0 to 4,294,967,295 for 32-bit int) and uses format specifier %u."
     },

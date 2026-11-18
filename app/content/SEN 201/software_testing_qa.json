@@ -373,7 +373,7 @@
       ],
       "question": "What is Boundary Value Analysis (BVA), and why is it effective?",
       "answer": "A testing technique targeting values at the boundaries of equivalence partitions (min, min-1, min+1, max, max-1, max+1). It is effective because developers most frequently make off-by-one errors at comparison boundaries (< vs <=).",
-      "explanation": "Complementary to Equivalence Partitioning.",
+      "explanation": "Boundary Value Analysis (BVA) is a black-box test design technique based on the empirical observation that software errors concentrate at extreme edges of input ranges. It tests the minimum, just below min, nominal, just above max, and maximum boundaries. (Pressman, Ch 19.5; Sommerville, Ch 8.2).",
       "why_wrong": {},
       "source": "Software Engineering Concepts and Principles Lecture Notes"
     },

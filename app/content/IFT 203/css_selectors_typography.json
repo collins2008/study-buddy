@@ -383,7 +383,7 @@
       ],
       "question": "What is the 4-tier specificity tuple (a, b, c, d)?",
       "answer": "a = Inline styles (1000)\nb = ID selectors (100)\nc = Class, attribute, and pseudo-class selectors (10)\nd = Element and pseudo-element selectors (1)\nEvaluated left to right; higher tier always wins.",
-      "explanation": "The standard W3C specificity scoring metric.",
+      "explanation": "W3C CSS Specificity is evaluated as a 4-tier tuple (a, b, c, d): a = inline styles (style attribute, 1,0,0,0); b = ID selectors (#nav, 0,1,0,0); c = class selectors, attribute selectors, and pseudo-classes (.btn, [type='text'], :hover, 0,0,1,0); d = type/element selectors and pseudo-elements (div, p, ::before, 0,0,0,1). The universal selector (*) and combinators have zero specificity (0,0,0,0). (W3C CSS Selectors Level 4).",
       "why_wrong": {},
       "source": "IFT 203 Week 6 Slides; W3C Specificity"
     },
@@ -447,7 +447,7 @@
       ],
       "question": "What does `!important` do in CSS, and why should it be avoided?",
       "answer": "It overrides all normal specificity and cascade rules. It should be avoided because it breaks the natural cascade, makes debugging CSS nightmares, and forces other developers to use even more `!important` declarations.",
-      "explanation": "Recognized architectural anti-pattern in frontend development.",
+      "explanation": "The '!important' declaration in CSS overrides all standard cascade specificity calculations within that declaration's origin. It should be strictly avoided in application stylesheets because it breaks the natural cascade, forces subsequent developers to write even more '!important' rules, and creates maintainability nightmares. (MDN Web Docs).",
       "why_wrong": {},
       "source": "IFT 203 Week 6 Slides; MDN Specificity"
     }

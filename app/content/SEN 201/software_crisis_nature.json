@@ -131,7 +131,9 @@
       "answer": 0,
       "explanation": "Programming is a sub-activity within software engineering. Software engineering is a disciplined, measurable approach spanning feasibility, requirements engineering, architectural design, verification and validation, deployment, maintenance, cost estimation, and multidisciplinary team management.",
       "why_wrong": {
-        "1": "The opposite is true: large-scale software engineering inherently requires coordinated multidisciplinary teams."
+        "1": "The opposite is true: large-scale software engineering inherently requires coordinated multidisciplinary teams.",
+        "2": "Option 2 ('Software engineering only applies to embedded systems, while programming applies to web applications.') is incorrect. The valid principle is represented by Option 0 ('Software engineering encompasses the entire software life cycle (requirements, architecture, testing, maintenance, and project management), whereas programming focuses primarily on writing code syntax and algorithms.'). In software engineering theory, Software engineering only applies to embedded systems, while programming applies to web applications. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('There is no distinction; they are completely interchangeable terms.') is incorrect. The valid principle is represented by Option 0 ('Software engineering encompasses the entire software life cycle (requirements, architecture, testing, maintenance, and project management), whereas programming focuses primarily on writing code syntax and algorithms.'). In software engineering theory, There is no distinction; they are completely interchangeable terms. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Covers full life cycle vs code implementation",
@@ -164,7 +166,10 @@
       "why_wrong": {
         "In generic products, only open-source code can be used...": "Most generic software (e.g. Microsoft Office) is proprietary commercial software.",
         "Generic products have no user interface...": "Virtually all consumer generic products feature extensive GUIs.",
-        "Generic products never require maintenance...": "Generic products require continuous updates, security patches, and version upgrades."
+        "Generic products never require maintenance...": "Generic products require continuous updates, security patches, and version upgrades.",
+        "1": "Option 1 ('In generic products, only open-source code can be used; customized products require assembly language.') is incorrect. The valid principle is represented by Option 0 ('In generic products, the specification is owned and controlled by the software developer; in customized products, the specification is owned and controlled by the customer.'). In software engineering theory, In generic products, only open-source code can be used; customized products require assembly language. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('Generic products have no user interface, while customized products always have a GUI.') is incorrect. The valid principle is represented by Option 0 ('In generic products, the specification is owned and controlled by the software developer; in customized products, the specification is owned and controlled by the customer.'). In software engineering theory, Generic products have no user interface, while customized products always have a GUI. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('Generic products never require maintenance, while customized products require daily updates.') is incorrect. The valid principle is represented by Option 0 ('In generic products, the specification is owned and controlled by the software developer; in customized products, the specification is owned and controlled by the customer.'). In software engineering theory, Generic products never require maintenance, while customized products require daily updates. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Generic: developer owns/controls specification",
@@ -294,7 +299,10 @@
       "why_wrong": {
         "Developers should be paid as little as possible...": "A humorous distractor; least privilege is an architectural security rule, not compensation.",
         "Software should be written without security controls...": "Direct violation of basic security engineering.",
-        "All users must be given root administrator privileges...": "Dangerous security vulnerability."
+        "All users must be given root administrator privileges...": "Dangerous security vulnerability.",
+        "1": "Option 1 ('Developers should be paid as little as possible to control software costs.') is incorrect. The valid principle is represented by Option 0 ('Every user, process, or system component must operate using only the minimal set of permissions necessary to perform its legitimate task.'). In software engineering theory, Developers should be paid as little as possible to control software costs. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('Software should be written without any security controls to maximize speed.') is incorrect. The valid principle is represented by Option 0 ('Every user, process, or system component must operate using only the minimal set of permissions necessary to perform its legitimate task.'). In software engineering theory, Software should be written without any security controls to maximize speed. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('All users must be given root administrator privileges to prevent permission errors.') is incorrect. The valid principle is represented by Option 0 ('Every user, process, or system component must operate using only the minimal set of permissions necessary to perform its legitimate task.'). In software engineering theory, All users must be given root administrator privileges to prevent permission errors. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Defines minimal necessary permissions",
@@ -381,7 +389,7 @@
       "question": "What is Software Engineering?",
       "options": [],
       "answer": "A systematic, disciplined, and measurable approach to the development, operation, maintenance, and evolution of software systems.",
-      "explanation": "Formal IEEE/textbook definition.",
+      "explanation": "Software Engineering is defined by IEEE as 'the systematic approach to the development, operation, maintenance, and retirement of software'—applying established scientific, mathematical, and engineering disciplines to building reliable software systems. (Sommerville, Ch 1.1).",
       "why_wrong": {},
       "marking_points": [
         "Systematic, disciplined, measurable approach",
@@ -427,7 +435,7 @@
       "question": "What four elements make up a complete software product?",
       "options": [],
       "answer": "1. Computer programs (executable code)\n2. Procedures\n3. Configuration data\n4. Associated documentation",
-      "explanation": "Software is more than just code.",
+      "explanation": "A complete software product consists of: 1) Executable computer program instructions; 2) Configuration files and database structures; and 3) Comprehensive documentation (system requirements, architecture manuals, API docs, and user guides). (Sommerville, Ch 1.1).",
       "why_wrong": {},
       "marking_points": [
         "Programs, procedures, data, documentation"
@@ -449,7 +457,7 @@
       "question": "What is the difference between Generic and Customized software products?",
       "options": [],
       "answer": "- Generic: Sold on open market; specification owned by developer (e.g. Windows, Word).\n- Customized: Commissioned for a specific client; specification owned by customer (e.g. university portal).",
-      "explanation": "Determined by specification ownership and target market.",
+      "explanation": "Generic software products are stand-alone systems developed by a software company and sold on the open market (specification owned by developer). Customized (bespoke) products are commissioned by a particular customer for their specific enterprise needs (specification owned by customer). (Sommerville, Ch 1.1).",
       "why_wrong": {},
       "marking_points": [
         "Generic: developer owns spec",
@@ -494,7 +502,7 @@
       "question": "What is Low Coupling in software design?",
       "options": [],
       "answer": "Minimizing the direct dependencies between distinct modules so that changes to one module do not break others.",
-      "explanation": "Modules communicate strictly through stable, well-defined interfaces.",
+      "explanation": "Loose coupling ensures that software modules have minimal interdependence and communicate strictly across stable, well-defined public interfaces, ensuring modifications in one module do not ripple across the system. (Pressman, Ch 12.3).",
       "why_wrong": {},
       "marking_points": [
         "Minimizes inter-module dependencies"
@@ -516,7 +524,7 @@
       "question": "What is the DRY principle?",
       "options": [],
       "answer": "Don't Repeat Yourself: Every piece of knowledge or business rule must have a single, unambiguous, authoritative representation within a system.",
-      "explanation": "Prevents inconsistent maintenance updates.",
+      "explanation": "High cohesion demands that all elements, methods, and data inside a single module or class collaborate closely to execute a single, tightly-focused functional responsibility. (Pressman, Ch 12.3).",
       "why_wrong": {},
       "marking_points": [
         "Single authoritative representation of knowledge"
@@ -538,7 +546,7 @@
       "question": "What is the Single Responsibility Principle (SRP)?",
       "options": [],
       "answer": "A module or class should have only one coherent responsibility and only one reason to change.",
-      "explanation": "First rule of the SOLID design principles.",
+      "explanation": "The Single Responsibility Principle (SRP) states that a class or module should have one, and only one, reason to change—meaning it should encapsulate a single, unified responsibility. (Martin, Clean Code).",
       "why_wrong": {},
       "marking_points": [
         "Only one reason to change"

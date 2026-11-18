@@ -430,7 +430,7 @@
       ],
       "question": "What is Semantic HTML, and why is it preferred over `<div>` tags?",
       "answer": "Using tags that describe the meaning of the content (e.g., `<article>`, `<nav>`, `<header>`) rather than generic containers. It makes pages accessible to screen readers, understandable to search engine crawlers, and easier to maintain.",
-      "explanation": "Foundational principle of modern web engineering.",
+      "explanation": "Semantic HTML means using HTML markup tags according to their inherent meaning and purpose (e.g. '<nav>', '<main>', '<article>', '<header>', '<footer>') rather than generic presentational wrappers ('<div>', '<span>'). It enhances accessibility for screen readers, improves search engine indexing (SEO), and provides clean document structure for team maintainability. (W3C HTML5 Semantics).",
       "why_wrong": {},
       "source": "IFT 203 Slide 3; Week 5 Slides"
     },
@@ -462,7 +462,7 @@
       ],
       "question": "What is the purpose of `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">`?",
       "answer": "It informs mobile browsers to set the screen width of the viewport to the actual physical width of the device and sets the initial zoom level to 100%, enabling responsive mobile CSS rendering without auto-zooming out.",
-      "explanation": "Mandatory for all modern mobile-responsive web development.",
+      "explanation": "The viewport meta tag '<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">' instructs mobile browser rendering engines to set the logical layout viewport width equal to the physical screen width of the device and establish a 1:1 initial zoom scale, preventing mobile browsers from defaulting to a zoomed-out 980px desktop view. (W3C Responsive Web Design).",
       "why_wrong": {},
       "source": "IFT 203 Slide 3"
     }

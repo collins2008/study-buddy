@@ -261,7 +261,7 @@
       "accepted_answers": [
         "void"
       ],
-      "explanation": "'void' indicates the absence of a return value.",
+      "explanation": "The 'void' keyword, when used as a function return type specifier in C, informs the compiler that the function performs an action (side effect) but produces no return value for the caller. Attempting to assign the result of a void function call to any variable results in a compile-time type mismatch error. Inside a void function, a bare 'return;' statement terminates execution early without an expression.",
       "why_wrong": {},
       "source": "Deitel Ch 5.3",
       "verified": true,
@@ -320,7 +320,7 @@
           "right": "Enables compiler signature and parameter type verification"
         }
       ],
-      "explanation": "Summarizes C scope and storage duration rules.",
+      "explanation": "In C, storage class and declaration placement dictate memory duration and accessibility: Local auto variables possess block scope and automatic storage duration (created on the call stack at function entry and destroyed upon exit); Local static variables have block scope but static storage duration (retaining their values across multiple calls in the data segment); Global variables defined outside any function have file scope and static storage duration across the entire translation unit; and Register variables suggest placement in high-speed CPU registers without addressable memory locations (& operator prohibited).",
       "why_wrong": {},
       "source": "Deitel Ch 5.11, 5.12",
       "verified": true,
@@ -344,7 +344,7 @@
         "Function executes local statements and computes return value",
         "Stack frame popped and control returns to caller address"
       ],
-      "explanation": "Standard ABI procedure call sequence in C.",
+      "explanation": "During a C function call: (1) The caller pushes arguments onto the call stack or loads them into ABI calling convention registers; (2) The 'call' instruction pushes the return address (the next instruction in the caller) onto the stack; (3) The function prologue allocates a new stack frame (activation record) by adjusting the base pointer (EBP/RBP) and stack pointer (ESP/RSP); (4) The callee's body executes local operations; (5) The function epilogue tears down local frame allocations, stores the return value in the designated accumulator register (EAX/RAX), and the 'ret' instruction pops the return address, restoring caller execution.",
       "why_wrong": {},
       "source": "Deitel Ch 5.8",
       "verified": true,
@@ -370,7 +370,7 @@
         "Returns result from power function",
         "Main prints 'Result: 16\\n'"
       ],
-      "explanation": "Standard function design and implementation.",
+      "explanation": "The iterative power function initializes a result accumulator to 1, then loops 'exp' times multiplying 'result *= base'. This algorithm runs in O(exp) linear time complexity and O(1) auxiliary space, correctly handling exp = 0 by returning 1 (since any non-zero number to power 0 equals 1). Both parameters are passed by value, leaving caller arguments unmodified.",
       "why_wrong": {},
       "source": "Deitel Ch 5.4",
       "verified": true,
@@ -394,7 +394,7 @@
         "States that the address of the variable (&x) must be passed to simulate pass-by-reference",
         "Explains that the function receives a pointer and dereferences it (*ptr) to modify caller memory"
       ],
-      "explanation": "Foundational understanding bridging functions to pointer mechanics.",
+      "explanation": "C is strictly 'pass-by-value': when any argument is passed to a function, the runtime makes an independent copy of the value and places it into the callee's parameter stack frame. Modifications to parameters inside the function alter only the local copy, not the caller's variable. To simulate 'pass-by-reference' (allowing a function to mutate caller variables), programmers pass the address of the variable using the address-of operator (&var). The receiving function declares a pointer parameter (type *ptr) and dereferences it (*ptr = value) to directly access and overwrite the caller's memory location in place.",
       "why_wrong": {},
       "source": "Deitel Ch 5.5, Ch 7.4",
       "verified": true,
@@ -412,7 +412,7 @@
       ],
       "question": "What is the purpose of a function prototype in C?",
       "answer": "To declare a function's name, return type, and parameter types to the compiler before its first invocation, enabling argument validation.",
-      "explanation": "Deitel Ch 5.3."
+      "explanation": "A function prototype declares the function's return type, name, and parameter types before its definition or call. It enables the compiler to enforce strict type checking on arguments and return values, preventing runtime stack corruption. (Deitel, Ch 5.3)."
     },
     {
       "id": "cos201-fn-fc02",
@@ -426,7 +426,7 @@
       ],
       "question": "Does C support pass-by-reference natively for scalar types?",
       "answer": "No. C passes all scalars strictly by value. Pass-by-reference is simulated by passing pointer addresses.",
-      "explanation": "Deitel Ch 5.5."
+      "explanation": "By default, C passes all primitive arguments by value: a copy of each argument is pushed onto the call stack. Changes made to parameters inside the called function do not affect the original variables in the caller. To modify caller data, pass pointers (simulated call-by-reference). (Deitel, Ch 5.5)."
     },
     {
       "id": "cos201-fn-fc03",
@@ -440,7 +440,7 @@
       ],
       "question": "What is the lifetime and scope of a static local variable?",
       "answer": "Lifetime: Permanent (exists for entire program duration). Scope: Local to the block in which it is defined.",
-      "explanation": "Retains value across calls."
+      "explanation": "A local variable declared with the 'static' storage-class specifier is allocated in static data memory rather than on the call stack. It retains its value across multiple function calls throughout program lifetime, but its scope remains strictly private to the enclosing function. (Deitel, Ch 5.11)."
     },
     {
       "id": "cos201-fn-fc04",
@@ -454,7 +454,7 @@
       ],
       "question": "What two essential components must every recursive function possess?",
       "answer": "1. A base case that stops recursion. 2. A recursive call that reduces the problem toward the base case.",
-      "explanation": "Missing base case causes stack overflow."
+      "explanation": "Every recursive function must have at least one base case that terminates recursion without making further recursive calls. Omitting the base case or failing to converge towards it leads to infinite recursion and eventual stack overflow (segmentation fault). (Deitel, Ch 5.14)."
     },
     {
       "id": "cos201-fn-fc05",
@@ -468,7 +468,7 @@
       ],
       "question": "Can a function with return type 'void' contain a 'return' statement?",
       "answer": "Yes, using 'return;' without an expression, which immediately terminates and exits the function.",
-      "explanation": "E.g. return;."
+      "explanation": "A function with a 'void' return type does not return a value. It may terminate naturally at its closing brace, or exit early using a bare 'return;' statement without an expression. (Deitel, Ch 5.4)."
     },
     {
       "id": "cos201-fn-fc06",
@@ -482,7 +482,7 @@
       ],
       "question": "Can a C function return an array directly?",
       "answer": "No. C syntax does not allow returning an entire array by value; functions return pointers or structures containing arrays.",
-      "explanation": "Arrays decay to pointers."
+      "explanation": "When an array name is passed as an argument to a function in C, it automatically decays to a pointer to its first element (type int[] decays to int*). Consequently, array arguments are passed by reference and function modifications affect caller memory. (Deitel, Ch 6.5)."
     },
     {
       "id": "cos201-fn-fc07",
@@ -496,7 +496,7 @@
       ],
       "question": "What value should main() return to the operating system to indicate successful program execution?",
       "answer": "0 (zero) or the standard macro EXIT_SUCCESS from <stdlib.h>.",
-      "explanation": "Non-zero indicates abnormal termination."
+      "explanation": "Returning 0 from 'main()' signals successful program completion to the host operating system. Returning a non-zero integer (such as EXIT_FAILURE or 1) indicates an error or abnormal termination condition. (Deitel, Ch 2.3)."
     },
     {
       "id": "cos201-fn-fc08",
@@ -510,7 +510,7 @@
       ],
       "question": "What occurs when recursion fails to reach a base case?",
       "answer": "Stack overflow: recursive call frames exhaust the allocated stack memory, crashing the program.",
-      "explanation": "Infinite recursion error."
+      "explanation": "Stack overflow occurs when call stack memory is exhausted, commonly caused by runaway infinite recursion or allocating excessively large local arrays on the stack. The OS terminates the process with a segmentation fault. (Deitel, Ch 5.14)."
     }
   ],
   "case_studies": [

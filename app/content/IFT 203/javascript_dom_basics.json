@@ -347,7 +347,7 @@
       ],
       "question": "Compare `let`, `const`, and `var` in JavaScript scoping and reassignment.",
       "answer": "- `var`: Function-scoped, hoisted to top with undefined, reassignable.\n- `let`: Block-scoped `{ }`, not hoisted before declaration (TDZ), reassignable.\n- `const`: Block-scoped `{ }`, cannot be reassigned (immutable identifier binding).",
-      "explanation": "Standard ES6 variable scoping rules.",
+      "explanation": "In modern ECMAScript (ES6+): 'var' is function-scoped and hoisted with undefined initialization (prone to bugs); 'let' is block-scoped, not accessible before declaration (Temporal Dead Zone), and allows reassignment; 'const' is block-scoped, cannot be reassigned after declaration, and requires immediate initialization. (MDN JavaScript Reference).",
       "why_wrong": {},
       "source": "MDN Variable Scope"
     },
@@ -379,7 +379,7 @@
       ],
       "question": "What is the Document Object Model (DOM)?",
       "answer": "A tree-structured in-memory object representation of an HTML document created by the browser engine upon loading, providing an API for JavaScript to access and modify page content and styles.",
-      "explanation": "Foundational web architecture interface.",
+      "explanation": "The Document Object Model (DOM) is a cross-platform, language-independent W3C programming interface that represents HTML and XML documents as a hierarchical tree of objects and nodes, allowing programming languages (such as JavaScript) to dynamically inspect, modify, add, or delete document content, structure, and styles. (W3C DOM Level 4).",
       "why_wrong": {},
       "source": "W3C DOM Specification"
     },
@@ -395,7 +395,7 @@
       ],
       "question": "How does `document.querySelector()` differ from `document.querySelectorAll()`?",
       "answer": "`querySelector()` returns only the FIRST element that matches the specified CSS selector string.\n`querySelectorAll()` returns a static `NodeList` containing ALL elements that match the selector.",
-      "explanation": "Core DOM selection API.",
+      "explanation": "The method 'document.querySelector(selector)' returns the first Element within the document that matches the specified CSS selector, or null if no match is found. In contrast, 'document.querySelectorAll(selector)' returns a static NodeList representing all matching elements in document order. (W3C Selectors API).",
       "why_wrong": {},
       "source": "MDN QuerySelector"
     },
@@ -411,7 +411,7 @@
       ],
       "question": "Why is `element.textContent` preferred over `element.innerHTML` for inserting user text?",
       "answer": "`textContent` treats all strings as raw plain text, preventing Cross-Site Scripting (XSS) attacks. `innerHTML` parses tags and can execute injected malicious `<script>` or `<img>` event handlers.",
-      "explanation": "Essential security rule for web frontend developers.",
+      "explanation": "Assigning unvalidated user input to 'element.innerHTML' parses strings as executable HTML markup, exposing the application to catastrophic Cross-Site Scripting (XSS) attacks. Using 'element.textContent' ensures the browser treats data strictly as raw literal text, automatically neutralizing malicious script injection tags. (OWASP Top 10: XSS Prevention).",
       "why_wrong": {},
       "source": "OWASP Security Guidelines"
     },
@@ -443,7 +443,7 @@
       ],
       "question": "What is Event Delegation, and why is it efficient?",
       "answer": "Attaching a single event listener to a common parent element rather than attaching separate listeners to dozens of child elements. It saves memory and automatically handles dynamically added child elements via event bubbling.",
-      "explanation": "Core high-performance DOM design pattern.",
+      "explanation": "Event Delegation is a high-performance DOM event handling design pattern where a single event listener is attached to a common ancestor element rather than attaching individual listeners to multiple child elements. It leverages the DOM Event Bubbling phase ('event.target') to handle clicks on current and dynamically added children with minimal memory overhead. (MDN Event Reference).",
       "why_wrong": {},
       "source": "MDN Event Delegation"
     }

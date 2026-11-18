@@ -338,7 +338,7 @@
       ],
       "question": "What is a Web Server? Distinguish between its hardware and software definitions.",
       "answer": "Hardware: A physical or virtual computer connected to the Internet with a public IP.\nSoftware: A daemon program (e.g., Apache, Nginx, IIS) that listens on port 80/443, processes HTTP requests, and serves files or routes requests.",
-      "explanation": "Foundational web architecture definition.",
+      "explanation": "A Web Server can refer to hardware (a physical or virtual computer connected to the internet) or software (an HTTP server daemon such as Nginx, Apache HTTPD, or Caddy) responsible for receiving client requests, resolving URI routes, and returning HTTP responses with corresponding MIME types. (RFC 7230).",
       "why_wrong": {},
       "source": "IFT 203 Web Servers Lecture"
     },
@@ -354,7 +354,7 @@
       ],
       "question": "Explain the difference between HTTP `401 Unauthorized` and `403 Forbidden`.",
       "answer": "- 401 Unauthorized: The user is unauthenticated (missing or invalid login credentials).\n- 403 Forbidden: The user's identity is authenticated, but they lack permission/authorization to access the resource.",
-      "explanation": "Standard security error distinction.",
+      "explanation": "HTTP '401 Unauthorized' indicates that the request lacks valid authentication credentials (e.g. missing or expired API token/session cookie) and must include a 'WWW-Authenticate' header. In contrast, HTTP '403 Forbidden' means the server recognizes the user's authenticated identity, but that identity is strictly unauthorized/forbidden from accessing the requested resource (RBAC permission denial). (RFC 7231).",
       "why_wrong": {},
       "source": "RFC 9110 HTTP Semantics"
     },
@@ -370,7 +370,7 @@
       ],
       "question": "What is the difference between a `301` and a `302` HTTP redirect?",
       "answer": "- 301 Moved Permanently: The URL migration is permanent. Browsers cache the redirect and search engines transfer SEO ranking equity.\n- 302 Found: The redirection is temporary. Search engines retain the original URL in their index.",
-      "explanation": "Crucial distinction for SEO and URL routing.",
+      "explanation": "HTTP '301 Moved Permanently' indicates the requested URI resource has been assigned a new permanent URI; browsers and search engines cache the redirection and transfer SEO page rank to the target URL. HTTP '302 Found' (or 307 Temporary Redirect) indicates the redirection is temporary; clients continue using the original URI for future requests. (RFC 7231).",
       "why_wrong": {},
       "source": "RFC 9110"
     },
@@ -386,7 +386,7 @@
       ],
       "question": "Compare HTTP `502 Bad Gateway` with `504 Gateway Timeout`.",
       "answer": "- 502 Bad Gateway: A proxy or gateway received an invalid or corrupt response from an upstream server.\n- 504 Gateway Timeout: The upstream server failed to respond within the gateway's timeout window.",
-      "explanation": "Standard reverse proxy diagnostic codes.",
+      "explanation": "HTTP '502 Bad Gateway' indicates that a reverse proxy or gateway server (such as Nginx or Cloudflare) received an invalid, malformed, or dropped response from the upstream application server. HTTP '504 Gateway Timeout' indicates the proxy server did not receive a timely response from the upstream server before its timeout threshold expired. (RFC 7231).",
       "why_wrong": {},
       "source": "RFC 9110"
     },
@@ -434,7 +434,7 @@
       ],
       "question": "What does the `HttpOnly` cookie flag do?",
       "answer": "It blocks client-side JavaScript (`document.cookie`) from reading or modifying the cookie, protecting session authentication tokens from theft via Cross-Site Scripting (XSS) attacks.",
-      "explanation": "Mandatory cookie security flag.",
+      "explanation": "The 'HttpOnly' attribute on a Set-Cookie header instructs the web browser that the cookie must not be accessible via client-side JavaScript APIs (such as 'document.cookie'). This critical security defense mitigates session hijacking by preventing malicious XSS scripts from stealing authenticated session tokens. (RFC 6265).",
       "why_wrong": {},
       "source": "OWASP Cookie Security"
     },
@@ -450,7 +450,7 @@
       ],
       "question": "What is code minification, and why is it used?",
       "answer": "The automated process of removing all unnecessary whitespace, line breaks, comments, and shortening variable names in HTML/CSS/JS files without changing functionality, drastically reducing payload sizes.",
-      "explanation": "Standard production build step.",
+      "explanation": "Code minification is a production optimization process that removes all unnecessary whitespace, newline characters, code comments, and shortens variable identifiers without altering program functionality. It substantially reduces payload byte size, minimizes network transfer latency, and accelerates web page load times. (W3C Web Performance).",
       "why_wrong": {},
       "source": "Google Web Performance"
     }

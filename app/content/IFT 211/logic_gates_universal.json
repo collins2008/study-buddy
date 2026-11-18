@@ -124,9 +124,10 @@
       "answer": 0,
       "explanation": "By De Morgan's Law: A + B = (A' · B')'.\n1. Invert A using 1 NAND gate with tied inputs: A' = (A · A)'.\n2. Invert B using 1 NAND gate with tied inputs: B' = (B · B)'.\n3. Feed A' and B' into a 3rd NAND gate: (A' · B')' = (A')' + (B')' = A + B.\nTotal: exactly 3 NAND gates.",
       "why_wrong": {
-        "2": "2 NAND gates produce an AND gate (NAND followed by an inverter NAND), not an OR gate.",
-        "1": "1 NAND gate produces (AB)', which is a NAND function, not OR.",
-        "0": "4 NAND gates can build an XOR or NOR gate, but OR only requires 3."
+        "2": "A single NAND gate implements (AB)', which is NOT-AND, not OR.",
+        "1": "2 NAND gates implement an AND gate (NAND followed by inverter); an OR gate requires inverting both inputs first ((A' · B')'), requiring 3 NAND gates.",
+        "0": "4 NAND gates can build an XOR or NOR gate, but OR only requires 3.",
+        "3": "4 NAND gates implement an XOR gate; an OR gate requires only 3 NAND gates."
       },
       "marking_points": [
         "Uses 2 NAND gates to invert inputs A and B",
@@ -157,9 +158,10 @@
       "answer": 0,
       "explanation": "By De Morgan's Law: A · B = (A' + B')'.\n1. Invert A using 1 NOR gate with tied inputs: A' = (A + A)'.\n2. Invert B using 1 NOR gate with tied inputs: B' = (B + B)'.\n3. Feed A' and B' into a 3rd NOR gate: (A' + B')' = (A')' · (B')' = A · B.\nTotal: exactly 3 NOR gates.",
       "why_wrong": {
-        "2": "2 NOR gates produce an OR gate (NOR followed by an inverter NOR), not an AND gate.",
-        "1": "1 NOR gate produces (A+B)', which is NOR, not AND.",
-        "0": "4 NOR gates can build an XNOR or NAND gate, but AND only requires 3."
+        "2": "A single NOR gate implements (A + B)', which is NOT-OR, not AND.",
+        "1": "2 NOR gates implement an OR gate (NOR followed by inverter); an AND gate requires inverting both inputs first via NOR ((A' + B')'), requiring 3 NOR gates.",
+        "0": "4 NOR gates can build an XNOR or NAND gate, but AND only requires 3.",
+        "3": "4 NOR gates implement an XNOR gate; an AND gate requires only 3 NOR gates."
       },
       "marking_points": [
         "Uses 2 NOR gates to invert inputs A and B",
@@ -436,7 +438,7 @@
       "question": "What are the two universal logic gates, and why are they called universal?",
       "options": [],
       "answer": "NAND and NOR. They are called universal because any other logic gate or Boolean function can be constructed using only that gate type alone.",
-      "explanation": "They provide functional completeness.",
+      "explanation": "A set of logic gates is functionally complete (universal) if any Boolean function can be constructed using only gates from that set. Both {NAND} alone and {NOR} alone are universally complete. (Mano, Ch 2.8).",
       "why_wrong": {},
       "marking_points": [
         "Names NAND and NOR",
@@ -506,7 +508,7 @@
       "question": "What is the Boolean equation for a 2-input XOR gate?",
       "options": [],
       "answer": "F = A ⊕ B = A' · B + A · B'",
-      "explanation": "True when inputs are different.",
+      "explanation": "An XOR (Exclusive-OR) gate outputs logic 1 if and only if its two inputs are different (odd parity detector: 01 or 10 yields 1; 00 or 11 yields 0). Its output equation is Y = A ⊕ B = A'B + AB'. (Mano, Ch 2.7).",
       "why_wrong": {},
       "marking_points": [
         "F = A'B + AB'"

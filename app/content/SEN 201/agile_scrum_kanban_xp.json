@@ -66,7 +66,9 @@
       "answer": 0,
       "explanation": "As tested in Nile Exam Q9 and Q53: Principle #3 of the Agile Manifesto states: 'Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.' Working software is the primary measure of project progress.",
       "why_wrong": {
-        "1": "Agile explicitly values 'responding to change over following a plan.'"
+        "1": "Agile explicitly values 'responding to change over following a plan.'",
+        "2": "Option 2 ('Prioritizing extensive documentation over human interaction') is incorrect. The valid principle is represented by Option 0 ('Delivering working software quickly and frequently'). In software engineering theory, Prioritizing extensive documentation over human interaction represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('Avoiding direct customer collaboration to prevent scope changes') is incorrect. The valid principle is represented by Option 0 ('Delivering working software quickly and frequently'). In software engineering theory, Avoiding direct customer collaboration to prevent scope changes represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Identifies rapid, frequent delivery of working software as primary measure of progress"
@@ -98,7 +100,8 @@
       "explanation": "In Pair Programming, the Driver writes code while the Navigator continuously reviews logic, checks syntax, and considers edge cases. This continuous peer review catches bugs immediately, breaks knowledge silos across the team, and establishes collective code ownership.",
       "why_wrong": {
         "1": "Two developers working together on one task increases short-term labor cost slightly in exchange for vastly higher code quality.",
-        "2": "XP mandates Test-Driven Development (TDD) regardless of pair programming."
+        "2": "XP mandates Test-Driven Development (TDD) regardless of pair programming.",
+        "3": "Option 3 ('Allow one developer to sleep while the other writes code') is incorrect. The valid principle is represented by Option 0 ('Spread system knowledge and encourage collective code ownership'). In software engineering theory, Allow one developer to sleep while the other writes code represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Spreads knowledge across the team",
@@ -131,7 +134,10 @@
       "why_wrong": {
         "Software that is legally prohibited from commercial use...": "Most open-source licenses explicitly permit commercial enterprise use.",
         "Software that has no copyright licenses...": "Open source relies heavily on copyright law to enforce its licensing terms (copyleft or permissive).",
-        "Software written exclusively by university students...": "Global industry leaders (Linux, Python, React, PostgreSQL) are built by professional global communities."
+        "Software written exclusively by university students...": "Global industry leaders (Linux, Python, React, PostgreSQL) are built by professional global communities.",
+        "1": "Option 1 ('Software that is legally prohibited from being used for commercial purposes') is incorrect. The valid principle is represented by Option 0 ('Collaborative development where source code is publicly available for inspection and modification'). In software engineering theory, Software that is legally prohibited from being used for commercial purposes represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('Software that has no copyright licenses of any kind') is incorrect. The valid principle is represented by Option 0 ('Collaborative development where source code is publicly available for inspection and modification'). In software engineering theory, Software that has no copyright licenses of any kind represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('Software written exclusively by university undergraduate students') is incorrect. The valid principle is represented by Option 0 ('Collaborative development where source code is publicly available for inspection and modification'). In software engineering theory, Software written exclusively by university undergraduate students represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Public availability of source code",
@@ -163,7 +169,8 @@
       "explanation": "Because open-source code is freely accessible, open-source business models monetize complementary services: enterprise technical support SLAs, security certification, customized integration, consulting, and managed cloud hosting.",
       "why_wrong": {
         "1": "Open-source licenses explicitly grant the right to download and use the code.",
-        "3": "Unethical data-broker practice unrelated to open-source software business models."
+        "3": "Unethical data-broker practice unrelated to open-source software business models.",
+        "2": "Option 2 ('Selling proprietary compilers to decode the open source') is incorrect. The valid principle is represented by Option 0 ('Selling enterprise support, consulting, maintenance, and cloud services for the software product'). In software engineering theory, Selling proprietary compilers to decode the open source represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Monetizes support, maintenance, training, and managed services"
@@ -194,7 +201,10 @@
       "why_wrong": {
         "The Scrum Master, who dictates software features...": "Scrum Masters facilitate team health and process; they do not own business requirements.",
         "Any individual developer...": "Developers cannot accept arbitrary scope changes mid-sprint without Product Owner approval.",
-        "The database administrator": "A technical role, not a project scope authority."
+        "The database administrator": "A technical role, not a project scope authority.",
+        "1": "Option 1 ('The Scrum Master, who dictates software features to developers.') is incorrect. The valid principle is represented by Option 0 ('The Product Owner, who owns the Product Backlog and balances business priorities with team capacity.'). In software engineering theory, The Scrum Master, who dictates software features to developers. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('Any individual developer working on the project.') is incorrect. The valid principle is represented by Option 0 ('The Product Owner, who owns the Product Backlog and balances business priorities with team capacity.'). In software engineering theory, Any individual developer working on the project. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('The database administrator.') is incorrect. The valid principle is represented by Option 0 ('The Product Owner, who owns the Product Backlog and balances business priorities with team capacity.'). In software engineering theory, The database administrator. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Product Owner has sole authority over Product Backlog prioritization"
@@ -265,7 +275,10 @@
       "why_wrong": {
         "To punish developers who finish work early": "Kanban fosters collaboration, not disciplinary penalties.",
         "To limit developers to 2 hours a day": "WIP limits govern task inventory, not working hours.",
-        "To limit website users": "WIP limits apply to internal engineering tasks on the board, not web traffic."
+        "To limit website users": "WIP limits apply to internal engineering tasks on the board, not web traffic.",
+        "1": "Option 1 ('To punish developers who finish their work early.') is incorrect. The valid principle is represented by Option 0 ('To prevent multitasking and expose process bottlenecks, ensuring work items flow smoothly to completion rather than piling up half-finished.'). In software engineering theory, To punish developers who finish their work early. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('To prevent developers from working more than 2 hours a day.') is incorrect. The valid principle is represented by Option 0 ('To prevent multitasking and expose process bottlenecks, ensuring work items flow smoothly to completion rather than piling up half-finished.'). In software engineering theory, To prevent developers from working more than 2 hours a day. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('To limit the total number of users allowed to access the website.') is incorrect. The valid principle is represented by Option 0 ('To prevent multitasking and expose process bottlenecks, ensuring work items flow smoothly to completion rather than piling up half-finished.'). In software engineering theory, To limit the total number of users allowed to access the website. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Prevents task hoarding/multitasking",
@@ -297,7 +310,10 @@
       "why_wrong": {
         "1. How much bonus do I deserve?...": "Daily standups are synchronization check-ins, not salary reviews.",
         "1. What language should we switch to?...": "Process distractions outside the scope of daily progress synchronization.",
-        "1. What is the database password?...": "Operational trivia."
+        "1. What is the database password?...": "Operational trivia.",
+        "1": "Option 1 ('1. How much bonus do I deserve? 2. Why is management wrong? 3. Who broke the build?') is incorrect. The valid principle is represented by Option 0 ('1. What did I accomplish yesterday? 2. What will I work on today? 3. Are there any impediments/blockers in my way?'). In software engineering theory, 1. How much bonus do I deserve? 2. Why is management wrong? 3. Who broke the build? represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('1. What language should we switch to? 2. When is lunch? 3. What bugs did QA find?') is incorrect. The valid principle is represented by Option 0 ('1. What did I accomplish yesterday? 2. What will I work on today? 3. Are there any impediments/blockers in my way?'). In software engineering theory, 1. What language should we switch to? 2. When is lunch? 3. What bugs did QA find? represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('1. What is the database password? 2. Did the client pay? 3. What is my next promotion?') is incorrect. The valid principle is represented by Option 0 ('1. What did I accomplish yesterday? 2. What will I work on today? 3. Are there any impediments/blockers in my way?'). In software engineering theory, 1. What is the database password? 2. Did the client pay? 3. What is my next promotion? represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Yesterday's progress",
@@ -321,7 +337,7 @@
       "question": "What are the four core value statements of the Agile Manifesto?",
       "options": [],
       "answer": "1. Individuals and interactions over processes and tools\n2. Working software over comprehensive documentation\n3. Customer collaboration over contract negotiation\n4. Responding to change over following a plan",
-      "explanation": "Foundational philosophy published in 2001.",
+      "explanation": "The Agile Manifesto (formulated in 2001) prioritizes: 1) Individuals and interactions over processes and tools; 2) Working software over comprehensive documentation; 3) Customer collaboration over contract negotiation; and 4) Responding to change over following a plan. (Sommerville, Ch 3.1).",
       "why_wrong": {},
       "marking_points": [
         "Recalls all four value pairs"
@@ -343,7 +359,7 @@
       "question": "What are the three primary roles in a Scrum team?",
       "options": [],
       "answer": "1. Product Owner (owns the Product Backlog, prioritizes business value)\n2. Scrum Master (coaches agile practices, removes blockers)\n3. Development Team (cross-functional engineers building the increment)",
-      "explanation": "Scrum defines precisely three roles.",
+      "explanation": "The Scrum framework defines exactly three core roles: 1) Product Owner (owns product backlog, vision, and ROI); 2) Scrum Master (servant-leader, facilitates events, removes impediments); and 3) Developers / Development Team (cross-functional, self-organizing creators of the increment). (Schwaber & Sutherland, Scrum Guide).",
       "why_wrong": {},
       "marking_points": [
         "Product Owner, Scrum Master, Development Team"
@@ -365,7 +381,7 @@
       "question": "What are the four formal Scrum events/ceremonies within a Sprint?",
       "options": [],
       "answer": "1. Sprint Planning\n2. Daily Scrum (Standup)\n3. Sprint Review (Demo to stakeholders)\n4. Sprint Retrospective (Team process reflection)",
-      "explanation": "Core inspect-and-adapt milestones.",
+      "explanation": "The five formal Scrum events for inspection and adaptation are: 1) The Sprint (container event, 1-4 weeks); 2) Sprint Planning (defines sprint goal and backlog); 3) Daily Scrum (15-minute developer synchronization); 4) Sprint Review (inspects increment with stakeholders); and 5) Sprint Retrospective (inspects process and team improvements). (Scrum Guide).",
       "why_wrong": {},
       "marking_points": [
         "Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective"
@@ -387,7 +403,7 @@
       "question": "What are the two roles in Pair Programming, and what is the primary benefit?",
       "options": [],
       "answer": "- Driver (writes code and types)\n- Navigator (reviews code in real-time, considers edge cases and overall strategy)\nBenefit: Spreads system knowledge, catches defects immediately, and ensures collective code ownership.",
-      "explanation": "XP practice tested in Nile Exam Q54.",
+      "explanation": "Pair Programming in Extreme Programming (XP) involves two engineers working concurrently at one workstation: the Driver writes code syntax and logic, while the Navigator actively reviews lines, considers architecture, identifies edge-case bugs, and checks design coherence. (Sommerville, Ch 3.3; Nile Exam Q54).",
       "why_wrong": {},
       "marking_points": [
         "Driver and Navigator roles",
@@ -410,7 +426,7 @@
       "question": "What does the TDD 'Red-Green-Refactor' cycle mean?",
       "options": [],
       "answer": "- RED: Write a failing unit test first.\n- GREEN: Write the minimal production code needed to pass the test.\n- REFACTOR: Clean up and optimize the code without altering external behavior.",
-      "explanation": "Core engineering discipline of Extreme Programming.",
+      "explanation": "Test-Driven Development (TDD) follows the strict 'Red-Green-Refactor' cycle: 1) Write an automated unit test that fails (Red); 2) Write the minimum production code necessary to pass the test (Green); and 3) Refactor code for clarity and design while keeping tests green. (Beck, TDD by Example; Sommerville, Ch 3.3).",
       "why_wrong": {},
       "marking_points": [
         "Red: failing test",
@@ -434,7 +450,7 @@
       "question": "What is the difference between Continuous Integration (CI) and Continuous Delivery (CD)?",
       "options": [],
       "answer": "- CI: Automatically builds and tests code each time a developer commits to mainline.\n- CD: Automatically prepares and validates software so it can be deployed to production at any time with a single click (or continuous deployment: deployed automatically).",
-      "explanation": "Core pipelines of modern DevOps.",
+      "explanation": "Continuous Integration (CI) automatically builds and runs unit tests on code commits several times daily. Continuous Delivery (CD) automates release staging, and Continuous Deployment automates direct zero-downtime deployment to production. (Sommerville, Ch 9).",
       "why_wrong": {},
       "marking_points": [
         "CI: automated build/test on commit",
@@ -480,7 +496,7 @@
       "question": "How do companies make money from open-source software?",
       "options": [],
       "answer": "By selling commercial support SLAs, enterprise hosting, custom integration, consulting, and advanced management plugins (e.g. Red Hat, MongoDB).",
-      "explanation": "Tested directly in Nile Exam Q58.",
+      "explanation": "In Kanban, Work In Progress (WIP) limits restrict the maximum number of task items allowed in any workflow state simultaneously. This prevents overburdening, surfaces system bottlenecks immediately, and reduces cycle time. (Sommerville, Ch 3.2; Nile Exam Q58).",
       "why_wrong": {},
       "marking_points": [
         "Enterprise support, hosting, services, consulting"

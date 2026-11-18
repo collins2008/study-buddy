@@ -367,7 +367,7 @@
       ],
       "question": "What are the three project modes in the Basic COCOMO estimation model?",
       "answer": "1. Organic (small, experienced teams with flexible constraints),\n2. Semi-detached (medium teams with mixed experience and moderate constraints),\n3. Embedded (rigid hardware/software constraints and strict operational requirements).",
-      "explanation": "Formulated by Barry Boehm in 1981.",
+      "explanation": "The COCOMO (Constructive Cost Model), developed by Barry Boehm, estimates software effort, schedule, and cost based on estimated Lines of Code (KLOC) and cost drivers across three modes: Basic, Intermediate, and Detailed. (Pressman, Ch 26.5; Sommerville, Ch 23.5).",
       "why_wrong": {},
       "source": "Boehm (1981); Sommerville Ch. 23"
     },

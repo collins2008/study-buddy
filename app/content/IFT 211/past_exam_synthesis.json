@@ -128,8 +128,9 @@
       "answer": 0,
       "explanation": "Pad subtrahend to 7 bits: Minuend = 1001000_2 (72_10), Subtrahend = 0111001_2 (57_10).\n1. Take 1's complement of subtrahend: 1000110_2.\n2. Add to minuend:\n  1001000\n+ 1000110\n---------\n1 0001110 (Intermediate sum = 0001110 with end carry 1)\n3. In 1's complement, an end carry indicates a positive result and MUST be added to LSB (end-around carry):\n  0001110 + 1 = 0001111_2 (= 15_10).\nCheck: 72 - 57 = 15. Verified.",
       "why_wrong": {
-        "2": "Off by 1 arithmetic error.",
-        "3": "Forgot to add the end carry and complemented the result."
+        "2": "1's complement of 57 (0111001_2) is 1000110_2, not 1000111_2 (which is 2's complement).",
+        "3": "Arithmetic error during intermediate binary addition.",
+        "1": "In 1's complement arithmetic, an end-around carry MUST be added back into the LSB, not discarded. (Discarding carry is only valid in 2's complement)."
       },
       "marking_points": [
         "Finds 1's complement of 0111001 = 1000110",
@@ -228,7 +229,10 @@
       "why_wrong": {
         "(a) 10101_Gray, (b) 11101_2...": "Assumes Gray code is identical to binary.",
         "(a) 11010_Gray, (b) 10011_2...": "Parity and XOR calculation mistakes.",
-        "(a) 11111_Gray, (b) 11001_2...": "Wrongly converts Gray bit G2."
+        "(a) 11111_Gray, (b) 11001_2...": "Wrongly converts Gray bit G2.",
+        "1": "10101 is the binary representation of 21, not its Gray code; Gray code requires XOR-ing adjacent bits, yielding 11111.",
+        "2": "11010 is 26 in binary, not the Gray code of 21.",
+        "3": "Converting 11101 Gray to binary yields 10110 (22_10), not 11001 (25_10)."
       },
       "marking_points": [
         "Converts 21 to binary 10101",
@@ -292,8 +296,9 @@
       "answer": 0,
       "explanation": "As explicitly highlighted in lecturer notebook notes and the exam paper: the primary gates are OR, AND, and NOT. NAND and NOR are universal gates because through appropriate interconnection, either one can implement NOT, AND, and OR without any external components.",
       "why_wrong": {
-        "1": "NAND and NOR are universal, not primary; AND and OR cannot implement NOT on their own.",
-        "3": "Violates formal functional completeness theorems."
+        "1": "XOR and XNOR are derived gates, not universal gates.",
+        "3": "AND and OR are primary gates, not universal gates.",
+        "2": "XOR and XNOR cannot alone synthesize inverter or AND operations, so they are not universal; NAND and NOR are the universal gates."
       },
       "marking_points": [
         "Identifies OR, AND, NOT as primary",
@@ -317,7 +322,7 @@
       "question": "What is (+44) + (+14) in 8-bit binary 2's complement?",
       "options": [],
       "answer": "00111010_2 (= +58_10).",
-      "explanation": "00101100 + 00001110 = 00111010.",
+      "explanation": "In Nile University examinations, binary addition requires explicit carry propagation: 44_10 = 00101100_2 and 14_10 = 00001110_2. Column addition yields 00111010_2, which equals 32 + 16 + 2 = 58_10, verifying 44 + 14 = 58. (Nile Final Exam 2024).",
       "why_wrong": {},
       "marking_points": [
         "00111010_2 (+58)"
@@ -363,7 +368,7 @@
       "question": "What is 1001000_2 - 111001_2 in decimal and binary?",
       "options": [],
       "answer": "15_10 = 0001111_2 (or 1111_2).",
-      "explanation": "72 - 57 = 15.",
+      "explanation": "In 1's complement subtraction (72 - 57), 72_10 = 1001000_2 and 57_10 = 0111001_2. The 1's complement of 57 is 1000110_2. Summing 1001000 + 1000110 = 10011110_2 generates an end-around carry of 1, which added to 0001110 yields 0001111_2 (= 15_10). (Nile Final Exam 2024).",
       "why_wrong": {},
       "marking_points": [
         "15 decimal / 1111 binary"
@@ -386,7 +391,7 @@
       "question": "What are (a) decimal 51 in binary, and (b) binary 11011010 in hexadecimal?",
       "options": [],
       "answer": "(a) 00110011_2\n(b) DA_16",
-      "explanation": "51 = 32+16+2+1; 1101_2=D, 1010_2=A.",
+      "explanation": "Decimal 51_10 converted to binary by successive division by 2 yields 110011_2 (32 + 16 + 2 + 1). Grouping binary 11011010_2 into nibbles: 1101_2 = D_16, 1010_2 = A_16, yielding DA_16. (Nile Final Exam 2024).",
       "why_wrong": {},
       "marking_points": [
         "00110011_2 and DA_16"
@@ -479,7 +484,7 @@
       "question": "According to Nile University exams, which gates are Primary and which are Universal?",
       "options": [],
       "answer": "- Primary gates: OR, AND, NOT\n- Universal gates: NAND, NOR",
-      "explanation": "Universal gates can implement all Boolean operations.",
+      "explanation": "Primary gates (AND, OR, NOT) perform fundamental logical operations. NAND and NOR are universal gates because de Morgan's theorem allows constructing NOT, AND, OR, and XOR entirely out of either NAND or NOR gates alone. (Nile Final Exam 2024).",
       "why_wrong": {},
       "marking_points": [
         "Primary: OR, AND, NOT",

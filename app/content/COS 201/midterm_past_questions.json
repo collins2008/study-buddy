@@ -125,8 +125,10 @@
       "answer": 1,
       "explanation": "The prefix increment operator (++x) increments the value of x from 2 to 3 first, and then evaluates to the new incremented value (3), which is passed to printf.",
       "why_wrong": {
-        "0": "Confusion with decrement operator (--x).",
-        "1": "The syntax is completely valid C."
+        "0": "2 would be the result if post-increment (x++) was used instead of pre-increment (++x).",
+        "1": "The syntax is completely valid C.",
+        "2": "Pre-increment adds 1 to x (2+1=3), it does not subtract.",
+        "3": "Pre-increment within a printf call is standard, valid C syntax."
       },
       "marking_points": [
         "Applies prefix increment semantics: increment before evaluation"
@@ -256,9 +258,10 @@
       "answer": 0,
       "explanation": "Both 'a' and 'b' are integers. In C, integer division (5 / 2) truncates the fractional portion, yielding the integer 2. No floating-point promotion occurs.",
       "why_wrong": {
-        "1": "Mathematical division result; C integer division does NOT produce floating-point numbers.",
+        "1": "2.5 is the mathematical result, but integer division in C truncates the fractional part, yielding 2.",
         "0": "Rounds up instead of truncating towards zero.",
-        "2": "Valid integer division."
+        "2": "C integer division truncates towards zero; it does not round up to 3.",
+        "3": "Dividing two integers using '/' is completely valid standard C syntax."
       },
       "marking_points": [
         "Applies integer division truncation rule"
@@ -387,8 +390,10 @@
       "answer": 2,
       "explanation": "C arrays are 0-indexed: arr[0] is 1, arr[1] is 2, and arr[2] is 3. Accessing arr[2] prints 3.",
       "why_wrong": {
-        "0": "arr[1] is 2.",
-        "2": "arr[2] is completely within the 3-element bounds (indices 0, 1, 2)."
+        "0": "arr[0] is 1; in C, array indexing is 0-based.",
+        "2": "arr[2] is completely within the 3-element bounds (indices 0, 1, 2).",
+        "1": "arr[1] is 2, not arr[2].",
+        "3": "arr[2] is completely within the bounds of a 3-element array (valid indices are 0, 1, and 2)."
       },
       "marking_points": [
         "Applies 0-based array indexing to retrieve third element at index 2"
@@ -583,9 +588,10 @@
       "answer": 1,
       "explanation": "The loop executes for i = 0, 1, 2. When i=0: x += 0 (x=0). When i=1: x += 1 (x=1). When i=2: x += 2 (x=3). Loop terminates when i=3. The final value printed is 3.",
       "why_wrong": {
-        "3": "Assumes only the last value of i is stored into x instead of being accumulated.",
-        "0": "Stops accumulation early.",
-        "1": "Assumes the loop did not execute or x remained unmutated."
+        "3": "Assumes the loop body was not executed or x remained unmutated.",
+        "0": "x accumulates i across iterations: x = 0 + 0 + 1 + 2 = 3. 2 stops the summation early.",
+        "1": "Assumes the loop did not execute or x remained unmutated.",
+        "2": "Only accounts for the first non-zero iteration (i=1), omitting i=2."
       },
       "marking_points": [
         "Traces accumulation: 0 + 0 + 1 + 2 = 3"
@@ -781,8 +787,9 @@
       "answer": 0,
       "explanation": "In the expression (x || 1), x is 0 (false) but the right operand is 1 (true). For logical OR (||), if either operand is non-zero, the overall condition evaluates to 1 (true), executing the 'if' branch.",
       "why_wrong": {
-        "3": "The code prints 'True', not the numeric truth value.",
-        "2": "The code prints the string literal 'True', not an integer."
+        "3": "The code prints the string literal 'True', not numeric 1.",
+        "2": "The code prints the string literal 'True', not numeric 0.",
+        "1": "The logical OR (||) expression (0 || 1) evaluates to 1 (true), so the if-branch executes."
       },
       "marking_points": [
         "Evaluates (0 || 1) as true (1) and prints 'True'"
@@ -846,9 +853,10 @@
       "answer": 1,
       "explanation": "Condition (x > y) is (2 > 3), which is false (0). When the condition is false, the ternary operator evaluates and returns the expression after the colon (:), which is y (3).",
       "why_wrong": {
-        "2": "Value of x; this would be returned if (x > y) were true.",
-        "0": "Confuses the result with the Boolean truth value (0) of the comparison.",
-        "1": "Valid inline ternary operator in printf."
+        "2": "The ternary operator returns the evaluated expression (y = 3), not the boolean condition result.",
+        "0": "2 is the value of x; this would only be evaluated if (x > y) were true (2 > 3 is false).",
+        "1": "Valid inline ternary operator in printf.",
+        "3": "Using a ternary expression inside a printf call is standard, valid C syntax."
       },
       "marking_points": [
         "Evaluates condition (2 > 3) as false and returns y (3)"
@@ -1109,8 +1117,9 @@
       "answer": 1,
       "explanation": "In the logical AND expression (x && y), x is 1 (true) and y is 0 (false). Because logical AND requires both operands to be non-zero to be true, (1 && 0) evaluates to 0 (false). The 'else' branch executes, printing 'No'.",
       "why_wrong": {
-        "3": "Prints string literal 'No', not numeric result.",
-        "2": "Prints string literal 'No', not integer."
+        "3": "The code prints the string literal 'No', not numeric 0.",
+        "2": "The code prints the string literal 'No', not numeric 1.",
+        "0": "The logical AND (&&) expression (1 && 0) evaluates to 0 (false), so the else-branch executes."
       },
       "marking_points": [
         "Evaluates logical AND (1 && 0) as false, printing 'No'"
@@ -1306,9 +1315,10 @@
       "answer": 1,
       "explanation": "Condition (x < y) evaluates (1 < 2), which is true (1). Because condition is true, the first expression (y) is evaluated and returned. y has value 2.",
       "why_wrong": {
-        "2": "Value of x; this would be returned if x < y were false.",
+        "2": "The ternary operator returns the chosen operand (y = 2), not boolean 0.",
         "1": "Confuses result with boolean evaluation.",
-        "3": "Valid ternary conditional invocation."
+        "3": "The ternary conditional expression inside printf is valid standard C syntax.",
+        "0": "1 is the value of x; this would only be returned if the condition (x < y) were false."
       },
       "marking_points": [
         "Evaluates condition (1 < 2) as true and selects y=2"
@@ -1482,7 +1492,7 @@
       "question": "How do you declare a pointer variable in C?",
       "options": [],
       "answer": "type *pointer_name; (e.g. int *p;)",
-      "explanation": "The asterisk denotes indirection/pointer type.",
+      "explanation": "In pointer declarations such as 'int *ptr;', the asterisk (*) denotes that the variable is an indirection pointer that holds the memory address of an integer. In expressions, '*ptr' dereferences the pointer to access or modify the value at that address. (Deitel, Ch 7.3).",
       "why_wrong": {},
       "marking_points": [
         "States asterisk precedes pointer identifier"

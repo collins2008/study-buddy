@@ -92,7 +92,10 @@
       "why_wrong": {
         "The exact variable names...": "Variable naming is a detailed coding activity.",
         "The test case assertions...": "Test assertions are written during detailed design and implementation.",
-        "The physical color scheme...": "UI styling is decided during user-interface design."
+        "The physical color scheme...": "UI styling is decided during user-interface design.",
+        "1": "Option 1 ('The exact variable names to be used in source code') is incorrect. The valid principle is represented by Option 0 ('The cost-effectiveness, technical practicality, and viability of the proposed system'). In software engineering theory, The exact variable names to be used in source code represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('The test case assertions for unit testing') is incorrect. The valid principle is represented by Option 0 ('The cost-effectiveness, technical practicality, and viability of the proposed system'). In software engineering theory, The test case assertions for unit testing represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('The physical color scheme of the user interface') is incorrect. The valid principle is represented by Option 0 ('The cost-effectiveness, technical practicality, and viability of the proposed system'). In software engineering theory, The physical color scheme of the user interface represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Cost-effectiveness and technical practicality"
@@ -187,7 +190,10 @@
       "why_wrong": {
         "The exact SQL syntax...": "Technical database implementation detail.",
         "The hardware clock speed...": "Developer tooling detail.",
-        "The memory layout of C structs...": "Low-level programming detail."
+        "The memory layout of C structs...": "Low-level programming detail.",
+        "1": "Option 1 ('The exact SQL syntax for database tables') is incorrect. The valid principle is represented by Option 0 ('The high-level purpose, strategic goals, and business justification of the project'). In software engineering theory, The exact SQL syntax for database tables represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('The hardware clock speed of developer laptops') is incorrect. The valid principle is represented by Option 0 ('The high-level purpose, strategic goals, and business justification of the project'). In software engineering theory, The hardware clock speed of developer laptops represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('The memory layout of C language structs') is incorrect. The valid principle is represented by Option 0 ('The high-level purpose, strategic goals, and business justification of the project'). In software engineering theory, The memory layout of C language structs represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Strategic purpose, goals, and business justification"
@@ -250,7 +256,10 @@
       "why_wrong": {
         "A virus that slowly infects developer computers": "Confuses a managerial phenomenon with malware.",
         "A decrease in code written per day": "Metric of developer velocity, not scope creep.",
-        "The process of shrinking project features...": "This is scope reduction or descoping, the opposite of scope creep."
+        "The process of shrinking project features...": "This is scope reduction or descoping, the opposite of scope creep.",
+        "1": "Option 1 ('A virus that slowly infects developer computers.') is incorrect. The valid principle is represented by Option 0 ('The unplanned, continuous expansion of project boundaries and requirements without proportional adjustments to time, budget, and resources.'). In software engineering theory, A virus that slowly infects developer computers. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('A decrease in the number of lines of code written per day.') is incorrect. The valid principle is represented by Option 0 ('The unplanned, continuous expansion of project boundaries and requirements without proportional adjustments to time, budget, and resources.'). In software engineering theory, A decrease in the number of lines of code written per day. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('The process of shrinking project features to finish ahead of schedule.') is incorrect. The valid principle is represented by Option 0 ('The unplanned, continuous expansion of project boundaries and requirements without proportional adjustments to time, budget, and resources.'). In software engineering theory, The process of shrinking project features to finish ahead of schedule. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Unplanned expansion of project boundaries",
@@ -282,7 +291,10 @@
       "why_wrong": {
         "It is fine as written...": "Different developers will interpret 'fast' as 50ms, 2 seconds, or 10 seconds.",
         "It should be deleted because performance does not matter...": "Performance is a critical non-functional requirement.",
-        "It should be rewritten using assembly...": "Requirements are written in natural language specifications, not machine code."
+        "It should be rewritten using assembly...": "Requirements are written in natural language specifications, not machine code.",
+        "1": "Option 1 ('It is fine as written because developers know what 'fast' means.') is incorrect. The valid principle is represented by Option 0 ('It is completely unverifiable and subjective; it must be quantified with measurable operational metrics (e.g. 'Under a load of 500 concurrent users, 95% of course registration requests shall complete within 2.0 seconds').'). In software engineering theory, It is fine as written because developers know what 'fast' means. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('It should be deleted because software performance does not matter.') is incorrect. The valid principle is represented by Option 0 ('It is completely unverifiable and subjective; it must be quantified with measurable operational metrics (e.g. 'Under a load of 500 concurrent users, 95% of course registration requests shall complete within 2.0 seconds').'). In software engineering theory, It should be deleted because software performance does not matter. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('It should be rewritten using binary assembly code.') is incorrect. The valid principle is represented by Option 0 ('It is completely unverifiable and subjective; it must be quantified with measurable operational metrics (e.g. 'Under a load of 500 concurrent users, 95% of course registration requests shall complete within 2.0 seconds').'). In software engineering theory, It should be rewritten using binary assembly code. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Identifies subjective unverifiability",
@@ -305,7 +317,7 @@
       "question": "What is a Functional Requirement?",
       "options": [],
       "answer": "A statement specifying what services, functions, and behaviors the system must actively provide.",
-      "explanation": "Describes system behavior and data transformations.",
+      "explanation": "Functional requirements define specific services, functions, and data transformations the system must execute in response to user inputs (e.g. 'The system shall calculate vat for each cart checkout'). (Sommerville, Ch 4.1).",
       "why_wrong": {},
       "marking_points": [
         "Specifies services and behaviors system must provide"
@@ -327,7 +339,7 @@
       "question": "What is a Non-Functional Requirement?",
       "options": [],
       "answer": "A constraint on the services or functions offered by the system, covering quality attributes such as performance, reliability, security, and usability.",
-      "explanation": "Tested in Nile Exam Q5 & Q18.",
+      "explanation": "Non-functional requirements specify quality attributes, behavioral constraints, performance benchmarks, and regulatory standards that apply to the system as a whole (e.g., security, latency < 200ms, 99.9% uptime). (Sommerville, Ch 4.1; Nile Exam Q5 & Q18).",
       "why_wrong": {},
       "marking_points": [
         "Constraints on services/functions; quality attributes"
@@ -349,7 +361,7 @@
       "question": "What are the five core activities of Requirements Engineering?",
       "options": [],
       "answer": "1. Inception & Feasibility Study\n2. Elicitation\n3. Analysis & Negotiation\n4. Specification (SRS)\n5. Validation",
-      "explanation": "The standard engineering sequence.",
+      "explanation": "The standard Requirements Engineering process consists of four interleaved stages: 1) Elicitation (discovering stakeholder needs); 2) Analysis & Negotiation (resolving conflicts and prioritizing); 3) Specification (authoring the formal SRS); and 4) Validation (proving consistency and completeness). (Sommerville, Ch 4.3).",
       "why_wrong": {},
       "marking_points": [
         "Feasibility, Elicitation, Analysis, Specification, Validation"
@@ -371,7 +383,7 @@
       "question": "What are five essential characteristics of a good software requirement?",
       "options": [],
       "answer": "1. Unambiguous\n2. Verifiable (testable)\n3. Complete\n4. Consistent\n5. Traceable",
-      "explanation": "Tested in Nile Exam Q17.",
+      "explanation": "Software Requirements Specification (SRS) is the official contractual document produced according to IEEE 830 / ISO/IEC/IEEE 29148 standards, serving as the definitive agreement between client and development team. (Sommerville, Ch 4.4; Nile Exam Q17).",
       "why_wrong": {},
       "marking_points": [
         "Unambiguous, Verifiable, Complete, Consistent, Traceable"
@@ -393,7 +405,7 @@
       "question": "What is Scope Creep?",
       "options": [],
       "answer": "The uncontrolled expansion of product requirements and project scope during development without adjustments to schedule, budget, or resources.",
-      "explanation": "Tested in Nile Exam Q49.",
+      "explanation": "MoSCoW prioritization categorizes software requirements into: Must have (critical non-negotiable features), Should have (important but non-vital workarounds exist), Could have (desirable enhancements), and Won't have (deferred to future releases). (Nile Exam Q49).",
       "why_wrong": {},
       "marking_points": [
         "Uncontrolled scope expansion without time/budget adjustment"
@@ -415,7 +427,7 @@
       "question": "What is a Requirements Traceability Matrix (RTM)?",
       "options": [],
       "answer": "A table mapping each requirement ID to its source business need, architectural component, implementation code, and validating test cases.",
-      "explanation": "Ensures full lifecycle coverage and impacts analysis.",
+      "explanation": "A Requirements Traceability Matrix (RTM) maps each individual user requirement forward to architectural design components, source code modules, and test verification cases, and backward to its originating business stakeholder. (Sommerville, Ch 4.7).",
       "why_wrong": {},
       "marking_points": [
         "Maps requirements to design, code, and test cases"
@@ -437,7 +449,7 @@
       "question": "What is the standard template for writing an Agile User Story?",
       "options": [],
       "answer": "'As a [type of user], I want [a capability/feature], so that [a specific business benefit].'",
-      "explanation": "Standard format emphasizing user value.",
+      "explanation": "User Stories follow the Connextra format: 'As a <type of user>, I want <some capability>, so that <business value/benefit>'. They are accompanied by explicit, testable Acceptance Criteria. (Sommerville, Ch 3.2).",
       "why_wrong": {},
       "marking_points": [
         "As a... I want... so that..."
@@ -459,7 +471,7 @@
       "question": "What does the MoSCoW prioritization acronym stand for?",
       "options": [],
       "answer": "- Must have (mandatory)\n- Should have (high priority, non-critical)\n- Could have (desirable if time permits)\n- Won't have (deferred to future releases)",
-      "explanation": "Commonly used in agile requirements negotiation.",
+      "explanation": "Planning Poker is an agile consensus-based estimation technique using a modified Fibonacci sequence (1, 2, 3, 5, 8, 13, 20...) where team members simultaneously reveal story point estimates to prevent anchoring bias. (Sommerville, Ch 23.4).",
       "why_wrong": {},
       "marking_points": [
         "Must have, Should have, Could have, Won't have"

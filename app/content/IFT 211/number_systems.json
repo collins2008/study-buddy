@@ -733,7 +733,7 @@
       "question": "How many binary bits correspond to one octal digit, and why?",
       "options": [],
       "answer": "3 binary bits. Because 2^3 = 8, any 3-bit combination (000 to 111) maps uniquely to an octal digit (0 to 7).",
-      "explanation": "Triplets simplify conversion without decimal arithmetic.",
+      "explanation": "Because 8 = 2^3, octal to binary conversion is performed by grouping binary bits into triplets (3 bits) from right to left for integers and left to right for fractions, transcribing each triplet directly to an octal digit without decimal division. (Mano, Ch 1.4).",
       "why_wrong": {},
       "marking_points": [
         "States 3 bits",
@@ -757,7 +757,7 @@
       "question": "How many binary bits correspond to one hexadecimal digit, and what is this group called?",
       "options": [],
       "answer": "4 binary bits, called a nibble. Because 2^4 = 16, any 4-bit combination (0000 to 1111) maps uniquely to a hex digit (0 to F).",
-      "explanation": "Nibbles allow direct binary-to-hex transcription.",
+      "explanation": "Because 16 = 2^4, hexadecimal to binary conversion maps each hexadecimal digit directly to a 4-bit nibble (e.g. A = 1010, F = 1111), eliminating intermediate decimal arithmetic. (Mano, Ch 1.4).",
       "why_wrong": {},
       "marking_points": [
         "States 4 bits",

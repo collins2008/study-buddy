@@ -421,7 +421,7 @@
         "strcat(dest, src)": "Appends source string to the end of destination string",
         "strcmp(s1, s2)": "Lexicographically compares two strings (0 if identical)"
       },
-      "explanation": "These four functions constitute the core string manipulation library in C.",
+      "explanation": "The standard `<string.h>` library provides fundamental operations on null-terminated character sequences: 'strlen(s)' traverses memory until encountering the null terminator '\\0' and returns the character count (excluding '\\0'); 'strcpy(dest, src)' copies characters including the null terminator into a pre-allocated destination buffer; 'strcat(dest, src)' appends 'src' to the end of 'dest', overwriting the original null terminator of 'dest' and appending a new one; and 'strcmp(s1, s2)' performs lexicographical comparison returning 0 if equal, negative if s1 < s2, and positive if s1 > s2.",
       "why_wrong": {},
       "source": "Deitel C How to Program, Chapter 8",
       "verified": true,
@@ -543,7 +543,7 @@
       ],
       "question": "Does `strlen()` count the terminating null character `'\\0'`?",
       "answer": "No. `strlen()` counts only the characters before `'\\0'`.",
-      "explanation": "No. `strlen()` counts only the characters before `'\\0'`."
+      "explanation": "The 'strlen()' function counts and returns the number of characters in a string up to, but NOT including, the terminating null character ('\\0'). In contrast, 'sizeof(str)' on an array yields the total allocated byte size including '\\0'. (Deitel, Ch 8.3)."
     },
     {
       "id": "cos201-str-fc04",

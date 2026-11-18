@@ -263,7 +263,10 @@
       "why_wrong": {
         "Every single X on the map MUST be covered...": "Mandatory coverage of X adds unnecessary redundant gates.",
         "Never include an X in any group...": "Ignoring X forfeits valuable gate-reduction opportunities.",
-        "Convert all X's to 0 before starting...": "Forbids exploiting don't cares to enlarge groups."
+        "Convert all X's to 0 before starting...": "Forbids exploiting don't cares to enlarge groups.",
+        "1": "Don't-cares do not have to be covered. Grouping an X that contains no 1s creates redundant prime implicants and wastes hardware gates.",
+        "2": "Treating X strictly as 0 forfeits simplification opportunities; grouping an X with 1s can double group size and eliminate variable literals.",
+        "3": "Forcing all don't-cares to 0 produces a suboptimal circuit with more logic gates than necessary."
       },
       "marking_points": [
         "Treats X as 1 only to enlarge groups of 1s",
@@ -293,7 +296,9 @@
       "answer": 0,
       "explanation": "A 5-variable K-map requires two 4-variable overlay planes; 6 variables requires four planes. Visual pattern matching degrades rapidly in higher dimensions. Quine-McCluskey provides an exact, deterministic algebraic-tabular algorithm that guarantees finding all prime implicants and can be coded into software.",
       "why_wrong": {
-        "1": "K-maps simplify any Boolean sum-of-products or product-of-sums."
+        "1": "Quine-McCluskey is an exact minimization method, not an approximate heuristic.",
+        "2": "Quine-McCluskey is a strictly digital tabular minimization algorithm, not an analog circuit method.",
+        "3": "De Morgan's laws apply universally to any number of Boolean variables; the limitation of K-maps is visual/geometric complexity on 2D paper."
       },
       "marking_points": [
         "Explains geometric visualization limits in >=5 variables",
@@ -394,7 +399,7 @@
       "question": "What is a Prime Implicant in a Karnaugh map?",
       "options": [],
       "answer": "A maximal group of 2^k adjacent 1s that cannot be combined with any adjacent cells to form a larger group.",
-      "explanation": "Represents an implicant with minimal literals.",
+      "explanation": "A prime implicant is a product term obtained by combining the maximum possible number of adjacent squares (powers of 2: 1, 2, 4, 8, 16) in a K-map. An essential prime implicant is a prime implicant that covers at least one '1' not covered by any other prime implicant. (Mano, Ch 3.3).",
       "why_wrong": {},
       "marking_points": [
         "Maximal group that cannot be further combined"
@@ -506,7 +511,7 @@
       "question": "What is the Quine-McCluskey method?",
       "options": [],
       "answer": "A systematic, tabular algorithm used to find all prime implicants and select the minimal cover for Boolean functions, especially for 5 or more variables.",
-      "explanation": "Suitable for computer implementation.",
+      "explanation": "The Quine-McCluskey tabular minimization algorithm is an exact, algebraic procedure that systematic finds all prime implicants and the minimal prime implicant cover, making it readily programmable on a digital computer for functions with >5 variables. (Mano, Ch 3.9).",
       "why_wrong": {},
       "marking_points": [
         "Tabular algorithm",

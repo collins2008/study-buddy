@@ -198,7 +198,10 @@
       "why_wrong": {
         "When M=1, the circuit shuts off power...": "Hardware does not power down; it reconfigures mathematically.",
         "When M=0, it multiplies A by B...": "Adders perform addition and subtraction, not multiplication.",
-        "When M=1, it computes 9's complement...": "This is binary 2's complement, not decimal 9's complement."
+        "When M=1, it computes 9's complement...": "This is binary 2's complement, not decimal 9's complement.",
+        "1": "The circuit does not shut off power; it inverts the B bits using XOR and injects carry-in C0=1 to calculate 2's complement subtraction.",
+        "2": "A parallel adder/subtractor performs binary addition and subtraction, not multiplication or division.",
+        "3": "The circuit operates in binary two's complement, not decimal 9's complement BCD."
       },
       "marking_points": [
         "M=0 yields B and Cin=0 (addition)",
@@ -444,7 +447,7 @@
       "question": "What is a combinational circuit?",
       "options": [],
       "answer": "A circuit composed of logic gates whose outputs at any time depend only on the current combination of inputs, with no memory or feedback loops.",
-      "explanation": "Memoryless system.",
+      "explanation": "A combinational circuit is a memoryless digital system whose output values at any instant depend solely on the present combination of input values, with no internal feedback loops or storage elements. (Mano, Ch 4.1).",
       "why_wrong": {},
       "marking_points": [
         "Outputs depend only on current inputs",
@@ -467,7 +470,7 @@
       "question": "What are the output equations for a Half Adder?",
       "options": [],
       "answer": "Sum = A ⊕ B\nCarry = A · B",
-      "explanation": "Adds two 1-bit inputs.",
+      "explanation": "A half adder adds two 1-bit binary inputs (A and B) and produces two outputs: Sum S = A ⊕ B, and Carry C = A · B. It has no provision for an incoming carry bit from a previous stage. (Mano, Ch 4.3).",
       "why_wrong": {},
       "marking_points": [
         "Sum = A XOR B",
@@ -490,7 +493,7 @@
       "question": "What are the output equations for a Full Adder?",
       "options": [],
       "answer": "Sum = A ⊕ B ⊕ Cin\nCarry-out (Cout) = AB + Cin(A ⊕ B) = AB + BCin + ACin",
-      "explanation": "Adds three 1-bit inputs.",
+      "explanation": "A full adder adds three 1-bit binary inputs (A, B, and incoming carry Cin) to produce two outputs: Sum S = A ⊕ B ⊕ Cin, and Carry Out Cout = AB + Cin(A ⊕ B) = AB + BCin + ACin. (Mano, Ch 4.3).",
       "why_wrong": {},
       "marking_points": [
         "Sum equation",
@@ -513,7 +516,7 @@
       "question": "What are the output equations for a Half Subtractor (X - Y)?",
       "options": [],
       "answer": "Difference = X ⊕ Y\nBorrow = X' · Y",
-      "explanation": "Subtracts Y from X.",
+      "explanation": "A half subtractor subtracts a 1-bit subtrahend Y from a 1-bit minuend X, yielding Difference D = X ⊕ Y and Borrow Bout = X' · Y. (Mano, Ch 4.4).",
       "why_wrong": {},
       "marking_points": [
         "Diff = X XOR Y",
@@ -536,7 +539,7 @@
       "question": "What does an n-to-2^n binary decoder do?",
       "options": [],
       "answer": "It takes an n-bit binary input and activates exactly one of its 2^n output lines corresponding to that binary value.",
-      "explanation": "Translates binary address to 1-of-N active line.",
+      "explanation": "A decoder is a combinational logic circuit that converts binary information from n input lines to a maximum of 2^n unique output lines, activating exactly one output corresponding to the input code minterm. (Mano, Ch 4.9).",
       "why_wrong": {},
       "marking_points": [
         "n inputs to 2^n outputs",
@@ -559,7 +562,7 @@
       "question": "What is a multiplexer (data selector)?",
       "options": [],
       "answer": "A combinational circuit that selects binary information from one of 2^n input data lines and directs it to a single output line, based on n select lines.",
-      "explanation": "Acts as an electronic multi-position rotary switch.",
+      "explanation": "A multiplexer (MUX or data selector) directs binary information from one of 2^n input data lines to a single output line, controlled by the bit pattern on n selection lines. (Mano, Ch 4.11).",
       "why_wrong": {},
       "marking_points": [
         "2^n data inputs, n select lines, 1 output"
@@ -581,7 +584,7 @@
       "question": "What are the gate count boundaries for SSI, MSI, LSI, and VLSI?",
       "options": [],
       "answer": "- SSI: < 10 gates\n- MSI: 10 to 100 gates\n- LSI: 100 to a few thousand gates\n- VLSI: Thousands to millions of gates",
-      "explanation": "Standard digital IC complexity classification.",
+      "explanation": "Digital Integrated Circuits are classified by gate complexity: SSI (Small-Scale Integration, <10 gates), MSI (Medium-Scale Integration, 10-1,000 gates), LSI (Large-Scale Integration, 1,000-10,000 gates), and VLSI (Very Large-Scale Integration, >10,000 gates). (Mano, Ch 1.9).",
       "why_wrong": {},
       "marking_points": [
         "SSI <10",

@@ -59,8 +59,9 @@
       "answer": 1,
       "explanation": "'++x' is a pre-increment operator. It increments the value of 'x' from 2 to 3 first, and then supplies the updated value 3 to printf.",
       "why_wrong": {
-        "0": "Pre-increment adds 1 to x, it does not subtract.",
-        "2": "Pre-increment inside printf is standard, valid C syntax."
+        "0": "2 is returned by post-increment (x++), but pre-increment (++x) increments before yielding the value.",
+        "2": "Pre-increment adds 1 to x, it does not decrement.",
+        "3": "Pre-increment inside printf is completely valid C syntax."
       },
       "source": "COS 201 Midterm Type B, Q3; Deitel Ch 3.12",
       "verified": true,
@@ -119,7 +120,9 @@
       "explanation": "In C, when both operands of the division operator '/' are integers, integer division is performed. The fractional part is truncated (discarded), yielding 2. It does not produce a floating-point result or round up to 3.",
       "why_wrong": {
         "1": "2.5 is the mathematical result, but integer division in C truncates all decimals.",
-        "0": "Dividing two non-zero integers is completely valid C syntax."
+        "0": "Dividing two non-zero integers is completely valid C syntax.",
+        "2": "C integer division truncates towards zero; it never rounds up.",
+        "3": "Dividing two integers is valid standard C syntax."
       },
       "source": "COS 201 Midterm Type B, Q7; Deitel Ch 2.5",
       "verified": true,
@@ -264,8 +267,9 @@
       "answer": 0,
       "explanation": "The logical OR operator '||' evaluates to true (1) if either operand is non-zero. Since the right operand is 1 (non-zero/true), the condition (0 || 1) is true, and 'True' is printed.",
       "why_wrong": {
-        "3": "The printf statement outputs the text 'True', not numeric 1.",
-        "2": "The printf statement outputs the text 'True', not numeric 0."
+        "3": "The code prints the string literal 'True', not numeric 1.",
+        "2": "The code prints the string literal 'True', not numeric 0.",
+        "1": "(0 || 1) evaluates to 1 (true), so the if branch executes and prints 'True'."
       },
       "source": "COS 201 Midterm Type B, Q23; Deitel Ch 4.10",
       "verified": true,
@@ -293,9 +297,10 @@
       "answer": 1,
       "explanation": "The condition 'x > y' (2 > 3) is false (0). The ternary operator selects the expression after the colon ':', which is 'y' (3). Thus 3 is printed.",
       "why_wrong": {
-        "0": "2 is 'x', which is only selected if x > y is true.",
-        "2": "The ternary evaluates to the chosen operand's value, not boolean 0.",
-        "1": "Using ternary expressions inside printf arguments is fully standard C."
+        "0": "2 is 'x', which is only selected if x > y is true (2 > 3 is false).",
+        "2": "The ternary evaluates to the chosen operand's value (3), not boolean 0.",
+        "1": "Using ternary expressions inside printf arguments is fully standard C.",
+        "3": "Using ternary expressions inside printf arguments is fully standard C."
       },
       "source": "COS 201 Midterm Type B, Q25; Deitel Ch 3.5",
       "verified": true,
@@ -353,7 +358,8 @@
       "explanation": "The logical AND operator '&&' requires both operands to be non-zero (true). Since 'y' is 0, the expression '1 && 0' evaluates to false, triggering the else clause to print 'No'.",
       "why_wrong": {
         "3": "The code outputs the string 'No', not 0.",
-        "2": "The code outputs the string 'No', not 1."
+        "2": "The code outputs the string 'No', not 1.",
+        "0": "(1 && 0) evaluates to 0 (false), so the else branch executes and prints 'No'."
       },
       "source": "COS 201 Midterm Type B, Q33; Deitel Ch 4.10",
       "verified": true,
@@ -411,8 +417,9 @@
       "explanation": "The condition 'x < y' (1 < 2) is true. In a ternary expression 'cond ? expr1 : expr2', when the condition is true, expr1 is selected. Here expr1 is 'y' (2). Therefore, 2 is printed.",
       "why_wrong": {
         "1": "1 is 'x', which would be selected only if x < y were false.",
-        "0": "The ternary yields the evaluated expression, not 0.",
-        "3": "The syntax is valid standard C."
+        "0": "1 is 'x', which would be selected only if x < y were false (1 < 2 is true).",
+        "3": "The syntax is valid standard C.",
+        "2": "The ternary yields the evaluated expression (y = 2), not 0."
       },
       "source": "COS 201 Midterm Type B, Q39; Deitel Ch 3.5",
       "verified": true,
@@ -760,7 +767,7 @@
       ],
       "question": "What does the modulus operator '%' do in C and what restriction does it have?",
       "answer": "It returns the remainder of integer division. Restriction: Both operands MUST be integer types (illegal on float/double).",
-      "explanation": "E.g. 10 % 3 == 1."
+      "explanation": "The modulus operator (%) yields the remainder of integer division (e.g., 17 % 5 = 2). It cannot be applied to floating-point types (float or double) in C; using it with floats causes a compile-time error. (Deitel, Ch 2.6)."
     },
     {
       "id": "cos201-op-fc02",
@@ -774,7 +781,7 @@
       ],
       "question": "What is the difference between '++x' and 'x++'?",
       "answer": "'++x' increments first, then returns new value. 'x++' returns current value first, then increments.",
-      "explanation": "Pre-increment vs post-increment."
+      "explanation": "Pre-increment (++x) increments the operand x by 1 first and evaluates to the new value. Post-increment (x++) evaluates to the current value of x first in the enclosing expression, and then increments x by 1. (Deitel, Ch 3.12)."
     },
     {
       "id": "cos201-op-fc03",
@@ -802,7 +809,7 @@
       ],
       "question": "What is the syntax and purpose of the conditional (ternary) operator?",
       "answer": "Syntax: condition ? expr1 : expr2. If condition is true, evaluates to expr1; else evaluates to expr2.",
-      "explanation": "Only ternary operator in C."
+      "explanation": "The ternary conditional operator (? :) takes three operands: 'condition ? expr1 : expr2'. It evaluates expr1 if condition is true (non-zero), or expr2 if condition is false (zero). It is the only ternary operator in C. (Deitel, Ch 3.6)."
     },
     {
       "id": "cos201-op-fc05",
@@ -816,7 +823,7 @@
       ],
       "question": "What is the danger of writing 'if (x = 0)' instead of 'if (x == 0)'?",
       "answer": "'x = 0' assigns 0 to x and evaluates to 0 (false), so the branch NEVER executes. '==' performs comparison.",
-      "explanation": "A classic C source bug."
+      "explanation": "In C, '=' is the assignment operator (stores a value), whereas '==' is the relational equality operator (tests for equality). Confusing 'if (x = 5)' for 'if (x == 5)' assigns 5 to x and evaluates to 5 (true), a classic logical bug. (Deitel, Ch 3.13)."
     },
     {
       "id": "cos201-op-fc06",
@@ -830,7 +837,7 @@
       ],
       "question": "Between '*' and '+', which operator has higher precedence?",
       "answer": "Multiplication '*' has higher precedence than addition '+'.",
-      "explanation": "Parentheses can be used to override default precedence."
+      "explanation": "In C operator precedence, arithmetic operators (*, /, %, +, -) have higher precedence than relational operators (<, <=, >, >=), which have higher precedence than equality operators (==, !=), which precede logical operators (&&, ||). Parentheses override default precedence. (Deitel, Ch 4.11)."
     },
     {
       "id": "cos201-op-fc07",
@@ -844,7 +851,7 @@
       ],
       "question": "What is the associativity of assignment operators (=, +=, *=) in C?",
       "answer": "Right-to-Left (e.g. a = b = c = 5 evaluates c=5 first, then b=5, then a=5).",
-      "explanation": "Unlike arithmetic operators which are Left-to-Right."
+      "explanation": "Most operators in C (arithmetic, relational, logical) evaluate Left-to-Right. However, assignment operators (=, +=, etc.), the ternary conditional operator (? :), and unary operators (!, ++, --, sizeof, &, *) are right-associative (evaluate Right-to-Left). (Deitel, Ch 4.11)."
     },
     {
       "id": "cos201-op-fc08",
@@ -858,7 +865,7 @@
       ],
       "question": "What is 'x += 5' equivalent to in C?",
       "answer": "'x = x + 5' (adds 5 to the current value of x and stores result back in x).",
-      "explanation": "Compound assignment operator."
+      "explanation": "Compound assignment operators (+=, -=, *=, /=, %=) combine an arithmetic operation with assignment. The expression 'x += y + 1' is strictly equivalent to 'x = x + (y + 1)', where the entire right-hand side is evaluated first. (Deitel, Ch 3.11)."
     }
   ],
   "case_studies": [

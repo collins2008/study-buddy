@@ -1403,7 +1403,7 @@
           ],
           "question": "What is Heuristic Evaluation, and who pioneered the methodology?",
           "answer": "Heuristic Evaluation is a 'discount' usability inspection method developed by Jakob Nielsen and Rolf Molich. In this method, 3 to 5 usability specialists independently evaluate an interface against a set of recognized usability design principles (the 10 heuristics) to identify design defects without involving end users.",
-          "explanation": "It is widely favored because it is faster, cheaper, and less resource-intensive than recruiting end users, identifying 75% to 85% of usability issues when conducted by 3-5 evaluators.",
+          "explanation": "Heuristic evaluation serves as a cost-effective discount usability engineering method: employing 3 to 5 independent evaluators inspecting an interface against Nielsen's 10 heuristics typically uncovers 75% to 85% of core usability defects without the extensive participant recruitment and laboratory costs of full empirical user testing. (Nielsen & Landauer, 1993).",
           "source": "Jakob Nielsen Usability Engineering & INS 202 Evaluation Literature"
         },
         {

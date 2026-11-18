@@ -99,7 +99,8 @@
       "explanation": "Context models establish the high-level scope of the project: what falls inside the proposed software boundary and what external entities (human actors, third-party APIs, legacy databases, hardware sensors) reside outside and communicate across that boundary.",
       "why_wrong": {
         "1": "Implementation-level detail.",
-        "2": "Low-level computer architecture detail."
+        "2": "Low-level computer architecture detail.",
+        "3": "Option 3 ('The graphic user interface CSS color palette') is incorrect. The valid principle is represented by Option 0 ('System boundaries and external interactions with environment and other systems'). In software engineering theory, The graphic user interface CSS color palette represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "System boundaries and external interactions"
@@ -131,7 +132,10 @@
       "why_wrong": {
         "Aggregation represents private inheritance...": "Both are association types, not inheritance/generalization.",
         "Aggregation applies only to databases...": "Both apply across all object-oriented software designs.",
-        "There is no difference...": "Denotes completely different object lifecycle ownership and memory deallocation semantics."
+        "There is no difference...": "Denotes completely different object lifecycle ownership and memory deallocation semantics.",
+        "1": "Option 1 ('Aggregation represents private inheritance, while Composition represents public inheritance.') is incorrect. The valid principle is represented by Option 0 ('In Aggregation, child components can exist independently if the container is destroyed; In Composition, child parts share a lifecycle death-dependency with the container and cannot exist without it.'). In software engineering theory, Aggregation represents private inheritance, while Composition represents public inheritance. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('Aggregation applies only to database tables, while Composition applies to web pages.') is incorrect. The valid principle is represented by Option 0 ('In Aggregation, child components can exist independently if the container is destroyed; In Composition, child parts share a lifecycle death-dependency with the container and cannot exist without it.'). In software engineering theory, Aggregation applies only to database tables, while Composition applies to web pages. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('There is no difference; they are purely interchangeable visual styles.') is incorrect. The valid principle is represented by Option 0 ('In Aggregation, child components can exist independently if the container is destroyed; In Composition, child parts share a lifecycle death-dependency with the container and cannot exist without it.'). In software engineering theory, There is no difference; they are purely interchangeable visual styles. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Aggregation: parts survive container destruction",
@@ -164,7 +168,10 @@
       "why_wrong": {
         "<<include>> is used for external actors...": "Both connect use cases to use cases, not actors.",
         "<<include>> represents inheritance between classes...": "Use cases model functional requirements, not class OOP inheritance.",
-        "<<include>> can only be used once...": "Both stereotypes can be used wherever logically appropriate."
+        "<<include>> can only be used once...": "Both stereotypes can be used wherever logically appropriate.",
+        "1": "Option 1 ('<<include>> is used for external actors, while <<extend>> is used for internal databases.') is incorrect. The valid principle is represented by Option 0 ('<<include>> indicates mandatory execution of the child usecase whenever the base usecase runs; <<extend>> indicates optional or conditional execution only at defined extension points.'). In software engineering theory, <<include>> is used for external actors, while <<extend>> is used for internal databases. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('<<include>> represents inheritance between classes, while <<extend>> represents method overriding.') is incorrect. The valid principle is represented by Option 0 ('<<include>> indicates mandatory execution of the child usecase whenever the base usecase runs; <<extend>> indicates optional or conditional execution only at defined extension points.'). In software engineering theory, <<include>> represents inheritance between classes, while <<extend>> represents method overriding. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('<<include>> can only be used once per diagram, while <<extend>> is unlimited.') is incorrect. The valid principle is represented by Option 0 ('<<include>> indicates mandatory execution of the child usecase whenever the base usecase runs; <<extend>> indicates optional or conditional execution only at defined extension points.'). In software engineering theory, <<include>> can only be used once per diagram, while <<extend>> is unlimited. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "<<include>> is mandatory execution",
@@ -249,7 +256,10 @@
       "why_wrong": {
         "A Synchronous message is drawn with a dashed line...": "Dashed lines are used specifically for Return messages (<---).",
         "Synchronous messages can only send numbers...": "UML message parameters are typed arbitrarily.",
-        "Synchronous messages destroy the receiving object...": "Object destruction is denoted by a large bold 'X' at the end of a lifeline."
+        "Synchronous messages destroy the receiving object...": "Object destruction is denoted by a large bold 'X' at the end of a lifeline.",
+        "1": "Option 1 ('A Synchronous message is drawn with a dashed line, while Asynchronous is a double line.') is incorrect. The valid principle is represented by Option 0 ('A Synchronous message is drawn with a solid line and filled triangular arrowhead (—►) where the sender blocks waiting for a return; An Asynchronous message is drawn with an open arrowhead (—>) where the sender continues executing immediately.'). In software engineering theory, A Synchronous message is drawn with a dashed line, while Asynchronous is a double line. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('Synchronous messages can only send numbers, while Asynchronous messages can only send strings.') is incorrect. The valid principle is represented by Option 0 ('A Synchronous message is drawn with a solid line and filled triangular arrowhead (—►) where the sender blocks waiting for a return; An Asynchronous message is drawn with an open arrowhead (—>) where the sender continues executing immediately.'). In software engineering theory, Synchronous messages can only send numbers, while Asynchronous messages can only send strings. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('Synchronous messages destroy the receiving object, while Asynchronous messages clone it.') is incorrect. The valid principle is represented by Option 0 ('A Synchronous message is drawn with a solid line and filled triangular arrowhead (—►) where the sender blocks waiting for a return; An Asynchronous message is drawn with an open arrowhead (—>) where the sender continues executing immediately.'). In software engineering theory, Synchronous messages destroy the receiving object, while Asynchronous messages clone it. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Synchronous: filled arrowhead, blocking caller",
@@ -281,7 +291,10 @@
       "why_wrong": {
         "A password that encrypts the state machine": "Confuses a logical conditional guard with encryption credentials.",
         "A security guard who monitors the server room": "Humorous literal distractor.",
-        "The amount of CPU memory allocated...": "Statecharts model discrete behavioral logic, not memory allocations."
+        "The amount of CPU memory allocated...": "Statecharts model discrete behavioral logic, not memory allocations.",
+        "1": "Option 1 ('A password that encrypts the state machine.') is incorrect. The valid principle is represented by Option 0 ('A Boolean condition that must evaluate to TRUE for the transition to trigger when the event occurs.'). In software engineering theory, A password that encrypts the state machine. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('A security guard who monitors the server room.') is incorrect. The valid principle is represented by Option 0 ('A Boolean condition that must evaluate to TRUE for the transition to trigger when the event occurs.'). In software engineering theory, A security guard who monitors the server room. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('The amount of CPU memory allocated to the state.') is incorrect. The valid principle is represented by Option 0 ('A Boolean condition that must evaluate to TRUE for the transition to trigger when the event occurs.'). In software engineering theory, The amount of CPU memory allocated to the state. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Defines Guard as a Boolean condition in square brackets that must be true to trigger transition"
@@ -313,7 +326,10 @@
       "why_wrong": {
         "A Fork terminates the program...": "Final nodes denote termination, not forks.",
         "A Fork represents a database deadlock...": "Fork/Join are concurrency control structures, not SQL queries.",
-        "A Fork indicates an error condition...": "Error handling is modeled via interruptible regions or exception handlers."
+        "A Fork indicates an error condition...": "Error handling is modeled via interruptible regions or exception handlers.",
+        "1": "Option 1 ('A Fork terminates the program, while a Join reboots the server.') is incorrect. The valid principle is represented by Option 0 ('A Fork splits a single execution path into two or more concurrent parallel activities; A Join synchronizes multiple parallel incoming paths, waiting for all to finish before proceeding.'). In software engineering theory, A Fork terminates the program, while a Join reboots the server. represents a common misconception or invalid design practice.",
+        "2": "Option 2 ('A Fork represents a database deadlock, while a Join represents a SQL join.') is incorrect. The valid principle is represented by Option 0 ('A Fork splits a single execution path into two or more concurrent parallel activities; A Join synchronizes multiple parallel incoming paths, waiting for all to finish before proceeding.'). In software engineering theory, A Fork represents a database deadlock, while a Join represents a SQL join. represents a common misconception or invalid design practice.",
+        "3": "Option 3 ('A Fork indicates an error condition, while a Join logs an exception.') is incorrect. The valid principle is represented by Option 0 ('A Fork splits a single execution path into two or more concurrent parallel activities; A Join synchronizes multiple parallel incoming paths, waiting for all to finish before proceeding.'). In software engineering theory, A Fork indicates an error condition, while a Join logs an exception. represents a common misconception or invalid design practice."
       },
       "marking_points": [
         "Fork: splits into parallel concurrent activities",
@@ -336,7 +352,7 @@
       "question": "What does a UML Class Diagram represent?",
       "options": [],
       "answer": "The static structure of an object-oriented system, showing classes, attributes, operations, and relationships.",
-      "explanation": "Tested in Nile Exam Q8.",
+      "explanation": "Unified Modeling Language (UML) is the ISO-standardized visual modeling language managed by the Object Management Group (OMG) for specifying, visualizing, constructing, and documenting artifacts of object-oriented software systems. (Sommerville, Ch 5.1; Nile Exam Q8).",
       "why_wrong": {},
       "marking_points": [
         "Static structure, classes, attributes, operations, relationships"
@@ -358,7 +374,7 @@
       "question": "What does a Context Model illustrate?",
       "options": [],
       "answer": "The system boundary and interactions between the system and its external environment/external systems.",
-      "explanation": "Tested in Nile Exam Q22.",
+      "explanation": "A Use Case Diagram depicts the functional boundary of a system, the external human or machine actors that interact with it, and the distinct use cases (services) provided to those actors. (Sommerville, Ch 5.2; Nile Exam Q22).",
       "why_wrong": {},
       "marking_points": [
         "System boundary and external interactions"
@@ -380,7 +396,7 @@
       "question": "What is the difference between Aggregation and Composition in UML?",
       "options": [],
       "answer": "- Aggregation (hollow diamond): Weak 'has-a' relationship; components can exist independently.\n- Composition (filled diamond): Strong whole-part relationship; components are destroyed if the container is destroyed.",
-      "explanation": "Lifecycle ownership semantics.",
+      "explanation": "In UML class modeling: Aggregation (open diamond) represents a 'has-a' relationship where child parts can exist independently of the whole. Composition (filled diamond) represents a strong 'death-dependency' ownership where parts cannot survive without the parent. (Sommerville, Ch 5.3).",
       "why_wrong": {},
       "marking_points": [
         "Aggregation: independent lifecycle",
@@ -403,7 +419,7 @@
       "question": "What is the difference between <<include>> and <<extend>> in Use Case diagrams?",
       "options": [],
       "answer": "- <<include>>: Mandatory sub-flow; base use case always invokes the included use case.\n- <<extend>>: Optional or conditional sub-flow; only executes at specified extension points.",
-      "explanation": "Crucial use case relationship distinction.",
+      "explanation": "In UML use case diagrams, '<<include>>' denotes mandatory execution of a reusable sub-case whenever the base usecase runs. '<<extend>>' denotes optional or conditional execution that occurs only when specific extension points are satisfied. (Sommerville, Ch 5.2).",
       "why_wrong": {},
       "marking_points": [
         "<<include>> mandatory",
@@ -426,7 +442,7 @@
       "question": "What do +, -, #, and ~ mean in a UML Class diagram?",
       "options": [],
       "answer": "+ Public\n- Private\n# Protected\n~ Package (Default)",
-      "explanation": "Standard UML attribute and method access markers.",
+      "explanation": "Standard UML visibility notations: '+' denotes public access, '-' denotes private access, '#' denotes protected access (accessible to subclasses), and '~' denotes package-private access. (Sommerville, Ch 5.3).",
       "why_wrong": {},
       "marking_points": [
         "+ Public, - Private, # Protected, ~ Package"
@@ -448,7 +464,7 @@
       "question": "What does a Sequence Diagram illustrate?",
       "options": [],
       "answer": "Object interactions and message exchanges organized in chronological time sequence along lifelines.",
-      "explanation": "Primary interaction diagram in UML.",
+      "explanation": "A Sequence Diagram is an interaction diagram that details how objects collaborate over time by showing lifelines, synchronous messages (filled arrowhead), asynchronous messages (open arrowhead), and return messages (dashed line) ordered vertically from top to bottom. (Sommerville, Ch 5.4).",
       "why_wrong": {},
       "marking_points": [
         "Object interactions and messages over time along lifelines"
@@ -470,7 +486,7 @@
       "question": "What are the three parts of a State Machine transition label 'Event [Guard] / Action'?",
       "options": [],
       "answer": "1. Event: The stimulus triggering the transition.\n2. Guard: A Boolean condition that must be true for the transition to fire.\n3. Action: An executable operation performed during the transition.",
-      "explanation": "Standard syntax for state transitions.",
+      "explanation": "In UML State Machine diagrams, transitions between states are specified using the syntax: 'Trigger [Guard Condition] / Effect Action'. The transition fires on the trigger only if the boolean guard evaluates to true. (Sommerville, Ch 5.5).",
       "why_wrong": {},
       "marking_points": [
         "Event (trigger), Guard (condition), Action (effect)"
@@ -492,7 +508,7 @@
       "question": "What is the purpose of an Activity Diagram in UML?",
       "options": [],
       "answer": "To model procedural workflows, business logic processes, decision points, and parallel/concurrent activities.",
-      "explanation": "Visualizes dynamic workflow across swimlanes.",
+      "explanation": "An Activity Diagram models the dynamic operational workflow of a business process or use case, using action states, decision diamonds, fork/join synchronization bars, and partition swimlanes to allocate responsibilities. (Sommerville, Ch 5.1).",
       "why_wrong": {},
       "marking_points": [
         "Models workflows, decisions, and parallel/concurrent activities"

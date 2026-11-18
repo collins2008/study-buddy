@@ -250,7 +250,9 @@
       "answer": 0,
       "explanation": "1. Replace X with X·1 using the identity element postulate (Postulate 2b).\n2. Factor out X using the distributive law: X·(1 + Y).\n3. By the dominance theorem, 1 + Y = 1.\n4. X·(1) = X by identity.",
       "why_wrong": {
-        "3": "Invalid substitution of 1 for X."
+        "3": "Violates the absorption identity X + XY = X.",
+        "1": "Incorrectly attempts algebraic distribution and claims X · (X + Y) = X + Y, which violates Boolean laws.",
+        "2": "Arbitrarily swaps and multiplies variables without applying valid Boolean postulates."
       },
       "marking_points": [
         "Expresses X as X·1",
@@ -479,7 +481,7 @@
       "question": "What is the expansion of A + (B · C) according to the Boolean distributive law?",
       "options": [],
       "answer": "(A + B) · (A + C)",
-      "explanation": "In Boolean algebra, OR distributes over AND.",
+      "explanation": "In Boolean algebra, the OR operation distributes over AND: A + (B · C) = (A + B) · (A + C). This dual distributive law has no counterpart in standard real-number algebra and is a favorite Nile examination question. (Mano, Ch 2.2).",
       "why_wrong": {},
       "marking_points": [
         "States (A+B)(A+C)"
@@ -549,7 +551,7 @@
       "question": "What is the Consensus Theorem in Sum-of-Products form?",
       "options": [],
       "answer": "A · B + A' · C + B · C = A · B + A' · C",
-      "explanation": "The term B·C is redundant and can be eliminated because it is covered by the consensus of AB and A'C.",
+      "explanation": "The Consensus Theorem states that in an expression of the form AB + A'C + BC, the third term BC is completely redundant and can be deleted: AB + A'C + BC = AB + A'C. The dual form is (A + B)(A' + C)(B + C) = (A + B)(A' + C). (Mano, Ch 2.3).",
       "why_wrong": {},
       "marking_points": [
         "Recalls AB + A'C + BC = AB + A'C"
