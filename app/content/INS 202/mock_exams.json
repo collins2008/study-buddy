@@ -135,7 +135,12 @@
             "skip to main content"
           ],
           "explanation": "The POUR principles are Perceivable, Operable, Understandable, and Robust. A 'Skip to main content' (or 'Skip navigation') link allows keyboard and screen reader users to bypass repetitive header navigation on every page load.",
-          "source": "WCAG 2.1 Guidelines & Module 06 Navigation"
+          "source": "WCAG 2.1 Guidelines & Module 06 Navigation",
+          "blanks": [
+            "perceivable",
+            "robust",
+            "skip to main content"
+          ]
         },
         {
           "id": "ins202-acc-011",
@@ -162,7 +167,13 @@
             3
           ],
           "explanation": "Logical keyboard navigation order begins with the 'Skip to Main Content' link (allowing keyboard users to bypass header clutter), followed by the brand logo, then the global navigation items, and finally landing on the main content area where the primary task begins.",
-          "source": "Module 06 (Navigation) & WCAG 2.1 Navigation Order"
+          "source": "Module 06 (Navigation) & WCAG 2.1 Navigation Order",
+          "steps": [
+            "Skip to Main Content link (hidden visually until focused via keyboard Tab)",
+            "Primary Brand Logo linking to homepage with descriptive alt text",
+            "Global Navigation Bar links (<nav> unordered list items)",
+            "Main Content Area heading (<h1>) and primary workflow interactive elements"
+          ]
         },
         {
           "id": "ins202-acc-013",
@@ -404,7 +415,25 @@
             "Error Prevention"
           ],
           "explanation": "Lack of feedback violates 'Visibility of System Status'. Cryptic hexadecimal error codes violate 'Help Users Recognize, Diagnose, and Recover from Errors' (which demands plain language). Lack of an emergency exit or Undo violates 'User Control and Freedom'. Allowing invalid inputs instead of constraining choices violates 'Error Prevention'.",
-          "source": "Jakob Nielsen's 10 Usability Heuristics"
+          "source": "Jakob Nielsen's 10 Usability Heuristics",
+          "pairs": [
+            {
+              "left": "A file-saving operation shows a blank screen for 30 seconds with no progress bar or spinner",
+              "right": "Visibility of System Status"
+            },
+            {
+              "left": "A system error pop-up displays 'Fatal Exception 0x0000005F at memory address 0x8849'",
+              "right": "Help Users Recognize, Diagnose, and Recover from Errors"
+            },
+            {
+              "left": "A user accidentally hits 'Empty Trash' but there is no 'Undo' button or recovery option",
+              "right": "User Control and Freedom"
+            },
+            {
+              "left": "A date-picker field allows users to select February 31st and only crashes after submitting the form",
+              "right": "Error Prevention"
+            }
+          ]
         },
         {
           "id": "ins202-eval-013",
@@ -522,7 +551,14 @@
           "marking_points": [],
           "source": "Student Notebook Image 21.47.02 (1); Module 01 Slides 19-24",
           "verified": true,
-          "verified_output": "Safety, Utility, Effectiveness, Efficiency, Usability."
+          "verified_output": "Safety, Utility, Effectiveness, Efficiency, Usability.",
+          "answers": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
         },
         {
           "id": "ins202-fnd-003",
@@ -915,7 +951,21 @@
           "marking_points": [],
           "source": "Module 02 Slide 43",
           "verified": true,
-          "verified_output": "Matched response time thresholds (0.1s, 1s, 10s)."
+          "verified_output": "Matched response time thresholds (0.1s, 1s, 10s).",
+          "pairs": [
+            {
+              "left": "0.1 second (100 milliseconds)",
+              "right": "Perceived as instantaneous; the user feels that the software is reacting directly to their physical manipulation (essential for direct manipulation and keypress states)."
+            },
+            {
+              "left": "1.0 second (1,000 milliseconds)",
+              "right": "User notices a brief delay, but their natural mental stream of thought remains uninterrupted; no special loading indicators required."
+            },
+            {
+              "left": "10 seconds",
+              "right": "The absolute limit for keeping a user's focused attention on the task; beyond this, the user's attention is diverted and a progress bar is mandatory."
+            }
+          ]
         }
       ]
     },
@@ -1055,7 +1105,25 @@
             "Synchronized closed captions and visual alerts in place of acoustic alarms"
           ],
           "explanation": "Blindness relies on screen readers. Color blindness requires dual encoding (not relying on color alone). Severe motor impairments utilize sip-and-puff or eye trackers. Deafness requires closed captions and visual notifications.",
-          "source": "Universal Design Principles & Assistive Technology Standards"
+          "source": "Universal Design Principles & Assistive Technology Standards",
+          "pairs": [
+            {
+              "left": "Total blindness",
+              "right": "Screen reader (e.g., NVDA, VoiceOver) utilizing semantic HTML and ARIA labels"
+            },
+            {
+              "left": "Deuteranopia (red-green color blindness)",
+              "right": "Dual encoding of information using distinct geometric icons and high-luminance contrast"
+            },
+            {
+              "left": "Severe motor tremors / quadriplegia",
+              "right": "Sip-and-puff switch devices or eye-gaze tracking cameras with enlarged touch targets"
+            },
+            {
+              "left": "Profound hearing loss (deafness)",
+              "right": "Synchronized closed captions and visual alerts in place of acoustic alarms"
+            }
+          ]
         },
         {
           "id": "ins202-acc-012",
@@ -1283,7 +1351,12 @@
             "regressive"
           ],
           "explanation": "Usability specifications divide metrics into objective performance measures (quantifying user speed, errors, completion) and subjective preference measures (quantifying attitudes and ratings). Extreme emotional breakdowns during testing (such as shouting at the monitor or striking hardware) are documented as 'regressive behaviors'.",
-          "source": "Module 03 (Know Thy User), Slides 38-39: Usability Specifications"
+          "source": "Module 03 (Know Thy User), Slides 38-39: Usability Specifications",
+          "blanks": [
+            "performance",
+            "preference",
+            "regressive"
+          ]
         },
         {
           "id": "ins202-eval-012",
@@ -1310,7 +1383,13 @@
             3
           ],
           "explanation": "Standard usability protocol begins with a pre-test briefing explaining consent and framing the test around the interface (not user competence). Realistic tasks are executed sequentially while logging metrics. After each individual task, brief post-task questions (like SEQ) capture immediate difficulty. Finally, at the session end, a global post-test instrument (like SUS) and debriefing interview take place.",
-          "source": "Module 03 / Module 07 Evaluation Procedures"
+          "source": "Module 03 / Module 07 Evaluation Procedures",
+          "steps": [
+            "Administer pre-test briefing and emphasize that the system, not the participant, is being evaluated",
+            "Present realistic task scenarios one by one while observing actions and noting performance metrics",
+            "Administer post-task single-item ease questionnaires (SEQ) immediately following each task",
+            "Administer comprehensive post-test preference questionnaires (e.g., Likert-based SUS) and conduct debriefing"
+          ]
         },
         {
           "id": "ins202-eval-014",
@@ -1457,7 +1536,25 @@
           "marking_points": [],
           "source": "Module 01 Slides 12, 28-29",
           "verified": true,
-          "verified_output": "Matched interdisciplinary fields."
+          "verified_output": "Matched interdisciplinary fields.",
+          "pairs": [
+            {
+              "left": "Computer Science",
+              "right": "Provides software architecture, programming languages, algorithms, and technical implementation of interactive systems."
+            },
+            {
+              "left": "Cognitive Psychology",
+              "right": "Provides models of human perception, memory limitations (7±2 chunks), mental models, and decision-making processes."
+            },
+            {
+              "left": "Ergonomics / Human Factors",
+              "right": "Evaluates physical human biomechanics, workstation posture, visual fatigue, and physical button/hardware dimensions."
+            },
+            {
+              "left": "Graphic & Visual Design",
+              "right": "Establishes visual hierarchy, typography, aesthetic appeal, alignment, and color contrast principles."
+            }
+          ]
         },
         {
           "id": "ins202-fnd-006",
@@ -1517,7 +1614,12 @@
           "marking_points": [],
           "source": "Module 01 Slide 11",
           "verified": true,
-          "verified_output": "design, evaluation, implementation"
+          "verified_output": "design, evaluation, implementation",
+          "blanks": [
+            "design",
+            "evaluation",
+            "implementation"
+          ]
         },
         {
           "id": "ins202-fnd-010",
@@ -1698,7 +1800,25 @@
           "marking_points": [],
           "source": "Module 02 Slides 20-34",
           "verified": true,
-          "verified_output": "Matched Gestalt principles."
+          "verified_output": "Matched Gestalt principles.",
+          "pairs": [
+            {
+              "left": "Proximity",
+              "right": "Placing input field text labels significantly closer to their corresponding form boxes than to preceding fields so users perceive them as a pair."
+            },
+            {
+              "left": "Similarity",
+              "right": "Rendering all clickable primary action buttons in the identical blue pill shape and font across every screen to indicate common functionality."
+            },
+            {
+              "left": "Continuity / Alignment",
+              "right": "Left-aligning all headings, paragraph text, and input boxes along a single vertical axis to facilitate smooth, rapid top-to-bottom visual scanning."
+            },
+            {
+              "left": "Closure",
+              "right": "Designing an icon or logo using broken or striped lines (like the IBM logo) where the mind automatically fills in the blanks to see complete letters."
+            }
+          ]
         },
         {
           "id": "ins202-hum-004",
@@ -1756,7 +1876,11 @@
           "marking_points": [],
           "source": "Module 02 Slide 37-38",
           "verified": true,
-          "verified_output": "chunking, 080-331-4492"
+          "verified_output": "chunking, 080-331-4492",
+          "blanks": [
+            "chunking",
+            "080-331-4492"
+          ]
         },
         {
           "id": "ins202-hum-008",

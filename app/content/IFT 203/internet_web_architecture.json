@@ -206,7 +206,29 @@
       ],
       "explanation": "These protocols represent the foundational communication stack of the Internet and Web, spanning the Application, Transport, and Internet layers.",
       "why_wrong": {},
-      "source": "IFT 203 Slide 2; Kurose & Ross Computer Networking"
+      "source": "IFT 203 Slide 2; Kurose & Ross Computer Networking",
+      "pairs": [
+        {
+          "left": "HTTP",
+          "right": "Application-layer protocol for transferring hypertext requests and responses in plain text over port 80"
+        },
+        {
+          "left": "HTTPS",
+          "right": "Application-layer protocol encrypted with TLS/SSL for secure transactions over port 443"
+        },
+        {
+          "left": "TCP",
+          "right": "Transport-layer protocol establishing reliable, ordered, error-checked packet stream delivery via 3-way handshakes"
+        },
+        {
+          "left": "IP",
+          "right": "Internet-layer protocol responsible for addressing packets and routing them across network boundaries"
+        },
+        {
+          "left": "DNS",
+          "right": "Hierarchical naming service translating human-readable hostnames into numeric IP addresses"
+        }
+      ]
     },
     {
       "id": "ift203-wa-006",
@@ -238,7 +260,15 @@
       ],
       "explanation": "The standard web page access lifecycle proceeds from user input to DNS address resolution, TCP transport handshake, HTTP application request, server response generation, and final client browser parsing and DOM rendering.",
       "why_wrong": {},
-      "source": "IFT 203 Slide 2; MDN Web Docs: How the Web Works"
+      "source": "IFT 203 Slide 2; MDN Web Docs: How the Web Works",
+      "steps": [
+        "User types a website URL into the browser address bar and hits Enter",
+        "Browser queries local cache and DNS servers to resolve the domain name into an IP address",
+        "Browser establishes a TCP connection with the target server via a 3-way handshake (SYN, SYN-ACK, ACK)",
+        "Browser transmits an HTTP GET request header and body to the destination web server",
+        "Web server processes the request and returns an HTTP response containing a status code (e.g., 200 OK) and HTML payload",
+        "Browser engine parses the HTML markup, builds the Document Object Model (DOM), requests external CSS/JS, and renders the visual page"
+      ]
     },
     {
       "id": "ift203-wa-007",
@@ -294,7 +324,12 @@
       "why_wrong": {
         "2": "Connecting to databases and executing SQL is strictly a back-end server operation. Exposing database credentials in front-end client code would allow any user to read or drop entire databases."
       },
-      "source": "IFT 203 Slide 2; MDN Client-Side vs Server-Side Overview"
+      "source": "IFT 203 Slide 2; MDN Client-Side vs Server-Side Overview",
+      "answers": [
+        0,
+        1,
+        3
+      ]
     },
     {
       "id": "ift203-wa-fc01",

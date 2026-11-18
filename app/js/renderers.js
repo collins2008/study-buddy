@@ -138,7 +138,7 @@ const Renderers = {
   },
 
   // 1. MCQ (Single Answer)
-  renderMCQ: function(q, area, feedback, onSubmit, options) {
+  renderMCQ: function(q, area, feedback, onSubmit, options = {}) {
     const list = document.createElement('div');
     list.className = 'options-list';
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -150,7 +150,7 @@ const Renderers = {
       btn.onclick = () => {
         if (btn.disabled) return;
         this.askConfidence((confidence) => {
-          this.evaluateMCQ(q, idx, list, feedback, onSubmit, confidence);
+          this.evaluateMCQ(q, idx, list, feedback, onSubmit, confidence, options);
         });
       };
       list.appendChild(btn);
@@ -158,10 +158,32 @@ const Renderers = {
     area.appendChild(list);
   },
 
-  evaluateMCQ: function(q, selectedIdx, list, feedback, onSubmit, confidence) {
-    const isCorrect = (selectedIdx === q.answer || selectedIdx === parseInt(q.answer));
+  evaluateMCQ: function(q, selectedIdx, list, feedback, onSubmit, confidence, options = {}) {
+    let targetIdx = q.answer;
+    if (typeof targetIdx === 'string') {
+      const trimmed = targetIdx.trim();
+      const inOptions = q.options ? q.options.indexOf(trimmed) : -1;
+      if (inOptions !== -1) {
+        targetIdx = inOptions;
+      } else {
+        const parsed = parseInt(trimmed, 10);
+        targetIdx = isNaN(parsed) ? 0 : parsed;
+      }
+    } else {
+      targetIdx = parseInt(targetIdx, 10);
+    }
+    const isCorrect = (selectedIdx === targetIdx);
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const targetIdx = parseInt(q.answer);
+
+    if (options && options.examMode) {
+      // Exam mode: no instant right/wrong revelation during test
+      Array.from(list.children).forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === selectedIdx) btn.classList.add('selected');
+      });
+      if (onSubmit) onSubmit({ isCorrect, confidence, selected: selectedIdx, targetIdx });
+      return;
+    }
 
     Array.from(list.children).forEach((btn, idx) => {
       btn.disabled = true;
@@ -170,7 +192,7 @@ const Renderers = {
     });
 
     this.showExplanation(q, isCorrect, feedback, selectedIdx, confidence);
-    if (onSubmit) onSubmit({ isCorrect, confidence, selected: selectedIdx });
+    if (onSubmit) onSubmit({ isCorrect, confidence, selected: selectedIdx, targetIdx });
   },
 
   // 2. Multi Select
@@ -409,9 +431,12 @@ const Renderers = {
     });
     area.appendChild(choicesDiv);
 
-    // Click handler for left items
-    container.querySelectorAll('.match-def').forEach(defEl => {
-      defEl.onclick = () => {
+    // Click handler for rows / left items
+    container.querySelectorAll('.matching-row').forEach(row => {
+      row.onclick = () => {
+        const defEl = row.querySelector('.match-def');
+        container.querySelectorAll('.matching-row').forEach(r => r.classList.remove('selected-row'));
+        row.classList.add('selected-row');
         container.querySelectorAll('.match-def').forEach(d => d.style.borderColor = 'var(--border)');
         defEl.style.borderColor = 'var(--primary)';
         selectedLeft = defEl.getAttribute('data-left');
@@ -875,11 +900,13 @@ const Renderers = {
 
     // Why Wrong item for selected option
     let whyWrongHtml = '';
-    if (q.why_wrong && selectedIdx !== null && q.why_wrong[selectedIdx]) {
+    const wwKey = selectedIdx !== null && selectedIdx !== undefined ? String(selectedIdx) : null;
+    const wwText = (q.why_wrong && wwKey && (q.why_wrong[wwKey] || (q.options && q.why_wrong[q.options[selectedIdx]]))) || '';
+    if (wwText) {
       whyWrongHtml = `
         <div class="why-wrong-item">
           <strong>Why option (${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[selectedIdx]}) was incorrect:</strong><br>
-          ${q.why_wrong[selectedIdx]}
+          ${wwText}
         </div>
       `;
     }

@@ -1,7 +1,7 @@
 {
   "course": "IFT 211",
   "topic": "Combinational Circuits & Truth Tables",
-  "summary": "This topic examines combinational logic circuits, where output states are exclusively determined by current input combinations without memory or feedback. It explores formal analysis and synthesis procedures from specifications to optimized truth tables and schematics, treating don't-care conditions. Essential arithmetic building blocks are thoroughly analyzed, including Half Adders, Full Adders (constructed from two half adders and an OR gate), Ripple Carry Adders with propagation delay formulas, Half/Full Subtractors, and 2's complement Adder-Subtractor circuits with mode selection. Medium Scale Integration (MSI) devices \u2014 Decoders, Encoders, Priority Encoders, Multiplexers (data selectors), and Demultiplexers \u2014 are studied alongside universal MUX logic synthesis and exam-style multi-gate circuit node tracing.",
+  "summary": "This topic examines combinational logic circuits, where output states are exclusively determined by current input combinations without memory or feedback. It explores formal analysis and synthesis procedures from specifications to optimized truth tables and schematics, treating don't-care conditions. Essential arithmetic building blocks are thoroughly analyzed, including Half Adders, Full Adders (constructed from two half adders and an OR gate), Ripple Carry Adders with propagation delay formulas, Half/Full Subtractors, and 2's complement Adder-Subtractor circuits with mode selection. Medium Scale Integration (MSI) devices — Decoders, Encoders, Priority Encoders, Multiplexers (data selectors), and Demultiplexers — are studied alongside universal MUX logic synthesis and exam-style multi-gate circuit node tracing.",
   "key_terms": [
     {
       "term": "Combinational Circuit",
@@ -9,11 +9,11 @@
     },
     {
       "term": "Half Adder",
-      "definition": "An arithmetic circuit that adds two 1-bit binary inputs (A, B) to produce a Sum (S = A \u2295 B) and a Carry (C = A \u00b7 B), unable to accept an incoming carry bit."
+      "definition": "An arithmetic circuit that adds two 1-bit binary inputs (A, B) to produce a Sum (S = A ⊕ B) and a Carry (C = A · B), unable to accept an incoming carry bit."
     },
     {
       "term": "Full Adder",
-      "definition": "An arithmetic circuit that computes the sum of three 1-bit inputs (A, B, Cin) producing Sum = A \u2295 B \u2295 Cin and Carry-out Cout = AB + Cin(A \u2295 B)."
+      "definition": "An arithmetic circuit that computes the sum of three 1-bit inputs (A, B, Cin) producing Sum = A ⊕ B ⊕ Cin and Carry-out Cout = AB + Cin(A ⊕ B)."
     },
     {
       "term": "Ripple Carry Adder",
@@ -21,11 +21,11 @@
     },
     {
       "term": "Half Subtractor",
-      "definition": "A circuit that subtracts a 1-bit subtrahend Y from a minuend X, yielding Difference D = X \u2295 Y and Borrow B = X' \u00b7 Y."
+      "definition": "A circuit that subtracts a 1-bit subtrahend Y from a minuend X, yielding Difference D = X ⊕ Y and Borrow B = X' · Y."
     },
     {
       "term": "Full Subtractor",
-      "definition": "A circuit that computes X - Y - Bin producing Difference D = X \u2295 Y \u2295 Bin and Borrow-out Bout = X'Y + Bin(X \u2295 Y)'."
+      "definition": "A circuit that computes X - Y - Bin producing Difference D = X ⊕ Y ⊕ Bin and Borrow-out Bout = X'Y + Bin(X ⊕ Y)'."
     },
     {
       "term": "Adder-Subtractor Circuit",
@@ -62,12 +62,12 @@
         "Its outputs depend on both present inputs and the past sequence of clock pulses.",
         "It can only be built using microprocessor instructions."
       ],
-      "answer": "Its outputs at any instant depend solely on the present combination of inputs, with no memory elements or feedback paths.",
+      "answer": 0,
       "explanation": "Combinational circuits are memoryless: the output vector Y(t) is purely a Boolean function of current input vector X(t). Sequential circuits, by contrast, incorporate storage elements (latches/flip-flops) and feedback loops.",
       "why_wrong": {
-        "It contains flip-flops and clock signals that store previous internal states.": "This describes sequential logic circuits, not combinational ones.",
-        "Its outputs depend on both present inputs and the past sequence of clock pulses.": "This is the definition of a sequential state machine.",
-        "It can only be built using microprocessor instructions.": "Combinational circuits are hardware gate arrangements, not software programs."
+        "1": "This describes sequential logic circuits, not combinational ones.",
+        "2": "This is the definition of a sequential state machine.",
+        "3": "Combinational circuits are hardware gate arrangements, not software programs."
       },
       "marking_points": [
         "States memoryless operation",
@@ -89,17 +89,17 @@
       ],
       "question": "What are the Boolean equations for the Sum (S) and Carry (C) outputs of a 1-bit Half Adder with inputs A and B?",
       "options": [
-        "Sum = A \u2295 B (or A'B + AB'), Carry = A \u00b7 B",
-        "Sum = A \u00b7 B, Carry = A + B",
-        "Sum = A + B, Carry = A \u2295 B",
-        "Sum = (A \u00b7 B)', Carry = A' + B'"
+        "Sum = A ⊕ B (or A'B + AB'), Carry = A · B",
+        "Sum = A · B, Carry = A + B",
+        "Sum = A + B, Carry = A ⊕ B",
+        "Sum = (A · B)', Carry = A' + B'"
       ],
-      "answer": "Sum = A \u2295 B (or A'B + AB'), Carry = A \u00b7 B",
+      "answer": 0,
       "explanation": "Adding two single bits produces: 0+0=0 (S=0, C=0); 0+1=1 (S=1, C=0); 1+0=1 (S=1, C=0); 1+1=10_2 (S=0, C=1). Therefore, S is 1 when inputs differ (XOR: A'B + AB') and C is 1 only when both are 1 (AND: AB).",
       "why_wrong": {
-        "Sum = A \u00b7 B, Carry = A + B": "Reverses the logical roles of Carry and Sum.",
-        "Sum = A + B, Carry = A \u2295 B": "Inclusive OR would produce 1 for 1+1, which violates binary arithmetic (1+1=0 with carry 1).",
-        "Sum = (A \u00b7 B)', Carry = A' + B'": "These represent NAND and Negative-OR functions, not arithmetic addition."
+        "1": "Reverses the logical roles of Carry and Sum.",
+        "2": "Inclusive OR would produce 1 for 1+1, which violates binary arithmetic (1+1=0 with carry 1).",
+        "3": "These represent NAND and Negative-OR functions, not arithmetic addition."
       },
       "marking_points": [
         "Sum = A XOR B",
@@ -127,12 +127,12 @@
         "Using three Half Adders and no extra gates.",
         "Using one Half Adder and two Inverters."
       ],
-      "answer": "Using two Half Adders and one OR gate (or XOR gate for carry out).",
-      "explanation": "HA1 adds A and B to yield S1 = A \u2295 B and C1 = AB. HA2 adds S1 and Cin to yield Sum = S1 \u2295 Cin = A \u2295 B \u2295 Cin and C2 = S1 \u00b7 Cin = (A \u2295 B)Cin. The final Carry-out is Cout = C1 + C2 = AB + (A \u2295 B)Cin. Since C1 and C2 cannot both be 1 simultaneously, an OR or XOR gate connects C1 and C2.",
+      "answer": 0,
+      "explanation": "HA1 adds A and B to yield S1 = A ⊕ B and C1 = AB. HA2 adds S1 and Cin to yield Sum = S1 ⊕ Cin = A ⊕ B ⊕ Cin and C2 = S1 · Cin = (A ⊕ B)Cin. The final Carry-out is Cout = C1 + C2 = AB + (A ⊕ B)Cin. Since C1 and C2 cannot both be 1 simultaneously, an OR or XOR gate connects C1 and C2.",
       "why_wrong": {
-        "Using two Half Adders and one AND gate.": "Combining carries with AND produces 0 because C1 and C2 are mutually exclusive.",
-        "Using three Half Adders and no extra gates.": "A full adder requires only 2 half adders plus an OR gate.",
-        "Using one Half Adder and two Inverters.": "One half adder cannot handle three input bits (A, B, Cin)."
+        "1": "Combining carries with AND produces 0 because C1 and C2 are mutually exclusive.",
+        "2": "A full adder requires only 2 half adders plus an OR gate.",
+        "3": "One half adder cannot handle three input bits (A, B, Cin)."
       },
       "marking_points": [
         "Specifies 2 Half Adders",
@@ -160,12 +160,12 @@
         "64 gate delays",
         "128 gate delays"
       ],
-      "answer": "63 gate delays",
-      "explanation": "According to the course notes (Page 58): A 32-bit ripple carry adder requires 31 carry ripple computations across stages 0 to 30, with each stage taking 2 gate delays, plus the final stage sum calculation (1 gate delay). Total delay = 31 \u00d7 2 + 1 = 63 gate delays (or 2N - 1 for N=32).",
+      "answer": 0,
+      "explanation": "According to the course notes (Page 58): A 32-bit ripple carry adder requires 31 carry ripple computations across stages 0 to 30, with each stage taking 2 gate delays, plus the final stage sum calculation (1 gate delay). Total delay = 31 × 2 + 1 = 63 gate delays (or 2N - 1 for N=32).",
       "why_wrong": {
-        "32 gate delays": "Assumes only 1 gate delay per full adder stage instead of 2.",
-        "64 gate delays": "Neglects that the final stage sum does not wait for a subsequent carry generation.",
-        "128 gate delays": "Overestimates delays by assuming 4 gates per stage in serial."
+        "1": "Assumes only 1 gate delay per full adder stage instead of 2.",
+        "2": "Neglects that the final stage sum does not wait for a subsequent carry generation.",
+        "3": "Overestimates delays by assuming 4 gates per stage in serial."
       },
       "marking_points": [
         "Calculates 31 carry stages * 2 = 62 delays",
@@ -193,8 +193,8 @@
         "When M=0, it multiplies A by B; When M=1, it divides A by B.",
         "When M=1, it computes 9's complement BCD subtraction."
       ],
-      "answer": "When M=0, B bits pass unchanged and C0=0 (performing A + B); When M=1, B bits are inverted (1's complement) and C0=1 (adding 1), achieving 2's complement subtraction A + B' + 1 = A - B.",
-      "explanation": "An XOR gate behaves as a programmable inverter: B \u2295 0 = B (identity) and B \u2295 1 = B' (inversion). When M=1, B is complemented and Cin=1 is injected into the LSB, exactly realizing 2's complement subtraction (A + B' + 1 = A - B) without requiring separate subtractor circuits.",
+      "answer": 0,
+      "explanation": "An XOR gate behaves as a programmable inverter: B ⊕ 0 = B (identity) and B ⊕ 1 = B' (inversion). When M=1, B is complemented and Cin=1 is injected into the LSB, exactly realizing 2's complement subtraction (A + B' + 1 = A - B) without requiring separate subtractor circuits.",
       "why_wrong": {
         "When M=1, the circuit shuts off power...": "Hardware does not power down; it reconfigures mathematically.",
         "When M=0, it multiplies A by B...": "Adders perform addition and subtraction, not multiplication.",
@@ -220,17 +220,17 @@
       ],
       "question": "What are the Boolean equations for the Difference (D) and Borrow (B) of a 1-bit Half Subtractor subtracting subtrahend Y from minuend X (X - Y)?",
       "options": [
-        "Difference D = X \u2295 Y, Borrow B = X' \u00b7 Y",
-        "Difference D = X \u00b7 Y, Borrow B = X + Y'",
-        "Difference D = X' \u00b7 Y, Borrow B = X \u2295 Y",
-        "Difference D = X \u2295 Y, Borrow B = X \u00b7 Y'"
+        "Difference D = X ⊕ Y, Borrow B = X' · Y",
+        "Difference D = X · Y, Borrow B = X + Y'",
+        "Difference D = X' · Y, Borrow B = X ⊕ Y",
+        "Difference D = X ⊕ Y, Borrow B = X · Y'"
       ],
-      "answer": "Difference D = X \u2295 Y, Borrow B = X' \u00b7 Y",
-      "explanation": "Evaluating 1-bit subtraction X - Y:\n0 - 0 = D:0, B:0\n0 - 1 = D:1, Borrow:1 (since 0 - 1 in binary requires borrowing 2, leaving 2 - 1 = 1)\n1 - 0 = D:1, B:0\n1 - 1 = D:0, B:0\nHence, D = X \u2295 Y and Borrow B = X'Y.",
+      "answer": 0,
+      "explanation": "Evaluating 1-bit subtraction X - Y:\n0 - 0 = D:0, B:0\n0 - 1 = D:1, Borrow:1 (since 0 - 1 in binary requires borrowing 2, leaving 2 - 1 = 1)\n1 - 0 = D:1, B:0\n1 - 1 = D:0, B:0\nHence, D = X ⊕ Y and Borrow B = X'Y.",
       "why_wrong": {
-        "Difference D = X \u00b7 Y, Borrow B = X + Y'": "Incorrect Boolean operations for subtraction.",
-        "Difference D = X' \u00b7 Y, Borrow B = X \u2295 Y": "Swaps the formulas for Difference and Borrow.",
-        "Difference D = X \u2295 Y, Borrow B = X \u00b7 Y'": "X \u00b7 Y' represents borrowing when Y=0 and X=1, which is backwards."
+        "1": "Incorrect Boolean operations for subtraction.",
+        "2": "Swaps the formulas for Difference and Borrow.",
+        "3": "X · Y' represents borrowing when Y=0 and X=1, which is backwards."
       },
       "marking_points": [
         "Difference = X XOR Y",
@@ -258,12 +258,12 @@
         "Output line x6",
         "All output lines simultaneously"
       ],
-      "answer": "Output line x5",
-      "explanation": "A binary decoder decodes the binary value n = (101)_2 = 5 decimal. Exactly one corresponding output minterm line x5 = a2 \u00b7 a1' \u00b7 a0 is driven to logic 1, while all other seven output lines remain at logic 0.",
+      "answer": 0,
+      "explanation": "A binary decoder decodes the binary value n = (101)_2 = 5 decimal. Exactly one corresponding output minterm line x5 = a2 · a1' · a0 is driven to logic 1, while all other seven output lines remain at logic 0.",
       "why_wrong": {
-        "Output line x3": "Binary 101 is 5, not 3 (011).",
-        "Output line x6": "Binary 101 is 5, not 6 (110).",
-        "All output lines simultaneously": "A decoder by definition activates exactly one line corresponding to the binary address."
+        "1": "Binary 101 is 5, not 3 (011).",
+        "2": "Binary 101 is 5, not 6 (110).",
+        "3": "A decoder by definition activates exactly one line corresponding to the binary address."
       },
       "marking_points": [
         "Decodes 101_2 as decimal 5",
@@ -290,12 +290,12 @@
         "Because a priority encoder converts analog voltage directly into audio signals.",
         "Because a standard encoder can only handle negative binary numbers."
       ],
-      "answer": "Because if multiple input lines are active simultaneously, a priority encoder deterministically outputs the code of the highest-priority input, whereas a standard encoder produces invalid/erroneous codes.",
+      "answer": 0,
       "explanation": "Standard encoders assume strictly one input is active at any time; multiple simultaneous inputs produce undefined overlapping binary outputs. Priority encoders resolve collisions by establishing an unambiguous hierarchy (e.g. I3 > I2 > I1 > I0).",
       "why_wrong": {
-        "Because a priority encoder operates without any electrical power.": "All active digital ICs require DC power.",
-        "Because a priority encoder converts analog voltage directly into audio signals.": "Encoders process digital binary logic levels, not analog audio.",
-        "Because a standard encoder can only handle negative binary numbers.": "Encoders operate on discrete digital lines, not signed binary words."
+        "1": "All active digital ICs require DC power.",
+        "2": "Encoders process digital binary logic levels, not analog audio.",
+        "3": "Encoders operate on discrete digital lines, not signed binary words."
       },
       "marking_points": [
         "Identifies resolution of simultaneous active inputs",
@@ -323,12 +323,12 @@
         "D0=0, D1=0, D2=1, D3=1",
         "D0=1, D1=1, D2=0, D3=0"
       ],
-      "answer": "D0=0, D1=1, D2=1, D3=0",
-      "explanation": "For a 4-to-1 MUX: F = S1'S0'D0 + S1'S0D1 + S1S0'D2 + S1S0D3.\nAssigning S1=A, S0=B:\n- For AB = 00: F = 0 \u2295 0 = 0 -> D0 must be 0.\n- For AB = 01: F = 0 \u2295 1 = 1 -> D1 must be 1.\n- For AB = 10: F = 1 \u2295 0 = 1 -> D2 must be 1.\n- For AB = 11: F = 1 \u2295 1 = 0 -> D3 must be 0.\nTherefore, the required data inputs are D0=0, D1=1, D2=1, D3=0.",
+      "answer": 0,
+      "explanation": "For a 4-to-1 MUX: F = S1'S0'D0 + S1'S0D1 + S1S0'D2 + S1S0D3.\nAssigning S1=A, S0=B:\n- For AB = 00: F = 0 ⊕ 0 = 0 -> D0 must be 0.\n- For AB = 01: F = 0 ⊕ 1 = 1 -> D1 must be 1.\n- For AB = 10: F = 1 ⊕ 0 = 1 -> D2 must be 1.\n- For AB = 11: F = 1 ⊕ 1 = 0 -> D3 must be 0.\nTherefore, the required data inputs are D0=0, D1=1, D2=1, D3=0.",
       "why_wrong": {
-        "D0=1, D1=0, D2=0, D3=1": "This implements XNOR (AB + A'B'), the complement of XOR.",
-        "D0=0, D1=0, D2=1, D3=1": "This implements the projection function F = A.",
-        "D0=1, D1=1, D2=0, D3=0": "This implements F = A'."
+        "1": "This implements XNOR (AB + A'B'), the complement of XOR.",
+        "2": "This implements the projection function F = A.",
+        "3": "This implements F = A'."
       },
       "marking_points": [
         "Evaluates truth table for XOR at minterms m0, m1, m2, m3",
@@ -349,19 +349,19 @@
         "nile-exam-exercise-vi",
         "boolean-derivation"
       ],
-      "question": "In Nile University Final Exam Exercise VI, a logic circuit has three inputs A, B, C and produces output X = (A \u2295 B) + (B \u00b7 C'). What is the value of X when input vector is A = 1, B = 1, C = 0?",
+      "question": "In Nile University Final Exam Exercise VI, a logic circuit has three inputs A, B, C and produces output X = (A ⊕ B) + (B · C'). What is the value of X when input vector is A = 1, B = 1, C = 0?",
       "options": [
         "X = 1",
         "X = 0",
         "X is indeterminate",
         "X oscillates"
       ],
-      "answer": "X = 1",
-      "explanation": "Evaluate intermediate nodes step by step:\n1. Node 1: A \u2295 B = 1 \u2295 1 = 0 (since both inputs are identical).\n2. Node 2: C' = 0' = 1.\n3. Node 3: B \u00b7 C' = 1 \u00b7 1 = 1.\n4. Output X = (Node 1) + (Node 3) = 0 + 1 = 1.\nTherefore, X = 1.",
+      "answer": 0,
+      "explanation": "Evaluate intermediate nodes step by step:\n1. Node 1: A ⊕ B = 1 ⊕ 1 = 0 (since both inputs are identical).\n2. Node 2: C' = 0' = 1.\n3. Node 3: B · C' = 1 · 1 = 1.\n4. Output X = (Node 1) + (Node 3) = 0 + 1 = 1.\nTherefore, X = 1.",
       "why_wrong": {
-        "X = 0": "Incorrectly evaluates 1 + 0 = 0 or misses that B\u00b7C' evaluates to 1.",
-        "X is indeterminate": "Combinational circuit with definite inputs produces a definite deterministic logic output.",
-        "X oscillates": "There are no feedback loops in this circuit to cause oscillation."
+        "1": "Incorrectly evaluates 1 + 0 = 0 or misses that B·C' evaluates to 1.",
+        "2": "Combinational circuit with definite inputs produces a definite deterministic logic output.",
+        "3": "There are no feedback loops in this circuit to cause oscillation."
       },
       "marking_points": [
         "Evaluates 1 XOR 1 = 0",
@@ -383,19 +383,19 @@
         "nile-exam-exercise-vi",
         "minterm-count"
       ],
-      "question": "For the logic expression from Nile Exam Exercise VI: X = (A \u2295 B) + (B \u00b7 C'), for how many of the 8 possible 3-bit input combinations (A, B, C) does X evaluate to 1?",
+      "question": "For the logic expression from Nile Exam Exercise VI: X = (A ⊕ B) + (B · C'), for how many of the 8 possible 3-bit input combinations (A, B, C) does X evaluate to 1?",
       "options": [
         "5 combinations",
         "4 combinations",
         "6 combinations",
         "3 combinations"
       ],
-      "answer": "5 combinations",
-      "explanation": "Evaluate all 8 rows of the truth table for X = A'B + AB' + BC':\n- 000: (0^0) + 0 = 0\n- 001: (0^0) + 0 = 0\n- 010: (0^1) + (1\u00b71) = 1 + 1 = 1\n- 011: (0^1) + (1\u00b70) = 1 + 0 = 1\n- 100: (1^0) + 0 = 1 + 0 = 1\n- 101: (1^0) + 0 = 1 + 0 = 1\n- 110: (1^1) + (1\u00b71) = 0 + 1 = 1\n- 111: (1^1) + (1\u00b70) = 0 + 0 = 0\nX is 1 for inputs: 010, 011, 100, 101, 110 (minterms m2, m3, m4, m5, m6). Total = exactly 5 combinations.",
+      "answer": 0,
+      "explanation": "Evaluate all 8 rows of the truth table for X = A'B + AB' + BC':\n- 000: (0^0) + 0 = 0\n- 001: (0^0) + 0 = 0\n- 010: (0^1) + (1·1) = 1 + 1 = 1\n- 011: (0^1) + (1·0) = 1 + 0 = 1\n- 100: (1^0) + 0 = 1 + 0 = 1\n- 101: (1^0) + 0 = 1 + 0 = 1\n- 110: (1^1) + (1·1) = 0 + 1 = 1\n- 111: (1^1) + (1·0) = 0 + 0 = 0\nX is 1 for inputs: 010, 011, 100, 101, 110 (minterms m2, m3, m4, m5, m6). Total = exactly 5 combinations.",
       "why_wrong": {
-        "4 combinations": "Misses minterm m6 (110) where A^B=0 but B\u00b7C'=1.",
-        "6 combinations": "Incorrectly includes minterm m7 (111).",
-        "3 combinations": "Only counts cases where A^B=1 and ignores B\u00b7C'."
+        "1": "Misses minterm m6 (110) where A^B=0 but B·C'=1.",
+        "2": "Incorrectly includes minterm m7 (111).",
+        "3": "Only counts cases where A^B=1 and ignores B·C'."
       },
       "marking_points": [
         "Evaluates all 8 rows",
@@ -416,9 +416,9 @@
         "synthesis",
         "decoder-or-synthesis"
       ],
-      "question": "Explain how an arbitrary 3-variable Boolean function F(A, B, C) = \u03a3m(1, 3, 5, 7) can be implemented using a standard 3-to-8 line decoder and an external logic gate.",
+      "question": "Explain how an arbitrary 3-variable Boolean function F(A, B, C) = Σm(1, 3, 5, 7) can be implemented using a standard 3-to-8 line decoder and an external logic gate.",
       "options": [],
-      "answer": "1. Connect input variables A, B, C to the select address inputs of the 3-to-8 decoder (A as MSB, C as LSB).\n2. The decoder generates all 8 canonical minterms m0 through m7 on its individual output lines.\n3. Identify the output lines corresponding to the designated minterms in the summation list: lines 1 (m1), 3 (m3), 5 (m5), and 7 (m7).\n4. Connect these four selected output lines directly into the inputs of a single 4-input OR gate.\n5. The output of the OR gate produces F = m1 + m3 + m5 + m7, which exactly realizes the function F(A, B, C). (Notice that \u03a3m(1,3,5,7) simplifies to F = C).",
+      "answer": "1. Connect input variables A, B, C to the select address inputs of the 3-to-8 decoder (A as MSB, C as LSB).\n2. The decoder generates all 8 canonical minterms m0 through m7 on its individual output lines.\n3. Identify the output lines corresponding to the designated minterms in the summation list: lines 1 (m1), 3 (m3), 5 (m5), and 7 (m7).\n4. Connect these four selected output lines directly into the inputs of a single 4-input OR gate.\n5. The output of the OR gate produces F = m1 + m3 + m5 + m7, which exactly realizes the function F(A, B, C). (Notice that Σm(1,3,5,7) simplifies to F = C).",
       "explanation": "Because a decoder produces all standard minterms, any Sum-of-Products function can be implemented by simply ORing together its constituent minterm outputs.",
       "why_wrong": {},
       "marking_points": [
@@ -466,7 +466,7 @@
       ],
       "question": "What are the output equations for a Half Adder?",
       "options": [],
-      "answer": "Sum = A \u2295 B\nCarry = A \u00b7 B",
+      "answer": "Sum = A ⊕ B\nCarry = A · B",
       "explanation": "Adds two 1-bit inputs.",
       "why_wrong": {},
       "marking_points": [
@@ -489,7 +489,7 @@
       ],
       "question": "What are the output equations for a Full Adder?",
       "options": [],
-      "answer": "Sum = A \u2295 B \u2295 Cin\nCarry-out (Cout) = AB + Cin(A \u2295 B) = AB + BCin + ACin",
+      "answer": "Sum = A ⊕ B ⊕ Cin\nCarry-out (Cout) = AB + Cin(A ⊕ B) = AB + BCin + ACin",
       "explanation": "Adds three 1-bit inputs.",
       "why_wrong": {},
       "marking_points": [
@@ -512,7 +512,7 @@
       ],
       "question": "What are the output equations for a Half Subtractor (X - Y)?",
       "options": [],
-      "answer": "Difference = X \u2295 Y\nBorrow = X' \u00b7 Y",
+      "answer": "Difference = X ⊕ Y\nBorrow = X' · Y",
       "explanation": "Subtracts Y from X.",
       "why_wrong": {},
       "marking_points": [
@@ -639,12 +639,12 @@
             "24.0 ns",
             "12.0 ns"
           ],
-          "answer": "18.5 ns",
-          "explanation": "Critical path calculation:\n1. The B inputs must first pass through the input XOR gates: 1.5 ns.\n2. The carry then ripples through 7 stages (stages 0 to 6): 7 \u00d7 2 ns = 14 ns.\n3. The final stage 7 calculates its sum output using the arrived carry: 3 ns sum delay.\nTotal propagation time = 1.5 ns (XOR) + 14 ns (7 carries) + 3 ns (final sum) = 18.5 ns.",
+          "answer": 0,
+          "explanation": "Critical path calculation:\n1. The B inputs must first pass through the input XOR gates: 1.5 ns.\n2. The carry then ripples through 7 stages (stages 0 to 6): 7 × 2 ns = 14 ns.\n3. The final stage 7 calculates its sum output using the arrived carry: 3 ns sum delay.\nTotal propagation time = 1.5 ns (XOR) + 14 ns (7 carries) + 3 ns (final sum) = 18.5 ns.",
           "why_wrong": {
-            "15.5 ns": "Omits the initial 1.5 ns input XOR gate delay.",
-            "24.0 ns": "Multiplies all 8 stages by 3 ns instead of tracing the carry propagation path.",
-            "12.0 ns": "Underestimates ripple carry delay."
+            "1": "Omits the initial 1.5 ns input XOR gate delay.",
+            "2": "Multiplies all 8 stages by 3 ns instead of tracing the carry propagation path.",
+            "3": "Underestimates ripple carry delay."
           },
           "marking_points": [
             "Identifies XOR delay = 1.5 ns",
@@ -669,16 +669,16 @@
           ],
           "question": "How should the student design the signed overflow detection flag (V) using the carry signals of the 8-bit ripple adder?",
           "options": [
-            "V = C7 \u2295 C8 (XOR the carry into the sign bit C7 with the carry out of the sign bit C8).",
+            "V = C7 ⊕ C8 (XOR the carry into the sign bit C7 with the carry out of the sign bit C8).",
             "V = C8 only (overflow occurs whenever there is an end carry).",
-            "V = C7 \u00b7 C8 (AND the two carries).",
+            "V = C7 · C8 (AND the two carries).",
             "V = (C8)' (overflow occurs when there is NO end carry)."
           ],
-          "answer": "V = C7 \u2295 C8 (XOR the carry into the sign bit C7 with the carry out of the sign bit C8).",
-          "explanation": "In 2's complement signed arithmetic, an arithmetic overflow occurs if and only if the carry into the sign bit (MSB, C7) differs from the carry out of the sign bit (C8). If C7 \u2260 C8, V = C7 \u2295 C8 = 1, indicating that the result exceeded the 8-bit signed range [-128, +127]. An end carry C8 alone indicates an unsigned borrow/carry, not signed overflow.",
+          "answer": 0,
+          "explanation": "In 2's complement signed arithmetic, an arithmetic overflow occurs if and only if the carry into the sign bit (MSB, C7) differs from the carry out of the sign bit (C8). If C7 ≠ C8, V = C7 ⊕ C8 = 1, indicating that the result exceeded the 8-bit signed range [-128, +127]. An end carry C8 alone indicates an unsigned borrow/carry, not signed overflow.",
           "why_wrong": {
             "V = C8 only...": "In signed 2's complement, an end carry frequently occurs during valid operations (e.g. adding positive and negative numbers).",
-            "V = C7 \u00b7 C8...": "When both carries are 1, no overflow occurred (e.g. (-1) + (-1)).",
+            "V = C7 · C8...": "When both carries are 1, no overflow occurred (e.g. (-1) + (-1)).",
             "V = (C8)'...": "Incorrect criterion."
           },
           "marking_points": [
@@ -708,19 +708,19 @@
           ],
           "question": "What is the complete algebraic expression for the intermediate node R and the final output X in terms of A, B, C?",
           "options": [],
-          "answer": "R = A \u2295 B, X = (A \u2295 B) + B\u00b7C'",
+          "answer": "R = A ⊕ B, X = (A ⊕ B) + B·C'",
           "accepted_answers": [
-            "R = A \u2295 B, X = (A \u2295 B) + B\u00b7C'",
+            "R = A ⊕ B, X = (A ⊕ B) + B·C'",
             "R = A ^ B, X = (A ^ B) + B*C'",
             "R = A XOR B, X = (A XOR B) + B AND (NOT C)",
-            "X = (A \u2295 B) + BC'"
+            "X = (A ⊕ B) + BC'"
           ],
-          "explanation": "Node R is fed by inputs A and B to an XOR gate, so R = A \u2295 B. Node Q is the inverse of C, so Q = C'. Node S is an AND gate taking B and Q, so S = B \u00b7 C'. Node X is an OR gate combining R and S, so X = R + S = (A \u2295 B) + B\u00b7C'.",
+          "explanation": "Node R is fed by inputs A and B to an XOR gate, so R = A ⊕ B. Node Q is the inverse of C, so Q = C'. Node S is an AND gate taking B and Q, so S = B · C'. Node X is an OR gate combining R and S, so X = R + S = (A ⊕ B) + B·C'.",
           "why_wrong": {},
           "marking_points": [
             "R = A XOR B",
-            "S = B \u00b7 C'",
-            "X = (A XOR B) + B \u00b7 C'"
+            "S = B · C'",
+            "X = (A XOR B) + B · C'"
           ],
           "source": "Nile University Final Exam Paper, Exercise VI",
           "verified": true,
@@ -737,19 +737,19 @@
             "nile-exam-exercise-vi",
             "simplification"
           ],
-          "question": "Expand X = (A \u2295 B) + B\u00b7C' into canonical Sum of Minterms. Which minterms \u03a3m(...) represent this function?",
+          "question": "Expand X = (A ⊕ B) + B·C' into canonical Sum of Minterms. Which minterms Σm(...) represent this function?",
           "options": [
-            "\u03a3m(2, 3, 4, 5, 6)",
-            "\u03a3m(1, 2, 4, 7)",
-            "\u03a3m(0, 1, 6, 7)",
-            "\u03a3m(2, 4, 6)"
+            "Σm(2, 3, 4, 5, 6)",
+            "Σm(1, 2, 4, 7)",
+            "Σm(0, 1, 6, 7)",
+            "Σm(2, 4, 6)"
           ],
-          "answer": "\u03a3m(2, 3, 4, 5, 6)",
-          "explanation": "Expand algebraically:\nX = (A'B + AB') + BC'\n= A'B(C + C') + AB'(C + C') + (A + A')BC'\n= A'BC + A'BC' + AB'C + AB'C' + ABC' + A'BC'\nEliminate duplicate A'BC':\n= A'BC' (m2) + A'BC (m3) + AB'C' (m4) + AB'C (m5) + ABC' (m6).\nIn decimal: m2, m3, m4, m5, m6. Thus, X = \u03a3m(2, 3, 4, 5, 6).",
+          "answer": 0,
+          "explanation": "Expand algebraically:\nX = (A'B + AB') + BC'\n= A'B(C + C') + AB'(C + C') + (A + A')BC'\n= A'BC + A'BC' + AB'C + AB'C' + ABC' + A'BC'\nEliminate duplicate A'BC':\n= A'BC' (m2) + A'BC (m3) + AB'C' (m4) + AB'C (m5) + ABC' (m6).\nIn decimal: m2, m3, m4, m5, m6. Thus, X = Σm(2, 3, 4, 5, 6).",
           "why_wrong": {
-            "\u03a3m(1, 2, 4, 7)": "Includes m1 and m7 where X is 0.",
-            "\u03a3m(0, 1, 6, 7)": "Lists the complement terms plus m6.",
-            "\u03a3m(2, 4, 6)": "Only includes even minterms, missing m3 and m5."
+            "1": "Includes m1 and m7 where X is 0.",
+            "2": "Lists the complement terms plus m6.",
+            "3": "Only includes even minterms, missing m3 and m5."
           },
           "marking_points": [
             "Expands A'B + AB' into minterms 2, 3, 4, 5",

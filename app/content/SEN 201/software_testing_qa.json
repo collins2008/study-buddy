@@ -257,7 +257,12 @@
       "why_wrong": {
         "3": "Compilers verify grammar and generate machine code; they do not dynamically simulate or execute runtime test permutations."
       },
-      "source": "Nile University SEN 201 Final Exam Paper Type B Q70; Sommerville Ch. 8"
+      "source": "Nile University SEN 201 Final Exam Paper Type B Q70; Sommerville Ch. 8",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "sen201-tq-fc01",

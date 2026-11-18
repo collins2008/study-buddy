@@ -332,8 +332,7 @@
       "answer": 0,
       "explanation": "By definition in the ISO C Standard, sizeof(char) is ALWAYS exactly 1. All other data type sizes in C are expressed as multiples of the size of char.",
       "why_wrong": {
-        "1": "char is never 2 bytes in standard C byte accounting.",
-        "2": "4 is typical for int or float, not char.",
+        "0": "4 is typical for int or float, not char.",
         "3": "While int and pointer sizes are architecture-dependent, sizeof(char) is strictly guaranteed by the standard to be 1."
       },
       "source": "Deitel Ch 14.5; ISO C Standard 6.5.3.4",
@@ -458,7 +457,8 @@
       },
       "source": "Deitel Ch 2.3; ANSI C Standard Section 6.4.2",
       "verified": true,
-      "verified_output": ""
+      "verified_output": "",
+      "answer": true
     },
     {
       "id": "cos201-dt-015",

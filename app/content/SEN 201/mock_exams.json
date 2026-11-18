@@ -29,12 +29,10 @@
             "Prioritizing extensive documentation over human interaction",
             "Avoiding direct customer collaboration to prevent scope changes"
           ],
-          "answer": "Delivering working software quickly and frequently",
+          "answer": 0,
           "explanation": "As tested in Nile Exam Q9 and Q53: Principle #3 of the Agile Manifesto states: 'Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.' Working software is the primary measure of project progress.",
           "why_wrong": {
-            "Rigid adherence to initial project plans": "Agile explicitly values 'responding to change over following a plan.'",
-            "Prioritizing extensive documentation...": "Agile values 'working software over comprehensive documentation.'",
-            "Avoiding direct customer collaboration...": "Agile values 'customer collaboration over contract negotiation.'"
+            "1": "Agile explicitly values 'responding to change over following a plan.'"
           },
           "marking_points": [
             "Identifies rapid, frequent delivery of working software as primary measure of progress"
@@ -62,7 +60,7 @@
             "Software that has no copyright licenses of any kind",
             "Software written exclusively by university undergraduate students"
           ],
-          "answer": "Collaborative development where source code is publicly available for inspection and modification",
+          "answer": 0,
           "explanation": "Open-source development is centered on transparency and collective peer review: source code is released under open licenses (e.g. MIT, Apache, GPL) that grant users the legal right to inspect, modify, and redistribute the software collaboratively.",
           "why_wrong": {
             "Software that is legally prohibited from commercial use...": "Most open-source licenses explicitly permit commercial enterprise use.",
@@ -95,7 +93,7 @@
             "Any individual developer working on the project.",
             "The database administrator."
           ],
-          "answer": "The Product Owner, who owns the Product Backlog and balances business priorities with team capacity.",
+          "answer": 0,
           "explanation": "In Scrum governance, only the Product Owner has the authority to define user stories, prioritize the Product Backlog, and decide whether scope changes warrant modifying the current Sprint or queuing them for the next Sprint. The Scrum Master facilitates the process and removes blockers, but does not dictate business requirements.",
           "why_wrong": {
             "The Scrum Master, who dictates software features...": "Scrum Masters facilitate team health and process; they do not own business requirements.",
@@ -127,7 +125,7 @@
             "To prevent developers from working more than 2 hours a day.",
             "To limit the total number of users allowed to access the website."
           ],
-          "answer": "To prevent multitasking and expose process bottlenecks, ensuring work items flow smoothly to completion rather than piling up half-finished.",
+          "answer": 0,
           "explanation": "Little's Law and Lean principles show that excessive work-in-progress increases cycle times and context-switching overhead. By capping the number of cards in an active column, if 'Code Review' hits its WIP limit, developers must help unblock pending reviews before starting new coding tasks ('Stop starting, start finishing').",
           "why_wrong": {
             "To punish developers who finish work early": "Kanban fosters collaboration, not disciplinary penalties.",
@@ -256,7 +254,7 @@
             "The team should abolish 2-week sprints and switch to daily deployments with zero planning.",
             "The developers should work 20-hour overtime shifts to satisfy both the sprint backlog and the new requests."
           ],
-          "answer": "The Product Owner is violating Sprint stability: the Scrum Master must coach the Product Owner to place new feature requests onto the Product Backlog for prioritization in the NEXT sprint planning, leaving the current Sprint Goal intact.",
+          "answer": 0,
           "explanation": "A core premise of Scrum is that once a Sprint begins, the Sprint Goal is protected against mid-sprint scope churn that endangers completion. If an idea is truly critical, the Product Owner adds it to the top of the Product Backlog for the upcoming Sprint. Only in extraordinary circumstances where the Sprint Goal becomes completely obsolete may the Product Owner formally cancel the entire Sprint.",
           "why_wrong": {
             "The Scrum Master should fire the developers...": "The developers are properly defending their agreed sprint commitment.",
@@ -291,8 +289,8 @@
             "The CFO is right; pair programming is only used when an office runs out of computers.",
             "Pair programming eliminates the need to compile code."
           ],
-          "answer": "Pair programming incurs only ~15% additional development time while reducing defect density by 15-50%, drastically reducing post-release bug fixing costs which are 10-100x more expensive in production.",
-          "explanation": "Empirical studies (e.g. Cockburn & Williams) demonstrate that pairing increases effort by approximately 15%, but generates significantly cleaner code with 15\u201350% fewer defects. Because fixing defects in live trading engines costs 10 to 100 times more than catching them during coding (Boehm's cost of change), pair programming yields massive net economic savings.",
+          "answer": 0,
+          "explanation": "Empirical studies (e.g. Cockburn & Williams) demonstrate that pairing increases effort by approximately 15%, but generates significantly cleaner code with 15–50% fewer defects. Because fixing defects in live trading engines costs 10 to 100 times more than catching them during coding (Boehm's cost of change), pair programming yields massive net economic savings.",
           "why_wrong": {
             "Pair programming produces 400% more code...": "Pairing produces more concise, less bloated code, not more raw volume.",
             "The CFO is right; only used when running out of computers...": "Pairing is an intentional quality discipline, not a hardware shortage workaround.",
@@ -417,7 +415,25 @@
           "explanation": "Philippe Kruchten's 4+1 View Model structures architectural descriptions according to stakeholder viewpoints: Logical (functional domain abstractions), Process (runtime concurrency/performance), Development (source code modularity/builds), and Physical (hardware deployment topology).",
           "why_wrong": {},
           "source": "Kruchten 4+1 View Model; Nile Final Exam Q61",
-          "topic_slug": "architecture_patterns"
+          "topic_slug": "architecture_patterns",
+          "pairs": [
+            {
+              "left": "Logical View",
+              "right": "Class diagrams, object models, and domain abstractions"
+            },
+            {
+              "left": "Process View",
+              "right": "Concurrency, threads, inter-process communication, and latency"
+            },
+            {
+              "left": "Development View",
+              "right": "Code packages, libraries, modular subsystems, and build dependencies"
+            },
+            {
+              "left": "Physical View",
+              "right": "Hardware processors, server nodes, network topologies, and deployment units"
+            }
+          ]
         },
         {
           "id": "sen201-ap-007",
@@ -691,7 +707,15 @@
           "explanation": "The engineering lifecycle begins with feasibility analysis, proceeds through requirements specification, architecture, construction/unit testing, full system integration, and concludes with deployment and evolutionary maintenance.",
           "why_wrong": {},
           "source": "Sommerville Ch. 1 & 2; Software Engineering Concepts and Principles Lecture Notes",
-          "topic_slug": "final_exam_comprehensive"
+          "topic_slug": "final_exam_comprehensive",
+          "steps": [
+            "Feasibility Study & Business Case Evaluation",
+            "Requirements Elicitation, Analysis & Specification (SRS)",
+            "Architectural & Detailed System Design",
+            "Implementation, Code Inspection & Unit Testing",
+            "Integration, System & Acceptance Testing",
+            "System Deployment, Operation & Evolutionary Maintenance"
+          ]
         },
         {
           "id": "sen201-fe-fc01",
@@ -1060,7 +1084,7 @@
           "scenario": "A 5-year-old logistics startup experienced rapid growth, expanding from 10 drivers to 50,000 drivers. To meet aggressive marketing deadlines, developers took shortcuts, resulting in a single `OrderManager` class with 4,200 lines of code, 38 global fields, and methods with cyclomatic complexities exceeding 45. A single change to order calculation breaks driver payout processing, requiring emergency weekend rollbacks. The development team requests a dedicated 3-week refactoring sprint."
         },
         {
-          "id": "sen201-pm-001",
+          "id": "sen201-pmm-001",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "mcq",
@@ -1078,12 +1102,11 @@
             "Strict sequential phase completion without review",
             "Exclusively pair programming"
           ],
-          "answer": "Risk assessment and management at every iteration",
+          "answer": 0,
           "explanation": "As tested in Nile Exam Question 3: Barry Boehm's Spiral Model is fundamentally a risk-driven process model. Unlike linear or purely agile models, every single 360-degree spiral loop explicitly begins with setting objectives and mandates an in-depth risk analysis step to identify and resolve technical, financial, or operational risks before engineering proceeds.",
           "why_wrong": {
-            "Elimination of all documentation": "The Spiral Model produces formal documentation, milestone reviews, and management checkpoints at each loop.",
-            "Strict sequential phase completion...": "This is the Waterfall model, whereas the Spiral model is inherently iterative and cyclic.",
-            "Exclusively pair programming": "Pair programming is a practice of Extreme Programming (XP), not the Spiral Model."
+            "1": "The Spiral Model produces formal documentation, milestone reviews, and management checkpoints at each loop.",
+            "3": "Pair programming is a practice of Extreme Programming (XP), not the Spiral Model."
           },
           "marking_points": [
             "Identifies risk assessment/management as defining feature"
@@ -1094,7 +1117,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-003",
+          "id": "sen201-pmm-003",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "mcq",
@@ -1112,12 +1135,12 @@
             "Reducing the need for software testing",
             "Simplifying the compiler optimization process"
           ],
-          "answer": "Validation and refinement of requirements with stakeholders",
+          "answer": 0,
           "explanation": "The primary objective of building a prototype is to clarify ambiguous user requirements, validate user interface workflows, and resolve stakeholder misunderstandings early in the development lifecycle before committing major resources to production engineering.",
           "why_wrong": {
-            "Rapid delivery of the final production system": "Prototypes are typically throwaway or preliminary models, not hardened production-ready systems.",
-            "Reducing the need for software testing": "Testing remains mandatory; prototypes do not eliminate formal verification and validation.",
-            "Simplifying the compiler optimization process": "Compilers optimize binaries independently of development process models."
+            "1": "Prototypes are typically throwaway or preliminary models, not hardened production-ready systems.",
+            "2": "Testing remains mandatory; prototypes do not eliminate formal verification and validation.",
+            "3": "Compilers optimize binaries independently of development process models."
           },
           "marking_points": [
             "Validation and refinement of requirements"
@@ -1128,7 +1151,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-005",
+          "id": "sen201-pmm-005",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "mcq",
@@ -1145,12 +1168,10 @@
             "Force developers to begin writing production database queries early",
             "Eliminate the need to involve real end-users"
           ],
-          "answer": "Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration",
+          "answer": 0,
           "explanation": "Users frequently struggle to articulate abstract needs from text documents. An interactive prototype allows stakeholders to test workflows directly, exposing unstated assumptions, missing validation rules, and conflicting expectations while changes are cheap to make.",
           "why_wrong": {
-            "Replace the need for any formal written requirements...": "A prototype supplements, but does not entirely replace, formal contractual specifications.",
-            "Force developers to begin writing production database queries...": "Prototypes often use mock data; forcing early production DB design defeats the exploratory purpose.",
-            "Eliminate the need to involve real end-users": "Prototypes are built specifically to engage real end-users."
+            "3": "Prototypes are built specifically to engage real end-users."
           },
           "marking_points": [
             "Reveals hidden assumptions through interactive visual demonstration"
@@ -1161,7 +1182,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-007",
+          "id": "sen201-pmm-007",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "mcq",
@@ -1177,12 +1198,12 @@
             "Construction Phase",
             "Transition Phase"
           ],
-          "answer": "Elaboration Phase",
+          "answer": 0,
           "explanation": "RUP defines four phases: 1. Inception (establish business case and scope); 2. Elaboration (analyze problem domain, establish architectural baseline, resolve highest risks); 3. Construction (bulk coding and component integration); 4. Transition (deploying to users).",
           "why_wrong": {
-            "Inception Phase": "Inception defines project scope, business viability, and initial cost estimates, not the full architecture.",
-            "Construction Phase": "Construction builds the remaining functionality upon the already-established architectural baseline.",
-            "Transition Phase": "Transition handles beta testing, user training, and deployment."
+            "1": "Inception defines project scope, business viability, and initial cost estimates, not the full architecture.",
+            "2": "Construction builds the remaining functionality upon the already-established architectural baseline.",
+            "3": "Transition handles beta testing, user training, and deployment."
           },
           "marking_points": [
             "Identifies Elaboration phase as establishing architectural baseline"
@@ -1193,7 +1214,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-fc01",
+          "id": "sen201-pmm-fc01",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "flashcard",
@@ -1217,7 +1238,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-fc03",
+          "id": "sen201-pmm-fc03",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "flashcard",
@@ -1240,7 +1261,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-fc05",
+          "id": "sen201-pmm-fc05",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "flashcard",
@@ -1263,7 +1284,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-fc07",
+          "id": "sen201-pmm-fc07",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "flashcard",
@@ -1286,7 +1307,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-cs01-q1",
+          "id": "sen201-pmm-cs01-q1",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "mcq",
@@ -1303,7 +1324,7 @@
             "Because Agile methodologies are illegal under Nigerian copyright law.",
             "Because the Waterfall model cannot run on Linux servers."
           ],
-          "answer": "Because the project carries severe technical, legal, and national security risks that require explicit risk assessment, formal architectural baselines, and verification gates before full-scale deployment.",
+          "answer": 0,
           "explanation": "Large-scale safety-critical systems with strict regulatory compliance, multi-agency dependencies, and catastrophic failure penalties require formal risk mitigation, comprehensive documentation, and architectural verification (strengths of the Spiral Model and RUP Elaboration), which purely informal Agile sprints can overlook.",
           "why_wrong": {
             "Because the Spiral Model guarantees zero lines of code...": "Nonsensical assertion; software must be coded.",
@@ -1321,7 +1342,7 @@
           "scenario": "A federal government ministry in Abuja contracts an IT consulting consortium to develop a nationwide e-Passport and border control management system. The project involves strict biometric encryption protocols, multi-agency legal clearances, integration with international police databases, and life-critical security compliance. The ministry's senior director demands using a pure 2-week Agile sprint model, while the systems architect argues for a risk-driven Spiral Model."
         },
         {
-          "id": "sen201-pm-cs02-q1",
+          "id": "sen201-pmm-cs02-q1",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "mcq",
@@ -1338,7 +1359,7 @@
             "The hospital violating open-source GPL licenses.",
             "Developers spending too much time on automated unit tests."
           ],
-          "answer": "Management mistaking an unhardened, non-secure throwaway prototype with mock data for production-ready software.",
+          "answer": 0,
           "explanation": "As warned in Section 5.2 of the lecture notes: A primary risk of prototyping is that stakeholders see a functioning visual screen and assume the software is complete. In reality, the prototype lacks database ACID transactions, patient data encryption, audit logging, input sanitization, and concurrent error handling, creating grave patient safety hazards.",
           "why_wrong": {
             "The prototype running out of memory...": "The issue is architectural and managerial, not low-level pointer management.",
@@ -1385,12 +1406,11 @@
             "Completely eliminate the need for automated unit testing",
             "Allow one developer to sleep while the other writes code"
           ],
-          "answer": "Spread system knowledge and encourage collective code ownership",
+          "answer": 0,
           "explanation": "In Pair Programming, the Driver writes code while the Navigator continuously reviews logic, checks syntax, and considers edge cases. This continuous peer review catches bugs immediately, breaks knowledge silos across the team, and establishes collective code ownership.",
           "why_wrong": {
-            "Halve the total salary paid to developers": "Two developers working together on one task increases short-term labor cost slightly in exchange for vastly higher code quality.",
-            "Completely eliminate the need for automated unit testing": "XP mandates Test-Driven Development (TDD) regardless of pair programming.",
-            "Allow one developer to sleep...": "Both developers are actively, intellectually engaged in continuous collaboration."
+            "1": "Two developers working together on one task increases short-term labor cost slightly in exchange for vastly higher code quality.",
+            "2": "XP mandates Test-Driven Development (TDD) regardless of pair programming."
           },
           "marking_points": [
             "Spreads knowledge across the team",
@@ -1419,12 +1439,11 @@
             "Selling proprietary compilers to decode the open source",
             "Selling user private browser search histories"
           ],
-          "answer": "Selling enterprise support, consulting, maintenance, and cloud services for the software product",
+          "answer": 0,
           "explanation": "Because open-source code is freely accessible, open-source business models monetize complementary services: enterprise technical support SLAs, security certification, customized integration, consulting, and managed cloud hosting.",
           "why_wrong": {
-            "Suing users who download the public source code": "Open-source licenses explicitly grant the right to download and use the code.",
-            "Selling proprietary compilers...": "Open source is compiled using standard public tools (e.g. GCC, Clang, OpenJDK).",
-            "Selling user private browser search histories": "Unethical data-broker practice unrelated to open-source software business models."
+            "1": "Open-source licenses explicitly grant the right to download and use the code.",
+            "3": "Unethical data-broker practice unrelated to open-source software business models."
           },
           "marking_points": [
             "Monetizes support, maintenance, training, and managed services"
@@ -1467,7 +1486,13 @@
           "source": "Software Engineering Concepts Lecture Notes, Section 9.6",
           "verified": true,
           "verified_output": "N/A",
-          "topic_slug": "agile_scrum_kanban_xp"
+          "topic_slug": "agile_scrum_kanban_xp",
+          "steps": [
+            "1. RED (Write a unit test that defines a feature and watch it fail) -> 2. GREEN (Write the minimal production code necessary to pass the test) -> 3. REFACTOR (Clean up the code, eliminate duplication, and improve design while keeping tests green)",
+            "1. GREEN -> 2. RED -> 3. REFACTOR",
+            "1. REFACTOR -> 2. CODE -> 3. TEST",
+            "1. WRITE ALL CODE -> 2. MANUAL TEST -> 3. DEPLOY"
+          ]
         },
         {
           "id": "sen201-ag-008",
@@ -1486,7 +1511,7 @@
             "1. What language should we switch to? 2. When is lunch? 3. What bugs did QA find?",
             "1. What is the database password? 2. Did the client pay? 3. What is my next promotion?"
           ],
-          "answer": "1. What did I accomplish yesterday? 2. What will I work on today? 3. Are there any impediments/blockers in my way?",
+          "answer": 0,
           "explanation": "The Daily Scrum is a brief, focused synchronization event where each team member answers: 1. What did I do yesterday that helped the team meet the Sprint Goal? 2. What will I do today? 3. What obstacles or blockers are impeding progress? Detailed architectural debates are deferred to separate follow-up sessions.",
           "why_wrong": {
             "1. How much bonus do I deserve?...": "Daily standups are synchronization check-ins, not salary reviews.",
@@ -1736,7 +1761,13 @@
           "explanation": "In standard n-tier architecture, requests flow downward: Presentation Layer captures user actions -> Business Logic executes business validation and computations -> Data Access Layer constructs queries and maps models -> Database Layer stores and manages persistent records.",
           "why_wrong": {},
           "source": "Sommerville Ch. 6; Software Engineering Concepts and Principles Lecture Notes",
-          "topic_slug": "architecture_patterns"
+          "topic_slug": "architecture_patterns",
+          "steps": [
+            "Presentation Layer (User Interface & Controllers)",
+            "Business Logic / Domain Application Layer",
+            "Data Access / Persistence Layer (ORMs, DAOs)",
+            "Database / Storage Layer (Relational DBMS, Cloud Storage)"
+          ]
         },
         {
           "id": "sen201-ap-008",
@@ -1766,7 +1797,12 @@
             "3": "Encapsulating internal fields via accessors is standard object-oriented information hiding, not a violation of SOLID."
           },
           "source": "Software Engineering Concepts and Principles Lecture Notes; Martin (2002) Agile Software Development",
-          "topic_slug": "architecture_patterns"
+          "topic_slug": "architecture_patterns",
+          "answers": [
+            0,
+            1,
+            2
+          ]
         },
         {
           "id": "sen201-ap-fc02",
@@ -1855,7 +1891,7 @@
             "Specifies an exact cache invalidation trigger (e.g., invalidate or update cache entry when a lecturer uploads or amends an approved grade).",
             "Notes the non-functional benefit: drastic reduction in database CPU contention and sub-second response times for student queries."
           ],
-          "answer": "1. Architectural Abstraction: The Repository pattern encapsulates data retrieval logic, cleanly isolating GPA calculation rules from persistent storage.\n2. Caching Strategy: Because grade records are read far more frequently than they are updated, GPA results can be memoized in an in-memory cache (e.g., Redis), transforming expensive 45-second multi-table aggregation queries into sub-millisecond key-value lookups.\n3. Cache Invalidation Policy: The cache must use write-through or event-driven invalidation\u2014whenever a lecturer submits or modifies a grade in the Academic Records subsystem, the cached GPA entry for affected students is invalidated and recalculated.\n4. Non-Functional Impact: Relieves database lock contention and guarantees consistent sub-second page loads during peak registration.",
+          "answer": "1. Architectural Abstraction: The Repository pattern encapsulates data retrieval logic, cleanly isolating GPA calculation rules from persistent storage.\n2. Caching Strategy: Because grade records are read far more frequently than they are updated, GPA results can be memoized in an in-memory cache (e.g., Redis), transforming expensive 45-second multi-table aggregation queries into sub-millisecond key-value lookups.\n3. Cache Invalidation Policy: The cache must use write-through or event-driven invalidation—whenever a lecturer submits or modifies a grade in the Academic Records subsystem, the cached GPA entry for affected students is invalidated and recalculated.\n4. Non-Functional Impact: Relieves database lock contention and guarantees consistent sub-second page loads during peak registration.",
           "explanation": "Separating calculation logic from direct disk storage via repository caching ensures high availability and eliminates recalculation storms.",
           "why_wrong": {},
           "source": "Sommerville Ch. 6; Architecture Case Studies",
@@ -2002,7 +2038,29 @@
           "explanation": "Unites the fundamental process models tested in the Nile SEN 201 examination: Waterfall (linear), Spiral (risk-driven), Scrum (sprints), RUP (architecture-centric), and XP (code craftsmanship).",
           "why_wrong": {},
           "source": "Nile Final Exam Paper Type B Q3, Q4, Q15, Q53, Q54; Sommerville Ch. 2 & 3",
-          "topic_slug": "final_exam_comprehensive"
+          "topic_slug": "final_exam_comprehensive",
+          "pairs": [
+            {
+              "left": "Waterfall Model",
+              "right": "Strict linear phase-gate progression requiring fully signed-off requirements before design begins"
+            },
+            {
+              "left": "Spiral Model",
+              "right": "Risk-driven iterative lifecycle with formal risk assessment at every revolving loop"
+            },
+            {
+              "left": "Scrum",
+              "right": "Agile framework delivering working software in fixed-length 2-4 week sprints with daily standups"
+            },
+            {
+              "left": "Rational Unified Process (RUP)",
+              "right": "Architecture-centric, use-case driven iterative framework across 4 phases (Inception to Transition)"
+            },
+            {
+              "left": "Extreme Programming (XP)",
+              "right": "Disciplined agile practice emphasizing Test-Driven Development (TDD) and Pair Programming"
+            }
+          ]
         },
         {
           "id": "sen201-fe-008",
@@ -2032,7 +2090,12 @@
             "3": "Hardware advancements increase system scale and complexity, which exacerbates software errors if disciplined engineering is neglected."
           },
           "source": "Nile Final Exam Paper Type B Q1, Q2, Q66; Sommerville Ch. 1",
-          "topic_slug": "final_exam_comprehensive"
+          "topic_slug": "final_exam_comprehensive",
+          "answers": [
+            0,
+            1,
+            2
+          ]
         },
         {
           "id": "sen201-fe-fc02",
@@ -2287,7 +2350,25 @@
           "explanation": "ISO/IEC 14764 standardizes software maintenance into four distinct categories based on operational intent: Corrective (fixing bugs), Adaptive (adapting to environment changes), Perfective (adding enhancements), and Preventive (proactive refactoring).",
           "why_wrong": {},
           "source": "ISO/IEC 14764; Nile Final Exam Q75",
-          "topic_slug": "maintenance_reengineering"
+          "topic_slug": "maintenance_reengineering",
+          "pairs": [
+            {
+              "left": "Corrective Maintenance",
+              "right": "Patching a memory leak and fixing a zero-division error reported by users in production"
+            },
+            {
+              "left": "Adaptive Maintenance",
+              "right": "Modifying payment drivers after migrating from an on-premise server to AWS Linux cloud"
+            },
+            {
+              "left": "Perfective Maintenance",
+              "right": "Adding multi-currency support and biometric fingerprint login to satisfy new customer requests"
+            },
+            {
+              "left": "Preventive Maintenance",
+              "right": "Refactoring a 3,000-line God class and extracting duplicate methods into shared utility modules"
+            }
+          ]
         },
         {
           "id": "sen201-mr-fc02",
@@ -2408,7 +2489,7 @@
           "scenario": "A 5-year-old logistics startup experienced rapid growth, expanding from 10 drivers to 50,000 drivers. To meet aggressive marketing deadlines, developers took shortcuts, resulting in a single `OrderManager` class with 4,200 lines of code, 38 global fields, and methods with cyclomatic complexities exceeding 45. A single change to order calculation breaks driver payout processing, requiring emergency weekend rollbacks. The development team requests a dedicated 3-week refactoring sprint."
         },
         {
-          "id": "sen201-pm-002",
+          "id": "sen201-pmm-002",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "mcq",
@@ -2425,12 +2506,12 @@
             "Implementation",
             "Maintenance"
           ],
-          "answer": "Requirements analysis and specification",
+          "answer": 0,
           "explanation": "In the classical Waterfall Model, detailed functional and non-functional requirements are gathered, analyzed, and documented in a formal Software Requirements Specification (SRS) during the Requirements Analysis phase before any design or coding begins.",
           "why_wrong": {
-            "System design": "Design focuses on creating the architectural blueprint, data structures, and algorithms to satisfy already-defined requirements.",
-            "Implementation": "Implementation translates detailed design into executable source code.",
-            "Maintenance": "Maintenance occurs post-deployment to patch defects and handle environmental changes."
+            "1": "Design focuses on creating the architectural blueprint, data structures, and algorithms to satisfy already-defined requirements.",
+            "2": "Implementation translates detailed design into executable source code.",
+            "3": "Maintenance occurs post-deployment to patch defects and handle environmental changes."
           },
           "marking_points": [
             "Identifies Requirements Analysis phase"
@@ -2441,7 +2522,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-004",
+          "id": "sen201-pmm-004",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "mcq",
@@ -2459,12 +2540,12 @@
             "Writing code without any software architecture",
             "Manual testing without automated tools"
           ],
-          "answer": "Iterative development and architecture-centric management of requirements",
+          "answer": 0,
           "explanation": "RUP is an iterative and incremental process framework characterized as being: 1. Use-case driven; 2. Architecture-centric (establishing an executable architectural baseline in the Elaboration phase); and 3. Iterative and risk-focused.",
           "why_wrong": {
-            "Strict adherence to a linear waterfall sequence": "RUP explicitly rejects single-pass waterfall development in favor of iterative cycles.",
-            "Writing code without any software architecture": "RUP is famously architecture-centric, emphasizing early architectural stabilization.",
-            "Manual testing without automated tools": "RUP strongly emphasizes automated test suites."
+            "1": "RUP explicitly rejects single-pass waterfall development in favor of iterative cycles.",
+            "2": "RUP is famously architecture-centric, emphasizing early architectural stabilization.",
+            "3": "RUP strongly emphasizes automated test suites."
           },
           "marking_points": [
             "Iterative development",
@@ -2476,7 +2557,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-006",
+          "id": "sen201-pmm-006",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "matching",
@@ -2508,10 +2589,28 @@
           "source": "Software Engineering Process Models Lecture Notes, Section 5",
           "verified": true,
           "verified_output": "N/A",
-          "topic_slug": "process_models_traditional"
+          "topic_slug": "process_models_traditional",
+          "pairs": [
+            {
+              "left": "Acceptance Testing",
+              "right": "Requirements Analysis"
+            },
+            {
+              "left": "System Testing",
+              "right": "System Architecture Design"
+            },
+            {
+              "left": "Integration Testing",
+              "right": "Detailed Subsystem Design"
+            },
+            {
+              "left": "Unit Testing",
+              "right": "Component Implementation"
+            }
+          ]
         },
         {
-          "id": "sen201-pm-008",
+          "id": "sen201-pmm-008",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "mcq",
@@ -2528,7 +2627,7 @@
             "The Waterfall Model cannot be used with relational databases.",
             "Waterfall requires zero documentation, leaving no audit trail."
           ],
-          "answer": "Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.",
+          "answer": 0,
           "explanation": "Because Waterfall requires freezing requirements before design and coding, changing requirements mid-way requires discarding completed work. Testing happens at the end ('big bang'), meaning major conceptual misunderstandings are discovered too late.",
           "why_wrong": {
             "Developers will write code too quickly...": "Waterfall delays coding until requirements and design are fully documented.",
@@ -2545,7 +2644,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-fc02",
+          "id": "sen201-pmm-fc02",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "flashcard",
@@ -2568,7 +2667,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-fc04",
+          "id": "sen201-pmm-fc04",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "flashcard",
@@ -2592,7 +2691,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-fc06",
+          "id": "sen201-pmm-fc06",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "flashcard",
@@ -2615,7 +2714,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-fc08",
+          "id": "sen201-pmm-fc08",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "flashcard",
@@ -2638,7 +2737,7 @@
           "topic_slug": "process_models_traditional"
         },
         {
-          "id": "sen201-pm-cs01-q2",
+          "id": "sen201-pmm-cs01-q2",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "explain",
@@ -2665,7 +2764,7 @@
           "scenario": "A federal government ministry in Abuja contracts an IT consulting consortium to develop a nationwide e-Passport and border control management system. The project involves strict biometric encryption protocols, multi-agency legal clearances, integration with international police databases, and life-critical security compliance. The ministry's senior director demands using a pure 2-week Agile sprint model, while the systems architect argues for a risk-driven Spiral Model."
         },
         {
-          "id": "sen201-pm-cs02-q2",
+          "id": "sen201-pmm-cs02-q2",
           "course": "SEN 201",
           "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
           "type": "explain",

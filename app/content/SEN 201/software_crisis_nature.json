@@ -63,12 +63,12 @@
         "Difficulties in meeting schedules and budgets in software projects only",
         "Lack of qualified software engineers only"
       ],
-      "answer": "All of the above (frequent crashes of software systems, difficulties in meeting schedules and budgets, and lack of qualified software engineers)",
+      "answer": 0,
       "explanation": "As stated in Nile Exam Question 1: The 'software crisis' (formally identified at the 1968 NATO conference) manifested across multiple interrelated dimensions: catastrophic schedule delays and cost blowouts, poor reliability leading to frequent system crashes, and an acute shortage of trained engineers capable of building large-scale systems.",
       "why_wrong": {
-        "Frequent crashes of software systems only": "Incomplete; ignores the profound economic schedule and cost failures.",
-        "Difficulties in meeting schedules and budgets in software projects only": "Incomplete; ignores the technical quality and personnel crises.",
-        "Lack of qualified software engineers only": "Incomplete; only describes the labor symptom without the technical impact."
+        "1": "Incomplete; ignores the profound economic schedule and cost failures.",
+        "2": "Incomplete; ignores the technical quality and personnel crises.",
+        "3": "Incomplete; only describes the labor symptom without the technical impact."
       },
       "marking_points": [
         "Identifies schedule/budget failures",
@@ -97,12 +97,12 @@
         "Increase in the number of software engineers",
         "Evolution of programming languages"
       ],
-      "answer": "Failure of large software projects to meet schedule and budget constraints",
+      "answer": 0,
       "explanation": "As software projects grew in scale in the 1960s, informal, craft-based programming approaches collapsed. The birth of software engineering as an engineering discipline was precipitated by the systemic failure of large software projects to meet schedule and budget constraints, necessitating rigorous, measurable processes.",
       "why_wrong": {
-        "Demand for faster computers": "Hardware speed increased independently via semiconductor advancements (Moore's law).",
-        "Increase in the number of software engineers": "An increase in personnel did not solve the crisis; poor processes made large teams even less efficient (Brooks' Law).",
-        "Evolution of programming languages": "New languages were a tool, not the primary historical driver for establishing the discipline."
+        "1": "Hardware speed increased independently via semiconductor advancements (Moore's law).",
+        "2": "An increase in personnel did not solve the crisis; poor processes made large teams even less efficient (Brooks' Law).",
+        "3": "New languages were a tool, not the primary historical driver for establishing the discipline."
       },
       "marking_points": [
         "Identifies failure of large projects to meet budget and schedule constraints"
@@ -128,12 +128,10 @@
         "Software engineering only applies to embedded systems, while programming applies to web applications.",
         "There is no distinction; they are completely interchangeable terms."
       ],
-      "answer": "Software engineering encompasses the entire software life cycle (requirements, architecture, testing, maintenance, and project management), whereas programming focuses primarily on writing code syntax and algorithms.",
+      "answer": 0,
       "explanation": "Programming is a sub-activity within software engineering. Software engineering is a disciplined, measurable approach spanning feasibility, requirements engineering, architectural design, verification and validation, deployment, maintenance, cost estimation, and multidisciplinary team management.",
       "why_wrong": {
-        "Programming is done in teams, while software engineering is strictly an individual effort.": "The opposite is true: large-scale software engineering inherently requires coordinated multidisciplinary teams.",
-        "Software engineering only applies to embedded systems...": "Software engineering applies universally across all software domains.",
-        "There is no distinction...": "Confuses a single craft implementation step with an end-to-end engineering discipline."
+        "1": "The opposite is true: large-scale software engineering inherently requires coordinated multidisciplinary teams."
       },
       "marking_points": [
         "Covers full life cycle vs code implementation",
@@ -161,7 +159,7 @@
         "Generic products have no user interface, while customized products always have a GUI.",
         "Generic products never require maintenance, while customized products require daily updates."
       ],
-      "answer": "In generic products, the specification is owned and controlled by the software developer; in customized products, the specification is owned and controlled by the customer.",
+      "answer": 0,
       "explanation": "Generic products (e.g. Windows, Excel, Photoshop) are sold to the open market, so the vendor determines features and release schedules. Customized products (e.g. Nile University Student Portal, hospital patient records) are commissioned by a single client, who dictates the precise requirements and owns the specification.",
       "why_wrong": {
         "In generic products, only open-source code can be used...": "Most generic software (e.g. Microsoft Office) is proprietary commercial software.",
@@ -193,12 +191,12 @@
         "High Cohesion within modules and High Coupling between modules.",
         "Low Cohesion within modules and Low Coupling between modules."
       ],
-      "answer": "High Cohesion within modules and Low Coupling between modules.",
+      "answer": 0,
       "explanation": "High cohesion means that elements within a single module collaborate closely on a single, well-defined responsibility (making it easy to understand and maintain). Low coupling means modules depend as little as possible on one another's internal details (preventing bugs from rippling across the system).",
       "why_wrong": {
-        "Low Cohesion within modules and High Coupling between modules.": "This is the worst possible architectural anti-pattern ('spaghetti code').",
-        "High Cohesion within modules and High Coupling between modules.": "High coupling creates rigid, fragile systems that cannot be modified independently.",
-        "Low Cohesion within modules and Low Coupling between modules.": "Low cohesion produces bloated, unfocused 'god classes'."
+        "1": "This is the worst possible architectural anti-pattern ('spaghetti code').",
+        "2": "High coupling creates rigid, fragile systems that cannot be modified independently.",
+        "3": "Low cohesion produces bloated, unfocused 'god classes'."
       },
       "marking_points": [
         "Selects High Cohesion",
@@ -225,12 +223,12 @@
         "Defensive Programming",
         "Abstraction"
       ],
-      "answer": "Single Responsibility Principle (SRP)",
+      "answer": 0,
       "explanation": "The Single Responsibility Principle (SRP) dictates that a class or module should have only one reason to change. The 'StudentAccountManager' has three distinct reasons to change: accounting fee rules, PDF formatting changes, and email notification provider updates. These three concerns should be split into separate cohesive classes.",
       "why_wrong": {
-        "Principle of Least Privilege": "This principle relates to user security access rights, not class responsibilities.",
-        "Defensive Programming": "This involves input validation and error handling, not module boundaries.",
-        "Abstraction": "Abstraction hides implementation details; the violation here is combining multiple responsibilities."
+        "1": "This principle relates to user security access rights, not class responsibilities.",
+        "2": "This involves input validation and error handling, not module boundaries.",
+        "3": "Abstraction hides implementation details; the violation here is combining multiple responsibilities."
       },
       "marking_points": [
         "Identifies violation of Single Responsibility Principle",
@@ -258,12 +256,12 @@
         "Don't Repeat Yourself (DRY)",
         "Information Hiding"
       ],
-      "answer": "Dependency Inversion Principle (DIP)",
+      "answer": 0,
       "explanation": "DIP states: High-level modules should not depend on low-level modules; both should depend on abstractions. Directly coupling the business logic (registration) to a concrete low-level driver (MySQL) prevents switching to PostgreSQL, SQLite, or a mock testing database without rewriting core business logic.",
       "why_wrong": {
-        "Open-Closed Principle (OCP)": "OCP deals with extending functionality without modifying existing code.",
-        "Don't Repeat Yourself (DRY)": "DRY addresses code and knowledge duplication.",
-        "Information Hiding": "The driver might still hide internal variables, but the dependency direction is inverted."
+        "1": "OCP deals with extending functionality without modifying existing code.",
+        "2": "DRY addresses code and knowledge duplication.",
+        "3": "The driver might still hide internal variables, but the dependency direction is inverted."
       },
       "marking_points": [
         "Identifies violation of Dependency Inversion Principle",
@@ -291,7 +289,7 @@
         "Software should be written without any security controls to maximize speed.",
         "All users must be given root administrator privileges to prevent permission errors."
       ],
-      "answer": "Every user, process, or system component must operate using only the minimal set of permissions necessary to perform its legitimate task.",
+      "answer": 0,
       "explanation": "The Principle of Least Privilege limits the potential blast radius of an exploit or bug. For instance, in a university portal, a student account should never have database write access to modify grades, and a web worker process should not run with root/administrator OS privileges.",
       "why_wrong": {
         "Developers should be paid as little as possible...": "A humorous distractor; least privilege is an architectural security rule, not compensation.",
@@ -338,7 +336,13 @@
       ],
       "source": "Software Engineering Concepts Lecture Notes, Section 11 & Lehman's Laws",
       "verified": true,
-      "verified_output": "N/A"
+      "verified_output": "N/A",
+      "steps": [
+        "Continuing Change forces modifications -> Increasing Complexity degrades internal structure -> Quality declines unless actively maintained -> Growth rate slows as maintenance consumed by technical debt",
+        "Software automatically refactors itself -> Complexity decreases -> Performance improves exponentially",
+        "Software stabilizes permanently and never requires changes after release",
+        "Hardware upgrades automatically resolve all software architectural deficiencies"
+      ]
     },
     {
       "id": "sen201-sc-010",
@@ -567,12 +571,10 @@
             "It exhibits High Cohesion because all code is located conveniently in one file.",
             "It demonstrates proper Separation of Concerns because all banking tasks are together."
           ],
-          "answer": "It exhibits critically Low Cohesion (combining unrelated responsibilities) and High Coupling (tight internal dependencies between calculations, database, and third-party APIs).",
+          "answer": 0,
           "explanation": "Cohesion measures internal focus: a single class doing UI, risk math, database queries, PDF generation, and SMS calls has very low cohesion. Coupling measures interdependency: changes in risk math rippling into SMS crashes proves tight coupling. Placing everything in one file is an anti-pattern, not cohesion.",
           "why_wrong": {
-            "It exhibits High Cohesion and Low Coupling...": "Completely contradicts the observed cascading bugs and bloated design.",
-            "It exhibits High Cohesion because all code is located conveniently in one file.": "Common student blunder: confusing file compactness with functional cohesion.",
-            "It demonstrates proper Separation of Concerns...": "It completely destroys separation of concerns by tangling presentation, business logic, and I/O."
+            "2": "Common student blunder: confusing file compactness with functional cohesion."
           },
           "marking_points": [
             "Identifies Low Cohesion",
@@ -632,7 +634,7 @@
             "Generic software is legally prohibited from storing student matriculation numbers.",
             "Generic software developers always retain the right to delete university grades."
           ],
-          "answer": "The university does not control the software specification, forcing the university to either compromise on its unique institutional examination rules or incur high customization and integration costs.",
+          "answer": 0,
           "explanation": "In generic software, the vendor owns and controls the specification to satisfy general market demand. When an institution has unique local workflows (e.g. Nile University's specific continuous assessment weighting or biometric clearance gates), generic software often requires awkward workarounds or costly custom integration layers.",
           "why_wrong": {
             "Generic software cannot run on modern hardware...": "Commercial software is typically designed for standard modern hardware architectures.",
@@ -665,7 +667,7 @@
             "Direct DROP and ALTER TABLE SQL privileges to reset the database between exams.",
             "Zero database access of any kind; all validation must be done purely via paper printouts."
           ],
-          "answer": "Read-only access to verify student enrollment and biometric templates, and append-only permission to record attendance timestamp records for that specific exam session.",
+          "answer": 0,
           "explanation": "Under the Principle of Least Privilege, the tablet app needs only to check who is eligible (read enrollment) and mark who showed up (append timestamp log). Granting write or admin access to academic records creates severe security risks (e.g. grade tampering if a tablet is stolen).",
           "why_wrong": {
             "Full read-write administrator access...": "Massive security vulnerability violating least privilege.",

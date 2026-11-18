@@ -347,7 +347,12 @@
       "why_wrong": {},
       "source": "Deitel C How to Program, Section 6.2 & 6.9",
       "verified": true,
-      "verified_output": "(Conceptual terminology)"
+      "verified_output": "(Conceptual terminology)",
+      "blanks": [
+        "contiguous",
+        "type",
+        "row-major"
+      ]
     },
     {
       "id": "cos201-arr-012",
@@ -410,7 +415,14 @@
       "why_wrong": {},
       "source": "Deitel C How to Program, Section 6.7",
       "verified": true,
-      "verified_output": "(Algorithm step sequence)"
+      "verified_output": "(Algorithm step sequence)",
+      "steps": [
+        "Start with index i = 0",
+        "Compare element arr[i] with its adjacent neighbor arr[i + 1]",
+        "If arr[i] > arr[i + 1], swap their contents",
+        "Increment i and repeat comparison until i reaches the end of the unsorted segment",
+        "The largest unsorted value is now placed at its final sorted position at the end"
+      ]
     },
     {
       "id": "cos201-arr-014",
@@ -440,7 +452,25 @@
       "why_wrong": {},
       "source": "Deitel C How to Program, Chapter 6",
       "verified": true,
-      "verified_output": "(Matching concept map)"
+      "verified_output": "(Matching concept map)",
+      "pairs": [
+        {
+          "left": "int a[10] = {0};",
+          "right": "Initializes all 10 elements to zero"
+        },
+        {
+          "left": "sizeof(a) / sizeof(a[0])",
+          "right": "Calculates number of elements in a static array"
+        },
+        {
+          "left": "a[row][col]",
+          "right": "Accesses element in row-major 2D array"
+        },
+        {
+          "left": "const int a[]",
+          "right": "Read-only array parameter protected from callee modification"
+        }
+      ]
     },
     {
       "id": "cos201-arr-015",

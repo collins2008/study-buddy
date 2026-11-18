@@ -203,7 +203,29 @@
       ],
       "explanation": "These methods form the core toolkit for dynamic client-side DOM manipulation taught in 200-level web technology courses.",
       "why_wrong": {},
-      "source": "MDN Node and Element APIs; IFT 203 Syllabus"
+      "source": "MDN Node and Element APIs; IFT 203 Syllabus",
+      "pairs": [
+        {
+          "left": "document.createElement('div')",
+          "right": "Creates a new element node in memory, ready to be attached to the DOM"
+        },
+        {
+          "left": "parent.appendChild(child)",
+          "right": "Inserts a node as the last child of a specified parent element"
+        },
+        {
+          "left": "element.classList.toggle('active')",
+          "right": "Adds the class if it is absent; removes the class if it is present"
+        },
+        {
+          "left": "element.setAttribute('src', 'logo.png')",
+          "right": "Sets the specified HTML attribute to a given value"
+        },
+        {
+          "left": "element.remove()",
+          "right": "Deletes the target element node completely from the DOM tree"
+        }
+      ]
     },
     {
       "id": "ift203-js-006",
@@ -229,7 +251,12 @@
       ],
       "explanation": "Standard W3C event propagation consists of three sequential phases: 1. Capturing (trickling down), 2. Target (executing on the target element), and 3. Bubbling (propagating back up through ancestor nodes).",
       "why_wrong": {},
-      "source": "W3C DOM Event Architecture; MDN Event Propagation"
+      "source": "W3C DOM Event Architecture; MDN Event Propagation",
+      "steps": [
+        "Capturing Phase (event travels downwards from Window/Document down the ancestor tree to the target)",
+        "Target Phase (event reaches the exact element that was clicked)",
+        "Bubbling Phase (event bubbles upwards from the target element back up through ancestors to Document/Window)"
+      ]
     },
     {
       "id": "ift203-js-007",
@@ -285,7 +312,12 @@
       "why_wrong": {
         "3": "`compile` is not a DOM event; HTML is markup parsed by browsers, not compiled into C binaries."
       },
-      "source": "MDN Event Reference; IFT 203 Lecture Notes"
+      "source": "MDN Event Reference; IFT 203 Lecture Notes",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ift203-js-fc01",

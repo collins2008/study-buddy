@@ -273,7 +273,13 @@
         "lemonade"
       ],
       "explanation": "Slide 17 outlines the five principles: Bird in hand (available means), Affordable loss (risk only what you can lose), Crazy quilt (partnerships), Lemonade (leverage surprises), and Pilot in the plane (focus on what can be influenced).",
-      "source": "Entrepreneurship Theories Deck, Slide 17: Effectuation: Five Principles"
+      "source": "Entrepreneurship Theories Deck, Slide 17: Effectuation: Five Principles",
+      "blanks": [
+        "bird in hand",
+        "affordable loss",
+        "crazy quilt",
+        "lemonade"
+      ]
     },
     {
       "id": "ent211-thy-010",
@@ -299,7 +305,25 @@
         "Action Framework: Effectual logic, affordable loss, and means-driven venture creation"
       ],
       "explanation": "Knight represents economic uncertainty. McClelland represents psychological motivation (n-Ach). Weber represents sociological and cultural values. Sarasvathy represents effectuation action logic.",
-      "source": "Entrepreneurship Theories Deck, Slides 3 & 20: Three Families of Explanation"
+      "source": "Entrepreneurship Theories Deck, Slides 3 & 20: Three Families of Explanation",
+      "pairs": [
+        {
+          "left": "Frank H. Knight",
+          "right": "Economic Theory: Unmeasurable uncertainty as the source of entrepreneurial profit"
+        },
+        {
+          "left": "David McClelland",
+          "right": "Psychological Theory: Need for Achievement (n-Ach) and moderate risk preference"
+        },
+        {
+          "left": "Max Weber",
+          "right": "Sociological Theory: Religious work ethics, cultural values, and capital accumulation"
+        },
+        {
+          "left": "Saras Sarasvathy",
+          "right": "Action Framework: Effectual logic, affordable loss, and means-driven venture creation"
+        }
+      ]
     },
     {
       "id": "ent211-thy-011",
@@ -326,7 +350,13 @@
         3
       ],
       "explanation": "Deck 4 (Slide 7) details the sequence: New technology or model -> Older products replaced -> Weak firms lose customers -> Overall economic productivity improves.",
-      "source": "Entrepreneurship Theories Deck, Slide 7: Schumpeter: Creative Destruction"
+      "source": "Entrepreneurship Theories Deck, Slide 7: Schumpeter: Creative Destruction",
+      "steps": [
+        "Entrepreneur introduces a 'new combination' (new technology, product, or business model)",
+        "The innovative solution attracts customers away from established legacy providers",
+        "Older, inefficient firms lose market share and face obsolescence or bankruptcy",
+        "Macroeconomic productivity increases and a higher-efficiency economic equilibrium is established"
+      ]
     },
     {
       "id": "ent211-thy-012",

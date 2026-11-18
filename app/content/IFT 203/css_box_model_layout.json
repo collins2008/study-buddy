@@ -203,7 +203,29 @@
       ],
       "explanation": "These five positioning schemes dictate how elements are placed and shifted relative to the normal flow, ancestors, or viewport.",
       "why_wrong": {},
-      "source": "IFT 203 Week 6 Slides; MDN Position"
+      "source": "IFT 203 Week 6 Slides; MDN Position",
+      "pairs": [
+        {
+          "left": "static",
+          "right": "Normal document flow; top/left/z-index properties have zero effect"
+        },
+        {
+          "left": "relative",
+          "right": "Positioned offset from its own normal flow position, retaining its original footprint"
+        },
+        {
+          "left": "absolute",
+          "right": "Removed from flow; positioned relative to nearest non-static positioned ancestor"
+        },
+        {
+          "left": "fixed",
+          "right": "Removed from flow; positioned relative to browser viewport, staying stationary on scroll"
+        },
+        {
+          "left": "sticky",
+          "right": "Toggles between relative and fixed positioning based on the user's scroll position"
+        }
+      ]
     },
     {
       "id": "ift203-bm-006",
@@ -230,7 +252,13 @@
       ],
       "explanation": "The CSS Box Model is structured strictly from inside to outside: Content -> Padding -> Border -> Margin.",
       "why_wrong": {},
-      "source": "IFT 203 Week 6 Slides; W3C Box Model"
+      "source": "IFT 203 Week 6 Slides; W3C Box Model",
+      "steps": [
+        "Content (the inner text, child elements, or image)",
+        "Padding (the transparent interior cushion around the content)",
+        "Border (the outline enclosing the padding and content)",
+        "Margin (the transparent exterior clearance outside the border)"
+      ]
     },
     {
       "id": "ift203-bm-007",
@@ -286,7 +314,12 @@
       "why_wrong": {
         "3": "CSS Flexbox was developed by the W3C in the 2010s for responsive web layouts, not 1965 televisions."
       },
-      "source": "IFT 203 Week 6 Slides; W3C CSS Flexible Box Layout"
+      "source": "IFT 203 Week 6 Slides; W3C CSS Flexible Box Layout",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ift203-bm-fc01",

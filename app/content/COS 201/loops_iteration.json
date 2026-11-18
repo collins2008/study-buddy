@@ -148,8 +148,7 @@
       "answer": 0,
       "explanation": "The loop runs for i = 0, 1, 2:\n- i = 0: x = 0 + 0 = 0\n- i = 1: x = 0 + 1 = 1\n- i = 2: x = 1 + 2 = 3\nWhen i becomes 3, '3 < 3' is false. printf outputs 3.",
       "why_wrong": {
-        "1": "2 is the final value of i, not the accumulated sum x.",
-        "2": "6 would be the result if i <= 3 was used (0 + 1 + 2 + 3 = 6).",
+        "1": "6 would be the result if i <= 3 was used (0 + 1 + 2 + 3 = 6).",
         "3": "x is updated in iterations 1 and 2, so it does not remain 0."
       },
       "source": "COS 201 Midterm Type B, Q17; Deitel Ch 4.3",

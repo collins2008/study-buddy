@@ -148,9 +148,8 @@
           "answer": 1,
           "explanation": "'++x' is a pre-increment operator. It increments the value of 'x' from 2 to 3 first, and then supplies the updated value 3 to printf.",
           "why_wrong": {
-            "0": "2 would be the output if post-increment 'x++' were used.",
-            "2": "Pre-increment adds 1 to x, it does not subtract.",
-            "3": "Pre-increment inside printf is standard, valid C syntax."
+            "0": "Pre-increment adds 1 to x, it does not subtract.",
+            "2": "Pre-increment inside printf is standard, valid C syntax."
           },
           "source": "COS 201 Midterm Type B, Q3; Deitel Ch 3.12",
           "verified": true,
@@ -709,7 +708,25 @@
           "source": "Deitel C How to Program, Chapter 6",
           "verified": true,
           "verified_output": "(Matching concept map)",
-          "topic_slug": "arrays_1d_2d"
+          "topic_slug": "arrays_1d_2d",
+          "pairs": [
+            {
+              "left": "int a[10] = {0};",
+              "right": "Initializes all 10 elements to zero"
+            },
+            {
+              "left": "sizeof(a) / sizeof(a[0])",
+              "right": "Calculates number of elements in a static array"
+            },
+            {
+              "left": "a[row][col]",
+              "right": "Accesses element in row-major 2D array"
+            },
+            {
+              "left": "const int a[]",
+              "right": "Read-only array parameter protected from callee modification"
+            }
+          ]
         },
         {
           "id": "cos201-ptr-001",
@@ -833,7 +850,25 @@
           "source": "Deitel C How to Program, Chapter 7",
           "verified": true,
           "verified_output": "(Concept map)",
-          "topic_slug": "pointers_memory"
+          "topic_slug": "pointers_memory",
+          "pairs": [
+            {
+              "left": "&var",
+              "right": "Memory address of variable var"
+            },
+            {
+              "left": "*ptr",
+              "right": "Value stored at address in ptr"
+            },
+            {
+              "left": "ptr + 1",
+              "right": "Address of the next element scaled by data type size"
+            },
+            {
+              "left": "const int *p",
+              "right": "Pointer to read-only integer data"
+            }
+          ]
         },
         {
           "id": "cos201-str-001",
@@ -956,7 +991,25 @@
           "source": "Deitel C How to Program, Chapter 8",
           "verified": true,
           "verified_output": "(Function map)",
-          "topic_slug": "strings_char_arrays"
+          "topic_slug": "strings_char_arrays",
+          "pairs": [
+            {
+              "left": "strlen(s)",
+              "right": "Returns number of characters preceding the null terminator"
+            },
+            {
+              "left": "strcpy(dest, src)",
+              "right": "Copies source string to destination buffer including '\\0'"
+            },
+            {
+              "left": "strcat(dest, src)",
+              "right": "Appends source string to the end of destination string"
+            },
+            {
+              "left": "strcmp(s1, s2)",
+              "right": "Lexicographically compares two strings (0 if identical)"
+            }
+          ]
         },
         {
           "id": "cos201-mid-003",
@@ -977,12 +1030,11 @@
             "1",
             "Error"
           ],
-          "answer": "3",
+          "answer": 1,
           "explanation": "The prefix increment operator (++x) increments the value of x from 2 to 3 first, and then evaluates to the new incremented value (3), which is passed to printf.",
           "why_wrong": {
-            "2": "This would be the output if post-increment (x++) had been used, which evaluates before incrementing.",
-            "1": "Confusion with decrement operator (--x).",
-            "Error": "The syntax is completely valid C."
+            "0": "Confusion with decrement operator (--x).",
+            "1": "The syntax is completely valid C."
           },
           "marking_points": [
             "Applies prefix increment semantics: increment before evaluation"
@@ -1011,12 +1063,12 @@
             "0 1 2",
             "2 3 4"
           ],
-          "answer": "1 2 3",
+          "answer": 0,
           "explanation": "The loop starts with a=1. Iteration 1 prints '1 ' and a becomes 2. Iteration 2 prints '2 ' and a becomes 3. Iteration 3 prints '3 ' and a becomes 4. When a=4, condition (4 < 4) is false, so the loop terminates without printing 4.",
           "why_wrong": {
-            "1 2 3 4": "Off-by-one error; assumes condition is '<=' instead of strictly '<'.",
-            "0 1 2": "Assumes a starts at 0 instead of 1.",
-            "2 3 4": "Assumes a was incremented prior to the first print."
+            "1": "Off-by-one error; assumes condition is '<=' instead of strictly '<'.",
+            "2": "Assumes a starts at 0 instead of 1.",
+            "3": "Assumes a was incremented prior to the first print."
           },
           "marking_points": [
             "Traces while loop termination condition strictly at a=4"
@@ -1045,12 +1097,12 @@
             "3",
             "Error"
           ],
-          "answer": "2",
+          "answer": 0,
           "explanation": "Both 'a' and 'b' are integers. In C, integer division (5 / 2) truncates the fractional portion, yielding the integer 2. No floating-point promotion occurs.",
           "why_wrong": {
-            "2.5": "Mathematical division result; C integer division does NOT produce floating-point numbers.",
-            "3": "Rounds up instead of truncating towards zero.",
-            "Error": "Valid integer division."
+            "1": "Mathematical division result; C integer division does NOT produce floating-point numbers.",
+            "0": "Rounds up instead of truncating towards zero.",
+            "2": "Valid integer division."
           },
           "marking_points": [
             "Applies integer division truncation rule"
@@ -1079,12 +1131,12 @@
             "10",
             "7"
           ],
-          "answer": "11",
+          "answer": 1,
           "explanation": "Multiplication (*) has higher precedence than addition (+). Thus, b * 2 is evaluated first (4 * 2 = 8), followed by addition (3 + 8 = 11).",
           "why_wrong": {
-            "14": "Evaluates left-to-right ignoring operator precedence: (3 + 4) * 2 = 7 * 2 = 14.",
-            "10": "Arithmetic miscalculation.",
-            "7": "Evaluates a + b only without multiplying."
+            "0": "Evaluates left-to-right ignoring operator precedence: (3 + 4) * 2 = 7 * 2 = 14.",
+            "2": "Arithmetic miscalculation.",
+            "3": "Evaluates a + b only without multiplying."
           },
           "marking_points": [
             "Applies precedence: multiplication before addition"
@@ -1113,12 +1165,12 @@
             "Other",
             "Error"
           ],
-          "answer": "Five",
+          "answer": 1,
           "explanation": "Variable 'a' has value 5. Execution jumps directly to 'case 5:', printing 'Five'. The 'break' statement terminates the switch block, preventing fallthrough into default.",
           "why_wrong": {
-            "One": "Only executes if a == 1.",
-            "Other": "Only executes if no cases match or if a matching case falls through.",
-            "Error": "Completely valid switch statement syntax."
+            "0": "Only executes if a == 1.",
+            "2": "Only executes if no cases match or if a matching case falls through.",
+            "3": "Completely valid switch statement syntax."
           },
           "marking_points": [
             "Matches switch expression to case 5 and halts at break"
@@ -1147,12 +1199,11 @@
             "0",
             "1"
           ],
-          "answer": "True",
+          "answer": 0,
           "explanation": "In the expression (x || 1), x is 0 (false) but the right operand is 1 (true). For logical OR (||), if either operand is non-zero, the overall condition evaluates to 1 (true), executing the 'if' branch.",
           "why_wrong": {
-            "False": "Assumes both operands must be true (confusion with logical AND &&).",
-            "0": "The code prints the string literal 'True', not an integer.",
-            "1": "The code prints 'True', not the numeric truth value."
+            "3": "The code prints 'True', not the numeric truth value.",
+            "2": "The code prints the string literal 'True', not an integer."
           },
           "marking_points": [
             "Evaluates (0 || 1) as true (1) and prints 'True'"
@@ -1181,12 +1232,12 @@
             "40",
             "20"
           ],
-          "answer": "40",
+          "answer": 2,
           "explanation": "With 0-based indexing: arr[0] is 10 and arr[2] is 30. Adding them yields 10 + 30 = 40.",
           "why_wrong": {
-            "10": "Value of arr[0] alone.",
-            "30": "Value of arr[2] alone.",
-            "20": "Value of arr[1] alone."
+            "0": "Value of arr[0] alone.",
+            "1": "Value of arr[2] alone.",
+            "3": "Value of arr[1] alone."
           },
           "marking_points": [
             "Indexes arr[0]=10 and arr[2]=30, computing 10+30=40"
@@ -1215,12 +1266,12 @@
             "0",
             "Error"
           ],
-          "answer": "2",
+          "answer": 1,
           "explanation": "Condition (x < y) evaluates (1 < 2), which is true (1). Because condition is true, the first expression (y) is evaluated and returned. y has value 2.",
           "why_wrong": {
-            "1": "Value of x; this would be returned if x < y were false.",
-            "0": "Confuses result with boolean evaluation.",
-            "Error": "Valid ternary conditional invocation."
+            "2": "Value of x; this would be returned if x < y were false.",
+            "1": "Confuses result with boolean evaluation.",
+            "3": "Valid ternary conditional invocation."
           },
           "marking_points": [
             "Evaluates condition (1 < 2) as true and selects y=2"
@@ -1336,7 +1387,8 @@
           "source": "Deitel Ch 2.3; ANSI C Standard Section 6.4.2",
           "verified": true,
           "verified_output": "",
-          "topic_slug": "data_types_variables"
+          "topic_slug": "data_types_variables",
+          "answer": true
         },
         {
           "id": "cos201-dt-025",
@@ -1391,8 +1443,7 @@
           "explanation": "In C, when both operands of the division operator '/' are integers, integer division is performed. The fractional part is truncated (discarded), yielding 2. It does not produce a floating-point result or round up to 3.",
           "why_wrong": {
             "1": "2.5 is the mathematical result, but integer division in C truncates all decimals.",
-            "2": "C does not round 2.5 up to 3; it truncates toward zero.",
-            "3": "Dividing two non-zero integers is completely valid C syntax."
+            "0": "Dividing two non-zero integers is completely valid C syntax."
           },
           "source": "COS 201 Midterm Type B, Q7; Deitel Ch 2.5",
           "verified": true,
@@ -1423,7 +1474,7 @@
           "why_wrong": {
             "0": "2 is 'x', which is only selected if x > y is true.",
             "2": "The ternary evaluates to the chosen operand's value, not boolean 0.",
-            "3": "Using ternary expressions inside printf arguments is fully standard C."
+            "1": "Using ternary expressions inside printf arguments is fully standard C."
           },
           "source": "COS 201 Midterm Type B, Q25; Deitel Ch 3.5",
           "verified": true,
@@ -1628,8 +1679,7 @@
           "answer": 0,
           "explanation": "The loop runs for i = 0, 1, 2:\n- i = 0: x = 0 + 0 = 0\n- i = 1: x = 0 + 1 = 1\n- i = 2: x = 1 + 2 = 3\nWhen i becomes 3, '3 < 3' is false. printf outputs 3.",
           "why_wrong": {
-            "1": "2 is the final value of i, not the accumulated sum x.",
-            "2": "6 would be the result if i <= 3 was used (0 + 1 + 2 + 3 = 6).",
+            "1": "6 would be the result if i <= 3 was used (0 + 1 + 2 + 3 = 6).",
             "3": "x is updated in iterations 1 and 2, so it does not remain 0."
           },
           "source": "COS 201 Midterm Type B, Q17; Deitel Ch 4.3",
@@ -2051,7 +2101,13 @@
           "source": "Deitel C How to Program, Chapter 7",
           "verified": true,
           "verified_output": "(Conceptual terminology)",
-          "topic_slug": "pointers_memory"
+          "topic_slug": "pointers_memory",
+          "blanks": [
+            "&",
+            "*",
+            "NULL",
+            "free"
+          ]
         },
         {
           "id": "cos201-ptr-016",
@@ -2166,7 +2222,13 @@
           "source": "Deitel C How to Program, Chapter 8",
           "verified": true,
           "verified_output": "(Terminology cloze)",
-          "topic_slug": "strings_char_arrays"
+          "topic_slug": "strings_char_arrays",
+          "blanks": [
+            "\\0",
+            "string.h",
+            "strlen",
+            "fgets"
+          ]
         },
         {
           "id": "cos201-str-015",
@@ -2216,12 +2278,12 @@
             "1 2",
             "0 1 2"
           ],
-          "answer": "0 1",
+          "answer": 1,
           "explanation": "Iteration 1: prints '0 ', x increments to 1. Condition (1 < 2) is true, loop repeats. Iteration 2: prints '1 ', x increments to 2. Condition (2 < 2) is false, loop terminates. Total output: '0 1 '.",
           "why_wrong": {
             "0": "Assumes loop only executes once.",
-            "1 2": "Assumes x is incremented before printing.",
-            "0 1 2": "Off-by-one error; assumes condition checked before or inclusive of 2."
+            "2": "Assumes x is incremented before printing.",
+            "3": "Off-by-one error; assumes condition checked before or inclusive of 2."
           },
           "marking_points": [
             "Traces do-while post-test execution for exactly 2 passes"
@@ -2249,12 +2311,11 @@
             "3",
             "Error"
           ],
-          "answer": "3",
+          "answer": 2,
           "explanation": "C arrays are 0-indexed: arr[0] is 1, arr[1] is 2, and arr[2] is 3. Accessing arr[2] prints 3.",
           "why_wrong": {
-            "1": "arr[0] is 1; assumes 1-based indexing where arr[1] is first.",
-            "2": "arr[1] is 2.",
-            "Error": "arr[2] is completely within the 3-element bounds (indices 0, 1, 2)."
+            "0": "arr[1] is 2.",
+            "2": "arr[2] is completely within the 3-element bounds (indices 0, 1, 2)."
           },
           "marking_points": [
             "Applies 0-based array indexing to retrieve third element at index 2"
@@ -2283,12 +2344,12 @@
             "1",
             "0"
           ],
-          "answer": "3",
+          "answer": 1,
           "explanation": "The loop executes for i = 0, 1, 2. When i=0: x += 0 (x=0). When i=1: x += 1 (x=1). When i=2: x += 2 (x=3). Loop terminates when i=3. The final value printed is 3.",
           "why_wrong": {
-            "2": "Assumes only the last value of i is stored into x instead of being accumulated.",
-            "1": "Stops accumulation early.",
-            "0": "Assumes the loop did not execute or x remained unmutated."
+            "3": "Assumes only the last value of i is stored into x instead of being accumulated.",
+            "0": "Stops accumulation early.",
+            "1": "Assumes the loop did not execute or x remained unmutated."
           },
           "marking_points": [
             "Traces accumulation: 0 + 0 + 1 + 2 = 3"
@@ -2317,12 +2378,12 @@
             "10",
             "8"
           ],
-          "answer": "12",
+          "answer": 1,
           "explanation": "With 0-based indexing: arr[0]=2, arr[1]=4, arr[2]=6, arr[3]=8. arr[1] is 4 and arr[3] is 8. Their sum is 4 + 8 = 12.",
           "why_wrong": {
-            "6": "Sum of arr[0] + arr[1] (2 + 4 = 6).",
-            "10": "Sum of arr[1] + arr[2] (4 + 6 = 10) or arr[0] + arr[3] (2 + 8 = 10).",
-            "8": "Value of arr[3] alone."
+            "0": "Sum of arr[0] + arr[1] (2 + 4 = 6).",
+            "2": "Sum of arr[1] + arr[2] (4 + 6 = 10) or arr[0] + arr[3] (2 + 8 = 10).",
+            "3": "Value of arr[3] alone."
           },
           "marking_points": [
             "Extracts arr[1]=4 and arr[3]=8 and computes sum = 12"
@@ -2351,12 +2412,12 @@
             "0",
             "Error"
           ],
-          "answer": "3",
+          "answer": 1,
           "explanation": "Condition (x > y) is (2 > 3), which is false (0). When the condition is false, the ternary operator evaluates and returns the expression after the colon (:), which is y (3).",
           "why_wrong": {
             "2": "Value of x; this would be returned if (x > y) were true.",
             "0": "Confuses the result with the Boolean truth value (0) of the comparison.",
-            "Error": "Valid inline ternary operator in printf."
+            "1": "Valid inline ternary operator in printf."
           },
           "marking_points": [
             "Evaluates condition (2 > 3) as false and returns y (3)"
@@ -2385,12 +2446,12 @@
             "0 1 2",
             "2 3 4"
           ],
-          "answer": "1 2 3",
+          "answer": 0,
           "explanation": "Because post-increment (i++) is used, printf receives the current value of i before the increment occurs: pass 1 prints 1 (i becomes 2); pass 2 prints 2 (i becomes 3); pass 3 prints 3 (i becomes 4). Condition (4 <= 3) is false, so loop terminates. Output: '1 2 3 '.",
           "why_wrong": {
-            "2 3 4": "This would occur if pre-increment (++i) had been used.",
-            "1 2 3 4": "Assumes i <= 3 is evaluated after post-increment inside the body.",
-            "0 1 2": "Assumes 0-based initial value."
+            "3": "This would occur if pre-increment (++i) had been used.",
+            "1": "Assumes i <= 3 is evaluated after post-increment inside the body.",
+            "2": "Assumes 0-based initial value."
           },
           "marking_points": [
             "Traces post-increment within printf: prints current value then increments"
@@ -2419,12 +2480,11 @@
             "1",
             "0"
           ],
-          "answer": "No",
+          "answer": 1,
           "explanation": "In the logical AND expression (x && y), x is 1 (true) and y is 0 (false). Because logical AND requires both operands to be non-zero to be true, (1 && 0) evaluates to 0 (false). The 'else' branch executes, printing 'No'.",
           "why_wrong": {
-            "Yes": "Assumes true if any operand is true (confusion with logical OR ||).",
-            "1": "Prints string literal 'No', not integer.",
-            "0": "Prints string literal 'No', not numeric result."
+            "3": "Prints string literal 'No', not numeric result.",
+            "2": "Prints string literal 'No', not integer."
           },
           "marking_points": [
             "Evaluates logical AND (1 && 0) as false, printing 'No'"
@@ -2453,12 +2513,12 @@
             "2 4 6",
             "1 3 5"
           ],
-          "answer": "0 2 4",
+          "answer": 0,
           "explanation": "The loop iterates for i = 0, 1, 2. When i=0: 0*2 = 0. When i=1: 1*2 = 2. When i=2: 2*2 = 4. When i=3: condition (3 < 3) is false. Total output: '0 2 4 '.",
           "why_wrong": {
-            "0 1 2": "Prints the index i directly without multiplying by 2.",
-            "2 4 6": "Assumes i starts at 1 instead of 0.",
-            "1 3 5": "Odd numbers sequence; incorrect arithmetic."
+            "1": "Prints the index i directly without multiplying by 2.",
+            "2": "Assumes i starts at 1 instead of 0.",
+            "3": "Odd numbers sequence; incorrect arithmetic."
           },
           "marking_points": [
             "Multiplies loop index by 2 across iterations 0, 1, 2"

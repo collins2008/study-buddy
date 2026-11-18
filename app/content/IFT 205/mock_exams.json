@@ -1,6 +1,6 @@
 {
   "course": "IFT 205",
-  "title": "IFT 205: Introduction to Information Technology \u2014 Mock Examinations",
+  "title": "IFT 205: Introduction to Information Technology — Mock Examinations",
   "exams": [
     {
       "id": "ift205-mock-alpha",
@@ -52,8 +52,8 @@
           ],
           "question": "A digital computer can execute instructions and process data in its internal registers without any electrical energy source.",
           "options": [
-            "True \u2014 internal mechanical components and solid-state silicon gates can process instructions purely through optical ambient light.",
-            "False \u2014 a digital computer fundamentally relies on electrical voltage levels (high and low potentials) across semiconductor transistors to represent and manipulate binary states."
+            "True — internal mechanical components and solid-state silicon gates can process instructions purely through optical ambient light.",
+            "False — a digital computer fundamentally relies on electrical voltage levels (high and low potentials) across semiconductor transistors to represent and manipulate binary states."
           ],
           "answer": 1,
           "explanation": "Digital computers are electronic devices built from semiconductor transistors that represent binary 1s and 0s via discrete electrical voltage thresholds. Without electrical power (mains or battery), the logic gates cannot operate, memory cells lose state, and no processing can occur.",
@@ -121,7 +121,25 @@
           "marking_points": [],
           "source": "Week 5 Slides 17-19",
           "verified": true,
-          "verified_output": "Matched data quality dimensions."
+          "verified_output": "Matched data quality dimensions.",
+          "pairs": [
+            {
+              "left": "Accuracy",
+              "right": "Recorded data values correctly reflect real-world facts without factual or computational errors."
+            },
+            {
+              "left": "Completeness",
+              "right": "All required mandatory fields and records are populated with zero missing essential elements."
+            },
+            {
+              "left": "Consistency",
+              "right": "Data stored across multiple tables or distributed databases agrees without contradictory values."
+            },
+            {
+              "left": "Timeliness",
+              "right": "Data is current, up to date, and available within the operational timeframe required for decision-making."
+            }
+          ]
         },
         {
           "id": "ift205-fnd-009",
@@ -147,12 +165,17 @@
             "byte",
             "256"
           ],
-          "explanation": "A bit (binary digit) holds two states ($0$ or $1$). Eight bits make a byte. With 8 bits, $2^8 = 256$ unique permutations ($00000000_2$ to $11111111_2$) can be represented, allowing encoding of numbers 0\u2013255 or standard ASCII characters.",
+          "explanation": "A bit (binary digit) holds two states ($0$ or $1$). Eight bits make a byte. With 8 bits, $2^8 = 256$ unique permutations ($00000000_2$ to $11111111_2$) can be represented, allowing encoding of numbers 0–255 or standard ASCII characters.",
           "why_wrong": {},
           "marking_points": [],
           "source": "Week 5 Slides 5-6",
           "verified": true,
-          "verified_output": "bit, byte, 256"
+          "verified_output": "bit, byte, 256",
+          "blanks": [
+            "bit",
+            "byte",
+            "256"
+          ]
         },
         {
           "id": "ift205-fnd-011",
@@ -219,8 +242,8 @@
           ],
           "question": "True or False: Because modern computing hardware and artificial intelligence software are highly autonomous, 'People' are no longer classified as a core component of Information Technology systems.",
           "options": [
-            "True \u2014 modern automated servers run unattended in headless data centers without requiring any human presence.",
-            "False \u2014 people remain an indispensable pillar of IT systems as system architects, administrators, data providers, ethical decision-makers, and final consumers of processed information."
+            "True — modern automated servers run unattended in headless data centers without requiring any human presence.",
+            "False — people remain an indispensable pillar of IT systems as system architects, administrators, data providers, ethical decision-makers, and final consumers of processed information."
           ],
           "answer": 1,
           "explanation": "Technology is created to serve human objectives. Without people to formulate requirements, input operational data, interpret analytical dashboards, maintain infrastructure, and enact business decisions, hardware and software have no economic or organisational purpose.",
@@ -323,8 +346,8 @@
           ],
           "question": "When a desktop computer experiences an abrupt electrical power outage, all unsaved documents and active application data stored in RAM are permanently lost.",
           "options": [
-            "False \u2014 RAM uses magnetic orientation across microscopic ferrite cores that permanently retain data during power loss.",
-            "True \u2014 RAM is volatile memory that requires continuous electrical refresh charges to maintain its stored capacitor states; once power ceases, the data immediately vanishes."
+            "False — RAM uses magnetic orientation across microscopic ferrite cores that permanently retain data during power loss.",
+            "True — RAM is volatile memory that requires continuous electrical refresh charges to maintain its stored capacitor states; once power ceases, the data immediately vanishes."
           ],
           "answer": 1,
           "explanation": "RAM (Random Access Memory) is volatile semiconductor memory. Modern dynamic RAM (DRAM) stores bits as microscopic electrical charges across tiny capacitor-transistor pairs that must be continuously refreshed hundreds of times per second. Without electrical power, the capacitors discharge instantly, resulting in total loss of unsaved contents.",
@@ -364,7 +387,25 @@
           "marking_points": [],
           "source": "IFT205_Week2 Slide 9-10; Week 5 Slides 26-31",
           "verified": true,
-          "verified_output": "Matched storage technologies."
+          "verified_output": "Matched storage technologies.",
+          "pairs": [
+            {
+              "left": "Hard Disk Drive (HDD)",
+              "right": "Utilizes spinning magnetic platters and moving mechanical actuator read/write heads; lowest cost per terabyte but vulnerable to physical drop shock."
+            },
+            {
+              "left": "Solid-State Drive (SSD)",
+              "right": "Employs non-volatile NAND flash memory chips with zero moving parts, providing low access latency and high shock tolerance."
+            },
+            {
+              "left": "Read-Only Memory (ROM)",
+              "right": "Non-volatile primary firmware chip holding low-level startup bootstrap code (BIOS/UEFI) required to initialize system hardware."
+            },
+            {
+              "left": "CPU Level 1 Cache",
+              "right": "Smallest, fastest static RAM directly integrated on the processor core, operating at CPU clock frequency to minimize memory latency."
+            }
+          ]
         },
         {
           "id": "ift205-hwd-006",
@@ -424,7 +465,12 @@
           "marking_points": [],
           "source": "IFT205_Week2 Slide 12",
           "verified": true,
-          "verified_output": "data, address, control"
+          "verified_output": "data, address, control",
+          "blanks": [
+            "data",
+            "address",
+            "control"
+          ]
         },
         {
           "id": "ift205-hwd-010",
@@ -493,10 +539,10 @@
           ],
           "question": "A student claims: 'Upgrading my laptop's RAM from 8 GB to 32 GB will instantly double the clock speed of my CPU and make my single-threaded arithmetic calculations run twice as fast.' Is this assertion accurate?",
           "options": [
-            "No \u2014 RAM capacity allows more programs and large data sets to remain concurrently active in memory without disk swapping/paging, but does not alter the CPU's internal clock frequency or single-threaded execution speed.",
-            "Yes \u2014 CPU clock frequency is mathematically equal to total installed gigabytes of RAM multiplied by bus width.",
-            "Yes \u2014 increasing RAM automatically overclocks the ALU by an identical percentage ratio.",
-            "No \u2014 upgrading RAM actually slows down the computer because the CPU takes four times longer to search through larger memory spaces."
+            "No — RAM capacity allows more programs and large data sets to remain concurrently active in memory without disk swapping/paging, but does not alter the CPU's internal clock frequency or single-threaded execution speed.",
+            "Yes — CPU clock frequency is mathematically equal to total installed gigabytes of RAM multiplied by bus width.",
+            "Yes — increasing RAM automatically overclocks the ALU by an identical percentage ratio.",
+            "No — upgrading RAM actually slows down the computer because the CPU takes four times longer to search through larger memory spaces."
           ],
           "answer": 0,
           "explanation": "As emphasized in Lecture 1: 'More RAM can help with multitasking and running memory-heavy applications without disk paging, but does not automatically make every individual task faster.' CPU clock speed (in GHz) and IPC (instructions per cycle) are fixed architectural properties independent of RAM capacity.",
@@ -522,8 +568,8 @@
           ],
           "question": "Solid-state drives (SSDs) are vulnerable to mechanical head crashes when dropped onto concrete, in the exact same manner as traditional hard disk drives (HDDs).",
           "options": [
-            "True \u2014 SSD flash micro-needles will bend and scratch the silicon wafers during a drop.",
-            "False \u2014 SSDs contain zero mechanical actuator arms or rotating platters, making them physically immune to head crashes, whereas HDDs risk head collisions with platters under shock."
+            "True — SSD flash micro-needles will bend and scratch the silicon wafers during a drop.",
+            "False — SSDs contain zero mechanical actuator arms or rotating platters, making them physically immune to head crashes, whereas HDDs risk head collisions with platters under shock."
           ],
           "answer": 1,
           "explanation": "In an HDD, the read/write heads fly fractions of a millimeter above spinning platters; a drop can cause the heads to collide with the surface (a 'head crash'), destroying data. SSDs use stationary solid-state NAND flash chips soldered to a circuit board with no moving parts, making mechanical head crashes physically impossible.",
@@ -547,7 +593,7 @@
           ],
           "question": "Explain the technical phenomenon of 'thermal throttling' occurring during the 3D CAD rendering, and identify the hardware components responsible for mitigating it.",
           "options": [],
-          "answer": "Thermal throttling is an automated hardware protection mechanism where the CPU deliberately reduces its operational clock frequency (GHz) and core voltage when internal temperature sensors detect levels approaching thermal limits (e.g. 95\u00b0C\u2013100\u00b0C) during sustained heavy multi-core CAD rendering. This prevents permanent physical damage from overheating, but severely degrades rendering speed. Mitigating this requires proper thermal interface material (thermal paste), high-performance CPU heatsinks with high-airflow cooling fans or liquid cooling radiators, and a well-ventilated chassis ensuring adequate airflow.",
+          "answer": "Thermal throttling is an automated hardware protection mechanism where the CPU deliberately reduces its operational clock frequency (GHz) and core voltage when internal temperature sensors detect levels approaching thermal limits (e.g. 95°C–100°C) during sustained heavy multi-core CAD rendering. This prevents permanent physical damage from overheating, but severely degrades rendering speed. Mitigating this requires proper thermal interface material (thermal paste), high-performance CPU heatsinks with high-airflow cooling fans or liquid cooling radiators, and a well-ventilated chassis ensuring adequate airflow.",
           "explanation": "Thermal throttling reduces clock speed to prevent thermal destruction. Mitigated by heatsinks, thermal paste, and airflow cooling.",
           "why_wrong": {},
           "marking_points": [
@@ -572,7 +618,7 @@
           ],
           "question": "Evaluate how the firm's backup policy satisfies the 3-2-1 backup rule, and discuss how the offsite AWS S3 copy protects against catastrophic local loss.",
           "options": [],
-          "answer": "The firm satisfies the 3-2-1 rule as follows: (1) 3 copies of data exist (the original working files on the server, the local NAS copy, and the cloud copy); (2) 2 different media/storage technologies are used (the server's internal drive array and the network-attached storage/cloud object storage); (3) 1 copy is preserved offsite (the encrypted AWS S3 bucket). The offsite cloud copy guarantees business continuity against disasters that destroy the entire physical office\u2014such as fire, building collapse, localized flood, physical theft of equipment, or power grid sabotage that simultaneously destroys both the server and the adjacent local NAS.",
+          "answer": "The firm satisfies the 3-2-1 rule as follows: (1) 3 copies of data exist (the original working files on the server, the local NAS copy, and the cloud copy); (2) 2 different media/storage technologies are used (the server's internal drive array and the network-attached storage/cloud object storage); (3) 1 copy is preserved offsite (the encrypted AWS S3 bucket). The offsite cloud copy guarantees business continuity against disasters that destroy the entire physical office—such as fire, building collapse, localized flood, physical theft of equipment, or power grid sabotage that simultaneously destroys both the server and the adjacent local NAS.",
           "explanation": "Satisfies 3 copies, 2 media, 1 offsite. Protects against local office destruction.",
           "why_wrong": {},
           "marking_points": [
@@ -620,7 +666,14 @@
           "marking_points": [],
           "source": "Software and Operating Systems Slide 5; Student Notebook",
           "verified": true,
-          "verified_output": "Five core OS functions."
+          "verified_output": "Five core OS functions.",
+          "answers": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
         },
         {
           "id": "ift205-ops-004",
@@ -652,7 +705,14 @@
           "marking_points": [],
           "source": "Student Notebook Image 21.47.02 ('How to install a new window OS')",
           "verified": true,
-          "verified_output": "Installation sequence: USB media -> BIOS boot order -> Installer -> Partition/Format -> OOBE"
+          "verified_output": "Installation sequence: USB media -> BIOS boot order -> Installer -> Partition/Format -> OOBE",
+          "steps": [
+            "Create a bootable installation USB flash drive using an official OS ISO image",
+            "Insert USB drive, power on PC, and access BIOS/UEFI firmware to configure the boot order priority",
+            "Boot into OS setup wizard, agree to license terms, and select Custom (Clean) installation",
+            "Partition the target storage drive and format the partition with the appropriate file system (e.g. NTFS)",
+            "Complete the file installation process and configure Out-of-Box Experience (OOBE) user accounts and drivers"
+          ]
         },
         {
           "id": "ift205-ops-006",
@@ -695,8 +755,8 @@
           ],
           "question": "A newly purchased USB laser printer can function perfectly and print formatted documents on any computer without requiring an operating system device driver.",
           "options": [
-            "True \u2014 modern USB printers communicate via universal electrical telemetry that automatically bypasses operating system software layers.",
-            "False \u2014 an operating system requires a specific device driver program that translates standard high-level print commands into the exact low-level control codes and raster data recognized by that printer's hardware controller."
+            "True — modern USB printers communicate via universal electrical telemetry that automatically bypasses operating system software layers.",
+            "False — an operating system requires a specific device driver program that translates standard high-level print commands into the exact low-level control codes and raster data recognized by that printer's hardware controller."
           ],
           "answer": 1,
           "explanation": "A device driver is specialized system software acting as a bridge between the operating system and a specific hardware device. Without a driver (whether pre-installed, class-compliant, or downloaded), the OS cannot communicate the printer's specific resolution, page geometry, or printing protocol.",
@@ -883,11 +943,11 @@
             "Class D with default subnet mask 255.255.255.255"
           ],
           "answer": 0,
-          "explanation": "IPv4 Class C spans first octet values from 192 to 223. Because 197 falls within 192\u2013223, it is a Class C address. Class C addresses allocate 24 bits to the network ID and 8 bits to the host ID, giving a default subnet mask of 255.255.255.0 (/24).",
+          "explanation": "IPv4 Class C spans first octet values from 192 to 223. Because 197 falls within 192–223, it is a Class C address. Class C addresses allocate 24 bits to the network ID and 8 bits to the host ID, giving a default subnet mask of 255.255.255.0 (/24).",
           "why_wrong": {
-            "1": "Class A covers first octets 1\u2013126 with default mask 255.0.0.0.",
-            "2": "Class B covers first octets 128\u2013191 with default mask 255.255.0.0.",
-            "3": "Class D covers 224\u2013239 for multicasting and does not have a default host subnet mask."
+            "1": "Class A covers first octets 1–126 with default mask 255.0.0.0.",
+            "2": "Class B covers first octets 128–191 with default mask 255.255.0.0.",
+            "3": "Class D covers 224–239 for multicasting and does not have a default host subnet mask."
           },
           "marking_points": [],
           "source": "Student Notebook Image 21.47.02 ('Learn abt IPV4 classes'); Week 6 Slide 12",
@@ -1019,7 +1079,12 @@
           "marking_points": [],
           "source": "IFT205_Week2 Slide 4; Student Notebook",
           "verified": true,
-          "verified_output": "Hardware, Software, and People."
+          "verified_output": "Hardware, Software, and People.",
+          "answers": [
+            0,
+            1,
+            2
+          ]
         },
         {
           "id": "ift205-fnd-004",
@@ -1048,7 +1113,13 @@
           "marking_points": [],
           "source": "Week 5 Slide 13",
           "verified": true,
-          "verified_output": "Input -> Processing -> Output -> Storage"
+          "verified_output": "Input -> Processing -> Output -> Storage",
+          "steps": [
+            "Input (capturing raw data from peripheral devices or sensors)",
+            "Processing (manipulating, calculating, and evaluating data via the CPU)",
+            "Output (generating human-readable or machine-usable results)",
+            "Storage (persisting data and results to secondary non-volatile media for future access)"
+          ]
         },
         {
           "id": "ift205-fnd-006",
@@ -1236,7 +1307,7 @@
             "Replacing all wired Ethernet cables with satellite Wi-Fi routers"
           ],
           "answer": 0,
-          "explanation": "Data validation enforces constraints at data entry (e.g. allowable numerical ranges such as 5\u20131000 and fixed units mg/ml via drop-down menus), rejecting out-of-bounds input before committing it to the database.",
+          "explanation": "Data validation enforces constraints at data entry (e.g. allowable numerical ranges such as 5–1000 and fixed units mg/ml via drop-down menus), rejecting out-of-bounds input before committing it to the database.",
           "why_wrong": {
             "1": "Batch spooling queues data; it does nothing to prevent incorrect medical dosage typing.",
             "2": "RAM size affects multitasking capacity, not logical field verification.",
@@ -1333,7 +1404,13 @@
           "marking_points": [],
           "source": "Week 5 Slide 25; Textbook Architecture",
           "verified": true,
-          "verified_output": "Fetch -> Decode -> Execute -> Store"
+          "verified_output": "Fetch -> Decode -> Execute -> Store",
+          "steps": [
+            "Fetch (retrieve the next instruction from RAM or cache into the Instruction Register)",
+            "Decode (translate the fetched instruction opcode into operational control signals)",
+            "Execute (perform the instruction's operation via the ALU or dedicated hardware)",
+            "Store / Writeback (write the execution results back to a register or main memory)"
+          ]
         },
         {
           "id": "ift205-hwd-005",
@@ -1448,7 +1525,12 @@
           "marking_points": [],
           "source": "IFT205_Week2 Slide 10; Week 5 Slide 30-31",
           "verified": true,
-          "verified_output": "Faster access, shock resilience, silent operation."
+          "verified_output": "Faster access, shock resilience, silent operation.",
+          "answers": [
+            0,
+            1,
+            2
+          ]
         },
         {
           "id": "ift205-hwd-013",
@@ -1622,7 +1704,25 @@
           "marking_points": [],
           "source": "Software and Operating Systems Slide 6; Student Notebook Hint",
           "verified": true,
-          "verified_output": "Matched UI paradigms."
+          "verified_output": "Matched UI paradigms.",
+          "pairs": [
+            {
+              "left": "Graphical User Interface (GUI)",
+              "right": "Employs Windows, Icons, Menus, and Pointers (WIMP); highly intuitive for novices but consumes substantial RAM and GPU processing overhead."
+            },
+            {
+              "left": "Command Line Interface (CLI)",
+              "right": "Executes typed text commands with strict syntax; consumes minimal system resources and enables powerful automated batch scripting."
+            },
+            {
+              "left": "Touchscreen Interface",
+              "right": "Uses direct finger gestures (tap, pinch, swipe) directly on display glass; primary interface on modern mobile phones and tablets."
+            },
+            {
+              "left": "Voice User Interface (VUI)",
+              "right": "Interprets spoken natural language audio through acoustic models and natural language processing."
+            }
+          ]
         },
         {
           "id": "ift205-ops-005",
@@ -1682,7 +1782,12 @@
           "marking_points": [],
           "source": "Software and Operating Systems Slide 18",
           "verified": true,
-          "verified_output": "open-source, freeware, proprietary"
+          "verified_output": "open-source, freeware, proprietary",
+          "blanks": [
+            "open-source",
+            "freeware",
+            "proprietary"
+          ]
         },
         {
           "id": "ift205-ops-009",
@@ -1783,8 +1888,8 @@
           ],
           "question": "Restarting a frozen operating system or crashed computer device is a valid, recommended first troubleshooting step rather than an amateur superstition.",
           "options": [
-            "False \u2014 restarting physically degrades the motherboard capacitors and causes permanent file corruption in the BIOS chip.",
-            "True \u2014 restarting flushes volatile RAM, terminates runaway or deadlocked processes, clears leaked memory allocations, and reloads core system drivers into a clean initial state."
+            "False — restarting physically degrades the motherboard capacitors and causes permanent file corruption in the BIOS chip.",
+            "True — restarting flushes volatile RAM, terminates runaway or deadlocked processes, clears leaked memory allocations, and reloads core system drivers into a clean initial state."
           ],
           "answer": 1,
           "explanation": "As noted in Lecture Slide 24: 'Restart the application or device when safe and appropriate.' Restarting is a foundational diagnostic step because it purges erratic volatile memory state, eliminates deadlocked threads, resets hardware peripheral registers, and starts system services afresh.",
@@ -1866,8 +1971,8 @@
           ],
           "question": "A Local Area Network (LAN) deployed in a university computer laboratory cannot function or allow students to share files and print documents unless there is an active, paid connection to the Internet.",
           "options": [
-            "True \u2014 modern network interface cards (NICs) automatically disable their physical Ethernet ports if they cannot ping a public Google DNS server.",
-            "False \u2014 a LAN operates independently at the local link and network layers; devices connected via a switch can communicate, share files, and print locally even when completely isolated from the Internet."
+            "True — modern network interface cards (NICs) automatically disable their physical Ethernet ports if they cannot ping a public Google DNS server.",
+            "False — a LAN operates independently at the local link and network layers; devices connected via a switch can communicate, share files, and print locally even when completely isolated from the Internet."
           ],
           "answer": 1,
           "explanation": "As explicitly highlighted by the lecturer in student lecture notes: 'A LAN does not need an active internet connection.' A LAN exists whenever two or more devices are interconnected locally through a switch or access point. Local file sharing, intranet services, database access, and network printing operate completely within the local IP subnet without requiring any WAN/ISP internet connectivity.",
@@ -1909,7 +2014,29 @@
           "marking_points": [],
           "source": "Student Notebook Image 21.47.02; Week 6 Slide 12",
           "verified": true,
-          "verified_output": "Matched all 5 IPv4 classes."
+          "verified_output": "Matched all 5 IPv4 classes.",
+          "pairs": [
+            {
+              "left": "Class A",
+              "right": "First octet: 1 to 126; Default mask 255.0.0.0; Designed for massive networks with millions of hosts."
+            },
+            {
+              "left": "Class B",
+              "right": "First octet: 128 to 191; Default mask 255.255.0.0; Designed for medium-to-large organizations and universities."
+            },
+            {
+              "left": "Class C",
+              "right": "First octet: 192 to 223; Default mask 255.255.255.0; Designed for small departmental LANs (up to 254 hosts)."
+            },
+            {
+              "left": "Class D",
+              "right": "First octet: 224 to 239; No subnet mask; Strictly reserved for network Multicasting transmissions."
+            },
+            {
+              "left": "Class E",
+              "right": "First octet: 240 to 255; No subnet mask; Strictly reserved for experimental and research purposes."
+            }
+          ]
         },
         {
           "id": "ift205-net-005",
@@ -1968,7 +2095,12 @@
           "marking_points": [],
           "source": "Week 6 Slide 10; IFT205_Week2 Slide 30",
           "verified": true,
-          "verified_output": "bandwidth, throughput, latency"
+          "verified_output": "bandwidth, throughput, latency",
+          "blanks": [
+            "bandwidth",
+            "throughput",
+            "latency"
+          ]
         },
         {
           "id": "ift205-net-009",
@@ -2001,7 +2133,12 @@
           "marking_points": [],
           "source": "Student Notebook Image 21.47.02; RFC 1918",
           "verified": true,
-          "verified_output": "10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16."
+          "verified_output": "10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16.",
+          "answers": [
+            0,
+            1,
+            2
+          ]
         }
       ]
     }

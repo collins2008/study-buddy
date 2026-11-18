@@ -59,12 +59,12 @@
         "11011",
         "11110"
       ],
-      "answer": "11111",
+      "answer": 0,
       "explanation": "1. Convert decimal 21 to binary: 21 = 16 + 4 + 1 = 10101_2.\n2. Convert binary (B4 B3 B2 B1 B0 = 1 0 1 0 1) to Gray code (G4 G3 G2 G1 G0):\n   G4 = B4 = 1\n   G3 = B4 XOR B3 = 1 XOR 0 = 1\n   G2 = B3 XOR B2 = 0 XOR 1 = 1\n   G1 = B2 XOR B1 = 1 XOR 0 = 1\n   G0 = B1 XOR B0 = 0 XOR 1 = 1\nCombining yields 11111_Gray.",
       "why_wrong": {
-        "10101": "This is the original pure binary representation, not the Gray code.",
-        "11011": "Arithmetic XOR error between B3 and B2.",
-        "11110": "Off-by-one in the LSB G0."
+        "1": "This is the original pure binary representation, not the Gray code.",
+        "2": "Arithmetic XOR error between B3 and B2.",
+        "3": "Off-by-one in the LSB G0."
       },
       "marking_points": [
         "Converts decimal 21 to binary 10101_2",
@@ -93,12 +93,12 @@
         "11010",
         "10011"
       ],
-      "answer": "10110",
+      "answer": 0,
       "explanation": "Convert Gray (G4 G3 G2 G1 G0 = 1 1 1 0 1) to binary (B4 B3 B2 B1 B0):\nB4 = G4 = 1\nB3 = B4 XOR G3 = 1 XOR 1 = 0\nB2 = B3 XOR G2 = 0 XOR 1 = 1\nB1 = B2 XOR G1 = 1 XOR 0 = 1\nB0 = B1 XOR G0 = 1 XOR 1 = 0\nResult = 10110_2 (which equals decimal 22).",
       "why_wrong": {
-        "10111": "Error in the LSB calculation (1 XOR 1 = 0, not 1).",
-        "11010": "XORed adjacent Gray bits instead of using previously generated binary bit.",
-        "10011": "Bit 2 calculation error."
+        "1": "Error in the LSB calculation (1 XOR 1 = 0, not 1).",
+        "2": "XORed adjacent Gray bits instead of using previously generated binary bit.",
+        "3": "Bit 2 calculation error."
       },
       "marking_points": [
         "Sets B4 = G4 = 1",
@@ -126,12 +126,12 @@
         "1110010100",
         "1101010010"
       ],
-      "answer": "1110010010",
+      "answer": 0,
       "explanation": "1. Decode each 4-bit BCD nibble to its decimal digit:\n   1001_2 = 9\n   0001_2 = 1\n   0100_2 = 4\n   The decimal number is 914_10.\n2. Convert 914 to pure binary by successive division by 2:\n   914 = 512 + 256 + 128 + 16 + 2\n   = 2^9 + 2^8 + 2^7 + 2^4 + 2^1\n   = 1110010010_2.",
       "why_wrong": {
-        "100100010100": "Treats BCD as if it were already a pure binary number without conversion.",
-        "1110010100": "Evaluates to 916 decimal; addition error.",
-        "1101010010": "Evaluates to 850 decimal."
+        "1": "Treats BCD as if it were already a pure binary number without conversion.",
+        "2": "Evaluates to 916 decimal; addition error.",
+        "3": "Evaluates to 850 decimal."
       },
       "marking_points": [
         "Decodes BCD nibbles to decimal 914",
@@ -164,7 +164,10 @@
       ],
       "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise III",
       "verified": true,
-      "verified_output": "ASCII stream translates to 'Coded - 0211'"
+      "verified_output": "ASCII stream translates to 'Coded - 0211'",
+      "accepted_answers": [
+        "Coded - 0211"
+      ]
     },
     {
       "id": "ift211-cd-005",
@@ -183,12 +186,12 @@
         "0111",
         "0000"
       ],
-      "answer": "1011",
-      "explanation": "Standard BCD only encodes single decimal digits 0 through 9 (0000_2 through 1001_2). The 4-bit combinations from 1010_2 (10) to 1111_2 (15) \u2014 including 1011_2 (11) \u2014 are illegal/invalid in BCD.",
+      "answer": 0,
+      "explanation": "Standard BCD only encodes single decimal digits 0 through 9 (0000_2 through 1001_2). The 4-bit combinations from 1010_2 (10) to 1111_2 (15) — including 1011_2 (11) — are illegal/invalid in BCD.",
       "why_wrong": {
-        "1001": "Valid BCD representing decimal digit 9.",
-        "0111": "Valid BCD representing decimal digit 7.",
-        "0000": "Valid BCD representing decimal digit 0."
+        "1": "Valid BCD representing decimal digit 9.",
+        "2": "Valid BCD representing decimal digit 7.",
+        "3": "Valid BCD representing decimal digit 0."
       },
       "marking_points": [
         "Identifies 1011 as > 9, hence invalid in 8421 BCD"
@@ -214,12 +217,12 @@
         "Both methods produce the identical 4-bit pattern 1101.",
         "Binary conversion requires 8 bits while BCD coding requires 4 bits."
       ],
-      "answer": "Binary conversion yields 1101_2 (4 bits), whereas BCD coding yields 0001 0011_BCD (8 bits).",
+      "answer": 0,
       "explanation": "Conversion expresses the true mathematical magnitude in base 2 (13_10 = 1101_2). Coding replaces each individual decimal symbol with a code word: '1' -> 0001, '3' -> 0011, producing 0001 0011.",
       "why_wrong": {
-        "Binary conversion yields 00010011_2, whereas BCD coding yields 1101.": "Reverses the definitions.",
-        "Both methods produce the identical 4-bit pattern 1101.": "Conflates pure radix conversion with symbol coding.",
-        "Binary conversion requires 8 bits while BCD coding requires 4 bits.": "BCD requires more bits (8 bits) than pure binary (4 bits)."
+        "1": "Reverses the definitions.",
+        "2": "Conflates pure radix conversion with symbol coding.",
+        "3": "BCD requires more bits (8 bits) than pure binary (4 bits)."
       },
       "marking_points": [
         "Differentiates numeric base conversion (1101) from BCD symbol coding (0001 0011)"
@@ -245,12 +248,12 @@
         "1010",
         "0011"
       ],
-      "answer": "1001",
+      "answer": 0,
       "explanation": "To obtain the Excess-3 code of a decimal digit, add 3 (0011_2) to its 8421 binary value:\n6 + 3 = 9_10 = 1001_2.\nNotice that Excess-3 is self-complementing: 9's complement of 6 is 3 (3+3 = 6 = 0110_2), which is the bitwise inversion of 1001_2.",
       "why_wrong": {
-        "0110": "This is standard 8421 BCD for 6, without adding 3.",
-        "1010": "Equals 10 decimal; added 4 instead of 3.",
-        "0011": "This is Excess-3 for 0 (0 + 3 = 3)."
+        "1": "This is standard 8421 BCD for 6, without adding 3.",
+        "2": "Equals 10 decimal; added 4 instead of 3.",
+        "3": "This is Excess-3 for 0 (0 + 3 = 3)."
       },
       "marking_points": [
         "Adds 3 to decimal 6 to get 9",
@@ -278,12 +281,12 @@
         "Because Gray code allows faster arithmetic multiplication.",
         "Because Gray code uses fewer tracks on the optical disc."
       ],
-      "answer": "Because adjacent positions differ by only one bit, preventing spurious transitional errors caused by mechanical sensor misalignment.",
+      "answer": 0,
       "explanation": "In standard binary, transitioning from 3 (011) to 4 (100) changes all three bits simultaneously. Because mechanical sensors switch at slightly different microsecond thresholds, intermediate false states like 111 (7) or 000 (0) can be read erroneously. In Gray code, only a single bit changes per transition (010 to 110), completely eliminating transitional glitches.",
       "why_wrong": {
-        "Because Gray code circuits do not require logic gates.": "Logic gates are still required to process Gray code.",
-        "Because Gray code allows faster arithmetic multiplication.": "Gray code is non-weighted and non-arithmetic; arithmetic is harder in Gray code.",
-        "Because Gray code uses fewer tracks on the optical disc.": "Both require exactly n tracks for 2^n positions."
+        "1": "Logic gates are still required to process Gray code.",
+        "2": "Gray code is non-weighted and non-arithmetic; arithmetic is harder in Gray code.",
+        "3": "Both require exactly n tracks for 2^n positions."
       },
       "marking_points": [
         "Explains unit distance property prevents transitional read glitches in sensors"
@@ -310,12 +313,12 @@
         "Undefined",
         "Both 0 and 1"
       ],
-      "answer": "0",
+      "answer": 0,
       "explanation": "The message bits '1 0 1' contain two 1s (an even count). To maintain an even number of 1s in the overall 4-bit word (P X Y Z), the even parity bit P must be 0 (giving 0 1 0 1, which has two 1s).",
       "why_wrong": {
         "1": "Setting P=1 would make the total count of 1s equal to 3 (which is odd).",
-        "Undefined": "Parity bit is uniquely determined.",
-        "Both 0 and 1": "Only 0 produces an even count."
+        "2": "Parity bit is uniquely determined.",
+        "3": "Only 0 produces an even count."
       },
       "marking_points": [
         "Counts two 1s in message",
@@ -329,7 +332,7 @@
       "id": "ift211-cd-010",
       "course": "IFT 211",
       "topic": "BCD, Gray Code & ASCII Encoding",
-      "type": "true_false_why",
+      "type": "mcq",
       "difficulty": 3,
       "tags": [
         "parity",
@@ -342,12 +345,12 @@
         "True: The receiver compares the parity against a checksum polynomial that corrects dual-bit errors.",
         "False: Parity bits can only detect errors in decimal digits, not binary messages."
       ],
-      "answer": "False: If an even number of bits (such as 2 bits) are corrupted, the total count of 1s changes by an even amount (+2, 0, or -2), leaving the parity unchanged and the error completely undetectable.",
+      "answer": 0,
       "explanation": "Single-bit parity only detects an odd number of flipped bits. Two simultaneous bit errors cancel out each other's effect on total parity, meaning the error slips through unnoticed.",
       "why_wrong": {
-        "True: Parity checking detects all bit errors regardless of how many bits flip.": "Parity fundamentally fails on even numbers of bit flips.",
-        "True: The receiver compares the parity against a checksum polynomial that corrects dual-bit errors.": "Single parity bits carry no polynomial or error-correcting capability (Hamming codes are required for that).",
-        "False: Parity bits can only detect errors in decimal digits, not binary messages.": "Parity operates directly on binary bit streams."
+        "1": "Parity fundamentally fails on even numbers of bit flips.",
+        "2": "Single parity bits carry no polynomial or error-correcting capability (Hamming codes are required for that).",
+        "3": "Parity operates directly on binary bit streams."
       },
       "marking_points": [
         "Explains that 2 flipped bits preserve even/odd parity count, rendering error undetectable"
@@ -568,12 +571,12 @@
             "The encoder outputs a parity check exception and halts.",
             "The number 8 cannot be represented in a 4-bit binary code."
           ],
-          "answer": "All 4 bits change simultaneously; slight optical sensor misalignment can cause brief readout of any intermediate number (such as 1111 = 15), causing dangerous motor jerking.",
+          "answer": 0,
           "explanation": "In 0111 -> 1000, bit 3 turns on while bits 2, 1, and 0 turn off. Mechanical sensors cannot switch at the exact same picosecond. If bit 3 switches on before bits 2, 1, 0 switch off, the reader registers 1111 (15) instantaneously.",
           "why_wrong": {
-            "The disc physically overheats due to high bit density.": "Passive optical sensors do not overheat from bit transitions.",
-            "The encoder outputs a parity check exception and halts.": "Standard position tracks have no automatic hardware parity unless added.",
-            "The number 8 cannot be represented in a 4-bit binary code.": "4 bits represent 0 through 15 easily."
+            "1": "Passive optical sensors do not overheat from bit transitions.",
+            "2": "Standard position tracks have no automatic hardware parity unless added.",
+            "3": "4 bits represent 0 through 15 easily."
           },
           "marking_points": [
             "Identifies simultaneous 4-bit transition causes false intermediate readouts"
@@ -600,7 +603,7 @@
             "Position 7 = 0101_Gray, Position 8 = 1101_Gray (two bits change).",
             "Position 7 = 1100_Gray, Position 8 = 0100_Gray (no bits change)."
           ],
-          "answer": "Position 7 = 0100_Gray, Position 8 = 1100_Gray (only the MSB changes).",
+          "answer": 0,
           "explanation": "Convert 7 (0111_2) to Gray:\nG3 = 0, G2 = 0^1 = 1, G1 = 1^1 = 0, G0 = 1^1 = 0 -> 0100_Gray.\nConvert 8 (1000_2) to Gray:\nG3 = 1, G2 = 1^0 = 1, G1 = 0^0 = 0, G0 = 0^0 = 0 -> 1100_Gray.\nComparing 0100 and 1100: ONLY bit 3 flips (from 0 to 1). Bits 2, 1, 0 remain strictly 1, 0, 0.",
           "why_wrong": {
             "Position 7 = 0111_Gray, Position 8 = 1000_Gray...": "These are binary values, not Gray code.",
@@ -646,7 +649,10 @@
           ],
           "source": "Digital Logic ASCII Telemetry Scenario",
           "verified": true,
-          "verified_output": "84='T', 50='2', 53='5', 67='C' -> 'T25C'"
+          "verified_output": "84='T', 50='2', 53='5', 67='C' -> 'T25C'",
+          "accepted_answers": [
+            "T25C"
+          ]
         },
         {
           "id": "ift211-cd-cs02-q2",
@@ -666,12 +672,12 @@
             "Undefined",
             "Both 1 and 0"
           ],
-          "answer": "1",
+          "answer": 0,
           "explanation": "Byte 2 is `00110010`. Count the number of 1s in this byte: bit 5 is 1, bit 4 is 1, and bit 1 is 1. Total count of 1s = 3 (an odd number). For Even Parity, the total number of 1s in the 9-bit frame must be even. Therefore, the parity bit P must be 1 (so total 1s = 3 + 1 = 4).",
           "why_wrong": {
             "0": "If P=0, the total number of 1s remains 3 (odd), violating Even Parity.",
-            "Undefined": "Parity bit is uniquely determined.",
-            "Both 1 and 0": "Only P=1 establishes even parity."
+            "2": "Parity bit is uniquely determined.",
+            "3": "Only P=1 establishes even parity."
           },
           "marking_points": [
             "Counts three 1s in 00110010",

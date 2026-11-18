@@ -102,7 +102,14 @@
       "marking_points": [],
       "source": "Software and Operating Systems Slide 5; Student Notebook",
       "verified": true,
-      "verified_output": "Five core OS functions."
+      "verified_output": "Five core OS functions.",
+      "answers": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
     },
     {
       "id": "ift205-ops-003",
@@ -132,7 +139,25 @@
       "marking_points": [],
       "source": "Software and Operating Systems Slide 6; Student Notebook Hint",
       "verified": true,
-      "verified_output": "Matched UI paradigms."
+      "verified_output": "Matched UI paradigms.",
+      "pairs": [
+        {
+          "left": "Graphical User Interface (GUI)",
+          "right": "Employs Windows, Icons, Menus, and Pointers (WIMP); highly intuitive for novices but consumes substantial RAM and GPU processing overhead."
+        },
+        {
+          "left": "Command Line Interface (CLI)",
+          "right": "Executes typed text commands with strict syntax; consumes minimal system resources and enables powerful automated batch scripting."
+        },
+        {
+          "left": "Touchscreen Interface",
+          "right": "Uses direct finger gestures (tap, pinch, swipe) directly on display glass; primary interface on modern mobile phones and tablets."
+        },
+        {
+          "left": "Voice User Interface (VUI)",
+          "right": "Interprets spoken natural language audio through acoustic models and natural language processing."
+        }
+      ]
     },
     {
       "id": "ift205-ops-004",
@@ -164,7 +189,14 @@
       "marking_points": [],
       "source": "Student Notebook Image 21.47.02 ('How to install a new window OS')",
       "verified": true,
-      "verified_output": "Installation sequence: USB media -> BIOS boot order -> Installer -> Partition/Format -> OOBE"
+      "verified_output": "Installation sequence: USB media -> BIOS boot order -> Installer -> Partition/Format -> OOBE",
+      "steps": [
+        "Create a bootable installation USB flash drive using an official OS ISO image",
+        "Insert USB drive, power on PC, and access BIOS/UEFI firmware to configure the boot order priority",
+        "Boot into OS setup wizard, agree to license terms, and select Custom (Clean) installation",
+        "Partition the target storage drive and format the partition with the appropriate file system (e.g. NTFS)",
+        "Complete the file installation process and configure Out-of-Box Experience (OOBE) user accounts and drivers"
+      ]
     },
     {
       "id": "ift205-ops-005",
@@ -253,7 +285,12 @@
       "marking_points": [],
       "source": "Software and Operating Systems Slide 18",
       "verified": true,
-      "verified_output": "open-source, freeware, proprietary"
+      "verified_output": "open-source, freeware, proprietary",
+      "blanks": [
+        "open-source",
+        "freeware",
+        "proprietary"
+      ]
     },
     {
       "id": "ift205-ops-008",
@@ -267,8 +304,8 @@
       ],
       "question": "A newly purchased USB laser printer can function perfectly and print formatted documents on any computer without requiring an operating system device driver.",
       "options": [
-        "True \u2014 modern USB printers communicate via universal electrical telemetry that automatically bypasses operating system software layers.",
-        "False \u2014 an operating system requires a specific device driver program that translates standard high-level print commands into the exact low-level control codes and raster data recognized by that printer's hardware controller."
+        "True — modern USB printers communicate via universal electrical telemetry that automatically bypasses operating system software layers.",
+        "False — an operating system requires a specific device driver program that translates standard high-level print commands into the exact low-level control codes and raster data recognized by that printer's hardware controller."
       ],
       "answer": 1,
       "explanation": "A device driver is specialized system software acting as a bridge between the operating system and a specific hardware device. Without a driver (whether pre-installed, class-compliant, or downloaded), the OS cannot communicate the printer's specific resolution, page geometry, or printing protocol.",
@@ -457,8 +494,8 @@
       ],
       "question": "Restarting a frozen operating system or crashed computer device is a valid, recommended first troubleshooting step rather than an amateur superstition.",
       "options": [
-        "False \u2014 restarting physically degrades the motherboard capacitors and causes permanent file corruption in the BIOS chip.",
-        "True \u2014 restarting flushes volatile RAM, terminates runaway or deadlocked processes, clears leaked memory allocations, and reloads core system drivers into a clean initial state."
+        "False — restarting physically degrades the motherboard capacitors and causes permanent file corruption in the BIOS chip.",
+        "True — restarting flushes volatile RAM, terminates runaway or deadlocked processes, clears leaked memory allocations, and reloads core system drivers into a clean initial state."
       ],
       "answer": 1,
       "explanation": "As noted in Lecture Slide 24: 'Restart the application or device when safe and appropriate.' Restarting is a foundational diagnostic step because it purges erratic volatile memory state, eliminates deadlocked threads, resets hardware peripheral registers, and starts system services afresh.",

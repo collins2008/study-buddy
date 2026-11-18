@@ -274,7 +274,14 @@
         "value"
       ],
       "explanation": "Slide 4 of the lecture notes defines the 5-step entrepreneurial sequence: SPOT Opportunity -> MOBILISE Resources -> TEST Assumptions -> ACT on Calculated Risk -> CREATE Value.",
-      "source": "ENT 211 Lecture Notes, Slide 4: Core Concept Process"
+      "source": "ENT 211 Lecture Notes, Slide 4: Core Concept Process",
+      "blanks": [
+        "spots",
+        "mobilises",
+        "tests",
+        "calculated",
+        "value"
+      ]
     },
     {
       "id": "ent211-fnd-010",
@@ -300,7 +307,25 @@
         "Defined entrepreneurship as the pursuit of opportunity beyond resources currently controlled"
       ],
       "explanation": "Schumpeter introduced new combinations and creative destruction. Drucker emphasized searching for change as opportunity. Hisrich defined value creation under financial, psychic, and social risks. Stevenson formulated the Harvard definition of pursuing opportunity beyond controlled resources.",
-      "source": "ENT 211 Lecture Notes, Slide 5: Key Thinkers & Academic Literature"
+      "source": "ENT 211 Lecture Notes, Slide 5: Key Thinkers & Academic Literature",
+      "pairs": [
+        {
+          "left": "Joseph A. Schumpeter",
+          "right": "Emphasized 'new combinations' of resources and creative destruction as the engine of economic progress"
+        },
+        {
+          "left": "Peter F. Drucker",
+          "right": "Stated that entrepreneurs systematically search for change, respond to it, and exploit it as an opportunity"
+        },
+        {
+          "left": "Robert D. Hisrich",
+          "right": "Highlighted creating something new with value while assuming financial, psychic, and social risks"
+        },
+        {
+          "left": "Howard Stevenson",
+          "right": "Defined entrepreneurship as the pursuit of opportunity beyond resources currently controlled"
+        }
+      ]
     },
     {
       "id": "ent211-fnd-011",
@@ -331,7 +356,15 @@
         5
       ],
       "explanation": "Deck 2 (Entrepreneurial Thinking, Slide 2) details the 6-stage cognitive inquiry: (1) What problem exists? (2) Who is affected? (3) Why unaddressed? (4) What alternatives exist? (5) How can the idea work? (6) What resources are needed?",
-      "source": "Entrepreneurial Thinking Deck, Slide 2: Thinking Like an Entrepreneur"
+      "source": "Entrepreneurial Thinking Deck, Slide 2: Thinking Like an Entrepreneur",
+      "steps": [
+        "Spot the unmet need: What problem exists in everyday life?",
+        "Know the people involved: Who is affected by this problem?",
+        "Find the gap: Why has this problem remained unaddressed?",
+        "Compare options: What existing alternatives do customers currently use?",
+        "Make it useful: How can the proposed solution work effectively?",
+        "Plan for delivery: What resources, capital, and tools are needed?"
+      ]
     },
     {
       "id": "ent211-fnd-012",

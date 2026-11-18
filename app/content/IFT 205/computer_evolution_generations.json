@@ -97,7 +97,29 @@
       "marking_points": [],
       "source": "Evolution_and_Classification_of_Computers Slides 16-22",
       "verified": true,
-      "verified_output": "Matched all 5 generations."
+      "verified_output": "Matched all 5 generations.",
+      "pairs": [
+        {
+          "left": "First Generation (1940s-1950s)",
+          "right": "Vacuum Tubes (thermionic electronic valves emitting high heat)"
+        },
+        {
+          "left": "Second Generation (1950s-1960s)",
+          "right": "Discrete Transistors (solid-state semiconductor switches)"
+        },
+        {
+          "left": "Third Generation (1960s-1970s)",
+          "right": "Integrated Circuits (ICs etched on silicon semiconductor chips)"
+        },
+        {
+          "left": "Fourth Generation (1970s-Present)",
+          "right": "Microprocessors (VLSI/ULSI placing entire CPU onto a single chip)"
+        },
+        {
+          "left": "Fifth Generation (Present & Future)",
+          "right": "Artificial Intelligence, Massive Parallel Processing, and Quantum Computing"
+        }
+      ]
     },
     {
       "id": "ift205-evo-003",
@@ -111,8 +133,8 @@
       ],
       "question": "The ENIAC computer (completed in 1945) allowed operators to switch between different software programs instantly by loading code from a floppy disk into RAM.",
       "options": [
-        "True \u2014 ENIAC used high-density 3.5-inch floppy disks to boot the MS-DOS operating system.",
-        "False \u2014 ENIAC was not a stored-program computer; reprogramming it required technicians to physically re-route electrical patch cords and manually flip thousands of mechanical switches over several days."
+        "True — ENIAC used high-density 3.5-inch floppy disks to boot the MS-DOS operating system.",
+        "False — ENIAC was not a stored-program computer; reprogramming it required technicians to physically re-route electrical patch cords and manually flip thousands of mechanical switches over several days."
       ],
       "answer": 1,
       "explanation": "ENIAC was programmed hardwired: to change its calculation routine, teams of human programmers had to manually disconnect, rewire, and re-patch dozens of external cables and configure rotary switches. The Stored-Program Concept was subsequently introduced by John von Neumann to store instructions in memory instead.",
@@ -154,7 +176,14 @@
       "marking_points": [],
       "source": "Evolution_and_Classification_of_Computers Slide 5-20, 40",
       "verified": true,
-      "verified_output": "Abacus -> Babbage -> Hollerith -> ENIAC -> Intel 4004"
+      "verified_output": "Abacus -> Babbage -> Hollerith -> ENIAC -> Intel 4004",
+      "steps": [
+        "The Abacus manual bead counting tool",
+        "Charles Babbage designs the mechanical Analytical Engine",
+        "Herman Hollerith develops punched-card tabulating machines for the US Census",
+        "ENIAC electronic vacuum-tube computer is completed",
+        "Intel releases the 4004, the first single-chip commercial microprocessor"
+      ]
     },
     {
       "id": "ift205-evo-005",
@@ -242,7 +271,11 @@
       "marking_points": [],
       "source": "Evolution_and_Classification_of_Computers Slide 15",
       "verified": true,
-      "verified_output": "John von Neumann, stored-program"
+      "verified_output": "John von Neumann, stored-program",
+      "blanks": [
+        "John von Neumann",
+        "stored-program"
+      ]
     },
     {
       "id": "ift205-evo-008",
@@ -275,7 +308,12 @@
       "marking_points": [],
       "source": "Evolution_and_Classification_of_Computers Slide 18, 22",
       "verified": true,
-      "verified_output": "Smaller size, lower power/heat, higher reliability."
+      "verified_output": "Smaller size, lower power/heat, higher reliability.",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ift205-evo-009",
@@ -374,8 +412,8 @@
       ],
       "question": "A computer is defined as a 'server' strictly and solely because it is physically housed in a tall, freestanding metal rack cabinet.",
       "options": [
-        "True \u2014 if a computer is placed on an office desk, it automatically converts its motherboard into a client terminal.",
-        "False \u2014 a server is defined by its operational role and software services (providing data, resources, or services to network clients), not purely by its physical enclosure or chassis form factor."
+        "True — if a computer is placed on an office desk, it automatically converts its motherboard into a client terminal.",
+        "False — a server is defined by its operational role and software services (providing data, resources, or services to network clients), not purely by its physical enclosure or chassis form factor."
       ],
       "answer": 1,
       "explanation": "As explicitly highlighted in Slide 42 ('A server is defined only by being a tall cabinet. True/False'): False! A server is defined by its role: it runs software that responds to requests from other computers over a network. A server can be housed in a desktop tower, a rack blade, or a virtual machine.",
@@ -544,7 +582,7 @@
             "case_study",
             "client_server_tiering"
           ],
-          "question": "Explain how the bank's IT architecture integrates all three tiers of computers\u2014the branch teller desktop microcomputers, the ATM embedded controllers, and the central mainframe\u2014to complete a cash withdrawal.",
+          "question": "Explain how the bank's IT architecture integrates all three tiers of computers—the branch teller desktop microcomputers, the ATM embedded controllers, and the central mainframe—to complete a cash withdrawal.",
           "options": [],
           "answer": "The bank operates a distributed multi-tier client-server architecture: (1) The ATM contains an Embedded System controller that reads the customer's debit card chip, captures the PIN via an encrypted keypad, and dispenses cash mechanically; (2) The ATM embedded controller packages the withdrawal request and transmits it over an encrypted Wide Area Network (WAN) to the bank's central data center; (3) The central Mainframe receives the request, queries the core database, verifies the account balance and cryptographic signature, deducts the withdrawal amount atomically to ensure consistency, and transmits back an authorization token; (4) The ATM embedded controller receives the approval, dispenses the currency notes, and prints a physical receipt. Similarly, branch teller desktop microcomputers act as clients submitting transactions to the same central mainframe engine.",
           "explanation": "Client-server workflow integrating embedded ATM controllers, microcomputer workstations, and central transactional mainframe.",

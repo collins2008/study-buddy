@@ -205,7 +205,29 @@
       ],
       "explanation": "These elements and attributes are the standard building blocks of interactive HTML5 forms covered in Nile IFT 203 lectures and take-home practicals.",
       "why_wrong": {},
-      "source": "IFT 203 Week 5 Slides; Practice Codes Docx"
+      "source": "IFT 203 Week 5 Slides; Practice Codes Docx",
+      "pairs": [
+        {
+          "left": "<textarea>",
+          "right": "Provides a multi-line text input field, requiring an explicit closing tag"
+        },
+        {
+          "left": "<select> & <option>",
+          "right": "Creates a drop-down selection menu for choosing one or more items"
+        },
+        {
+          "left": "<fieldset> & <legend>",
+          "right": "Groups logically related form controls inside a visual border with a caption title"
+        },
+        {
+          "left": "required",
+          "right": "HTML5 boolean attribute preventing form submission if the input field is left empty"
+        },
+        {
+          "left": "placeholder",
+          "right": "Displays faint hint text inside an input field that disappears as soon as the user begins typing"
+        }
+      ]
     },
     {
       "id": "ift203-ft-006",
@@ -233,7 +255,13 @@
       ],
       "explanation": "In semantic HTML tables: `<caption>` must appear immediately after `<table>`, followed by `<thead>` (headers), `<tbody>` (data rows), and `<tfoot>` (footer totals/summaries).",
       "why_wrong": {},
-      "source": "IFT 203 Week 5 Slides; W3C HTML5 Table Model"
+      "source": "IFT 203 Week 5 Slides; W3C HTML5 Table Model",
+      "steps": [
+        "<caption> (accessible title of the table, placed first)</caption>",
+        "<thead> containing <tr> and <th> header cells</thead>",
+        "<tbody> containing <tr> and <td> data rows</tbody>",
+        "<tfoot> containing <tr> and <td> summary or total calculations</tfoot>"
+      ]
     },
     {
       "id": "ift203-ft-007",
@@ -290,7 +318,12 @@
       "why_wrong": {
         "3": "`<img>` is a void (empty) element and does not have a closing tag in HTML5."
       },
-      "source": "IFT 203 Week 4 & 5 Slides; MDN Links & Media"
+      "source": "IFT 203 Week 4 & 5 Slides; MDN Links & Media",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ift203-ft-fc01",

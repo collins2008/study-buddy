@@ -299,7 +299,12 @@
         "regressive"
       ],
       "explanation": "Usability specifications divide metrics into objective performance measures (quantifying user speed, errors, completion) and subjective preference measures (quantifying attitudes and ratings). Extreme emotional breakdowns during testing (such as shouting at the monitor or striking hardware) are documented as 'regressive behaviors'.",
-      "source": "Module 03 (Know Thy User), Slides 38-39: Usability Specifications"
+      "source": "Module 03 (Know Thy User), Slides 38-39: Usability Specifications",
+      "blanks": [
+        "performance",
+        "preference",
+        "regressive"
+      ]
     },
     {
       "id": "ins202-eval-011",
@@ -325,7 +330,25 @@
         "Error Prevention"
       ],
       "explanation": "Lack of feedback violates 'Visibility of System Status'. Cryptic hexadecimal error codes violate 'Help Users Recognize, Diagnose, and Recover from Errors' (which demands plain language). Lack of an emergency exit or Undo violates 'User Control and Freedom'. Allowing invalid inputs instead of constraining choices violates 'Error Prevention'.",
-      "source": "Jakob Nielsen's 10 Usability Heuristics"
+      "source": "Jakob Nielsen's 10 Usability Heuristics",
+      "pairs": [
+        {
+          "left": "A file-saving operation shows a blank screen for 30 seconds with no progress bar or spinner",
+          "right": "Visibility of System Status"
+        },
+        {
+          "left": "A system error pop-up displays 'Fatal Exception 0x0000005F at memory address 0x8849'",
+          "right": "Help Users Recognize, Diagnose, and Recover from Errors"
+        },
+        {
+          "left": "A user accidentally hits 'Empty Trash' but there is no 'Undo' button or recovery option",
+          "right": "User Control and Freedom"
+        },
+        {
+          "left": "A date-picker field allows users to select February 31st and only crashes after submitting the form",
+          "right": "Error Prevention"
+        }
+      ]
     },
     {
       "id": "ins202-eval-012",
@@ -352,7 +375,13 @@
         3
       ],
       "explanation": "Standard usability protocol begins with a pre-test briefing explaining consent and framing the test around the interface (not user competence). Realistic tasks are executed sequentially while logging metrics. After each individual task, brief post-task questions (like SEQ) capture immediate difficulty. Finally, at the session end, a global post-test instrument (like SUS) and debriefing interview take place.",
-      "source": "Module 03 / Module 07 Evaluation Procedures"
+      "source": "Module 03 / Module 07 Evaluation Procedures",
+      "steps": [
+        "Administer pre-test briefing and emphasize that the system, not the participant, is being evaluated",
+        "Present realistic task scenarios one by one while observing actions and noting performance metrics",
+        "Administer post-task single-item ease questionnaires (SEQ) immediately following each task",
+        "Administer comprehensive post-test preference questionnaires (e.g., Likert-based SUS) and conduct debriefing"
+      ]
     },
     {
       "id": "ins202-eval-013",

@@ -26,15 +26,15 @@
     },
     {
       "term": "Class A IP Address",
-      "definition": "An IPv4 address with first octet 1\u2013126 and default subnet mask 255.0.0.0 (/8), supporting up to 16,777,214 hosts per network."
+      "definition": "An IPv4 address with first octet 1–126 and default subnet mask 255.0.0.0 (/8), supporting up to 16,777,214 hosts per network."
     },
     {
       "term": "Class B IP Address",
-      "definition": "An IPv4 address with first octet 128\u2013191 and default subnet mask 255.255.0.0 (/16), supporting up to 65,534 hosts per network."
+      "definition": "An IPv4 address with first octet 128–191 and default subnet mask 255.255.0.0 (/16), supporting up to 65,534 hosts per network."
     },
     {
       "term": "Class C IP Address",
-      "definition": "An IPv4 address with first octet 192\u2013223 and default subnet mask 255.255.255.0 (/24), supporting up to 254 hosts per network."
+      "definition": "An IPv4 address with first octet 192–223 and default subnet mask 255.255.255.0 (/24), supporting up to 254 hosts per network."
     }
   ],
   "questions": [
@@ -50,8 +50,8 @@
       ],
       "question": "A Local Area Network (LAN) deployed in a university computer laboratory cannot function or allow students to share files and print documents unless there is an active, paid connection to the Internet.",
       "options": [
-        "True \u2014 modern network interface cards (NICs) automatically disable their physical Ethernet ports if they cannot ping a public Google DNS server.",
-        "False \u2014 a LAN operates independently at the local link and network layers; devices connected via a switch can communicate, share files, and print locally even when completely isolated from the Internet."
+        "True — modern network interface cards (NICs) automatically disable their physical Ethernet ports if they cannot ping a public Google DNS server.",
+        "False — a LAN operates independently at the local link and network layers; devices connected via a switch can communicate, share files, and print locally even when completely isolated from the Internet."
       ],
       "answer": 1,
       "explanation": "As explicitly highlighted by the lecturer in student lecture notes: 'A LAN does not need an active internet connection.' A LAN exists whenever two or more devices are interconnected locally through a switch or access point. Local file sharing, intranet services, database access, and network printing operate completely within the local IP subnet without requiring any WAN/ISP internet connectivity.",
@@ -81,11 +81,11 @@
         "Class D with default subnet mask 255.255.255.255"
       ],
       "answer": 0,
-      "explanation": "IPv4 Class C spans first octet values from 192 to 223. Because 197 falls within 192\u2013223, it is a Class C address. Class C addresses allocate 24 bits to the network ID and 8 bits to the host ID, giving a default subnet mask of 255.255.255.0 (/24).",
+      "explanation": "IPv4 Class C spans first octet values from 192 to 223. Because 197 falls within 192–223, it is a Class C address. Class C addresses allocate 24 bits to the network ID and 8 bits to the host ID, giving a default subnet mask of 255.255.255.0 (/24).",
       "why_wrong": {
-        "1": "Class A covers first octets 1\u2013126 with default mask 255.0.0.0.",
-        "2": "Class B covers first octets 128\u2013191 with default mask 255.255.0.0.",
-        "3": "Class D covers 224\u2013239 for multicasting and does not have a default host subnet mask."
+        "1": "Class A covers first octets 1–126 with default mask 255.0.0.0.",
+        "2": "Class B covers first octets 128–191 with default mask 255.255.0.0.",
+        "3": "Class D covers 224–239 for multicasting and does not have a default host subnet mask."
       },
       "marking_points": [],
       "source": "Student Notebook Image 21.47.02 ('Learn abt IPV4 classes'); Week 6 Slide 12",
@@ -122,7 +122,29 @@
       "marking_points": [],
       "source": "Student Notebook Image 21.47.02; Week 6 Slide 12",
       "verified": true,
-      "verified_output": "Matched all 5 IPv4 classes."
+      "verified_output": "Matched all 5 IPv4 classes.",
+      "pairs": [
+        {
+          "left": "Class A",
+          "right": "First octet: 1 to 126; Default mask 255.0.0.0; Designed for massive networks with millions of hosts."
+        },
+        {
+          "left": "Class B",
+          "right": "First octet: 128 to 191; Default mask 255.255.0.0; Designed for medium-to-large organizations and universities."
+        },
+        {
+          "left": "Class C",
+          "right": "First octet: 192 to 223; Default mask 255.255.255.0; Designed for small departmental LANs (up to 254 hosts)."
+        },
+        {
+          "left": "Class D",
+          "right": "First octet: 224 to 239; No subnet mask; Strictly reserved for network Multicasting transmissions."
+        },
+        {
+          "left": "Class E",
+          "right": "First octet: 240 to 255; No subnet mask; Strictly reserved for experimental and research purposes."
+        }
+      ]
     },
     {
       "id": "ift205-net-004",
@@ -235,7 +257,12 @@
       "marking_points": [],
       "source": "Week 6 Slide 10; IFT205_Week2 Slide 30",
       "verified": true,
-      "verified_output": "bandwidth, throughput, latency"
+      "verified_output": "bandwidth, throughput, latency",
+      "blanks": [
+        "bandwidth",
+        "throughput",
+        "latency"
+      ]
     },
     {
       "id": "ift205-net-008",
@@ -297,7 +324,12 @@
       "marking_points": [],
       "source": "Student Notebook Image 21.47.02; RFC 1918",
       "verified": true,
-      "verified_output": "10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16."
+      "verified_output": "10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16.",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ift205-net-010",
@@ -422,7 +454,7 @@
       ],
       "question": "Distinguish clearly between 'The Internet' and 'The World Wide Web (WWW)'. Why is it technically inaccurate to use these terms interchangeably?",
       "options": [],
-      "answer": "The Internet is the massive, global physical and logical networking infrastructure\u2014the underlying 'hardware and communication highways' consisting of cables, routers, switches, servers, and satellites communicating via the TCP/IP protocol suite. In contrast, the World Wide Web (WWW) is an application service that runs on top of the Internet infrastructure. Invented by Tim Berners-Lee in 1989, the Web is a vast collection of interlinked hypertext documents, multimedia web pages, and web applications identified by URLs and transmitted via HTTP/HTTPS. The Internet supports many other services besides the Web, including email (SMTP/IMAP), file transfer (FTP), remote access (SSH), streaming media, and gaming.",
+      "answer": "The Internet is the massive, global physical and logical networking infrastructure—the underlying 'hardware and communication highways' consisting of cables, routers, switches, servers, and satellites communicating via the TCP/IP protocol suite. In contrast, the World Wide Web (WWW) is an application service that runs on top of the Internet infrastructure. Invented by Tim Berners-Lee in 1989, the Web is a vast collection of interlinked hypertext documents, multimedia web pages, and web applications identified by URLs and transmitted via HTTP/HTTPS. The Internet supports many other services besides the Web, including email (SMTP/IMAP), file transfer (FTP), remote access (SSH), streaming media, and gaming.",
       "explanation": "Internet is the physical/logical network infrastructure; Web is an information service running on top of it.",
       "why_wrong": {},
       "marking_points": [
@@ -476,8 +508,8 @@
       ],
       "question": "A Personal Area Network (PAN) typically spans an entire university campus and is linked using underground fiber-optic cables.",
       "options": [
-        "True \u2014 PANs are designed for campus-wide high-speed computing clusters.",
-        "False \u2014 a PAN is centered around a single person within a short range of approximately 10 meters (using Bluetooth or USB), whereas a campus-wide network is a Campus Area Network (CAN) or LAN."
+        "True — PANs are designed for campus-wide high-speed computing clusters.",
+        "False — a PAN is centered around a single person within a short range of approximately 10 meters (using Bluetooth or USB), whereas a campus-wide network is a Campus Area Network (CAN) or LAN."
       ],
       "answer": 1,
       "explanation": "A Personal Area Network (PAN) covers a very small personal space (typically within 10 meters / 30 feet) connecting personal devices such as smartphones, smartwatches, and wireless earbuds via Bluetooth. A campus network is a LAN or CAN.",
@@ -596,7 +628,7 @@
           ],
           "question": "Propose two specific network management and security policies the company must implement to protect critical payment transactions from staff video streaming interference.",
           "options": [],
-          "answer": "The company should implement: (1) Quality of Service (QoS) and Traffic Prioritization: Configure the edge router/firewall to classify payment transaction traffic (HTTPS/API calls) as highest priority, reserving guaranteed bandwidth and low latency for financial transactions while assigning video streaming to best-effort lowest priority; (2) Network Segmentation and VLANs: Segregate the network into distinct Virtual LANs (VLANs)\u2014one secure, isolated VLAN for production payment servers and corporate operations, and a separate Guest/Staff Wi-Fi VLAN with bandwidth caps and firewall content filtering that blocks non-work entertainment/video streaming during business hours.",
+          "answer": "The company should implement: (1) Quality of Service (QoS) and Traffic Prioritization: Configure the edge router/firewall to classify payment transaction traffic (HTTPS/API calls) as highest priority, reserving guaranteed bandwidth and low latency for financial transactions while assigning video streaming to best-effort lowest priority; (2) Network Segmentation and VLANs: Segregate the network into distinct Virtual LANs (VLANs)—one secure, isolated VLAN for production payment servers and corporate operations, and a separate Guest/Staff Wi-Fi VLAN with bandwidth caps and firewall content filtering that blocks non-work entertainment/video streaming during business hours.",
           "explanation": "QoS guarantees priority and low latency for critical transactions; VLAN segmentation isolates production traffic from entertainment bandwidth.",
           "why_wrong": {},
           "marking_points": [

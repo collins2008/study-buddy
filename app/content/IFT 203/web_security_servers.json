@@ -203,7 +203,29 @@
       ],
       "explanation": "Mastery of standard HTTP status codes is an indispensable diagnostic skill for university examinations and full-stack engineering.",
       "why_wrong": {},
-      "source": "RFC 9110 HTTP Semantics"
+      "source": "RFC 9110 HTTP Semantics",
+      "pairs": [
+        {
+          "left": "200 OK",
+          "right": "Standard successful HTTP response containing requested resource payload"
+        },
+        {
+          "left": "301 Moved Permanently",
+          "right": "Permanent redirection signaling browsers and search crawlers to update bookmarks and indices"
+        },
+        {
+          "left": "400 Bad Request",
+          "right": "Client error indicating the server cannot process the request due to malformed syntax"
+        },
+        {
+          "left": "403 Forbidden",
+          "right": "Client error where server recognizes authenticated identity but refuses permission"
+        },
+        {
+          "left": "503 Service Unavailable",
+          "right": "Server error indicating the server is currently unable to handle request due to overload or maintenance"
+        }
+      ]
     },
     {
       "id": "ift203-ws-006",
@@ -234,7 +256,14 @@
       ],
       "explanation": "The TLS handshake negotiates encryption ciphers, verifies server identity through CA-signed certificates, securely exchanges a symmetric session key, and transitions to encrypted communication.",
       "why_wrong": {},
-      "source": "RFC 8446 The Transport Layer Security (TLS) Protocol Version 1.3"
+      "source": "RFC 8446 The Transport Layer Security (TLS) Protocol Version 1.3",
+      "steps": [
+        "Client Hello: Browser sends supported TLS versions and cryptographic cipher suites to the server",
+        "Server Hello & Certificate: Server replies with chosen cipher suite and presents its digital SSL/TLS Certificate signed by a trusted CA",
+        "Certificate Verification: Browser verifies the digital signature of the certificate against its pre-installed list of trusted Certificate Authorities",
+        "Session Key Exchange: Client and server exchange/derive symmetric encryption session keys using asymmetric cryptography",
+        "Encrypted Session: Secure, symmetric-encrypted HTTP communication begins over port 443"
+      ]
     },
     {
       "id": "ift203-ws-007",
@@ -290,7 +319,12 @@
       "why_wrong": {
         "3": "Writing passwords in HTML comments exposes critical credentials to the entire public Internet."
       },
-      "source": "OWASP Security Guidelines; Google Web Fundamentals Performance"
+      "source": "OWASP Security Guidelines; Google Web Fundamentals Performance",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ift203-ws-fc01",

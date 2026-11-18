@@ -121,7 +121,25 @@
       "marking_points": [],
       "source": "Module 02 Slide 54; Norman Interaction Principles",
       "verified": true,
-      "verified_output": "Matched physical, logical, cultural, semantic constraints."
+      "verified_output": "Matched physical, logical, cultural, semantic constraints.",
+      "pairs": [
+        {
+          "left": "Physical Constraint",
+          "right": "A USB-A plug or smartphone SIM card with an asymmetrical beveled corner that physically prevents incorrect insertion."
+        },
+        {
+          "left": "Logical Constraint",
+          "right": "A flight booking website graying out and disabling return calendar dates that occur prior to the selected departure date."
+        },
+        {
+          "left": "Cultural Constraint",
+          "right": "Using red for emergency stop buttons and green for operational confirmation, relying on shared societal conventions."
+        },
+        {
+          "left": "Semantic Constraint",
+          "right": "An automobile GPS navigation system preventing an operator from entering an address in the middle of the Atlantic Ocean based on geographical meaning."
+        }
+      ]
     },
     {
       "id": "ins202-pri-004",
@@ -135,8 +153,8 @@
       ],
       "question": "A commercial glass office door has an identical vertical cylindrical pull-handle mounted on both sides. A visitor pushes the handle firmly, but the door refuses to open until they realize it must be pulled. This interface failure is known in HCI as a 'Norman Door' caused by misleading perceived affordance.",
       "options": [
-        "False \u2014 vertical cylindrical handles inherently communicate pushing to all human cultures, so the visitor made an irrational mental calculation.",
-        "True \u2014 a vertical handle physically affords and visually signifies pulling; if a door must be pushed, installing a flat push-plate provides the correct perceived affordance."
+        "False — vertical cylindrical handles inherently communicate pushing to all human cultures, so the visitor made an irrational mental calculation.",
+        "True — a vertical handle physically affords and visually signifies pulling; if a door must be pushed, installing a flat push-plate provides the correct perceived affordance."
       ],
       "answer": 1,
       "explanation": "A 'Norman Door' (named after Don Norman) is a door whose design gives false visual affordance cues. A vertical bar affords pulling (giving hands a surface to grasp). If the door opens by pushing, installing a pull handle causes natural user error; a flat metal push plate physically affords pushing and prevents mistakes.",
@@ -179,7 +197,12 @@
       "marking_points": [],
       "source": "Module 01 Slide 13; Shneiderman Direct Manipulation",
       "verified": true,
-      "verified_output": "Continuous visual representation, physical actions, rapid reversible feedback."
+      "verified_output": "Continuous visual representation, physical actions, rapid reversible feedback.",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ins202-pri-006",
@@ -238,7 +261,12 @@
       "marking_points": [],
       "source": "Module 02 Slide 48; Norman Design Principles",
       "verified": true,
-      "verified_output": "feedback, visual, auditory"
+      "verified_output": "feedback, visual, auditory",
+      "blanks": [
+        "feedback",
+        "visual",
+        "auditory"
+      ]
     },
     {
       "id": "ins202-pri-008",
@@ -362,8 +390,8 @@
       ],
       "question": "A user's Mental Model of how an operating system stores files is guaranteed to be technically identical to the computer engineer's Conceptual Model of disk block allocation tables and inode pointers.",
       "options": [
-        "True \u2014 every person who clicks a folder icon mentally simulates the underlying magnetic cluster addresses on the drive surface.",
-        "False \u2014 users form simplified mental models based on visible metaphors (e.g. documents sitting inside folders in a filing cabinet), whereas the engineer's conceptual model consists of data structures, master file tables, and physical storage blocks."
+        "True — every person who clicks a folder icon mentally simulates the underlying magnetic cluster addresses on the drive surface.",
+        "False — users form simplified mental models based on visible metaphors (e.g. documents sitting inside folders in a filing cabinet), whereas the engineer's conceptual model consists of data structures, master file tables, and physical storage blocks."
       ],
       "answer": 1,
       "explanation": "As taught in Module 02 Slide 44: Users build mental models to predict and understand how a system works. These models are based on visible metaphors (files and folders) and past experience, not the actual low-level data structures (inodes, sectors, file tables) known to computer engineers.",

@@ -270,7 +270,13 @@
         "invention"
       ],
       "explanation": "Slide 9 outlines the three-stage progression: IDEA -> IMPLEMENTATION -> VALUE. Slide 10 defines Invention as creating something new, while Innovation is practical value implementation.",
-      "source": "ENT 211 Lecture Notes, Slides 9-10: Core Concept & Invention vs Innovation"
+      "source": "ENT 211 Lecture Notes, Slides 9-10: Core Concept & Invention vs Innovation",
+      "blanks": [
+        "idea",
+        "implementation",
+        "value",
+        "invention"
+      ]
     },
     {
       "id": "ent211-inn-010",
@@ -296,7 +302,25 @@
         "Business Model Innovation"
       ],
       "explanation": "The electric tricycle is a physical good (Product). Biometric tablet registration improves operational workflows (Process). SMS reminders and follow-up calls improve the customer experience (Service). Daily solar subscriptions restructure revenue and value capture (Business Model).",
-      "source": "ENT 211 Lecture Notes, Slide 11: Forms Innovation Can Take"
+      "source": "ENT 211 Lecture Notes, Slide 11: Forms Innovation Can Take",
+      "pairs": [
+        {
+          "left": "Developing an electric tricycle with swappable lithium battery packs",
+          "right": "Product Innovation"
+        },
+        {
+          "left": "Replacing paper customer registration forms with digital biometric tablet signups",
+          "right": "Process Innovation"
+        },
+        {
+          "left": "Sending automated SMS reminders and post-service follow-up calls to clinic patients",
+          "right": "Service Innovation"
+        },
+        {
+          "left": "Offering solar home systems via a 200-Naira daily mobile money subscription",
+          "right": "Business Model Innovation"
+        }
+      ]
     },
     {
       "id": "ent211-inn-011",
@@ -323,7 +347,13 @@
         3
       ],
       "explanation": "Christensen's theory follows a predictable sequence: (1) low-end or new-market entry, (2) incumbent complacency and abandonment of low-margin tiers, (3) quality and technological improvement by the entrant, and (4) upmarket migration that unseats the mainstream incumbent.",
-      "source": "Strategic Innovation & Christensen Disruption Model"
+      "source": "Strategic Innovation & Christensen Disruption Model",
+      "steps": [
+        "Entrant launches a cheaper, simpler product targeting low-end or unserved non-consumers",
+        "Established incumbents ignore the entrant because profit margins in that segment are low",
+        "Entrant steadily improves product quality, reliability, and features over time",
+        "Entrant migrates upmarket, attracting mainstream customers and displacing the incumbent"
+      ]
     },
     {
       "id": "ent211-inn-012",

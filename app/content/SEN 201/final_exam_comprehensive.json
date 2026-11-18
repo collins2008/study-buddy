@@ -232,7 +232,29 @@
       ],
       "explanation": "Unites the fundamental process models tested in the Nile SEN 201 examination: Waterfall (linear), Spiral (risk-driven), Scrum (sprints), RUP (architecture-centric), and XP (code craftsmanship).",
       "why_wrong": {},
-      "source": "Nile Final Exam Paper Type B Q3, Q4, Q15, Q53, Q54; Sommerville Ch. 2 & 3"
+      "source": "Nile Final Exam Paper Type B Q3, Q4, Q15, Q53, Q54; Sommerville Ch. 2 & 3",
+      "pairs": [
+        {
+          "left": "Waterfall Model",
+          "right": "Strict linear phase-gate progression requiring fully signed-off requirements before design begins"
+        },
+        {
+          "left": "Spiral Model",
+          "right": "Risk-driven iterative lifecycle with formal risk assessment at every revolving loop"
+        },
+        {
+          "left": "Scrum",
+          "right": "Agile framework delivering working software in fixed-length 2-4 week sprints with daily standups"
+        },
+        {
+          "left": "Rational Unified Process (RUP)",
+          "right": "Architecture-centric, use-case driven iterative framework across 4 phases (Inception to Transition)"
+        },
+        {
+          "left": "Extreme Programming (XP)",
+          "right": "Disciplined agile practice emphasizing Test-Driven Development (TDD) and Pair Programming"
+        }
+      ]
     },
     {
       "id": "sen201-fe-007",
@@ -264,7 +286,15 @@
       ],
       "explanation": "The engineering lifecycle begins with feasibility analysis, proceeds through requirements specification, architecture, construction/unit testing, full system integration, and concludes with deployment and evolutionary maintenance.",
       "why_wrong": {},
-      "source": "Sommerville Ch. 1 & 2; Software Engineering Concepts and Principles Lecture Notes"
+      "source": "Sommerville Ch. 1 & 2; Software Engineering Concepts and Principles Lecture Notes",
+      "steps": [
+        "Feasibility Study & Business Case Evaluation",
+        "Requirements Elicitation, Analysis & Specification (SRS)",
+        "Architectural & Detailed System Design",
+        "Implementation, Code Inspection & Unit Testing",
+        "Integration, System & Acceptance Testing",
+        "System Deployment, Operation & Evolutionary Maintenance"
+      ]
     },
     {
       "id": "sen201-fe-008",
@@ -293,7 +323,12 @@
       "why_wrong": {
         "3": "Hardware advancements increase system scale and complexity, which exacerbates software errors if disciplined engineering is neglected."
       },
-      "source": "Nile Final Exam Paper Type B Q1, Q2, Q66; Sommerville Ch. 1"
+      "source": "Nile Final Exam Paper Type B Q1, Q2, Q66; Sommerville Ch. 1",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "sen201-fe-fc01",

@@ -382,7 +382,13 @@
       "why_wrong": {},
       "source": "Deitel C How to Program, Chapter 7",
       "verified": true,
-      "verified_output": "(Conceptual terminology)"
+      "verified_output": "(Conceptual terminology)",
+      "blanks": [
+        "&",
+        "*",
+        "NULL",
+        "free"
+      ]
     },
     {
       "id": "cos201-ptr-013",
@@ -417,7 +423,15 @@
       "why_wrong": {},
       "source": "Deitel C How to Program, Section 7.11",
       "verified": true,
-      "verified_output": "(Lifecycle sequence)"
+      "verified_output": "(Lifecycle sequence)",
+      "steps": [
+        "Declare a pointer variable (e.g. `int *ptr = NULL;`)",
+        "Call `malloc()` or `calloc()` to allocate required bytes on the heap",
+        "Verify whether the returned pointer is `NULL` before using it",
+        "Read from and write to the allocated memory buffer",
+        "Call `free(ptr)` to release the heap memory",
+        "Set `ptr = NULL;` to avoid a dangling pointer"
+      ]
     },
     {
       "id": "cos201-ptr-014",
@@ -447,7 +461,25 @@
       "why_wrong": {},
       "source": "Deitel C How to Program, Chapter 7",
       "verified": true,
-      "verified_output": "(Concept map)"
+      "verified_output": "(Concept map)",
+      "pairs": [
+        {
+          "left": "&var",
+          "right": "Memory address of variable var"
+        },
+        {
+          "left": "*ptr",
+          "right": "Value stored at address in ptr"
+        },
+        {
+          "left": "ptr + 1",
+          "right": "Address of the next element scaled by data type size"
+        },
+        {
+          "left": "const int *p",
+          "right": "Pointer to read-only integer data"
+        }
+      ]
     },
     {
       "id": "cos201-ptr-015",
@@ -651,9 +683,8 @@
           "answer": 0,
           "explanation": "In 'university', the vowels are 'u', 'i', 'e', and 'i' (the 'y' is treated as consonant by this function). There are exactly 4 matches. Output is 4.",
           "why_wrong": {
-            "1": "Misses one of the two 'i's in 'university'.",
-            "2": "5 would count 'y' as a vowel, which is not in the condition.",
-            "3": "10 is the total length of the string 'university'."
+            "1": "10 is the total length of the string 'university'.",
+            "2": "5 would count 'y' as a vowel, which is not in the condition."
           },
           "source": "Deitel C How to Program, Section 7.8",
           "verified": true,

@@ -197,7 +197,25 @@
       ],
       "explanation": "Philippe Kruchten's 4+1 View Model structures architectural descriptions according to stakeholder viewpoints: Logical (functional domain abstractions), Process (runtime concurrency/performance), Development (source code modularity/builds), and Physical (hardware deployment topology).",
       "why_wrong": {},
-      "source": "Kruchten 4+1 View Model; Nile Final Exam Q61"
+      "source": "Kruchten 4+1 View Model; Nile Final Exam Q61",
+      "pairs": [
+        {
+          "left": "Logical View",
+          "right": "Class diagrams, object models, and domain abstractions"
+        },
+        {
+          "left": "Process View",
+          "right": "Concurrency, threads, inter-process communication, and latency"
+        },
+        {
+          "left": "Development View",
+          "right": "Code packages, libraries, modular subsystems, and build dependencies"
+        },
+        {
+          "left": "Physical View",
+          "right": "Hardware processors, server nodes, network topologies, and deployment units"
+        }
+      ]
     },
     {
       "id": "sen201-ap-006",
@@ -225,7 +243,13 @@
       ],
       "explanation": "In standard n-tier architecture, requests flow downward: Presentation Layer captures user actions -> Business Logic executes business validation and computations -> Data Access Layer constructs queries and maps models -> Database Layer stores and manages persistent records.",
       "why_wrong": {},
-      "source": "Sommerville Ch. 6; Software Engineering Concepts and Principles Lecture Notes"
+      "source": "Sommerville Ch. 6; Software Engineering Concepts and Principles Lecture Notes",
+      "steps": [
+        "Presentation Layer (User Interface & Controllers)",
+        "Business Logic / Domain Application Layer",
+        "Data Access / Persistence Layer (ORMs, DAOs)",
+        "Database / Storage Layer (Relational DBMS, Cloud Storage)"
+      ]
     },
     {
       "id": "sen201-ap-007",
@@ -281,7 +305,12 @@
       "why_wrong": {
         "3": "Encapsulating internal fields via accessors is standard object-oriented information hiding, not a violation of SOLID."
       },
-      "source": "Software Engineering Concepts and Principles Lecture Notes; Martin (2002) Agile Software Development"
+      "source": "Software Engineering Concepts and Principles Lecture Notes; Martin (2002) Agile Software Development",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "sen201-ap-fc01",
@@ -464,7 +493,7 @@
             "Specifies an exact cache invalidation trigger (e.g., invalidate or update cache entry when a lecturer uploads or amends an approved grade).",
             "Notes the non-functional benefit: drastic reduction in database CPU contention and sub-second response times for student queries."
           ],
-          "answer": "1. Architectural Abstraction: The Repository pattern encapsulates data retrieval logic, cleanly isolating GPA calculation rules from persistent storage.\n2. Caching Strategy: Because grade records are read far more frequently than they are updated, GPA results can be memoized in an in-memory cache (e.g., Redis), transforming expensive 45-second multi-table aggregation queries into sub-millisecond key-value lookups.\n3. Cache Invalidation Policy: The cache must use write-through or event-driven invalidation\u2014whenever a lecturer submits or modifies a grade in the Academic Records subsystem, the cached GPA entry for affected students is invalidated and recalculated.\n4. Non-Functional Impact: Relieves database lock contention and guarantees consistent sub-second page loads during peak registration.",
+          "answer": "1. Architectural Abstraction: The Repository pattern encapsulates data retrieval logic, cleanly isolating GPA calculation rules from persistent storage.\n2. Caching Strategy: Because grade records are read far more frequently than they are updated, GPA results can be memoized in an in-memory cache (e.g., Redis), transforming expensive 45-second multi-table aggregation queries into sub-millisecond key-value lookups.\n3. Cache Invalidation Policy: The cache must use write-through or event-driven invalidation—whenever a lecturer submits or modifies a grade in the Academic Records subsystem, the cached GPA entry for affected students is invalidated and recalculated.\n4. Non-Functional Impact: Relieves database lock contention and guarantees consistent sub-second page loads during peak registration.",
           "explanation": "Separating calculation logic from direct disk storage via repository caching ensures high availability and eliminates recalculation storms.",
           "why_wrong": {},
           "source": "Sommerville Ch. 6; Architecture Case Studies"

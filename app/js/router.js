@@ -7,8 +7,8 @@ const Router = {
 
   init: function() {
     window.addEventListener('popstate', (e) => {
-      const view = (e.state && e.state.view) || 'home';
-      this.navigate(view, e.state ? e.state.params : null, false);
+      const hash = window.location.hash.replace('#', '') || 'home';
+      this.navigate(hash, (e.state && e.state.params) || {}, false);
     });
 
     document.querySelectorAll('.menu-item[data-view]').forEach(item => {
@@ -25,10 +25,23 @@ const Router = {
     };
   },
 
-  navigate: function(view, params = {}, push = true) {
+  navigate: function(viewInput, params = {}, push = true) {
+    let view = viewInput;
+    if (typeof viewInput === 'string' && viewInput.includes('?')) {
+      const parts = viewInput.split('?');
+      view = parts[0];
+      const searchParams = new URLSearchParams(parts[1]);
+      const parsed = {};
+      for (const [k, v] of searchParams.entries()) {
+        parsed[k] = v;
+      }
+      params = { ...parsed, ...params };
+    }
+
     this.currentView = view;
     if (push) {
-      history.pushState({ view, params }, '', `#${view}`);
+      const query = params && Object.keys(params).length ? '?' + new URLSearchParams(params).toString() : '';
+      history.pushState({ view, params }, '', `#${view}${query}`);
     }
 
     const backBtn = document.getElementById('btn-back');
@@ -335,6 +348,10 @@ const Router = {
 
   // 4. ACTIVE STUDY SESSION (One Question at a Time)
   startSession: function(sessionConfig) {
+    if (this._examTimer) {
+      clearInterval(this._examTimer);
+      this._examTimer = null;
+    }
     this.activeSession = {
       ...sessionConfig,
       currentIndex: 0,
@@ -356,13 +373,29 @@ const Router = {
     const curQ = s.questions[s.currentIndex];
     document.getElementById('app-title').textContent = `${s.title} (${s.currentIndex + 1}/${s.questions.length})`;
 
+    // Format timer
+    let timerHtml = '';
+    if (s.timeLeft !== null) {
+      const min = Math.floor(s.timeLeft / 60);
+      const sec = s.timeLeft % 60;
+      timerHtml = `
+        <div class="exam-timer-pill" id="exam-timer-box" style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,107,107,0.15); border:1px solid var(--danger); padding:4px 12px; border-radius:20px; font-weight:700; margin-bottom:12px;">
+          <span>⏱️ Remaining:</span>
+          <span id="timer-val">${min}:${sec < 10 ? '0' : ''}${sec}</span>
+        </div>
+      `;
+    }
+
     container.innerHTML = `
       <div>
-        ${s.lives !== null ? `
-          <div class="lives-display">
-            ${Array.from({ length: 3 }).map((_, i) => `<span style="opacity:${i < s.lives ? 1 : 0.2}">❤️</span>`).join('')}
-          </div>
-        ` : ''}
+        <div class="flex" style="justify-content:space-between; align-items:center;">
+          ${timerHtml}
+          ${s.lives !== null ? `
+            <div class="lives-display">
+              ${Array.from({ length: 3 }).map((_, i) => `<span style="opacity:${i < s.lives ? 1 : 0.2}">❤️</span>`).join('')}
+            </div>
+          ` : ''}
+        </div>
 
         <div class="progress-bar mb-md">
           <div class="progress-fill" style="width:${((s.currentIndex) / s.questions.length) * 100}%"></div>
@@ -376,10 +409,33 @@ const Router = {
       </div>
     `;
 
+    // Manage timer interval
+    if (s.timeLeft !== null && !this._examTimer) {
+      this._examTimer = setInterval(() => {
+        if (!this.activeSession || this.activeSession.timeLeft === null) {
+          clearInterval(this._examTimer);
+          this._examTimer = null;
+          return;
+        }
+        this.activeSession.timeLeft--;
+        const min = Math.floor(this.activeSession.timeLeft / 60);
+        const sec = this.activeSession.timeLeft % 60;
+        const timerEl = document.getElementById('timer-val');
+        if (timerEl) timerEl.textContent = `${min}:${sec < 10 ? '0' : ''}${sec}`;
+        if (this.activeSession.timeLeft <= 0) {
+          clearInterval(this._examTimer);
+          this._examTimer = null;
+          App.showToast('⏰ Time is up! Exam auto-submitted.');
+          this.renderSessionSummary(container);
+        }
+      }, 1000);
+    }
+
     const target = container.querySelector('#q-render-target');
     const controls = container.querySelector('#session-controls');
     const nextBtn = container.querySelector('#btn-next-q');
 
+    const renderOpts = { examMode: s.mode === 'mock' };
     Renderers.renderQuestion(curQ, target, async (result) => {
       s.scores.push({ questionId: curQ.id, ...result });
 
@@ -405,7 +461,7 @@ const Router = {
 
       controls.style.display = 'flex';
       nextBtn.focus();
-    });
+    }, renderOpts);
 
     nextBtn.onclick = () => {
       s.currentIndex++;
@@ -415,7 +471,11 @@ const Router = {
 
   // 5. SESSION SUMMARY VIEW
   renderSessionSummary: function(container) {
-    const s = this.activeSession;
+    if (this._examTimer) {
+      clearInterval(this._examTimer);
+      this._examTimer = null;
+    }
+    const s = this.activeSession || { scores: [], questions: [] };
     const total = s.scores.length || 1;
     const correctCount = s.scores.filter(r => r.isCorrect).length;
     const pct = Math.round((correctCount / total) * 100);
@@ -423,13 +483,40 @@ const Router = {
     // Filter confident wrong
     const confidentWrong = s.scores.filter(r => !r.isCorrect && r.confidence === 'sure');
 
+    // Per-topic breakdown
+    const topicStats = {};
+    (s.questions || []).forEach(q => {
+      const t = q.topic || 'General';
+      if (!topicStats[t]) topicStats[t] = { total: 0, correct: 0, course: q.course };
+      topicStats[t].total++;
+      const matched = s.scores.find(sc => sc.questionId === q.id);
+      if (matched && matched.isCorrect) topicStats[t].correct++;
+    });
+
+    const topicBreakdownHtml = Object.entries(topicStats).map(([topic, stat]) => {
+      const topicPct = stat.total ? Math.round((stat.correct / stat.total) * 100) : 0;
+      return `
+        <div class="mb-sm text-left">
+          <div class="flex" style="justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
+            <span>${topic.replace(/_/g, ' ')}</span>
+            <span><strong>${stat.correct}/${stat.total}</strong> (${topicPct}%)</span>
+          </div>
+          <div class="progress-bar" style="height:6px;">
+            <div class="progress-fill" style="width:${topicPct}%; background:${topicPct >= 70 ? 'var(--success)' : (topicPct >= 40 ? 'var(--warn)' : 'var(--danger)')};"></div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
     container.innerHTML = `
       <div class="q-card fade-in text-center">
-        <h2>Session Complete!</h2>
+        <h2>${s.mode === 'mock' ? 'Exam Scored Review' : 'Session Complete!'}</h2>
         <div class="score-circle" style="--pct:${pct}%">
           <span class="score-number">${pct}%</span>
         </div>
-        <p class="text-sm text-muted mb-md">Answered ${correctCount} of ${total} correctly</p>
+        <p class="text-sm text-muted mb-md">
+          Answered <strong>${correctCount} of ${total}</strong> questions correctly (${pct >= 50 ? '✓ PASS' : '✗ NEEDS WORK'})
+        </p>
 
         ${confidentWrong.length > 0 ? `
           <div class="card mb-md text-left" style="border-color:var(--danger); background:rgba(255,71,87,0.08);">
@@ -438,9 +525,14 @@ const Router = {
           </div>
         ` : ''}
 
+        <div class="card mb-md text-left">
+          <h3 class="mb-sm" style="font-size:1rem;">📊 Diagnostic Breakdown by Topic</h3>
+          ${topicBreakdownHtml || '<p class="text-sm text-muted">No topic data available</p>'}
+        </div>
+
         <div class="flex gap-md mt-lg">
           <button class="btn btn-secondary flex-1" id="btn-summary-home">Back to Home</button>
-          <button class="btn btn-primary flex-1" id="btn-summary-retry">Retry Weak Qs</button>
+          <button class="btn btn-primary flex-1" id="btn-summary-retry">Drill Weak Spots</button>
         </div>
       </div>
     `;
@@ -498,7 +590,28 @@ const Router = {
   renderWeakSpots: async function(container) {
     container.innerHTML = '<div class="spinner"></div>';
     const history = await DB.getAllHistory();
-    // Rank by error rate
+
+    // Group by Topic
+    const topicAgg = {};
+    history.forEach(h => {
+      const topicKey = h.topic || 'unknown';
+      if (!topicAgg[topicKey]) {
+        topicAgg[topicKey] = { topic: topicKey, course: h.course, correct: 0, wrong: 0 };
+      }
+      topicAgg[topicKey].correct += (h.correct || 0);
+      topicAgg[topicKey].wrong += (h.wrong || 0);
+    });
+
+    const rankedTopics = Object.values(topicAgg)
+      .map(t => {
+        const total = t.correct + t.wrong;
+        const errRate = total > 0 ? Math.round((t.wrong / total) * 100) : 0;
+        return { ...t, total, errRate };
+      })
+      .filter(t => t.total >= 1 && t.errRate > 20)
+      .sort((a, b) => b.errRate - a.errRate);
+
+    // Rank individual questions by error rate
     const ranked = history
       .filter(h => (h.correct + h.wrong) > 0)
       .map(h => {
@@ -506,10 +619,10 @@ const Router = {
         const errRate = Math.round((h.wrong / total) * 100);
         return { ...h, total, errRate };
       })
-      .filter(h => h.errRate > 30)
+      .filter(h => h.errRate > 25)
       .sort((a, b) => b.errRate - a.errRate);
 
-    if (!ranked.length) {
+    if (!ranked.length && !rankedTopics.length) {
       container.innerHTML = `
         <div class="empty-state fade-in">
           <div class="empty-icon">🌟</div>
@@ -521,7 +634,17 @@ const Router = {
       return;
     }
 
-    let itemsHtml = ranked.slice(0, 15).map(r => `
+    const topicsHtml = rankedTopics.slice(0, 5).map(t => `
+      <div class="card mb-sm flex" style="align-items:center; justify-content:space-between;">
+        <div>
+          <div class="bold text-sm weak-topic-title">${t.topic.replace(/_/g, ' ')}</div>
+          <div class="text-sm text-muted">${t.course || ''} • ${t.wrong} wrong out of ${t.total}</div>
+        </div>
+        <span class="tag tag-danger weak-topic-rate">${t.errRate}% error</span>
+      </div>
+    `).join('');
+
+    const itemsHtml = ranked.slice(0, 15).map(r => `
       <div class="weak-item">
         <div style="flex:1;">
           <div class="bold text-sm">${r.id}</div>
@@ -536,12 +659,31 @@ const Router = {
 
     container.innerHTML = `
       <div class="fade-in q-card">
-        <h2 class="section-title">Weak Spots & High-Error Questions</h2>
+        <h2 class="section-title">Weak Spots & Diagnostics</h2>
+        ${rankedTopics.length > 0 ? `
+          <div class="mb-lg">
+            <h3 class="mb-sm" style="font-size:1rem;">⚠️ High-Error Topics</h3>
+            ${topicsHtml}
+            <button class="btn btn-primary btn-full mt-sm" id="btn-practice-weakest-topic">
+              🎯 Practice Weakest Topic: ${rankedTopics[0].topic.replace(/_/g, ' ')}
+            </button>
+          </div>
+        ` : ''}
+
+        <h3 class="mb-sm" style="font-size:1rem;">📌 High-Error Individual Questions</h3>
         <p class="text-sm text-muted mb-md">Questions where your error rate is highest</p>
-        <button class="btn btn-primary btn-full mb-md" id="btn-drill-weak">Drill My Weakest Questions Now</button>
+        <button class="btn btn-secondary btn-full mb-md" id="btn-drill-weak">Drill My Weakest Questions Now</button>
         <div>${itemsHtml}</div>
       </div>
     `;
+
+    const topicBtn = container.querySelector('#btn-practice-weakest-topic');
+    if (topicBtn && rankedTopics.length > 0) {
+      topicBtn.onclick = () => {
+        const top = rankedTopics[0];
+        this.navigate('practice', { course: top.course, topic: top.topic });
+      };
+    }
 
     container.querySelector('#btn-drill-weak').onclick = async () => {
       const topIds = ranked.slice(0, 20).map(r => r.id);

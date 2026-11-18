@@ -364,7 +364,9 @@
             "cos201-mid-cs02-q2"
           ]
         }
-      ]
+      ],
+      "mock_file": "COS 201/mock_exams.json",
+      "cheatsheet_file": "COS 201/cheatsheet.md"
     },
     {
       "code": "IFT 211",
@@ -626,7 +628,9 @@
             "ift211-pe-cs02-q2"
           ]
         }
-      ]
+      ],
+      "mock_file": "IFT 211/mock_exams.json",
+      "cheatsheet_file": "IFT 211/cheatsheet.md"
     },
     {
       "code": "SEN 201",
@@ -868,26 +872,26 @@
           "file": "SEN 201/project_management_metrics.json",
           "question_count": 20,
           "question_ids": [
-            "sen201-pm-001",
-            "sen201-pm-002",
-            "sen201-pm-003",
-            "sen201-pm-004",
-            "sen201-pm-005",
-            "sen201-pm-006",
-            "sen201-pm-007",
-            "sen201-pm-008",
-            "sen201-pm-fc01",
-            "sen201-pm-fc02",
-            "sen201-pm-fc03",
-            "sen201-pm-fc04",
-            "sen201-pm-fc05",
-            "sen201-pm-fc06",
-            "sen201-pm-fc07",
-            "sen201-pm-fc08",
-            "sen201-pm-cs01-q1",
-            "sen201-pm-cs01-q2",
-            "sen201-pm-cs02-q1",
-            "sen201-pm-cs02-q2"
+            "sen201-pmm-001",
+            "sen201-pmm-002",
+            "sen201-pmm-003",
+            "sen201-pmm-004",
+            "sen201-pmm-005",
+            "sen201-pmm-006",
+            "sen201-pmm-007",
+            "sen201-pmm-008",
+            "sen201-pmm-fc01",
+            "sen201-pmm-fc02",
+            "sen201-pmm-fc03",
+            "sen201-pmm-fc04",
+            "sen201-pmm-fc05",
+            "sen201-pmm-fc06",
+            "sen201-pmm-fc07",
+            "sen201-pmm-fc08",
+            "sen201-pmm-cs01-q1",
+            "sen201-pmm-cs01-q2",
+            "sen201-pmm-cs02-q1",
+            "sen201-pmm-cs02-q2"
           ]
         },
         {
@@ -918,7 +922,9 @@
             "sen201-fe-cs02-q2"
           ]
         }
-      ]
+      ],
+      "mock_file": "SEN 201/mock_exams.json",
+      "cheatsheet_file": "SEN 201/cheatsheet.md"
     },
     {
       "code": "IFT 203",
@@ -1124,7 +1130,9 @@
             "ift203-ws-cs02-q2"
           ]
         }
-      ]
+      ],
+      "mock_file": "IFT 203/mock_exams.json",
+      "cheatsheet_file": "IFT 203/cheatsheet.md"
     },
     {
       "code": "IFT 205",
@@ -1275,7 +1283,9 @@
             "ift205-evo-cs2-q2"
           ]
         }
-      ]
+      ],
+      "mock_file": "IFT 205/mock_exams.json",
+      "cheatsheet_file": "IFT 205/cheatsheet.md"
     },
     {
       "code": "INS 202",
@@ -1481,7 +1491,9 @@
             "ins202-acc-cs2-q2"
           ]
         }
-      ]
+      ],
+      "mock_file": "INS 202/mock_exams.json",
+      "cheatsheet_file": "INS 202/cheatsheet.md"
     },
     {
       "code": "ENT 211",
@@ -1603,7 +1615,9 @@
             "ent211-opp-cs2-q2"
           ]
         }
-      ]
+      ],
+      "mock_file": "ENT 211/mock_exams.json",
+      "cheatsheet_file": "ENT 211/cheatsheet.md"
     }
   ]
 }

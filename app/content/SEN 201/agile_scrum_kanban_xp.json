@@ -1,7 +1,7 @@
 {
   "course": "SEN 201",
   "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
-  "summary": "This topic covers modern lightweight and empirical software engineering methodologies designed for volatility, rapid value delivery, and continuous adaptation. It explores the Agile Manifesto and its four core value pairs, contrasting adaptive methods with heavy plan-driven models. The Scrum framework is thoroughly analyzed across its roles (Product Owner, Scrum Master, Cross-functional Dev Team), artifacts (Product Backlog, Sprint Backlog, Burndown Chart), and events (Sprint Planning, 15-minute Daily Scrum, Sprint Review, Sprint Retrospective). Extreme Programming (XP) practices \u2014 notably Pair Programming (driver/navigator dynamics for knowledge spreading and collective ownership), Test-Driven Development (Red-Green-Refactor), Continuous Integration (CI), and Small Releases \u2014 are scrutinized. The topic also covers Kanban flow and Work-in-Progress (WIP) constraints, modern DevOps culture (automating the deployment pipeline with CI/CD and Infrastructure as Code), and open-source collaborative business models based on selling enterprise support and services.",
+  "summary": "This topic covers modern lightweight and empirical software engineering methodologies designed for volatility, rapid value delivery, and continuous adaptation. It explores the Agile Manifesto and its four core value pairs, contrasting adaptive methods with heavy plan-driven models. The Scrum framework is thoroughly analyzed across its roles (Product Owner, Scrum Master, Cross-functional Dev Team), artifacts (Product Backlog, Sprint Backlog, Burndown Chart), and events (Sprint Planning, 15-minute Daily Scrum, Sprint Review, Sprint Retrospective). Extreme Programming (XP) practices — notably Pair Programming (driver/navigator dynamics for knowledge spreading and collective ownership), Test-Driven Development (Red-Green-Refactor), Continuous Integration (CI), and Small Releases — are scrutinized. The topic also covers Kanban flow and Work-in-Progress (WIP) constraints, modern DevOps culture (automating the deployment pipeline with CI/CD and Infrastructure as Code), and open-source collaborative business models based on selling enterprise support and services.",
   "key_terms": [
     {
       "term": "Agile Manifesto",
@@ -63,12 +63,10 @@
         "Prioritizing extensive documentation over human interaction",
         "Avoiding direct customer collaboration to prevent scope changes"
       ],
-      "answer": "Delivering working software quickly and frequently",
+      "answer": 0,
       "explanation": "As tested in Nile Exam Q9 and Q53: Principle #3 of the Agile Manifesto states: 'Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.' Working software is the primary measure of project progress.",
       "why_wrong": {
-        "Rigid adherence to initial project plans": "Agile explicitly values 'responding to change over following a plan.'",
-        "Prioritizing extensive documentation...": "Agile values 'working software over comprehensive documentation.'",
-        "Avoiding direct customer collaboration...": "Agile values 'customer collaboration over contract negotiation.'"
+        "1": "Agile explicitly values 'responding to change over following a plan.'"
       },
       "marking_points": [
         "Identifies rapid, frequent delivery of working software as primary measure of progress"
@@ -96,12 +94,11 @@
         "Completely eliminate the need for automated unit testing",
         "Allow one developer to sleep while the other writes code"
       ],
-      "answer": "Spread system knowledge and encourage collective code ownership",
+      "answer": 0,
       "explanation": "In Pair Programming, the Driver writes code while the Navigator continuously reviews logic, checks syntax, and considers edge cases. This continuous peer review catches bugs immediately, breaks knowledge silos across the team, and establishes collective code ownership.",
       "why_wrong": {
-        "Halve the total salary paid to developers": "Two developers working together on one task increases short-term labor cost slightly in exchange for vastly higher code quality.",
-        "Completely eliminate the need for automated unit testing": "XP mandates Test-Driven Development (TDD) regardless of pair programming.",
-        "Allow one developer to sleep...": "Both developers are actively, intellectually engaged in continuous collaboration."
+        "1": "Two developers working together on one task increases short-term labor cost slightly in exchange for vastly higher code quality.",
+        "2": "XP mandates Test-Driven Development (TDD) regardless of pair programming."
       },
       "marking_points": [
         "Spreads knowledge across the team",
@@ -129,7 +126,7 @@
         "Software that has no copyright licenses of any kind",
         "Software written exclusively by university undergraduate students"
       ],
-      "answer": "Collaborative development where source code is publicly available for inspection and modification",
+      "answer": 0,
       "explanation": "Open-source development is centered on transparency and collective peer review: source code is released under open licenses (e.g. MIT, Apache, GPL) that grant users the legal right to inspect, modify, and redistribute the software collaboratively.",
       "why_wrong": {
         "Software that is legally prohibited from commercial use...": "Most open-source licenses explicitly permit commercial enterprise use.",
@@ -162,12 +159,11 @@
         "Selling proprietary compilers to decode the open source",
         "Selling user private browser search histories"
       ],
-      "answer": "Selling enterprise support, consulting, maintenance, and cloud services for the software product",
+      "answer": 0,
       "explanation": "Because open-source code is freely accessible, open-source business models monetize complementary services: enterprise technical support SLAs, security certification, customized integration, consulting, and managed cloud hosting.",
       "why_wrong": {
-        "Suing users who download the public source code": "Open-source licenses explicitly grant the right to download and use the code.",
-        "Selling proprietary compilers...": "Open source is compiled using standard public tools (e.g. GCC, Clang, OpenJDK).",
-        "Selling user private browser search histories": "Unethical data-broker practice unrelated to open-source software business models."
+        "1": "Open-source licenses explicitly grant the right to download and use the code.",
+        "3": "Unethical data-broker practice unrelated to open-source software business models."
       },
       "marking_points": [
         "Monetizes support, maintenance, training, and managed services"
@@ -193,7 +189,7 @@
         "Any individual developer working on the project.",
         "The database administrator."
       ],
-      "answer": "The Product Owner, who owns the Product Backlog and balances business priorities with team capacity.",
+      "answer": 0,
       "explanation": "In Scrum governance, only the Product Owner has the authority to define user stories, prioritize the Product Backlog, and decide whether scope changes warrant modifying the current Sprint or queuing them for the next Sprint. The Scrum Master facilitates the process and removes blockers, but does not dictate business requirements.",
       "why_wrong": {
         "The Scrum Master, who dictates software features...": "Scrum Masters facilitate team health and process; they do not own business requirements.",
@@ -239,7 +235,13 @@
       ],
       "source": "Software Engineering Concepts Lecture Notes, Section 9.6",
       "verified": true,
-      "verified_output": "N/A"
+      "verified_output": "N/A",
+      "steps": [
+        "1. RED (Write a unit test that defines a feature and watch it fail) -> 2. GREEN (Write the minimal production code necessary to pass the test) -> 3. REFACTOR (Clean up the code, eliminate duplication, and improve design while keeping tests green)",
+        "1. GREEN -> 2. RED -> 3. REFACTOR",
+        "1. REFACTOR -> 2. CODE -> 3. TEST",
+        "1. WRITE ALL CODE -> 2. MANUAL TEST -> 3. DEPLOY"
+      ]
     },
     {
       "id": "sen201-ag-007",
@@ -258,7 +260,7 @@
         "To prevent developers from working more than 2 hours a day.",
         "To limit the total number of users allowed to access the website."
       ],
-      "answer": "To prevent multitasking and expose process bottlenecks, ensuring work items flow smoothly to completion rather than piling up half-finished.",
+      "answer": 0,
       "explanation": "Little's Law and Lean principles show that excessive work-in-progress increases cycle times and context-switching overhead. By capping the number of cards in an active column, if 'Code Review' hits its WIP limit, developers must help unblock pending reviews before starting new coding tasks ('Stop starting, start finishing').",
       "why_wrong": {
         "To punish developers who finish work early": "Kanban fosters collaboration, not disciplinary penalties.",
@@ -290,7 +292,7 @@
         "1. What language should we switch to? 2. When is lunch? 3. What bugs did QA find?",
         "1. What is the database password? 2. Did the client pay? 3. What is my next promotion?"
       ],
-      "answer": "1. What did I accomplish yesterday? 2. What will I work on today? 3. Are there any impediments/blockers in my way?",
+      "answer": 0,
       "explanation": "The Daily Scrum is a brief, focused synchronization event where each team member answers: 1. What did I do yesterday that helped the team meet the Sprint Goal? 2. What will I do today? 3. What obstacles or blockers are impeding progress? Detailed architectural debates are deferred to separate follow-up sessions.",
       "why_wrong": {
         "1. How much bonus do I deserve?...": "Daily standups are synchronization check-ins, not salary reviews.",
@@ -511,7 +513,7 @@
             "The team should abolish 2-week sprints and switch to daily deployments with zero planning.",
             "The developers should work 20-hour overtime shifts to satisfy both the sprint backlog and the new requests."
           ],
-          "answer": "The Product Owner is violating Sprint stability: the Scrum Master must coach the Product Owner to place new feature requests onto the Product Backlog for prioritization in the NEXT sprint planning, leaving the current Sprint Goal intact.",
+          "answer": 0,
           "explanation": "A core premise of Scrum is that once a Sprint begins, the Sprint Goal is protected against mid-sprint scope churn that endangers completion. If an idea is truly critical, the Product Owner adds it to the top of the Product Backlog for the upcoming Sprint. Only in extraordinary circumstances where the Sprint Goal becomes completely obsolete may the Product Owner formally cancel the entire Sprint.",
           "why_wrong": {
             "The Scrum Master should fire the developers...": "The developers are properly defending their agreed sprint commitment.",
@@ -576,8 +578,8 @@
             "The CFO is right; pair programming is only used when an office runs out of computers.",
             "Pair programming eliminates the need to compile code."
           ],
-          "answer": "Pair programming incurs only ~15% additional development time while reducing defect density by 15-50%, drastically reducing post-release bug fixing costs which are 10-100x more expensive in production.",
-          "explanation": "Empirical studies (e.g. Cockburn & Williams) demonstrate that pairing increases effort by approximately 15%, but generates significantly cleaner code with 15\u201350% fewer defects. Because fixing defects in live trading engines costs 10 to 100 times more than catching them during coding (Boehm's cost of change), pair programming yields massive net economic savings.",
+          "answer": 0,
+          "explanation": "Empirical studies (e.g. Cockburn & Williams) demonstrate that pairing increases effort by approximately 15%, but generates significantly cleaner code with 15–50% fewer defects. Because fixing defects in live trading engines costs 10 to 100 times more than catching them during coding (Boehm's cost of change), pair programming yields massive net economic savings.",
           "why_wrong": {
             "Pair programming produces 400% more code...": "Pairing produces more concise, less bloated code, not more raw volume.",
             "The CFO is right; only used when running out of computers...": "Pairing is an intentional quality discipline, not a hardware shortage workaround.",

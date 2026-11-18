@@ -2,7 +2,7 @@
   "course": "INS 202",
   "topic": "human_factors_ergonomics",
   "title": "Human Factors, Cognitive Psychology & Ergonomics",
-  "summary": "Comprehensive examination of human cognitive psychology, sensory perception, motor constraints, and ergonomic principles in interface design. Explores Constructivism (the mind creating abstract intervening models rather than pixel-by-pixel snapshots) and the critical role of context and mindset in visual perception. Thorough treatment of the Five Gestalt Principles: Proximity, Similarity, Symmetry, Continuity/Alignment, and Closure, with concrete layout applications. Details human memory architecture, emphasizing George Miller's (1956) 'Magic Number 7 \u00b1 2' rule, information chunking techniques, and the golden rule of Usability: favoring Recognition over Recall (menus vs commands, bookmarks, auto-complete). Rigorous mathematical and ergonomic analysis of Fitts's Law relating target distance and width to movement time, explaining why screen corners and edges possess infinite target width. Reviews Robert Miller's system response time thresholds (0.1s, 1.0s, 10s) and physical accessibility standards including color blindness and contrast ratios.",
+  "summary": "Comprehensive examination of human cognitive psychology, sensory perception, motor constraints, and ergonomic principles in interface design. Explores Constructivism (the mind creating abstract intervening models rather than pixel-by-pixel snapshots) and the critical role of context and mindset in visual perception. Thorough treatment of the Five Gestalt Principles: Proximity, Similarity, Symmetry, Continuity/Alignment, and Closure, with concrete layout applications. Details human memory architecture, emphasizing George Miller's (1956) 'Magic Number 7 ± 2' rule, information chunking techniques, and the golden rule of Usability: favoring Recognition over Recall (menus vs commands, bookmarks, auto-complete). Rigorous mathematical and ergonomic analysis of Fitts's Law relating target distance and width to movement time, explaining why screen corners and edges possess infinite target width. Reviews Robert Miller's system response time thresholds (0.1s, 1.0s, 10s) and physical accessibility standards including color blindness and contrast ratios.",
   "key_terms": [
     {
       "term": "Constructivism",
@@ -13,7 +13,7 @@
       "definition": "A psychological framework asserting that the human mind perceives visual objects as organized, cohesive wholes rather than disparate collections of parts."
     },
     {
-      "term": "Magic Number 7 \u00b1 2",
+      "term": "Magic Number 7 ± 2",
       "definition": "George Miller's (1956) cognitive threshold establishing that human short-term working memory can hold only 5 to 9 chunks of information simultaneously."
     },
     {
@@ -59,13 +59,13 @@
       "explanation": "In his landmark 1956 paper, George Miller demonstrated that human short-term working memory is strictly bottlenecked, capable of holding only $7 \\pm 2$ chunks of information at a single time before older items are overwritten or forgotten.",
       "why_wrong": {
         "1": "64 MB is a digital computer storage metric, not biological human short-term memory.",
-        "2": "Human short-term memory is severely constrained and decays in 15\u201330 seconds without rehearsal.",
+        "2": "Human short-term memory is severely constrained and decays in 15–30 seconds without rehearsal.",
         "3": "Humans can hold several multi-symbol concepts, far exceeding a single binary bit."
       },
       "marking_points": [],
       "source": "Module 02 Slide 37",
       "verified": true,
-      "verified_output": "7 \u00b1 2 chunks (Miller 1956)."
+      "verified_output": "7 ± 2 chunks (Miller 1956)."
     },
     {
       "id": "ins202-hum-002",
@@ -95,7 +95,25 @@
       "marking_points": [],
       "source": "Module 02 Slides 20-34",
       "verified": true,
-      "verified_output": "Matched Gestalt principles."
+      "verified_output": "Matched Gestalt principles.",
+      "pairs": [
+        {
+          "left": "Proximity",
+          "right": "Placing input field text labels significantly closer to their corresponding form boxes than to preceding fields so users perceive them as a pair."
+        },
+        {
+          "left": "Similarity",
+          "right": "Rendering all clickable primary action buttons in the identical blue pill shape and font across every screen to indicate common functionality."
+        },
+        {
+          "left": "Continuity / Alignment",
+          "right": "Left-aligning all headings, paragraph text, and input boxes along a single vertical axis to facilitate smooth, rapid top-to-bottom visual scanning."
+        },
+        {
+          "left": "Closure",
+          "right": "Designing an icon or logo using broken or striped lines (like the IBM logo) where the mind automatically fills in the blanks to see complete letters."
+        }
+      ]
     },
     {
       "id": "ins202-hum-003",
@@ -163,8 +181,8 @@
       ],
       "question": "In a desktop computer graphical interface, the four physical corners and edges of the display monitor represent the easiest, fastest targets to click according to Fitts's Law.",
       "options": [
-        "False \u2014 corners are the hardest targets because mouse balls get physically stuck in monitor bezels.",
-        "True \u2014 because the mouse cursor physically stops at the boundaries of the display screen and cannot overshoot, the screen edges and corners possess effectively 'infinite width' (W = \u221e), making acquisition extremely fast."
+        "False — corners are the hardest targets because mouse balls get physically stuck in monitor bezels.",
+        "True — because the mouse cursor physically stops at the boundaries of the display screen and cannot overshoot, the screen edges and corners possess effectively 'infinite width' (W = ∞), making acquisition extremely fast."
       ],
       "answer": 1,
       "explanation": "In desktop GUIs, the edge of the monitor acts as a physical barrier: a user can throw the mouse cursor forcefully toward a corner without fear of overshooting. Mathematically, the target width is effectively infinite ($W = \\infty$), reducing the Index of Difficulty to near zero. This is why the Windows Start menu is pinned in the bottom-left corner and the macOS menu bar sits on the top edge.",
@@ -203,7 +221,11 @@
       "marking_points": [],
       "source": "Module 02 Slide 37-38",
       "verified": true,
-      "verified_output": "chunking, 080-331-4492"
+      "verified_output": "chunking, 080-331-4492",
+      "blanks": [
+        "chunking",
+        "080-331-4492"
+      ]
     },
     {
       "id": "ins202-hum-007",
@@ -252,7 +274,7 @@
         "The mathematical Consensus theorem of Boolean algebra"
       ],
       "answer": 0,
-      "explanation": "As highlighted in Module 02 Slides 8\u201315: Context and mindset play a major role in what people perceive. The exact same visual stimuli are interpreted completely differently depending on the surrounding environmental context.",
+      "explanation": "As highlighted in Module 02 Slides 8–15: Context and mindset play a major role in what people perceive. The exact same visual stimuli are interpreted completely differently depending on the surrounding environmental context.",
       "why_wrong": {
         "1": "Humans do not experience electronic hardware register bit-flips.",
         "2": "Perceptual ambiguity is cognitive, not monitor refresh flicker.",
@@ -289,7 +311,21 @@
       "marking_points": [],
       "source": "Module 02 Slide 43",
       "verified": true,
-      "verified_output": "Matched response time thresholds (0.1s, 1s, 10s)."
+      "verified_output": "Matched response time thresholds (0.1s, 1s, 10s).",
+      "pairs": [
+        {
+          "left": "0.1 second (100 milliseconds)",
+          "right": "Perceived as instantaneous; the user feels that the software is reacting directly to their physical manipulation (essential for direct manipulation and keypress states)."
+        },
+        {
+          "left": "1.0 second (1,000 milliseconds)",
+          "right": "User notices a brief delay, but their natural mental stream of thought remains uninterrupted; no special loading indicators required."
+        },
+        {
+          "left": "10 seconds",
+          "right": "The absolute limit for keeping a user's focused attention on the task; beyond this, the user's attention is diverted and a progress bar is mandatory."
+        }
+      ]
     },
     {
       "id": "ins202-hum-010",
@@ -357,11 +393,11 @@
       ],
       "question": "Information stored in human short-term working memory remains permanently available for several days even if the user experiences severe interruptions and performs unrelated mathematical tasks.",
       "options": [
-        "True \u2014 human short-term memory has the same persistence characteristics as an enterprise solid-state drive.",
-        "False \u2014 short-term memory has rapid decay (typically vanishing within 15 to 30 seconds unless actively refreshed), and distractions readily wipe its contents."
+        "True — human short-term memory has the same persistence characteristics as an enterprise solid-state drive.",
+        "False — short-term memory has rapid decay (typically vanishing within 15 to 30 seconds unless actively refreshed), and distractions readily wipe its contents."
       ],
       "answer": 1,
-      "explanation": "Short-term working memory is fragile and volatile. Without continuous rehearsal or external memory aids (such as breadcrumbs, auto-saved drafts, or post-it notes), items decay rapidly in 15\u201330 seconds and are easily displaced by interruptions.",
+      "explanation": "Short-term working memory is fragile and volatile. Without continuous rehearsal or external memory aids (such as breadcrumbs, auto-saved drafts, or post-it notes), items decay rapidly in 15–30 seconds and are easily displaced by interruptions.",
       "why_wrong": {
         "0": "Human short-term memory is biologically fragile and decays almost immediately upon interruption."
       },
@@ -471,7 +507,7 @@
         "Hide all three buttons and require users to type raw SQL queries."
       ],
       "answer": 0,
-      "explanation": "As shown in Module 02 Slide 25\u201328: applying the principle of Similarity means making buttons the same size, using the same font, and maintaining visual consistency across the control set so users perceive related choices cleanly.",
+      "explanation": "As shown in Module 02 Slide 25–28: applying the principle of Similarity means making buttons the same size, using the same font, and maintaining visual consistency across the control set so users perceive related choices cleanly.",
       "why_wrong": {
         "1": "Randomizing button positions disorients users and destroys learnability.",
         "2": "Inflating the Cancel button emphasizes the wrong business priority.",
@@ -498,13 +534,13 @@
             "case_study",
             "miller_and_chunking"
           ],
-          "question": "Apply George Miller's Magic Number 7\u00b12 rule and the concept of 'Chunking' to diagnose why health workers suffered high error rates when entering the 11-digit identity number and 14-digit birth code.",
+          "question": "Apply George Miller's Magic Number 7±2 rule and the concept of 'Chunking' to diagnose why health workers suffered high error rates when entering the 11-digit identity number and 14-digit birth code.",
           "options": [],
-          "answer": "Human short-term working memory is strictly limited to $7 \\pm 2$ items (Miller, 1956). When presented with unbroken 11-digit and 14-digit continuous numerical strings, the volume of data severely exceeds the biological memory capacity, forcing workers to repeatedly shift visual gaze back and forth between physical paper documents and the mobile phone screen. This continuous context switching leads to severe digit transpositions and omissions. The solution is 'Chunking': the interface must divide long numbers into structured, formatted groups separated by hyphens or visual blocks (e.g. formatting the 11-digit NIN as '1234 - 567 - 8901' and the birth code into 3-to-4-digit chunks), reducing cognitive load from 11\u201314 isolated digits down to 3\u20134 manageable chunks well within working memory capacity.",
-          "explanation": "Long numbers exceed 7\u00b12 working memory limits. Chunking into 3-4 segments eliminates cognitive overload and transcription errors.",
+          "answer": "Human short-term working memory is strictly limited to $7 \\pm 2$ items (Miller, 1956). When presented with unbroken 11-digit and 14-digit continuous numerical strings, the volume of data severely exceeds the biological memory capacity, forcing workers to repeatedly shift visual gaze back and forth between physical paper documents and the mobile phone screen. This continuous context switching leads to severe digit transpositions and omissions. The solution is 'Chunking': the interface must divide long numbers into structured, formatted groups separated by hyphens or visual blocks (e.g. formatting the 11-digit NIN as '1234 - 567 - 8901' and the birth code into 3-to-4-digit chunks), reducing cognitive load from 11–14 isolated digits down to 3–4 manageable chunks well within working memory capacity.",
+          "explanation": "Long numbers exceed 7±2 working memory limits. Chunking into 3-4 segments eliminates cognitive overload and transcription errors.",
           "why_wrong": {},
           "marking_points": [
-            "Identifies George Miller's 7\u00b12 capacity limit for working memory.",
+            "Identifies George Miller's 7±2 capacity limit for working memory.",
             "Explains that unbroken 11-digit and 14-digit strings exceed cognitive capacity, causing gaze switching and transcription errors.",
             "Proposes Chunking as the definitive cognitive solution.",
             "Demonstrates how formatting numbers into 3-to-4-digit blocks brings mental load within biological limits."

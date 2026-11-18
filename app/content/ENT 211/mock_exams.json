@@ -132,7 +132,14 @@
             "value"
           ],
           "explanation": "Slide 4 of the lecture notes defines the 5-step entrepreneurial sequence: SPOT Opportunity -> MOBILISE Resources -> TEST Assumptions -> ACT on Calculated Risk -> CREATE Value.",
-          "source": "ENT 211 Lecture Notes, Slide 4: Core Concept Process"
+          "source": "ENT 211 Lecture Notes, Slide 4: Core Concept Process",
+          "blanks": [
+            "spots",
+            "mobilises",
+            "tests",
+            "calculated",
+            "value"
+          ]
         },
         {
           "id": "ent211-fnd-011",
@@ -163,7 +170,15 @@
             5
           ],
           "explanation": "Deck 2 (Entrepreneurial Thinking, Slide 2) details the 6-stage cognitive inquiry: (1) What problem exists? (2) Who is affected? (3) Why unaddressed? (4) What alternatives exist? (5) How can the idea work? (6) What resources are needed?",
-          "source": "Entrepreneurial Thinking Deck, Slide 2: Thinking Like an Entrepreneur"
+          "source": "Entrepreneurial Thinking Deck, Slide 2: Thinking Like an Entrepreneur",
+          "steps": [
+            "Spot the unmet need: What problem exists in everyday life?",
+            "Know the people involved: Who is affected by this problem?",
+            "Find the gap: Why has this problem remained unaddressed?",
+            "Compare options: What existing alternatives do customers currently use?",
+            "Make it useful: How can the proposed solution work effectively?",
+            "Plan for delivery: What resources, capital, and tools are needed?"
+          ]
         },
         {
           "id": "ent211-fnd-013",
@@ -375,7 +390,13 @@
             "lemonade"
           ],
           "explanation": "Slide 17 outlines the five principles: Bird in hand (available means), Affordable loss (risk only what you can lose), Crazy quilt (partnerships), Lemonade (leverage surprises), and Pilot in the plane (focus on what can be influenced).",
-          "source": "Entrepreneurship Theories Deck, Slide 17: Effectuation: Five Principles"
+          "source": "Entrepreneurship Theories Deck, Slide 17: Effectuation: Five Principles",
+          "blanks": [
+            "bird in hand",
+            "affordable loss",
+            "crazy quilt",
+            "lemonade"
+          ]
         },
         {
           "id": "ent211-thy-011",
@@ -402,7 +423,13 @@
             3
           ],
           "explanation": "Deck 4 (Slide 7) details the sequence: New technology or model -> Older products replaced -> Weak firms lose customers -> Overall economic productivity improves.",
-          "source": "Entrepreneurship Theories Deck, Slide 7: Schumpeter: Creative Destruction"
+          "source": "Entrepreneurship Theories Deck, Slide 7: Schumpeter: Creative Destruction",
+          "steps": [
+            "Entrepreneur introduces a 'new combination' (new technology, product, or business model)",
+            "The innovative solution attracts customers away from established legacy providers",
+            "Older, inefficient firms lose market share and face obsolescence or bankruptcy",
+            "Macroeconomic productivity increases and a higher-efficiency economic equilibrium is established"
+          ]
         },
         {
           "id": "ent211-thy-013",
@@ -606,7 +633,13 @@
             "invention"
           ],
           "explanation": "Slide 9 outlines the three-stage progression: IDEA -> IMPLEMENTATION -> VALUE. Slide 10 defines Invention as creating something new, while Innovation is practical value implementation.",
-          "source": "ENT 211 Lecture Notes, Slides 9-10: Core Concept & Invention vs Innovation"
+          "source": "ENT 211 Lecture Notes, Slides 9-10: Core Concept & Invention vs Innovation",
+          "blanks": [
+            "idea",
+            "implementation",
+            "value",
+            "invention"
+          ]
         },
         {
           "id": "ent211-inn-011",
@@ -633,7 +666,13 @@
             3
           ],
           "explanation": "Christensen's theory follows a predictable sequence: (1) low-end or new-market entry, (2) incumbent complacency and abandonment of low-margin tiers, (3) quality and technological improvement by the entrant, and (4) upmarket migration that unseats the mainstream incumbent.",
-          "source": "Strategic Innovation & Christensen Disruption Model"
+          "source": "Strategic Innovation & Christensen Disruption Model",
+          "steps": [
+            "Entrant launches a cheaper, simpler product targeting low-end or unserved non-consumers",
+            "Established incumbents ignore the entrant because profit margins in that segment are low",
+            "Entrant steadily improves product quality, reliability, and features over time",
+            "Entrant migrates upmarket, attracting mainstream customers and displacing the incumbent"
+          ]
         },
         {
           "id": "ent211-inn-013",
@@ -855,7 +894,25 @@
             "Defined entrepreneurship as the pursuit of opportunity beyond resources currently controlled"
           ],
           "explanation": "Schumpeter introduced new combinations and creative destruction. Drucker emphasized searching for change as opportunity. Hisrich defined value creation under financial, psychic, and social risks. Stevenson formulated the Harvard definition of pursuing opportunity beyond controlled resources.",
-          "source": "ENT 211 Lecture Notes, Slide 5: Key Thinkers & Academic Literature"
+          "source": "ENT 211 Lecture Notes, Slide 5: Key Thinkers & Academic Literature",
+          "pairs": [
+            {
+              "left": "Joseph A. Schumpeter",
+              "right": "Emphasized 'new combinations' of resources and creative destruction as the engine of economic progress"
+            },
+            {
+              "left": "Peter F. Drucker",
+              "right": "Stated that entrepreneurs systematically search for change, respond to it, and exploit it as an opportunity"
+            },
+            {
+              "left": "Robert D. Hisrich",
+              "right": "Highlighted creating something new with value while assuming financial, psychic, and social risks"
+            },
+            {
+              "left": "Howard Stevenson",
+              "right": "Defined entrepreneurship as the pursuit of opportunity beyond resources currently controlled"
+            }
+          ]
         },
         {
           "id": "ent211-fnd-012",
@@ -1082,7 +1139,25 @@
             "Action Framework: Effectual logic, affordable loss, and means-driven venture creation"
           ],
           "explanation": "Knight represents economic uncertainty. McClelland represents psychological motivation (n-Ach). Weber represents sociological and cultural values. Sarasvathy represents effectuation action logic.",
-          "source": "Entrepreneurship Theories Deck, Slides 3 & 20: Three Families of Explanation"
+          "source": "Entrepreneurship Theories Deck, Slides 3 & 20: Three Families of Explanation",
+          "pairs": [
+            {
+              "left": "Frank H. Knight",
+              "right": "Economic Theory: Unmeasurable uncertainty as the source of entrepreneurial profit"
+            },
+            {
+              "left": "David McClelland",
+              "right": "Psychological Theory: Need for Achievement (n-Ach) and moderate risk preference"
+            },
+            {
+              "left": "Max Weber",
+              "right": "Sociological Theory: Religious work ethics, cultural values, and capital accumulation"
+            },
+            {
+              "left": "Saras Sarasvathy",
+              "right": "Action Framework: Effectual logic, affordable loss, and means-driven venture creation"
+            }
+          ]
         },
         {
           "id": "ent211-thy-012",
@@ -1314,7 +1389,25 @@
             "Business Model Innovation"
           ],
           "explanation": "The electric tricycle is a physical good (Product). Biometric tablet registration improves operational workflows (Process). SMS reminders and follow-up calls improve the customer experience (Service). Daily solar subscriptions restructure revenue and value capture (Business Model).",
-          "source": "ENT 211 Lecture Notes, Slide 11: Forms Innovation Can Take"
+          "source": "ENT 211 Lecture Notes, Slide 11: Forms Innovation Can Take",
+          "pairs": [
+            {
+              "left": "Developing an electric tricycle with swappable lithium battery packs",
+              "right": "Product Innovation"
+            },
+            {
+              "left": "Replacing paper customer registration forms with digital biometric tablet signups",
+              "right": "Process Innovation"
+            },
+            {
+              "left": "Sending automated SMS reminders and post-service follow-up calls to clinic patients",
+              "right": "Service Innovation"
+            },
+            {
+              "left": "Offering solar home systems via a 200-Naira daily mobile money subscription",
+              "right": "Business Model Innovation"
+            }
+          ]
         },
         {
           "id": "ent211-inn-012",

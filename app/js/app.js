@@ -11,7 +11,9 @@ const App = {
 
     // 2. Register Service Worker for offline PWA
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js').catch(err => {
+      navigator.serviceWorker.register('./sw.js').then(() => {
+        setTimeout(() => this.cacheAllContent(), 1200);
+      }).catch(err => {
         console.warn('SW registration failed:', err);
       });
     }
@@ -96,18 +98,38 @@ const App = {
       pool = pool.filter(q => q.difficulty === targetDiff);
     }
 
+    // Deduplicate pool by question ID
+    const seen = new Set();
+    const uniquePool = pool.filter(q => {
+      if (!q.id || seen.has(q.id)) return false;
+      seen.add(q.id);
+      return true;
+    });
+
     // Shuffle pool
-    const shuffled = [...pool].sort(() => Math.random() - 0.5);
+    const shuffled = [...uniquePool].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, limit);
   },
 
   loadQuestionsByType: async function(courseCode, qType) {
     const pool = await this.loadAllQuestionsForCourse(courseCode);
-    return pool.filter(q => q.type === qType);
+    const seen = new Set();
+    return pool.filter(q => {
+      if (!q.id || seen.has(q.id)) return false;
+      seen.add(q.id);
+      return q.type === qType;
+    });
   },
 
   loadMockQuestions: async function(courseCode, count = 40) {
-    const pool = await this.loadAllQuestionsForCourse(courseCode);
+    const rawPool = await this.loadAllQuestionsForCourse(courseCode);
+    const seen = new Set();
+    const pool = rawPool.filter(q => {
+      if (!q.id || seen.has(q.id)) return false;
+      seen.add(q.id);
+      return true;
+    });
+
     // Weighted selection: prioritize L3 & L4 (at least 40%)
     const highDiff = pool.filter(q => (q.difficulty || 1) >= 3);
     const lowDiff = pool.filter(q => (q.difficulty || 1) < 3);
@@ -155,12 +177,14 @@ const App = {
 
   cacheAllContent: async function() {
     const index = await this.getContentIndex();
-    const urlsToCache = ['/content/index.json'];
+    const urlsToCache = ['content/index.json'];
 
     for (const c of (index.courses || [])) {
       for (const t of c.topics) {
-        urlsToCache.push(`/content/${c.code}/${t.slug}.json`);
+        urlsToCache.push(`content/${c.code}/${t.slug}.json`);
       }
+      if (c.mock_file) urlsToCache.push(`content/${c.mock_file}`);
+      if (c.cheatsheet_file) urlsToCache.push(`content/${c.cheatsheet_file}`);
     }
 
     if (navigator.serviceWorker && navigator.serviceWorker.controller) {
@@ -168,6 +192,14 @@ const App = {
         type: 'CACHE_CONTENT',
         urls: urlsToCache
       });
+    }
+    if ('caches' in window) {
+      try {
+        const cache = await caches.open('studybuddy-content-v1');
+        await Promise.all(urlsToCache.map(u => cache.add(u).catch(() => null)));
+      } catch (e) {
+        // Cached in background
+      }
     }
   },
 

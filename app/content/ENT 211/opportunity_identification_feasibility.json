@@ -272,7 +272,15 @@
         "legal"
       ],
       "explanation": "Slide 12 defines PESTEL as Political, Economic, Social, Technological, Environmental, and Legal.",
-      "source": "Opportunity Identification & Evaluation Deck, Slide 12: PESTEL Framework"
+      "source": "Opportunity Identification & Evaluation Deck, Slide 12: PESTEL Framework",
+      "blanks": [
+        "political",
+        "economic",
+        "social",
+        "technological",
+        "environmental",
+        "legal"
+      ]
     },
     {
       "id": "ent211-opp-010",
@@ -298,7 +306,25 @@
         "Can the enterprise operate lawfully, securing necessary CAC registration, municipal permits, and regulatory compliance?"
       ],
       "explanation": "Slides 22-24 break down the core screening questions across Market, Technical, Financial, and Legal feasibility dimensions.",
-      "source": "Opportunity Identification & Evaluation Deck, Slides 22-24: Feasibility Pillars"
+      "source": "Opportunity Identification & Evaluation Deck, Slides 22-24: Feasibility Pillars",
+      "pairs": [
+        {
+          "left": "Market Feasibility",
+          "right": "Do customers have a genuine problem, and are they willing and able to pay for the proposed solution?"
+        },
+        {
+          "left": "Technical Feasibility",
+          "right": "Are the required machinery, facilities, technical expertise, and physical infrastructure available to produce the offering?"
+        },
+        {
+          "left": "Financial Feasibility",
+          "right": "Can the proposed pricing and cost structure cover startup capital, generate positive cash flow, and yield acceptable profit margins?"
+        },
+        {
+          "left": "Legal Feasibility",
+          "right": "Can the enterprise operate lawfully, securing necessary CAC registration, municipal permits, and regulatory compliance?"
+        }
+      ]
     },
     {
       "id": "ent211-opp-011",
@@ -327,7 +353,14 @@
         4
       ],
       "explanation": "Slide 26 outlines the 7-step sequence: (1) Identify a problem or need -> (2) Generate possible business ideas -> (3) Scan environment & identify market gap -> (4) Assess resources & conduct preliminary feasibility -> (5) Decide: proceed, modify, research further, or stop.",
-      "source": "Opportunity Identification & Evaluation Deck, Slide 26: From Identification to Evaluation"
+      "source": "Opportunity Identification & Evaluation Deck, Slide 26: From Identification to Evaluation",
+      "steps": [
+        "Identify an authentic problem or unmet customer need",
+        "Generate possible creative business ideas to solve it",
+        "Scan the external environment (PESTEL) and identify the specific market gap",
+        "Conduct preliminary feasibility assessment across market, technical, financial, and legal pillars",
+        "Make an evidence-based decision: proceed, modify/pivot, research further, or abandon"
+      ]
     },
     {
       "id": "ent211-opp-012",

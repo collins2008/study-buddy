@@ -66,7 +66,13 @@
       "marking_points": [],
       "source": "Module 01 Slide 31",
       "verified": true,
-      "verified_output": "Needs -> User/Task -> Functional -> Requirements/Prototyping"
+      "verified_output": "Needs -> User/Task -> Functional -> Requirements/Prototyping",
+      "steps": [
+        "Needs Analysis (summarizing system nature, target users, and business benefits)",
+        "User and Task Analysis (modeling user personas, workflows, and task hierarchies)",
+        "Functional Analysis (specifying the system functions required to support tasks)",
+        "Requirements & Prototyping (iteratively building and evaluating interface prototypes)"
+      ]
     },
     {
       "id": "ins202-ucd-002",
@@ -134,8 +140,8 @@
       ],
       "question": "When designing a new enterprise inventory management software system for a logistics company, interviewing corporate department managers is an acceptable, complete substitute for observing frontline warehouse workers.",
       "options": [
-        "True \u2014 corporate managers understand daily floor operations with 100% precision and make all technical decisions.",
-        "False \u2014 'Managers are NOT users.' Managers often hold idealized or flawed assumptions about daily workflows; the Gold Standard of user research is directly observing frontline workers in their authentic operational workplace."
+        "True — corporate managers understand daily floor operations with 100% precision and make all technical decisions.",
+        "False — 'Managers are NOT users.' Managers often hold idealized or flawed assumptions about daily workflows; the Gold Standard of user research is directly observing frontline workers in their authentic operational workplace."
       ],
       "answer": 1,
       "explanation": "As stated verbatim in Module 03 Slide 18: 'How can you learn the characteristics of your users? Not managers. Managers are not users. They may think they know users, but they aren't users. Good sources: Users themselves, preferably in their workplace. The Gold Standard.'",
@@ -175,7 +181,25 @@
       "marking_points": [],
       "source": "Module 07 Slides 10-12",
       "verified": true,
-      "verified_output": "Matched Horizontal, Vertical, Global, Local prototypes."
+      "verified_output": "Matched Horizontal, Vertical, Global, Local prototypes.",
+      "pairs": [
+        {
+          "left": "Horizontal Prototype",
+          "right": "Broad feature coverage across the system, but shallow depth (screens are linked at top level, but underlying logic is non-functional)."
+        },
+        {
+          "left": "Vertical Prototype",
+          "right": "Narrow feature coverage (only one or two specific features), but deep, fully functional operational logic implemented."
+        },
+        {
+          "left": "Global Prototype",
+          "right": "A comprehensive prototype exhibiting both breadth and depth across the entire web application architecture."
+        },
+        {
+          "left": "Local Prototype",
+          "right": "An isolated mockup constructed specifically to test design alternatives for a contentious design impasse or difficult issue."
+        }
+      ]
     },
     {
       "id": "ins202-ucd-006",
@@ -195,7 +219,7 @@
         "Operating system kernels cannot execute instructions unless all prototypes are drawn with blue ink."
       ],
       "answer": 0,
-      "explanation": "As formulated in Module 07 Slides 3\u20134, 16: 'Traditional software development: you can't test until you implement. Implementation is expensive... If testing is postponed until implementation is complete, there are no resources and no time to do it over when an interface design mistake is uncovered.' Prototyping breaks this paradox by testing mockups before code is written.",
+      "explanation": "As formulated in Module 07 Slides 3–4, 16: 'Traditional software development: you can't test until you implement. Implementation is expensive... If testing is postponed until implementation is complete, there are no resources and no time to do it over when an interface design mistake is uncovered.' Prototyping breaks this paradox by testing mockups before code is written.",
       "why_wrong": {
         "1": "Modern software compiles on modern microprocessors.",
         "2": "Users routinely use modern high-RAM computers without objection.",
@@ -237,7 +261,12 @@
       "marking_points": [],
       "source": "Module 07 Slides 19-22",
       "verified": true,
-      "verified_output": "Fast/cheap, no mistaken completion, maximizes iteration cycles."
+      "verified_output": "Fast/cheap, no mistaken completion, maximizes iteration cycles.",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ins202-ucd-008",
@@ -322,7 +351,11 @@
       "marking_points": [],
       "source": "Module 03 Slide 17",
       "verified": true,
-      "verified_output": "primary, secondary"
+      "verified_output": "primary, secondary",
+      "blanks": [
+        "primary",
+        "secondary"
+      ]
     },
     {
       "id": "ins202-ucd-011",
@@ -365,8 +398,8 @@
       ],
       "question": "A formal website redesign driven by User-Centered Development at IBM increased product sales by 400% in the first month and caused an 84% reduction in the use of the 'Help' button.",
       "options": [
-        "False \u2014 IBM reported that user-centered redesign had zero impact on commercial metrics.",
-        "True \u2014 by conducting user analysis and aligning navigation with real user workflows, IBM achieved a 400% sales surge and an 84% plunge in users feeling lost enough to click Help."
+        "False — IBM reported that user-centered redesign had zero impact on commercial metrics.",
+        "True — by conducting user analysis and aligning navigation with real user workflows, IBM achieved a 400% sales surge and an 84% plunge in users feeling lost enough to click Help."
       ],
       "answer": 1,
       "explanation": "As cited directly in Module 03 Slide 4: 'Examples: Redesign of an IBM site increased sales 400% within the first month; IBM site: 84% reduction in use of Help button, meaning users were not lost as often.'",
@@ -396,7 +429,7 @@
         "Sending a mailed paper postal questionnaire to the patient during the operation."
       ],
       "answer": 0,
-      "explanation": "As stated in Module 03 Slide 30\u201331: 'Sometimes talking while doing the work is not feasible... Talking right after may be best alternative to thinking aloud.' In high-stress or life-critical tasks, thinking aloud introduces dangerous cognitive interference, so retrospective review is preferred.",
+      "explanation": "As stated in Module 03 Slide 30–31: 'Sometimes talking while doing the work is not feasible... Talking right after may be best alternative to thinking aloud.' In high-stress or life-critical tasks, thinking aloud introduces dangerous cognitive interference, so retrospective review is preferred.",
       "why_wrong": {
         "1": "Megaphone interruptions endanger patient life and violate surgical protocol.",
         "2": "Focus groups inside sterile surgical rooms contaminate the operating field.",
@@ -525,7 +558,7 @@
           "verified_output": "The Implementation Paradox."
         },
         {
-          "id": "ins202-ucd-cs2-q2",
+          "id": "ins202-ucd-cs1-q2",
           "course": "INS 202",
           "topic": "user_centered_development",
           "type": "explain",
@@ -536,7 +569,7 @@
           ],
           "question": "Construct a four-phase User-Centered Development (UCD) plan that the agency should have followed from Day 1 to avoid this multi-million Naira disaster.",
           "options": [],
-          "answer": "The agency should have executed the four standard UCD phases: (1) Phase 1: Needs Analysis \u2014 Define the core citizen goal (renew passport with zero friction) and business metrics (target >90% first-time completion rate); (2) Phase 2: User and Task Analysis \u2014 Conduct interviews and observations with diverse Nigerian citizens across age groups, education levels, and device types (mobile smartphones vs desktops); identify that citizens take photos with phones rather than specialized photo editing tools; (3) Phase 3: Low-Fidelity Prototyping & Form Design \u2014 Create paper wireframes and interactive mockups; design an automated browser-based cropping and auto-resizing tool that accepts any standard smartphone selfie and automatically formats it to passport dimensions, eliminating pixel math for citizens; (4) Phase 4: Usability Testing via Think Aloud Protocol \u2014 Test low- and medium-fidelity prototypes with real citizens in an iterative loop, discovering photo upload confusion in Week 3 (costing zero engineering code rewrite) instead of Month 9.",
+          "answer": "The agency should have executed the four standard UCD phases: (1) Phase 1: Needs Analysis — Define the core citizen goal (renew passport with zero friction) and business metrics (target >90% first-time completion rate); (2) Phase 2: User and Task Analysis — Conduct interviews and observations with diverse Nigerian citizens across age groups, education levels, and device types (mobile smartphones vs desktops); identify that citizens take photos with phones rather than specialized photo editing tools; (3) Phase 3: Low-Fidelity Prototyping & Form Design — Create paper wireframes and interactive mockups; design an automated browser-based cropping and auto-resizing tool that accepts any standard smartphone selfie and automatically formats it to passport dimensions, eliminating pixel math for citizens; (4) Phase 4: Usability Testing via Think Aloud Protocol — Test low- and medium-fidelity prototypes with real citizens in an iterative loop, discovering photo upload confusion in Week 3 (costing zero engineering code rewrite) instead of Month 9.",
           "explanation": "Applies the 4 UCD phases: Needs Analysis, User/Task Analysis, Prototyping (auto-crop), and early Think Aloud usability testing.",
           "why_wrong": {},
           "marking_points": [

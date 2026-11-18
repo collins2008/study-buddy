@@ -56,12 +56,11 @@
         "Strict sequential phase completion without review",
         "Exclusively pair programming"
       ],
-      "answer": "Risk assessment and management at every iteration",
+      "answer": 0,
       "explanation": "As tested in Nile Exam Question 3: Barry Boehm's Spiral Model is fundamentally a risk-driven process model. Unlike linear or purely agile models, every single 360-degree spiral loop explicitly begins with setting objectives and mandates an in-depth risk analysis step to identify and resolve technical, financial, or operational risks before engineering proceeds.",
       "why_wrong": {
-        "Elimination of all documentation": "The Spiral Model produces formal documentation, milestone reviews, and management checkpoints at each loop.",
-        "Strict sequential phase completion...": "This is the Waterfall model, whereas the Spiral model is inherently iterative and cyclic.",
-        "Exclusively pair programming": "Pair programming is a practice of Extreme Programming (XP), not the Spiral Model."
+        "1": "The Spiral Model produces formal documentation, milestone reviews, and management checkpoints at each loop.",
+        "3": "Pair programming is a practice of Extreme Programming (XP), not the Spiral Model."
       },
       "marking_points": [
         "Identifies risk assessment/management as defining feature"
@@ -88,12 +87,12 @@
         "Implementation",
         "Maintenance"
       ],
-      "answer": "Requirements analysis and specification",
+      "answer": 0,
       "explanation": "In the classical Waterfall Model, detailed functional and non-functional requirements are gathered, analyzed, and documented in a formal Software Requirements Specification (SRS) during the Requirements Analysis phase before any design or coding begins.",
       "why_wrong": {
-        "System design": "Design focuses on creating the architectural blueprint, data structures, and algorithms to satisfy already-defined requirements.",
-        "Implementation": "Implementation translates detailed design into executable source code.",
-        "Maintenance": "Maintenance occurs post-deployment to patch defects and handle environmental changes."
+        "1": "Design focuses on creating the architectural blueprint, data structures, and algorithms to satisfy already-defined requirements.",
+        "2": "Implementation translates detailed design into executable source code.",
+        "3": "Maintenance occurs post-deployment to patch defects and handle environmental changes."
       },
       "marking_points": [
         "Identifies Requirements Analysis phase"
@@ -121,12 +120,12 @@
         "Reducing the need for software testing",
         "Simplifying the compiler optimization process"
       ],
-      "answer": "Validation and refinement of requirements with stakeholders",
+      "answer": 0,
       "explanation": "The primary objective of building a prototype is to clarify ambiguous user requirements, validate user interface workflows, and resolve stakeholder misunderstandings early in the development lifecycle before committing major resources to production engineering.",
       "why_wrong": {
-        "Rapid delivery of the final production system": "Prototypes are typically throwaway or preliminary models, not hardened production-ready systems.",
-        "Reducing the need for software testing": "Testing remains mandatory; prototypes do not eliminate formal verification and validation.",
-        "Simplifying the compiler optimization process": "Compilers optimize binaries independently of development process models."
+        "1": "Prototypes are typically throwaway or preliminary models, not hardened production-ready systems.",
+        "2": "Testing remains mandatory; prototypes do not eliminate formal verification and validation.",
+        "3": "Compilers optimize binaries independently of development process models."
       },
       "marking_points": [
         "Validation and refinement of requirements"
@@ -154,12 +153,12 @@
         "Writing code without any software architecture",
         "Manual testing without automated tools"
       ],
-      "answer": "Iterative development and architecture-centric management of requirements",
+      "answer": 0,
       "explanation": "RUP is an iterative and incremental process framework characterized as being: 1. Use-case driven; 2. Architecture-centric (establishing an executable architectural baseline in the Elaboration phase); and 3. Iterative and risk-focused.",
       "why_wrong": {
-        "Strict adherence to a linear waterfall sequence": "RUP explicitly rejects single-pass waterfall development in favor of iterative cycles.",
-        "Writing code without any software architecture": "RUP is famously architecture-centric, emphasizing early architectural stabilization.",
-        "Manual testing without automated tools": "RUP strongly emphasizes automated test suites."
+        "1": "RUP explicitly rejects single-pass waterfall development in favor of iterative cycles.",
+        "2": "RUP is famously architecture-centric, emphasizing early architectural stabilization.",
+        "3": "RUP strongly emphasizes automated test suites."
       },
       "marking_points": [
         "Iterative development",
@@ -187,12 +186,10 @@
         "Force developers to begin writing production database queries early",
         "Eliminate the need to involve real end-users"
       ],
-      "answer": "Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration",
+      "answer": 0,
       "explanation": "Users frequently struggle to articulate abstract needs from text documents. An interactive prototype allows stakeholders to test workflows directly, exposing unstated assumptions, missing validation rules, and conflicting expectations while changes are cheap to make.",
       "why_wrong": {
-        "Replace the need for any formal written requirements...": "A prototype supplements, but does not entirely replace, formal contractual specifications.",
-        "Force developers to begin writing production database queries...": "Prototypes often use mock data; forcing early production DB design defeats the exploratory purpose.",
-        "Eliminate the need to involve real end-users": "Prototypes are built specifically to engage real end-users."
+        "3": "Prototypes are built specifically to engage real end-users."
       },
       "marking_points": [
         "Reveals hidden assumptions through interactive visual demonstration"
@@ -233,7 +230,25 @@
       ],
       "source": "Software Engineering Process Models Lecture Notes, Section 5",
       "verified": true,
-      "verified_output": "N/A"
+      "verified_output": "N/A",
+      "pairs": [
+        {
+          "left": "Acceptance Testing",
+          "right": "Requirements Analysis"
+        },
+        {
+          "left": "System Testing",
+          "right": "System Architecture Design"
+        },
+        {
+          "left": "Integration Testing",
+          "right": "Detailed Subsystem Design"
+        },
+        {
+          "left": "Unit Testing",
+          "right": "Component Implementation"
+        }
+      ]
     },
     {
       "id": "sen201-pm-007",
@@ -252,12 +267,12 @@
         "Construction Phase",
         "Transition Phase"
       ],
-      "answer": "Elaboration Phase",
+      "answer": 0,
       "explanation": "RUP defines four phases: 1. Inception (establish business case and scope); 2. Elaboration (analyze problem domain, establish architectural baseline, resolve highest risks); 3. Construction (bulk coding and component integration); 4. Transition (deploying to users).",
       "why_wrong": {
-        "Inception Phase": "Inception defines project scope, business viability, and initial cost estimates, not the full architecture.",
-        "Construction Phase": "Construction builds the remaining functionality upon the already-established architectural baseline.",
-        "Transition Phase": "Transition handles beta testing, user training, and deployment."
+        "1": "Inception defines project scope, business viability, and initial cost estimates, not the full architecture.",
+        "2": "Construction builds the remaining functionality upon the already-established architectural baseline.",
+        "3": "Transition handles beta testing, user training, and deployment."
       },
       "marking_points": [
         "Identifies Elaboration phase as establishing architectural baseline"
@@ -284,7 +299,7 @@
         "The Waterfall Model cannot be used with relational databases.",
         "Waterfall requires zero documentation, leaving no audit trail."
       ],
-      "answer": "Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.",
+      "answer": 0,
       "explanation": "Because Waterfall requires freezing requirements before design and coding, changing requirements mid-way requires discarding completed work. Testing happens at the end ('big bang'), meaning major conceptual misunderstandings are discovered too late.",
       "why_wrong": {
         "Developers will write code too quickly...": "Waterfall delays coding until requirements and design are fully documented.",
@@ -501,7 +516,7 @@
             "Because Agile methodologies are illegal under Nigerian copyright law.",
             "Because the Waterfall model cannot run on Linux servers."
           ],
-          "answer": "Because the project carries severe technical, legal, and national security risks that require explicit risk assessment, formal architectural baselines, and verification gates before full-scale deployment.",
+          "answer": 0,
           "explanation": "Large-scale safety-critical systems with strict regulatory compliance, multi-agency dependencies, and catastrophic failure penalties require formal risk mitigation, comprehensive documentation, and architectural verification (strengths of the Spiral Model and RUP Elaboration), which purely informal Agile sprints can overlook.",
           "why_wrong": {
             "Because the Spiral Model guarantees zero lines of code...": "Nonsensical assertion; software must be coded.",
@@ -565,7 +580,7 @@
             "The hospital violating open-source GPL licenses.",
             "Developers spending too much time on automated unit tests."
           ],
-          "answer": "Management mistaking an unhardened, non-secure throwaway prototype with mock data for production-ready software.",
+          "answer": 0,
           "explanation": "As warned in Section 5.2 of the lecture notes: A primary risk of prototyping is that stakeholders see a functioning visual screen and assume the software is complete. In reality, the prototype lacks database ACID transactions, patient data encryption, audit logging, input sanitization, and concurrent error handling, creating grave patient safety hazards.",
           "why_wrong": {
             "The prototype running out of memory...": "The issue is architectural and managerial, not low-level pointer management.",

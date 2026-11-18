@@ -1,7 +1,7 @@
 {
   "course": "IFT 211",
   "topic": "Past Exam Synthesis & Multi-Topic Problem Solving",
-  "summary": "This capstone synthesis topic reconstructs the official Nile University 2024/2025 First Semester Final Examination in Digital Logic and Design (IFT 211, 60 Marks). It synthesizes all core examined domains: Exercise I signed 2's complement addition ((+44)+(+14), (+44)+(-14)) and multi-method binary subtraction (1001000 - 111001 via borrowing, 1's complement with end-around carry, and 2's complement with discarded carry); Exercise II decimal-to-binary (51 -> 00110011) and binary-to-hexadecimal (11011010 -> DA); Exercise III 12-byte ASCII byte stream decoding ('Coded - 0211'); Exercise IV non-weighted encodings (decimal 21 to Gray 11111, Gray 11101 to binary 10110, and BCD 1001 0001 0100 to decimal 914 and binary 1110010010); and Exercise V-VI logic circuit node tracing (X = A \u2295 B + B \u00b7 C') and primary versus universal gate classifications.",
+  "summary": "This capstone synthesis topic reconstructs the official Nile University 2024/2025 First Semester Final Examination in Digital Logic and Design (IFT 211, 60 Marks). It synthesizes all core examined domains: Exercise I signed 2's complement addition ((+44)+(+14), (+44)+(-14)) and multi-method binary subtraction (1001000 - 111001 via borrowing, 1's complement with end-around carry, and 2's complement with discarded carry); Exercise II decimal-to-binary (51 -> 00110011) and binary-to-hexadecimal (11011010 -> DA); Exercise III 12-byte ASCII byte stream decoding ('Coded - 0211'); Exercise IV non-weighted encodings (decimal 21 to Gray 11111, Gray 11101 to binary 10110, and BCD 1001 0001 0100 to decimal 914 and binary 1110010010); and Exercise V-VI logic circuit node tracing (X = A ⊕ B + B · C') and primary versus universal gate classifications.",
   "key_terms": [
     {
       "term": "2's Complement Arithmetic",
@@ -33,7 +33,7 @@
     },
     {
       "term": "Primary Gate",
-      "definition": "The three elemental Boolean logic gates \u2014 OR, AND, and NOT \u2014 as classified by Nile University examiners."
+      "definition": "The three elemental Boolean logic gates — OR, AND, and NOT — as classified by Nile University examiners."
     }
   ],
   "questions": [
@@ -55,12 +55,12 @@
         "10111010_2 (= -70_10)",
         "00011110_2 (= +30_10)"
       ],
-      "answer": "00111010_2 (= +58_10)",
+      "answer": 0,
       "explanation": "Convert to 8-bit binary:\n+44 = 32 + 8 + 4 = 00101100_2\n+14 = 8 + 4 + 2 = 00001110_2\nAdd:\n  00101100\n+ 00001110\n----------\n  00111010_2\nCheck: 32 + 16 + 8 + 2 = +58_10. Correct (+44 + 14 = +58). MSB is 0, indicating a positive number within the 8-bit signed range [-128, +127].",
       "why_wrong": {
-        "00111100_2 (= +60_10)": "Carry error in the 2s and 4s bit positions.",
-        "10111010_2 (= -70_10)": "Mistakenly inverts the sign bit.",
-        "00011110_2 (= +30_10)": "This is (+44) - (+14), not addition."
+        "1": "Carry error in the 2s and 4s bit positions.",
+        "2": "Mistakenly inverts the sign bit.",
+        "3": "This is (+44) - (+14), not addition."
       },
       "marking_points": [
         "Converts +44 to 00101100",
@@ -90,12 +90,12 @@
         "00011111_2 (= +31_10)",
         "11100010_2 (= -30_10)"
       ],
-      "answer": "00011110_2 (= +30_10)",
+      "answer": 0,
       "explanation": "1. +44 = 00101100_2.\n2. -14 in 2's complement: +14 = 00001110_2 -> 1's comp = 11110001 -> 2's comp = 11110010_2.\n3. Add:\n  00101100 (+44)\n+ 11110010 (-14)\n----------\n1 00011110\n4. In 2's complement, the end carry of 1 is DISCARDED.\n5. Result = 00011110_2 = 16 + 8 + 4 + 2 = +30_10. Correct (+44 - 14 = +30).",
       "why_wrong": {
-        "10011110_2 (= -98_10)": "Kept the end carry in the sign bit position.",
-        "00011111_2 (= +31_10)": "Wrongly added the end carry back to LSB (confusing 2's complement with 1's complement end-around carry).",
-        "11100010_2 (= -30_10)": "Produced -30 instead of +30."
+        "1": "Kept the end carry in the sign bit position.",
+        "2": "Wrongly added the end carry back to LSB (confusing 2's complement with 1's complement end-around carry).",
+        "3": "Produced -30 instead of +30."
       },
       "marking_points": [
         "Finds 2's complement of -14 = 11110010",
@@ -125,12 +125,11 @@
         "Final difference = 0010000_2 (= 16_10)",
         "Final difference = 1110001_2"
       ],
-      "answer": "Intermediate sum = 1001110_2; Adding end-around carry yields final difference 0001111_2 (= 15_10)",
+      "answer": 0,
       "explanation": "Pad subtrahend to 7 bits: Minuend = 1001000_2 (72_10), Subtrahend = 0111001_2 (57_10).\n1. Take 1's complement of subtrahend: 1000110_2.\n2. Add to minuend:\n  1001000\n+ 1000110\n---------\n1 0001110 (Intermediate sum = 0001110 with end carry 1)\n3. In 1's complement, an end carry indicates a positive result and MUST be added to LSB (end-around carry):\n  0001110 + 1 = 0001111_2 (= 15_10).\nCheck: 72 - 57 = 15. Verified.",
       "why_wrong": {
-        "Intermediate sum = 1001111_2; Discarding carry...": "Discarding end carry is 2's complement procedure, not 1's complement.",
-        "Final difference = 0010000_2 (= 16_10)": "Off by 1 arithmetic error.",
-        "Final difference = 1110001_2": "Forgot to add the end carry and complemented the result."
+        "2": "Off by 1 arithmetic error.",
+        "3": "Forgot to add the end carry and complemented the result."
       },
       "marking_points": [
         "Finds 1's complement of 0111001 = 1000110",
@@ -160,12 +159,12 @@
         "(a) 00110011_2, (b) AD_16",
         "(a) 01010001_2, (b) CA_16"
       ],
-      "answer": "(a) 00110011_2, (b) DA_16",
+      "answer": 0,
       "explanation": "(a) Decimal 51 to binary:\n51 = 32 + 16 + 2 + 1 = 00110011_2.\n(b) Binary 11011010 to hexadecimal:\nSplit into two 4-bit nibbles:\n1101_2 = 8 + 4 + 1 = 13 = D_16\n1010_2 = 8 + 2 = 10 = A_16\nCombining gives: DA_16.",
       "why_wrong": {
-        "(a) 00110101_2, (b) DB_16": "00110101 is decimal 53, not 51.",
-        "(a) 00110011_2, (b) AD_16": "Reverses the nibble order (wrote AD instead of DA).",
-        "(a) 01010001_2, (b) CA_16": "01010001 is BCD representation of 51, not pure binary."
+        "1": "00110101 is decimal 53, not 51.",
+        "2": "Reverses the nibble order (wrote AD instead of DA).",
+        "3": "01010001 is BCD representation of 51, not pure binary."
       },
       "marking_points": [
         "Converts 51 to 00110011_2",
@@ -224,8 +223,8 @@
         "(a) 11010_Gray, (b) 10011_2 (= 19_10)",
         "(a) 11111_Gray, (b) 11001_2 (= 25_10)"
       ],
-      "answer": "(a) 11111_Gray, (b) 10110_2 (= 22_10)",
-      "explanation": "(a) Decimal 21 to binary = 10101_2 (B4=1, B3=0, B2=1, B1=0, B0=1).\nGray code conversion:\nG4 = B4 = 1\nG3 = B4 \u2295 B3 = 1 \u2295 0 = 1\nG2 = B3 \u2295 B2 = 0 \u2295 1 = 1\nG1 = B2 \u2295 B1 = 1 \u2295 0 = 1\nG0 = B1 \u2295 B0 = 0 \u2295 1 = 1\nResult = 11111_Gray.\n\n(b) Gray code 11101_Gray to binary (G4=1, G3=1, G2=1, G1=0, G0=1):\nB4 = G4 = 1\nB3 = B4 \u2295 G3 = 1 \u2295 1 = 0\nB2 = B3 \u2295 G2 = 0 \u2295 1 = 1\nB1 = B2 \u2295 G1 = 1 \u2295 0 = 1\nB0 = B1 \u2295 G0 = 1 \u2295 1 = 0\nBinary result = 10110_2 (which is 16 + 4 + 2 = 22_10).",
+      "answer": 0,
+      "explanation": "(a) Decimal 21 to binary = 10101_2 (B4=1, B3=0, B2=1, B1=0, B0=1).\nGray code conversion:\nG4 = B4 = 1\nG3 = B4 ⊕ B3 = 1 ⊕ 0 = 1\nG2 = B3 ⊕ B2 = 0 ⊕ 1 = 1\nG1 = B2 ⊕ B1 = 1 ⊕ 0 = 1\nG0 = B1 ⊕ B0 = 0 ⊕ 1 = 1\nResult = 11111_Gray.\n\n(b) Gray code 11101_Gray to binary (G4=1, G3=1, G2=1, G1=0, G0=1):\nB4 = G4 = 1\nB3 = B4 ⊕ G3 = 1 ⊕ 1 = 0\nB2 = B3 ⊕ G2 = 0 ⊕ 1 = 1\nB1 = B2 ⊕ G1 = 1 ⊕ 0 = 1\nB0 = B1 ⊕ G0 = 1 ⊕ 1 = 0\nBinary result = 10110_2 (which is 16 + 4 + 2 = 22_10).",
       "why_wrong": {
         "(a) 10101_Gray, (b) 11101_2...": "Assumes Gray code is identical to binary.",
         "(a) 11010_Gray, (b) 10011_2...": "Parity and XOR calculation mistakes.",
@@ -257,12 +256,12 @@
         "1011010010_2",
         "1100101000_2"
       ],
-      "answer": "1110010010_2",
+      "answer": 0,
       "explanation": "Step 1: Decode each 4-bit BCD nibble into decimal digits:\n- 1001_2 = 9\n- 0001_2 = 1\n- 0100_2 = 4\nDecimal number = 914_10.\nStep 2: Convert decimal 914 to pure binary by successive powers of 2:\n914 = 512 + 256 + 128 + 16 + 2\n= 2^9 + 2^8 + 2^7 + 2^4 + 2^1\n= 1110010010_2.\nNotice: BCD represents digits; you cannot simply treat the BCD bits as pure binary!",
       "why_wrong": {
-        "100100010100_2": "Common student blunder: directly copied the BCD bit string as if it were a binary integer (representing 2324_10 instead of 914_10).",
-        "1011010010_2": "Arithmetic conversion error (equals 722_10).",
-        "1100101000_2": "Equals 808_10."
+        "1": "Common student blunder: directly copied the BCD bit string as if it were a binary integer (representing 2324_10 instead of 914_10).",
+        "2": "Arithmetic conversion error (equals 722_10).",
+        "3": "Equals 808_10."
       },
       "marking_points": [
         "Decodes BCD to decimal 914",
@@ -290,12 +289,11 @@
         "XOR and XNOR are Universal gates; NAND and NOR are Derived gates.",
         "All gates are equally primary and universal."
       ],
-      "answer": "OR, AND, and NOT are Primary gates; NAND and NOR are Universal gates because each can synthesize all other gates.",
+      "answer": 0,
       "explanation": "As explicitly highlighted in lecturer notebook notes and the exam paper: the primary gates are OR, AND, and NOT. NAND and NOR are universal gates because through appropriate interconnection, either one can implement NOT, AND, and OR without any external components.",
       "why_wrong": {
-        "NAND and NOR are Primary gates; AND and OR are Universal gates.": "NAND and NOR are universal, not primary; AND and OR cannot implement NOT on their own.",
-        "XOR and XNOR are Universal gates...": "XOR cannot implement NAND or NOT on its own without true/false constant inputs.",
-        "All gates are equally primary and universal.": "Violates formal functional completeness theorems."
+        "1": "NAND and NOR are universal, not primary; AND and OR cannot implement NOT on their own.",
+        "3": "Violates formal functional completeness theorems."
       },
       "marking_points": [
         "Identifies OR, AND, NOT as primary",
@@ -515,7 +513,7 @@
             "2's complement of subtrahend = 0000111_2; Difference = 1001111_2 (= 79_10)",
             "2's complement of subtrahend = 1111001_2; Difference = 0010000_2 (= 16_10)"
           ],
-          "answer": "2's complement of subtrahend = 1000111_2; Sum = 1 0001111_2; Discarding carry yields difference 0001111_2 (= 15_10)",
+          "answer": 0,
           "explanation": "Pad subtrahend to 7 bits: 0111001_2.\n1. 1's complement = 1000110_2.\n2. 2's complement = 1000110 + 1 = 1000111_2.\n3. Add minuend 1001000 and 2's complement:\n  1001000\n+ 1000111\n---------\n1 0001111\n4. In 2's complement subtraction, an end carry indicates the result is positive; discard the end carry.\nFinal difference = 0001111_2 = 15_10.",
           "why_wrong": {
             "2's complement of subtrahend = 1000110_2...": "1000110 is 1's complement, not 2's complement (forgot to add 1).",
@@ -580,12 +578,12 @@
             "R = 1, S = 1, X = 1",
             "R = 0, S = 0, X = 0"
           ],
-          "answer": "R = 1, S = 0, X = 1",
-          "explanation": "Evaluate intermediate nodes step by step:\n- R = A \u2295 B = 0 \u2295 1 = 1 (inputs differ, XOR produces 1).\n- Q = C' = 1' = 0.\n- S = B \u00b7 Q = 1 \u00b7 0 = 0.\n- X = R + S = 1 + 0 = 1.\nTherefore, R = 1, S = 0, and X = 1.",
+          "answer": 0,
+          "explanation": "Evaluate intermediate nodes step by step:\n- R = A ⊕ B = 0 ⊕ 1 = 1 (inputs differ, XOR produces 1).\n- Q = C' = 1' = 0.\n- S = B · Q = 1 · 0 = 0.\n- X = R + S = 1 + 0 = 1.\nTherefore, R = 1, S = 0, and X = 1.",
           "why_wrong": {
-            "R = 0, S = 1, X = 1": "Evaluated 0 XOR 1 as 0.",
-            "R = 1, S = 1, X = 1": "Evaluated S as 1 (neglected C'=0).",
-            "R = 0, S = 0, X = 0": "Both gates evaluated incorrectly."
+            "1": "Evaluated 0 XOR 1 as 0.",
+            "2": "Evaluated S as 1 (neglected C'=0).",
+            "3": "Both gates evaluated incorrectly."
           },
           "marking_points": [
             "R = 0 XOR 1 = 1",
@@ -607,19 +605,19 @@
             "nile-exam-exercise-vi",
             "simplification"
           ],
-          "question": "Using Boolean algebra theorems, simplify X = (A \u2295 B) + B\u00b7C' into a minimal Sum-of-Products expression with the minimum number of literals.",
+          "question": "Using Boolean algebra theorems, simplify X = (A ⊕ B) + B·C' into a minimal Sum-of-Products expression with the minimum number of literals.",
           "options": [
             "X = A'B + AB' + BC'",
             "X = A + B",
             "X = A'B + AB'",
             "X = (A + B)(A' + C')"
           ],
-          "answer": "X = A'B + AB' + BC'",
-          "explanation": "Expand the XOR term: A \u2295 B = A'B + AB'.\nSo X = A'B + AB' + BC'.\nCheck consensus theorem: between A'B and AB', the variable B is not complemented. Looking at A'B + BC', can it be reduced? No, plotting on a K-map:\n1s are at m2(010), m3(011), m4(100), m5(101), m6(110).\nGroups:\n- Quad/Pair m2, m3 -> A'B\n- Pair m4, m5 -> AB'\n- Pair m2, m6 -> BC'\nEvery term covers a unique minterm: m3 is only in A'B; m4, m5 only in AB'; m6 only in BC'.\nHence, all three prime implicants are essential, and the minimal expression is X = A'B + AB' + BC' (or (A \u2295 B) + BC').",
+          "answer": 0,
+          "explanation": "Expand the XOR term: A ⊕ B = A'B + AB'.\nSo X = A'B + AB' + BC'.\nCheck consensus theorem: between A'B and AB', the variable B is not complemented. Looking at A'B + BC', can it be reduced? No, plotting on a K-map:\n1s are at m2(010), m3(011), m4(100), m5(101), m6(110).\nGroups:\n- Quad/Pair m2, m3 -> A'B\n- Pair m4, m5 -> AB'\n- Pair m2, m6 -> BC'\nEvery term covers a unique minterm: m3 is only in A'B; m4, m5 only in AB'; m6 only in BC'.\nHence, all three prime implicants are essential, and the minimal expression is X = A'B + AB' + BC' (or (A ⊕ B) + BC').",
           "why_wrong": {
-            "X = A + B": "Incorrect simplification; would output 1 for input 111 (m7), but for 111, X is 0.",
-            "X = A'B + AB'": "Omits BC', leaving minterm m6 (110) uncovered.",
-            "X = (A + B)(A' + C')": "This is in POS form, not minimal SOP."
+            "1": "Incorrect simplification; would output 1 for input 111 (m7), but for 111, X is 0.",
+            "2": "Omits BC', leaving minterm m6 (110) uncovered.",
+            "3": "This is in POS form, not minimal SOP."
           },
           "marking_points": [
             "Expands A XOR B to A'B + AB'",

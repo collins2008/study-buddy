@@ -55,12 +55,12 @@
         "01001010",
         "00111110"
       ],
-      "answer": "00111010",
+      "answer": 0,
       "explanation": "Convert both decimal numbers to 8-bit binary:\n+44 = 32 + 8 + 4 = 00101100_2\n+14 = 8 + 4 + 2 = 00001110_2\nPerform binary addition:\n  00101100\n+ 00001110\n----------\n  00111010_2\nCheck: 32 + 16 + 8 + 2 = 58_10. (+44 + +14 = +58). No overflow occurred (sign bit is 0).",
       "why_wrong": {
-        "00101010": "Evaluates to 42 in decimal; addition error in bit 4.",
-        "01001010": "Evaluates to 74 in decimal; extraneous carry generated.",
-        "00111110": "Evaluates to 62 in decimal."
+        "1": "Evaluates to 42 in decimal; addition error in bit 4.",
+        "2": "Evaluates to 74 in decimal; extraneous carry generated.",
+        "3": "Evaluates to 62 in decimal."
       },
       "marking_points": [
         "Converts +44 to 00101100_2",
@@ -89,12 +89,12 @@
         "10011110",
         "00011100"
       ],
-      "answer": "00011110",
+      "answer": 0,
       "explanation": "1. Find 8-bit binary for +44: 00101100_2.\n2. Find 8-bit 2's complement for -14:\n   +14 = 00001110_2\n   1's comp = 11110001_2\n   2's comp = 11110001 + 1 = 11110010_2.\n3. Add +44 and -14:\n    00101100\n  + 11110010\n  ----------\n   100011110_2\n4. In 8-bit arithmetic, discard the 9th carry-out bit:\n   Result = 00011110_2.\nCheck: 16 + 8 + 4 + 2 = 30_10 (+44 - 14 = +30).",
       "why_wrong": {
-        "00101110": "Evaluates to 46 in decimal; failed to negate 14.",
-        "10011110": "Includes the carry-out as the MSB, falsely interpreting the result as negative.",
-        "00011100": "Evaluates to 28 in decimal; off-by-two addition error."
+        "1": "Evaluates to 46 in decimal; failed to negate 14.",
+        "2": "Includes the carry-out as the MSB, falsely interpreting the result as negative.",
+        "3": "Evaluates to 28 in decimal; off-by-two addition error."
       },
       "marking_points": [
         "Converts -14 to 2's complement 11110010_2",
@@ -123,12 +123,12 @@
         "0001101",
         "0011111"
       ],
-      "answer": "0001111",
+      "answer": 0,
       "explanation": "Pad 111001 to 7 bits: 0111001_2.\nIn decimal: 1001000_2 = 64 + 8 = 72_10; 0111001_2 = 32 + 16 + 8 + 1 = 57_10.\nDifference = 72 - 57 = 15_10 = 0001111_2.\nColumn-by-column with borrow:\n  1001000\n- 0111001\n---------\nBit 0: 0 - 1 -> borrow from bit 3 (cascade: bit 3 becomes 0, bits 2 and 1 become 1, bit 0 becomes 2) -> 2 - 1 = 1.\nBit 1: 1 - 0 = 1.\nBit 2: 1 - 0 = 1.\nBit 3: 0 - 1 -> borrow from bit 6 -> 2 - 1 = 1.\nBit 4: 1 - 1 = 0.\nBit 5: 1 - 1 = 0.\nBit 6: 0 - 0 = 0.\nResult: 0001111_2 (15_10).",
       "why_wrong": {
-        "0010111": "Evaluates to 23; borrowing error at bit 3.",
-        "0001101": "Evaluates to 13; arithmetic error at bit 1.",
-        "0011111": "Evaluates to 31; missed propagation of borrow."
+        "1": "Evaluates to 23; borrowing error at bit 3.",
+        "2": "Evaluates to 13; arithmetic error at bit 1.",
+        "3": "Evaluates to 31; missed propagation of borrow."
       },
       "marking_points": [
         "Aligns 1001000 and 0111001",
@@ -158,12 +158,12 @@
         "Intermediate sum: 00001110; Final result: 0001110",
         "Intermediate sum: 10011110; Final result: 0011111"
       ],
-      "answer": "Intermediate sum: 10001110; Final result after adding end carry: 0001111",
+      "answer": 0,
       "explanation": "1. 1's complement of subtrahend 0111001 is 1000110.\n2. Add minuend and 1's complement:\n    1001000\n  + 1000110\n  ---------\n   10001110\n3. Because an end carry (the leading 1) is produced, the result is positive. Add this end-around carry to the LSB:\n    0001110\n  +       1\n  ---------\n    0001111_2 (15_10).",
       "why_wrong": {
-        "Intermediate sum: 10001111; Final result: 0001111 (carry discarded)": "This describes 2's complement subtraction, not 1's complement.",
-        "Intermediate sum: 00001110; Final result: 0001110": "Omits the end-around carry addition.",
-        "Intermediate sum: 10011110; Final result: 0011111": "Addition error in intermediate stage."
+        "1": "This describes 2's complement subtraction, not 1's complement.",
+        "2": "Omits the end-around carry addition.",
+        "3": "Addition error in intermediate stage."
       },
       "marking_points": [
         "Inverts subtrahend to 1000110",
@@ -192,12 +192,12 @@
         "It eliminates the need for binary logic gates in arithmetic units.",
         "It does not require carry propagation across bits during addition."
       ],
-      "answer": "It has only one unique representation for zero (00000000) and standard binary addition hardware directly performs subtraction.",
+      "answer": 0,
       "explanation": "Sign-magnitude and 1's complement suffer from two zeroes (+0 and -0), which complicates equality comparison logic. Furthermore, 1's complement requires end-around carry circuitry. 2's complement has a single zero and allows the exact same adder circuit to perform A - B by computing A + (-B).",
       "why_wrong": {
-        "It can represent twice as many positive numbers as 1's complement.": "The positive range is identical: 0 to +(2^(n-1) - 1). 2's complement only gains one extra negative number (-2^(n-1)).",
-        "It eliminates the need for binary logic gates in arithmetic units.": "Logic gates are fundamentally required in all digital hardware.",
-        "It does not require carry propagation across bits during addition.": "Addition still requires carry propagation (ripple-carry or carry-lookahead)."
+        "1": "The positive range is identical: 0 to +(2^(n-1) - 1). 2's complement only gains one extra negative number (-2^(n-1)).",
+        "2": "Logic gates are fundamentally required in all digital hardware.",
+        "3": "Addition still requires carry propagation (ripple-carry or carry-lookahead)."
       },
       "marking_points": [
         "Identifies single representation of zero",
@@ -225,12 +225,12 @@
         "The ALU halts with a division-by-zero hardware exception.",
         "The result wraps around to 00000000."
       ],
-      "answer": "An arithmetic overflow occurs: 01010000 + 01000110 = 10010110, which yields a negative result (-106) instead of +150.",
+      "answer": 0,
       "explanation": "In 8-bit 2's complement, the maximum representable positive number is +(2^7 - 1) = +127. Adding +80 (01010000) and +70 (01000110) yields 10010110_2. The MSB is 1, meaning the hardware interprets this as negative: -(2's comp of 10010110) = -(01101001 + 1) = -106_10. Because two positive operands yielded a negative result, an overflow flag is set.",
       "why_wrong": {
-        "No overflow occurs; the result is correctly represented as positive 150.": "8-bit signed range cannot exceed +127; 150 cannot fit.",
-        "The ALU halts with a division-by-zero hardware exception.": "This is an addition operation, not division.",
-        "The result wraps around to 00000000.": "Wrap-around yields 10010110 (-106), not zero."
+        "1": "8-bit signed range cannot exceed +127; 150 cannot fit.",
+        "2": "This is an addition operation, not division.",
+        "3": "Wrap-around yields 10010110 (-106), not zero."
       },
       "marking_points": [
         "Calculates 80 + 70 = 150 which exceeds +127",
@@ -259,12 +259,12 @@
         "-2^n to +(2^n - 1)",
         "0 to 2^n - 1"
       ],
-      "answer": "-2^(n-1) to +(2^(n-1) - 1)",
+      "answer": 0,
       "explanation": "Because 2's complement has only one zero (00...0), the unused bit pattern 100...0 represents one additional negative number: -2^(n-1). Thus, the range is -2^(n-1) to +(2^(n-1) - 1).",
       "why_wrong": {
-        "-(2^(n-1) - 1) to +(2^(n-1) - 1)": "This is the symmetric range for 1's complement and sign-magnitude due to dual zeroes.",
-        "-2^n to +(2^n - 1)": "Requires n+1 bits.",
-        "0 to 2^n - 1": "This is the range for unsigned n-bit integers."
+        "1": "This is the symmetric range for 1's complement and sign-magnitude due to dual zeroes.",
+        "2": "Requires n+1 bits.",
+        "3": "This is the range for unsigned n-bit integers."
       },
       "marking_points": [
         "Recalls asymmetric range [-2^(n-1), +(2^(n-1) - 1)]"
@@ -290,12 +290,12 @@
         "48423",
         "46641"
       ],
-      "answer": "47641",
+      "answer": 0,
       "explanation": "1. Equalize digit length: minuend x = 48032 (5 digits); subtrahend y = 00391 (pad with leading zeros).\n2. 9's complement of 00391 = 99999 - 00391 = 99608.\n3. 10's complement of y = 99608 + 1 = 99609.\n4. Add x and 10's complement of y:\n    48032\n  + 99609\n  -------\n   147641\n5. Drop the leading carry '1': Result = 47641.",
       "why_wrong": {
-        "47642": "Added 1 twice.",
-        "48423": "Added rather than subtracted.",
-        "46641": "Borrow error in manual subtraction."
+        "1": "Added 1 twice.",
+        "2": "Added rather than subtracted.",
+        "3": "Borrow error in manual subtraction."
       },
       "marking_points": [
         "Pads subtrahend to 00391",
@@ -324,12 +324,12 @@
         "Overflow occurs whenever there is a carry-out from the MSB",
         "Overflow occurs whenever the result is zero"
       ],
-      "answer": "Overflow = Carry-in into MSB XOR Carry-out from MSB (C_in ^ C_out)",
+      "answer": 0,
       "explanation": "Overflow occurs when the sign bit receives an improper carry. If there is a carry into the MSB without a carry out, or a carry out without a carry in, C_in != C_out, so C_in XOR C_out = 1. A normal positive carry produces both a carry-in and carry-out, yielding XOR = 0 (no overflow).",
       "why_wrong": {
-        "Overflow = Carry-out from MSB AND Carry-in into MSB": "When both are 1, no overflow has occurred (e.g. -1 + -1 = -2).",
-        "Overflow occurs whenever there is a carry-out from the MSB": "Carry-out occurs in virtually all negative additions without implying overflow (e.g. -5 + +10 has carry out = 1, but result +5 is correct).",
-        "Overflow occurs whenever the result is zero": "Zero is a valid result within range."
+        "1": "When both are 1, no overflow has occurred (e.g. -1 + -1 = -2).",
+        "2": "Carry-out occurs in virtually all negative additions without implying overflow (e.g. -5 + +10 has carry out = 1, but result +5 is correct).",
+        "3": "Zero is a valid result within range."
       },
       "marking_points": [
         "Identifies XOR between C_in and C_out of MSB"
@@ -350,7 +350,7 @@
       ],
       "question": "Compare the handling of the end-carry bit between 1's complement subtraction and 2's complement subtraction when subtracting a smaller number from a larger positive number.",
       "options": [],
-      "answer": "In 1's complement subtraction, an end-carry generated from the MSB indicates a positive result, and this end-carry must be added back to the least significant bit (LSB) \u2014 a process known as 'end-around carry' \u2014 to obtain the exact magnitude. In 2's complement subtraction, an end-carry generated from the MSB also confirms a positive result, but this carry is simply ignored or discarded because adding 1 was already incorporated when forming the 2's complement before the addition.",
+      "answer": "In 1's complement subtraction, an end-carry generated from the MSB indicates a positive result, and this end-carry must be added back to the least significant bit (LSB) — a process known as 'end-around carry' — to obtain the exact magnitude. In 2's complement subtraction, an end-carry generated from the MSB also confirms a positive result, but this carry is simply ignored or discarded because adding 1 was already incorporated when forming the 2's complement before the addition.",
       "explanation": "Because 2's complement is 1's complement + 1, the '+1' is already embedded in the subtrahend, so no end-around carry is needed.",
       "why_wrong": {},
       "marking_points": [
@@ -380,12 +380,12 @@
         "(+12) = 00001100, (-12) = 11110100",
         "(+12) = 10001100, (-12) = 00001100"
       ],
-      "answer": "(+12) = 00001100, (-12) = 10001100",
+      "answer": 0,
       "explanation": "In 8-bit sign-magnitude, the leftmost bit is the sign (0 for +, 1 for -) and the remaining 7 bits store the binary magnitude of 12 (0001100_2). Thus, +12 = 00001100 and -12 = 10001100.",
       "why_wrong": {
-        "(+12) = 00001100, (-12) = 11110011": "11110011 is 1's complement representation.",
-        "(+12) = 00001100, (-12) = 11110100": "11110100 is 2's complement representation.",
-        "(+12) = 10001100, (-12) = 00001100": "Reverses the sign bit convention."
+        "1": "11110011 is 1's complement representation.",
+        "2": "11110100 is 2's complement representation.",
+        "3": "Reverses the sign bit convention."
       },
       "marking_points": [
         "Maintains magnitude 0001100",
@@ -412,12 +412,12 @@
         "11110100",
         "11110010"
       ],
-      "answer": "11110011",
+      "answer": 0,
       "explanation": "+12 in 8-bit binary is 00001100. Inverting all 8 bits gives 11110011_2, which is the 1's complement representation of -12.",
       "why_wrong": {
-        "10001100": "Sign-magnitude representation of -12.",
-        "11110100": "2's complement representation of -12.",
-        "11110010": "Mis-inversion at bit 1."
+        "1": "Sign-magnitude representation of -12.",
+        "2": "2's complement representation of -12.",
+        "3": "Mis-inversion at bit 1."
       },
       "marking_points": [
         "Inverts all 8 bits of 00001100 to yield 11110011"
@@ -455,7 +455,21 @@
       ],
       "source": "Digital Logic Lecture Note, Page 6-7",
       "verified": true,
-      "verified_output": "N/A"
+      "verified_output": "N/A",
+      "pairs": [
+        {
+          "left": "Sign-Magnitude",
+          "right": "00000000 (+0) and 10000000 (-0)"
+        },
+        {
+          "left": "1's Complement",
+          "right": "00000000 (+0) and 11111111 (-0)"
+        },
+        {
+          "left": "2's Complement",
+          "right": "00000000 only"
+        }
+      ]
     },
     {
       "id": "ift211-ac-014",
@@ -486,7 +500,11 @@
       ],
       "source": "Digital Logic Lecture Note, Page 7",
       "verified": true,
-      "verified_output": "N/A"
+      "verified_output": "N/A",
+      "blanks": [
+        "first 1",
+        "invert"
+      ]
     },
     {
       "id": "ift211-ac-fc01",
@@ -696,12 +714,12 @@
             "11000111",
             "10111010"
           ],
-          "answer": "11000110",
+          "answer": 0,
           "explanation": "1. Find -44 in 8-bit 2's complement:\n   +44 = 00101100_2 -> 1's comp = 11010011 -> 2's comp = 11010100_2.\n2. Find -14 in 8-bit 2's complement:\n   +14 = 00001110_2 -> 1's comp = 11110001 -> 2's comp = 11110010_2.\n3. Add:\n    11010100 (-44)\n  + 11110010 (-14)\n  ---------------\n   111000110\n4. Discard 9th carry bit: 11000110_2.\nCheck: 2's comp of 11000110 is 00111001 + 1 = 00111010_2 = 58. Since MSB=1, value is -58_10.",
           "why_wrong": {
-            "00111010": "Positive 58; omitted negative sign encoding.",
-            "11000111": "Off-by-one in LSB addition.",
-            "10111010": "Signed magnitude representation (-58), not 2's complement."
+            "1": "Positive 58; omitted negative sign encoding.",
+            "2": "Off-by-one in LSB addition.",
+            "3": "Signed magnitude representation (-58), not 2's complement."
           },
           "marking_points": [
             "Converts -44 to 11010100",
@@ -730,12 +748,12 @@
             "The system clips the value to -128 automatically.",
             "Underflow exception is thrown because both numbers are negative."
           ],
-          "answer": "Overflow occurs: the sum -135 falls outside the representable range [-128, +127], resulting in a positive number (+121).",
+          "answer": 0,
           "explanation": "The minimum 8-bit signed integer is -128. Adding -70 (10111010) and -65 (10111111) gives sum -135. In binary: 10111010 + 10111111 = 101111001. Discarding end-carry yields 01111001_2 = +121_10 (MSB flipped to 0). Adding two negative numbers resulting in a positive number triggers the arithmetic overflow flag.",
           "why_wrong": {
-            "No overflow occurs; the result is correctly stored as negative 135.": "8-bit signed words cannot represent -135.",
-            "The system clips the value to -128 automatically.": "Standard ALUs wrap around unless saturating arithmetic logic is explicitly implemented.",
-            "Underflow exception is thrown because both numbers are negative.": "Underflow occurs in floating-point when magnitude is too small near zero; this is integer overflow."
+            "1": "8-bit signed words cannot represent -135.",
+            "2": "Standard ALUs wrap around unless saturating arithmetic logic is explicitly implemented.",
+            "3": "Underflow occurs in floating-point when magnitude is too small near zero; this is integer overflow."
           },
           "marking_points": [
             "Identifies -135 < -128 boundary violation",
@@ -770,12 +788,12 @@
             "1000111",
             "1100001"
           ],
-          "answer": "1110001",
+          "answer": 0,
           "explanation": "1. Y = 1001000_2 (72_10).\n2. Form 7-bit 2's complement of Y:\n   1's comp = 0110111\n   2's comp = 0110111 + 1 = 0111000_2.\n3. Add X (0111001) + 2's comp of Y (0111000):\n    0111001\n  + 0111000\n  ---------\n    1110001_2.\nNotice NO end-carry is generated, confirming the result is negative.",
           "why_wrong": {
-            "0001111": "This is the absolute magnitude (+15), not the 2's complement encoded negative result.",
-            "1000111": "Incorrect addition.",
-            "1100001": "Missed carry at bit 4."
+            "1": "This is the absolute magnitude (+15), not the 2's complement encoded negative result.",
+            "2": "Incorrect addition.",
+            "3": "Missed carry at bit 4."
           },
           "marking_points": [
             "Finds 2's comp of 1001000 as 0111000",

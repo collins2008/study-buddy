@@ -38,7 +38,7 @@
   ],
   "questions": [
     {
-      "id": "sen201-pm-001",
+      "id": "sen201-pmm-001",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "mcq",
@@ -66,7 +66,7 @@
       "source": "Nile University SEN 201 Final Exam Paper Type B Q11; Sommerville Ch. 25"
     },
     {
-      "id": "sen201-pm-002",
+      "id": "sen201-pmm-002",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "mcq",
@@ -93,7 +93,7 @@
       "source": "Nile University SEN 201 Final Exam Paper Type B Q49; Sommerville Ch. 22"
     },
     {
-      "id": "sen201-pm-003",
+      "id": "sen201-pmm-003",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "mcq",
@@ -120,7 +120,7 @@
       "source": "Boehm (1981) Software Engineering Economics; Sommerville Ch. 23"
     },
     {
-      "id": "sen201-pm-004",
+      "id": "sen201-pmm-004",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "mcq",
@@ -130,7 +130,7 @@
         "calculation",
         "estimation"
       ],
-      "question": "Using Basic COCOMO for an Organic software project where Effort = 2.4 * (KLOC)^1.05 Person-Months, estimate the development effort required for a project estimated at 10 KLOC (given 10^1.05 \u2248 11.22):",
+      "question": "Using Basic COCOMO for an Organic software project where Effort = 2.4 * (KLOC)^1.05 Person-Months, estimate the development effort required for a project estimated at 10 KLOC (given 10^1.05 ≈ 11.22):",
       "options": [
         "10.0 Person-Months",
         "26.9 Person-Months",
@@ -147,7 +147,7 @@
       "source": "Software Engineering Concepts and Principles Lecture Notes; Sommerville Ch. 23"
     },
     {
-      "id": "sen201-pm-005",
+      "id": "sen201-pmm-005",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "matching",
@@ -204,10 +204,32 @@
       ],
       "explanation": "The staged CMMI model defines five progressive maturity levels evaluating organizational engineering rigor from ad-hoc chaos (Level 1) to continuous quantitative optimization (Level 5).",
       "why_wrong": {},
-      "source": "Software Process Assessment Models PDF; SEI CMMI Framework"
+      "source": "Software Process Assessment Models PDF; SEI CMMI Framework",
+      "pairs": [
+        {
+          "left": "Level 1: Initial",
+          "right": "Processes are unpredictable, ad-hoc, and chaotic; success depends on individual heroics"
+        },
+        {
+          "left": "Level 2: Managed",
+          "right": "Basic project management is established; processes are planned and monitored at the project level"
+        },
+        {
+          "left": "Level 3: Defined",
+          "right": "Standard processes are characterized, documented, and integrated across the entire organization"
+        },
+        {
+          "left": "Level 4: Quantitatively Managed",
+          "right": "Process performance is controlled using statistical and quantitative measurement techniques"
+        },
+        {
+          "left": "Level 5: Optimizing",
+          "right": "Continuous process improvement is institutionalized through quantitative feedback and innovative piloting"
+        }
+      ]
     },
     {
-      "id": "sen201-pm-006",
+      "id": "sen201-pmm-006",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "sequencing",
@@ -232,10 +254,16 @@
       ],
       "explanation": "Standard risk management follows a sequential lifecycle: first identify potential risks, analyze their probability and impact, plan responses/mitigations, and monitor risk triggers throughout project execution.",
       "why_wrong": {},
-      "source": "Sommerville Ch. 22; Software Engineering Concepts and Principles Lecture Notes"
+      "source": "Sommerville Ch. 22; Software Engineering Concepts and Principles Lecture Notes",
+      "steps": [
+        "Risk Identification (discovering potential project, product, and business risks)",
+        "Risk Analysis & Evaluation (assessing probability of occurrence and severity of impact)",
+        "Risk Planning (formulating avoidance, mitigation, and contingency strategies)",
+        "Risk Monitoring (continuously tracking risk indicators and trigger conditions)"
+      ]
     },
     {
-      "id": "sen201-pm-007",
+      "id": "sen201-pmm-007",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "mcq",
@@ -262,7 +290,7 @@
       "source": "Software Engineering Concepts and Principles Lecture Notes; Sommerville Ch. 22"
     },
     {
-      "id": "sen201-pm-008",
+      "id": "sen201-pmm-008",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "multi_select",
@@ -288,10 +316,15 @@
       "why_wrong": {
         "2": "Writing assembly code is a low-level implementation programming task performed by developers, not a CCB management function."
       },
-      "source": "Sommerville Ch. 25; Software Engineering Concepts and Principles Lecture Notes"
+      "source": "Sommerville Ch. 25; Software Engineering Concepts and Principles Lecture Notes",
+      "answers": [
+        0,
+        1,
+        3
+      ]
     },
     {
-      "id": "sen201-pm-fc01",
+      "id": "sen201-pmm-fc01",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "flashcard",
@@ -307,7 +340,7 @@
       "source": "Software Engineering Concepts and Principles Lecture Notes"
     },
     {
-      "id": "sen201-pm-fc02",
+      "id": "sen201-pmm-fc02",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "flashcard",
@@ -323,7 +356,7 @@
       "source": "Sommerville Ch. 22"
     },
     {
-      "id": "sen201-pm-fc03",
+      "id": "sen201-pmm-fc03",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "flashcard",
@@ -339,7 +372,7 @@
       "source": "Boehm (1981); Sommerville Ch. 23"
     },
     {
-      "id": "sen201-pm-fc04",
+      "id": "sen201-pmm-fc04",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "flashcard",
@@ -355,7 +388,7 @@
       "source": "Sommerville Ch. 22"
     },
     {
-      "id": "sen201-pm-fc05",
+      "id": "sen201-pmm-fc05",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "flashcard",
@@ -371,7 +404,7 @@
       "source": "Nile Final Exam Paper Type B Q11"
     },
     {
-      "id": "sen201-pm-fc06",
+      "id": "sen201-pmm-fc06",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "flashcard",
@@ -387,7 +420,7 @@
       "source": "Software Engineering Concepts and Principles Lecture Notes"
     },
     {
-      "id": "sen201-pm-fc07",
+      "id": "sen201-pmm-fc07",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "flashcard",
@@ -403,7 +436,7 @@
       "source": "Software Process Assessment Models PDF"
     },
     {
-      "id": "sen201-pm-fc08",
+      "id": "sen201-pmm-fc08",
       "course": "SEN 201",
       "topic": "Software Project Management, Metrics & Process Assessment",
       "type": "flashcard",
@@ -421,11 +454,11 @@
   ],
   "case_studies": [
     {
-      "id": "sen201-pm-cs01",
+      "id": "sen201-pmm-cs01",
       "scenario": "A Nigerian fintech startup is building a multi-currency mobile payment wallet. The project network consists of three concurrent activity paths: Path 1: UI/UX Wireframing -> Mobile Client Dev (10 weeks); Path 2: Microservice Backend Architecture -> Payment API Integration -> Security Penetration Testing (16 weeks); Path 3: Regulatory Compliance Filing -> Bank Partner KYC Integration (12 weeks). The total project launch is scheduled for 16 weeks. During week 8, the lead backend engineer contracts malaria, causing the Payment API Integration activity to be delayed by 3 weeks.",
       "sub_questions": [
         {
-          "id": "sen201-pm-cs01-q1",
+          "id": "sen201-pmm-cs01-q1",
           "course": "SEN 201",
           "topic": "Software Project Management, Metrics & Process Assessment",
           "type": "mcq",
@@ -452,7 +485,7 @@
           "source": "Sommerville Ch. 22; CPM Project Case Studies"
         },
         {
-          "id": "sen201-pm-cs01-q2",
+          "id": "sen201-pmm-cs01-q2",
           "course": "SEN 201",
           "topic": "Software Project Management, Metrics & Process Assessment",
           "type": "explain",
@@ -462,7 +495,7 @@
             "schedule-compression",
             "crashing-fast-tracking"
           ],
-          "question": "To recover the 3-week delay and meet the contractual 16-week launch deadline, contrast the two schedule compression techniques\u2014'Crashing' and 'Fast-Tracking'\u2014and evaluate their specific risks for this fintech project.",
+          "question": "To recover the 3-week delay and meet the contractual 16-week launch deadline, contrast the two schedule compression techniques—'Crashing' and 'Fast-Tracking'—and evaluate their specific risks for this fintech project.",
           "marking_points": [
             "Defines Crashing: Adding extra resources (overtime, bringing in senior contract developers) to critical path activities to shorten duration.",
             "Identifies Crashing Risks: Increased project costs and Brook's Law risk ('adding manpower to a late software project makes it later' due to communication overhead).",
@@ -477,11 +510,11 @@
       ]
     },
     {
-      "id": "sen201-pm-cs02",
+      "id": "sen201-pmm-cs02",
       "scenario": "A 100-developer enterprise software vendor fails an ISO 9001 and CMMI appraisal audit. The auditors discover that: (1) developers push unreviewed code directly into the production Git `main` branch; (2) requirements changes are communicated via Slack messages without formal logging; (3) different customers receive different, untracked binary builds containing unverified patches; and (4) when a critical regression occurs, the team cannot identify which code commit caused the failure or which customer received the affected version.",
       "sub_questions": [
         {
-          "id": "sen201-pm-cs02-q1",
+          "id": "sen201-pmm-cs02-q1",
           "course": "SEN 201",
           "topic": "Software Project Management, Metrics & Process Assessment",
           "type": "mcq",
@@ -508,7 +541,7 @@
           "source": "Software Process Assessment Models PDF; SEI CMMI Framework"
         },
         {
-          "id": "sen201-pm-cs02-q2",
+          "id": "sen201-pmm-cs02-q2",
           "course": "SEN 201",
           "topic": "Software Project Management, Metrics & Process Assessment",
           "type": "explain",

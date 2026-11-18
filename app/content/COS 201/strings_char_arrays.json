@@ -350,7 +350,13 @@
       "why_wrong": {},
       "source": "Deitel C How to Program, Chapter 8",
       "verified": true,
-      "verified_output": "(Terminology cloze)"
+      "verified_output": "(Terminology cloze)",
+      "blanks": [
+        "\\0",
+        "string.h",
+        "strlen",
+        "fgets"
+      ]
     },
     {
       "id": "cos201-str-012",
@@ -382,7 +388,14 @@
       "why_wrong": {},
       "source": "Deitel C How to Program, Section 8.3",
       "verified": true,
-      "verified_output": "(Standard idiom sequence)"
+      "verified_output": "(Standard idiom sequence)",
+      "steps": [
+        "Declare a char array buffer of sufficient size (e.g. `char buf[64];`)",
+        "Call `fgets(buf, sizeof(buf), stdin)` to read input securely",
+        "Compute string length using `size_t len = strlen(buf);`",
+        "Check if `len > 0` and the last character `buf[len - 1] == '\\n'`",
+        "Replace the trailing newline with the null terminator `buf[len - 1] = '\\0';`"
+      ]
     },
     {
       "id": "cos201-str-013",
@@ -412,7 +425,25 @@
       "why_wrong": {},
       "source": "Deitel C How to Program, Chapter 8",
       "verified": true,
-      "verified_output": "(Function map)"
+      "verified_output": "(Function map)",
+      "pairs": [
+        {
+          "left": "strlen(s)",
+          "right": "Returns number of characters preceding the null terminator"
+        },
+        {
+          "left": "strcpy(dest, src)",
+          "right": "Copies source string to destination buffer including '\\0'"
+        },
+        {
+          "left": "strcat(dest, src)",
+          "right": "Appends source string to the end of destination string"
+        },
+        {
+          "left": "strcmp(s1, s2)",
+          "right": "Lexicographically compares two strings (0 if identical)"
+        }
+      ]
     },
     {
       "id": "cos201-str-014",

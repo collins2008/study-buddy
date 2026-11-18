@@ -79,8 +79,8 @@
       ],
       "question": "When a desktop computer experiences an abrupt electrical power outage, all unsaved documents and active application data stored in RAM are permanently lost.",
       "options": [
-        "False \u2014 RAM uses magnetic orientation across microscopic ferrite cores that permanently retain data during power loss.",
-        "True \u2014 RAM is volatile memory that requires continuous electrical refresh charges to maintain its stored capacitor states; once power ceases, the data immediately vanishes."
+        "False — RAM uses magnetic orientation across microscopic ferrite cores that permanently retain data during power loss.",
+        "True — RAM is volatile memory that requires continuous electrical refresh charges to maintain its stored capacitor states; once power ceases, the data immediately vanishes."
       ],
       "answer": 1,
       "explanation": "RAM (Random Access Memory) is volatile semiconductor memory. Modern dynamic RAM (DRAM) stores bits as microscopic electrical charges across tiny capacitor-transistor pairs that must be continuously refreshed hundreds of times per second. Without electrical power, the capacitors discharge instantly, resulting in total loss of unsaved contents.",
@@ -120,7 +120,13 @@
       "marking_points": [],
       "source": "Week 5 Slide 25; Textbook Architecture",
       "verified": true,
-      "verified_output": "Fetch -> Decode -> Execute -> Store"
+      "verified_output": "Fetch -> Decode -> Execute -> Store",
+      "steps": [
+        "Fetch (retrieve the next instruction from RAM or cache into the Instruction Register)",
+        "Decode (translate the fetched instruction opcode into operational control signals)",
+        "Execute (perform the instruction's operation via the ALU or dedicated hardware)",
+        "Store / Writeback (write the execution results back to a register or main memory)"
+      ]
     },
     {
       "id": "ift205-hwd-004",
@@ -150,7 +156,25 @@
       "marking_points": [],
       "source": "IFT205_Week2 Slide 9-10; Week 5 Slides 26-31",
       "verified": true,
-      "verified_output": "Matched storage technologies."
+      "verified_output": "Matched storage technologies.",
+      "pairs": [
+        {
+          "left": "Hard Disk Drive (HDD)",
+          "right": "Utilizes spinning magnetic platters and moving mechanical actuator read/write heads; lowest cost per terabyte but vulnerable to physical drop shock."
+        },
+        {
+          "left": "Solid-State Drive (SSD)",
+          "right": "Employs non-volatile NAND flash memory chips with zero moving parts, providing low access latency and high shock tolerance."
+        },
+        {
+          "left": "Read-Only Memory (ROM)",
+          "right": "Non-volatile primary firmware chip holding low-level startup bootstrap code (BIOS/UEFI) required to initialize system hardware."
+        },
+        {
+          "left": "CPU Level 1 Cache",
+          "right": "Smallest, fastest static RAM directly integrated on the processor core, operating at CPU clock frequency to minimize memory latency."
+        }
+      ]
     },
     {
       "id": "ift205-hwd-005",
@@ -263,7 +287,12 @@
       "marking_points": [],
       "source": "IFT205_Week2 Slide 12",
       "verified": true,
-      "verified_output": "data, address, control"
+      "verified_output": "data, address, control",
+      "blanks": [
+        "data",
+        "address",
+        "control"
+      ]
     },
     {
       "id": "ift205-hwd-009",
@@ -354,7 +383,12 @@
       "marking_points": [],
       "source": "IFT205_Week2 Slide 10; Week 5 Slide 30-31",
       "verified": true,
-      "verified_output": "Faster access, shock resilience, silent operation."
+      "verified_output": "Faster access, shock resilience, silent operation.",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ift205-hwd-012",
@@ -423,10 +457,10 @@
       ],
       "question": "A student claims: 'Upgrading my laptop's RAM from 8 GB to 32 GB will instantly double the clock speed of my CPU and make my single-threaded arithmetic calculations run twice as fast.' Is this assertion accurate?",
       "options": [
-        "No \u2014 RAM capacity allows more programs and large data sets to remain concurrently active in memory without disk swapping/paging, but does not alter the CPU's internal clock frequency or single-threaded execution speed.",
-        "Yes \u2014 CPU clock frequency is mathematically equal to total installed gigabytes of RAM multiplied by bus width.",
-        "Yes \u2014 increasing RAM automatically overclocks the ALU by an identical percentage ratio.",
-        "No \u2014 upgrading RAM actually slows down the computer because the CPU takes four times longer to search through larger memory spaces."
+        "No — RAM capacity allows more programs and large data sets to remain concurrently active in memory without disk swapping/paging, but does not alter the CPU's internal clock frequency or single-threaded execution speed.",
+        "Yes — CPU clock frequency is mathematically equal to total installed gigabytes of RAM multiplied by bus width.",
+        "Yes — increasing RAM automatically overclocks the ALU by an identical percentage ratio.",
+        "No — upgrading RAM actually slows down the computer because the CPU takes four times longer to search through larger memory spaces."
       ],
       "answer": 0,
       "explanation": "As emphasized in Lecture 1: 'More RAM can help with multitasking and running memory-heavy applications without disk paging, but does not automatically make every individual task faster.' CPU clock speed (in GHz) and IPC (instructions per cycle) are fixed architectural properties independent of RAM capacity.",
@@ -480,8 +514,8 @@
       ],
       "question": "Solid-state drives (SSDs) are vulnerable to mechanical head crashes when dropped onto concrete, in the exact same manner as traditional hard disk drives (HDDs).",
       "options": [
-        "True \u2014 SSD flash micro-needles will bend and scratch the silicon wafers during a drop.",
-        "False \u2014 SSDs contain zero mechanical actuator arms or rotating platters, making them physically immune to head crashes, whereas HDDs risk head collisions with platters under shock."
+        "True — SSD flash micro-needles will bend and scratch the silicon wafers during a drop.",
+        "False — SSDs contain zero mechanical actuator arms or rotating platters, making them physically immune to head crashes, whereas HDDs risk head collisions with platters under shock."
       ],
       "answer": 1,
       "explanation": "In an HDD, the read/write heads fly fractions of a millimeter above spinning platters; a drop can cause the heads to collide with the surface (a 'head crash'), destroying data. SSDs use stationary solid-state NAND flash chips soldered to a circuit board with no moving parts, making mechanical head crashes physically impossible.",
@@ -540,7 +574,7 @@
           ],
           "question": "Explain the technical phenomenon of 'thermal throttling' occurring during the 3D CAD rendering, and identify the hardware components responsible for mitigating it.",
           "options": [],
-          "answer": "Thermal throttling is an automated hardware protection mechanism where the CPU deliberately reduces its operational clock frequency (GHz) and core voltage when internal temperature sensors detect levels approaching thermal limits (e.g. 95\u00b0C\u2013100\u00b0C) during sustained heavy multi-core CAD rendering. This prevents permanent physical damage from overheating, but severely degrades rendering speed. Mitigating this requires proper thermal interface material (thermal paste), high-performance CPU heatsinks with high-airflow cooling fans or liquid cooling radiators, and a well-ventilated chassis ensuring adequate airflow.",
+          "answer": "Thermal throttling is an automated hardware protection mechanism where the CPU deliberately reduces its operational clock frequency (GHz) and core voltage when internal temperature sensors detect levels approaching thermal limits (e.g. 95°C–100°C) during sustained heavy multi-core CAD rendering. This prevents permanent physical damage from overheating, but severely degrades rendering speed. Mitigating this requires proper thermal interface material (thermal paste), high-performance CPU heatsinks with high-airflow cooling fans or liquid cooling radiators, and a well-ventilated chassis ensuring adequate airflow.",
           "explanation": "Thermal throttling reduces clock speed to prevent thermal destruction. Mitigated by heatsinks, thermal paste, and airflow cooling.",
           "why_wrong": {},
           "marking_points": [
@@ -600,7 +634,7 @@
           ],
           "question": "Evaluate how the firm's backup policy satisfies the 3-2-1 backup rule, and discuss how the offsite AWS S3 copy protects against catastrophic local loss.",
           "options": [],
-          "answer": "The firm satisfies the 3-2-1 rule as follows: (1) 3 copies of data exist (the original working files on the server, the local NAS copy, and the cloud copy); (2) 2 different media/storage technologies are used (the server's internal drive array and the network-attached storage/cloud object storage); (3) 1 copy is preserved offsite (the encrypted AWS S3 bucket). The offsite cloud copy guarantees business continuity against disasters that destroy the entire physical office\u2014such as fire, building collapse, localized flood, physical theft of equipment, or power grid sabotage that simultaneously destroys both the server and the adjacent local NAS.",
+          "answer": "The firm satisfies the 3-2-1 rule as follows: (1) 3 copies of data exist (the original working files on the server, the local NAS copy, and the cloud copy); (2) 2 different media/storage technologies are used (the server's internal drive array and the network-attached storage/cloud object storage); (3) 1 copy is preserved offsite (the encrypted AWS S3 bucket). The offsite cloud copy guarantees business continuity against disasters that destroy the entire physical office—such as fire, building collapse, localized flood, physical theft of equipment, or power grid sabotage that simultaneously destroys both the server and the adjacent local NAS.",
           "explanation": "Satisfies 3 copies, 2 media, 1 offsite. Protects against local office destruction.",
           "why_wrong": {},
           "marking_points": [

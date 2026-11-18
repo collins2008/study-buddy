@@ -1,7 +1,7 @@
 {
   "course": "IFT 203",
   "topic": "CSS Selectors, Specificity & Typography",
-  "summary": "This topic explores styling web documents using Cascading Style Sheets (CSS3). It covers the three methods of attaching styles (Inline, Internal, and External `<link>`), establishing why external stylesheets are the industry standard for maintainability and browser caching. Students master selector syntax: Universal (`*`), Type (`p`), Class (`.name`), ID (`#name`), and Combinators (descendant `A B`, direct child `A > B`, adjacent sibling `A + B`, general sibling `A ~ B`). The core mathematical foundation of CSS is Specificity\u2014represented as a 4-tier tuple (inline: 1000, ID: 100, class/pseudo-class: 10, element: 1)\u2014which dictates which rule wins when multiple styles target the same element. Finally, the topic examines color models (Hex, RGB, RGBA with opacity) and scalable typography, comparing absolute units (`px`) with accessible relative units (`rem` based on root font size vs `em` based on parent font size), and defining robust font-family fallback stacks.",
+  "summary": "This topic explores styling web documents using Cascading Style Sheets (CSS3). It covers the three methods of attaching styles (Inline, Internal, and External `<link>`), establishing why external stylesheets are the industry standard for maintainability and browser caching. Students master selector syntax: Universal (`*`), Type (`p`), Class (`.name`), ID (`#name`), and Combinators (descendant `A B`, direct child `A > B`, adjacent sibling `A + B`, general sibling `A ~ B`). The core mathematical foundation of CSS is Specificity—represented as a 4-tier tuple (inline: 1000, ID: 100, class/pseudo-class: 10, element: 1)—which dictates which rule wins when multiple styles target the same element. Finally, the topic examines color models (Hex, RGB, RGBA with opacity) and scalable typography, comparing absolute units (`px`) with accessible relative units (`rem` based on root font size vs `em` based on parent font size), and defining robust font-family fallback stacks.",
   "key_terms": [
     {
       "term": "CSS Specificity",
@@ -203,7 +203,29 @@
       ],
       "explanation": "These symbols constitute the core syntax of CSS selectors and combinators evaluated in Nile University IFT 203 examinations.",
       "why_wrong": {},
-      "source": "IFT 203 Week 6 Slides"
+      "source": "IFT 203 Week 6 Slides",
+      "pairs": [
+        {
+          "left": "#",
+          "right": "ID selector: targets a unique element by its id attribute (specificity 100)"
+        },
+        {
+          "left": ".",
+          "right": "Class selector: targets elements by their class attribute (specificity 10)"
+        },
+        {
+          "left": ">",
+          "right": "Child combinator: targets only immediate direct child elements"
+        },
+        {
+          "left": "+",
+          "right": "Adjacent sibling combinator: targets an element immediately preceded by another"
+        },
+        {
+          "left": ":",
+          "right": "Pseudo-class prefix: targets elements in a specific temporary state (e.g., :hover)"
+        }
+      ]
     },
     {
       "id": "ift203-cs-006",
@@ -232,7 +254,14 @@
       ],
       "explanation": "Standard W3C specificity hierarchy: Universal (0) < Element (1) < Class/Pseudo-class (10) < ID (100) < Inline Style (1000).",
       "why_wrong": {},
-      "source": "IFT 203 Week 6 Slides; W3C CSS Specificity"
+      "source": "IFT 203 Week 6 Slides; W3C CSS Specificity",
+      "steps": [
+        "Universal selector: * (Specificity 0,0,0,0)",
+        "Element/Type selector: p, h1 (Specificity 0,0,0,1)",
+        "Class selector: .highlight (Specificity 0,0,1,0)",
+        "ID selector: #navbar (Specificity 0,1,0,0)",
+        "Inline style attribute: style=\"...\" (Specificity 1,0,0,0)"
+      ]
     },
     {
       "id": "ift203-cs-007",
@@ -287,7 +316,12 @@
       "why_wrong": {
         "3": "Using dozens of different fonts is a grotesque design anti-pattern that destroys performance and visual consistency."
       },
-      "source": "IFT 203 Week 6 Slides; MDN Styling Text"
+      "source": "IFT 203 Week 6 Slides; MDN Styling Text",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ift203-cs-fc01",
@@ -468,7 +502,7 @@
             "Solution 2 (Specificity matching/chaining): Target the element using an ID-qualified selector (e.g., `#confirm-drop.btn-danger` or `button#confirm-drop`) which achieves specificity (0,1,1,0), cleanly overriding the base ID rule.",
             "States the principle of keeping CSS specificity flat for enterprise maintainability."
           ],
-          "answer": "1. Why `!important` is an Anti-Pattern:\nAppending `!important` breaks the natural cascading flow of CSS. It creates technical debt by initiating a 'specificity arms race'\u2014any future theme changes or modal dialogs targeting this button will also be forced to use `!important`, making the codebase brittle and unmaintainable.\n\n2. Two Clean Engineering Solutions:\n- Solution 1: Refactor Base Styles to Classes (Best Practice): Remove the ID selector from the CSS entirely. IDs should be reserved for JavaScript DOM access and in-page anchor links, not styling hooks. Re-author the base style as a class `.btn` and state modifier `.btn-danger`. Because both are classes, source order allows `.btn-danger` to win naturally:\n```css\n.btn { background-color: green; }\n.btn-danger { background-color: red; }\n```\n- Solution 2: Chain Selector to Match Specificity (Quick Fix): If the base ID cannot be edited immediately, chain the class to the ID in the override selector: `#confirm-drop.btn-danger { background-color: red; }`. This gives a specificity score of (0,1,1,0) (score 110), which cleanly defeats the base ID selector (0,1,0,0) (score 100) without resorting to `!important`.",
+          "answer": "1. Why `!important` is an Anti-Pattern:\nAppending `!important` breaks the natural cascading flow of CSS. It creates technical debt by initiating a 'specificity arms race'—any future theme changes or modal dialogs targeting this button will also be forced to use `!important`, making the codebase brittle and unmaintainable.\n\n2. Two Clean Engineering Solutions:\n- Solution 1: Refactor Base Styles to Classes (Best Practice): Remove the ID selector from the CSS entirely. IDs should be reserved for JavaScript DOM access and in-page anchor links, not styling hooks. Re-author the base style as a class `.btn` and state modifier `.btn-danger`. Because both are classes, source order allows `.btn-danger` to win naturally:\n```css\n.btn { background-color: green; }\n.btn-danger { background-color: red; }\n```\n- Solution 2: Chain Selector to Match Specificity (Quick Fix): If the base ID cannot be edited immediately, chain the class to the ID in the override selector: `#confirm-drop.btn-danger { background-color: red; }`. This gives a specificity score of (0,1,1,0) (score 110), which cleanly defeats the base ID selector (0,1,0,0) (score 100) without resorting to `!important`.",
           "explanation": "Disciplined frontend engineering keeps specificity low and avoids `!important` hacks.",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides; CSS Architecture Guidelines"

@@ -74,7 +74,14 @@
       "marking_points": [],
       "source": "Student Notebook Image 21.47.02 (1); Module 01 Slides 19-24",
       "verified": true,
-      "verified_output": "Safety, Utility, Effectiveness, Efficiency, Usability."
+      "verified_output": "Safety, Utility, Effectiveness, Efficiency, Usability.",
+      "answers": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
     },
     {
       "id": "ins202-fnd-002",
@@ -150,7 +157,7 @@
       ],
       "answer": {
         "Computer Science": "Provides software architecture, programming languages, algorithms, and technical implementation of interactive systems.",
-        "Cognitive Psychology": "Provides models of human perception, memory limitations (7\u00b12 chunks), mental models, and decision-making processes.",
+        "Cognitive Psychology": "Provides models of human perception, memory limitations (7±2 chunks), mental models, and decision-making processes.",
         "Ergonomics / Human Factors": "Evaluates physical human biomechanics, workstation posture, visual fatigue, and physical button/hardware dimensions.",
         "Graphic & Visual Design": "Establishes visual hierarchy, typography, aesthetic appeal, alignment, and color contrast principles."
       },
@@ -159,7 +166,25 @@
       "marking_points": [],
       "source": "Module 01 Slides 12, 28-29",
       "verified": true,
-      "verified_output": "Matched interdisciplinary fields."
+      "verified_output": "Matched interdisciplinary fields.",
+      "pairs": [
+        {
+          "left": "Computer Science",
+          "right": "Provides software architecture, programming languages, algorithms, and technical implementation of interactive systems."
+        },
+        {
+          "left": "Cognitive Psychology",
+          "right": "Provides models of human perception, memory limitations (7±2 chunks), mental models, and decision-making processes."
+        },
+        {
+          "left": "Ergonomics / Human Factors",
+          "right": "Evaluates physical human biomechanics, workstation posture, visual fatigue, and physical button/hardware dimensions."
+        },
+        {
+          "left": "Graphic & Visual Design",
+          "right": "Establishes visual hierarchy, typography, aesthetic appeal, alignment, and color contrast principles."
+        }
+      ]
     },
     {
       "id": "ins202-fnd-005",
@@ -231,8 +256,8 @@
       ],
       "question": "The HCI goal of 'Safety' applies exclusively to industrial and military systems such as air traffic control towers and nuclear power plants, with zero relevance to ordinary consumer websites.",
       "options": [
-        "True \u2014 consumer websites only deal with amusement and fashion, so human errors never have serious consequences.",
-        "False \u2014 safety in general computing encompasses both physical safety and the safety of data (e.g. preventing accidental permanent deletion of tax records, bank fund transfers, or unrecoverable medical files)."
+        "True — consumer websites only deal with amusement and fashion, so human errors never have serious consequences.",
+        "False — safety in general computing encompasses both physical safety and the safety of data (e.g. preventing accidental permanent deletion of tax records, bank fund transfers, or unrecoverable medical files)."
       ],
       "answer": 1,
       "explanation": "As taught in Module 01 Slide 20: Safety covers both Safety of Users (preventing physical catastrophe in aviation, automotive, and hospital care) AND Safety of Data (preventing accidental deletion of critical customer records, financial accounts, or thesis dissertations through destructive, non-reversible actions).",
@@ -273,7 +298,12 @@
       "marking_points": [],
       "source": "Module 01 Slide 11",
       "verified": true,
-      "verified_output": "design, evaluation, implementation"
+      "verified_output": "design, evaluation, implementation",
+      "blanks": [
+        "design",
+        "evaluation",
+        "implementation"
+      ]
     },
     {
       "id": "ins202-fnd-009",
@@ -367,8 +397,8 @@
       ],
       "question": "Conducting user research and usability testing before writing code actually reduces total software development and maintenance costs over the system lifecycle.",
       "options": [
-        "False \u2014 user research is a pure financial waste that always adds 50% overhead to project costs without benefit.",
-        "True \u2014 learning about users first prevents teams from building complex features users never use, and finding interface design defects during early requirements is up to 100 times cheaper than fixing them after software deployment."
+        "False — user research is a pure financial waste that always adds 50% overhead to project costs without benefit.",
+        "True — learning about users first prevents teams from building complex features users never use, and finding interface design defects during early requirements is up to 100 times cheaper than fixing them after software deployment."
       ],
       "answer": 1,
       "explanation": "As taught in Module 01 Slide 8: 'Learn about users first, and you will avoid implementing features users don't want.' Software engineering economics (e.g. Boehm's cost-of-change curve) confirms that fixing usability mistakes after product rollout is vastly more expensive than discovering them during early user analysis.",

@@ -275,7 +275,13 @@
         "contrast"
       ],
       "explanation": "Module 05 defines the four universal principles of visual organization: Proximity (grouping related items), Alignment (shared grid lines), Consistency (uniform styling and behavior), and Contrast (making distinct elements visually prominent).",
-      "source": "Module 05 (Visual Organization), Slide 2: Four Principles of Visual Organization"
+      "source": "Module 05 (Visual Organization), Slide 2: Four Principles of Visual Organization",
+      "blanks": [
+        "proximity",
+        "alignment",
+        "consistency",
+        "contrast"
+      ]
     },
     {
       "id": "ins202-ui-010",
@@ -301,7 +307,25 @@
         "Database-driven Content Management System (CMS) powering themes, dynamic templates, and blog architectures"
       ],
       "explanation": "Figma is the industry leader for collaborative vector UI design. Balsamiq focuses on sketch-like low-fi wireframing. Webflow generates production-clean semantic front-end code visually. WordPress is the premier CMS for dynamic template-driven sites.",
-      "source": "Module 07 (Slide 39) & Student Notebook ('templates: wordpress, figma, wix, webflow, color-lib')"
+      "source": "Module 07 (Slide 39) & Student Notebook ('templates: wordpress, figma, wix, webflow, color-lib')",
+      "pairs": [
+        {
+          "left": "Figma",
+          "right": "Cloud-based collaborative vector UI design and high-fidelity interactive component prototyping"
+        },
+        {
+          "left": "Balsamiq",
+          "right": "Low-fidelity wireframing software intentionally simulating hand-drawn sketches for rapid concept validation"
+        },
+        {
+          "left": "Webflow",
+          "right": "Visual web design platform that generates semantic, production-ready HTML5, CSS3, and JavaScript code"
+        },
+        {
+          "left": "WordPress",
+          "right": "Database-driven Content Management System (CMS) powering themes, dynamic templates, and blog architectures"
+        }
+      ]
     },
     {
       "id": "ins202-ui-011",
@@ -328,7 +352,13 @@
         3
       ],
       "explanation": "A disciplined UCD process begins with user research / IA discovery (card sorting) to determine content structure, progresses to rapid low-fidelity wireframing (paper or Balsamiq) to validate layouts cheaply, advances to high-fidelity interactive component prototyping (Figma), and concludes with front-end implementation (Webflow/CMS).",
-      "source": "Module 04, 05, 07 Integrated Design Process"
+      "source": "Module 04, 05, 07 Integrated Design Process",
+      "steps": [
+        "Conduct Open Card Sorting with target users to discover information architecture categories",
+        "Create low-fidelity paper wireframes or Balsamiq sketches to validate layout and content hierarchy",
+        "Build interactive vector prototypes with design system components in Figma",
+        "Implement production front-end code using semantic HTML/CSS in Webflow or a CMS template"
+      ]
     },
     {
       "id": "ins202-ui-012",

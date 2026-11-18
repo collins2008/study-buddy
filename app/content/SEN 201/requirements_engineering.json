@@ -1,7 +1,7 @@
 {
   "course": "SEN 201",
   "topic": "Requirements Engineering & Specification",
-  "summary": "This topic explores the disciplined methods used to discover, analyze, specify, validate, and manage software requirements. It details the essential taxonomy of requirements: Business Requirements (high-level organizational goals), User Requirements (operational user tasks), Functional Requirements (system behaviors, services, and transformations), and Non-Functional Requirements (quality attributes and operational constraints such as response time, availability, security, and reliability). The five core requirements engineering activities \u2014 Inception/Feasibility, Elicitation (interviews, surveys, workshops), Analysis and Negotiation (MoSCoW prioritization), formal Specification (IEEE 830 SRS, User Stories with INVEST criteria), and Validation (verifiability, consistency, completeness) \u2014 are examined. Uncontrolled Scope Creep and Requirements Traceability Matrices (RTM) connecting requirements to downstream design, code, and test artifacts are thoroughly analyzed.",
+  "summary": "This topic explores the disciplined methods used to discover, analyze, specify, validate, and manage software requirements. It details the essential taxonomy of requirements: Business Requirements (high-level organizational goals), User Requirements (operational user tasks), Functional Requirements (system behaviors, services, and transformations), and Non-Functional Requirements (quality attributes and operational constraints such as response time, availability, security, and reliability). The five core requirements engineering activities — Inception/Feasibility, Elicitation (interviews, surveys, workshops), Analysis and Negotiation (MoSCoW prioritization), formal Specification (IEEE 830 SRS, User Stories with INVEST criteria), and Validation (verifiability, consistency, completeness) — are examined. Uncontrolled Scope Creep and Requirements Traceability Matrices (RTM) connecting requirements to downstream design, code, and test artifacts are thoroughly analyzed.",
   "key_terms": [
     {
       "term": "Functional Requirement",
@@ -56,12 +56,12 @@
         "User requirement",
         "Domain requirement"
       ],
-      "answer": "Non-functional requirement",
+      "answer": 0,
       "explanation": "Non-functional requirements specify quality attributes, behavioral constraints, and operational standards (e.g., response time under load, 99.9% uptime reliability, data encryption security). Functional requirements, by contrast, specify the specific services and calculations the system must perform.",
       "why_wrong": {
-        "Functional requirement": "Functional requirements describe what the system does (features, calculations), not how well or under what constraints it does it.",
-        "User requirement": "User requirements can be either functional or non-functional, written in non-technical language.",
-        "Domain requirement": "Domain requirements reflect fundamental operational laws of the application domain (e.g., banking regulations)."
+        "1": "Functional requirements describe what the system does (features, calculations), not how well or under what constraints it does it.",
+        "2": "User requirements can be either functional or non-functional, written in non-technical language.",
+        "3": "Domain requirements reflect fundamental operational laws of the application domain (e.g., banking regulations)."
       },
       "marking_points": [
         "Identifies Non-functional requirement as specifying constraints like reliability and response time"
@@ -87,7 +87,7 @@
         "The test case assertions for unit testing",
         "The physical color scheme of the user interface"
       ],
-      "answer": "The cost-effectiveness, technical practicality, and viability of the proposed system",
+      "answer": 0,
       "explanation": "A feasibility study is a short, focused investigation conducted before allocating full project budget to decide whether the proposed software is worth building. It assesses economic feasibility (cost vs benefit), technical feasibility (skills and tools), and operational practicality.",
       "why_wrong": {
         "The exact variable names...": "Variable naming is a detailed coding activity.",
@@ -119,12 +119,12 @@
         "System constraint",
         "Legal compliance requirement"
       ],
-      "answer": "Functional requirement",
+      "answer": 0,
       "explanation": "Functional requirements define the core functions of the software: input-to-output transformations, business rules, data processing, calculations, and specific feature capabilities (e.g. 'The system shall calculate late fee penalties at 5% per month').",
       "why_wrong": {
-        "Non-functional requirement": "Non-functional requirements describe operational constraints and quality attributes, not functional behaviors.",
-        "System constraint": "A constraint restricts design freedom (e.g. must run on Android 12).",
-        "Legal compliance requirement": "Legal compliance is a category of non-functional constraint."
+        "1": "Non-functional requirements describe operational constraints and quality attributes, not functional behaviors.",
+        "2": "A constraint restricts design freedom (e.g. must run on Android 12).",
+        "3": "Legal compliance is a category of non-functional constraint."
       },
       "marking_points": [
         "Identifies Functional requirement as describing services and behavior"
@@ -151,12 +151,12 @@
         "Traceable",
         "Consistent"
       ],
-      "answer": "Ambiguous",
+      "answer": 0,
       "explanation": "Ambiguity is the single most dangerous defect in requirements engineering! A good requirement must be clear, unambiguous (having exactly one possible interpretation), verifiable, complete, consistent, and traceable. An ambiguous requirement inevitably leads to developer misinterpretation.",
       "why_wrong": {
-        "Verifiable": "Verifiability is an essential quality of good requirements.",
-        "Traceable": "Traceability is an essential quality of good requirements.",
-        "Consistent": "Consistency (no mutual contradictions) is an essential quality of good requirements."
+        "1": "Verifiability is an essential quality of good requirements.",
+        "2": "Traceability is an essential quality of good requirements.",
+        "3": "Consistency (no mutual contradictions) is an essential quality of good requirements."
       },
       "marking_points": [
         "Selects Ambiguous as an undesirable defect, not a good characteristic"
@@ -182,7 +182,7 @@
         "The hardware clock speed of developer laptops",
         "The memory layout of C language structs"
       ],
-      "answer": "The high-level purpose, strategic goals, and business justification of the project",
+      "answer": 0,
       "explanation": "Business requirements define the organization's overarching vision and commercial/institutional rationale: why the system is being funded, what problem it solves, and how return on investment or organizational efficiency will be measured.",
       "why_wrong": {
         "The exact SQL syntax...": "Technical database implementation detail.",
@@ -213,12 +213,12 @@
         "Assembly instructions",
         "Hardware constraints"
       ],
-      "answer": "User requirements",
+      "answer": 0,
       "explanation": "User requirements are written from the perspective of external actors, describing everyday tasks, operational workflows, and services provided to users without mandating low-level technical implementation details.",
       "why_wrong": {
-        "Compiler directives": "Low-level compiler flags (#define, etc.).",
-        "Assembly instructions": "Machine-level operations.",
-        "Hardware constraints": "Physical server boundaries."
+        "1": "Low-level compiler flags (#define, etc.).",
+        "2": "Machine-level operations.",
+        "3": "Physical server boundaries."
       },
       "marking_points": [
         "Identifies User requirements"
@@ -245,7 +245,7 @@
         "A decrease in the number of lines of code written per day.",
         "The process of shrinking project features to finish ahead of schedule."
       ],
-      "answer": "The unplanned, continuous expansion of project boundaries and requirements without proportional adjustments to time, budget, and resources.",
+      "answer": 0,
       "explanation": "Scope creep occurs when stakeholders continuously add features, tweaks, and new requests throughout development without formally increasing the budget or deadline. This leads directly to project delays, cost overruns, developer burnout, and architectural degradation.",
       "why_wrong": {
         "A virus that slowly infects developer computers": "Confuses a managerial phenomenon with malware.",
@@ -277,7 +277,7 @@
         "It should be deleted because software performance does not matter.",
         "It should be rewritten using binary assembly code."
       ],
-      "answer": "It is completely unverifiable and subjective; it must be quantified with measurable operational metrics (e.g. 'Under a load of 500 concurrent users, 95% of course registration requests shall complete within 2.0 seconds').",
+      "answer": 0,
       "explanation": "Vague adjectives like 'fast', 'robust', or 'intuitive' cannot be validated by a test suite because there is no pass/fail criterion. Requirements engineers must quantify non-functional requirements by specifying exact workloads, percentile response times, error rates, and testing environments.",
       "why_wrong": {
         "It is fine as written...": "Different developers will interpret 'fast' as 50ms, 2 seconds, or 10 seconds.",
@@ -492,7 +492,7 @@
             "The server running on 64-bit architecture instead of 32-bit.",
             "Failure to install antivirus software on the campus routers."
           ],
-          "answer": "Vague, unverifiable requirements in the original document, coupled with a lack of formal change control leading to severe scope creep.",
+          "answer": 0,
           "explanation": "The initial requirements suffered from ambiguity and lack of verifiability ('fast', 'secure', 'user-friendly'). Without a formal Software Requirements Specification (SRS), baseline sign-off, and a change control board, stakeholders added new features indiscriminately, resulting in classic scope creep.",
           "why_wrong": {
             "Developers using Python instead of HTML...": "Technology choices are irrelevant to the requirements governance breakdown.",

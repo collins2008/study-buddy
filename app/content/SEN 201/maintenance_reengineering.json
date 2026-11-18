@@ -1,7 +1,7 @@
 {
   "course": "SEN 201",
   "topic": "Software Evolution, Maintenance & Legacy Systems",
-  "summary": "Software evolution reflects the reality that commercial software must continuously adapt to maintain business relevance and operational integrity. Governed by Lehman's Laws of Software Evolution\u2014notably Continuing Change and Increasing Complexity\u2014unmaintained software inevitably experiences structural decay. The software lifecycle transitions through development, evolution, servicing (operational bug fixes only), and phase-out. Maintenance comprises four standard ISO/IEC categories: Corrective (defect resolution), Adaptive (environmental modifications), Perfective (enhancements and new features), and Preventive (refactoring to forestall decay). Managing legacy systems requires portfolio assessment across business value and technical quality; systems with high business value but low quality warrant re-engineering rather than high-risk greenfield redevelopment. Software re-engineering systematically applies reverse engineering, source code translation, and modular restructuring to eliminate code smells and restore maintainability.",
+  "summary": "Software evolution reflects the reality that commercial software must continuously adapt to maintain business relevance and operational integrity. Governed by Lehman's Laws of Software Evolution—notably Continuing Change and Increasing Complexity—unmaintained software inevitably experiences structural decay. The software lifecycle transitions through development, evolution, servicing (operational bug fixes only), and phase-out. Maintenance comprises four standard ISO/IEC categories: Corrective (defect resolution), Adaptive (environmental modifications), Perfective (enhancements and new features), and Preventive (refactoring to forestall decay). Managing legacy systems requires portfolio assessment across business value and technical quality; systems with high business value but low quality warrant re-engineering rather than high-risk greenfield redevelopment. Software re-engineering systematically applies reverse engineering, source code translation, and modular restructuring to eliminate code smells and restore maintainability.",
   "key_terms": [
     {
       "term": "Software Evolution",
@@ -278,7 +278,25 @@
       ],
       "explanation": "ISO/IEC 14764 standardizes software maintenance into four distinct categories based on operational intent: Corrective (fixing bugs), Adaptive (adapting to environment changes), Perfective (adding enhancements), and Preventive (proactive refactoring).",
       "why_wrong": {},
-      "source": "ISO/IEC 14764; Nile Final Exam Q75"
+      "source": "ISO/IEC 14764; Nile Final Exam Q75",
+      "pairs": [
+        {
+          "left": "Corrective Maintenance",
+          "right": "Patching a memory leak and fixing a zero-division error reported by users in production"
+        },
+        {
+          "left": "Adaptive Maintenance",
+          "right": "Modifying payment drivers after migrating from an on-premise server to AWS Linux cloud"
+        },
+        {
+          "left": "Perfective Maintenance",
+          "right": "Adding multi-currency support and biometric fingerprint login to satisfy new customer requests"
+        },
+        {
+          "left": "Preventive Maintenance",
+          "right": "Refactoring a 3,000-line God class and extracting duplicate methods into shared utility modules"
+        }
+      ]
     },
     {
       "id": "sen201-mr-fc01",

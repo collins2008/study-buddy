@@ -63,12 +63,12 @@
         "Activity diagram",
         "State diagram"
       ],
-      "answer": "Class diagram",
+      "answer": 0,
       "explanation": "A Class diagram is the central structural diagram in object-oriented design. It depicts classes, their internal data fields (attributes), methods (operations), and relationships such as inheritance, association, aggregation, and composition.",
       "why_wrong": {
-        "Use-case diagram": "Shows external actors and functional goals, not internal class structures.",
-        "Activity diagram": "Represents dynamic control flow and business process workflows.",
-        "State diagram": "Models the dynamic state transitions of a single reactive object."
+        "1": "Shows external actors and functional goals, not internal class structures.",
+        "2": "Represents dynamic control flow and business process workflows.",
+        "3": "Models the dynamic state transitions of a single reactive object."
       },
       "marking_points": [
         "Identifies Class diagram as representing static structure of classes and relationships"
@@ -95,12 +95,11 @@
         "Microprocessor CPU register states",
         "The graphic user interface CSS color palette"
       ],
-      "answer": "System boundaries and external interactions with environment and other systems",
+      "answer": 0,
       "explanation": "Context models establish the high-level scope of the project: what falls inside the proposed software boundary and what external entities (human actors, third-party APIs, legacy databases, hardware sensors) reside outside and communicate across that boundary.",
       "why_wrong": {
-        "Internal data types of local variables": "Implementation-level detail.",
-        "Microprocessor CPU register states": "Low-level computer architecture detail.",
-        "The graphic user interface CSS palette": "Visual presentation design."
+        "1": "Implementation-level detail.",
+        "2": "Low-level computer architecture detail."
       },
       "marking_points": [
         "System boundaries and external interactions"
@@ -127,7 +126,7 @@
         "Aggregation applies only to database tables, while Composition applies to web pages.",
         "There is no difference; they are purely interchangeable visual styles."
       ],
-      "answer": "In Aggregation, child components can exist independently if the container is destroyed; In Composition, child parts share a lifecycle death-dependency with the container and cannot exist without it.",
+      "answer": 0,
       "explanation": "Aggregation represents a weak 'has-a' relationship (e.g. A Department has Professors; if the Department closes, the Professors still exist). Composition represents a strong, exclusive whole-part ownership (e.g. An Examination has ExamQuestions; if the Examination is deleted, its constituent questions are destroyed with it).",
       "why_wrong": {
         "Aggregation represents private inheritance...": "Both are association types, not inheritance/generalization.",
@@ -160,7 +159,7 @@
         "<<include>> represents inheritance between classes, while <<extend>> represents method overriding.",
         "<<include>> can only be used once per diagram, while <<extend>> is unlimited."
       ],
-      "answer": "<<include>> indicates mandatory execution of the child usecase whenever the base usecase runs; <<extend>> indicates optional or conditional execution only at defined extension points.",
+      "answer": 0,
       "explanation": "<<include>> encapsulates common, mandatory sub-behavior (e.g., 'View Exam Results' <<include>> 'Authenticate Student'). <<extend>> injects optional, conditional behavior that only executes under specific circumstances (e.g., 'Display Late Fee Warning' <<extend>> 'Pay Tuition', triggered only if payment date is past due).",
       "why_wrong": {
         "<<include>> is used for external actors...": "Both connect use cases to use cases, not actors.",
@@ -207,7 +206,25 @@
       ],
       "source": "OMG UML Specification 2.5 & Class Diagram Notations",
       "verified": true,
-      "verified_output": "N/A"
+      "verified_output": "N/A",
+      "pairs": [
+        {
+          "left": "+",
+          "right": "Public"
+        },
+        {
+          "left": "-",
+          "right": "Private"
+        },
+        {
+          "left": "#",
+          "right": "Protected"
+        },
+        {
+          "left": "~",
+          "right": "Package"
+        }
+      ]
     },
     {
       "id": "sen201-um-006",
@@ -222,12 +239,12 @@
       ],
       "question": "In a UML Sequence diagram, what is the visual and behavioral difference between a SYNCHRONOUS message and an ASYNCHRONOUS message?",
       "options": [
-        "A Synchronous message is drawn with a solid line and filled triangular arrowhead (\u2014\u25ba) where the sender blocks waiting for a return; An Asynchronous message is drawn with an open arrowhead (\u2014>) where the sender continues executing immediately.",
+        "A Synchronous message is drawn with a solid line and filled triangular arrowhead (—►) where the sender blocks waiting for a return; An Asynchronous message is drawn with an open arrowhead (—>) where the sender continues executing immediately.",
         "A Synchronous message is drawn with a dashed line, while Asynchronous is a double line.",
         "Synchronous messages can only send numbers, while Asynchronous messages can only send strings.",
         "Synchronous messages destroy the receiving object, while Asynchronous messages clone it."
       ],
-      "answer": "A Synchronous message is drawn with a solid line and filled triangular arrowhead (\u2014\u25ba) where the sender blocks waiting for a return; An Asynchronous message is drawn with an open arrowhead (\u2014>) where the sender continues executing immediately.",
+      "answer": 0,
       "explanation": "Synchronous calls model blocking function calls (e.g. waiting for a database query return before proceeding). Asynchronous calls model non-blocking message events (e.g. publishing an event to a message queue or firing an SMS dispatch), where the sender does not pause its thread of control.",
       "why_wrong": {
         "A Synchronous message is drawn with a dashed line...": "Dashed lines are used specifically for Return messages (<---).",
@@ -259,7 +276,7 @@
         "A security guard who monitors the server room.",
         "The amount of CPU memory allocated to the state."
       ],
-      "answer": "A Boolean condition that must evaluate to TRUE for the transition to trigger when the event occurs.",
+      "answer": 0,
       "explanation": "In statechart semantics, when an Event occurs, the transition will only fire if the Boolean Guard condition enclosed in square brackets evaluates to true (e.g., `cardInserted [validPIN == true] / startSession()`). If the guard evaluates to false, the transition is inhibited.",
       "why_wrong": {
         "A password that encrypts the state machine": "Confuses a logical conditional guard with encryption credentials.",
@@ -291,7 +308,7 @@
         "A Fork represents a database deadlock, while a Join represents a SQL join.",
         "A Fork indicates an error condition, while a Join logs an exception."
       ],
-      "answer": "A Fork splits a single execution path into two or more concurrent parallel activities; A Join synchronizes multiple parallel incoming paths, waiting for all to finish before proceeding.",
+      "answer": 0,
       "explanation": "Activity diagrams model parallel execution and concurrency using synchronization bars: a Fork has 1 incoming transition and multiple outgoing concurrent branches; a Join has multiple incoming concurrent branches and 1 outgoing transition that fires only when all incoming activities have arrived.",
       "why_wrong": {
         "A Fork terminates the program...": "Final nodes denote termination, not forks.",
@@ -508,7 +525,7 @@
             "Because Aggregation makes database queries run 10 times faster.",
             "Because UML prohibits Composition between humans."
           ],
-          "answer": "Because if the Department is dissolved, the Professor continues to exist as an employee of the university and can be transferred to another department.",
+          "answer": 0,
           "explanation": "Aggregation represents shared association where the part's lifecycle is independent of the whole. If Nile University re-organizes or closes the Department of Software Engineering, the Professor object is not deleted from the payroll system; they persist independently. Modeling it as Composition would dictate that deleting the Department deletes all its Professors.",
           "why_wrong": {
             "Because Professors cannot exist outside...": "Professors exist independently as faculty employees.",
@@ -572,7 +589,7 @@
             "Operand 1: Bank shuts down server; Operand 2: Card melts.",
             "Operand 1: The ATM prints receipt; Operand 2: The ATM rings alarm."
           ],
-          "answer": "Operand 1: [pinValid == true] -> Bank returns auth token and displays account menu; Operand 2: [else] -> Bank increments failure counter, displays error message, and ejects card if attempts exceed 3.",
+          "answer": 0,
           "explanation": "In UML Sequence diagrams, an 'alt' (alternative) combined fragment models mutually exclusive conditional execution (if-else). The first operand executes if the guard [pinValid == true] holds; the second operand [else] executes if the PIN is invalid, handling error messages and security locking.",
           "why_wrong": {
             "Operand 1: withdraws cash; Operand 2: buys airtime...": "That is a choice of transaction, not the verification result of verifyPIN.",

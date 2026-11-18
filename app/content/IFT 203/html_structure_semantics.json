@@ -212,7 +212,33 @@
       ],
       "explanation": "These six elements form the core semantic landmark hierarchy introduced in HTML5 to replace generic non-semantic `<div>` structures.",
       "why_wrong": {},
-      "source": "IFT 203 Slide 3 & Week 5 Slides; W3C Semantic Structure"
+      "source": "IFT 203 Slide 3 & Week 5 Slides; W3C Semantic Structure",
+      "pairs": [
+        {
+          "left": "<header>",
+          "right": "Contains introductory content, site logo, or navigational aids for a page or section"
+        },
+        {
+          "left": "<nav>",
+          "right": "Designates a major block of navigational links"
+        },
+        {
+          "left": "<main>",
+          "right": "Encapsulates the dominant, central content unique to this individual document (only one per page)"
+        },
+        {
+          "left": "<article>",
+          "right": "Represents a complete, self-contained composition that is independently syndicatable (e.g., a blog post)"
+        },
+        {
+          "left": "<aside>",
+          "right": "Represents content tangentially related to the main content (e.g., sidebars or related links)"
+        },
+        {
+          "left": "<footer>",
+          "right": "Contains closing information such as author copyright, terms of service, and contact details"
+        }
+      ]
     },
     {
       "id": "ift203-hs-006",
@@ -242,7 +268,14 @@
       ],
       "explanation": "Every valid HTML5 file begins with `<!DOCTYPE html>`, followed by the root `<html>` tag, the `<head>` metadata container, the visible `<body>` content, and ends with the closing `</html>` tag.",
       "why_wrong": {},
-      "source": "IFT 203 Slide 3; HTML Basics Week 4"
+      "source": "IFT 203 Slide 3; HTML Basics Week 4",
+      "steps": [
+        "<!DOCTYPE html>",
+        "<html lang=\"en\">",
+        "<head><meta charset=\"UTF-8\"><title>Page Title</title></head>",
+        "<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>",
+        "</html>"
+      ]
     },
     {
       "id": "ift203-hs-007",
@@ -298,7 +331,12 @@
       "why_wrong": {
         "3": "Semantic tags are text tokens parsed by browsers; they have zero relation to electrical physics or 100x speed claims."
       },
-      "source": "IFT 203 Slide 3; MDN Semantic HTML Guide"
+      "source": "IFT 203 Slide 3; MDN Semantic HTML Guide",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ift203-hs-fc01",

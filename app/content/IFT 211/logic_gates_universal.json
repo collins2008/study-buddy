@@ -5,7 +5,7 @@
   "key_terms": [
     {
       "term": "Primary Logic Gates",
-      "definition": "The three elementary logic gates \u2014 AND, OR, and NOT \u2014 from which all Boolean functions are fundamentally defined."
+      "definition": "The three elementary logic gates — AND, OR, and NOT — from which all Boolean functions are fundamentally defined."
     },
     {
       "term": "Universal Gate",
@@ -13,19 +13,19 @@
     },
     {
       "term": "Negative-OR",
-      "definition": "The De Morgan equivalent symbol of a NAND gate, represented as an OR gate with active-low inverted inputs: (A\u00b7B)' = A' + B'."
+      "definition": "The De Morgan equivalent symbol of a NAND gate, represented as an OR gate with active-low inverted inputs: (A·B)' = A' + B'."
     },
     {
       "term": "Negative-AND",
-      "definition": "The De Morgan equivalent symbol of a NOR gate, represented as an AND gate with active-low inverted inputs: (A+B)' = A' \u00b7 B'."
+      "definition": "The De Morgan equivalent symbol of a NOR gate, represented as an AND gate with active-low inverted inputs: (A+B)' = A' · B'."
     },
     {
       "term": "Exclusive-OR (XOR)",
-      "definition": "A gate yielding output 1 if and only if its inputs are different (odd parity): F = A \u2295 B = A'B + AB'."
+      "definition": "A gate yielding output 1 if and only if its inputs are different (odd parity): F = A ⊕ B = A'B + AB'."
     },
     {
       "term": "Exclusive-NOR (XNOR)",
-      "definition": "An equivalence gate yielding output 1 if and only if its inputs are identical: F = (A \u2295 B)' = AB + A'B'."
+      "definition": "An equivalence gate yielding output 1 if and only if its inputs are identical: F = (A ⊕ B)' = AB + A'B'."
     },
     {
       "term": "Fan-in",
@@ -58,12 +58,12 @@
         "XOR, XNOR",
         "AND, NAND, OR"
       ],
-      "answer": "OR, AND, NOT",
+      "answer": 0,
       "explanation": "According to fundamental digital logic and lecturer exam notes: the primary gates are OR, AND, and NOT. NAND and NOR are universal gates, while XOR and XNOR are derived gates.",
       "why_wrong": {
-        "NAND, NOR": "These are universal gates, not primary gates.",
-        "XOR, XNOR": "These are derived/secondary arithmetic gates.",
-        "AND, NAND, OR": "NAND is a derived universal gate, not a primary gate."
+        "1": "These are universal gates, not primary gates.",
+        "2": "These are derived/secondary arithmetic gates.",
+        "3": "NAND is a derived universal gate, not a primary gate."
       },
       "marking_points": [
         "Names OR, AND, NOT as primary gates"
@@ -90,12 +90,12 @@
         "Because they do not require power supply connections to operate.",
         "Because they contain built-in microprocessors that execute software code."
       ],
-      "answer": "Because any arbitrary Boolean function (including NOT, AND, and OR) can be constructed exclusively using only NAND gates or only NOR gates.",
+      "answer": 0,
       "explanation": "A universal gate is mathematically and functionally complete: repeated interconnection of that single gate type alone can realize negation (NOT), conjunction (AND), and disjunction (OR), enabling entire computers to be manufactured using only NAND or only NOR silicon.",
       "why_wrong": {
-        "Because they can operate at universal voltages from 1V to 1000V.": "Fabrication limits operational voltage to standard logic levels (e.g. 1.8V to 5V).",
-        "Because they do not require power supply connections to operate.": "All active digital ICs require Vcc and Ground power connections.",
-        "Because they contain built-in microprocessors that execute software code.": "Logic gates are hardware switching circuits, not microprocessors."
+        "1": "Fabrication limits operational voltage to standard logic levels (e.g. 1.8V to 5V).",
+        "2": "All active digital ICs require Vcc and Ground power connections.",
+        "3": "Logic gates are hardware switching circuits, not microprocessors."
       },
       "marking_points": [
         "Explains functional completeness: can synthesize all basic gates without other ICs"
@@ -121,12 +121,12 @@
         "1",
         "4"
       ],
-      "answer": "3",
-      "explanation": "By De Morgan's Law: A + B = (A' \u00b7 B')'.\n1. Invert A using 1 NAND gate with tied inputs: A' = (A \u00b7 A)'.\n2. Invert B using 1 NAND gate with tied inputs: B' = (B \u00b7 B)'.\n3. Feed A' and B' into a 3rd NAND gate: (A' \u00b7 B')' = (A')' + (B')' = A + B.\nTotal: exactly 3 NAND gates.",
+      "answer": 0,
+      "explanation": "By De Morgan's Law: A + B = (A' · B')'.\n1. Invert A using 1 NAND gate with tied inputs: A' = (A · A)'.\n2. Invert B using 1 NAND gate with tied inputs: B' = (B · B)'.\n3. Feed A' and B' into a 3rd NAND gate: (A' · B')' = (A')' + (B')' = A + B.\nTotal: exactly 3 NAND gates.",
       "why_wrong": {
         "2": "2 NAND gates produce an AND gate (NAND followed by an inverter NAND), not an OR gate.",
         "1": "1 NAND gate produces (AB)', which is a NAND function, not OR.",
-        "4": "4 NAND gates can build an XOR or NOR gate, but OR only requires 3."
+        "0": "4 NAND gates can build an XOR or NOR gate, but OR only requires 3."
       },
       "marking_points": [
         "Uses 2 NAND gates to invert inputs A and B",
@@ -147,19 +147,19 @@
         "nor-synthesis",
         "gate-count"
       ],
-      "question": "How many 2-input NOR gates are required to construct a 2-input AND gate (F = A \u00b7 B)?",
+      "question": "How many 2-input NOR gates are required to construct a 2-input AND gate (F = A · B)?",
       "options": [
         "3",
         "2",
         "1",
         "4"
       ],
-      "answer": "3",
-      "explanation": "By De Morgan's Law: A \u00b7 B = (A' + B')'.\n1. Invert A using 1 NOR gate with tied inputs: A' = (A + A)'.\n2. Invert B using 1 NOR gate with tied inputs: B' = (B + B)'.\n3. Feed A' and B' into a 3rd NOR gate: (A' + B')' = (A')' \u00b7 (B')' = A \u00b7 B.\nTotal: exactly 3 NOR gates.",
+      "answer": 0,
+      "explanation": "By De Morgan's Law: A · B = (A' + B')'.\n1. Invert A using 1 NOR gate with tied inputs: A' = (A + A)'.\n2. Invert B using 1 NOR gate with tied inputs: B' = (B + B)'.\n3. Feed A' and B' into a 3rd NOR gate: (A' + B')' = (A')' · (B')' = A · B.\nTotal: exactly 3 NOR gates.",
       "why_wrong": {
         "2": "2 NOR gates produce an OR gate (NOR followed by an inverter NOR), not an AND gate.",
         "1": "1 NOR gate produces (A+B)', which is NOR, not AND.",
-        "4": "4 NOR gates can build an XNOR or NAND gate, but AND only requires 3."
+        "0": "4 NOR gates can build an XNOR or NAND gate, but AND only requires 3."
       },
       "marking_points": [
         "Uses 2 NOR gates to invert inputs A and B",
@@ -183,17 +183,17 @@
       ],
       "question": "What is the Boolean expression and characteristic behavior of a 2-input Exclusive-OR (XOR) gate?",
       "options": [
-        "F = A \u2295 B = A'B + AB'; Output is 1 when the inputs are DIFFERENT.",
-        "F = A \u2295 B = AB + A'B'; Output is 1 when the inputs are IDENTICAL.",
+        "F = A ⊕ B = A'B + AB'; Output is 1 when the inputs are DIFFERENT.",
+        "F = A ⊕ B = AB + A'B'; Output is 1 when the inputs are IDENTICAL.",
         "F = A + B; Output is 1 when at least one input is 1.",
         "F = (AB)'; Output is 0 only when both inputs are 1."
       ],
-      "answer": "F = A \u2295 B = A'B + AB'; Output is 1 when the inputs are DIFFERENT.",
+      "answer": 0,
       "explanation": "An XOR gate evaluates to 1 when one input is 1 and the other is 0 (inputs are different). Its canonical Sum-of-Products expression is A'B + AB'.",
       "why_wrong": {
-        "F = A \u2295 B = AB + A'B'; Output is 1 when the inputs are IDENTICAL.": "This is the XNOR (equivalence) gate, which is the complement of XOR.",
-        "F = A + B; Output is 1 when at least one input is 1.": "This is the standard inclusive OR gate.",
-        "F = (AB)'; Output is 0 only when both inputs are 1.": "This is the NAND gate."
+        "1": "This is the XNOR (equivalence) gate, which is the complement of XOR.",
+        "2": "This is the standard inclusive OR gate.",
+        "3": "This is the NAND gate."
       },
       "marking_points": [
         "Recalls F = A'B + AB'",
@@ -221,12 +221,12 @@
         "AND gate",
         "XOR gate"
       ],
-      "answer": "NAND gate",
-      "explanation": "Negative-OR computes A' + B'. By De Morgan's Second Law, A' + B' = (A \u00b7 B)'. (A \u00b7 B)' is the definition of a NAND gate. Therefore, a NAND gate can be drawn as an AND gate with an inverted output bubble OR as an OR gate with inverted input bubbles.",
+      "answer": 0,
+      "explanation": "Negative-OR computes A' + B'. By De Morgan's Second Law, A' + B' = (A · B)'. (A · B)' is the definition of a NAND gate. Therefore, a NAND gate can be drawn as an AND gate with an inverted output bubble OR as an OR gate with inverted input bubbles.",
       "why_wrong": {
-        "NOR gate": "A NOR gate is equivalent to a Negative-AND (A' \u00b7 B').",
-        "AND gate": "An AND gate computes A \u00b7 B without inversion.",
-        "XOR gate": "An XOR gate computes A'B + AB'."
+        "1": "A NOR gate is equivalent to a Negative-AND (A' · B').",
+        "2": "An AND gate computes A · B without inversion.",
+        "3": "An XOR gate computes A'B + AB'."
       },
       "marking_points": [
         "Equates Negative-OR (A' + B') to NAND (AB)' via De Morgan"
@@ -253,12 +253,12 @@
         "16",
         "40"
       ],
-      "answer": "10",
+      "answer": 0,
       "explanation": "Fan-out is constrained by the minimum of high-state fan-out and low-state fan-out:\nHigh state fan-out = I_OH / I_IH = 0.4 mA / 0.04 mA = 10.\nLow state fan-out = I_OL / I_IL = 16 mA / 1.6 mA = 10.\nTherefore, the maximum reliable fan-out is exactly 10 standard loads.",
       "why_wrong": {
-        "4": "Underestimates driving capability.",
-        "16": "Takes only I_OL without dividing by the per-input current I_IL (1.6 mA).",
-        "40": "Incorrectly divides 16 mA by 0.4 mA across disparate logic states."
+        "1": "Underestimates driving capability.",
+        "2": "Takes only I_OL without dividing by the per-input current I_IL (1.6 mA).",
+        "3": "Incorrectly divides 16 mA by 0.4 mA across disparate logic states."
       },
       "marking_points": [
         "Calculates high state: 0.4 / 0.04 = 10",
@@ -286,12 +286,12 @@
         "0.4 pJ",
         "100 pJ"
       ],
-      "answer": "10 pJ",
-      "explanation": "Power-Delay Product (PDP) = Power \u00d7 Propagation Delay = (2 \u00d7 10^-3 W) \u00d7 (5 \u00d7 10^-9 s) = 10 \u00d7 10^-12 Joules = 10 pJ. PDP is the fundamental figure of merit measuring energy consumption per switching event.",
+      "answer": 0,
+      "explanation": "Power-Delay Product (PDP) = Power × Propagation Delay = (2 × 10^-3 W) × (5 × 10^-9 s) = 10 × 10^-12 Joules = 10 pJ. PDP is the fundamental figure of merit measuring energy consumption per switching event.",
       "why_wrong": {
-        "2.5 pJ": "Divided 5 by 2 instead of multiplying.",
-        "0.4 pJ": "Divided 2 by 5 instead of multiplying.",
-        "100 pJ": "Arithmetic error by a factor of 10."
+        "1": "Divided 5 by 2 instead of multiplying.",
+        "2": "Divided 2 by 5 instead of multiplying.",
+        "3": "Arithmetic error by a factor of 10."
       },
       "marking_points": [
         "Multiplies Power (2 mW) by Delay (5 ns)",
@@ -321,12 +321,12 @@
         "TTL (Transistor-Transistor Logic)",
         "RTL (Resistor-Transistor Logic)"
       ],
-      "answer": "CMOS (Complementary Metal-Oxide-Semiconductor)",
+      "answer": 0,
       "explanation": "CMOS utilizes complementary pairs of p-channel and n-channel MOSFETs. In any static state, one transistor of each pair is off, resulting in near-zero static DC current draw and extremely low power dissipation.",
       "why_wrong": {
-        "ECL (Emitter-Coupled Logic)": "ECL consumes the highest power because transistors operate constantly in the active, non-saturated region.",
-        "TTL (Transistor-Transistor Logic)": "TTL draws continuous current through internal resistors and bipolar transistors.",
-        "RTL (Resistor-Transistor Logic)": "RTL is an obsolete family that dissipated substantial power across resistors."
+        "1": "ECL consumes the highest power because transistors operate constantly in the active, non-saturated region.",
+        "2": "TTL draws continuous current through internal resistors and bipolar transistors.",
+        "3": "RTL is an obsolete family that dissipated substantial power across resistors."
       },
       "marking_points": [
         "Selects CMOS as lowest power dissipation logic family"
@@ -353,7 +353,7 @@
         "Invert all literals -> Connect inputs to NOR gates -> Add pull-up resistors"
       ],
       "answer": "Start with the Sum-of-Products (AND-OR) expression -> Apply double negation to the entire expression -> Use De Morgan's Law to convert the outer OR gate into a NAND gate -> Replace the first-level AND gates and second-level OR gate directly with NAND gates",
-      "explanation": "Because (A + B)'' = ((A)' \u00b7 (B)')', double complementing an AND-OR circuit and applying De Morgan to the inner complement turns the OR into a NAND of NANDs. In a two-level AND-OR circuit, both levels simply become NAND gates.",
+      "explanation": "Because (A + B)'' = ((A)' · (B)')', double complementing an AND-OR circuit and applying De Morgan to the inner complement turns the OR into a NAND of NANDs. In a two-level AND-OR circuit, both levels simply become NAND gates.",
       "why_wrong": {
         "Replace all OR gates with AND gates...": "Arbitrary substitution alters the logic truth table.",
         "Convert to Product-of-Sums...": "Product-of-Sums directly maps to NOR-NOR logic, not NAND-NAND.",
@@ -366,7 +366,13 @@
       ],
       "source": "Digital Logic Lecture Note, Page 17 & 28",
       "verified": true,
-      "verified_output": "N/A"
+      "verified_output": "N/A",
+      "steps": [
+        "Start with the Sum-of-Products (AND-OR) expression -> Apply double negation to the entire expression -> Use De Morgan's Law to convert the outer OR gate into a NAND gate -> Replace the first-level AND gates and second-level OR gate directly with NAND gates",
+        "Replace all OR gates with AND gates -> Invert all inputs -> Remove inverters",
+        "Convert to Product-of-Sums -> Remove all AND gates -> Add XOR gates",
+        "Invert all literals -> Connect inputs to NOR gates -> Add pull-up resistors"
+      ]
     },
     {
       "id": "ift211-lg-011",
@@ -380,13 +386,13 @@
       ],
       "question": "Prove algebraically and with gate interconnections that a 2-input NAND gate is universal by deriving: (a) a NOT gate, (b) an AND gate, and (c) an OR gate.",
       "options": [],
-      "answer": "(a) NOT: Connect both inputs of a NAND gate together: F = (A \u00b7 A)' = A'.\n(b) AND: Connect inputs A and B to a NAND gate to produce (AB)', then feed that output to a second NAND gate configured as an inverter: ((AB)' \u00b7 (AB)')' = ((AB)')' = AB.\n(c) OR: Invert input A using a NAND gate to get A', invert input B using a second NAND gate to get B', and feed A' and B' into a third NAND gate: (A' \u00b7 B')'. By De Morgan's theorem, (A' \u00b7 B')' = (A')' + (B')' = A + B.\nSince NOT, AND, and OR are fully realized, the NAND gate is functionally complete and universal.",
+      "answer": "(a) NOT: Connect both inputs of a NAND gate together: F = (A · A)' = A'.\n(b) AND: Connect inputs A and B to a NAND gate to produce (AB)', then feed that output to a second NAND gate configured as an inverter: ((AB)' · (AB)')' = ((AB)')' = AB.\n(c) OR: Invert input A using a NAND gate to get A', invert input B using a second NAND gate to get B', and feed A' and B' into a third NAND gate: (A' · B')'. By De Morgan's theorem, (A' · B')' = (A')' + (B')' = A + B.\nSince NOT, AND, and OR are fully realized, the NAND gate is functionally complete and universal.",
       "explanation": "Because any Boolean function can be expressed with AND, OR, and NOT, synthesizing these three operations proves universality.",
       "why_wrong": {},
       "marking_points": [
-        "Proves NOT: (A\u00b7A)' = A'",
+        "Proves NOT: (A·A)' = A'",
         "Proves AND: ((AB)')' = AB using 2 NANDs",
-        "Proves OR: (A'\u00b7B')' = A + B using 3 NANDs",
+        "Proves OR: (A'·B')' = A + B using 3 NANDs",
         "Concludes functional completeness"
       ],
       "source": "Digital Logic Lecture Note, Page 17",
@@ -499,7 +505,7 @@
       ],
       "question": "What is the Boolean equation for a 2-input XOR gate?",
       "options": [],
-      "answer": "F = A \u2295 B = A' \u00b7 B + A \u00b7 B'",
+      "answer": "F = A ⊕ B = A' · B + A · B'",
       "explanation": "True when inputs are different.",
       "why_wrong": {},
       "marking_points": [
@@ -522,7 +528,7 @@
       ],
       "question": "What is the Boolean equation for a 2-input XNOR (equivalence) gate?",
       "options": [],
-      "answer": "F = (A \u2295 B)' = A \u00b7 B + A' \u00b7 B'",
+      "answer": "F = (A ⊕ B)' = A · B + A' · B'",
       "explanation": "True when inputs are identical (both 1 or both 0).",
       "why_wrong": {},
       "marking_points": [
@@ -582,7 +588,7 @@
   "case_studies": [
     {
       "id": "ift211-lg-cs01",
-      "scenario": "A hardware technician at Nile University is assembling a digital motor controller on a breadboard. The circuit specification requires the logic function: F = A \u00b7 B + C \u00b7 D. The technician has only a single 7400 Quad 2-Input NAND IC (which contains exactly four 2-input NAND gates) and wants to build the circuit without purchasing any extra chips.",
+      "scenario": "A hardware technician at Nile University is assembling a digital motor controller on a breadboard. The circuit specification requires the logic function: F = A · B + C · D. The technician has only a single 7400 Quad 2-Input NAND IC (which contains exactly four 2-input NAND gates) and wants to build the circuit without purchasing any extra chips.",
       "sub_questions": [
         {
           "id": "ift211-lg-cs01-q1",
@@ -595,19 +601,18 @@
             "nand-conversion",
             "gate-count"
           ],
-          "question": "Convert F = A \u00b7 B + C \u00b7 D to an all-NAND implementation. How many 2-input NAND gates are needed, and does it fit on the single 7400 IC?",
+          "question": "Convert F = A · B + C · D to an all-NAND implementation. How many 2-input NAND gates are needed, and does it fit on the single 7400 IC?",
           "options": [
-            "Exactly 3 NAND gates: Gate 1 = (AB)', Gate 2 = (CD)', Gate 3 = ((AB)' \u00b7 (CD)')' = AB + CD. Yes, it fits within the 4 gates of the single 7400 IC.",
+            "Exactly 3 NAND gates: Gate 1 = (AB)', Gate 2 = (CD)', Gate 3 = ((AB)' · (CD)')' = AB + CD. Yes, it fits within the 4 gates of the single 7400 IC.",
             "Exactly 5 NAND gates; it requires two 7400 ICs.",
             "Exactly 4 NAND gates: it uses every gate on the 7400 chip.",
             "It cannot be built using NAND gates because + requires OR gates."
           ],
-          "answer": "Exactly 3 NAND gates: Gate 1 = (AB)', Gate 2 = (CD)', Gate 3 = ((AB)' \u00b7 (CD)')' = AB + CD. Yes, it fits within the 4 gates of the single 7400 IC.",
-          "explanation": "Double negate F: F = ( (A\u00b7B + C\u00b7D)' )'. By De Morgan's Law on the inner complement: (A\u00b7B + C\u00b7D)' = (A\u00b7B)' \u00b7 (C\u00b7D)'. Therefore: F = ( (A\u00b7B)' \u00b7 (C\u00b7D)' )'. Gate 1 computes (AB)'. Gate 2 computes (CD)'. Gate 3 computes the NAND of the two outputs: ((AB)' \u00b7 (CD)')' = AB + CD. This uses exactly 3 gates, fitting on the 4-gate 7400 IC with 1 gate spare.",
+          "answer": 0,
+          "explanation": "Double negate F: F = ( (A·B + C·D)' )'. By De Morgan's Law on the inner complement: (A·B + C·D)' = (A·B)' · (C·D)'. Therefore: F = ( (A·B)' · (C·D)' )'. Gate 1 computes (AB)'. Gate 2 computes (CD)'. Gate 3 computes the NAND of the two outputs: ((AB)' · (CD)')' = AB + CD. This uses exactly 3 gates, fitting on the 4-gate 7400 IC with 1 gate spare.",
           "why_wrong": {
-            "Exactly 5 NAND gates; it requires two 7400 ICs.": "Inverts the intermediate signals unnecessarily.",
-            "Exactly 4 NAND gates: it uses every gate on the 7400 chip.": "Only 3 gates are needed; 1 remains spare.",
-            "It cannot be built using NAND gates...": "NAND is a universal gate; any Boolean function can be realized."
+            "1": "Inverts the intermediate signals unnecessarily.",
+            "2": "Only 3 gates are needed; 1 remains spare."
           },
           "marking_points": [
             "Applies double complement to AB + CD",
@@ -636,12 +641,12 @@
             "Connect the unused output directly to Ground.",
             "Connect the unused output directly to Vcc."
           ],
-          "answer": "Tie its unused inputs to Vcc (logic 1) or Ground (logic 0) to prevent floating inputs from causing high static power consumption and spurious oscillations.",
+          "answer": 0,
           "explanation": "In CMOS technology, floating high-impedance inputs drift into the linear threshold region, turning on both PMOS and NMOS transistors simultaneously. This causes excessive shoot-through current, overheating, and oscillation noise. Unused inputs must be tied to a stable logic level.",
           "why_wrong": {
-            "Leave the inputs floating (disconnected) in the air.": "Dangerous design flaw causing floating-gate instability in CMOS.",
-            "Connect the unused output directly to Ground.": "Shorting a gate output to ground destroys the output stage transistors when output attempts to go HIGH.",
-            "Connect the unused output directly to Vcc.": "Shorts the gate output stage when output goes LOW."
+            "1": "Dangerous design flaw causing floating-gate instability in CMOS.",
+            "2": "Shorting a gate output to ground destroys the output stage transistors when output attempts to go HIGH.",
+            "3": "Shorts the gate output stage when output goes LOW."
           },
           "marking_points": [
             "Explains tying unused inputs to Vcc or GND to prevent floating gate oscillation"
@@ -654,7 +659,7 @@
     },
     {
       "id": "ift211-lg-cs02",
-      "scenario": "A security system at Nile University requires an alert buzzer B to trigger under two circumstances: either when the front door sensor (A) and rear door sensor (B_sensor) have MISMATCHED states (indicating a breach in the airlock sequence), OR when the fire alarm override (F) is active. The logic is: Buzzer = (A \u2295 B_sensor) + F.",
+      "scenario": "A security system at Nile University requires an alert buzzer B to trigger under two circumstances: either when the front door sensor (A) and rear door sensor (B_sensor) have MISMATCHED states (indicating a breach in the airlock sequence), OR when the fire alarm override (F) is active. The logic is: Buzzer = (A ⊕ B_sensor) + F.",
       "sub_questions": [
         {
           "id": "ift211-lg-cs02-q1",
@@ -674,12 +679,12 @@
             "Oscillating between 0 and 1",
             "High-Impedance state"
           ],
-          "answer": "0 (Buzzer is OFF)",
-          "explanation": "Evaluate A \u2295 B_sensor: 1 \u2295 1 = 0 (because both inputs are identical, XOR evaluates to 0). Then evaluate OR with F: 0 + 0 = 0. Therefore, Buzzer = 0 (OFF).",
+          "answer": 0,
+          "explanation": "Evaluate A ⊕ B_sensor: 1 ⊕ 1 = 0 (because both inputs are identical, XOR evaluates to 0). Then evaluate OR with F: 0 + 0 = 0. Therefore, Buzzer = 0 (OFF).",
           "why_wrong": {
-            "1 (Buzzer sounds ALARM)": "Misinterprets 1 \u2295 1 as 1 (confusion with inclusive OR).",
-            "Oscillating between 0 and 1": "Combinational logic produces a stable DC level.",
-            "High-Impedance state": "Logic gates drive definite 0 or 1 levels."
+            "1": "Misinterprets 1 ⊕ 1 as 1 (confusion with inclusive OR).",
+            "2": "Combinational logic produces a stable DC level.",
+            "3": "Logic gates drive definite 0 or 1 levels."
           },
           "marking_points": [
             "Evaluates 1 XOR 1 = 0",
@@ -701,19 +706,19 @@
             "nor-synthesis",
             "xor"
           ],
-          "question": "How many total 2-input NOR gates would be required to implement the airlock sub-circuit (A \u2295 B_sensor) using only universal NOR gates?",
+          "question": "How many total 2-input NOR gates would be required to implement the airlock sub-circuit (A ⊕ B_sensor) using only universal NOR gates?",
           "options": [
             "5 NOR gates",
             "4 NOR gates",
             "3 NOR gates",
             "2 NOR gates"
           ],
-          "answer": "5 NOR gates",
-          "explanation": "Implementing XOR using only NOR gates requires 5 gates:\nA \u2295 B = ( (A + B)' + (A' + B')' )' = ( NOR(A,B) + NOR(A', B') )'.\nIn gate terms:\nGate 1 computes NOR(A, B) = (A+B)'.\nGate 2 computes A' by NORing (A, A).\nGate 3 computes B' by NORing (B, B).\nGate 4 computes NOR(A', B') = (A' + B')' = AB.\nGate 5 computes NOR of outputs from Gate 1 and Gate 4:\n( (A+B)' + AB )' = (A+B) \u00b7 (AB)' = (A+B)(A'+B') = A'B + AB' = A \u2295 B.\nTotal = exactly 5 NOR gates.",
+          "answer": 0,
+          "explanation": "Implementing XOR using only NOR gates requires 5 gates:\nA ⊕ B = ( (A + B)' + (A' + B')' )' = ( NOR(A,B) + NOR(A', B') )'.\nIn gate terms:\nGate 1 computes NOR(A, B) = (A+B)'.\nGate 2 computes A' by NORing (A, A).\nGate 3 computes B' by NORing (B, B).\nGate 4 computes NOR(A', B') = (A' + B')' = AB.\nGate 5 computes NOR of outputs from Gate 1 and Gate 4:\n( (A+B)' + AB )' = (A+B) · (AB)' = (A+B)(A'+B') = A'B + AB' = A ⊕ B.\nTotal = exactly 5 NOR gates.",
           "why_wrong": {
-            "4 NOR gates": "4 NAND gates can build an XOR, but with NOR gates exactly 5 are required (or 4 with dual-rail inputs).",
-            "3 NOR gates": "3 NOR gates can only build an AND gate.",
-            "2 NOR gates": "2 NOR gates build an OR gate."
+            "1": "4 NAND gates can build an XOR, but with NOR gates exactly 5 are required (or 4 with dual-rail inputs).",
+            "2": "3 NOR gates can only build an AND gate.",
+            "3": "2 NOR gates build an OR gate."
           },
           "marking_points": [
             "Derives 5 NOR gates for XOR from single-rail inputs A and B"

@@ -98,7 +98,12 @@
       "marking_points": [],
       "source": "IFT205_Week2 Slide 4; Student Notebook",
       "verified": true,
-      "verified_output": "Hardware, Software, and People."
+      "verified_output": "Hardware, Software, and People.",
+      "answers": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "ift205-fnd-003",
@@ -112,8 +117,8 @@
       ],
       "question": "A digital computer can execute instructions and process data in its internal registers without any electrical energy source.",
       "options": [
-        "True \u2014 internal mechanical components and solid-state silicon gates can process instructions purely through optical ambient light.",
-        "False \u2014 a digital computer fundamentally relies on electrical voltage levels (high and low potentials) across semiconductor transistors to represent and manipulate binary states."
+        "True — internal mechanical components and solid-state silicon gates can process instructions purely through optical ambient light.",
+        "False — a digital computer fundamentally relies on electrical voltage levels (high and low potentials) across semiconductor transistors to represent and manipulate binary states."
       ],
       "answer": 1,
       "explanation": "Digital computers are electronic devices built from semiconductor transistors that represent binary 1s and 0s via discrete electrical voltage thresholds. Without electrical power (mains or battery), the logic gates cannot operate, memory cells lose state, and no processing can occur.",
@@ -152,7 +157,13 @@
       "marking_points": [],
       "source": "Week 5 Slide 13",
       "verified": true,
-      "verified_output": "Input -> Processing -> Output -> Storage"
+      "verified_output": "Input -> Processing -> Output -> Storage",
+      "steps": [
+        "Input (capturing raw data from peripheral devices or sensors)",
+        "Processing (manipulating, calculating, and evaluating data via the CPU)",
+        "Output (generating human-readable or machine-usable results)",
+        "Storage (persisting data and results to secondary non-volatile media for future access)"
+      ]
     },
     {
       "id": "ift205-fnd-005",
@@ -239,7 +250,25 @@
       "marking_points": [],
       "source": "Week 5 Slides 17-19",
       "verified": true,
-      "verified_output": "Matched data quality dimensions."
+      "verified_output": "Matched data quality dimensions.",
+      "pairs": [
+        {
+          "left": "Accuracy",
+          "right": "Recorded data values correctly reflect real-world facts without factual or computational errors."
+        },
+        {
+          "left": "Completeness",
+          "right": "All required mandatory fields and records are populated with zero missing essential elements."
+        },
+        {
+          "left": "Consistency",
+          "right": "Data stored across multiple tables or distributed databases agrees without contradictory values."
+        },
+        {
+          "left": "Timeliness",
+          "right": "Data is current, up to date, and available within the operational timeframe required for decision-making."
+        }
+      ]
     },
     {
       "id": "ift205-fnd-008",
@@ -294,12 +323,17 @@
         "byte",
         "256"
       ],
-      "explanation": "A bit (binary digit) holds two states ($0$ or $1$). Eight bits make a byte. With 8 bits, $2^8 = 256$ unique permutations ($00000000_2$ to $11111111_2$) can be represented, allowing encoding of numbers 0\u2013255 or standard ASCII characters.",
+      "explanation": "A bit (binary digit) holds two states ($0$ or $1$). Eight bits make a byte. With 8 bits, $2^8 = 256$ unique permutations ($00000000_2$ to $11111111_2$) can be represented, allowing encoding of numbers 0–255 or standard ASCII characters.",
       "why_wrong": {},
       "marking_points": [],
       "source": "Week 5 Slides 5-6",
       "verified": true,
-      "verified_output": "bit, byte, 256"
+      "verified_output": "bit, byte, 256",
+      "blanks": [
+        "bit",
+        "byte",
+        "256"
+      ]
     },
     {
       "id": "ift205-fnd-010",
@@ -447,8 +481,8 @@
       ],
       "question": "True or False: Because modern computing hardware and artificial intelligence software are highly autonomous, 'People' are no longer classified as a core component of Information Technology systems.",
       "options": [
-        "True \u2014 modern automated servers run unattended in headless data centers without requiring any human presence.",
-        "False \u2014 people remain an indispensable pillar of IT systems as system architects, administrators, data providers, ethical decision-makers, and final consumers of processed information."
+        "True — modern automated servers run unattended in headless data centers without requiring any human presence.",
+        "False — people remain an indispensable pillar of IT systems as system architects, administrators, data providers, ethical decision-makers, and final consumers of processed information."
       ],
       "answer": 1,
       "explanation": "Technology is created to serve human objectives. Without people to formulate requirements, input operational data, interpret analytical dashboards, maintain infrastructure, and enact business decisions, hardware and software have no economic or organisational purpose.",
@@ -542,7 +576,7 @@
             "Replacing all wired Ethernet cables with satellite Wi-Fi routers"
           ],
           "answer": 0,
-          "explanation": "Data validation enforces constraints at data entry (e.g. allowable numerical ranges such as 5\u20131000 and fixed units mg/ml via drop-down menus), rejecting out-of-bounds input before committing it to the database.",
+          "explanation": "Data validation enforces constraints at data entry (e.g. allowable numerical ranges such as 5–1000 and fixed units mg/ml via drop-down menus), rejecting out-of-bounds input before committing it to the database.",
           "why_wrong": {
             "1": "Batch spooling queues data; it does nothing to prevent incorrect medical dosage typing.",
             "2": "RAM size affects multitasking capacity, not logical field verification.",

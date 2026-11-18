@@ -11,4 +11,5 @@ Thumbs.db
 *.ppt
 *.pptx
 *.pdf
-app/content/SEN 201/_work/png_images/
+_tools_archive/
+*.bak

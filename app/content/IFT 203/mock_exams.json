@@ -126,7 +126,29 @@
           "explanation": "These five positioning schemes dictate how elements are placed and shifted relative to the normal flow, ancestors, or viewport.",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides; MDN Position",
-          "topic_slug": "css_box_model_layout"
+          "topic_slug": "css_box_model_layout",
+          "pairs": [
+            {
+              "left": "static",
+              "right": "Normal document flow; top/left/z-index properties have zero effect"
+            },
+            {
+              "left": "relative",
+              "right": "Positioned offset from its own normal flow position, retaining its original footprint"
+            },
+            {
+              "left": "absolute",
+              "right": "Removed from flow; positioned relative to nearest non-static positioned ancestor"
+            },
+            {
+              "left": "fixed",
+              "right": "Removed from flow; positioned relative to browser viewport, staying stationary on scroll"
+            },
+            {
+              "left": "sticky",
+              "right": "Toggles between relative and fixed positioning based on the user's scroll position"
+            }
+          ]
         },
         {
           "id": "ift203-bm-007",
@@ -397,7 +419,29 @@
           "explanation": "These symbols constitute the core syntax of CSS selectors and combinators evaluated in Nile University IFT 203 examinations.",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides",
-          "topic_slug": "css_selectors_typography"
+          "topic_slug": "css_selectors_typography",
+          "pairs": [
+            {
+              "left": "#",
+              "right": "ID selector: targets a unique element by its id attribute (specificity 100)"
+            },
+            {
+              "left": ".",
+              "right": "Class selector: targets elements by their class attribute (specificity 10)"
+            },
+            {
+              "left": ">",
+              "right": "Child combinator: targets only immediate direct child elements"
+            },
+            {
+              "left": "+",
+              "right": "Adjacent sibling combinator: targets an element immediately preceded by another"
+            },
+            {
+              "left": ":",
+              "right": "Pseudo-class prefix: targets elements in a specific temporary state (e.g., :hover)"
+            }
+          ]
         },
         {
           "id": "ift203-cs-007",
@@ -669,7 +713,29 @@
           "explanation": "These elements and attributes are the standard building blocks of interactive HTML5 forms covered in Nile IFT 203 lectures and take-home practicals.",
           "why_wrong": {},
           "source": "IFT 203 Week 5 Slides; Practice Codes Docx",
-          "topic_slug": "html_forms_tables_media"
+          "topic_slug": "html_forms_tables_media",
+          "pairs": [
+            {
+              "left": "<textarea>",
+              "right": "Provides a multi-line text input field, requiring an explicit closing tag"
+            },
+            {
+              "left": "<select> & <option>",
+              "right": "Creates a drop-down selection menu for choosing one or more items"
+            },
+            {
+              "left": "<fieldset> & <legend>",
+              "right": "Groups logically related form controls inside a visual border with a caption title"
+            },
+            {
+              "left": "required",
+              "right": "HTML5 boolean attribute preventing form submission if the input field is left empty"
+            },
+            {
+              "left": "placeholder",
+              "right": "Displays faint hint text inside an input field that disappears as soon as the user begins typing"
+            }
+          ]
         },
         {
           "id": "ift203-ft-007",
@@ -949,7 +1015,33 @@
           "explanation": "These six elements form the core semantic landmark hierarchy introduced in HTML5 to replace generic non-semantic `<div>` structures.",
           "why_wrong": {},
           "source": "IFT 203 Slide 3 & Week 5 Slides; W3C Semantic Structure",
-          "topic_slug": "html_structure_semantics"
+          "topic_slug": "html_structure_semantics",
+          "pairs": [
+            {
+              "left": "<header>",
+              "right": "Contains introductory content, site logo, or navigational aids for a page or section"
+            },
+            {
+              "left": "<nav>",
+              "right": "Designates a major block of navigational links"
+            },
+            {
+              "left": "<main>",
+              "right": "Encapsulates the dominant, central content unique to this individual document (only one per page)"
+            },
+            {
+              "left": "<article>",
+              "right": "Represents a complete, self-contained composition that is independently syndicatable (e.g., a blog post)"
+            },
+            {
+              "left": "<aside>",
+              "right": "Represents content tangentially related to the main content (e.g., sidebars or related links)"
+            },
+            {
+              "left": "<footer>",
+              "right": "Contains closing information such as author copyright, terms of service, and contact details"
+            }
+          ]
         },
         {
           "id": "ift203-hs-007",
@@ -1198,7 +1290,13 @@
           "explanation": "The CSS Box Model is structured strictly from inside to outside: Content -> Padding -> Border -> Margin.",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides; W3C Box Model",
-          "topic_slug": "css_box_model_layout"
+          "topic_slug": "css_box_model_layout",
+          "steps": [
+            "Content (the inner text, child elements, or image)",
+            "Padding (the transparent interior cushion around the content)",
+            "Border (the outline enclosing the padding and content)",
+            "Margin (the transparent exterior clearance outside the border)"
+          ]
         },
         {
           "id": "ift203-bm-008",
@@ -1228,7 +1326,12 @@
             "3": "CSS Flexbox was developed by the W3C in the 2010s for responsive web layouts, not 1965 televisions."
           },
           "source": "IFT 203 Week 6 Slides; W3C CSS Flexible Box Layout",
-          "topic_slug": "css_box_model_layout"
+          "topic_slug": "css_box_model_layout",
+          "answers": [
+            0,
+            1,
+            2
+          ]
         },
         {
           "id": "ift203-bm-fc02",
@@ -1433,7 +1536,14 @@
           "explanation": "Standard W3C specificity hierarchy: Universal (0) < Element (1) < Class/Pseudo-class (10) < ID (100) < Inline Style (1000).",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides; W3C CSS Specificity",
-          "topic_slug": "css_selectors_typography"
+          "topic_slug": "css_selectors_typography",
+          "steps": [
+            "Universal selector: * (Specificity 0,0,0,0)",
+            "Element/Type selector: p, h1 (Specificity 0,0,0,1)",
+            "Class selector: .highlight (Specificity 0,0,1,0)",
+            "ID selector: #navbar (Specificity 0,1,0,0)",
+            "Inline style attribute: style=\"...\" (Specificity 1,0,0,0)"
+          ]
         },
         {
           "id": "ift203-cs-008",
@@ -1462,7 +1572,12 @@
             "3": "Using dozens of different fonts is a grotesque design anti-pattern that destroys performance and visual consistency."
           },
           "source": "IFT 203 Week 6 Slides; MDN Styling Text",
-          "topic_slug": "css_selectors_typography"
+          "topic_slug": "css_selectors_typography",
+          "answers": [
+            0,
+            1,
+            2
+          ]
         },
         {
           "id": "ift203-cs-fc02",
@@ -1550,7 +1665,7 @@
             "Solution 2 (Specificity matching/chaining): Target the element using an ID-qualified selector (e.g., `#confirm-drop.btn-danger` or `button#confirm-drop`) which achieves specificity (0,1,1,0), cleanly overriding the base ID rule.",
             "States the principle of keeping CSS specificity flat for enterprise maintainability."
           ],
-          "answer": "1. Why `!important` is an Anti-Pattern:\nAppending `!important` breaks the natural cascading flow of CSS. It creates technical debt by initiating a 'specificity arms race'\u2014any future theme changes or modal dialogs targeting this button will also be forced to use `!important`, making the codebase brittle and unmaintainable.\n\n2. Two Clean Engineering Solutions:\n- Solution 1: Refactor Base Styles to Classes (Best Practice): Remove the ID selector from the CSS entirely. IDs should be reserved for JavaScript DOM access and in-page anchor links, not styling hooks. Re-author the base style as a class `.btn` and state modifier `.btn-danger`. Because both are classes, source order allows `.btn-danger` to win naturally:\n```css\n.btn { background-color: green; }\n.btn-danger { background-color: red; }\n```\n- Solution 2: Chain Selector to Match Specificity (Quick Fix): If the base ID cannot be edited immediately, chain the class to the ID in the override selector: `#confirm-drop.btn-danger { background-color: red; }`. This gives a specificity score of (0,1,1,0) (score 110), which cleanly defeats the base ID selector (0,1,0,0) (score 100) without resorting to `!important`.",
+          "answer": "1. Why `!important` is an Anti-Pattern:\nAppending `!important` breaks the natural cascading flow of CSS. It creates technical debt by initiating a 'specificity arms race'—any future theme changes or modal dialogs targeting this button will also be forced to use `!important`, making the codebase brittle and unmaintainable.\n\n2. Two Clean Engineering Solutions:\n- Solution 1: Refactor Base Styles to Classes (Best Practice): Remove the ID selector from the CSS entirely. IDs should be reserved for JavaScript DOM access and in-page anchor links, not styling hooks. Re-author the base style as a class `.btn` and state modifier `.btn-danger`. Because both are classes, source order allows `.btn-danger` to win naturally:\n```css\n.btn { background-color: green; }\n.btn-danger { background-color: red; }\n```\n- Solution 2: Chain Selector to Match Specificity (Quick Fix): If the base ID cannot be edited immediately, chain the class to the ID in the override selector: `#confirm-drop.btn-danger { background-color: red; }`. This gives a specificity score of (0,1,1,0) (score 110), which cleanly defeats the base ID selector (0,1,0,0) (score 100) without resorting to `!important`.",
           "explanation": "Disciplined frontend engineering keeps specificity low and avoids `!important` hacks.",
           "why_wrong": {},
           "source": "IFT 203 Week 6 Slides; CSS Architecture Guidelines",
@@ -1666,7 +1781,13 @@
           "explanation": "In semantic HTML tables: `<caption>` must appear immediately after `<table>`, followed by `<thead>` (headers), `<tbody>` (data rows), and `<tfoot>` (footer totals/summaries).",
           "why_wrong": {},
           "source": "IFT 203 Week 5 Slides; W3C HTML5 Table Model",
-          "topic_slug": "html_forms_tables_media"
+          "topic_slug": "html_forms_tables_media",
+          "steps": [
+            "<caption> (accessible title of the table, placed first)</caption>",
+            "<thead> containing <tr> and <th> header cells</thead>",
+            "<tbody> containing <tr> and <td> data rows</tbody>",
+            "<tfoot> containing <tr> and <td> summary or total calculations</tfoot>"
+          ]
         },
         {
           "id": "ift203-ft-008",
@@ -1697,7 +1818,12 @@
             "3": "`<img>` is a void (empty) element and does not have a closing tag in HTML5."
           },
           "source": "IFT 203 Week 4 & 5 Slides; MDN Links & Media",
-          "topic_slug": "html_forms_tables_media"
+          "topic_slug": "html_forms_tables_media",
+          "answers": [
+            0,
+            1,
+            2
+          ]
         },
         {
           "id": "ift203-ft-fc02",
@@ -1906,7 +2032,14 @@
           "explanation": "Every valid HTML5 file begins with `<!DOCTYPE html>`, followed by the root `<html>` tag, the `<head>` metadata container, the visible `<body>` content, and ends with the closing `</html>` tag.",
           "why_wrong": {},
           "source": "IFT 203 Slide 3; HTML Basics Week 4",
-          "topic_slug": "html_structure_semantics"
+          "topic_slug": "html_structure_semantics",
+          "steps": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head><meta charset=\"UTF-8\"><title>Page Title</title></head>",
+            "<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>",
+            "</html>"
+          ]
         },
         {
           "id": "ift203-hs-008",
@@ -1936,7 +2069,12 @@
             "3": "Semantic tags are text tokens parsed by browsers; they have zero relation to electrical physics or 100x speed claims."
           },
           "source": "IFT 203 Slide 3; MDN Semantic HTML Guide",
-          "topic_slug": "html_structure_semantics"
+          "topic_slug": "html_structure_semantics",
+          "answers": [
+            0,
+            1,
+            2
+          ]
         },
         {
           "id": "ift203-hs-fc02",
