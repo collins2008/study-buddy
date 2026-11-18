@@ -1,0 +1,1420 @@
+{
+  "course": "ENT 211",
+  "title": "ENT 211: Entrepreneurship and Innovation Mock Examinations",
+  "exams": [
+    {
+      "id": "ent211-mock-1",
+      "title": "ENT 211 Entrepreneurship & Innovation — Midterm Examination Mock 1",
+      "description": "Standard Nile University midterm exam simulation covering entrepreneurship foundations, value creation loop, Peter Drucker's opportunity principle, Schumpeter's Five New Combinations, Frank Knight's Risk vs Uncertainty, invention vs innovation, five types of innovation, and Nigerian industrial exemplars (Aliko Dangote, Tony Elumelu, Ibukun Awosika).",
+      "duration_minutes": 60,
+      "total_marks": 60,
+      "questions": [
+        {
+          "id": "ent211-fnd-001",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "entrepreneurship-definition",
+            "process",
+            "value-creation"
+          ],
+          "question": "According to the ENT 211 lecture curriculum, what is the core definition of entrepreneurship?",
+          "options": [
+            "The process of identifying opportunities, assembling resources, taking calculated risks, and creating value through business activities",
+            "The legal act of incorporating a limited liability company with the Corporate Affairs Commission (CAC)",
+            "Investing surplus inherited capital into government treasury bills to guarantee risk-free returns",
+            "Managing day-to-day administrative paperwork in a large multinational corporation"
+          ],
+          "answer": 0,
+          "explanation": "Slide 4 of the lecture notes explicitly defines entrepreneurship: 'Entrepreneurship is the process of identifying opportunities, assembling resources, taking calculated risks and creating value through business activities.' It involves a continuous cycle of spotting gaps, mobilising resources, testing assumptions, taking calculated risks, and delivering tangible value.",
+          "why_wrong": {
+            "1": "Legal registration is merely a regulatory step; without opportunity identification, resource mobilization, and value creation, company registration is not entrepreneurship.",
+            "2": "Investing in treasury bills is passive financial investment with zero entrepreneurial risk, venture creation, or innovation.",
+            "3": "Administrative routine maintenance describes traditional corporate management, not entrepreneurship."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 4: Core Concept"
+        },
+        {
+          "id": "ent211-fnd-003",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "entrepreneur-vs-manager",
+            "roles",
+            "comparison"
+          ],
+          "question": "In comparing the roles of an Entrepreneur and a Traditional Manager, which statement accurately reflects their fundamental differences according to the course matrix?",
+          "options": [
+            "Entrepreneurs create or pursue new opportunities and embrace calculated risk, whereas managers run operations, enforce standards, and control operational risk",
+            "Entrepreneurs only work alone without employees, whereas managers always work in large teams",
+            "Managers take massive personal financial risks, whereas entrepreneurs are legally protected from all financial losses",
+            "Entrepreneurs focus entirely on short-term weekly efficiency, whereas managers focus exclusively on long-term visionary disruption"
+          ],
+          "answer": 0,
+          "explanation": "Slide 8 explicitly contrasts the two roles: The Entrepreneur creates/pursues opportunities, takes calculated entrepreneurial risks, prioritizes innovation and growth, and challenges existing ways of working. The Manager runs and improves ongoing operations, controls operational risk, prioritizes efficiency and consistency, and maintains reliable systems and standards.",
+          "why_wrong": {
+            "1": "Entrepreneurs frequently lead large organizations (e.g., Aliko Dangote manages tens of thousands of employees).",
+            "2": "Entrepreneurs bear direct personal financial and career risk, while salaried corporate managers are insulated from personal venture loss.",
+            "3": "This inverts the roles: entrepreneurs are visionary and growth-oriented; managers focus on operational efficiency and stability."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 8: Entrepreneur vs. Manager"
+        },
+        {
+          "id": "ent211-fnd-005",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "nigerian-exemplars",
+            "aliko-dangote",
+            "backward-integration"
+          ],
+          "question": "Aliko Dangote's industrial journey in Nigeria transitioned the Dangote Group from trading and importing bulk commodities (cement, sugar, flour) into establishing massive local manufacturing factories and quarries. In business strategy and economic development, what is this process called?",
+          "options": [
+            "Backward Integration, which reduces national import dependence and captures value along the supply chain",
+            "Conglomerate Liquidation, which sells off manufacturing assets to invest in foreign real estate",
+            "Kirznerian Speculative Arbitrage, which exploits daily currency black-market rates",
+            "Horizontal Disinvestment, which shuts down local factories to import finished goods from Asia"
+          ],
+          "answer": 0,
+          "explanation": "Dangote's core strategy is 'backward integration': rather than continuing to import finished cement and sugar from abroad, the group invested in domestic manufacturing, building quarries, cement plants, and refineries in Nigeria. This created massive domestic employment, saved billions of dollars in foreign exchange, and stimulated deep backward and forward industrial linkages.",
+          "why_wrong": {
+            "1": "Liquidation means closing businesses down, whereas Dangote expanded massively into heavy manufacturing.",
+            "2": "Arbitrage is trading on price discrepancies without establishing industrial plants.",
+            "3": "Horizontal disinvestment would mean exiting domestic production, the exact opposite of Dangote's factory construction."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 6: The Role & Nigerian Industrial Exemplars"
+        },
+        {
+          "id": "ent211-fnd-007",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "entrepreneurial-mindset",
+            "risk-taking"
+          ],
+          "question": "Successful entrepreneurs are reckless gamblers who thrive on taking the highest possible financial risks regardless of the odds.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "explanation": "False. Slide 7 explicitly highlights that successful entrepreneurs practice 'Calculated risk-taking: weighs possible rewards against risks.' Entrepreneurs systematically avoid pure gambles; they gather information, test assumptions on a small scale, hedge downside exposures, and take measured, calculated risks where the potential returns justify the managed risk.",
+          "why_wrong": {
+            "0": "Entrepreneurs are not gamblers; they take calculated, mitigated risks and actively work to reduce uncertainty."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 7: Entrepreneurial Mindset"
+        },
+        {
+          "id": "ent211-fnd-009",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "entrepreneurial-process",
+            "value-creation",
+            "cloze"
+          ],
+          "question": "Complete the five stages of the entrepreneurial value-creation process outlined in ENT 211:\nThe process begins when an entrepreneur [blank1] an unmet opportunity or need in the market. Next, they [blank2] scarce human, financial, and physical resources. They then [blank3] their underlying assumptions through small-scale experiments, act by taking [blank4] risks, and ultimately create tangible [blank5] for customers and society.",
+          "answer": [
+            "spots",
+            "mobilises",
+            "tests",
+            "calculated",
+            "value"
+          ],
+          "explanation": "Slide 4 of the lecture notes defines the 5-step entrepreneurial sequence: SPOT Opportunity -> MOBILISE Resources -> TEST Assumptions -> ACT on Calculated Risk -> CREATE Value.",
+          "source": "ENT 211 Lecture Notes, Slide 4: Core Concept Process"
+        },
+        {
+          "id": "ent211-fnd-011",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "sequencing",
+          "difficulty": 2,
+          "tags": [
+            "entrepreneurial-thinking",
+            "problem-solving",
+            "sequencing"
+          ],
+          "question": "Arrange the six stages of 'Thinking Like an Entrepreneur' (Module: Entrepreneurial Thinking) in the correct logical sequence from first to last:",
+          "options": [
+            "Spot the unmet need: What problem exists in everyday life?",
+            "Know the people involved: Who is affected by this problem?",
+            "Find the gap: Why has this problem remained unaddressed?",
+            "Compare options: What existing alternatives do customers currently use?",
+            "Make it useful: How can the proposed solution work effectively?",
+            "Plan for delivery: What resources, capital, and tools are needed?"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "Deck 2 (Entrepreneurial Thinking, Slide 2) details the 6-stage cognitive inquiry: (1) What problem exists? (2) Who is affected? (3) Why unaddressed? (4) What alternatives exist? (5) How can the idea work? (6) What resources are needed?",
+          "source": "Entrepreneurial Thinking Deck, Slide 2: Thinking Like an Entrepreneur"
+        },
+        {
+          "id": "ent211-fnd-013",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "intrapreneurship",
+            "definition"
+          ],
+          "question": "Define 'Intrapreneurship' and state two key differences between an intrapreneur and an independent entrepreneur.",
+          "answer": "Intrapreneurship is the practice of developing new commercial ventures, products, or innovations within an existing corporate organization.\nDifferences:\n1. Risk Profile: The intrapreneur's personal capital is protected by a corporate salary, whereas the entrepreneur bears direct personal financial liability.\n2. Resources & Bureaucracy: The intrapreneur has access to corporate funding, brand trust, and distribution channels, but is constrained by corporate hierarchy and lacks full venture equity ownership.",
+          "explanation": "Intrapreneurs bring entrepreneurial energy into established enterprises.",
+          "source": "ENT 211 Infographic Lecture, Slide 2: Intrapreneurship"
+        },
+        {
+          "id": "ent211-fnd-015",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "economic-development",
+            "smes"
+          ],
+          "question": "List four distinct macroeconomic contributions of entrepreneurship in a developing economy like Nigeria.",
+          "answer": "1. Employment generation (SMEs provide the majority of private-sector jobs)\n2. Mobilization of idle domestic capital and local raw materials\n3. Import substitution (reducing foreign currency drain by producing goods locally)\n4. Wealth creation, poverty alleviation, and regional economic decentralization.",
+          "explanation": "Entrepreneurship serves as the primary engine of structural economic growth.",
+          "source": "ENT 211 Lecture Notes, Slide 3 & Infographic Lecture, Slide 2"
+        },
+        {
+          "id": "ent211-fnd-cs1-q1",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "entrepreneurial-process",
+            "testing-assumptions",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Amina is a 200-level Computer Science student at Nile University of Nigeria in Abuja. She observed that students living in on-campus hostels waste an average of...]\n\nHow did Amina demonstrate the ENT 211 concept of 'Testing Assumptions' and 'Taking Calculated Risk' rather than reckless speculation?",
+          "options": [
+            "By running a 2-week pilot using an existing partner facility's spare capacity rather than taking a bank loan to buy expensive machines upfront",
+            "By dropping out of university immediately to open a factory before speaking to any students",
+            "By offering free laundry indefinitely and hoping a venture capital fund would bail her out",
+            "By asking the university administration to ban students from washing their own clothes"
+          ],
+          "answer": 0,
+          "explanation": "Amina took a calculated, mitigated risk: she did not borrow millions of Naira to buy physical washing machines before validating demand. Instead, she tested core assumptions (willingness to pay, operational pickup times, customer satisfaction) using partner capacity and minimal capital outlay. This is textbook entrepreneurial assumption testing.",
+          "why_wrong": {
+            "1": "Dropping out without validating demand is reckless speculation, not calculated risk-taking.",
+            "2": "Providing services below cost without a sustainable business model leads to immediate bankruptcy.",
+            "3": "Lobbying for coercive bans is regulatory rent-seeking, not entrepreneurial value creation."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 4: Entrepreneurial Process (Spot, Mobilise, Test, Act, Create Value)"
+        },
+        {
+          "id": "ent211-fnd-cs2-q1",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "intrapreneurship-vs-entrepreneurship",
+            "tradeoffs",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Emeka is a Senior Product Manager at a leading commercial bank in Lagos. He identifies a major untapped market: smallholder farmers in Kaduna and Benue states c...]\n\nIf Emeka chooses Path A (Intrapreneurship inside the commercial bank), what is the greatest structural advantage and greatest structural drawback he will experience?",
+          "options": [
+            "Advantage: Immediate access to the bank's massive capital, existing regulatory licenses, and customer base; Drawback: He will not own the equity/IP, and decisions may be stalled by corporate bureaucracy",
+            "Advantage: He keeps 100% of all future company profits; Drawback: He will be personally liable for all farmer loan defaults",
+            "Advantage: Zero accountability to any managers; Drawback: He is legally prohibited from using any bank computers",
+            "Advantage: The Central Bank of Nigeria will grant him diplomatic immunity; Drawback: Farmers cannot use mobile phones"
+          ],
+          "answer": 0,
+          "explanation": "Intrapreneurs benefit from enormous institutional advantages: existing corporate balance sheets, established compliance/banking licenses, brand reputation, and established distribution. However, the drawbacks are substantial: the bank retains all equity and intellectual property, while risk-averse internal committees and corporate bureaucracy can delay innovation.",
+          "why_wrong": {
+            "1": "Intrapreneurs do not own corporate equity and do not keep all venture profits, nor do they bear personal bankruptcy liability for bank loans.",
+            "2": "Intrapreneurs report directly to corporate executives and are subject to strict corporate oversight.",
+            "3": "CBN does not grant diplomatic immunity, and Nigerian smallholders widely utilize GSM feature phones."
+          },
+          "source": "ENT 211 Infographic Lecture, Slide 2: Entrepreneurship vs. Intrapreneurship"
+        },
+        {
+          "id": "ent211-thy-001",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "frank-knight",
+            "risk-vs-uncertainty",
+            "economic-theories"
+          ],
+          "question": "In his seminal 1921 economic treatise, Frank H. Knight established a fundamental distinction between 'Risk' and 'Uncertainty'. According to Knight, what distinguishes true Uncertainty from Risk?",
+          "options": [
+            "Risk involves situations where outcome probabilities can be mathematically calculated and insured against, whereas Uncertainty involves situations where future odds are fundamentally unmeasurable and non-insurable",
+            "Risk occurs only in government civil service, whereas Uncertainty occurs only in private agriculture",
+            "Risk guarantees 100% financial profit, whereas Uncertainty guarantees 100% bankruptcy",
+            "Risk is eliminated by registering a patent, whereas Uncertainty is eliminated by taking a bank loan"
+          ],
+          "answer": 0,
+          "explanation": "Slide 8 details Knight's theory: 'Risk: Probabilities can be estimated, insurable or plannable. Uncertainty: Outcomes and odds cannot be known, entrepreneurs bear the consequences.' Pure economic profit is the reward the entrepreneur receives for exercising judgment and bearing uninsurable, true uncertainty.",
+          "why_wrong": {
+            "1": "Knight's theory applies across all economic activities, not restricted to civil service or agriculture.",
+            "2": "Risk does not guarantee profit, and uncertainty does not guarantee bankruptcy; uncertainty represents unknown probabilities.",
+            "3": "Neither patents nor bank loans eliminate fundamental market uncertainty."
+          },
+          "source": "Entrepreneurship Theories Deck, Slide 8: Knight: Risk and Uncertainty"
+        },
+        {
+          "id": "ent211-thy-003",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "harvey-leibenstein",
+            "x-inefficiency",
+            "gap-filling"
+          ],
+          "question": "In Harvey Leibenstein's economic theory of entrepreneurship, what is the primary role of the entrepreneur in addressing 'X-Inefficiency'?",
+          "options": [
+            "Acting as a 'gap-filler' and 'input-completer' who mobilizes fragmented, underutilized resources and coordinates bottlenecks to eliminate organizational waste",
+            "Calculating differential calculus equations to predict government tax revenues",
+            "Issuing fiat currency to replace central bank monetary policy",
+            "Shutting down competitive markets to create permanent monopolies"
+          ],
+          "answer": 0,
+          "explanation": "Slide 12 explains Leibenstein's theory: 'Market gap or waste -> Organise fragmented resources -> Better delivery -> Higher productivity.' Leibenstein observed that real-world markets and firms suffer from 'X-inefficiency' (internal slack and friction). The entrepreneur identifies missing operational links and acts as an input-completer and gap-filler to restore productive efficiency.",
+          "why_wrong": {
+            "1": "Predicting tax revenue is the job of treasury econometricians, not entrepreneurial gap-filling.",
+            "2": "Issuing national currency is the exclusive mandate of central banks.",
+            "3": "Gap-filling resolves operational bottlenecks; it does not aim to establish anti-competitive state monopolies."
+          },
+          "source": "Entrepreneurship Theories Deck, Slide 12: Leibenstein: X-Efficiency"
+        },
+        {
+          "id": "ent211-thy-005",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "max-weber",
+            "sociological-theories",
+            "culture"
+          ],
+          "question": "In Max Weber's sociological theory of entrepreneurship, what cultural and religious factor did he identify as historically catalytic in the rise of modern industrial capitalism?",
+          "options": [
+            "The Protestant (Calvinist) Ethic, which framed disciplined hard work as a moral calling and emphasized frugality, savings, and reinvestment of capital over personal luxury",
+            "The feudal monarchical mandate requiring all citizens to pay 90% of their income to royal aristocrats",
+            "The belief that economic profit is a spiritual sin that must be punished by excommunication",
+            "The ancient Roman tradition of relying entirely on gladiator tournaments for public revenue"
+          ],
+          "answer": 0,
+          "explanation": "Slide 10 highlights Weber's thesis: 'Work and wealth: Attitudes shape effort... Saving and investment: Values of conduct. Weber linked religious and cultural orientations to attitudes towards work and saving.' Weber argued that the ascetic Calvinist work ethic treated diligent labor as a divine duty and frowned on wasteful consumer hedonism, encouraging systematic capital accumulation and reinvestment.",
+          "why_wrong": {
+            "1": "Feudal extortion enriched aristocrats who spent on wars and castles, stifling entrepreneurial capital formation.",
+            "2": "Viewing profit as a sin suppressed enterprise; Weber studied how Protestantism *legitimized* rational commercial enterprise.",
+            "3": "Roman gladiators were entertainment, completely unrelated to Weber's sociological analysis of capitalism."
+          },
+          "source": "Entrepreneurship Theories Deck, Slide 10: Weber: Culture and Values"
+        },
+        {
+          "id": "ent211-thy-007",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "effectuation",
+            "saras-sarasvathy",
+            "bird-in-hand"
+          ],
+          "question": "A freshly graduated baker wants to start a commercial cake business in Abuja. Instead of waiting to secure a 10-million Naira commercial bank loan and renting a shop, she begins baking birthday cakes in her mother's kitchen using her existing oven, selling to classmates on WhatsApp, and reinvesting her weekly profits. In Saras Sarasvathy's theory of Effectuation, what principle is she applying?",
+          "options": [
+            "Bird in Hand, which dictates starting with available means (Who am I, What I know, Whom I know) rather than waiting for ideal external resources",
+            "Pilot in the Plane, which requires hiring commercial airline pilots to distribute pastries",
+            "Crazy Quilt, which involves sewing bedsheets to sell alongside birthday cakes",
+            "Neoclassical Causation, which requires executing a 5-year mathematical econometric forecast"
+          ],
+          "answer": 0,
+          "explanation": "Slides 16 and 17 detail Sarasvathy's Effectuation framework: 'Bird in hand: Start with available means (Who am I? What do I know? Whom do I know? What can I do now?). Example: A graduate sells cakes to friends, reinvests, then opens a bakery.' The baker acts immediately using her current means and network rather than waiting for large bank capital.",
+          "why_wrong": {
+            "1": "Pilot in the Plane is an effectuation metaphor meaning 'focus on what you can control', not hiring aviation pilots.",
+            "2": "Crazy Quilt refers to forming self-selecting stakeholder partnerships, not physical sewing of textiles.",
+            "3": "Causation is the opposite of effectuation; it fixes a goal first and demands forecasting all required capital in advance."
+          },
+          "source": "Entrepreneurship Theories Deck, Slides 16-17: Effectuation: Five Principles"
+        },
+        {
+          "id": "ent211-thy-009",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "effectuation-principles",
+            "cloze"
+          ],
+          "question": "Complete the statements regarding Saras Sarasvathy's five principles of Effectuation:\nThe [blank1] principle instructs founders to start with existing means rather than waiting for external funding. The [blank2] principle dictates that an entrepreneur should commit only what they can personally afford to forfeit at each stage. The [blank3] principle focuses on building self-selecting cooperative partnerships, while the [blank4] principle instructs founders to turn unexpected surprises and contingencies into valuable opportunities.",
+          "answer": [
+            "bird in hand",
+            "affordable loss",
+            "crazy quilt",
+            "lemonade"
+          ],
+          "explanation": "Slide 17 outlines the five principles: Bird in hand (available means), Affordable loss (risk only what you can lose), Crazy quilt (partnerships), Lemonade (leverage surprises), and Pilot in the plane (focus on what can be influenced).",
+          "source": "Entrepreneurship Theories Deck, Slide 17: Effectuation: Five Principles"
+        },
+        {
+          "id": "ent211-thy-011",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "sequencing",
+          "difficulty": 3,
+          "tags": [
+            "schumpeter-combinations",
+            "creative-destruction",
+            "sequencing"
+          ],
+          "question": "Arrange the phases of Joseph Schumpeter's Creative Destruction cycle in the correct economic sequence:",
+          "options": [
+            "Entrepreneur introduces a 'new combination' (new technology, product, or business model)",
+            "The innovative solution attracts customers away from established legacy providers",
+            "Older, inefficient firms lose market share and face obsolescence or bankruptcy",
+            "Macroeconomic productivity increases and a higher-efficiency economic equilibrium is established"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "Deck 4 (Slide 7) details the sequence: New technology or model -> Older products replaced -> Weak firms lose customers -> Overall economic productivity improves.",
+          "source": "Entrepreneurship Theories Deck, Slide 7: Schumpeter: Creative Destruction"
+        },
+        {
+          "id": "ent211-thy-013",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "kirzner",
+            "definition"
+          ],
+          "question": "What is 'Kirznerian Alertness', and how does the Kirznerian entrepreneur influence market equilibrium?",
+          "answer": "Kirznerian Alertness is the entrepreneurial ability to spontaneously notice existing price differences, unmet consumer needs, and market gaps without formal search costs. By buying low where resources are undervalued and selling high where demand is unmet (arbitrage), the entrepreneur moves the market closer to equilibrium.",
+          "explanation": "Kirzner emphasizes discovering existing opportunities rather than inventing new products.",
+          "source": "Entrepreneurship Theories Deck, Slide 13: Kirzner: Opportunity Alertness"
+        },
+        {
+          "id": "ent211-thy-015",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "leibenstein",
+            "definition"
+          ],
+          "question": "What is 'X-Inefficiency' in Harvey Leibenstein's theory, and how does the entrepreneur cure it?",
+          "answer": "X-Inefficiency is the failure of firms to achieve maximum productive efficiency due to internal frictions, organizational slack, waste, and fragmented resources. The entrepreneur cures it by acting as an 'input-completer' and 'gap-filler', assembling disjointed parts to eliminate operational waste.",
+          "explanation": "Leibenstein explains why management coordination is entrepreneurial.",
+          "source": "Entrepreneurship Theories Deck, Slide 12: Leibenstein: X-Efficiency"
+        },
+        {
+          "id": "ent211-thy-cs1-q1",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "effectuation",
+            "lemonade-principle",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Two Nile University graduates, Chidi and Zainab, set out to launch rival pastry and catering businesses in Wuse II, Abuja. Their strategic approaches differed c...]\n\nHow did Zainab exemplify Saras Sarasvathy's 'Lemonade Principle' when the government flour restriction occurred?",
+          "options": [
+            "By embracing the unexpected crisis and formulating a novel recipe using local cassava and sweet potato flour to lower costs and create a unique product",
+            "By organizing a street riot demanding that the government subsidize imported Italian wheat",
+            "By taking an additional 50-million Naira high-interest bank loan to buy black-market flour",
+            "By closing her kitchen permanently and emigrating to Canada"
+          ],
+          "answer": 0,
+          "explanation": "The Lemonade Principle states: 'When life gives you lemons, make lemonade'—entrepreneurs treat unexpected surprises, contingencies, and market shocks not as fatal disasters, but as productive inputs and opportunities for novel innovation. Zainab leveraged the flour restriction to innovate a localized, cost-effective cassava pastry recipe.",
+          "why_wrong": {
+            "1": "Political rioting is not an entrepreneurial business model solution.",
+            "2": "Accumulating more toxic debt during an operational crisis violates the Affordable Loss principle.",
+            "3": "Shutting down and fleeing represents total capitulation, not effectual problem-solving."
+          },
+          "source": "Entrepreneurship Theories Deck, Slide 17: Effectuation: Lemonade Principle"
+        },
+        {
+          "id": "ent211-thy-cs2-q1",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "kirzner-vs-leibenstein",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Alaba International Market in Lagos is West Africa's largest electronics commercial hub, housing over 10,000 independent importers, wholesalers, and retail dist...]\n\nWhich entrepreneurship theories best explain the commercial models of Venture Alpha (Obinna) and Venture Beta (Kemi)?",
+          "options": [
+            "Obinna demonstrates Kirznerian Opportunity Alertness and Price Arbitrage; Kemi demonstrates Leibenstein's X-Inefficiency and Gap-Filling role",
+            "Obinna demonstrates Schumpeterian Radical Invention; Kemi demonstrates Weberian Protestant Asceticism",
+            "Obinna demonstrates Hagen's Status Withdrawal; Kemi demonstrates Knightian Insurable Risk",
+            "Both demonstrate identical corporate intrapreneurship funded by international foreign aid"
+          ],
+          "answer": 0,
+          "explanation": "Obinna operates as a classic Kirznerian entrepreneur: he exhibits entrepreneurial alertness to geographical price discrepancies (Alaba vs Onitsha) and acts as an arbitrageur moving the market toward price equilibrium without manufacturing. Kemi operates as a classic Leibensteinian entrepreneur: she identifies organizational waste, friction, and operational slack (X-inefficiency) in freight offloading and acts as an 'input-completer' and 'gap-filler' to coordinate fragmented cart pushers into an efficient logistics system.",
+          "why_wrong": {
+            "1": "Obinna did not invent flat-panel TVs, and Kemi is organizing transport, not practicing religious asceticism.",
+            "2": "Neither venture is driven by ethnic status withdrawal or insurable risk calculations.",
+            "3": "Both are private independent commercial startups, not foreign-aid funded corporate intrapreneurship."
+          },
+          "source": "Entrepreneurship Theories Deck, Slides 12-13: Leibenstein & Kirzner"
+        },
+        {
+          "id": "ent211-inn-001",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "invention-vs-innovation",
+            "definitions"
+          ],
+          "question": "A mechanical engineer in a university laboratory invents a novel solar-powered cassava peeling device and files a patent. However, no factory produces it, no farmers ever use it, and no units are ever sold. According to the ENT 211 curriculum, how should this device be classified?",
+          "options": [
+            "It is an Invention, but NOT an Innovation, because it was never implemented or adopted in a way that created practical commercial value",
+            "It is a Radical Innovation, because obtaining a patent is the sole legal definition of innovation",
+            "It is a Business Model Innovation, because university research always represents commercial enterprise",
+            "It is an Incremental Innovation, because solar energy is an established technology"
+          ],
+          "answer": 0,
+          "explanation": "Slide 10 explicitly distinguishes the two: 'Invention: Creating or discovering something new... Innovation: Implementing an idea in a way that creates practical value. An invention may never be adopted. Innovation requires application and value.' Because the cassava peeler was never commercialized, distributed, or adopted by farmers, it remains an uncommercialized invention.",
+          "why_wrong": {
+            "1": "A patent proves novelty, but without implementation and value capture in the marketplace, it is not an innovation.",
+            "2": "Business model innovation alters value capture architectures; an idle lab prototype does not constitute business model innovation.",
+            "3": "It is not an innovation of any kind until practical adoption and value creation occur."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 10: Make the Distinction (Invention vs. Innovation)"
+        },
+        {
+          "id": "ent211-inn-003",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "business-model-innovation",
+            "types-of-innovation"
+          ],
+          "question": "An agricultural technology firm in Kano manufactures solar irrigation pumps priced at 1,500,000 Naira each, which smallholder farmers cannot afford. The firm restructures its offering: farmers pay zero upfront purchase costs, install the pump for free, and pay 500 Naira per day of water pumped via mobile money. What type of innovation has the firm introduced?",
+          "options": [
+            "Business Model Innovation, by shifting from outright asset sales to a 'Product-as-a-Service' pay-per-use revenue model",
+            "Process Innovation, by forcing farmers to dig irrigation canals manually",
+            "Pure Invention, because water pumps were never used in agriculture before",
+            "Corporate Intrapreneurship, because the firm was funded exclusively by international foreign aid"
+          ],
+          "answer": 0,
+          "explanation": "Slide 11 defines Business Model Innovation as 'A different way to create or earn value (e.g., subscription-based maintenance or pay-as-you-go)'. By replacing traditional capital equipment sales with a pay-per-use operational subscription, the company restructured its entire value proposition and revenue capture model, making the solution accessible to cash-constrained customers.",
+          "why_wrong": {
+            "1": "Manual digging is not an innovative process; it is archaic manual labor.",
+            "2": "Water pumps have existed for centuries; the innovation is in the financial and commercial monetization structure.",
+            "3": "Business model innovation is an organizational strategy, not dependent on foreign aid grants."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 11: Types of Innovation (Business Model)"
+        },
+        {
+          "id": "ent211-inn-005",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "disruptive-innovation",
+            "christensen"
+          ],
+          "question": "According to Clayton Christensen's theory of Disruptive Innovation, how do disruptive innovations typically gain a foothold in an established industry?",
+          "options": [
+            "By entering at the low end of the market or targeting non-consumers with simpler, cheaper, more accessible products that incumbents overlook, then improving quality and migrating upmarket",
+            "By launching products that are immediately five times more expensive than incumbent products and marketed exclusively to luxury billionaires",
+            "By acquiring all competitor patents through government antitrust lawsuits",
+            "By building identical clones of incumbent products and selling them through the exact same distribution channels at the same price"
+          ],
+          "answer": 0,
+          "explanation": "Clayton Christensen's classic model shows that disruptive innovations originate in low-end or new-market footholds. Established incumbents typically ignore these low-margin segments. The entrant improves over time, satisfies higher-tier demands, and eventually displaces the established market leaders (e.g., agency banking POS operators serving rural unbanked populations before taking merchant market share from big banks).",
+          "why_wrong": {
+            "1": "Luxury high-cost launches represent sustaining high-end products, the direct opposite of low-end disruptive footholds.",
+            "2": "Disruption is an operational and commercial market trajectory, not a legal antitrust lawsuit.",
+            "3": "Cloning products at identical prices is pure price competition without disruptive technological or business model mechanisms."
+          },
+          "source": "Strategic Innovation Literature & ENT 211 Lecture Notes, Slide 11"
+        },
+        {
+          "id": "ent211-inn-007",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "incremental-vs-radical",
+            "novelty"
+          ],
+          "question": "To be classified as an innovation in business, a new product must always involve a groundbreaking, patentable scientific discovery that changes the entire world.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "explanation": "False. Over 85% of commercial innovations are 'incremental innovations'—continuous, small-scale improvements, packaging changes, workflow optimizations, or customer service enhancements. As Slide 10 emphasizes: 'Innovation requires application and value; it does not always require a completely new invention.'",
+          "why_wrong": {
+            "0": "Innovation does not require radical invention; modest, incremental enhancements that create practical value qualify fully as innovations."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 10: Make the Distinction"
+        },
+        {
+          "id": "ent211-inn-009",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "innovation-process",
+            "triad",
+            "cloze"
+          ],
+          "question": "Complete the statements regarding the core nature of innovation:\nInnovation consists of a three-stage progression: it begins with an [blank1] representing a new possibility, requires [blank2] putting that concept into operational practice, and culminates in [blank3] representing a useful, captured economic outcome. While [blank4] is the discovery or creation of something entirely new, innovation is the successful commercial application of ideas.",
+          "answer": [
+            "idea",
+            "implementation",
+            "value",
+            "invention"
+          ],
+          "explanation": "Slide 9 outlines the three-stage progression: IDEA -> IMPLEMENTATION -> VALUE. Slide 10 defines Invention as creating something new, while Innovation is practical value implementation.",
+          "source": "ENT 211 Lecture Notes, Slides 9-10: Core Concept & Invention vs Innovation"
+        },
+        {
+          "id": "ent211-inn-011",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "sequencing",
+          "difficulty": 3,
+          "tags": [
+            "disruptive-innovation",
+            "trajectory",
+            "sequencing"
+          ],
+          "question": "Arrange the phases of Clayton Christensen's Disruptive Innovation model in chronological order from emergence to market dominance:",
+          "options": [
+            "Entrant launches a cheaper, simpler product targeting low-end or unserved non-consumers",
+            "Established incumbents ignore the entrant because profit margins in that segment are low",
+            "Entrant steadily improves product quality, reliability, and features over time",
+            "Entrant migrates upmarket, attracting mainstream customers and displacing the incumbent"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "Christensen's theory follows a predictable sequence: (1) low-end or new-market entry, (2) incumbent complacency and abandonment of low-margin tiers, (3) quality and technological improvement by the entrant, and (4) upmarket migration that unseats the mainstream incumbent.",
+          "source": "Strategic Innovation & Christensen Disruption Model"
+        },
+        {
+          "id": "ent211-inn-013",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "invention-vs-innovation"
+          ],
+          "question": "State two major differences between an Invention and an Innovation.",
+          "answer": "1. Nature: Invention is the creation or discovery of something new; Innovation is the practical implementation of an idea.\n2. Commercial Outcome: An invention may languish in a lab and create zero economic value; an innovation must achieve market adoption and generate tangible customer/business value.",
+          "explanation": "Invention does not guarantee adoption; innovation inherently involves commercial and practical utility.",
+          "source": "ENT 211 Lecture Notes, Slide 10: Invention vs Innovation"
+        },
+        {
+          "id": "ent211-inn-015",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "types-of-innovation"
+          ],
+          "question": "List the five distinct forms/types of innovation defined in the ENT 211 curriculum.",
+          "answer": "1. Product Innovation (new or improved physical goods)\n2. Process Innovation (better ways to do work/operations)\n3. Service Innovation (enhanced customer experience)\n4. Marketing Innovation (novel pricing, packaging, placement, or promotion)\n5. Business Model Innovation (different ways to create and earn value).",
+          "explanation": "An enterprise can leverage multiple forms of innovation concurrently.",
+          "source": "ENT 211 Lecture Notes, Slide 11: Forms Innovation Can Take"
+        },
+        {
+          "id": "ent211-inn-cs1-q1",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "disruptive-innovation",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Prior to 2018 in Nigeria, traditional commercial banks required customers to visit physical brick-and-mortar branches, stand in long queues, and fill paper depo...]\n\nHow does the rapid rise of agency banking in Nigeria demonstrate Clayton Christensen's theory of Disruptive Innovation?",
+          "options": [
+            "It entered by serving low-income, rural, and unbanked populations that traditional banks ignored as unprofitable, established a low-cost distribution model via retail shopkeepers, and eventually captured mainstream transaction volume from traditional bank branches",
+            "It was financed entirely by the United Nations to give free money to citizens without charging any transaction fees",
+            "It required every Nigerian citizen to purchase a 500,000-Naira mainframe computer to withdraw 2,000 Naira cash",
+            "Traditional banks voluntarily decided to shut down all operations because banking was no longer legal in Nigeria"
+          ],
+          "answer": 0,
+          "explanation": "This is textbook Disruptive Innovation: agency banking began by targeting the unbanked and underserved segments deemed unprofitable by high-overhead traditional banks. Using low-cost POS terminals and shared shopkeeper infrastructure, they offered greater convenience. As the agent network grew dense and reliable, mainstream urban consumers also abandoned bank branches in favor of corner POS agents, disrupting established banking operations.",
+          "why_wrong": {
+            "1": "Agency banking is a profitable commercial enterprise driven by fintech startups, not a UN charity grant.",
+            "2": "Agency banking uses affordable POS terminals operated by shopkeepers, not individual customer mainframes.",
+            "3": "Traditional banks fought to maintain branch deposits and launched reactive agent networks when they realized they were being disrupted."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 11 & Strategic Innovation Theory"
+        },
+        {
+          "id": "ent211-inn-cs2-q1",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "sources-of-innovation",
+            "drucker",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Nnaemeka Ikegwuonu, an entrepreneur in Owerri, Imo State, observed a heartbreaking crisis in Nigerian rural markets: smallholder tomato and vegetable farmers lo...]\n\nWhich of Peter Drucker's systematic Sources of Innovation did Nnaemeka primarily exploit when conceiving ColdHubs?",
+          "options": [
+            "Process Need, by identifying and solving a glaring bottleneck and massive waste in the agricultural supply chain workflow",
+            "Unexpected Failure of the Nigerian stock market",
+            "New Knowledge arising from the discovery of nuclear fission",
+            "Changes in Consumer Fashion regarding European winter coats"
+          ],
+          "answer": 0,
+          "explanation": "Drucker defined 'Process Need' as innovation driven by an obvious bottleneck, missing link, or severe pain point in an existing operational process. Post-harvest vegetable spoilage (losing 40-50% of crops due to lack of field cooling) was a critical broken link in Nigeria's food supply chain. ColdHubs innovated directly to solve this process bottleneck.",
+          "why_wrong": {
+            "1": "Stock market fluctuations had zero connection to rural tomato post-harvest losses.",
+            "2": "ColdHubs uses established solar photovoltaic panels, not nuclear fission.",
+            "3": "Winter coat fashion has no relevance to Nigerian agricultural food preservation."
+          },
+          "source": "Peter Drucker's 7 Sources of Innovation & ENT 211 Lecture Notes, Slide 11"
+        }
+      ]
+    },
+    {
+      "id": "ent211-mock-2",
+      "title": "ENT 211 Entrepreneurship & Innovation — Midterm Examination Mock 2",
+      "description": "Advanced analytical exam simulation covering David McClelland's n-Ach, Max Weber's cultural thesis, Everett Hagen's status withdrawal, Harvey Leibenstein's X-inefficiency, Saras Sarasvathy's Effectuation (Bird in Hand, Affordable Loss, Lemonade), Clayton Christensen's Disruptive Innovation, PESTEL environmental scanning, and Six Pillars of Feasibility assessment.",
+      "duration_minutes": 60,
+      "total_marks": 60,
+      "questions": [
+        {
+          "id": "ent211-fnd-002",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "key-thinkers",
+            "peter-drucker",
+            "opportunity"
+          ],
+          "question": "Which prominent management thinker defined the entrepreneur as an individual who 'always searches for change, responds to it, and exploits it as an opportunity'?",
+          "options": [
+            "Peter F. Drucker",
+            "Joseph A. Schumpeter",
+            "Frank H. Knight",
+            "Robert D. Hisrich"
+          ],
+          "answer": 0,
+          "explanation": "Peter Drucker famously defined the entrepreneur in terms of systematic change: entrepreneurs do not cause change by themselves, but they constantly search for change, respond to it, and treat it as a potential opportunity to create new value.",
+          "why_wrong": {
+            "1": "Joseph Schumpeter emphasized 'new combinations' and creative destruction.",
+            "2": "Frank Knight emphasized the distinction between risk and uninsurable uncertainty.",
+            "3": "Robert Hisrich highlighted creating something new while assuming financial, psychic, and social risks."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 5: Key Thinkers"
+        },
+        {
+          "id": "ent211-fnd-004",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "intrapreneurship",
+            "corporate-venturing"
+          ],
+          "question": "A senior software engineer at Access Bank notices that small retail merchants struggle with POS terminal network downtime. She uses the bank's internal R&D budget, compliance team, and banking license to develop an offline USSD-based payment product for the bank. What is this engineer's role, and what is her primary risk profile?",
+          "options": [
+            "An Intrapreneur; she leverages corporate resources and brand equity, while her personal financial capital is shielded from venture failure",
+            "An Independent Entrepreneur; she bears full personal bankruptcy risk and owns 100% of the resulting patent rights",
+            "A Venture Capitalist; she provides equity financing to external startups in exchange for board seats",
+            "A Speculator; she is gambling on currency exchange fluctuations without creating economic value"
+          ],
+          "answer": 0,
+          "explanation": "An intrapreneur (corporate entrepreneur) innovates and creates new commercial solutions *within* an established organization. The intrapreneur benefits from corporate capital, infrastructure, and salary stability (shielded personal financial risk), though the resulting intellectual property and equity belong to the corporation.",
+          "why_wrong": {
+            "1": "An independent entrepreneur operates outside a corporation and bears direct personal financial liability.",
+            "2": "A venture capitalist is an institutional investor, not an employee creating internal products.",
+            "3": "Speculation involves betting on price swings, not engineering payment systems."
+          },
+          "source": "ENT 211 Infographic Lecture, Slide 2: Entrepreneurship vs. Intrapreneurship"
+        },
+        {
+          "id": "ent211-fnd-006",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "africapitalism",
+            "tony-elumelu"
+          ],
+          "question": "What is 'Africapitalism', as pioneered by Nigerian entrepreneur and philanthropist Tony Elumelu?",
+          "options": [
+            "The economic philosophy that Africa's private sector must lead the continent's socioeconomic transformation through long-term strategic investments that create both economic prosperity and social wealth",
+            "A policy advocating that all African businesses should be nationalized and owned exclusively by the federal government",
+            "A financial trading model advocating that African startups should only accept foreign aid grants and avoid generating commercial profits",
+            "A doctrine stating that entrepreneurship is biologically inherited and cannot be taught or cultivated"
+          ],
+          "answer": 0,
+          "explanation": "Africapitalism, championed by Tony Elumelu, is the economic philosophy that the private sector—specifically African entrepreneurs making long-term investments in key sectors—is the primary engine that will create sustainable economic growth, generate jobs, and drive societal development across Africa.",
+          "why_wrong": {
+            "1": "Africapitalism champions the *private sector* and free enterprise, not state nationalization.",
+            "2": "Africapitalism emphasizes commercial viability, self-reliance, and sustainable private investment over foreign aid dependency.",
+            "3": "Course notes explicitly emphasize that entrepreneurial behaviors are developable skills, not genetic traits."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 6 & Nigerian Case Exemplars"
+        },
+        {
+          "id": "ent211-fnd-008",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "economic-development",
+            "smes",
+            "linkages"
+          ],
+          "question": "How does entrepreneurship contribute to the macroeconomic development of Nigeria through 'forward and backward linkages'?",
+          "options": [
+            "By purchasing local raw materials from agricultural farmers (backward linkage) and supplying processed inputs to retail distributors and bakeries (forward linkage)",
+            "By borrowing US Dollars from international hedge funds and depositing them in offshore tax havens",
+            "By replacing all human factory employees with imported robots to eliminate the domestic labor force",
+            "By strictly trading in imported finished luxury items without creating any local processing facilities"
+          ],
+          "answer": 0,
+          "explanation": "Economic linkages describe the ripple effects of enterprise: a backward linkage occurs when an enterprise creates demand for local suppliers of raw materials (e.g., a cassava flour mill buying from local farmers). A forward linkage occurs when the enterprise produces intermediate goods used by other downstream businesses (e.g., supplying flour to local bakeries).",
+          "why_wrong": {
+            "1": "Capital flight to offshore havens depletes domestic liquidity, the opposite of economic development.",
+            "2": "Eliminating jobs without redeployment harms consumer purchasing power and domestic demand.",
+            "3": "Pure importation of finished goods creates outward foreign currency drain without generating domestic backward linkages."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 3: Learning Objectives & Economic Impact"
+        },
+        {
+          "id": "ent211-fnd-010",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "key-thinkers",
+            "matching"
+          ],
+          "question": "Match each scholar of entrepreneurship to their core theoretical contribution:",
+          "options": [
+            "Joseph A. Schumpeter",
+            "Peter F. Drucker",
+            "Robert D. Hisrich",
+            "Howard Stevenson"
+          ],
+          "answer": [
+            "Emphasized 'new combinations' of resources and creative destruction as the engine of economic progress",
+            "Stated that entrepreneurs systematically search for change, respond to it, and exploit it as an opportunity",
+            "Highlighted creating something new with value while assuming financial, psychic, and social risks",
+            "Defined entrepreneurship as the pursuit of opportunity beyond resources currently controlled"
+          ],
+          "explanation": "Schumpeter introduced new combinations and creative destruction. Drucker emphasized searching for change as opportunity. Hisrich defined value creation under financial, psychic, and social risks. Stevenson formulated the Harvard definition of pursuing opportunity beyond controlled resources.",
+          "source": "ENT 211 Lecture Notes, Slide 5: Key Thinkers & Academic Literature"
+        },
+        {
+          "id": "ent211-fnd-012",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "entrepreneurship",
+            "definition"
+          ],
+          "question": "What are the four essential elements that define entrepreneurship in the ENT 211 curriculum?",
+          "answer": "1. Opportunity (identifying unmet needs or gaps)\n2. Resources (assembling and mobilizing capital, talent, and tools)\n3. Calculated Risk / Uncertainty (acting under incomplete information)\n4. Value Creation (producing economic and societal benefits).",
+          "explanation": "Entrepreneurship is fundamentally the synthesis of opportunity, resources, risk, and value creation.",
+          "source": "ENT 211 Lecture Notes, Slides 4-5"
+        },
+        {
+          "id": "ent211-fnd-014",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "calculated-risk",
+            "definition"
+          ],
+          "question": "What is meant by 'Calculated Risk' in the entrepreneurial mindset?",
+          "answer": "Calculated risk is the deliberate process of identifying, analyzing, and mitigating potential business downsides before committing resources, ensuring that the estimated probability and magnitude of the reward significantly outweigh the controllable loss.",
+          "explanation": "It separates disciplined entrepreneurs from reckless gamblers.",
+          "source": "ENT 211 Lecture Notes, Slide 7: Characteristics of Successful Entrepreneurs"
+        },
+        {
+          "id": "ent211-fnd-016",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "entrepreneur-vs-manager",
+            "strategic-orientation",
+            "analysis"
+          ],
+          "question": "Critically analyze the strategic differences between an Entrepreneur and a Traditional Corporate Manager across four dimensions: Strategic Focus, Risk Orientation, Attitude Toward Change, and Resource Allocation.",
+          "answer": "1. Strategic Focus: The Entrepreneur is opportunity-driven, constantly searching the external environment for market gaps, customer pain points, and unmet needs regardless of resources currently owned. In contrast, the Traditional Manager is resource-driven, focusing internally on optimizing, safeguarding, and allocating the resources already controlled by the firm.\n\n2. Risk Orientation: The Entrepreneur actively embraces calculated risk and operates under fundamental uncertainty, accepting the possibility of business failure in pursuit of exponential growth. The Manager is risk-averse, focusing on controlling, mitigating, and eliminating operational variance to guarantee steady, predictable performance.\n\n3. Attitude Toward Change: The Entrepreneur acts as a disruptive agent of change, challenging existing industry paradigms, legacy business models, and conventional practices. The Manager seeks stability, continuity, and predictability, enforcing standardized operating procedures (SOPs) and hierarchical rules.\n\n4. Resource Allocation: The Entrepreneur operates with lean, flexible commitments, staging resources in milestones and leveraging external partnerships to keep overhead low. The Manager allocates capital in formal, rigid annual budgetary cycles designed to protect administrative departmental boundaries.",
+          "explanation": "Understanding this distinction is vital: ventures need entrepreneurial vision to be born, but managerial discipline to scale sustainably.",
+          "marking_points": [
+            "Contrasts strategic focus: opportunity-driven (entrepreneur) vs resource-driven/preservation (manager)",
+            "Contrasts risk posture: calculated risk-taker under uncertainty vs risk-minimizer seeking predictability",
+            "Contrasts attitude toward change: disruptive change agent vs guardian of stability and standardized procedures",
+            "Contrasts resource allocation: lean, milestone-based staging vs formal, rigid annual budgeting cycles",
+            "Synthesizes that successful growing enterprises require both mindsets to survive and scale"
+          ],
+          "source": "ENT 211 Lecture Notes, Slide 8: Entrepreneur vs. Manager Matrix"
+        },
+        {
+          "id": "ent211-fnd-cs1-q2",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "value-creation",
+            "entrepreneurship-definition",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Amina is a 200-level Computer Science student at Nile University of Nigeria in Abuja. She observed that students living in on-campus hostels waste an average of...]\n\nUsing the 5-stage entrepreneurial framework from ENT 211 (Spot, Mobilise, Test, Act, Create Value), evaluate how Amina transformed everyday student friction into sustainable economic and societal value.",
+          "answer": "Amina executed the complete 5-stage entrepreneurial value-creation process:\n\n1. SPOT Opportunity: She identified everyday customer friction—hostel students wasting 4 hours every Saturday queuing or hand-washing clothes, generating stress and missed study hours.\n\n2. MOBILISE Resources: Instead of letting lack of personal capital stop her, she assembled resources creatively: negotiated off-peak bulk commercial discounts with an existing off-campus laundromat, hired two students for pickup logistics, and mobilized WhatsApp/flyers for marketing.\n\n3. TEST Assumptions: She executed a low-cost, 2-week pilot with 35 students to validate the critical assumption: will students pay 2,500 Naira for door-to-door convenience and reliability?\n\n4. ACT on Calculated Risk: She committed personal time and operational effort, accepting the risk of non-delivery or laundry damage while hedging capital risk through partnering.\n\n5. CREATE Value: She delivered tangible customer value (saving students 4 hours of tedious labor and providing clean clothes reliably), generated employment and stipends for two student assistants, generated incremental revenue for the local commercial laundry, and captured a net profit of 38,000 Naira.",
+          "explanation": "Amina's venture represents true entrepreneurship: turning an observed problem into coordinated resources, tested assumptions, and mutual value.",
+          "marking_points": [
+            "Identifies Stage 1 (Spot): Unmet student need and Saturday laundry time friction",
+            "Identifies Stage 2 (Mobilise): Assembling partner facility, student workers, and marketing without owning machines",
+            "Identifies Stage 3 (Test): 2-week pilot validating student willingness to pay 2,500 Naira",
+            "Identifies Stage 4 (Act): Taking measured risk and managing service execution",
+            "Identifies Stage 5 (Create Value): Time savings for students, income for student workers, revenue for partner, and venture profit"
+          ],
+          "source": "ENT 211 Lecture Notes, Slide 4 & Entrepreneurial Thinking Deck"
+        },
+        {
+          "id": "ent211-fnd-cs2-q2",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_core_concepts",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "entrepreneurship-vs-intrapreneurship",
+            "risk-return",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Emeka is a Senior Product Manager at a leading commercial bank in Lagos. He identifies a major untapped market: smallholder farmers in Kaduna and Benue states c...]\n\nCompare Path A (Intrapreneurship) and Path B (Independent Entrepreneurship) for Emeka in terms of personal financial risk, speed of decision-making, and long-term reward potential. Recommend which path he should take if his primary personal goal is building generational wealth and corporate autonomy.",
+          "answer": "Comparative Analysis for Emeka:\n\n1. Personal Financial Risk:\n- Path A (Intrapreneurship): Minimal personal risk. Emeka draws a steady corporate executive salary, benefits, and pension. If AgroTrust fails or suffers high farmer loan defaults, the bank absorbs the balance-sheet loss.\n- Path B (Entrepreneurship): High personal risk. Emeka forfeits his salary, invests personal savings, faces potential bankruptcy, and must secure dilutive venture funding.\n\n2. Speed of Decision-Making & Agility:\n- Path A: Slow and bureaucratic. Every algorithm modification, lending criteria shift, or marketing campaign requires approval through credit committees, compliance, legal, and risk management divisions.\n- Path B: Highly agile and rapid. As founder, Emeka can pivot within hours based on real-time farmer feedback and field data.\n\n3. Long-Term Reward Potential & Wealth Creation:\n- Path A: Capped upside. Emeka may receive a promotion, bonus, or modest corporate incentive, but the bank owns the multi-billion Naira valuation and IP.\n- Path B: Unlimited equity upside. Emeka retains significant founder equity; if AgroTrust scales across West Africa or is acquired, he achieves substantial wealth.\n\nRecommendation: If Emeka's primary objective is building generational wealth and achieving complete corporate autonomy, he must choose Path B (Independent Entrepreneurship). The equity ownership, strategic freedom, and unlimited upside of an independent venture are prerequisites for building generational wealth, whereas intrapreneurship primarily enriches corporate shareholders.",
+          "explanation": "Autonomous entrepreneurship offers limitless equity returns and rapid decision agility at the cost of personal financial risk.",
+          "marking_points": [
+            "Compares personal risk: shielded corporate salary/benefits in Path A vs personal savings/bankruptcy exposure in Path B",
+            "Compares decision-making agility: bureaucratic committee gridlock in Path A vs rapid founder pivoting in Path B",
+            "Compares wealth upside: capped bonus/promotion in Path A vs exponential equity ownership in Path B",
+            "Provides clear recommendation for Path B based on the criteria of generational wealth and autonomy",
+            "Justifies why corporate intrapreneurship cannot provide true equity independence"
+          ],
+          "source": "ENT 211 Lecture Notes, Slide 8 & Infographic Lecture, Slide 2"
+        },
+        {
+          "id": "ent211-thy-002",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "israel-kirzner",
+            "opportunity-alertness",
+            "arbitrage"
+          ],
+          "question": "How does Israel Kirzner's Austrian perspective on the entrepreneur differ fundamentally from Joseph Schumpeter's perspective?",
+          "options": [
+            "Kirzner views the entrepreneur as an alert arbitrageur who discovers existing price discrepancies and moves the market toward equilibrium, whereas Schumpeter views the entrepreneur as a disruptive innovator who destroys economic equilibrium through new combinations",
+            "Kirzner believes entrepreneurs only operate in state-run socialist economies, whereas Schumpeter believes entrepreneurs only operate in agriculture",
+            "Kirzner focuses exclusively on genetic hereditary psychology, whereas Schumpeter focuses exclusively on labor union strikes",
+            "Kirzner argues that all entrepreneurs must fail, whereas Schumpeter argues that entrepreneurs never fail"
+          ],
+          "answer": 0,
+          "explanation": "This is a classic theoretical contrast: Schumpeter's entrepreneur is a revolutionary who disrupts circular flow and destroys market equilibrium through innovative 'new combinations'. Kirzner's entrepreneur, by contrast, possesses 'entrepreneurial alertness' to existing market imperfections and unnoticed gaps, acting as an arbitrageur whose actions restore market equilibrium.",
+          "why_wrong": {
+            "1": "Both thinkers analyzed free-market capitalist dynamics, not state socialism vs agriculture.",
+            "2": "Neither thinker focused on genetics or labor strikes; both were prominent economic theorists.",
+            "3": "Neither argued that entrepreneurs are guaranteed to fail or guaranteed to succeed."
+          },
+          "source": "Entrepreneurship Theories Deck, Slides 6, 13 & Comparative Matrix"
+        },
+        {
+          "id": "ent211-thy-004",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "david-mcclelland",
+            "need-for-achievement",
+            "psychological-theories"
+          ],
+          "question": "According to psychologist David McClelland's Acquired Needs Theory, which specific psychological motive is most strongly correlated with successful entrepreneurial behavior?",
+          "options": [
+            "High Need for Achievement (n-Ach), characterized by setting challenging but attainable goals and demanding immediate feedback on performance",
+            "High Need for Affiliation (n-Aff), characterized by prioritizing social popularity and avoiding confrontation at all costs",
+            "High Need for Power (n-Power), characterized by seeking dictatorial political control over citizens",
+            "High Fear of Failure, characterized by refusing to make any business decisions without unanimous committee consent"
+          ],
+          "answer": 0,
+          "explanation": "Slide 9 outlines McClelland's Need for Achievement (n-Ach): 'Challenging goals: Difficult but attainable targets. Personal responsibility: Owns the results. Seeks feedback: Wants to know performance. Solves problems alone: Prefers independent effort. Keeps improving: Looks for better ways.' Entrepreneurs consistently exhibit high n-Ach.",
+          "why_wrong": {
+            "1": "High need for affiliation prioritizes pleasing others over making tough, rational business choices.",
+            "2": "High personalized power seeks domination over people rather than problem-solving and venture building.",
+            "3": "Fear of failure causes paralysis and risk aversion, the antithesis of the entrepreneurial mindset."
+          },
+          "source": "Entrepreneurship Theories Deck, Slide 9: McClelland: Need for Achievement"
+        },
+        {
+          "id": "ent211-thy-006",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "everett-hagen",
+            "status-withdrawal",
+            "sociological-theories"
+          ],
+          "question": "Everett Hagen proposed the theory of 'Status Withdrawal' to explain the emergence of entrepreneurial activity among specific demographic groups. What is the central premise of Hagen's theory?",
+          "options": [
+            "When a traditional social or ethnic group experiences a historical loss of social status and prestige, its members channel their creative frustrations into commercial enterprise to regain societal recognition",
+            "Governments must officially revoke the citizenship of business owners to encourage innovation",
+            "Entrepreneurs only emerge from the highest hereditary aristocratic ruling families",
+            "Status withdrawal occurs when commercial banks withdraw credit cards from college students"
+          ],
+          "answer": 0,
+          "explanation": "Slide 11 outlines Hagen's theory: 'Loss of status -> Dissatisfaction -> New skills, independence -> New venture.' When an established group suffers displacement or loses societal prestige, normal avenues of advancement are blocked, motivating ambitious individuals to channel their drive into independent enterprise, trade, and technical innovation (e.g., historical merchant minorities).",
+          "why_wrong": {
+            "1": "Hagen did not advocate stripping citizenship; he analyzed historical sociological displacement.",
+            "2": "Hagen demonstrated that dominant ruling aristocracies rarely innovate because they are invested in preserving the status quo.",
+            "3": "Status withdrawal refers to social prestige and class displacement, not bank credit card limits."
+          },
+          "source": "Entrepreneurship Theories Deck, Slide 11: Hagen: Status Withdrawal"
+        },
+        {
+          "id": "ent211-thy-008",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "effectuation-vs-causation"
+          ],
+          "question": "In entrepreneurial theory, 'Causation' and 'Effectuation' represent identical decision-making logics, both requiring detailed 5-year financial projections before any operational action can be taken.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "explanation": "False. Slide 16 explicitly contrasts them: Causation begins with a predetermined effect/goal and seeks to identify and assemble the necessary means through prediction and planning. Effectuation begins with existing means (Who I am, What I know, Whom I know) and allows goals to emerge dynamically through action, partnerships, and leveraging contingencies without relying on predictive forecasts.",
+          "why_wrong": {
+            "0": "Causation is predictive and goal-driven; Effectuation is non-predictive, means-driven, and adaptive."
+          },
+          "source": "Entrepreneurship Theories Deck, Slide 16: Effectuation: Contrast with Causal Approaches"
+        },
+        {
+          "id": "ent211-thy-010",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "theories-map",
+            "matching"
+          ],
+          "question": "Match each scholar to the primary theoretical family and concept they represent in the ENT 211 curriculum:",
+          "options": [
+            "Frank H. Knight",
+            "David McClelland",
+            "Max Weber",
+            "Saras Sarasvathy"
+          ],
+          "answer": [
+            "Economic Theory: Unmeasurable uncertainty as the source of entrepreneurial profit",
+            "Psychological Theory: Need for Achievement (n-Ach) and moderate risk preference",
+            "Sociological Theory: Religious work ethics, cultural values, and capital accumulation",
+            "Action Framework: Effectual logic, affordable loss, and means-driven venture creation"
+          ],
+          "explanation": "Knight represents economic uncertainty. McClelland represents psychological motivation (n-Ach). Weber represents sociological and cultural values. Sarasvathy represents effectuation action logic.",
+          "source": "Entrepreneurship Theories Deck, Slides 3 & 20: Three Families of Explanation"
+        },
+        {
+          "id": "ent211-thy-012",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "theories",
+            "classification"
+          ],
+          "question": "Name the three major families of entrepreneurship theories outlined in ENT 211.",
+          "answer": "1. Economic Theories (Schumpeter, Knight, Kirzner, Leibenstein, Drucker)\n2. Psychological Theories (McClelland)\n3. Sociological and Cultural Theories (Weber, Hagen).",
+          "explanation": "Slide 20 groups all theories into Economic, Psychological, and Sociological explanations.",
+          "source": "Entrepreneurship Theories Deck, Slide 20: Three Families of Explanation"
+        },
+        {
+          "id": "ent211-thy-014",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "effectuation",
+            "principles"
+          ],
+          "question": "List the five core principles of Saras Sarasvathy's Effectuation framework.",
+          "answer": "1. Bird in Hand (start with existing means)\n2. Affordable Loss (risk only what you can afford to lose)\n3. Crazy Quilt (build cooperative stakeholder partnerships)\n4. Lemonade (leverage unexpected contingencies and surprises)\n5. Pilot in the Plane (focus on controllable actions rather than predicting the future).",
+          "explanation": "These principles describe how expert entrepreneurs make decisions under deep uncertainty.",
+          "source": "Entrepreneurship Theories Deck, Slide 17: Effectuation: Five Principles"
+        },
+        {
+          "id": "ent211-thy-016",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "theories-comparison",
+            "multi-perspective",
+            "analysis"
+          ],
+          "question": "Why is it impossible for any single academic theory to fully explain the phenomenon of entrepreneurship? Illustrate how Economic, Psychological, and Action theories must be combined to analyze a growing enterprise.",
+          "answer": "Entrepreneurship is a multifaceted, multidimensional human and socioeconomic endeavor. Relying on a single theoretical lens produces an incomplete, distorted picture:\n\n1. Limits of Individual Perspectives:\n- Economic theories (Schumpeter, Knight, Kirzner) explain *what* happens in the market (arbitrage, innovation, uncertainty bearing), but fail to explain *who* is motivated to step forward or *why* specific individuals persevere while others quit.\n- Psychological theories (McClelland's n-Ach) explain internal human drive, motivation, and goal preferences, but ignore external macroeconomic barriers, regulatory policies, capital access, and technological shifts.\n- Sociological theories (Weber, Hagen) explain macro-cultural values, family networks, and status deprivation, but cannot explain why two siblings from the same cultural background make completely different entrepreneurial choices.\n\n2. Synthesis in a Single Venture Journey (Slide 23):\nConsider a growing bakery enterprise in Nigeria:\n- Effectuation (Sarasvathy): The founder starts with the oven she already owns and bakes for friends (Bird in Hand), risking only her monthly pocket allowance (Affordable Loss).\n- Kirznerian Alertness (Kirzner): She notices that university students studying late at night have no access to fresh snacks, filling the unmet nocturnal demand.\n- Need for Achievement (McClelland): Driven by high n-Ach, she sets rigorous daily sales targets, tracks every customer review, and continuously refines her recipes.\n- Resource-Based View (RBV): As revenue grows, she builds proprietary delivery routines, brand reputation, and trusted relationships with flour suppliers, securing a sustainable competitive advantage.\n\nConclusion: A robust understanding of entrepreneurship requires integrating economic market signals, psychological motivation, social context, and effectual action logic.",
+          "explanation": "Comprehensive entrepreneurship research requires synthesizing economic, psychological, and action-based lenses.",
+          "marking_points": [
+            "Explains why economic theories alone are insufficient (explain market mechanisms but not personal motivation)",
+            "Explains why psychological theories alone are insufficient (explain personality but ignore market structures and policy)",
+            "Explains why sociological theories alone are insufficient (explain cultural context but not individual variation)",
+            "Synthesizes multiple theories across a practical venture journey (e.g., Effectuation + Kirzner + McClelland + RBV)",
+            "Concludes that entrepreneurship requires an integrated multi-disciplinary perspective"
+          ],
+          "source": "Entrepreneurship Theories Deck, Slides 20, 22-23: Combining Theories"
+        },
+        {
+          "id": "ent211-thy-cs1-q2",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "causation-vs-effectuation",
+            "affordable-loss",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Two Nile University graduates, Chidi and Zainab, set out to launch rival pastry and catering businesses in Wuse II, Abuja. Their strategic approaches differed c...]\n\nContrast Chidi's Causal predictive approach with Zainab's Effectual approach in the context of Knightian Uncertainty and the Affordable Loss principle. Why did Chidi's strategy fail catastrophically in the Nigerian macroeconomic environment?",
+          "answer": "This case vividly contrasts Causal planning against Effectual execution under conditions of Knightian Uncertainty:\n\n1. Knightian Uncertainty vs Causal Planning:\nChidi committed the fatal error of applying Causal, predictive logic to an environment dominated by true Knightian Uncertainty. In developing markets like Nigeria, macroeconomic shocks (currency devaluations, import bans, fuel price spikes, power outages) are fundamentally unmeasurable and unpredictable. By borrowing 15 million Naira at 28% interest based on a rigid 5-year forecast, Chidi committed massive fixed overhead costs to an unalterable trajectory. When reality diverged from his forecast, his fixed commitments and debt obligations triggered catastrophic bankruptcy.\n\n2. Effectuation & Affordable Loss:\nIn contrast, Zainab embraced Knightian Uncertainty using Effectual logic. Guided by the Affordable Loss principle, she invested only 150,000 Naira—an amount she could completely forfeit without personal financial ruin. Because she carried zero bank debt and avoided rigid long-term leases, her venture was structurally agile and anti-fragile.\n\n3. Leverage of Contingencies:\nWhen the flour embargo hit, Chidi was paralyzed by asset-specific Italian ovens and debt covenants. Zainab, unencumbered by debt, treated the surprise as an opportunity (Lemonade Principle), partnering with local farmers (Crazy Quilt) to pioneer cassava-based baking. Her effectual stance turned external volatility into a competitive advantage.",
+          "explanation": "Predictive planning fails under severe macroeconomic uncertainty; effectual decision-making preserves agility and survival.",
+          "marking_points": [
+            "Explains how Knightian Uncertainty makes rigid 5-year forecasting dangerous in volatile macroeconomic environments",
+            "Contrasts Chidi's high-debt fixed commitment (Causation) with Zainab's lean, means-driven start (Bird in Hand)",
+            "Explains the Affordable Loss principle (Zainab risked only 150,000 Naira personal savings vs Chidi's 15m debt)",
+            "Contrasts agility under shock: Chidi's debt paralysis vs Zainab's Lemonade principle pivot to local cassava flour",
+            "Concludes why Effectuation is superior for startups operating under conditions of deep uncertainty"
+          ],
+          "source": "Entrepreneurship Theories Deck, Slides 8, 16-17: Knight & Effectuation"
+        },
+        {
+          "id": "ent211-thy-cs2-q2",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "kirzner",
+            "leibenstein",
+            "market-coordination",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Alaba International Market in Lagos is West Africa's largest electronics commercial hub, housing over 10,000 independent importers, wholesalers, and retail dist...]\n\nEvaluate how both Kirznerian Arbitrage (Obinna) and Leibensteinian Gap-Filling (Kemi) generate substantial economic value without requiring any radical scientific invention. Why are these market-correcting functions vital for developing economies like Nigeria?",
+          "answer": "Both ventures demonstrate that entrepreneurship does not require radical laboratory inventions to generate immense economic value:\n\n1. Kirznerian Arbitrage (Obinna's Venture Alpha):\n- Economic Mechanism: Obinna exploits information asymmetry and spatial price disparities across Nigerian cities. Developing markets suffer from severe information friction; buyers in Onitsha do not know which warehouse in Alaba has surplus inventory at the best price.\n- Value Creation: By connecting buyers and sellers, Obinna facilitates liquidity, prevents inventory spoilage, allocates consumer goods to high-demand regions, and drives prices toward competitive equilibrium. His alert coordination reduces search costs for all market participants.\n\n2. Leibensteinian Gap-Filling (Kemi's Venture Beta):\n- Economic Mechanism: Kemi tackles 'X-Inefficiency'—the pervasive operational friction, disorganized labor, and logistical bottlenecks that plague Nigerian commerce. Traditional micro-transporters were fragmented, unaccountable, and uncoordinated.\n- Value Creation: By aggregating 120 hand-cart pushers under a standardized mobile scheduling system, Kemi acts as an 'input-completer'. She eliminates container offloading delays from 48 hours to 90 minutes, prevents cargo damage, secures higher, reliable earnings for the laborers, and unlocks supply chain throughput for merchant wholesalers.\n\n3. Vital Role in Developing Economies:\nIn developing economies like Nigeria, the primary bottleneck to economic growth is rarely a shortage of raw ideas or technology; rather, it is market fragmentation, institutional voids, and logistics friction. Entrepreneurs who perform Kirznerian price discovery and Leibensteinian gap-filling restore efficiency, lower transaction costs, formalize informal labor, and enable commerce to flourish across the national economy.",
+          "explanation": "Market-correcting entrepreneurship resolves friction, eliminates waste, and connects disjointed markets.",
+          "marking_points": [
+            "Analyzes Kirznerian Arbitrage: overcoming spatial price disparities and information asymmetry between Alaba and Onitsha",
+            "Explains how arbitrage drives markets toward price equilibrium and lowers buyer search costs",
+            "Analyzes Leibensteinian Gap-Filling: organizing fragmented hand-cart pushers to eliminate operational X-inefficiency",
+            "Explains how Kemi acts as an input-completer, compressing container offload time from 48 hours to 90 minutes",
+            "Synthesizes why market-correcting coordination is critical for overcoming institutional voids in developing economies"
+          ],
+          "source": "Entrepreneurship Theories Deck, Slides 12-13 & Economic Theory Literature"
+        },
+        {
+          "id": "ent211-inn-002",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "types-of-innovation",
+            "process-innovation"
+          ],
+          "question": "A Nigerian haulage logistics company replaces its manual paper dispatch manifests with real-time GPS fleet-tracking software and automated fuel sensors, reducing transit fuel pilferage by 35% and cutting vehicle turnaround time by half. What specific type of innovation does this represent?",
+          "options": [
+            "Process Innovation, because it implements a superior operational method to execute work more efficiently and reduce costs",
+            "Product Innovation, because the company built the physical diesel trucks from scratch",
+            "Marketing Innovation, because fuel sensors are advertised on television billboards",
+            "Radical Invention, because GPS satellites were launched by the logistics company"
+          ],
+          "answer": 0,
+          "explanation": "Slide 11 defines Process Innovation as 'A better way to do work (e.g., digital stock tracking instead of paper-only records)'. The haulage company did not invent a new transport good (product); rather, they transformed their internal workflow and logistics delivery method, achieving higher efficiency and lower unit costs.",
+          "why_wrong": {
+            "1": "Product innovation involves introducing a new physical good; the company used existing trucks with operational workflow tracking.",
+            "2": "Marketing innovation involves promotion, pricing, or packaging changes to attract customers, not internal fuel monitoring.",
+            "3": "The company did not invent or launch GPS satellites; they adopted existing technology into their operations."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 11: Forms Innovation Can Take"
+        },
+        {
+          "id": "ent211-inn-004",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "creative-destruction",
+            "schumpeter",
+            "nigerian-context"
+          ],
+          "question": "In the early 2000s, Nigeria's state-owned telecommunications monopoly (NITEL) had fewer than 500,000 working landlines after decades of operation. When private GSM mobile operators (MTN, Econet/Airtel) introduced mobile cellular networks, landlines were rapidly abandoned, NITEL collapsed, and a massive multi-billion dollar mobile digital economy emerged. What economic phenomenon best describes this transformation?",
+          "options": [
+            "Schumpeter's Creative Destruction, where dynamic new technologies and business models revolutionize the economy by destroying obsolete, inefficient incumbents",
+            "Kirznerian Price Arbitrage, where traders buy cheap SIM cards in one city to sell in another without changing the industry structure",
+            "Incremental Quality Upgrades, where NITEL engineers added longer telephone cords to rotary phones",
+            "Knightian Pure Risk, where all GSM operations were fully insured against financial loss by the Central Bank of Nigeria"
+          ],
+          "answer": 0,
+          "explanation": "Deck 4 (Slide 7) explicitly cites mobile telecommunications as the quintessential example of Joseph Schumpeter's 'Creative Destruction': 'New technology or model -> Older products replaced -> Weak firms lose customers -> Productivity improves. Mobile payments and cellular networks changed how people communicate. Traditional businesses that fail to adapt lose customers to innovative rivals.'",
+          "why_wrong": {
+            "1": "Arbitrage involves short-term price differences without introducing revolutionary industrial infrastructure.",
+            "2": "GSM was a discontinuous radical and disruptive leap, not an incremental cord upgrade to rotary landlines.",
+            "3": "Knightian uncertainty cannot be insured; telecom entrepreneurs risked hundreds of millions of private dollars without state guarantees."
+          },
+          "source": "Entrepreneurship Theories Deck, Slide 7: Schumpeter: Creative Destruction"
+        },
+        {
+          "id": "ent211-inn-006",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "sources-of-innovation",
+            "peter-drucker",
+            "demographics"
+          ],
+          "question": "Over 60% of Nigeria's population is under the age of 25. Entrepreneurial ventures like PiggyVest, Kuda Bank, and Chowdeck built mobile-first consumer apps tailored to tech-savvy youth lifestyles. According to Peter Drucker's framework, what internal or external source of innovation did these startups leverage?",
+          "options": [
+            "Demographic changes and population age structure shifts",
+            "The unexpected failure of the Nigerian oil and gas industry",
+            "New scientific breakthroughs in quantum physics",
+            "Incongruities between agricultural harvest yields"
+          ],
+          "answer": 0,
+          "explanation": "Peter Drucker identified 'Demographic changes' (shifts in population size, age distribution, education, and urbanization) as one of the most reliable external sources of innovation. A youth-dominant population with high smartphone penetration creates vast new markets for digital-first financial services, food delivery, and entertainment.",
+          "why_wrong": {
+            "1": "Oil industry fluctuations did not create youth consumer banking apps.",
+            "2": "Fintech apps rely on mobile internet and cloud servers, not quantum physics breakthroughs.",
+            "3": "Agricultural harvest incongruities relate to farming logistics, not youth consumer finance."
+          },
+          "source": "Peter Drucker's 7 Sources of Innovation & ENT 211 Opportunity Sources, Slide 6"
+        },
+        {
+          "id": "ent211-inn-008",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "marketing-innovation",
+            "types-of-innovation"
+          ],
+          "question": "In Nigeria, fast-moving consumer goods (FMCG) companies observed that low-income daily wage earners could not afford large 1kg tins of powdered milk or detergent. The companies redesigned their packaging to introduce single-use 50-Naira 'micro-sachets'. What type of innovation is this, and what is its primary strategic effect?",
+          "options": [
+            "Marketing Innovation, which reconfigures packaging and pricing architecture to make existing goods affordable to the bottom of the pyramid",
+            "Process Innovation, which replaces chemical formulas with non-toxic herbs",
+            "Invention of Powdered Milk, which occurred in Lagos in 2022",
+            "Disruptive Bankruptcy, which caused FMCG manufacturers to liquidate their assets"
+          ],
+          "answer": 0,
+          "explanation": "Marketing innovation involves significant innovations in product design, packaging, placement, or pricing strategies. Developing affordable single-serve micro-sachets allows companies to capture massive daily market volume from consumers with daily cash flow constraints without altering the underlying chemical product.",
+          "why_wrong": {
+            "1": "The chemical formulation of the milk or detergent remained identical; only the packaging size and pricing changed.",
+            "2": "Powdered milk was invented in the 19th century in Europe, not recently in Lagos.",
+            "3": "Sachet packaging generated massive profitability and revenue growth, the opposite of bankruptcy."
+          },
+          "source": "ENT 211 Lecture Notes, Slide 11: Forms Innovation Can Take"
+        },
+        {
+          "id": "ent211-inn-010",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "types-of-innovation",
+            "matching"
+          ],
+          "question": "Match each practical business innovation to its correct classification under the ENT 211 curriculum:",
+          "options": [
+            "Developing an electric tricycle with swappable lithium battery packs",
+            "Replacing paper customer registration forms with digital biometric tablet signups",
+            "Sending automated SMS reminders and post-service follow-up calls to clinic patients",
+            "Offering solar home systems via a 200-Naira daily mobile money subscription"
+          ],
+          "answer": [
+            "Product Innovation",
+            "Process Innovation",
+            "Service Innovation",
+            "Business Model Innovation"
+          ],
+          "explanation": "The electric tricycle is a physical good (Product). Biometric tablet registration improves operational workflows (Process). SMS reminders and follow-up calls improve the customer experience (Service). Daily solar subscriptions restructure revenue and value capture (Business Model).",
+          "source": "ENT 211 Lecture Notes, Slide 11: Forms Innovation Can Take"
+        },
+        {
+          "id": "ent211-inn-012",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "innovation",
+            "definition"
+          ],
+          "question": "Define 'Innovation' in five words or fewer, according to ENT 211.",
+          "answer": "Implementing new ideas that create value (or: Turning ideas into value).",
+          "explanation": "Slide 9: 'Innovation is the successful implementation of new ideas that create value.'",
+          "source": "ENT 211 Lecture Notes, Slide 9: What is Innovation?"
+        },
+        {
+          "id": "ent211-inn-014",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "creative-destruction",
+            "definition"
+          ],
+          "question": "What is Joseph Schumpeter's concept of 'Creative Destruction'?",
+          "answer": "Creative Destruction is the economic process where innovative new technologies, products, methods, and business models continuously replace, obsolete, and destroy established legacy industries and uncompetitive firms from within.",
+          "explanation": "It explains why market competition is dynamic rather than static.",
+          "source": "Entrepreneurship Theories Deck, Slide 7: Schumpeter: Creative Destruction"
+        },
+        {
+          "id": "ent211-inn-016",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "invention-vs-innovation",
+            "creative-destruction",
+            "analysis"
+          ],
+          "question": "Explain the relationship between Invention, Innovation, and Schumpeterian Creative Destruction. Why is a society with thousands of patented scientific inventions not guaranteed to experience economic growth unless it cultivates entrepreneurial innovation?",
+          "answer": "The relationship between these three concepts represents the transmission mechanism of economic development:\n\n1. Invention vs Innovation: Invention is the creation of new scientific knowledge, devices, or patents. However, an invention has zero economic impact if it remains an uncommercialized prototype inside a university laboratory. Innovation is the practical, organizational, and commercial implementation of an idea that creates value in the marketplace. While inventors turn capital into ideas, innovative entrepreneurs turn ideas back into capital, jobs, and goods.\n\n2. The Innovation Engine: Economic growth does not stem from pure scientific discovery alone; it requires entrepreneurs who assemble resources, identify market opportunities, take calculated risks, and translate raw inventions into viable, affordable, mass-market products.\n\n3. Creative Destruction: When innovative entrepreneurs bring these solutions to market, they trigger Schumpeter's 'Creative Destruction.' Obsolete, high-cost, and inefficient legacy methods are replaced by superior, more productive alternatives (e.g., mobile banking replacing slow paper cheques). This structural mutation elevates national productivity and living standards.\n\nConclusion: A nation can hold thousands of registered patents, but if it lacks entrepreneurial risk-takers, capital markets, and favorable business environments to commercialize those inventions into scalable products, the patents remain economically sterile. Entrepreneurship is the indispensable catalyst that transforms inventions into innovations that fuel economic transformation.",
+          "explanation": "Invention provides technological possibility; entrepreneurial innovation executes value creation and drives economic mutation.",
+          "marking_points": [
+            "Clearly distinguishes invention (knowledge/prototype creation) from innovation (commercial value realization)",
+            "Explains why uncommercialized patents produce zero macroeconomic growth or employment",
+            "Defines Schumpeterian Creative Destruction as the replacement of inefficient legacy firms by dynamic new ventures",
+            "Illustrates with a practical example (e.g., mobile money or digital switching)",
+            "Concludes that entrepreneurship is the necessary vehicle to commercialize inventions into economic growth"
+          ],
+          "source": "ENT 211 Lecture Notes, Slides 9-11 & Entrepreneurship Theories, Slide 7"
+        },
+        {
+          "id": "ent211-inn-cs1-q2",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "creative-destruction",
+            "types-of-innovation",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Prior to 2018 in Nigeria, traditional commercial banks required customers to visit physical brick-and-mortar branches, stand in long queues, and fill paper depo...]\n\nAnalyze how agency banking combines both Process Innovation and Business Model Innovation to drive Schumpeterian Creative Destruction across the Nigerian financial sector.",
+          "answer": "Agency banking exemplifies the convergence of Process Innovation, Business Model Innovation, and Creative Destruction:\n\n1. Process Innovation: Traditional cash withdrawal required physical travel, security queues, handwritten paper deposit/withdrawal slips, teller manual verification, and cash vault retrieval. Agency banking replaced this tedious operational workflow with a digital 10-second end-to-end process: card swipe on a handheld POS $\to$ biometric/PIN authorization $\to$ instant interbank settlement $\to$ cash disbursement by the neighborhood merchant. This dramatically compressed transaction cycle time and operational friction.\n\n2. Business Model Innovation: Traditional banks relied on an asset-heavy capital expenditure model: leasing prime real estate, erecting bulletproof vaults, hiring armed security, and employing salaried branch tellers. Agency banking restructured this into an asset-light, decentralized revenue-sharing platform model. The fintech company owns no real estate; instead, neighborhood shopkeepers use their own working capital to provide liquidity in exchange for a split transaction commission fee. This converted fixed operational overhead into variable, scalable performance fees.\n\n3. Creative Destruction: This dual innovation triggered classic Schumpeterian creative destruction. The superior speed, accessibility, and lower cost structure of POS networks rendered brick-and-mortar retail bank halls obsolete for routine transactions. Traditional banks faced plunging branch transactions, high fixed overhead costs on empty halls, and loss of merchant acquiring revenues. To survive, legacy banks were forced to destroy their old operational paradigms and launch competing agency networks.",
+          "explanation": "Combining process efficiency and platform business models drives systemic economic disruption of legacy institutions.",
+          "marking_points": [
+            "Identifies Process Innovation: Digitizing manual bank hall queues, paper slips, and teller verification into 10-second instant POS settlements",
+            "Identifies Business Model Innovation: Shifting from asset-heavy real estate branches to decentralized revenue-sharing merchant agent networks",
+            "Explains Schumpeterian Creative Destruction: Obsoleting routine bank branch foot-traffic and forcing legacy banks to restructure",
+            "Analyzes customer value creation (unmatched proximity and time savings for citizens)"
+          ],
+          "source": "ENT 211 Lecture Notes, Slide 11 & Entrepreneurship Theories, Slide 7"
+        },
+        {
+          "id": "ent211-inn-cs2-q2",
+          "course": "ENT 211",
+          "topic": "innovation_types_sources",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "invention-vs-innovation",
+            "business-model-innovation",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Nnaemeka Ikegwuonu, an entrepreneur in Owerri, Imo State, observed a heartbreaking crisis in Nigerian rural markets: smallholder tomato and vegetable farmers lo...]\n\nExplain why ColdHubs is celebrated as a brilliant Business Model Innovation rather than just an engineering invention. How did the 'Pay-As-You-Store' model overcome the primary adoption barrier for Nigerian smallholder farmers?",
+          "answer": "ColdHubs illustrates the crucial distinction between technical invention and business model innovation:\n\n1. Technical Invention vs Practical Innovation: The components of ColdHubs (solar panels, inverters, lead-acid or lithium batteries, polyurethane cold-room insulation panels, and standard refrigeration compressors) were not invented by ColdHubs. They are existing, mature technologies. If Nnaemeka had merely built a solar cold room and waited for someone to buy it, it would have failed commercially because smallholder farmers and market women earn daily subsistence income and could never afford an upfront capital outlay of 10 million Naira. The engineering alone could not bridge the market gap.\n\n2. Business Model Innovation: Nnaemeka innovated the value capture architecture through the 'Pay-As-You-Store' subscription model. By retaining asset ownership and charging an incremental, micro-operational fee of 200 Naira per crate per day, ColdHubs perfectly aligned its cash flow with the daily harvesting and trading cycles of rural market women. The farmer pays 200 Naira to preserve a crate of tomatoes that would otherwise spoil and sells it two days later for 15,000 Naira, yielding an immense return on investment.\n\n3. Overcoming Adoption Barriers: This business model innovation eliminated the prohibitive capital expenditure (CapEx) barrier, converted refrigeration into an accessible daily operational expense (OpEx), eliminated risk for the farmer, and established a scalable, sustainable business creating immense social and economic value.",
+          "explanation": "ColdHubs succeeded because it innovated the commercial monetization model to match customer daily cash flows.",
+          "marking_points": [
+            "Clarifies that solar panels and refrigeration are existing technologies, not new scientific inventions",
+            "Identifies the primary adoption barrier: smallholder farmers cannot afford large upfront capital expenditure (CapEx)",
+            "Explains the Business Model Innovation: 'Pay-As-You-Store' daily subscription fee of 200 Naira per crate (OpEx)",
+            "Demonstrates how the micro-fee matches daily farmer cash flow while extending shelf life from 2 to 21 days",
+            "Concludes that business model innovation transformed existing technology into viable social and economic value"
+          ],
+          "source": "ENT 211 Lecture Notes, Slide 11: Business Model Innovation & Nigerian Case Exemplars"
+        }
+      ]
+    }
+  ]
+}

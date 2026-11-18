@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Large raw binary course materials (stored locally, omitted from git to prevent upload timeouts)
+*.ppt
+*.pptx
+*.pdf
+app/content/SEN 201/_work/png_images/

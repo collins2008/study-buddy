@@ -1,0 +1,367 @@
+=== SLIDE 1 ===
+02: Capabilities of Human Beings
+Human-Computer Interaction
+=== SLIDE 2 ===
+02: Capabilities of Human Beings
+2. Capabilities of Human Beings
+In this module you will learn about:
+Human senses, perception, memory, and interruptions
+Mental models, metaphors, and perceived affordance
+Some design guidelines based on these topics
+=== SLIDE 3 ===
+02: Capabilities of Human Beings
+Definitions
+Cognitive psychology:  the study of how people perceive, learn, and remember
+Cognition: the act or process of knowing
+The issue: confronted with a new experience (or website) how does a user draw on past experience to make sense of it?
+Example: underlined blue text is understood to be a link
+=== SLIDE 4 ===
+02: Capabilities of Human Beings
+Why do we care?
+Because when people try to understand something, they use a combination of
+What their senses are telling them
+The past experience they bring to the situation
+Their expectations
+=== SLIDE 5 ===
+02: Capabilities of Human Beings
+Senses
+Senses (sight, hearing, smell, taste, touch) provide data about what is happening around us
+We are visual beings (“See what I mean?”)
+Designing good Web materials requires knowledge about how people perceive
+=== SLIDE 6 ===
+02: Capabilities of Human Beings
+Constructivism
+Constructivism contends that our minds create or construct an intervening model that abstracts or summarizes the data we receive from our senses.
+Our brains do not create pixel-by-pixel images
+Our minds create, or construct, models that summarize what comes from our senses
+These models are what we perceive
+When we see something, we don’t remember all the details, only those that have meaning for us
+=== SLIDE 7 ===
+02: Capabilities of Human Beings
+Example: familiar objects that we see, but don’t store in detail
+How many links are there on top menu of amazon.com?
+What are the colors on Google icon? 
+How many lines are there in the IBM logo?
+Who cares?
+Moral: People filter out irrelevant factors and save only the important ones
+=== SLIDE 8 ===
+Constructivism Theory
+Constructive theory states that context plays a major part in what we perceive. 
+From your experience, give an example of an icon or phrase that means something different depending on the context.
+In the toolbox of Microsoft Paint, one menu item has a rectangle on it that means “select,” while a rectangle on another menu item means “draw a rectangle.” 
+”Search” may mean “search this Web site” or “search the entire Internet.” The good news is that nowadays, most commercial sites give you search results from only their site.
+02: Capabilities of Human Beings
+=== SLIDE 9 ===
+02: Capabilities of Human Beings
+Context
+Context plays a major role in what people see in an image
+Mind set: factors that we know and bring to a situation
+Mind set can have a profound effect on the usability of a web site or a mobile app
+=== SLIDE 10 ===
+02: Capabilities of Human Beings
+Example of context: What do you see?
+=== SLIDE 11 ===
+02: Capabilities of Human Beings
+Hint: it’s an animal, facing you . . .
+=== SLIDE 12 ===
+02: Capabilities of Human Beings
+Hint: this animal gives milk, and her face takes up the left half of the picture . . .
+=== SLIDE 13 ===
+02: Capabilities of Human Beings
+Why couldn’t you see the cow’s face at first?
+It’s blurry and too contrasty, of course, but more:
+You had no idea what to expect, because there was no context
+Now that you do have a context, you will have little difficulty recognizing it the next time
+=== SLIDE 14 ===
+02: Capabilities of Human Beings
+Another example of context: are these letters the same?
+=== SLIDE 15 ===
+02: Capabilities of Human Beings
+Well, yes, but now in context:
+=== SLIDE 16 ===
+02: Capabilities of Human Beings
+Exercise applying this idea
+Keep a diary of the number of times you couldn’t “see” something that was in front of you, because you expected it to look different:
+The teabags that were in the “wrong” box
+The sugar container that was right there—but you were looking for small packets of sugar
+A book that you remembered as having a blue cover, but it’s really green
+The button you couldn’t “see” because it was flashing, and your mind set is that anything flashing is an advertisement
+=== SLIDE 17 ===
+02: Capabilities of Human Beings
+Figure and ground
+Images are partitioned into 
+Figure (foreground) and
+Ground ( background)
+Sometimes figure and ground are ambiguous
+=== SLIDE 18 ===
+02: Capabilities of Human Beings
+Figure and ground: What do you see?
+=== SLIDE 19 ===
+02: Capabilities of Human Beings
+Gestalt psychology
+“Gestalt” is German for “shape,” but as the term is used in psychology it implies the idea of perception in context
+We don’t see things in isolation, but as parts of a whole
+The Gestalt view is that problem solving involves both reuse of knowledge and insight.
+=== SLIDE 20 ===
+02: Capabilities of Human Beings
+Five principles of Gestalt psychology
+We organize things into meaningful units using
+Proximity: we group by distance or location
+Similarity: we group by type
+Symmetry: we group by meaning
+Continuity: we group by flow of lines (alignment)
+Closure: we perceive shapes that are not (completely) there
+=== SLIDE 21 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Proximity
+=== SLIDE 22 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Example: a page that can be improved . .
+=== SLIDE 23 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+By using proximity to group related things
+=== SLIDE 24 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Similarity
+=== SLIDE 25 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Example: can you use similarity to improve this page?
+=== SLIDE 26 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Sure: make the buttons the same size:
+=== SLIDE 27 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Anything else?
+=== SLIDE 28 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Sure: use the same font everywhere:
+=== SLIDE 29 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Symmetry: we use our experience and expectations to make groups of things
+We see two triangles.
+We see three groups of paired square brackets.
+=== SLIDE 30 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Continuity: flow, or alignment
+We see curves AB and CD, not AC and DB, and not AD and BC
+We see two rows of circles, not two L-shaped groups
+=== SLIDE 31 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Can you use alignment (one form of continuity) to improve this page?
+=== SLIDE 32 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Sure: the lines on the previous slide show how to use horizontal alignment
+=== SLIDE 33 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+But why stop? Left-align both columns to get vertical alignment also
+=== SLIDE 34 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Closure: we mentally “fill in the blanks”
+All are seen as circles
+=== SLIDE 35 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+2.4 Memory
+The mind is a limited information processor
+Hierarchical Model
+Sensory
+Short Term
+Long Term
+Practice and effort needed to make this transfer 
+=== SLIDE 36 ===
+Short Term Memory Experiment
+Short-term memory also has a limited capacity
+Look at the following number sequence:
+265397620853
+Now write down as much of the sequence as you can remember
+Now try the following sequence:
+44 113 245 8920
+Here the digits are grouped or chunked.
+Measuring memory capacity: the average person can remember 7± 2 [Miller, 1956]
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+=== SLIDE 37 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+“The Magic Number 7, Plus or Minus 2”   George Miller, 1956
+Value of “ chunking”
+2125685382 vs. 212DanHome
+10 chunks vs. 3 (assuming 212 is familiar)
+A generalization of the 7 ± 2 rule is that we can remember 7 ± 2 chunks of information.
+Therefore chunking information can increase the short-term memory capacity
+Can you remember:
+Vsdfnjejn7dknsdnd33s
+The successful formation of a chunk is known as closure
+=== SLIDE 38 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+How many chunks in . . .
+www.bestbookbuys.com
+20? Not really:
+www.
+best
+book
+buys
+.com
+For an e-commerce site, why are short domain names more desirable than long ones?
+Shorter domain names place less of a burden on a user’s memory
+=== SLIDE 39 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Recognition vs. recall
+Why is a multiple choice test easier than an essay test?
+Multiple choice: you can recognize the answer
+Essay: you must recall the answer
+A computer with a GUI allows us to recognize commands on a menu, instead of remembering them as in DOS and UNIX
+To use a menu-based system a user must be able to recognize a command, while a command-line system requires that a user be able to recall a command.
+=== SLIDE 40 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Memory aids
+Post-It® notes
+In Windows
+ctrl- N  (new)
+ctrl- C  (copy)
+ctrl- S  (save)
+Favorites List and bookmarks to store URLs
+Hyperlinks—if their wording indicates the content of the target page. 
+(“Click here” is not a memory aid.)
+=== SLIDE 41 ===
+Exercise:
+Internet browsers such as Chrome and IE have a good number of memory aids built into them. Can you name a few?
+Bookmarks/Favorites
+History 
+Menus 
+Back button
+Tool tips
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+=== SLIDE 42 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+2.5 Interruptions
+Focusing attention and handling interruptions are related to memory
+In website design you need to give cues or memory aids for resuming tasks:
+Back button
+Followed links change color
+When filling in forms, blank boxes show where to pick up the job
+=== SLIDE 43 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Interruptions, continued
+How fast must a system respond before the user’s attention is diverted? (Robert Miller, 1968)
+Response time		User reaction
+	< 0.1 second         	Seems instantaneous
+  < 1 sec			Notices delay, but    					does not lose thought
+  > 10 sec	       		Switches to another task
+=== SLIDE 44 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+2.6 Mental Models
+How do people use knowledge to understand or make predictions about new situations?
+People build mental models 
+For example, a car: put gas in, turn key, and it runs. (Not exactly a car mechanic’s model!)
+Can’t ignore user’s mental model
+And how do we know what the users’ mental models are? 
+Through user testing.
+=== SLIDE 45 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+2.7 Metaphors
+Way to relate a difficult or more abstract concept to a familiar one
+Open file 
+Save file
+
+Desktop, windows, menus, icons and files are all examples of metaphor use in Windows
+=== SLIDE 46 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Metaphors have problems
+Disadvantage: metaphor may not be widely known or correctly understood 
+The mailbox icon meant nothing outside rural United States until explained. 
+And it’s backwards: the flag is put up to tell the mailman that we have put mail in the box to be picked up.
+=== SLIDE 47 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+2.8 Affordance
+Affordance: “The functions or services that an interface provides”
+A door affords entry to a room
+A radio button affords a 1-of-many choice
+On a door, a handle affords pulling; a crash bar affords pushing
+=== SLIDE 48 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Example of perceived affordance
+Top switch controls top lights
+By convention, with a light switch “up” is “on”
+=== SLIDE 49 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Perceived affordance
+We want affordance to be visible and obvious to the user
+The Up and Down lights on an elevator door should have arrows, or they should be placed vertically so that the top one means Up
+On a car, turning the steering wheel to the left makes the car go left.
+For example: We want affordance to be visible and obvious to the user when using Button (Label) or Link (Text)
+=== SLIDE 50 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+2.9 Design Guidelines for the Web
+Lessen burden on user’s memory:
+Use recognition instead of recall
+Help users chunk information
+Require as little short-term memory as possible
+Consider user’s mental models
+Provide visual clues and memory aids
+Provide feedback: let users know their input was received
+=== SLIDE 51 ===
+Design Example - Reduce Memory Load
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 52 ===
+Design Example - Strive for Consistency
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+=== SLIDE 53 ===
+Design Example – Remind Users and Refresh Their Memory
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 54 ===
+Design – Prevent Errors / Reversal of Action
+01:Introduction to HCI
+Preventing errors by presenting only the relevant information at a given time (inactive menu items) and making selections rather than enforcing recall or full manual input specification.
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 55 ===
+Examples of Categories/Criteria for HCI Guideline
+02: Capabilities of Human Beings
+Guidelines are much more specific than the principles.
+Tidwell’s guidelines address many categories of the “general HCI design” issues.
+=== SLIDE 56 ===
+Example: Guidelines for Gov. Web Page Layout – Visual Display Layout
+02: Capabilities of Human Beings
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 57 ===
+02: Capabilities of Human Beings
+Copyright © 2004 by Prentice Hall
+Summary
+In this module you learned that
+Sight is the most important sense—on the Web and in general
+We construct mental models; we don’t store bitmaps
+Context and expectations influence what we see
+Five principles of Gestalt psychology: proximity, similarity, symmetry, continuity, closure
+Metaphors are tricky
+Chunking helps memory
+Perceived affordance depends on users’ backgrounds, mental models, and expectations

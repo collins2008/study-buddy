@@ -1,0 +1,420 @@
+=== SLIDE 1 ===
+ENTREPRENEURSHIP AND INNOVATION
+OPPORTUNITY
+IDENTIFICATION
+AND EVALUATION
+Recognising needs, discovering market gaps and assessing business potential
+LECTURE NOTES
+=== SLIDE 2 ===
+GETTING STARTED
+Learning Outcomes
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+2
+Define a business opportunity and distinguish it from a business idea.
+Explain major sources of entrepreneurial opportunities.
+Describe environmental scanning and apply the PESTEL framework.
+Identify unmet customer needs and gaps in existing markets.
+Explain how available resources can be converted into business value.
+Conduct a preliminary feasibility assessment of a proposed opportunity.
+=== SLIDE 3 ===
+FOUNDATIONS
+1. Introduction to Opportunity Identification
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+3
+Entrepreneurship begins with recognising a need, problem or possibility that can be turned into value.
+Opportunity identification is the process of discovering or recognising potential business opportunities.
+Opportunity evaluation examines whether an identified possibility is practical, commercially attractive and worth pursuing.
+A business idea is not automatically an opportunity: it must be connected to real demand and a workable solution.
+Example: complaints about expensive, inconvenient campus meals may suggest a food-delivery opportunity—but demand, costs and delivery arrangements must first be investigated.
+=== SLIDE 4 ===
+FOUNDATIONS
+Business Idea versus Business Opportunity
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+4
+BUSINESS IDEA
+A thought, concept or proposed product or service.
+
+Example: “I want to start a laundry business.”
+BUSINESS OPPORTUNITY
+An idea supported by evidence of customer need, a reachable market and a realistic way to create value.
+
+Example: research shows students need reliable same-day laundry collection and delivery and are willing to pay for it.
+An idea suggests what could be done; an opportunity provides a reason to believe it can work.
+=== SLIDE 5 ===
+FOUNDATIONS
+Characteristics of a Promising Business Opportunity
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+5
+Genuine need
+Solves an actual problem or satisfies a real customer need.
+Identifiable market
+Has a clear group of potential customers.
+Commercial viability
+Can potentially generate revenue and acceptable returns.
+Feasibility
+Can be implemented with accessible resources and capabilities.
+Sustainability
+Can remain relevant beyond a short-lived trend.
+Competitive advantage
+Offers a reason customers will choose it over alternatives.
+=== SLIDE 6 ===
+DISCOVERING OPPORTUNITIES
+2. Sources of Business Opportunities
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+6
+Personal experience, professional knowledge and individual skills.
+Customer needs, complaints and everyday problems.
+Technological developments and new ways of delivering value.
+Changes in consumer behaviour, preferences and lifestyles.
+Demographic changes such as population growth and urbanisation.
+Government policies, regulations and public investment.
+Social and environmental challenges.
+Market research, industry observation and underutilised resources.
+=== SLIDE 7 ===
+DISCOVERING OPPORTUNITIES
+Sources: Experience, Skills and Customer Problems
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+7
+PERSONAL EXPERIENCE AND SKILLS
+People may turn education, professional knowledge, talents or workplace experience into businesses.
+
+Examples:
+• An accountant offering bookkeeping services.
+• A teacher providing tutoring.
+• A designer producing customised clothing.
+CUSTOMER NEEDS AND PROBLEMS
+Complaints and difficulties reveal what customers are not receiving from existing providers.
+
+Examples:
+• Slow laundry delivery creates scope for an express service.
+• Long food queues may create demand for pre-ordering and collection.
+=== SLIDE 8 ===
+DISCOVERING OPPORTUNITIES
+Sources: Technology, Consumers and Demographics
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+8
+TECHNOLOGY
+New tools create new products and more efficient delivery.
+
+Examples: mobile payments, online retail, digital learning and AI-enabled services.
+CONSUMER CHANGE
+Changing lifestyles and preferences create demand for new offerings.
+
+Examples: healthy meals, convenience services and online shopping.
+DEMOGRAPHICS
+Population size and composition influence demand.
+
+Example: student growth creates demand for housing, transport, food and learning support.
+=== SLIDE 9 ===
+DISCOVERING OPPORTUNITIES
+Sources: Policy, Social Change and Resources
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+9
+Government policy: incentives, infrastructure projects or new compliance requirements may create demand for products and services.
+Social and environmental challenges: waste, water access, pollution and unemployment can create opportunities for practical solutions.
+Market research: customer surveys, competitor analysis and industry data reveal underserved areas.
+Resource utilisation: idle buildings, machinery, land, skills, agricultural by-products and technology may be put to productive use.
+Example: an unused building may become a training centre, or agricultural waste may be processed into useful products.
+=== SLIDE 10 ===
+UNDERSTANDING THE BUSINESS ENVIRONMENT
+3. Environmental Scanning
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+10
+Environmental scanning is the systematic observation and analysis of factors that may create opportunities or threats for a business.
+It helps entrepreneurs understand changes in customers, competitors, technology, economic conditions and regulation.
+Scanning is more than noticing a trend: the entrepreneur considers how the change may affect demand, costs, operations and business prospects.
+Example: unreliable electricity combined with rising interest in solar power may indicate demand for solar installation and maintenance.
+=== SLIDE 11 ===
+ENVIRONMENTAL SCANNING
+Internal and External Business Environments
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+11
+INTERNAL ENVIRONMENT
+Factors within the organisation:
+
+• Human resources: skills and experience.
+• Financial resources: capital and cash flow.
+• Physical resources: land, buildings and equipment.
+• Organisational culture and management.
+• Technology, systems and capabilities.
+EXTERNAL ENVIRONMENT
+Factors outside the direct control of the business:
+
+• Political and regulatory conditions.
+• Economic conditions and purchasing power.
+• Social and demographic trends.
+• Technological developments.
+• Environmental conditions and competition.
+=== SLIDE 12 ===
+ENVIRONMENTAL SCANNING
+PESTEL: A Framework for Environmental Scanning
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+12
+P – Political
+Government stability, policies, taxation and trade restrictions.
+E – Economic
+Inflation, interest rates, income, unemployment and exchange rates.
+S – Social
+Culture, population, education, lifestyles and preferences.
+T – Technological
+Digital innovation, automation and new production methods.
+E – Environmental
+Climate, waste, pollution and sustainability.
+L – Legal
+Registration, labour law, consumer protection and sector regulation.
+=== SLIDE 13 ===
+ENVIRONMENTAL SCANNING
+Applying PESTEL: Example of a Solar Business
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+13
+Political: government energy policies and support for renewable energy.
+Economic: customers’ purchasing power, inflation and the cost of imported components.
+Social: public concern about unreliable electricity and interest in energy independence.
+Technological: availability, efficiency and maintenance requirements of solar systems.
+Environmental: interest in cleaner energy and reduced emissions.
+Legal: applicable business, electrical installation, safety and consumer requirements.
+PESTEL does not prove that a business will succeed; it identifies external conditions to investigate.
+=== SLIDE 14 ===
+FINDING DEMAND
+4. Identifying Unmet Customer Needs
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+14
+An unmet need exists when a customer requirement is unavailable, inaccessible, inadequate or poorly satisfied.
+Unserved needs: no suitable product or service is available.
+Underserved needs: an offering exists, but its quantity, quality, affordability or accessibility is inadequate.
+Poorly satisfied needs: products exist, but customers are dissatisfied with their quality or delivery.
+Emerging needs: new requirements arise from changes in technology, lifestyles or the wider environment.
+=== SLIDE 15 ===
+FINDING DEMAND
+How to Discover Unmet Needs
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+15
+LISTEN
+Conduct interviews and ask customers about difficulties, frustrations and desired improvements.
+OBSERVE
+Watch how people use products and services. Notice delays, workarounds and repeated problems.
+INVESTIGATE
+Use surveys, complaints, online reviews, community engagement and competitor analysis.
+Do not assume a problem is widespread: gather evidence from potential customers.
+=== SLIDE 16 ===
+FINDING DEMAND
+Example: Unmet Need in a University Community
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+16
+Observation: students struggle to obtain affordable meals after 6 p.m.
+Initial evidence: many food vendors close early; students face queues and some live far from food outlets.
+Possible solution: a low-cost meal ordering and delivery service using WhatsApp and designated collection points.
+Questions to investigate: how many students need the service, what price can they pay, and how frequently will they order?
+Also investigate food safety, vendor partnerships, delivery times and the cost of fulfilling each order.
+=== SLIDE 17 ===
+FINDING DEMAND
+5. Identifying Market Gaps
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+17
+A market gap is an area of customer demand that is not adequately served by existing businesses or available products and services.
+Price gap: existing options are too expensive for a particular customer group.
+Quality gap: products or services fail to meet expected standards.
+Accessibility gap: customers face distance, inconvenient hours or poor distribution.
+Product or service gap: customers require an offering that is not currently available.
+Customer-segment gap: existing providers overlook a particular group of potential customers.
+=== SLIDE 18 ===
+FINDING DEMAND
+Market Gap Analysis: Practical Examples
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+18
+=== SLIDE 19 ===
+CREATING VALUE FROM WHAT IS AVAILABLE
+6. Resource Utilisation
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+19
+Resource utilisation means using available resources effectively and efficiently to produce goods, deliver services or create value.
+Resources include human skills, finance, land, buildings, machinery, raw materials, technology and information.
+Idle assets can be redeployed: an unused building may become a co-working or training centre.
+Waste can become an input: agricultural by-products may be processed into animal feed or organic fertiliser.
+Skills and knowledge can become services: professional expertise may support a consultancy or training business.
+Shared-resource models can give customers access to facilities they cannot afford to own individually.
+=== SLIDE 20 ===
+CREATING VALUE FROM WHAT IS AVAILABLE
+Why Efficient Resource Utilisation Matters
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+20
+LOWER COSTS
+Using existing assets and reducing waste can limit capital and operating costs.
+HIGHER PRODUCTIVITY
+Better allocation of labour, equipment and materials can improve output and service delivery.
+MORE VALUE
+Reusing, sharing or repurposing resources can create new products, services and revenue streams.
+Entrepreneurial question: What resources are already available, and how can they be used more productively?
+=== SLIDE 21 ===
+TESTING THE OPPORTUNITY
+7. Preliminary Feasibility Assessment
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+21
+Preliminary feasibility assessment is an initial investigation to determine whether a proposed business idea is practical and has enough potential to justify further study.
+It helps identify major challenges early, reduce uncertainty and avoid committing resources to weak ideas.
+It is an early screening exercise—not a substitute for a detailed feasibility study or business plan.
+The entrepreneur considers whether customers will buy, whether the solution can be delivered, whether resources are available and whether the business can operate lawfully and sustainably.
+=== SLIDE 22 ===
+TESTING THE OPPORTUNITY
+Feasibility: Market and Technical
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+22
+MARKET FEASIBILITY
+Examines whether sufficient demand exists.
+
+Ask:
+• Who are the customers?
+• What problem is being solved?
+• How large is the potential market?
+• What are customers willing and able to pay?
+• Who are the competitors?
+• Is demand growing, stable or declining?
+TECHNICAL FEASIBILITY
+Examines whether the product or service can be produced or delivered.
+
+Ask:
+• What equipment and technology are required?
+• Are skilled people available?
+• Is the location suitable?
+• Are power, water and internet available?
+• Can required quality be maintained?
+=== SLIDE 23 ===
+TESTING THE OPPORTUNITY
+Feasibility: Financial and Operational
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+23
+FINANCIAL FEASIBILITY
+Examines whether the business can generate acceptable returns.
+
+Consider:
+• Start-up and working capital.
+• Operating costs and expected revenue.
+• Pricing and profit margins.
+• Cash-flow needs and financing sources.
+• Financial risks and likely returns.
+OPERATIONAL FEASIBILITY
+Examines whether day-to-day activities can be performed effectively.
+
+Consider:
+• Employees and responsibilities.
+• Supply of materials.
+• Production and service processes.
+• Inventory and distribution.
+• Customer service and quality control.
+=== SLIDE 24 ===
+TESTING THE OPPORTUNITY
+Feasibility: Legal and Management
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+24
+LEGAL FEASIBILITY
+Examines whether the business can operate within applicable laws and regulations.
+
+Consider:
+• Business registration.
+• Licences and permits.
+• Tax obligations.
+• Labour and safety rules.
+• Environmental and consumer protection requirements.
+MANAGEMENT FEASIBILITY
+Examines whether the entrepreneur and team can manage the business.
+
+Consider:
+• Industry knowledge and experience.
+• Financial and managerial skills.
+• Leadership and decision-making.
+• Ability to organise people and resources.
+• Capacity to manage risks.
+=== SLIDE 25 ===
+TESTING THE OPPORTUNITY
+Summary: Six Areas of Feasibility
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+25
+=== SLIDE 26 ===
+PUTTING THE PROCESS TOGETHER
+8. From Identification to Evaluation
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+26
+1
+Identify a problem or need
+2
+Generate possible business ideas
+3
+Scan the environment
+4
+Identify the market gap
+5
+Assess available resources
+6
+Conduct preliminary feasibility
+7
+Decide: proceed, modify, research further or stop
+The process is iterative: new evidence may require the entrepreneur to revise the idea or repeat earlier steps.
+=== SLIDE 27 ===
+APPLICATION
+Case Study: Campus Meal Delivery
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+27
+Situation: students struggle to obtain affordable meals after 6 p.m.; vendors close early, queues are long and some students live far from food outlets.
+Proposed idea: a meal-ordering and delivery service using WhatsApp and designated collection points.
+Opportunity evidence to seek: student demand, willingness to pay, order frequency and dissatisfaction with existing options.
+Environmental issues: student population, purchasing power, competitors, smartphone access and food-safety requirements.
+Resources: partner food vendors, smartphones, student delivery workers and a low-cost ordering channel.
+Feasibility questions: can orders be delivered on time, safely and at a price that covers costs?
+=== SLIDE 28 ===
+APPLICATION
+Case Study: What Should the Students Do?
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+28
+TEST DEMAND
+Interview students and run a short survey. Record preferred meals, delivery times, order frequency and willingness to pay.
+TEST OPERATIONS
+Speak with vendors. Map delivery routes, estimate delivery time and define safe food-handling procedures.
+TEST ECONOMICS
+Estimate meal costs, packaging, delivery and other expenses. Check whether the proposed price can cover costs.
+A small pilot can provide evidence before the students commit substantial resources.
+=== SLIDE 29 ===
+CRITICAL CONSIDERATIONS
+9. Challenges in Opportunity Identification and Evaluation
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+29
+Inadequate market information: decisions may be based on assumptions rather than reliable evidence.
+Limited finance: a promising idea may require more capital than the entrepreneur can access.
+Competition: established businesses may have stronger brands, customer relationships and economies of scale.
+Uncertainty: prices, policies, technology and customer preferences can change.
+Poor feasibility assessment: revenue may be overestimated while costs and regulatory requirements are underestimated.
+Inadequate entrepreneurial skills and fear of failure may prevent effective execution.
+=== SLIDE 30 ===
+WRAP-UP
+Conclusion: From Ideas to Viable Opportunities
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+30
+Business opportunities arise from needs, problems, changes and resources that can be converted into value.
+Environmental scanning helps entrepreneurs understand internal capabilities and external conditions.
+Unmet needs and market gaps reveal where customers are not adequately served.
+Resource utilisation can turn idle assets, skills and materials into productive inputs.
+Preliminary feasibility assessment tests market, technical, financial, operational, legal and management realities.
+Successful entrepreneurship requires evidence-based judgement—not merely enthusiasm for an idea.
+=== SLIDE 31 ===
+CHECK YOUR UNDERSTANDING
+Review Questions
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+31
+Define a business opportunity and distinguish it from a business idea.
+Discuss six sources of business opportunities.
+Explain environmental scanning and the six elements of PESTEL.
+Differentiate between unserved, underserved and poorly satisfied needs.
+Explain how market gaps and resource utilisation create opportunities.
+What is preliminary feasibility assessment? Discuss its six areas.
+Using an example from your community, identify and evaluate a possible business opportunity.
+=== SLIDE 32 ===
+APPLY WHAT YOU HAVE LEARNED
+Class Activity: Become an Opportunity Detective
+ENTREPRENEURSHIP AND INNOVATION  |  OPPORTUNITY IDENTIFICATION & EVALUATION
+32
+Work in small groups. Identify one problem experienced by people in your university or local community.
+Describe who experiences the problem and how they currently deal with it.
+Identify the unmet need or market gap.
+Propose a product or service that could address the problem.
+List the resources required and identify possible competitors.
+Assess demand, technical requirements, costs, operations and legal considerations.
+Recommend whether to proceed, modify the idea or investigate further—and justify your decision.

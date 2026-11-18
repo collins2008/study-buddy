@@ -1,0 +1,437 @@
+import json
+import os
+
+topic_data = {
+    "course": "SEN 201",
+    "topic": "Software Evolution, Maintenance & Legacy Systems",
+    "summary": "Software evolution reflects the reality that commercial software must continuously adapt to maintain business relevance and operational integrity. Governed by Lehman's Laws of Software Evolution—notably Continuing Change and Increasing Complexity—unmaintained software inevitably experiences structural decay. The software lifecycle transitions through development, evolution, servicing (operational bug fixes only), and phase-out. Maintenance comprises four standard ISO/IEC categories: Corrective (defect resolution), Adaptive (environmental modifications), Perfective (enhancements and new features), and Preventive (refactoring to forestall decay). Managing legacy systems requires portfolio assessment across business value and technical quality; systems with high business value but low quality warrant re-engineering rather than high-risk greenfield redevelopment. Software re-engineering systematically applies reverse engineering, source code translation, and modular restructuring to eliminate code smells and restore maintainability.",
+    "key_terms": [
+        {
+            "term": "Software Evolution",
+            "definition": "The continuous, iterative process of modifying and adapting a software system after its initial deployment to maintain business value, fix faults, and respond to operational changes."
+        },
+        {
+            "term": "Servicing Stage",
+            "definition": "A late stage in the software evolution lifecycle where the system is modified strictly to keep it operational (critical bug fixes, environment updates), with no new business functionality added."
+        },
+        {
+            "term": "Legacy System",
+            "definition": "An older software system that remains critical to business operations, encompassing hardware, application software, business data, organizational rules, and operational workflows."
+        },
+        {
+            "term": "Adaptive Maintenance",
+            "definition": "Software modification performed after delivery to keep a software product usable in a changed or changing environment (e.g., operating system upgrades, database migrations)."
+        },
+        {
+            "term": "Code Smell",
+            "definition": "A surface indication in source code that typically corresponds to a deeper design defect or structural decay, such as duplicated code, long methods, or God classes."
+        },
+        {
+            "term": "Software Re-engineering",
+            "definition": "The systematic examination and alteration of an existing legacy system to reconstitute it in a new form, improving quality and maintainability while preserving business logic at lower cost and risk than greenfield redevelopment."
+        },
+        {
+            "term": "Refactoring",
+            "definition": "The process of changing a software system's internal structure to make it easier to understand and cheaper to modify without altering its external observable behavior."
+        },
+        {
+            "term": "Lehman's Law of Increasing Complexity",
+            "definition": "The empirical law stating that as an evolving software system changes, its structural complexity increases unless explicit proactive effort (refactoring) is made to reduce it."
+        }
+    ],
+    "questions": [
+        {
+            "id": "sen201-mr-001",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["servicing-stage", "evolution", "lifecycle", "nile-exam"],
+            "question": "What occurs during the 'servicing stage' of the software evolution lifecycle?",
+            "options": [
+                "Software architecture is designed from scratch using UML diagrams",
+                "The software is only modified to keep it operational (bug fixes and platform patches), but no new business functionality is introduced",
+                "New functional requirements are rapidly implemented in two-week agile sprints",
+                "The software source code is permanently deleted and all users are migrated immediately"
+            ],
+            "answer": 1,
+            "explanation": "According to Nile Final Exam Question 72 and Sommerville's software evolution model, the servicing stage occurs when the software is in stable maintenance mode: engineers apply only critical bug fixes and environment adaptations to keep the system operational, while all major functional development ceases.",
+            "why_wrong": {
+                "0": "Architectural design from scratch occurs during initial greenfield development, not servicing.",
+                "2": "Implementing new business features characterizes the active evolution phase, not the servicing stage.",
+                "3": "Immediate deletion and user migration describes decommissioning and retirement."
+            },
+            "source": "Nile University SEN 201 Final Exam Paper Type B Q72; Sommerville Ch. 9"
+        },
+        {
+            "id": "sen201-mr-002",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["legacy-systems", "socio-technical", "nile-exam"],
+            "question": "Which of the following constitute essential components of a socio-technical legacy system?",
+            "options": [
+                "Application source code only",
+                "Hardware, application software, application data, business processes, and organizational policies (All of the above)",
+                "The company's external marketing website only",
+                "Developer salaries and cafeteria menus"
+            ],
+            "answer": 1,
+            "explanation": "Nile Final Exam Question 73 establishes that legacy systems are complex socio-technical entities comprising multiple interdependent layers: legacy hardware, system infrastructure, application programs, persistent business data, business rules, and the human business processes that rely upon them.",
+            "why_wrong": {
+                "0": "Source code is only one layer; legacy systems critically encompass persistent database records, hardware platforms, and embedded business processes.",
+                "2": "Marketing websites are peripheral web properties, not the core legacy socio-technical system.",
+                "3": "Developer salaries are operational overhead, not structural system components."
+            },
+            "source": "Nile University SEN 201 Final Exam Paper Type B Q73; Sommerville Ch. 9"
+        },
+        {
+            "id": "sen201-mr-003",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["legacy-assessment", "strategy", "nile-exam"],
+            "question": "In legacy system portfolio assessment, what is the recommended management strategy for a system that exhibits LOW technical quality (fragile, hard to maintain) but HIGH business value (critical to daily revenue)?",
+            "options": [
+                "Scrap the system immediately and halt all business operations",
+                "Continue standard maintenance without any architectural modifications",
+                "Re-engineer the system to improve maintainability or incrementally replace it with modern components",
+                "Rewrite the entire application in assembly language"
+            ],
+            "answer": 2,
+            "explanation": "Nile Final Exam Question 74 highlights that systems with high business value must be safeguarded. When their technical quality is degraded, the optimal strategy is re-engineering (or incremental replacement) to restore maintainability and reduce operational risk without destroying the proven business capabilities.",
+            "why_wrong": {
+                "0": "Scrapping a high-business-value system destroys core business capability and halts revenue generation.",
+                "1": "Continuing maintenance on low-quality software invites catastrophic outages and exponentially rising maintenance costs.",
+                "3": "Rewriting in assembly language increases technical fragility and maintenance cost exponentially."
+            },
+            "source": "Nile University SEN 201 Final Exam Paper Type B Q74; Sommerville Ch. 9"
+        },
+        {
+            "id": "sen201-mr-004",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["adaptive-maintenance", "environment", "nile-exam"],
+            "question": "Adapting an existing software application to run smoothly following an upgrade from Windows Server 2012 to Windows Server 2022 and migrating to a new PostgreSQL database version is classified as what category of maintenance?",
+            "options": [
+                "Corrective maintenance",
+                "Environmental adaptation (Adaptive) maintenance",
+                "Cosmetic UI beautification",
+                "Deconstructive maintenance"
+            ],
+            "answer": 1,
+            "explanation": "Nile Final Exam Question 75 and ISO/IEC 14764 define adaptive maintenance as software modifications necessitated by changes in the operational environment, such as operating system upgrades, database migrations, hardware replacements, or third-party API protocol changes.",
+            "why_wrong": {
+                "0": "Corrective maintenance specifically addresses fixing residual errors and runtime bugs.",
+                "2": "Cosmetic changes fall under perfective maintenance (user interface enhancements).",
+                "3": "Deconstructive maintenance is not a recognized category in software engineering standards."
+            },
+            "source": "Nile University SEN 201 Final Exam Paper Type B Q75; ISO/IEC 14764"
+        },
+        {
+            "id": "sen201-mr-005",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["code-smells", "refactoring", "nile-exam"],
+            "question": "Which of the following are recognized 'bad smells' in source code that signal architectural erosion and degradation?",
+            "options": [
+                "Using clear variable names and unit tests",
+                "Duplicate code, long methods / God classes, and speculative generality (All of the above)",
+                "Maintaining an automated continuous integration pipeline",
+                "Employing interfaces and dependency injection"
+            ],
+            "answer": 1,
+            "explanation": "Nile Final Exam Question 78 and Martin Fowler's refactoring catalog identify duplicated code, overly long methods, God classes, and speculative generality (unneeded abstractions) as classic 'bad code smells' requiring refactoring.",
+            "why_wrong": {
+                "0": "Clear variable names and comprehensive unit tests are exemplary software engineering practices.",
+                "2": "CI pipelines enhance software delivery quality and catch regressions.",
+                "3": "Interfaces and dependency injection enforce loose coupling, which is a desirable design practice."
+            },
+            "source": "Nile University SEN 201 Final Exam Paper Type B Q78; Fowler (1999) Refactoring"
+        },
+        {
+            "id": "sen201-mr-006",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["maintainability-metrics", "complexity", "nile-exam"],
+            "question": "Which complexity metrics are actively analyzed to predict software maintainability and identify high-cost maintenance components?",
+            "options": [
+                "Font size and monitor refresh rates used by developers",
+                "Number of system interfaces, volume/complexity of data structures, and cyclomatic complexity of control logic (All of the above)",
+                "The physical weight of the server rack",
+                "The number of coffee breaks taken by the scrum master"
+            ],
+            "answer": 1,
+            "explanation": "Nile Final Exam Question 79 highlights that maintainability prediction relies on structural complexity metrics: number of component interfaces (coupling), size and complexity of shared data structures, and McCabe cyclomatic complexity of control structures.",
+            "why_wrong": {
+                "0": "Font sizes and display hardware have zero relation to software code maintainability.",
+                "2": "Server hardware weight has no correlation with software algorithmic maintainability.",
+                "3": "Developer personal habits do not represent structural software complexity metrics."
+            },
+            "source": "Nile University SEN 201 Final Exam Paper Type B Q79; Sommerville Ch. 9"
+        },
+        {
+            "id": "sen201-mr-007",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["reengineering", "greenfield", "risk", "nile-exam"],
+            "question": "Why is software re-engineering generally preferred over greenfield redevelopment for core business legacy systems?",
+            "options": [
+                "Because greenfield redevelopment guarantees 100% bug-free delivery on the first release",
+                "Because re-engineering entails significantly lower business risk and lower cost by preserving proven business rules and institutional knowledge",
+                "Because re-engineering allows developers to avoid testing entirely",
+                "Because re-engineering automatically converts all code into artificial intelligence"
+            ],
+            "answer": 1,
+            "explanation": "Nile Final Exam Question 80 emphasizes that re-engineering carries much lower risk and cost than greenfield redevelopment. Complete rewrites frequently fail, exceed budgets, and miss subtle, undocumented edge-case business rules that are already operational in the legacy system.",
+            "why_wrong": {
+                "0": "Greenfield redevelopment has notoriously high failure, delay, and defect rates.",
+                "2": "Re-engineered systems require rigorous regression and integration testing.",
+                "3": "Re-engineering does not convert code into AI; it restructures legacy architectures."
+            },
+            "source": "Nile University SEN 201 Final Exam Paper Type B Q80; Sommerville Ch. 9"
+        },
+        {
+            "id": "sen201-mr-008",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "matching",
+            "difficulty": 3,
+            "tags": ["maintenance-types", "matching", "iso-14764"],
+            "question": "Match each ISO/IEC 14764 maintenance category to its corresponding real-world engineering activity:",
+            "options": [
+                {"left": "Corrective Maintenance", "right": "Patching a memory leak and fixing a zero-division error reported by users in production"},
+                {"left": "Adaptive Maintenance", "right": "Modifying payment drivers after migrating from an on-premise server to AWS Linux cloud"},
+                {"left": "Perfective Maintenance", "right": "Adding multi-currency support and biometric fingerprint login to satisfy new customer requests"},
+                {"left": "Preventive Maintenance", "right": "Refactoring a 3,000-line God class and extracting duplicate methods into shared utility modules"}
+            ],
+            "answer": [
+                {"left": "Corrective Maintenance", "right": "Patching a memory leak and fixing a zero-division error reported by users in production"},
+                {"left": "Adaptive Maintenance", "right": "Modifying payment drivers after migrating from an on-premise server to AWS Linux cloud"},
+                {"left": "Perfective Maintenance", "right": "Adding multi-currency support and biometric fingerprint login to satisfy new customer requests"},
+                {"left": "Preventive Maintenance", "right": "Refactoring a 3,000-line God class and extracting duplicate methods into shared utility modules"}
+            ],
+            "explanation": "ISO/IEC 14764 standardizes software maintenance into four distinct categories based on operational intent: Corrective (fixing bugs), Adaptive (adapting to environment changes), Perfective (adding enhancements), and Preventive (proactive refactoring).",
+            "why_wrong": {},
+            "source": "ISO/IEC 14764; Nile Final Exam Q75"
+        },
+        {
+            "id": "sen201-mr-fc01",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "software-evolution"],
+            "question": "What is Software Evolution?",
+            "answer": "The continuous, iterative lifecycle process of adapting and modifying software after delivery to correct faults, improve performance, and adapt to changing business environments.",
+            "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 14.",
+            "why_wrong": {},
+            "source": "Nile Final Exam Paper Type B Q14; Sommerville Ch. 9"
+        },
+        {
+            "id": "sen201-mr-fc02",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "servicing-stage"],
+            "question": "What defines the 'Servicing Stage' in software evolution?",
+            "answer": "The phase where modifications are limited strictly to keeping the system operational (bug fixes and operational patches); no new functional features are developed.",
+            "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 72.",
+            "why_wrong": {},
+            "source": "Nile Final Exam Paper Type B Q72"
+        },
+        {
+            "id": "sen201-mr-fc03",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "legacy-systems"],
+            "question": "What are the core components of a socio-technical Legacy System?",
+            "answer": "1. System hardware, 2. Operating/support software, 3. Application software, 4. Application data, 5. Business processes, and 6. Business policies and rules.",
+            "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 73.",
+            "why_wrong": {},
+            "source": "Nile Final Exam Paper Type B Q73"
+        },
+        {
+            "id": "sen201-mr-fc04",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "lehmans-laws"],
+            "question": "State Lehman's Law of Increasing Complexity.",
+            "answer": "As an evolving software system changes, its structural complexity increases and its maintainability degrades unless deliberate, proactive effort (such as refactoring) is made to maintain or simplify it.",
+            "explanation": "First formulated by Manny Lehman in his seminal empirical studies.",
+            "why_wrong": {},
+            "source": "Lehman & Belady; Sommerville Ch. 9"
+        },
+        {
+            "id": "sen201-mr-fc05",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "adaptive-maintenance"],
+            "question": "What is Adaptive Maintenance?",
+            "answer": "Modifications performed on software after delivery to keep it usable in a changing environment (e.g., changes in operating system, database management system, cloud platform, or external regulations).",
+            "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 75.",
+            "why_wrong": {},
+            "source": "Nile Final Exam Paper Type B Q75; ISO/IEC 14764"
+        },
+        {
+            "id": "sen201-mr-fc06",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "code-smells"],
+            "question": "Name three common 'Bad Smells' in code identified in software engineering.",
+            "answer": "1. Duplicate Code (cloned logic in multiple places), 2. Long Methods / Large Classes (God objects with too many responsibilities), and 3. Speculative Generality (unused abstractions built for imagined future needs).",
+            "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 78.",
+            "why_wrong": {},
+            "source": "Nile Final Exam Paper Type B Q78; Fowler Refactoring"
+        },
+        {
+            "id": "sen201-mr-fc07",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "re-engineering"],
+            "question": "What are the primary activities involved in Software Re-engineering?",
+            "answer": "1. Source code translation, 2. Reverse engineering (understanding program design), 3. Program structure improvement, 4. Data re-engineering, and 5. Refactoring.",
+            "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 77.",
+            "why_wrong": {},
+            "source": "Nile Final Exam Paper Type B Q77"
+        },
+        {
+            "id": "sen201-mr-fc08",
+            "course": "SEN 201",
+            "topic": "Software Evolution, Maintenance & Legacy Systems",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "refactoring"],
+            "question": "What is Refactoring, and how does it differ from Re-engineering?",
+            "answer": "Refactoring is small-scale, continuous code restructuring that improves internal design without altering external observable behavior. Re-engineering is large-scale system modernization, often restructuring architecture, migrating data, and translating languages.",
+            "explanation": "Refactoring is a routine engineering practice; re-engineering is an enterprise project.",
+            "why_wrong": {},
+            "source": "Fowler; Sommerville Ch. 9"
+        }
+    ],
+    "case_studies": [
+        {
+            "id": "sen201-mr-cs01",
+            "scenario": "A 40-year-old commercial bank operates its core transaction processing ledger on a legacy mainframe system written in COBOL. The system handles 15 million daily accounts with flawless transactional accuracy, but runs on costly hardware nearing end-of-life, and the bank cannot hire qualified COBOL engineers. A consultant suggests an immediate complete greenfield rewrite in Java within 9 months. However, the bank's internal chief architect warns that previous 'Big Bang' rewrites at competing banks failed catastrophically after spending tens of millions of dollars.",
+            "sub_questions": [
+                {
+                    "id": "sen201-mr-cs01-q1",
+                    "course": "SEN 201",
+                    "topic": "Software Evolution, Maintenance & Legacy Systems",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case-study", "legacy-migration", "risk"],
+                    "question": "Why does the bank's chief architect recommend software re-engineering and incremental modernization over a high-risk 'Big Bang' greenfield rewrite?",
+                    "options": [
+                        "Because COBOL is an object-oriented language that natively compiles to modern iOS applications",
+                        "Because the legacy system contains 40 years of hidden, undocumented business rules and edge-case exceptions that greenfield specifications almost certainly omit, leading to extreme delivery and regulatory risk",
+                        "Because re-engineering guarantees that hardware never needs replacement",
+                        "Because greenfield rewrites are illegal under banking compliance laws"
+                    ],
+                    "answer": 1,
+                    "explanation": "Nile Final Exam Question 80 and software engineering history show that legacy core banking systems contain decades of refined business rules embedded in source code without formal documentation. Greenfield rewrites almost always fail because they miss these tacit rules, whereas re-engineering incrementally preserves proven business logic at substantially lower risk.",
+                    "why_wrong": {
+                        "0": "COBOL is a procedural legacy business language, not an iOS runtime language.",
+                        "2": "Re-engineering often targets hardware migration (e.g., migrating COBOL to Linux or cloud containers).",
+                        "3": "Greenfield rewrites are legally permitted, but commercially and technically hazardous."
+                    },
+                    "source": "Nile Final Exam Paper Type B Q80; Sommerville Ch. 9"
+                },
+                {
+                    "id": "sen201-mr-cs01-q2",
+                    "course": "SEN 201",
+                    "topic": "Software Evolution, Maintenance & Legacy Systems",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case-study", "strangler-pattern", "incremental-modernization"],
+                    "question": "Describe how the bank can apply the 'Strangler Fig' architectural pattern to modernize the legacy COBOL mainframe incrementally without disrupting 24/7 banking operations.",
+                    "marking_points": [
+                        "Defines the Strangler Fig pattern: Incrementally replacing legacy system components by creating new microservices around the edges until the old system is completely intercepted and decommissioned.",
+                        "API / Facade routing: Placing an API Gateway / Integration Facade in front of the legacy mainframe to intercept incoming client banking requests.",
+                        "Stepwise migration: Migrating discrete functional domains (e.g., Customer Profile first, then Transfers, then Loans) into modern services one at a time.",
+                        "Validation & coexistence: Running shadow traffic / parallel runs to verify that modern services produce identical ledger outputs before retiring each legacy subsystem."
+                    ],
+                    "answer": "1. Strangler Fig Architecture: The bank avoids a dangerous 'Big Bang' cutover by placing an API Gateway or Facade in front of the legacy mainframe to intercept all incoming banking transactions.\n2. Incremental Service Extraction: Individual bounded domains (e.g., Account Inquiries and Customer Notifications first, followed by Bill Payments) are built as modern microservices that gradually intercept requests from the gateway.\n3. Shadow Validation (Parallel Runs): During migration, critical financial calculations are routed to both the legacy COBOL module and the new service concurrently, verifying 100% accounting equivalence before cutting over permanently.\n4. Graceful Decommissioning: Over time, the new microservices completely replace all legacy functions until the COBOL mainframe has no remaining active workflows, allowing it to be safely decommissioned with zero operational downtime.",
+                    "explanation": "The Strangler Fig pattern minimizes operational risk by replacing functionality gradually behind an API facade.",
+                    "why_wrong": {},
+                    "source": "Martin Fowler (2004) Strangler Fig Application; Sommerville Ch. 9"
+                }
+            ]
+        },
+        {
+            "id": "sen201-mr-cs02",
+            "scenario": "A 5-year-old logistics startup experienced rapid growth, expanding from 10 drivers to 50,000 drivers. To meet aggressive marketing deadlines, developers took shortcuts, resulting in a single `OrderManager` class with 4,200 lines of code, 38 global fields, and methods with cyclomatic complexities exceeding 45. A single change to order calculation breaks driver payout processing, requiring emergency weekend rollbacks. The development team requests a dedicated 3-week refactoring sprint.",
+            "sub_questions": [
+                {
+                    "id": "sen201-mr-cs02-q1",
+                    "course": "SEN 201",
+                    "topic": "Software Evolution, Maintenance & Legacy Systems",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case-study", "code-smells", "refactoring-techniques"],
+                    "question": "The 4,200-line `OrderManager` class is a prime example of which bad code smell, and which Martin Fowler refactoring technique should be applied first?",
+                    "options": [
+                        "Shotgun Surgery; apply inline class refactoring",
+                        "Large Class / God Class; apply 'Extract Class' and 'Extract Method' to decompose responsibilities into discrete, cohesive components",
+                        "Speculative Generality; introduce 15 new abstract interfaces",
+                        "Data Clumps; merge all order data into an encrypted binary blob"
+                    ],
+                    "answer": 1,
+                    "explanation": "A monolithic class accumulating excessive unrelated responsibilities is known as a 'God Class' or 'Large Class' smell. The standard remedy is applying 'Extract Class' and 'Extract Method' to separate distinct responsibilities (pricing, driver assignment, payout) into modular, cohesive classes.",
+                    "why_wrong": {
+                        "0": "Shotgun surgery occurs when a single change forces tiny edits across dozens of separate classes.",
+                        "2": "Speculative generality means creating unneeded abstract code for imagined future features; adding 15 more interfaces would worsen the problem.",
+                        "3": "An encrypted binary blob destroys data readability and prevents modular querying."
+                    },
+                    "source": "Nile Final Exam Paper Type B Q78; Fowler (1999) Refactoring"
+                },
+                {
+                    "id": "sen201-mr-cs02-q2",
+                    "course": "SEN 201",
+                    "topic": "Software Evolution, Maintenance & Legacy Systems",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case-study", "technical-debt", "metrics"],
+                    "question": "How can the engineering lead use software complexity metrics (Cyclomatic Complexity, Coupling Between Objects, Defect Rate) to justify the 3-week refactoring sprint to non-technical business executives?",
+                    "marking_points": [
+                        "Links high Cyclomatic Complexity (>45) directly to developer delivery velocity slowdown and exponential regression bug probability.",
+                        "Explains that high Coupling Between Objects (CBO) creates severe blast radiuses where fixing one feature breaks unrelated modules (e.g., orders breaking driver payouts).",
+                        "Translates technical debt into financial/business risk: downtime cost, lost merchant trust, and escalating engineer hours spent on firefighting rather than new revenue features.",
+                        "Shows that refactoring lowers complexity and establishes automated regression safety, drastically cutting future maintenance costs and accelerating time-to-market."
+                    ],
+                    "answer": "1. Translating Cyclomatic Complexity: The lead explains that a complexity score of 45 means each order method contains 45 decision paths, making complete human understanding and manual testing impossible and causing frequent production bugs.\n2. Explaining Coupling Blast Radius: Demonstrates that excessive Coupling Between Objects causes changes in order logic to inadvertently crash driver payouts, leading to driver dissatisfaction and reputational damage.\n3. Quantifying Technical Debt Cost: Highlights that 70% of developer engineering hours are currently squandered firefighting regressions rather than delivering revenue-generating features.\n4. Business ROI: Refactoring will lower cyclomatic complexity below 10 per method, establish robust automated test suites, cut regression defect rates by over 60%, and accelerate feature release velocity for upcoming quarters.",
+                    "explanation": "Effective engineering management maps software metrics directly to business costs, operational risk, and delivery velocity.",
+                    "why_wrong": {},
+                    "source": "Nile Final Exam Paper Type B Q76, Q79; Lehman's Laws"
+                }
+            ]
+        }
+    ]
+}
+
+out_file = r"c:\Users\Collins Ibilibor\Downloads\Study Buddy\app\content\SEN 201\maintenance_reengineering.json"
+with open(out_file, "w", encoding="utf-8") as f:
+    json.dump(topic_data, f, indent=2)
+
+print(f"Successfully generated {out_file} with {len(topic_data['questions']) + sum(len(cs['sub_questions']) for cs in topic_data.get('case_studies', []))} total questions.")

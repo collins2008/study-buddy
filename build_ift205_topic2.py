@@ -1,0 +1,523 @@
+import json
+import os
+
+topic_data = {
+    "course": "IFT 205",
+    "topic": "computer_hardware_architecture",
+    "title": "Hardware Components: Input, CPU, Memory & Storage",
+    "summary": "Deep architectural exploration of modern computer hardware systems. Explains the Von Neumann architecture, Central Processing Unit (CPU) internals including the Control Unit (CU), Arithmetic Logic Unit (ALU), Registers, and multi-tier Cache memory (L1, L2, L3), alongside the 4-phase Machine Cycle (Fetch, Decode, Execute, Store). Detailed analysis of the memory hierarchy, contrasting primary volatile RAM with non-volatile ROM/firmware, and contrasting electro-mechanical spinning Hard Disk Drives (HDDs) with NAND flash Solid-State Drives (SSDs). Covers system buses (Data, Address, Control), motherboard ports, input devices, printer technologies (Inkjet, Laser, Thermal), enterprise storage strategies including the 3-2-1 backup rule, backup types (Full, Incremental, Differential), backup versus real-time synchronization, and cloud service architectures (IaaS, PaaS, SaaS).",
+    "key_terms": [
+        {"term": "Control Unit (CU)", "definition": "The internal CPU component that fetches, decodes, and orchestrates the execution of instructions, directing data flow through system components."},
+        {"term": "Arithmetic Logic Unit (ALU)", "definition": "The digital circuit inside the CPU responsible for executing all mathematical computations and logical decision comparisons."},
+        {"term": "Random Access Memory (RAM)", "definition": "Primary volatile computer working memory directly accessible by the CPU, temporarily storing active programs and working data."},
+        {"term": "Solid-State Drive (SSD)", "definition": "A high-speed non-volatile secondary storage medium utilizing solid-state flash memory without spinning platters or moving parts."},
+        {"term": "Hard Disk Drive (HDD)", "definition": "A non-volatile magnetic storage device that stores data on spinning aluminum or ceramic platters read by electromagnetic actuator arms."},
+        {"term": "3-2-1 Backup Rule", "definition": "A foundational data protection strategy requiring 3 copies of critical data, on 2 different storage media types, with at least 1 copy preserved offsite."},
+        {"term": "Incremental Backup", "definition": "A backup type that records only files created or modified since the most recent backup of any kind, optimizing speed and capacity."},
+        {"term": "Differential Backup", "definition": "A backup type that saves all files created or modified since the last Full backup, simplifying restoration to just two backup sets."}
+    ],
+    "questions": [
+        {
+            "id": "ift205-hwd-001",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "mcq",
+            "difficulty": 1,
+            "tags": ["cpu_architecture", "alu_cu"],
+            "question": "Which internal component of the Central Processing Unit (CPU) is specifically responsible for coordinating system operations, fetching instructions from memory, and managing signal routing?",
+            "options": [
+                "Control Unit (CU)",
+                "Arithmetic Logic Unit (ALU)",
+                "Floating Point Accelerometer",
+                "Secondary Solid-State Controller"
+            ],
+            "answer": 0,
+            "explanation": "The Control Unit (CU) directs and coordinates all operations across the computer. It fetches instructions from main memory or cache, decodes them, and generates timing and control signals to instruct the ALU, registers, and buses on what operations to perform.",
+            "why_wrong": {
+                "1": "The ALU performs arithmetic calculations (addition, subtraction) and logical comparisons (AND, OR, NOT), but does not direct general system orchestration.",
+                "2": "An accelerometer is a motion sensor found in mobile phones, not a core CPU orchestrator.",
+                "3": "The SSD controller manages flash drive NAND cells, not internal CPU instruction execution."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 8; Week 5 Slide 25",
+            "verified": True,
+            "verified_output": "Control Unit (CU) coordinates CPU operations."
+        },
+        {
+            "id": "ift205-hwd-002",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "true_false_why",
+            "difficulty": 2,
+            "tags": ["memory_hierarchy", "ram_volatility"],
+            "question": "When a desktop computer experiences an abrupt electrical power outage, all unsaved documents and active application data stored in RAM are permanently lost.",
+            "options": [
+                "False — RAM uses magnetic orientation across microscopic ferrite cores that permanently retain data during power loss.",
+                "True — RAM is volatile memory that requires continuous electrical refresh charges to maintain its stored capacitor states; once power ceases, the data immediately vanishes."
+            ],
+            "answer": 1,
+            "explanation": "RAM (Random Access Memory) is volatile semiconductor memory. Modern dynamic RAM (DRAM) stores bits as microscopic electrical charges across tiny capacitor-transistor pairs that must be continuously refreshed hundreds of times per second. Without electrical power, the capacitors discharge instantly, resulting in total loss of unsaved contents.",
+            "why_wrong": {
+                "0": "Magnetic ferrite core memory is an obsolete 1950s/60s technology; modern computers use volatile semiconductor dynamic RAM."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 9; Week 5 Slide 26",
+            "verified": True,
+            "verified_output": "True. RAM is volatile."
+        },
+        {
+            "id": "ift205-hwd-003",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "sequencing",
+            "difficulty": 2,
+            "tags": ["machine_cycle", "cpu_execution"],
+            "question": "Place the four sequential stages of the CPU Machine (Instruction) Cycle in their exact operational order:",
+            "options": [
+                "Fetch (retrieve the next instruction from RAM or cache into the Instruction Register)",
+                "Decode (translate the fetched instruction opcode into operational control signals)",
+                "Execute (perform the instruction's operation via the ALU or dedicated hardware)",
+                "Store / Writeback (write the execution results back to a register or main memory)"
+            ],
+            "answer": [0, 1, 2, 3],
+            "explanation": "Every program instruction executed by a CPU undergoes the standard 4-stage Machine Cycle: 1. Fetch, 2. Decode, 3. Execute, and 4. Store (Writeback).",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "Week 5 Slide 25; Textbook Architecture",
+            "verified": True,
+            "verified_output": "Fetch -> Decode -> Execute -> Store"
+        },
+        {
+            "id": "ift205-hwd-004",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "matching",
+            "difficulty": 3,
+            "tags": ["storage_technologies", "hdd_vs_ssd"],
+            "question": "Match each storage hardware technology to its defining operational characteristic:",
+            "options": [
+                "Hard Disk Drive (HDD)",
+                "Solid-State Drive (SSD)",
+                "Read-Only Memory (ROM)",
+                "CPU Level 1 Cache"
+            ],
+            "answer": {
+                "Hard Disk Drive (HDD)": "Utilizes spinning magnetic platters and moving mechanical actuator read/write heads; lowest cost per terabyte but vulnerable to physical drop shock.",
+                "Solid-State Drive (SSD)": "Employs non-volatile NAND flash memory chips with zero moving parts, providing low access latency and high shock tolerance.",
+                "Read-Only Memory (ROM)": "Non-volatile primary firmware chip holding low-level startup bootstrap code (BIOS/UEFI) required to initialize system hardware.",
+                "CPU Level 1 Cache": "Smallest, fastest static RAM directly integrated on the processor core, operating at CPU clock frequency to minimize memory latency."
+            },
+            "explanation": "HDDs are mechanical and magnetic; SSDs are electronic and flash-based; ROM stores non-volatile startup firmware; L1 Cache provides the highest-speed memory directly on the processor die.",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 9-10; Week 5 Slides 26-31",
+            "verified": True,
+            "verified_output": "Matched storage technologies."
+        },
+        {
+            "id": "ift205-hwd-005",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["storage_strategy", "3_2_1_backup"],
+            "question": "An enterprise IT administrator implements the standard '3-2-1 Backup Rule'. Which of the following setups perfectly complies with this disaster-recovery standard?",
+            "options": [
+                "3 copies of data (1 production copy + 2 backups), stored on 2 different media types (e.g. local SSD and external magnetic tape/HDD), with 1 copy located offsite in a remote cloud facility.",
+                "3 copies of data, all stored in 3 separate folders on the identical internal desktop NVMe SSD, backed up 1 time per week.",
+                "2 copies of data, stored on 3 USB flash thumb drives plugged into the identical classroom computer tower.",
+                "1 copy of data uploaded to a single cloud drive that automatically syncs file deletions from a laptop."
+            ],
+            "answer": 0,
+            "explanation": "The 3-2-1 backup rule states: Keep 3 copies of critical data, across 2 different media types (protecting against medium-specific failure), with at least 1 copy preserved in a geographically separate offsite location (protecting against fire, theft, or flood).",
+            "why_wrong": {
+                "1": "Storing multiple copies on the same physical SSD offers zero protection if that single drive fails or the machine is stolen.",
+                "2": "Violates the 3-copy rule and leaves all drives connected to the same vulnerable host machine.",
+                "3": "A single synced cloud file is not a backup; sync mirrors deletions and ransomware encryption immediately."
+            },
+            "marking_points": [],
+            "source": "Week 5 Slide 36",
+            "verified": True,
+            "verified_output": "3 copies, 2 media types, 1 offsite."
+        },
+        {
+            "id": "ift205-hwd-006",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["backup_types", "incremental_vs_differential"],
+            "question": "An IT department performs a Full backup on Sunday night, followed by daily backups Monday through Thursday. On Friday morning, the main database crashes. If the IT team used INCREMENTAL backups, what media must be restored to recover the system to Thursday night's state?",
+            "options": [
+                "Sunday's Full backup PLUS every individual daily incremental backup (Monday, Tuesday, Wednesday, and Thursday) in exact sequential order.",
+                "Only Sunday's Full backup and Thursday's backup file.",
+                "Only Thursday's backup file alone.",
+                "Every backup taken over the preceding 365 calendar days."
+            ],
+            "answer": 0,
+            "explanation": "An Incremental backup captures only files changed since the *most recent backup of any kind*. Therefore, restoration requires Sunday's Full backup PLUS each successive incremental slice in sequence (Monday, Tuesday, Wednesday, Thursday). In contrast, a Differential backup would only require Sunday's Full plus Thursday's Differential.",
+            "why_wrong": {
+                "1": "Sunday plus Thursday only works if DIFFERENTIAL backups were used, not incremental.",
+                "2": "Thursday's incremental file contains only changes made on Thursday, lacking the core baseline and earlier days.",
+                "3": "Backups beyond the Sunday baseline are irrelevant to this recovery point."
+            },
+            "marking_points": [],
+            "source": "Week 5 Slide 35",
+            "verified": True,
+            "verified_output": "Sunday Full + Monday + Tuesday + Wednesday + Thursday incrementals."
+        },
+        {
+            "id": "ift205-hwd-007",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "explain",
+            "difficulty": 3,
+            "tags": ["backup_vs_sync"],
+            "question": "Explain why real-time cloud synchronization (such as Google Drive or OneDrive sync client) cannot replace a formal data backup strategy, especially in the context of ransomware or accidental file deletion.",
+            "options": [],
+            "answer": "Real-time synchronization is designed for availability and convenience by automatically mirroring file states between local storage and the cloud. If a user accidentally deletes an essential folder, or if ransomware encrypts local files, the sync software interprets this as an intentional change and immediately propagates the deletion or encrypted corruption to the cloud copy. In contrast, a true Backup creates independent, immutable, point-in-time recovery archives that preserve historical versions unaffected by local source corruptions.",
+            "explanation": "Sync propagates deletions and ransomware instantly. Backups isolate point-in-time versions for disaster recovery.",
+            "why_wrong": {},
+            "marking_points": [
+                "Defines synchronization as automated real-time state mirroring between devices/locations.",
+                "Explains that sync propagates file deletions, corruptions, and ransomware encryption instantly to the cloud.",
+                "Defines backup as point-in-time independent archiving.",
+                "Highlights that backups provide historical versioning allowing restoration prior to the incident."
+            ],
+            "source": "Week 5 Slide 37-38",
+            "verified": True,
+            "verified_output": "Backup vs Sync explanation."
+        },
+        {
+            "id": "ift205-hwd-008",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "cloze",
+            "difficulty": 2,
+            "tags": ["system_buses", "motherboard"],
+            "question": "A computer system motherboard contains three primary system buses: the {{c1::data}} bus transmits actual content between components; the {{c2::address}} bus carries memory location addresses from the CPU to RAM; and the {{c3::control}} bus carries operational timing, read, and write command signals.",
+            "options": ["data", "address", "control", "expansion", "peripheral", "power"],
+            "answer": ["data", "address", "control"],
+            "explanation": "The three system buses are: Data Bus (bidirectional content path), Address Bus (unidirectional memory address path from CPU), and Control Bus (timing and read/write coordination signals).",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 12",
+            "verified": True,
+            "verified_output": "data, address, control"
+        },
+        {
+            "id": "ift205-hwd-009",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["printers", "output_devices"],
+            "question": "A supermarket Point-of-Sale (POS) cash register prints customer receipts rapidly and silently without using liquid ink cartridges or toner powder. What printing technology does it employ?",
+            "options": [
+                "Direct Thermal printing (using heat-sensitive chemically treated paper)",
+                "Electrophotographic Laser printing (using fused polymer toner)",
+                "Piezoelectric Inkjet printing (using liquid micro-nozzles)",
+                "Impact Dot-matrix printing (using inked ribbon pins)"
+            ],
+            "answer": 0,
+            "explanation": "Thermal receipt printers use a heated print head that selectively activates heat-sensitive thermochromic paper to form black characters. They require no ink cartridges or toner ribbons, making them fast, silent, and highly reliable for POS receipts and ATM slips.",
+            "why_wrong": {
+                "1": "Laser printing requires toner cartridges and heated fusers, which are too bulky and expensive for small receipt registers.",
+                "2": "Inkjet printers require liquid ink cartridges which dry out and smudge easily when wet.",
+                "3": "Dot-matrix printers use physical pins hitting inked ribbons, which are loud and mechanical."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 11",
+            "verified": True,
+            "verified_output": "Direct Thermal printing."
+        },
+        {
+            "id": "ift205-hwd-010",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["cloud_models", "iaas_paas_saas"],
+            "question": "A university department subscribes to Microsoft 365, allowing students and lecturers to create documents, spreadsheets, and presentations directly inside a web browser without managing servers or installing operating system patches. Which cloud computing service model does this represent?",
+            "options": [
+                "Software as a Service (SaaS)",
+                "Platform as a Service (PaaS)",
+                "Infrastructure as a Service (IaaS)",
+                "Hardware as a Service (HaaS)"
+            ],
+            "answer": 0,
+            "explanation": "Software as a Service (SaaS) delivers complete end-user applications hosted and managed entirely by the cloud provider. Users access the applications via a web browser (e.g. Microsoft 365, Google Workspace) without needing to configure operating systems, middleware, or hardware.",
+            "why_wrong": {
+                "1": "PaaS provides development platforms and runtime environments (e.g. databases, Python runtimes) for software programmers to deploy custom code.",
+                "2": "IaaS provides raw infrastructure (virtual servers, storage, networking) where the customer must install and configure their own OS and software.",
+                "3": "HaaS is not a standard NIST cloud computing service model."
+            },
+            "marking_points": [],
+            "source": "Week 5 Slide 41",
+            "verified": True,
+            "verified_output": "Software as a Service (SaaS)."
+        },
+        {
+            "id": "ift205-hwd-011",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "multi_select",
+            "difficulty": 3,
+            "tags": ["ssd_advantages", "hardware_comparison"],
+            "question": "Which of the following represent established advantages of Solid-State Drives (SSDs) compared to traditional mechanical Hard Disk Drives (HDDs)? (Select THREE)",
+            "options": [
+                "Significantly faster data read/write access times and lower file seek latency",
+                "Higher physical resilience to drops, vibrations, and mechanical shock due to having zero moving parts",
+                "Completely silent operation during intensive file transfers",
+                "Lower monetary cost per terabyte of storage capacity at 10 TB+ enterprise scales",
+                "Ability to retain magnetic data indefinitely when exposed to powerful external neodymium magnets"
+            ],
+            "answer": [0, 1, 2],
+            "explanation": "SSDs use flash memory chips, providing near-instantaneous seek times, physical shock resistance (no moving heads/platters), and completely silent operation. However, HDDs remain cheaper per terabyte for multi-terabyte bulk storage, and SSDs store electrical charge (not magnetic fields).",
+            "why_wrong": {
+                "3": "Mechanical HDDs still maintain a lower cost per terabyte for massive storage capacities.",
+                "4": "SSDs store data using electrical charge in floating-gate or charge-trap transistors, not magnetic domains."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 10; Week 5 Slide 30-31",
+            "verified": True,
+            "verified_output": "Faster access, shock resilience, silent operation."
+        },
+        {
+            "id": "ift205-hwd-012",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "type_answer",
+            "difficulty": 2,
+            "tags": ["cpu_architecture", "registers"],
+            "question": "What is the name of the special CPU register that holds the memory address of the next program instruction waiting to be fetched and executed?",
+            "answer": "Program Counter",
+            "accepted_answers": ["Program Counter", "PC", "instruction pointer", "IP"],
+            "explanation": "The Program Counter (PC), also called the Instruction Pointer (IP), holds the memory address of the next sequential instruction to be fetched from memory. After fetching, it is automatically incremented.",
+            "marking_points": [
+                "Identifies 'Program Counter' or 'PC' (or 'Instruction Pointer')."
+            ],
+            "source": "Week 5 Slide 25; Architecture Notes",
+            "verified": True,
+            "verified_output": "Program Counter"
+        },
+        {
+            "id": "ift205-hwd-013",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["memory_hierarchy", "cache"],
+            "question": "Why is multi-level CPU Cache (L1, L2, L3) built directly into modern microprocessor dies instead of simply relying on high-capacity system RAM?",
+            "options": [
+                "Cache is ultra-fast Static RAM (SRAM) that operates at or near CPU clock speed, bridging the massive speed disparity between the fast processor and slower main DRAM.",
+                "Cache memory permanently stores the operating system so the computer never requires a secondary storage drive.",
+                "Cache is magnetic core memory that resists power surges caused by lightning.",
+                "Cache eliminates the need for the Arithmetic Logic Unit."
+            ],
+            "answer": 0,
+            "explanation": "CPUs operate at billions of cycles per second (GHz), while accessing system RAM takes many clock cycles (latency). Cache uses fast static RAM (SRAM) placed directly on the CPU die to store frequently accessed data and instructions, preventing the CPU from idling while waiting for main memory.",
+            "why_wrong": {
+                "1": "Cache is volatile and holds only tiny amounts of temporary working instructions, not the full OS.",
+                "2": "Cache is semiconductor silicon SRAM, not magnetic core.",
+                "3": "Cache is memory, not a processing execution unit; the ALU remains essential."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 8; Week 5 Slide 27",
+            "verified": True,
+            "verified_output": "Cache bridges processor and RAM speed disparity."
+        },
+        {
+            "id": "ift205-hwd-014",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["ram_upgrade", "performance_misconception"],
+            "question": "A student claims: 'Upgrading my laptop's RAM from 8 GB to 32 GB will instantly double the clock speed of my CPU and make my single-threaded arithmetic calculations run twice as fast.' Is this assertion accurate?",
+            "options": [
+                "No — RAM capacity allows more programs and large data sets to remain concurrently active in memory without disk swapping/paging, but does not alter the CPU's internal clock frequency or single-threaded execution speed.",
+                "Yes — CPU clock frequency is mathematically equal to total installed gigabytes of RAM multiplied by bus width.",
+                "Yes — increasing RAM automatically overclocks the ALU by an identical percentage ratio.",
+                "No — upgrading RAM actually slows down the computer because the CPU takes four times longer to search through larger memory spaces."
+            ],
+            "answer": 0,
+            "explanation": "As emphasized in Lecture 1: 'More RAM can help with multitasking and running memory-heavy applications without disk paging, but does not automatically make every individual task faster.' CPU clock speed (in GHz) and IPC (instructions per cycle) are fixed architectural properties independent of RAM capacity.",
+            "why_wrong": {
+                "1": "Clock frequency is determined by the CPU oscillator and multiplier, completely independent of memory capacity.",
+                "2": "The ALU does not overclock based on memory size.",
+                "3": "Memory address indexing is direct and near-constant time; it does not degrade performance proportionally to capacity."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 9",
+            "verified": True,
+            "verified_output": "RAM capacity aids multitasking, not CPU clock speed."
+        },
+        {
+            "id": "ift205-hwd-015",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["motherboard_ports"],
+            "question": "Which modern physical computer peripheral interface supports simultaneous transmission of high-definition digital video, multi-channel audio, and bidirectional data over a single reversible oval connector?",
+            "options": [
+                "USB Type-C (with DisplayPort Alternate Mode / Thunderbolt)",
+                "Legacy VGA (Video Graphics Array) 15-pin connector",
+                "PS/2 purple keyboard connector",
+                "Parallel DB-25 printer port"
+            ],
+            "answer": 0,
+            "explanation": "USB Type-C is a compact, reversible, 24-pin connector capable of carrying high-speed data, digital audio, high-definition video (via DisplayPort Alternate Mode), and high-wattage power delivery.",
+            "why_wrong": {
+                "1": "VGA is an obsolete analog video-only connector that carries zero audio and zero data.",
+                "2": "PS/2 carries only low-speed serial keyboard/mouse signals.",
+                "3": "The DB-25 parallel port was used for legacy printers and cannot transmit video or modern audio."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 12",
+            "verified": True,
+            "verified_output": "USB Type-C."
+        },
+        {
+            "id": "ift205-hwd-016",
+            "course": "IFT 205",
+            "topic": "computer_hardware_architecture",
+            "type": "true_false_why",
+            "difficulty": 3,
+            "tags": ["storage_longevity", "optical_vs_flash"],
+            "question": "Solid-state drives (SSDs) are vulnerable to mechanical head crashes when dropped onto concrete, in the exact same manner as traditional hard disk drives (HDDs).",
+            "options": [
+                "True — SSD flash micro-needles will bend and scratch the silicon wafers during a drop.",
+                "False — SSDs contain zero mechanical actuator arms or rotating platters, making them physically immune to head crashes, whereas HDDs risk head collisions with platters under shock."
+            ],
+            "answer": 1,
+            "explanation": "In an HDD, the read/write heads fly fractions of a millimeter above spinning platters; a drop can cause the heads to collide with the surface (a 'head crash'), destroying data. SSDs use stationary solid-state NAND flash chips soldered to a circuit board with no moving parts, making mechanical head crashes physically impossible.",
+            "why_wrong": {
+                "0": "SSDs do not have 'micro-needles' or mechanical parts; data is stored as electronic charge traps."
+            },
+            "marking_points": [],
+            "source": "Week 5 Slide 30-31",
+            "verified": True,
+            "verified_output": "False. SSDs have no moving parts and cannot suffer head crashes."
+        }
+    ],
+    "case_studies": [
+        {
+            "id": "ift205-hwd-cs1",
+            "scenario": "A civil engineering consultancy in Abuja upgrades its workstation computers. The engineers use CAD (Computer-Aided Design) software to render 3D structural models of bridges and skyscrapers. The firm purchases systems equipped with 8-core CPUs, 64 GB of RAM, high-end dedicated GPUs, a 1 TB NVMe SSD for the operating system and active projects, and a 16 TB mechanical HDD for archiving completed projects. During design rendering, the lead engineer notices that the CPU temperatures rise rapidly, and the system throttles down unless proper thermal management is maintained.",
+            "sub_questions": [
+                {
+                    "id": "ift205-hwd-cs1-q1",
+                    "course": "IFT 205",
+                    "topic": "computer_hardware_architecture",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case_study", "hardware_roles"],
+                    "question": "Why did the engineering firm specify BOTH a 1 TB NVMe SSD and a 16 TB mechanical HDD in each workstation instead of using HDDs alone or SSDs alone?",
+                    "options": [
+                        "To balance performance and budget: the high-speed NVMe SSD eliminates bottlenecks for OS and active CAD rendering, while the mechanical HDD provides cost-effective mass storage for multi-terabyte completed archives.",
+                        "Because CAD software refuses to launch unless both magnetic platters and flash memory chips are detected simultaneously by the motherboard.",
+                        "Because SSDs cannot physically store files larger than 500 megabytes.",
+                        "To allow the CPU's Control Unit to execute instructions directly from the HDD platters while the ALU reads the SSD."
+                    ],
+                    "answer": 0,
+                    "explanation": "Hybrid storage tiering is industry best practice: high-speed NVMe SSDs provide extreme read/write IOPS for the OS and active CAD working files, while mechanical HDDs offer much lower cost per terabyte for long-term archiving where speed is secondary.",
+                    "why_wrong": {
+                        "1": "CAD software has no architectural requirement for dual-drive detection.",
+                        "2": "SSDs can store multi-terabyte files without limitation.",
+                        "3": "The CPU never executes instructions directly from HDD platters; all code must first be loaded into system RAM."
+                    },
+                    "marking_points": [],
+                    "source": "IFT205_Week2 Slide 10; Week 5 Slide 31",
+                    "verified": True,
+                    "verified_output": "Hybrid storage: SSD for active CAD performance, HDD for cost-effective archives."
+                },
+                {
+                    "id": "ift205-hwd-cs1-q2",
+                    "course": "IFT 205",
+                    "topic": "computer_hardware_architecture",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case_study", "cpu_thermal_throttling"],
+                    "question": "Explain the technical phenomenon of 'thermal throttling' occurring during the 3D CAD rendering, and identify the hardware components responsible for mitigating it.",
+                    "options": [],
+                    "answer": "Thermal throttling is an automated hardware protection mechanism where the CPU deliberately reduces its operational clock frequency (GHz) and core voltage when internal temperature sensors detect levels approaching thermal limits (e.g. 95°C–100°C) during sustained heavy multi-core CAD rendering. This prevents permanent physical damage from overheating, but severely degrades rendering speed. Mitigating this requires proper thermal interface material (thermal paste), high-performance CPU heatsinks with high-airflow cooling fans or liquid cooling radiators, and a well-ventilated chassis ensuring adequate airflow.",
+                    "explanation": "Thermal throttling reduces clock speed to prevent thermal destruction. Mitigated by heatsinks, thermal paste, and airflow cooling.",
+                    "why_wrong": {},
+                    "marking_points": [
+                        "Defines thermal throttling as the CPU lowering clock frequency/voltage to protect against overheating.",
+                        "Explains that heavy continuous multi-core processing generates significant electrical thermal dissipation.",
+                        "Identifies that throttling causes noticeable performance drops.",
+                        "Names critical mitigation hardware: CPU heatsink, thermal paste, cooling fans, or liquid cooling loops."
+                    ],
+                    "source": "IFT205_Week2 Slide 8, 12",
+                    "verified": True,
+                    "verified_output": "Thermal throttling explanation and mitigation."
+                }
+            ]
+        },
+        {
+            "id": "ift205-hwd-cs2",
+            "scenario": "A financial auditing firm in Abuja maintains sensitive client financial ledgers on a centralized file server. The chief technology officer implements a backup policy: every Sunday at 1:00 AM, a Full backup of all 4 Terabytes of financial records is written to an external NAS drive. Monday through Saturday at 1:00 AM, a Differential backup is executed to the same NAS. In addition, an encrypted copy of Sunday's full backup is replicated to an Amazon Web Services (AWS) S3 bucket in a different geographic region. On Thursday afternoon, a severe electrical surge causes the server's local drives to fail catastrophically.",
+            "sub_questions": [
+                {
+                    "id": "ift205-hwd-cs2-q1",
+                    "course": "IFT 205",
+                    "topic": "computer_hardware_architecture",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case_study", "differential_restoration"],
+                    "question": "To completely restore the auditing server to its state as of Wednesday night (1:00 AM Thursday), which exact backup files must the IT administrator restore?",
+                    "options": [
+                        "Sunday's Full backup PLUS Wednesday's Differential backup only.",
+                        "Sunday's Full backup PLUS Monday, Tuesday, AND Wednesday backups in sequential order.",
+                        "Wednesday's Differential backup alone without the Sunday baseline.",
+                        "All backups from Sunday through Saturday."
+                    ],
+                    "answer": 0,
+                    "explanation": "In a Differential backup scheme, each daily backup captures all changes made since the *last Full backup*. Therefore, Wednesday's differential backup already contains all cumulative modifications from Monday, Tuesday, and Wednesday. Recovery requires only two sets: Sunday's Full backup PLUS Wednesday's Differential backup.",
+                    "why_wrong": {
+                        "1": "Restoring Monday, Tuesday, and Wednesday sequentially is only required for INCREMENTAL backups, not Differential.",
+                        "2": "A differential backup contains only modified delta blocks; without the base full backup, the file system is incomplete.",
+                        "3": "Thursday, Friday, and Saturday files do not exist yet on Thursday afternoon."
+                    },
+                    "marking_points": [],
+                    "source": "Week 5 Slide 35",
+                    "verified": True,
+                    "verified_output": "Sunday Full + Wednesday Differential."
+                },
+                {
+                    "id": "ift205-hwd-cs2-q2",
+                    "course": "IFT 205",
+                    "topic": "computer_hardware_architecture",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case_study", "3_2_1_compliance"],
+                    "question": "Evaluate how the firm's backup policy satisfies the 3-2-1 backup rule, and discuss how the offsite AWS S3 copy protects against catastrophic local loss.",
+                    "options": [],
+                    "answer": "The firm satisfies the 3-2-1 rule as follows: (1) 3 copies of data exist (the original working files on the server, the local NAS copy, and the cloud copy); (2) 2 different media/storage technologies are used (the server's internal drive array and the network-attached storage/cloud object storage); (3) 1 copy is preserved offsite (the encrypted AWS S3 bucket). The offsite cloud copy guarantees business continuity against disasters that destroy the entire physical office—such as fire, building collapse, localized flood, physical theft of equipment, or power grid sabotage that simultaneously destroys both the server and the adjacent local NAS.",
+                    "explanation": "Satisfies 3 copies, 2 media, 1 offsite. Protects against local office destruction.",
+                    "why_wrong": {},
+                    "marking_points": [
+                        "Maps the policy to '3 copies' (production, local NAS, cloud).",
+                        "Maps to '2 different media types' (internal server storage, external NAS/cloud).",
+                        "Maps to '1 offsite location' (AWS S3 cloud in different geographic region).",
+                        "Explains how offsite replication prevents total data loss from physical office catastrophes (fire, theft, power surges)."
+                    ],
+                    "source": "Week 5 Slide 36, 42",
+                    "verified": True,
+                    "verified_output": "3-2-1 compliance evaluation."
+                }
+            ]
+        }
+    ]
+}
+
+out_dir = os.path.join("app", "content", "IFT 205")
+os.makedirs(out_dir, exist_ok=True)
+out_path = os.path.join(out_dir, "computer_hardware_architecture.json")
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(topic_data, f, indent=2)
+
+print(f"Generated {out_path} with {len(topic_data['questions'])} questions and {len(topic_data['case_studies'])} case studies.")

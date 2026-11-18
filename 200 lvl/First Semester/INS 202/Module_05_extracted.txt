@@ -1,0 +1,164 @@
+=== SLIDE 1 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Human-Computer Interface
+=== SLIDE 2 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+5. Visual Organization
+In this module you will learn about:
+Four principles of visual organization and how to apply them
+Proximity
+Alignment
+Consistency
+Contrast
+=== SLIDE 3 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Four organizing principles: proximity
+See next slide for a tongue-in-cheek example: mindless application of alphabetic organization
+Preview: the result is a hodge-podge as seen by the user
+=== SLIDE 4 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Dan’s Clothing: the mindless version
+=== SLIDE 5 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+What groups would make sense?
+Women’s clothes, Men’s clothes, Kid’s clothes, Special sizes
+July Specials, Sales on rainwear, Closeout on pink socks
+Store locations, Store hours
+Open an account, Your account status
+Check out
+Email us.
+=== SLIDE 6 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Dan’s Clothing: with sensible groups
+What Gestalt psychology principle is related to this?
+=== SLIDE 7 ===
+Proximity
+The principle of proximity states that people tend to perceive items that are located close together as being related.
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 8 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Avoid centered alignment for lines that are of nearly equal length
+=== SLIDE 9 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Lines are now greatly different in length: reader knows it’s intentional
+=== SLIDE 10 ===
+Alignment
+People perceive items that appear along a virtual line as being related.  
+Using indentation to show hierarchy is an instance of using alignment.
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 11 ===
+Orpheus Chamber Orchestra: nice use of proximity and alignment
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 12 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+The principles are seen in combination
+Eddie Bauer site (next slide) has
+Horizontal alignment
+Vertical alignment
+Proximity, to group like items
+
+Consistency, in type size and font for links
+Contrast, between SALE and most else
+=== SLIDE 13 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 14 ===
+Can you identify virtual lines created by the alignment used on the page.
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 15 ===
+An example that’s not well aligned. Explain what you would do to improve the alignment.
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 16 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Don’t be a slave to centered alignment . . .
+=== SLIDE 17 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+. . . which is OK, but isn’t this better?
+=== SLIDE 18 ===
+Consistency
+Consistency means a high degree of uniformity in layout with in a page and uniformity in layout across pages.
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 19 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Note the consistent layout in the next few slides
+=== SLIDE 20 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+One of the pages reachable from the previous slide
+=== SLIDE 21 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+One of the pages reachable from the previous slide
+=== SLIDE 22 ===
+Contrast
+Items that look different will be perceived as different.
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 23 ===
+This webpage does not have very good contrast
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 24 ===
+Applying additional contrast by varying the font size in addition to applying proximity to help communicate the groups of information
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 25 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+How can we make this more interesting?
+=== SLIDE 26 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Use more contrast
+=== SLIDE 27 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Talk about boring!
+=== SLIDE 28 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+This is a quiz! (Not really)
+Look again at the previous slide. 
+How many ways can you improve it?
+Can you put all four principles to work?
+Next slide shows one possible way
+You can find lots of others
+=== SLIDE 29 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Here’s one way, but there are many other possibilities
+=== SLIDE 30 ===
+This web page needs some help in organizing the text on the page. Someone has already tried to use some organizing principles when creating the page, but one principle in particular is lacking. Which one is it
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 31 ===
+05: Visual Organization
+Copyright © 2004 by Prentice Hall
+Summary
+In this module you learned:
+Four principles of visual organization 
+Proximity
+Alignment
+Consistency
+Contrast
+Some ways they can be applied
+The message:
+There are principles; your can learn them and use them

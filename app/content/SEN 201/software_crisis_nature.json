@@ -1,0 +1,686 @@
+{
+  "course": "SEN 201",
+  "topic": "Software Engineering Principles & The Software Crisis",
+  "summary": "This foundational topic explores the disciplined genesis of software engineering, contrasting disciplined engineering lifecycles with ad-hoc programming. It analyzes the historical 'Software Crisis' (first identified at the 1968 NATO conference) characterized by budget overruns, delivery delays, unmaintainability, and catastrophic project failures, which drove the evolution of structured engineering standards. Essential product dichotomies (generic off-the-shelf vs customized/bespoke software) are delineated alongside foundational architectural design principles: Abstraction, Modularity, Encapsulation and Information Hiding, Separation of Concerns, High Cohesion versus Low Coupling, the DRY rule, the SOLID design principles (Single Responsibility, Open-Closed, Dependency Inversion), the Principle of Least Privilege, and Defensive Programming.",
+  "key_terms": [
+    {
+      "term": "Software Engineering",
+      "definition": "A systematic, disciplined, and measurable approach to the development, operation, maintenance, and evolution of software systems."
+    },
+    {
+      "term": "Software Crisis",
+      "definition": "The historical phenomenon where software projects routinely ran over budget, missed deadlines, exhibited low reliability, and proved difficult to maintain."
+    },
+    {
+      "term": "Software Product",
+      "definition": "A complete package comprising computer programs, procedures, configuration rules, and all associated technical documentation."
+    },
+    {
+      "term": "Generic Product",
+      "definition": "A stand-alone software system developed by a company and sold on the open market, where the developer controls the specification."
+    },
+    {
+      "term": "Customized (Bespoke) Product",
+      "definition": "Software commissioned by a specific client organization, where the customer owns and dictates the requirement specification."
+    },
+    {
+      "term": "Abstraction",
+      "definition": "The technique of representing essential characteristics while hiding non-essential operational and implementation details."
+    },
+    {
+      "term": "High Cohesion",
+      "definition": "The internal design quality where all responsibilities within a single module are tightly related and directed toward a single well-defined task."
+    },
+    {
+      "term": "Low Coupling",
+      "definition": "The degree of decoupling between distinct software modules, ensuring changes inside one module do not ripple into others."
+    },
+    {
+      "term": "Single Responsibility Principle (SRP)",
+      "definition": "The object-oriented design rule stating that a class or module should have only one reason to change."
+    },
+    {
+      "term": "Defensive Programming",
+      "definition": "A coding practice that anticipates incorrect inputs, system failures, and unauthorized requests through proactive validation."
+    }
+  ],
+  "questions": [
+    {
+      "id": "sen201-sc-001",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "nile-exam-q1",
+        "software-crisis",
+        "history"
+      ],
+      "question": "In Nile University Final Exam Question 1: What does the term 'software crisis' refer to?",
+      "options": [
+        "All of the above (frequent crashes of software systems, difficulties in meeting schedules and budgets, and lack of qualified software engineers)",
+        "Frequent crashes of software systems only",
+        "Difficulties in meeting schedules and budgets in software projects only",
+        "Lack of qualified software engineers only"
+      ],
+      "answer": "All of the above (frequent crashes of software systems, difficulties in meeting schedules and budgets, and lack of qualified software engineers)",
+      "explanation": "As stated in Nile Exam Question 1: The 'software crisis' (formally identified at the 1968 NATO conference) manifested across multiple interrelated dimensions: catastrophic schedule delays and cost blowouts, poor reliability leading to frequent system crashes, and an acute shortage of trained engineers capable of building large-scale systems.",
+      "why_wrong": {
+        "Frequent crashes of software systems only": "Incomplete; ignores the profound economic schedule and cost failures.",
+        "Difficulties in meeting schedules and budgets in software projects only": "Incomplete; ignores the technical quality and personnel crises.",
+        "Lack of qualified software engineers only": "Incomplete; only describes the labor symptom without the technical impact."
+      },
+      "marking_points": [
+        "Identifies schedule/budget failures",
+        "Identifies system crashes/reliability defects",
+        "Selects 'All of the above'"
+      ],
+      "source": "Nile University Final Exam Paper (Type B), Question 1",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-002",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "nile-exam-q2",
+        "birth-of-se",
+        "discipline"
+      ],
+      "question": "In Nile University Final Exam Question 2: What was a significant reason for the birth of software engineering as a discipline?",
+      "options": [
+        "Failure of large software projects to meet schedule and budget constraints",
+        "Demand for faster computers",
+        "Increase in the number of software engineers",
+        "Evolution of programming languages"
+      ],
+      "answer": "Failure of large software projects to meet schedule and budget constraints",
+      "explanation": "As software projects grew in scale in the 1960s, informal, craft-based programming approaches collapsed. The birth of software engineering as an engineering discipline was precipitated by the systemic failure of large software projects to meet schedule and budget constraints, necessitating rigorous, measurable processes.",
+      "why_wrong": {
+        "Demand for faster computers": "Hardware speed increased independently via semiconductor advancements (Moore's law).",
+        "Increase in the number of software engineers": "An increase in personnel did not solve the crisis; poor processes made large teams even less efficient (Brooks' Law).",
+        "Evolution of programming languages": "New languages were a tool, not the primary historical driver for establishing the discipline."
+      },
+      "marking_points": [
+        "Identifies failure of large projects to meet budget and schedule constraints"
+      ],
+      "source": "Nile University Final Exam Paper (Type B), Question 2",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-003",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "se-vs-programming",
+        "definition"
+      ],
+      "question": "According to the course notes, how does Software Engineering fundamentally differ from computer programming?",
+      "options": [
+        "Software engineering encompasses the entire software life cycle (requirements, architecture, testing, maintenance, and project management), whereas programming focuses primarily on writing code syntax and algorithms.",
+        "Programming is done in teams, while software engineering is strictly an individual effort.",
+        "Software engineering only applies to embedded systems, while programming applies to web applications.",
+        "There is no distinction; they are completely interchangeable terms."
+      ],
+      "answer": "Software engineering encompasses the entire software life cycle (requirements, architecture, testing, maintenance, and project management), whereas programming focuses primarily on writing code syntax and algorithms.",
+      "explanation": "Programming is a sub-activity within software engineering. Software engineering is a disciplined, measurable approach spanning feasibility, requirements engineering, architectural design, verification and validation, deployment, maintenance, cost estimation, and multidisciplinary team management.",
+      "why_wrong": {
+        "Programming is done in teams, while software engineering is strictly an individual effort.": "The opposite is true: large-scale software engineering inherently requires coordinated multidisciplinary teams.",
+        "Software engineering only applies to embedded systems...": "Software engineering applies universally across all software domains.",
+        "There is no distinction...": "Confuses a single craft implementation step with an end-to-end engineering discipline."
+      },
+      "marking_points": [
+        "Covers full life cycle vs code implementation",
+        "Mentions requirements, architecture, testing, management"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 1.3",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-004",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "software-products",
+        "generic-vs-bespoke",
+        "analysis"
+      ],
+      "question": "What is the critical difference between a GENERIC software product and a CUSTOMIZED (bespoke) software product regarding specification ownership?",
+      "options": [
+        "In generic products, the specification is owned and controlled by the software developer; in customized products, the specification is owned and controlled by the customer.",
+        "In generic products, only open-source code can be used; customized products require assembly language.",
+        "Generic products have no user interface, while customized products always have a GUI.",
+        "Generic products never require maintenance, while customized products require daily updates."
+      ],
+      "answer": "In generic products, the specification is owned and controlled by the software developer; in customized products, the specification is owned and controlled by the customer.",
+      "explanation": "Generic products (e.g. Windows, Excel, Photoshop) are sold to the open market, so the vendor determines features and release schedules. Customized products (e.g. Nile University Student Portal, hospital patient records) are commissioned by a single client, who dictates the precise requirements and owns the specification.",
+      "why_wrong": {
+        "In generic products, only open-source code can be used...": "Most generic software (e.g. Microsoft Office) is proprietary commercial software.",
+        "Generic products have no user interface...": "Virtually all consumer generic products feature extensive GUIs.",
+        "Generic products never require maintenance...": "Generic products require continuous updates, security patches, and version upgrades."
+      },
+      "marking_points": [
+        "Generic: developer owns/controls specification",
+        "Customized: customer owns/controls specification"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 2.1",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-005",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "cohesion-vs-coupling",
+        "design-principles"
+      ],
+      "question": "In software design, what is the desired relationship between COHESION and COUPLING for building robust, maintainable systems?",
+      "options": [
+        "High Cohesion within modules and Low Coupling between modules.",
+        "Low Cohesion within modules and High Coupling between modules.",
+        "High Cohesion within modules and High Coupling between modules.",
+        "Low Cohesion within modules and Low Coupling between modules."
+      ],
+      "answer": "High Cohesion within modules and Low Coupling between modules.",
+      "explanation": "High cohesion means that elements within a single module collaborate closely on a single, well-defined responsibility (making it easy to understand and maintain). Low coupling means modules depend as little as possible on one another's internal details (preventing bugs from rippling across the system).",
+      "why_wrong": {
+        "Low Cohesion within modules and High Coupling between modules.": "This is the worst possible architectural anti-pattern ('spaghetti code').",
+        "High Cohesion within modules and High Coupling between modules.": "High coupling creates rigid, fragile systems that cannot be modified independently.",
+        "Low Cohesion within modules and Low Coupling between modules.": "Low cohesion produces bloated, unfocused 'god classes'."
+      },
+      "marking_points": [
+        "Selects High Cohesion",
+        "Selects Low Coupling"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Sections 3.5 & 3.6",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-006",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "solid-principles",
+        "srp"
+      ],
+      "question": "A developer writes a class named 'StudentAccountManager' that handles calculating student fees, generating PDF receipts, and sending payment confirmation emails. Which core software engineering principle is directly violated?",
+      "options": [
+        "Single Responsibility Principle (SRP)",
+        "Principle of Least Privilege",
+        "Defensive Programming",
+        "Abstraction"
+      ],
+      "answer": "Single Responsibility Principle (SRP)",
+      "explanation": "The Single Responsibility Principle (SRP) dictates that a class or module should have only one reason to change. The 'StudentAccountManager' has three distinct reasons to change: accounting fee rules, PDF formatting changes, and email notification provider updates. These three concerns should be split into separate cohesive classes.",
+      "why_wrong": {
+        "Principle of Least Privilege": "This principle relates to user security access rights, not class responsibilities.",
+        "Defensive Programming": "This involves input validation and error handling, not module boundaries.",
+        "Abstraction": "Abstraction hides implementation details; the violation here is combining multiple responsibilities."
+      },
+      "marking_points": [
+        "Identifies violation of Single Responsibility Principle",
+        "Explains class has multiple reasons to change"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 3.10",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-007",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "solid-principles",
+        "dip",
+        "architecture"
+      ],
+      "question": "A university registration module directly instantiates a concrete MySQL database driver class inside its enrollment function rather than interacting through a general 'DatabaseRepository' interface. Which principle does this violate?",
+      "options": [
+        "Dependency Inversion Principle (DIP)",
+        "Open-Closed Principle (OCP)",
+        "Don't Repeat Yourself (DRY)",
+        "Information Hiding"
+      ],
+      "answer": "Dependency Inversion Principle (DIP)",
+      "explanation": "DIP states: High-level modules should not depend on low-level modules; both should depend on abstractions. Directly coupling the business logic (registration) to a concrete low-level driver (MySQL) prevents switching to PostgreSQL, SQLite, or a mock testing database without rewriting core business logic.",
+      "why_wrong": {
+        "Open-Closed Principle (OCP)": "OCP deals with extending functionality without modifying existing code.",
+        "Don't Repeat Yourself (DRY)": "DRY addresses code and knowledge duplication.",
+        "Information Hiding": "The driver might still hide internal variables, but the dependency direction is inverted."
+      },
+      "marking_points": [
+        "Identifies violation of Dependency Inversion Principle",
+        "Explains high-level business logic must depend on abstractions"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 3.12",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-008",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "security-principles",
+        "least-privilege",
+        "analysis"
+      ],
+      "question": "What does the PRINCIPLE OF LEAST PRIVILEGE dictate in secure software engineering?",
+      "options": [
+        "Every user, process, or system component must operate using only the minimal set of permissions necessary to perform its legitimate task.",
+        "Developers should be paid as little as possible to control software costs.",
+        "Software should be written without any security controls to maximize speed.",
+        "All users must be given root administrator privileges to prevent permission errors."
+      ],
+      "answer": "Every user, process, or system component must operate using only the minimal set of permissions necessary to perform its legitimate task.",
+      "explanation": "The Principle of Least Privilege limits the potential blast radius of an exploit or bug. For instance, in a university portal, a student account should never have database write access to modify grades, and a web worker process should not run with root/administrator OS privileges.",
+      "why_wrong": {
+        "Developers should be paid as little as possible...": "A humorous distractor; least privilege is an architectural security rule, not compensation.",
+        "Software should be written without security controls...": "Direct violation of basic security engineering.",
+        "All users must be given root administrator privileges...": "Dangerous security vulnerability."
+      },
+      "marking_points": [
+        "Defines minimal necessary permissions",
+        "Explains containment of potential security breaches"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 3.13",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-009",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "sequencing",
+      "difficulty": 3,
+      "tags": [
+        "evolutionary-laws",
+        "lehmans-laws",
+        "analysis"
+      ],
+      "question": "According to Lehman's Laws of Software Evolution, what happens to a large E-type software system if no proactive refactoring and maintenance effort is applied over time?",
+      "options": [
+        "Continuing Change forces modifications -> Increasing Complexity degrades internal structure -> Quality declines unless actively maintained -> Growth rate slows as maintenance consumed by technical debt",
+        "Software automatically refactors itself -> Complexity decreases -> Performance improves exponentially",
+        "Software stabilizes permanently and never requires changes after release",
+        "Hardware upgrades automatically resolve all software architectural deficiencies"
+      ],
+      "answer": "Continuing Change forces modifications -> Increasing Complexity degrades internal structure -> Quality declines unless actively maintained -> Growth rate slows as maintenance consumed by technical debt",
+      "explanation": "Lehman's First and Second Laws state that an evolving system must continually adapt to its environment or become progressively less satisfactory (Continuing Change), and as it evolves, its complexity increases unless work is done to maintain or reduce it (Increasing Complexity).",
+      "why_wrong": {
+        "Software automatically refactors itself...": "Software systems do not self-heal without disciplined human refactoring.",
+        "Software stabilizes permanently...": "Real-world operational environments change constantly (OS updates, tax laws, business rules).",
+        "Hardware upgrades automatically resolve...": "Hardware upgrades cannot repair architectural tangles or structural rot."
+      },
+      "marking_points": [
+        "Names Continuing Change",
+        "Names Increasing Complexity",
+        "Notes Quality decline without proactive refactoring"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 11 & Lehman's Laws",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-010",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "explain",
+      "difficulty": 3,
+      "tags": [
+        "defensive-programming",
+        "techniques"
+      ],
+      "question": "Explain three concrete defensive programming techniques that a software engineer must apply when handling external user input in a web application.",
+      "options": [],
+      "answer": "1. Input Validation & Sanitization: Never trust external input. Validate data types, ranges, lengths, and formats against strict whitelists before processing (e.g. rejecting SQL injection or script tags).\n2. Graceful Error Handling & Exceptions: Anticipate null values, lost database connections, and unexpected states using try-catch blocks and structured error logging, rather than letting the application crash or leak stack traces to users.\n3. Fail-Safe Defaults: In security checks and state decisions, default to a safe, unprivileged state (e.g., deny access by default if permission checks fail or timeout).",
+      "explanation": "Defensive programming ensures system robustness, availability, and security by assuming that inputs will occasionally be malformed, malicious, or unavailable.",
+      "why_wrong": {},
+      "marking_points": [
+        "Mentions input validation/whitelisting",
+        "Mentions structured exception handling without crashing",
+        "Mentions fail-safe defaults or rejecting unauthenticated states"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 3.14",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-fc01",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "definition"
+      ],
+      "question": "What is Software Engineering?",
+      "options": [],
+      "answer": "A systematic, disciplined, and measurable approach to the development, operation, maintenance, and evolution of software systems.",
+      "explanation": "Formal IEEE/textbook definition.",
+      "why_wrong": {},
+      "marking_points": [
+        "Systematic, disciplined, measurable approach",
+        "Spans development, operation, maintenance"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 1",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-fc02",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "software-crisis"
+      ],
+      "question": "What was the Software Crisis and when was it identified?",
+      "options": [],
+      "answer": "The crisis where software projects routinely ran over budget, missed deadlines, were unreliable, and proved difficult to maintain; formally identified at the 1968 NATO conference in Garmisch.",
+      "explanation": "Marked the birth of Software Engineering as an engineering discipline.",
+      "why_wrong": {},
+      "marking_points": [
+        "Over budget, late, unreliable, unmaintainable",
+        "1968 NATO conference"
+      ],
+      "source": "Nile Exam Q1 & Lecture Notes Section 1.2",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-fc03",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "software-composition"
+      ],
+      "question": "What four elements make up a complete software product?",
+      "options": [],
+      "answer": "1. Computer programs (executable code)\n2. Procedures\n3. Configuration data\n4. Associated documentation",
+      "explanation": "Software is more than just code.",
+      "why_wrong": {},
+      "marking_points": [
+        "Programs, procedures, data, documentation"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 1.1",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-fc04",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "product-types"
+      ],
+      "question": "What is the difference between Generic and Customized software products?",
+      "options": [],
+      "answer": "- Generic: Sold on open market; specification owned by developer (e.g. Windows, Word).\n- Customized: Commissioned for a specific client; specification owned by customer (e.g. university portal).",
+      "explanation": "Determined by specification ownership and target market.",
+      "why_wrong": {},
+      "marking_points": [
+        "Generic: developer owns spec",
+        "Customized: customer owns spec"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 2.1",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-fc05",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "cohesion"
+      ],
+      "question": "What is High Cohesion in software design?",
+      "options": [],
+      "answer": "The degree to which all responsibilities and elements within a single module are tightly related and serve a single, focused purpose.",
+      "explanation": "Functional cohesion is the highest and most desirable form.",
+      "why_wrong": {},
+      "marking_points": [
+        "Responsibilities inside a module serve a single purpose"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 3.5",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-fc06",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "coupling"
+      ],
+      "question": "What is Low Coupling in software design?",
+      "options": [],
+      "answer": "Minimizing the direct dependencies between distinct modules so that changes to one module do not break others.",
+      "explanation": "Modules communicate strictly through stable, well-defined interfaces.",
+      "why_wrong": {},
+      "marking_points": [
+        "Minimizes inter-module dependencies"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 3.6",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-fc07",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "dry"
+      ],
+      "question": "What is the DRY principle?",
+      "options": [],
+      "answer": "Don't Repeat Yourself: Every piece of knowledge or business rule must have a single, unambiguous, authoritative representation within a system.",
+      "explanation": "Prevents inconsistent maintenance updates.",
+      "why_wrong": {},
+      "marking_points": [
+        "Single authoritative representation of knowledge"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 3.9",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-sc-fc08",
+      "course": "SEN 201",
+      "topic": "Software Engineering Principles & The Software Crisis",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "srp"
+      ],
+      "question": "What is the Single Responsibility Principle (SRP)?",
+      "options": [],
+      "answer": "A module or class should have only one coherent responsibility and only one reason to change.",
+      "explanation": "First rule of the SOLID design principles.",
+      "why_wrong": {},
+      "marking_points": [
+        "Only one reason to change"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 3.10",
+      "verified": true,
+      "verified_output": "N/A"
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "sen201-sc-cs01",
+      "scenario": "A fast-growing fintech startup in Abuja built an automated loan disbursement application using ad-hoc programming techniques. A single monolithic script named 'LoanHandler.py' (over 4,000 lines of code) parses JSON web requests, calculates borrower credit risk, runs SQL queries against a PostgreSQL database, generates PDF loan contracts, and calls external SMS and payment APIs. Over 6 months, every minor interest-rate formula change inadvertently corrupted customer SMS notifications and created intermittent database connection pool exhaustions, causing the system to crash during peak morning hours.",
+      "sub_questions": [
+        {
+          "id": "sen201-sc-cs01-q1",
+          "course": "SEN 201",
+          "topic": "Software Engineering Principles & The Software Crisis",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "cohesion-coupling",
+            "architectural-diagnosis"
+          ],
+          "question": "From a software engineering perspective, how should the architecture of 'LoanHandler.py' be diagnosed regarding cohesion and coupling?",
+          "options": [
+            "It exhibits critically Low Cohesion (combining unrelated responsibilities) and High Coupling (tight internal dependencies between calculations, database, and third-party APIs).",
+            "It exhibits High Cohesion and Low Coupling, indicating an ideal architecture.",
+            "It exhibits High Cohesion because all code is located conveniently in one file.",
+            "It demonstrates proper Separation of Concerns because all banking tasks are together."
+          ],
+          "answer": "It exhibits critically Low Cohesion (combining unrelated responsibilities) and High Coupling (tight internal dependencies between calculations, database, and third-party APIs).",
+          "explanation": "Cohesion measures internal focus: a single class doing UI, risk math, database queries, PDF generation, and SMS calls has very low cohesion. Coupling measures interdependency: changes in risk math rippling into SMS crashes proves tight coupling. Placing everything in one file is an anti-pattern, not cohesion.",
+          "why_wrong": {
+            "It exhibits High Cohesion and Low Coupling...": "Completely contradicts the observed cascading bugs and bloated design.",
+            "It exhibits High Cohesion because all code is located conveniently in one file.": "Common student blunder: confusing file compactness with functional cohesion.",
+            "It demonstrates proper Separation of Concerns...": "It completely destroys separation of concerns by tangling presentation, business logic, and I/O."
+          },
+          "marking_points": [
+            "Identifies Low Cohesion",
+            "Identifies High Coupling",
+            "Explains ripple effects"
+          ],
+          "source": "Software Engineering Principles Case Study",
+          "verified": true,
+          "verified_output": "N/A"
+        },
+        {
+          "id": "sen201-sc-cs01-q2",
+          "course": "SEN 201",
+          "topic": "Software Engineering Principles & The Software Crisis",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "refactoring-plan",
+            "solid-principles"
+          ],
+          "question": "Propose an architectural refactoring plan for this loan system using the Single Responsibility Principle (SRP) and Dependency Inversion Principle (DIP). Identify the specific modules that should be created.",
+          "options": [],
+          "answer": "1. Apply Single Responsibility Principle (SRP) by decomposing the monolithic script into four distinct cohesive services:\n   a. CreditRiskEvaluator: purely handles interest calculation and borrower risk rules.\n   b. LoanRepository: handles database persistence, transactions, and connection pools.\n   c. ContractGenerator: handles PDF rendering from loan parameters.\n   d. NotificationService: manages SMS and email dispatch.\n2. Apply Dependency Inversion Principle (DIP):\n   - High-level loan orchestrator depends on abstract interfaces (e.g. IPaymentGateway, INotificationProvider, ILoanRepository) rather than concrete third-party SDKs.\n   - This allows mocking the SMS API and database during unit tests and enables swapping payment providers without altering business calculations.",
+          "explanation": "Applying SRP and DIP isolates failure domains, so interest rule changes cannot break notifications.",
+          "why_wrong": {},
+          "marking_points": [
+            "Decomposes into distinct modules (Risk, Database/Repo, Contract, Notification)",
+            "Applies SRP by giving each module one reason to change",
+            "Applies DIP by introducing abstract interfaces for third-party services and repositories"
+          ],
+          "source": "Software Engineering Principles Refactoring Blueprint",
+          "verified": true,
+          "verified_output": "N/A"
+        }
+      ]
+    },
+    {
+      "id": "sen201-sc-cs02",
+      "scenario": "Nile University's IT directorate is tasked with deploying an automated biometric examination attendance verification platform across 4 campus faculties. The university is debating whether to purchase a generic, commercial off-the-shelf attendance product from an international vendor or commission a customized (bespoke) system developed specifically for Nile University's academic regulations and biometric hardware.",
+      "sub_questions": [
+        {
+          "id": "sen201-sc-cs02-q1",
+          "course": "SEN 201",
+          "topic": "Software Engineering Principles & The Software Crisis",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "generic-vs-bespoke",
+            "tradeoff-analysis"
+          ],
+          "question": "What is the primary risk Nile University faces if it chooses the GENERIC commercial off-the-shelf attendance product rather than a bespoke solution?",
+          "options": [
+            "The university does not control the software specification, forcing the university to either compromise on its unique institutional examination rules or incur high customization and integration costs.",
+            "Generic software cannot run on modern x86 or ARM computer hardware.",
+            "Generic software is legally prohibited from storing student matriculation numbers.",
+            "Generic software developers always retain the right to delete university grades."
+          ],
+          "answer": "The university does not control the software specification, forcing the university to either compromise on its unique institutional examination rules or incur high customization and integration costs.",
+          "explanation": "In generic software, the vendor owns and controls the specification to satisfy general market demand. When an institution has unique local workflows (e.g. Nile University's specific continuous assessment weighting or biometric clearance gates), generic software often requires awkward workarounds or costly custom integration layers.",
+          "why_wrong": {
+            "Generic software cannot run on modern hardware...": "Commercial software is typically designed for standard modern hardware architectures.",
+            "Generic software is legally prohibited...": "Data protection compliance depends on data processing agreements, not whether software is generic.",
+            "Generic software developers always retain the right...": "Absurd legal assertion."
+          },
+          "marking_points": [
+            "Identifies lack of specification control",
+            "Highlights mismatch with unique institutional rules"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 2.1",
+          "verified": true,
+          "verified_output": "N/A"
+        },
+        {
+          "id": "sen201-sc-cs02-q2",
+          "course": "SEN 201",
+          "topic": "Software Engineering Principles & The Software Crisis",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "least-privilege",
+            "security"
+          ],
+          "question": "In the bespoke architecture, examination invigilators are given tablet devices to scan student fingerprints at exam hall entrances. Applying the Principle of Least Privilege, what database access permissions should the invigilator tablet application possess?",
+          "options": [
+            "Read-only access to verify student enrollment and biometric templates, and append-only permission to record attendance timestamp records for that specific exam session.",
+            "Full read-write administrator access to all tables including student GPAs, fee payments, and exam question databases.",
+            "Direct DROP and ALTER TABLE SQL privileges to reset the database between exams.",
+            "Zero database access of any kind; all validation must be done purely via paper printouts."
+          ],
+          "answer": "Read-only access to verify student enrollment and biometric templates, and append-only permission to record attendance timestamp records for that specific exam session.",
+          "explanation": "Under the Principle of Least Privilege, the tablet app needs only to check who is eligible (read enrollment) and mark who showed up (append timestamp log). Granting write or admin access to academic records creates severe security risks (e.g. grade tampering if a tablet is stolen).",
+          "why_wrong": {
+            "Full read-write administrator access...": "Massive security vulnerability violating least privilege.",
+            "Direct DROP and ALTER TABLE...": "Catastrophic DDL permissions that could destroy university data.",
+            "Zero database access...": "Defeats the entire purpose of deploying an automated biometric tablet platform."
+          },
+          "marking_points": [
+            "Grants minimal necessary read and append permissions",
+            "Denies modification access to unrelated academic records"
+          ],
+          "source": "Software Engineering Security & Least Privilege Principles",
+          "verified": true,
+          "verified_output": "N/A"
+        }
+      ]
+    }
+  ]
+}

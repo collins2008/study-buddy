@@ -1,0 +1,259 @@
+=== SLIDE 1 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Human-Computer Interface
+=== SLIDE 2 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+6. Navigation Design
+In this module you will learn about:
+Site-level navigation: making it easy for the user to get around the site
+Page-level navigation: making it easy for the user to find things on a page
+=== SLIDE 3 ===
+Site-level vs. Page-level Navigation
+Site-level navigation encompasses issues pertaining to understanding and moving through the information architecture of a Web site. 
+Page-level navigation includes techniques that enhance the comprehensibility of an individual Web page.
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 4 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Navigation: connections
+Good navigation builds on good content organization (Module 4)
+Choose a navigation system that reflects the content’s organizational structure
+Visual design (Module 5) and navigation design are interrelated
+Choose visual navigation elements that build context for a user
+A navigational system is a visual representation of an organizational structure
+=== SLIDE 5 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Three types of navigation systems
+Hierarchical
+Derived from hierarchical organizational structure
+Ad hoc
+Hyperlinks
+Database
+Search engines
+The most common is hierarchical, with many ad hoc links added
+=== SLIDE 6 ===
+Navigation Systems cont.
+A hierarchical navigational: provides users with a top-down view of a site. 
+Ad hoc systems serve a hypertext organizational structure and typically appear as embedded links in a Web page. 
+A database navigational system implements a database organizational structure. A user types in a word or phrase to find related pages.
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 7 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Rare to use only one
+Most websites build on a judicious combination of these three, with one dominant theme
+Hierarchical plus hyperlinks very common
+Most sites should have some form of hierarchical navigational system. 
+Ad hoc systems involve links that are added typically because a hierarchical system can’t accommodate a particular association. 
+Database navigational systems typically appear as an ancillary system but rarely as the primary navigation system for a site
+=== SLIDE 8 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+A pure hierarchy is rare
+We add links to facilitate moving around the hierarchy without going all the way to the top; note extra links at bottom level
+=== SLIDE 9 ===
+Global navigation system
+Navigation bar: A navigation bar is a list of links grouped together on a page. 
+Global navigation system: Such a system appears consistently on every page of the site and offers navigation options for the entire site. For small sites such as a personal site, a global navigation system is sufficient.
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 10 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Global navigation
+For a small site, it may be possible to show the major links on every page
+Global navigation
+=== SLIDE 11 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Global navigation bar can be vertical
+Global navigation
+Note the little bullet beside Home. 
+That changes as the user moves around the site, thus providing more context, and helping to answer the user’s basic questions: 
+
+“Where am I, how did I get here, and where can I go from here?” 
+The outstanding sites never leave the user without answers to those questions.
+=== SLIDE 12 ===
+Other page levels & Breadcrumbs
+Secondary pages are reachable from the home page by one click. A third-level page is one click away from a secondary page.
+Breadcrumbs display a record of links that the user clicked in the process of traveling to the current page. They are a record of a user’s trail through the site. In a sense, they serve as a sign that reads, “You are here,” and thus help build context for a user. 
+They are useful in sites having three levels or more.
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 13 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Showing more levels in the hierarchy
+Drop-downs or pull-outs can show the next level
+=== SLIDE 14 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Breadcrumbs show user “This is where you are how you got here”
+Breadcrumbs
+=== SLIDE 15 ===
+Subsites…
+A subsite is a collection of pages within a web site that can share a common navigation system, which may be different in style from the Web site as a whole. 
+A local navigation system helps users with accessing a subsite and complements the site’s global navigation.
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 16 ===
+06: Navigation
+Many sites have subsites
+Subsites
+=== SLIDE 17 ===
+Ad hoc Links
+Ad hoc links express relationships among content items that cannot be accommodated by a hierarchical system. 
+They usually appear as embedded links on a page. They add flexibility that is lacking in a pure hierarchical system. 
+When adding ad hoc links try positioning them in a bulleted list or place them at the start or the close of a paragraph so that they stand out enough that users can see them while scanning the page.
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 18 ===
+06: Navigation
+Ad hoc links are very common
+=== SLIDE 19 ===
+06: Navigation
+The most familiar example of database navigation: Google
+=== SLIDE 20 ===
+06: Navigation
+Building context for the user with navigation bars
+=== SLIDE 21 ===
+Navigational Elements
+Navigational elements are visual organizations of text and graphics that display a user’s options and current position in a site. 
+The most common of these are navigation bars and menus. 
+Others include: site maps and frames.
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 22 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Graphical navigation bar
+=== SLIDE 23 ===
+Graphical vs Text Navigation Bars
+Graphical navigation bars have enormous appeal. They can also display context (“You are here”) clearly. However, they take longer to download than text. 
+Also, if a user has turned off image loading, he or she may not be able to see the navigation bar at all. 
+Graphical navigation bars are more costly to maintain than text-based navigation bars because they require access to additional graphics software and additional graphics expertise to change them
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 24 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Be careful with metaphors: what do these mean?
+These were planned for a Sun Microsystems intranet, available only to employees. In other words, a reasonably homogeneous group. And the icons were devised by professional graphic designers. Fortunately, Sun did user testing—and dropped these icons.
+=== SLIDE 25 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Intended meanings. Moral: add words, too!
+=== SLIDE 26 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+So add words!
+=== SLIDE 27 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Some standard meanings
+Conventions help a user to navigate a site quickly.
+Label and meaning 
+Home: the main entry point of a Web site, generally containing the top-level links to the site
+Search: find related pages by supplying a word or a phrase
+About Us: information about the company that created the site
+Shop: browse for merchandise
+Check Out: supply shipping and billing information, complete transaction
+=== SLIDE 28 ===
+Labels
+Labels are words presented as links in a navigation bar and represent paths to subsets of information held in the site. 
+The best resource for developing labels is the results from card-sorting interviews. 
+A second resource is previously established conventions for labeling.
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 29 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Menus pack in a lot of information; note the dropdown from Software
+=== SLIDE 30 ===
+Menus
+Menus present a list of possible links in the form of a drop-down or scrollable list. 
+The biggest difference in appearance when compared to a navigation bar is that all of the items in the various menus are not visible at any one time.
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 31 ===
+Menus: Advantages and Disadvantages
+With menus, it’s possible to pack a lot of options onto a single page, minimizing the number of clicks required to reach a particular page. 
+This reduces the number of page downloads, which is always a plus. 
+However, some experts believe that menus carry two disadvantages. 
+With menus, not all options are visible at any one time.
+Further, a user must act before seeing: a user must scrub the cursor over an item in order to activate the list.
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 32 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Site maps
+Textual
+Takes work 
+For a big site, must be selective
+Graphical
+Cool—for a small site.
+A site map is no substitute for good navigation
+=== SLIDE 33 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Graphical site map example
+=== SLIDE 34 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Frames
+A frame is an area of the browser window that stays visible as the user moves from page to page
+A simple way to provide global navigation
+But hogs screen real estate: you can’t do anything else with that space
+May not print
+Hard (impossible?) to bookmark
+Used much less often than formerly
+=== SLIDE 35 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Built-in browser services
+History of pages visited
+Back button
+Forward button
+Color coding of links
+Unvisited
+Visited
+Active
+Don’t mess with the convention that blue is an unvisited link.
+=== SLIDE 36 ===
+Builts-in Browser navigational aids that help build context for a user
+06: Navigation
+Copyright © 2004 by Prentice Hall
+=== SLIDE 37 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Page-level navigation aids
+Remember proximity, alignment, consistency: make the layout obvious
+Make size of text box appropriate to the amount of data
+(How many forms have you filled out where some box is MUCH too small for what you have to enter? What were those people thinking?)
+Show which fields are required, with * or Required: 
+This will cut down on the numbers of errors and speed form processing. 
+Make button placement consistent: before or after its associated text
+=== SLIDE 38 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Make error reports clear
+Say explicitly what the problem was
+Perhaps change the color of the offending box
+Show as many errors as possible on one page; don’t make user correct one error per attempt to send the data
+Don’t make user re-enter correct data
+Sounds obvious, huh? Then why are so many forms terrible?
+Sales are lost at this point, in big bad quantities
+=== SLIDE 39 ===
+06: Navigation
+Copyright © 2004 by Prentice Hall
+Summary
+In this module you have learned that:
+Effective navigation is a combination of good content organization and good visual organization
+The main navigational system is hierarchical, with a lot of hyperlinks added
+You can learn from all the bad sites you’ve suffered with

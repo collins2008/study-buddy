@@ -1,0 +1,519 @@
+=== SLIDE 1 ===
+INTRODUCTION TO INFORMATION TECHNOLOGY
+Evolution and Classification of Computers
+History • Generations • Desktop, laptop, mobile, server, embedded and high-performance systems
+A visual journey from the abacus to AI—and from personal devices to supercomputers.
+ZAKARIYYA ABDULLAHI ADAMU
+ASSISTANT LECTURER
+Zakariyya.adamu@nileuniversity.edu.ng
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+01
+=== SLIDE 2 ===
+Learning Outcomes
+By the end of this lesson, you should be able to…
+EXPLAIN
+Major milestones
+COMPARE
+Computer generations
+CLASSIFY
+Types of systems
+APPLY
+Match systems to jobs
+EVALUATE
+Choose suitable systems
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+02
+=== SLIDE 3 ===
+Why Study Computer Evolution?
+The devices we use today are the result of many earlier ideas.
+●  Explains why modern computers are smaller and more powerful.
+●  Shows how hardware advances changed work, learning and society.
+●  Helps users choose the right type of computer.
+●  Connects historical developments to AI, cloud services and smart devices.
+TECHNOLOGY BUILDS ON EARLIER IDEAS
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+03
+=== SLIDE 4 ===
+What Is a Computer?
+A computer accepts data, processes it using instructions, stores it and produces information.
+INPUT
+PROCESS
+OUTPUT
+STORAGE
+Keeps data and instructions for later use.
+INSTRUCTIONS
+Programs tell the computer what to do.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+04
+=== SLIDE 5 ===
+The Big Picture: From Counting to Computing
+Each era improved speed, reliability, size, cost or flexibility.
+Counting tools
+Ancient
+Mechanical
+1600s–1800s
+Punched cards
+1800s–1900s
+Electronic
+1940s
+Microprocessor
+1970s
+Connected + AI
+Today
+Ideas overlap and improve; history is not a perfectly straight line.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+05
+=== SLIDE 6 ===
+Before Electronic Computers
+People used physical tools and mechanical devices to calculate.
+Early tools solved counting problems
+●  Manual and human-powered
+●  Useful for arithmetic
+●  No electronic components required
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+06
+=== SLIDE 7 ===
+The Abacus
+A simple counting tool that represents numbers with beads or counters.
+Numbers represented with beads
+●  Low cost and reusable
+●  No electricity needed
+●  Still used for teaching arithmetic
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+07
+=== SLIDE 8 ===
+Mechanical Calculators
+Gears and wheels automated some arithmetic operations.
+Calculation through motion
+●  Gears and levers represent numbers
+●  More repeatable than mental arithmetic
+●  Complex to build and maintain
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+08
+=== SLIDE 9 ===
+Charles Babbage
+His Difference Engine aimed to calculate mathematical tables mechanically.
+A programmable vision begins
+●  Difference Engine: calculate tables
+●  Analytical Engine: broader programmable ideas
+●  Designs influenced later computing
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+09
+=== SLIDE 10 ===
+Ada Lovelace
+She described a sequence of operations for Babbage’s proposed Analytical Engine.
+Algorithms before modern computers
+●  Step-by-step operations
+●  A key pioneer in computing history
+●  Her work concerned the Analytical Engine
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+10
+=== SLIDE 11 ===
+Herman Hollerith and Punched Cards
+Holes in cards represented data that machines could count and sort.
+Data represented by holes
+●  Punched cards encoded information
+●  Machines counted and sorted data
+●  Influenced large-scale data processing
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+11
+=== SLIDE 12 ===
+Alan Turing and Computation
+Turing helped formalise the idea of computation and algorithms.
+A theoretical foundation
+●  Theory of algorithms and computation
+●  Abstract machine model
+●  Major influence on computer science
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+12
+=== SLIDE 13 ===
+The First Electronic Computers
+Vacuum tubes enabled electronic calculation but consumed power and generated heat.
+Electronic switching
+●  Vacuum tubes switched signals
+●  Large and power-hungry
+●  Generated substantial heat
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+13
+=== SLIDE 14 ===
+ENIAC: A Landmark Machine
+An early large-scale electronic general-purpose computer completed in the 1940s.
+A landmark of early computing
+●  Large-scale electronic general-purpose system
+●  Occupied a large room
+●  Reprogramming was labour-intensive
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+14
+=== SLIDE 15 ===
+The Stored-Program Concept
+Instructions can be stored in memory, making a computer easier to reprogram.
+PROGRAM
+MEMORY
+CPU
+RESULT
+Programs become easier to change
+●  Instructions and data held in memory
+●  Flexible and easier to reconfigure
+●  Foundation of most general-purpose computers
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+15
+=== SLIDE 16 ===
+Computer Generations at a Glance
+Generations are commonly described by their dominant hardware technology.
+1st
+Vacuum tubes
+2nd
+Transistors
+3rd
+Integrated circuits
+4th
+Microprocessors
+5th
+AI / parallel
+These are useful teaching labels; dates and boundaries vary by source.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+16
+=== SLIDE 17 ===
+First Generation: Vacuum Tubes
+Large, hot, costly machines that needed frequent maintenance.
+Vacuum tubes
+●  Very large and expensive
+●  High power use and heat
+●  Frequent maintenance; e.g. ENIAC
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+17
+=== SLIDE 18 ===
+Second Generation: Transistors
+Smaller, more reliable and more energy-efficient switching devices.
+Transistors
+●  Smaller and more reliable
+●  Less heat and power
+●  Expanded business and scientific use
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+18
+=== SLIDE 19 ===
+Third Generation: Integrated Circuits
+Many electronic components were combined on compact chips.
+Integrated circuits
+●  Many components on one chip
+●  Higher reliability and lower cost
+●  Operating systems advanced
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+19
+=== SLIDE 20 ===
+Fourth Generation: Microprocessors
+The CPU could be placed on a single integrated circuit.
+Microprocessors
+●  CPU placed on a chip
+●  Personal computing expanded
+●  Networks and graphical interfaces spread
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+20
+=== SLIDE 21 ===
+Fifth Generation: AI and Parallel Processing
+A broad teaching label associated with intelligent and advanced computing.
+AI and parallel processing
+●  Machine learning and intelligent systems
+●  Parallel and distributed computing
+●  Not one single hardware invention
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+21
+=== SLIDE 22 ===
+Compare the Five Generations
+Compare size, speed, reliability, cost and typical applications.
+1st
+Vacuum tubes
+Large, hot
+1940s–50s
+2nd
+Transistors
+Smaller, reliable
+1950s–60s
+3rd
+Integrated circuits
+Compact, faster
+1960s–70s
+4th
+Microprocessors
+Personal computers
+1970s onward
+5th
+AI / parallel
+Intelligent, connected
+Modern era
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+22
+=== SLIDE 23 ===
+How Computers Became Personal
+Microprocessors helped make affordable personal computers practical.
+PERSONAL COMPUTING
+More affordable systems brought computing to individuals.
+PORTABILITY
+Battery-powered designs support work away from a desk.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+23
+=== SLIDE 24 ===
+From Desktop to Laptop
+Portability changed where people could work and learn.
+PERSONAL COMPUTING
+More affordable systems brought computing to individuals.
+PORTABILITY
+Battery-powered designs support work away from a desk.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+24
+=== SLIDE 25 ===
+Mobile Computing
+Smartphones and tablets combine computing, communication and sensors.
+MORE THAN A PHONE
+Processor, memory, storage, cameras, sensors and networking.
+EVERYDAY USES
+Messaging, maps, payments, learning, photography and more.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+25
+=== SLIDE 26 ===
+What Does Classification Mean?
+Computers can be grouped by size, purpose, capacity, portability and role.
+SIZE
+PURPOSE
+CAPACITY
+PORTABILITY
+One computer can fit several categories at once.
+Example: a laptop is a microcomputer, portable device and general-purpose system.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+26
+=== SLIDE 27 ===
+Classification by Size and Capacity
+Different systems support personal tasks, shared services and massive calculations.
+Microcomputer
+Personal use
+Workstation
+Technical work
+Server
+Shared services
+Mainframe
+Many transactions
+Supercomputer
+Extreme calculations
+These are typical roles, not a strict ranking of every computer.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+27
+=== SLIDE 28 ===
+Desktop Computers
+Designed for a fixed workspace, often with separate components.
+●  Often has separate monitor, keyboard and mouse.
+●  Easy to upgrade individual parts.
+●  Good for labs, offices and fixed workspaces.
+●  Usually relies on mains electricity.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+28
+=== SLIDE 29 ===
+Laptop Computers
+Portable computers with integrated screen, keyboard, battery and pointing device.
+●  Screen, keyboard, touchpad, battery and computer are integrated.
+●  Can be carried between classes, home and office.
+●  Battery life and upgrade options vary by model.
+●  Useful for students and mobile workers.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+29
+=== SLIDE 30 ===
+Mobile Devices: Phones and Tablets
+Touch-first, battery-powered computers designed for mobility.
+MORE THAN A PHONE
+Processor, memory, storage, cameras, sensors and networking.
+EVERYDAY USES
+Messaging, maps, payments, learning, photography and more.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+30
+=== SLIDE 31 ===
+Servers: Computers That Provide Services
+Servers respond to requests from other computers over a network.
+USER
+NETWORK
+SERVER
+RESPONSE
+EXAMPLES
+Websites, email, file storage, databases and LMS.
+KEY IDEA
+A server is defined by the service it provides.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+31
+=== SLIDE 32 ===
+Mainframes: High-Volume Transactions
+Mainframes focus on dependable processing of many simultaneous transactions.
+PAY
+ID
+LOG
+PAY
+ID
+LOG
+Built for dependable, high-volume transaction processing
+●  Handles many users and transactions concurrently.
+●  Emphasises reliability, security and data integrity.
+●  Used in banking, insurance, government and airline reservations.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+32
+=== SLIDE 33 ===
+High-Performance Computing (HPC)
+Supercomputers and clusters solve demanding scientific and engineering problems.
+HPC = many calculations, often in parallel
+●  Climate and weather modelling
+●  Drug discovery and molecular simulation
+●  Astronomy, physics and engineering
+●  AI training and large-scale analytics
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+33
+=== SLIDE 34 ===
+Embedded Systems
+Computers built into devices to control a particular function.
+SMART TV
+Software manages apps, picture, sound and connectivity.
+CAR CONTROL
+Embedded computers monitor sensors and control vehicle functions.
+WASHING MACHINE
+Controls wash cycles, timing, water level and safety checks.
+Usually designed for a specific task, often with limited user interaction.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+34
+=== SLIDE 35 ===
+Workstation vs Server vs Mainframe vs Supercomputer
+The main difference is the typical workload and scale—not simply appearance.
+Workstation
+Technical work
+Design / engineering
+Single user
+Server
+Shared services
+Web / files / apps
+Network role
+Mainframe
+Many transactions
+Banking / airlines
+Reliability
+Supercomputer
+Extreme calculations
+Climate / simulation
+Peak performance
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+35
+=== SLIDE 36 ===
+How Different Systems Connect
+Personal devices often rely on servers and data centres behind the scenes.
+NETWORK
+Clients request information or services; servers respond.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+36
+=== SLIDE 37 ===
+Real-Life Example: A University
+Teaching, learning, records and research depend on several computer types.
+STUDENTS
+Laptops and phones access course materials.
+UNIVERSITY SERVERS
+Host LMS, email, records and websites.
+RESEARCH
+Workstations and clusters support research.
+Submitting an assignment may involve a student device, network, application server and database.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+37
+=== SLIDE 38 ===
+Choosing the Right Computer
+Match the system to the task, budget, performance and maintenance needs.
+TASK
+PERFORMANCE
+BUDGET
+SUPPORT
+ASK FIRST
+What job must it do, and how many users need it?
+THEN COMPARE
+Speed, memory, storage, reliability, power and maintenance.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+38
+=== SLIDE 39 ===
+Important Terms to Remember
+Review these words before attempting the activities.
+Vacuum tube
+Early electronic switch
+Transistor
+Semiconductor switch
+Microprocessor
+CPU on a chip
+Server
+Provides network services
+Embedded system
+Computer inside a device
+HPC
+High-performance computing
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+39
+=== SLIDE 40 ===
+Class Activity 1: Put History in Order
+Arrange the milestones from earliest to latest.
+Put these milestones in the correct historical order:
+1.  Vacuum-tube computers
+2.  Mechanical calculating machines
+3.  Transistors
+4.  Microprocessor
+5.  Integrated circuits
+6.  Abacus
+Write the correct order in your notes and explain one transition.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+40
+=== SLIDE 41 ===
+Class Activity 2: Match System to Job
+Choose the most suitable type of computer for each scenario.
+Carry between lectures
+Laptop
+Website must serve users all day
+Server
+Weather and climate modelling
+HPC / supercomputer
+Washing machine controls cycles
+Embedded system
+Bank processes many transactions
+Mainframe
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+41
+=== SLIDE 42 ===
+Quick Check: True or False?
+Answer before moving to the next slide.
+●  1. First-generation computers used transistors. (True / False)
+●  2. A server is defined only by being a tall cabinet. (True / False)
+●  3. Embedded systems usually perform a specific function. (True / False)
+●  4. Modern smartphones are computers. (True / False)
+●  5. Every computer belongs to only one category. (True / False)
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+42
+=== SLIDE 43 ===
+Quick Check: Choose the Best Answer
+Focus on why each answer is correct.
+Which technology replaced vacuum tubes in generation two?
+A. Transistor    B. Monitor    C. Keyboard
+Which system is built into a washing machine?
+A. Mainframe    B. Embedded system    C. Laptop
+Which system handles many reliable transactions?
+A. Mainframe    B. Smartphone    C. Abacus
+Which category tackles extreme scientific calculations?
+A. HPC    B. Desktop    C. Mobile
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+43
+=== SLIDE 44 ===
+Summary: What Changed Over Time?
+Computers became smaller, faster, cheaper, more connected and specialised.
+SMALLER
+FASTER
+CHEAPER
+CONNECTED
+SPECIALISED
+The basic cycle remains: input → processing → output, supported by storage and communication.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+45
+=== SLIDE 45 ===
+References and Further Learning
+Use credible sources to explore computing history further.
+●  Computer History Museum — computerhistory.org
+●  Encyclopaedia Britannica — britannica.com
+●  IEEE Computer Society — computer.org
+●  NIST — nist.gov
+●  NASA — nasa.gov
+Teaching note: computer generations are a useful introductory framework; dates and boundaries vary by textbook.
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  EVOLUTION & CLASSIFICATION
+47

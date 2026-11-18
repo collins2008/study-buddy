@@ -1,0 +1,826 @@
+=== SLIDE 1 ===
+INTRODUCTION TO INFORMATION TECHNOLOGY
+DATA REPRESENTATION AND PROCESSING
+STORAGE AND CLOUD SERVICES
+ZAKARIYYA ABDULLAHI ADAMU
+ASSISTANT LECTURER
+Zakariyya.adamu@nileuniversity.edu.ng
+=== SLIDE 2 ===
+DATA REPRESENTATION & PROCESSING
+Learning outcomes
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+2
+By the end of this lecture, students should be able to:
+Explain data, information, bits and bytes.
+Describe how computers represent numbers and other data.
+Explain the input–processing–output cycle and the role of storage.
+Identify common data-quality dimensions and storage units.
+Apply the ideas to familiar examples such as school records, banking and online shopping.
+KEY TAKEAWAY
+Focus on how raw facts become useful information inside a computer.
+=== SLIDE 3 ===
+DATA REPRESENTATION & PROCESSING
+Data and information: what is the difference?
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+3
+Data are raw facts that have not yet been organised or interpreted.
+Examples: 18, 24, “Amina”, 01/11/2026, or a list of student scores.
+Information is data processed and presented in a meaningful context.
+Example: “Amina scored 18 out of 20 in the ICT quiz” is more meaningful than the number 18 alone.
+Computers capture, process, store and communicate data to produce information.
+RAW DATA
+Individual facts, values or observations.
+INFORMATION
+Processed data that supports understanding or action.
+KEY TAKEAWAY
+Data becomes information when context and meaning are added.
+=== SLIDE 4 ===
+DATA REPRESENTATION & PROCESSING
+Why computers use binary
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+4
+Digital computers use electronic circuits with two reliable states.
+These states are commonly represented as 0 and 1.
+A binary digit is called a bit (short for binary digit).
+At the hardware level, 0 and 1 can correspond to low/high voltage or off/on states.
+Binary is not the only way humans write numbers; it is the practical language used by digital hardware.
+0
+A logical low/off state.
+1
+A logical high/on state.
+KEY TAKEAWAY
+A computer stores and manipulates information using patterns of bits.
+=== SLIDE 5 ===
+DATA REPRESENTATION & PROCESSING
+Bits: the smallest unit
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+5
+A bit is the smallest unit of digital information.
+A bit can hold one of two values: 0 or 1.
+One bit alone can represent only two possibilities, such as yes/no or true/false.
+More bits allow more combinations: 2 bits = 4 combinations; 3 bits = 8 combinations.
+With n bits, the number of possible patterns is 2ⁿ.
+1 BIT
+2 possible patterns: 0 or 1.
+3 BITS
+8 patterns: 000 to 111.
+KEY TAKEAWAY
+The number of possible patterns doubles whenever one extra bit is added.
+=== SLIDE 6 ===
+DATA REPRESENTATION & PROCESSING
+Bytes and groups of bytes
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+6
+A byte is a group of 8 bits.
+A byte can represent 256 different patterns (2⁸), from 00000000 to 11111111.
+Text characters, small numeric values and parts of files can be encoded using bytes.
+Computers group bytes into larger units to measure memory and file sizes.
+Example: a short text file may occupy a few kilobytes; a video may occupy gigabytes.
+BIT
+One binary digit.
+BYTE
+8 bits; 256 patterns.
+LARGER UNITS
+KB, MB, GB, TB and beyond.
+KEY TAKEAWAY
+Remember: 8 bits = 1 byte.
+=== SLIDE 7 ===
+DATA REPRESENTATION & PROCESSING
+Understanding binary place value
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+7
+Binary is a base-2 number system; it uses only 0 and 1.
+Each position represents a power of 2, moving from right to left.
+Example: 1011₂ = (1×8) + (0×4) + (1×2) + (1×1) = 11₁₀.
+The subscript ₂ identifies binary; the subscript ₁₀ identifies decimal.
+Computers use binary internally, while users commonly enter decimal numbers.
+8
+2³
+4
+2²
+2
+2¹
+1
+2⁰
+KEY TAKEAWAY
+Binary place values increase by powers of two from right to left.
+=== SLIDE 8 ===
+DATA REPRESENTATION & PROCESSING
+Worked example: convert binary to decimal
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+8
+Convert 1101₂ to decimal.
+Write the place values: 8, 4, 2, 1.
+Multiply each bit by its place value: (1×8) + (1×4) + (0×2) + (1×1).
+Add the results: 8 + 4 + 0 + 1 = 13.
+Therefore, 1101₂ = 13₁₀.
+KEY TAKEAWAY
+Only add the place values where the binary digit is 1.
+=== SLIDE 9 ===
+DATA REPRESENTATION & PROCESSING
+Number representation overview
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+9
+Computers represent numbers using bit patterns.
+Unsigned integers represent zero and positive whole numbers.
+Signed integers represent positive and negative whole numbers; a common method is two’s complement.
+Real numbers with fractional parts are commonly stored using floating-point representation.
+Different representations have limits: a fixed number of bits can represent only a finite range of values.
+INTEGER
+Whole number, e.g. 27 or −8.
+FLOATING POINT
+Approximate real value, e.g. 3.14159.
+KEY TAKEAWAY
+The representation chosen affects the range and precision of a stored number.
+=== SLIDE 10 ===
+DATA REPRESENTATION & PROCESSING
+Decimal, binary and hexadecimal
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+10
+Decimal (base 10) uses digits 0–9 and is familiar to people.
+Binary (base 2) uses 0 and 1 and maps naturally to digital circuits.
+Hexadecimal (base 16) uses 0–9 and A–F; each hexadecimal digit represents four bits.
+Hexadecimal is a compact way to write long binary patterns.
+Example: binary 1111₂ = decimal 15 = hexadecimal F₁₆.
+DECIMAL
+Base 10
+BINARY
+Base 2
+HEXADECIMAL
+Base 16
+KEY TAKEAWAY
+Hexadecimal makes binary values shorter and easier to read.
+=== SLIDE 11 ===
+DATA REPRESENTATION & PROCESSING
+Representing text, images, audio and video
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+11
+Text: character-encoding standards such as Unicode assign numeric codes to characters.
+Images: pixels are represented by numerical colour values; resolution describes pixel dimensions.
+Audio: sound is sampled at intervals and each sample is represented digitally.
+Video: a sequence of image frames, usually combined with audio and compressed.
+All these media eventually become binary data that can be stored, processed and transmitted.
+TEXT
+Character codes
+IMAGE
+Pixels and colour values
+AUDIO
+Digital samples
+VIDEO
+Frames + sound
+KEY TAKEAWAY
+Different media types use different encoding methods, but all are stored as bits.
+=== SLIDE 12 ===
+DATA REPRESENTATION & PROCESSING
+What is data processing?
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+12
+Data processing is the set of operations performed on raw data to produce useful results.
+It may involve collecting, validating, sorting, calculating, classifying, summarising and storing data.
+Processing can be manual, mechanical or electronic.
+Computerised processing is fast and repeatable, but depends on accurate input and correct instructions.
+Example: a school system calculates each student's total score and grade from assessment records.
+INPUT
+Raw facts enter the system.
+PROCESS
+Rules and calculations are applied.
+OUTPUT
+Useful results are produced.
+KEY TAKEAWAY
+Processing transforms input data into a result that has meaning.
+=== SLIDE 13 ===
+DATA REPRESENTATION & PROCESSING
+The information processing cycle
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+13
+A common model is Input → Processing → Output → Storage.
+Input: capture data through a keyboard, scanner, form, sensor or other device.
+Processing: apply instructions, calculations, comparisons or sorting.
+Output: present results through a screen, printout, speaker or report.
+Storage: save data and results for later use; feedback can help improve the next cycle.
+INPUT
+Capture
+PROCESSING
+Transform
+OUTPUT
+Present
+STORAGE
+Save
+KEY TAKEAWAY
+The stages work together; a system may repeat the cycle many times.
+=== SLIDE 14 ===
+DATA REPRESENTATION & PROCESSING
+Example: processing student examination results
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+14
+Input: lecturers enter each student's test and examination scores.
+Validation: the system checks that scores are within the permitted range.
+Processing: it adds scores, calculates totals and assigns grades using approved rules.
+Output: students receive result slips and management receives class summaries.
+Storage: approved results are saved in the student information system for future reference.
+SCORES
+Test + exam
+CHECK
+Valid range?
+CALCULATE
+Total + grade
+REPORT
+Result slip
+KEY TAKEAWAY
+A clear processing workflow reduces repetitive calculation and supports timely reporting.
+=== SLIDE 15 ===
+DATA REPRESENTATION & PROCESSING
+Processing methods: batch and real-time
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+15
+Batch processing collects transactions and processes them together at a scheduled time.
+Example: an organisation processes staff salaries at the end of the month.
+Real-time processing handles data immediately or with very little delay.
+Example: an ATM checks an account balance and authorises a withdrawal during the transaction.
+Online transaction processing (OLTP) supports many short, concurrent transactions, such as retail sales.
+BATCH
+Grouped processing at a planned time.
+REAL-TIME
+Immediate response to an event.
+KEY TAKEAWAY
+Choose a processing method based on how quickly the result is needed.
+=== SLIDE 16 ===
+DATA REPRESENTATION & PROCESSING
+Data validation and verification
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+16
+Validation checks whether data follows defined rules before it is accepted.
+Range check: age must fall within an allowed range.
+Format check: a date must follow the required pattern.
+Presence check: a required student ID field cannot be blank.
+Verification checks whether data was entered or copied correctly; double-entry and proofreading are examples.
+VALIDATION
+Is the data acceptable under the rules?
+VERIFICATION
+Was the data captured accurately?
+KEY TAKEAWAY
+Validation does not guarantee truth; it only checks specified rules.
+=== SLIDE 17 ===
+DATA REPRESENTATION & PROCESSING
+Data quality: why it matters
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+17
+Data quality describes how suitable data is for its intended purpose.
+Poor-quality data can lead to wrong decisions, duplicate payments, missed messages or inaccurate reports.
+Example: a bank with an incorrect account number may send a transfer to the wrong destination or reject it.
+Data quality is a shared responsibility of people, processes and technology.
+Good systems include controls at data entry, processing, storage and reporting stages.
+GOOD DATA
+Supports trustworthy decisions.
+POOR DATA
+Creates errors, waste and risk.
+KEY TAKEAWAY
+A computer can process bad data quickly and still produce a bad result.
+=== SLIDE 18 ===
+DATA REPRESENTATION & PROCESSING
+Dimensions of data quality
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+18
+Accuracy: values correctly describe the real-world fact.
+Completeness: required fields and records are present.
+Consistency: the same fact is recorded in compatible ways across systems.
+Timeliness: data is current enough for the task.
+Validity: data follows defined formats and rules; uniqueness means duplicates are controlled.
+ACCURACY
+Correct
+COMPLETE
+No key gaps
+CONSISTENT
+Agrees
+TIMELY
+Up to date
+VALID
+Follows rules
+KEY TAKEAWAY
+High-quality data should be accurate, complete, consistent, timely and valid.
+=== SLIDE 19 ===
+DATA REPRESENTATION & PROCESSING
+Common causes of poor data quality
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+19
+Human error: typing mistakes, selecting the wrong record or misunderstanding a field.
+Outdated records: phone numbers, addresses or job roles are not updated.
+Duplicate records: one person is registered more than once.
+Poor system design: unclear forms, missing validation or inconsistent formats.
+Integration problems: systems exchange data using different codes, formats or definitions.
+KEY TAKEAWAY
+Preventing errors at the point of capture is often cheaper than correcting them later.
+=== SLIDE 20 ===
+DATA REPRESENTATION & PROCESSING
+Storage units: from bytes to terabytes
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+20
+Digital storage capacity is measured in bytes and larger multiples.
+Common decimal units: 1 KB = 1,000 bytes; 1 MB = 1,000 KB; 1 GB = 1,000 MB; 1 TB = 1,000 GB.
+Binary-based units use KiB, MiB, GiB and TiB, where each step is 1,024 of the previous unit.
+Manufacturers often advertise decimal capacity, while some operating systems display binary-based values.
+Always check whether a figure uses decimal or binary units when comparing capacities.
+KB / KiB
+Small documents
+MB / MiB
+Photos and music
+GB / GiB
+Apps and videos
+TB / TiB
+Large collections and backups
+KEY TAKEAWAY
+Storage-unit labels can differ because decimal and binary measurement systems are both used.
+=== SLIDE 21 ===
+DATA REPRESENTATION & PROCESSING
+Estimating file sizes in everyday life
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+21
+A plain-text document may be only a few kilobytes, depending on its content and formatting.
+A compressed photograph may be a few megabytes; resolution and image format affect size.
+A song in a compressed audio format may occupy several megabytes.
+A high-definition video can occupy hundreds of megabytes or several gigabytes.
+Actual size varies with duration, quality, compression and file format.
+DOCUMENT
+Usually KB
+PHOTO
+Often MB
+VIDEO
+Often hundreds of MB or GB
+KEY TAKEAWAY
+File size depends on the amount of data and how efficiently it is encoded.
+=== SLIDE 22 ===
+DATA REPRESENTATION & PROCESSING
+Section review: data representation and processing
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+22
+Bits and bytes are the foundation of digital representation: 8 bits make 1 byte.
+Binary is base 2; hexadecimal is a compact way to express binary patterns.
+Computers encode text, images, sound and video as digital data.
+The processing cycle commonly includes input, processing, output and storage.
+Data quality determines whether processed results can be trusted.
+KEY TAKEAWAY
+Next: where data and programs are kept, and how cloud services extend storage.
+=== SLIDE 23 ===
+STORAGE AND CLOUD SERVICES
+Learning outcomes
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+33
+By the end of this section, students should be able to:
+Distinguish primary storage from secondary storage.
+Compare RAM, ROM, HDDs and SSDs.
+Explain backups, synchronisation and cloud storage.
+Identify cloud service models and common benefits and risks.
+Recommend suitable storage practices for individuals and organisations.
+KEY TAKEAWAY
+Understand not only where data is stored, but how it is protected and accessed.
+=== SLIDE 24 ===
+STORAGE AND CLOUD SERVICES
+What is computer storage?
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+34
+Computer storage is the technology used to retain digital data and instructions.
+Storage may be temporary or long-term, depending on its purpose and technology.
+Primary storage supports the CPU while programs are running.
+Secondary storage keeps files and applications when power is off.
+Storage capacity, speed, cost, durability and portability are important selection factors.
+TEMPORARY
+Supports active work.
+LONG-TERM
+Retains files and programs.
+KEY TAKEAWAY
+Different storage technologies serve different roles in a computer system.
+=== SLIDE 25 ===
+STORAGE AND CLOUD SERVICES
+Primary storage: memory close to the CPU
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+35
+Primary storage is directly accessible by the processor or closely integrated with it.
+RAM holds programs and data currently being used; it is usually volatile.
+ROM or firmware memory stores essential startup instructions and is generally non-volatile.
+CPU cache is very fast, small memory that keeps frequently needed data close to the processor.
+Primary storage is fast, but usually more limited in capacity than secondary storage.
+RAM
+Working area for active programs.
+ROM / FIRMWARE
+Startup instructions.
+CACHE
+Very fast memory near the CPU.
+KEY TAKEAWAY
+Primary storage helps the CPU access instructions and data quickly.
+=== SLIDE 26 ===
+STORAGE AND CLOUD SERVICES
+RAM: the computer's working memory
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+36
+RAM stands for Random Access Memory.
+When an application opens, the operating system loads the needed program code and data into RAM.
+More available RAM can help a computer handle more applications and larger tasks at once.
+RAM is volatile: its contents are normally lost when power is removed.
+Example: opening a browser, document editor and video meeting uses RAM for active work.
+MORE RAM
+Can improve multitasking when memory is a bottleneck.
+LIMITATION
+RAM does not replace permanent file storage.
+KEY TAKEAWAY
+Save important work to secondary storage; do not rely on RAM to keep it.
+=== SLIDE 27 ===
+STORAGE AND CLOUD SERVICES
+ROM, firmware and cache
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+37
+ROM means Read-Only Memory, although modern firmware storage can sometimes be updated.
+Firmware provides low-level instructions that help hardware start and operate.
+BIOS or UEFI firmware helps initialise hardware and begin loading the operating system.
+Cache memory stores frequently accessed instructions or data to reduce waiting time.
+Cache is typically smaller and faster than RAM; users rarely manage it directly.
+FIRMWARE
+Helps start and control hardware.
+CACHE
+Reduces access delays for frequently used data.
+KEY TAKEAWAY
+RAM, firmware and cache have different purposes; they are not interchangeable.
+=== SLIDE 28 ===
+STORAGE AND CLOUD SERVICES
+Secondary storage: keeping data for later
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+38
+Secondary storage retains data even when the computer is switched off.
+It stores operating systems, applications, documents, photographs, databases and backups.
+Examples include hard disk drives, solid-state drives, USB flash drives, memory cards and optical discs.
+Secondary storage usually offers greater capacity at lower cost per unit than primary memory.
+Speed, portability, durability and security vary across devices.
+INTERNAL
+Installed inside a computer.
+EXTERNAL
+Connected when needed, e.g. USB drive.
+KEY TAKEAWAY
+Secondary storage is where most personal and organisational files are kept.
+=== SLIDE 29 ===
+STORAGE AND CLOUD SERVICES
+HDD: hard disk drive
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+39
+An HDD stores data magnetically on rotating platters.
+A read/write head moves over the platter surfaces to access data.
+HDDs are available in large capacities and can be cost-effective for bulk storage.
+Because they contain moving parts, they can be affected by drops, vibration and mechanical wear.
+Example: an external 2 TB HDD may be used to archive photos, videos and old project files.
+ADVANTAGE
+Often economical for large storage capacity.
+LIMITATION
+Mechanical parts make it more vulnerable to physical shock.
+KEY TAKEAWAY
+HDDs are useful for capacity-focused storage, especially when speed is less critical.
+=== SLIDE 30 ===
+STORAGE AND CLOUD SERVICES
+SSD: solid-state drive
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+40
+An SSD stores data in flash memory chips and has no moving mechanical parts.
+SSDs generally provide faster boot times, application loading and file access than HDDs.
+They are quieter, use less power in many cases and resist ordinary movement better.
+SSDs usually cost more per gigabyte than HDDs, although prices continue to change.
+Example: a laptop with an SSD often starts faster and feels more responsive.
+ADVANTAGE
+Fast access and no moving parts.
+LIMITATION
+Cost per GB may be higher than an HDD.
+KEY TAKEAWAY
+SSDs are a strong choice for operating systems and frequently used applications.
+=== SLIDE 31 ===
+STORAGE AND CLOUD SERVICES
+HDD versus SSD: a practical comparison
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+41
+HDD: magnetic platters, moving parts, typically lower cost per GB for large capacities.
+SSD: flash memory, no moving parts, typically faster response and better shock resistance.
+Both can store operating systems, applications and user files.
+An organisation may use SSDs for staff laptops and HDDs for large archives.
+Do not assume every SSD is faster in every situation; interface and model specifications matter.
+HDD
+Capacity-focused; economical bulk storage.
+SSD
+Performance-focused; fast everyday access.
+KEY TAKEAWAY
+Choose based on workload, budget, capacity and reliability requirements.
+=== SLIDE 32 ===
+STORAGE AND CLOUD SERVICES
+Other secondary storage devices
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+42
+USB flash drives are small, portable devices useful for transferring files.
+Memory cards are commonly used in phones, cameras and other portable devices.
+Optical discs such as DVDs use laser technology and are now less common for everyday storage.
+Network-attached storage (NAS) provides shared storage over a local network.
+External drives are convenient, but they can be lost, damaged or infected by malware.
+USB DRIVE
+Portable file transfer.
+MEMORY CARD
+Small devices and cameras.
+NAS
+Shared storage on a network.
+KEY TAKEAWAY
+Portable storage is convenient but should not be the only copy of important data.
+=== SLIDE 33 ===
+STORAGE AND CLOUD SERVICES
+How to choose a storage device
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+43
+Capacity: how much data must be stored now and in the future?
+Performance: how quickly must files be opened, saved or transferred?
+Cost: what is the purchase price and ongoing maintenance cost?
+Reliability: what happens if the device fails or is damaged?
+Security and portability: does the device need encryption, access control or frequent movement?
+LAPTOP
+SSD for speed and responsiveness.
+MEDIA ARCHIVE
+Large HDD or managed storage.
+SHARED OFFICE FILES
+NAS or managed cloud storage.
+KEY TAKEAWAY
+No single device is best for every storage need.
+=== SLIDE 34 ===
+STORAGE AND CLOUD SERVICES
+What is a backup?
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+44
+A backup is a separate copy of data that can be used to restore information after loss or damage.
+Backups protect against accidental deletion, device failure, ransomware, theft and disasters.
+A backup should be separate from the original data; simply copying a file to another folder on the same drive is not enough.
+Backups should be scheduled, monitored and tested through restore exercises.
+Example: a lecturer backs up lecture slides and student marks to an encrypted external drive and a secure cloud location.
+SOURCE DATA
+Original files.
+BACKUP COPY
+Separate recoverable copy.
+KEY TAKEAWAY
+A backup is useful only if it can be restored when needed.
+=== SLIDE 35 ===
+STORAGE AND CLOUD SERVICES
+Backup types: full, incremental and differential
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+45
+Full backup: copies all selected data each time; simplest to restore but can require more time and space.
+Incremental backup: copies data changed since the most recent backup of any type; efficient, but restoration may need several backup sets.
+Differential backup: copies data changed since the last full backup; restoration needs the full backup and latest differential.
+Organisations combine methods to balance backup speed, storage use and recovery time.
+Example: a weekly full backup with daily incremental backups.
+FULL
+All selected files.
+INCREMENTAL
+Changes since last backup.
+DIFFERENTIAL
+Changes since last full backup.
+KEY TAKEAWAY
+Backup strategy affects both storage requirements and recovery effort.
+=== SLIDE 36 ===
+STORAGE AND CLOUD SERVICES
+The 3-2-1 backup rule
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+46
+Keep at least 3 copies of important data, including the working copy.
+Use 2 different types of storage media or systems where practical.
+Keep at least 1 copy off-site or otherwise isolated from the main location.
+An offline or immutable copy can help protect against ransomware that targets connected backups.
+Example: laptop copy + external drive + secure cloud backup.
+COPY 1
+Working computer
+COPY 2
+External drive
+COPY 3
+Off-site / cloud
+KEY TAKEAWAY
+The 3-2-1 rule reduces the chance that one incident destroys every copy.
+=== SLIDE 37 ===
+STORAGE AND CLOUD SERVICES
+Synchronisation: keeping versions aligned
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+47
+Synchronisation (sync) keeps files or data consistent across two or more devices or locations.
+Example: a document saved in a cloud folder on a laptop becomes available on a phone after syncing.
+Sync is useful for collaboration and moving between devices.
+However, unwanted edits or deletions may also synchronise to every connected device.
+Version history and independent backups are important safeguards.
+DEVICE A
+Edit a file.
+SYNC SERVICE
+Transfers changes.
+DEVICE B
+Receives updated file.
+KEY TAKEAWAY
+Synchronisation improves access; it is not a substitute for backup.
+=== SLIDE 38 ===
+STORAGE AND CLOUD SERVICES
+Backup versus synchronisation
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+48
+Backup creates recoverable copies for restoration after data loss.
+Synchronisation keeps working copies aligned across devices or users.
+Deleting a synced file may delete it from other synced locations.
+A backup system may preserve earlier versions even after a file is changed or deleted.
+Use both: synchronise active work and back up important files independently.
+SYNC
+Keeps copies aligned for access.
+BACKUP
+Preserves copies for recovery.
+KEY TAKEAWAY
+Sync helps you work across devices; backup helps you recover from loss.
+=== SLIDE 39 ===
+STORAGE AND CLOUD SERVICES
+What is cloud storage?
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+49
+Cloud storage saves data on remote servers accessed through a network, usually the internet.
+A provider operates the infrastructure, while customers use an app, browser or service interface.
+Examples include Google Drive, Microsoft OneDrive, Dropbox and iCloud.
+Files may be accessed from multiple devices, depending on permissions and connectivity.
+Cloud storage can be personal, organisational or part of a larger cloud computing service.
+YOUR DEVICE
+Uploads and downloads files.
+INTERNET
+Connects to the service.
+CLOUD DATA CENTRE
+Stores and manages data.
+KEY TAKEAWAY
+Cloud storage means remote storage delivered as a service over a network.
+=== SLIDE 40 ===
+STORAGE AND CLOUD SERVICES
+How cloud storage works
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+50
+A user signs in through an app or web browser.
+The device sends data over an encrypted network connection to the provider's servers.
+The service stores the file and its associated information, such as owner and permissions.
+Authorised users can later view, download, edit or share the file.
+Some services keep local copies or cached files so users can work when temporarily offline.
+SIGN IN
+Authenticate
+UPLOAD
+Send file
+STORE
+Remote servers
+ACCESS
+Retrieve / share
+KEY TAKEAWAY
+Access depends on account security, permissions, service availability and network connectivity.
+=== SLIDE 41 ===
+STORAGE AND CLOUD SERVICES
+Cloud service models: IaaS, PaaS and SaaS
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+51
+Infrastructure as a Service (IaaS): rent computing resources such as virtual servers, storage and networks.
+Platform as a Service (PaaS): use a managed environment to build, test and deploy applications.
+Software as a Service (SaaS): use a complete application through a browser or app.
+Examples: renting a virtual server is IaaS; using a managed app platform is PaaS; using webmail is SaaS.
+Cloud storage is a service capability that may be included in IaaS, SaaS or a dedicated storage product.
+IaaS
+Rent infrastructure.
+PaaS
+Build and deploy apps.
+SaaS
+Use finished software.
+KEY TAKEAWAY
+The key difference is how much of the technology stack the provider manages.
+=== SLIDE 42 ===
+STORAGE AND CLOUD SERVICES
+Benefits of cloud storage
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+52
+Accessibility: authorised users can reach files from different locations and devices.
+Collaboration: several people can work on shared documents, subject to permissions.
+Scalability: storage capacity can often be increased without buying local hardware.
+Reduced local maintenance: the provider manages much of the underlying infrastructure.
+Recovery options: some services provide version history, recycle bins and geographically separate copies.
+ACCESS
+Work across devices.
+COLLABORATE
+Share and co-edit.
+SCALE
+Expand capacity as needed.
+KEY TAKEAWAY
+Cloud storage can improve flexibility, but its value depends on good management.
+=== SLIDE 43 ===
+STORAGE AND CLOUD SERVICES
+Risks and limitations of cloud storage
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+53
+Internet dependence: poor connectivity may delay access or synchronisation.
+Privacy and security: weak passwords, oversharing or compromised accounts can expose files.
+Availability: provider outages can temporarily interrupt access.
+Cost and lock-in: recurring fees, storage limits and migration effort should be considered.
+Compliance and location: organisations must understand data-protection obligations and where data is processed or stored.
+SECURITY
+Protect accounts and permissions.
+AVAILABILITY
+Plan for outages.
+GOVERNANCE
+Know policies and obligations.
+KEY TAKEAWAY
+Cloud services still require user responsibility, security controls and contingency plans.
+=== SLIDE 44 ===
+STORAGE AND CLOUD SERVICES
+Protecting files in local and cloud storage
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+54
+Use strong, unique passwords and multi-factor authentication where available.
+Encrypt sensitive files and devices, especially laptops and removable drives.
+Share files only with intended people; review links and access permissions regularly.
+Install updates and use reputable endpoint protection.
+Keep independent backups and test recovery; do not treat a synced folder as the only copy.
+AUTHENTICATE
+Strong password + MFA.
+AUTHORISE
+Least-privilege access.
+RECOVER
+Independent tested backups.
+KEY TAKEAWAY
+Security is a combination of technology, user behaviour and organisational policy.
+=== SLIDE 45 ===
+STORAGE AND CLOUD SERVICES
+Practical scenario: a lecturer's storage plan
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+55
+Working files: keep current lecture slides and class materials on the laptop's SSD.
+Collaboration: share approved course documents through the university's authorised cloud or LMS platform.
+Backup: make scheduled backups to an encrypted external drive and an approved off-site location.
+Student records: store marks and personal information only in approved systems with restricted access.
+Recovery: periodically restore a sample file to confirm that backups work.
+DAILY WORK
+Laptop SSD + approved cloud workspace.
+PROTECTION
+Encrypted independent backup.
+SENSITIVE DATA
+Approved system + restricted access.
+KEY TAKEAWAY
+Use approved institutional platforms for student information and confidential records.
+=== SLIDE 46 ===
+STORAGE AND CLOUD SERVICES
+Class activity: choose the right storage
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+56
+Scenario A: A student needs to move a 20 MB assignment between a home computer and campus lab.
+Scenario B: A media department must retain several terabytes of video archives economically.
+Scenario C: A lecturer and teaching assistant need to edit the same course outline.
+Scenario D: A school must recover student records after a laptop is stolen.
+Discuss the best storage approach for each scenario and explain the trade-offs.
+A
+USB drive or secure cloud sharing.
+B
+High-capacity HDD / managed archive.
+C
+Shared cloud document with permissions.
+D
+Independent encrypted backups.
+KEY TAKEAWAY
+A good recommendation explains both the benefit and the risk.
+=== SLIDE 47 ===
+STORAGE AND CLOUD SERVICES
+Common misconceptions to avoid
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+57
+“Cloud means my files are stored in the sky.” In reality, they are stored on physical servers in data centres.
+“Sync is backup.” Not necessarily; deletions and unwanted changes can sync too.
+“An external drive cannot fail.” All storage devices can fail, be lost or be damaged.
+“More storage makes a computer faster.” Capacity and performance are different characteristics.
+“Cloud providers handle all security.” Users and organisations still manage accounts, access and data choices.
+KEY TAKEAWAY
+Use precise terms and understand what each technology actually does.
+=== SLIDE 48 ===
+STORAGE AND CLOUD SERVICES
+Summary: storage and cloud services
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+58
+Primary storage (RAM, cache and firmware memory) supports the computer while it operates.
+Secondary storage (HDD, SSD, USB and network storage) retains data for long-term use.
+HDDs offer economical capacity; SSDs usually offer faster access and better resistance to movement.
+Backups support recovery; synchronisation keeps working copies aligned.
+Cloud storage provides network-based access and collaboration, but needs security, governance and backup planning.
+KEY TAKEAWAY
+The safest storage strategy combines appropriate devices, secure access and tested backups.
+=== SLIDE 49 ===
+REVIEW & DISCUSSION
+End-of-lecture review questions
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+59
+1. Explain the difference between a bit and a byte. How many patterns can 4 bits represent?
+2. Convert 1011₂ to decimal and show your working.
+3. Describe the input–processing–output cycle using an example from a university.
+4. Identify and explain four dimensions of data quality.
+5. Compare primary and secondary storage, and distinguish an HDD from an SSD.
+6. Explain the difference between backup and synchronisation.
+7. State three benefits and three risks of cloud storage.
+KEY TAKEAWAY
+Students should be able to explain each concept and apply it to a real situation.
+=== SLIDE 50 ===
+LECTURER'S GUIDE
+Suggested teaching approach
+INTRODUCTION TO INFORMATION TECHNOLOGY  |  LECTURE NOTES
+60
+Suggested duration: two 90-minute sessions or one extended lecture with a short break.
+Session 1: binary, bits and bytes, number representation, processing cycle and data quality.
+Session 2: primary and secondary storage, HDD vs SSD, backup, synchronisation and cloud services.
+Use the worked binary conversion as a board exercise; ask students to explain each place value.
+Use the lecturer storage scenario for a short group discussion and ask groups to justify their choices.
+Assessment idea: a short quiz plus a scenario-based question on selecting a storage and backup strategy.
+KEY TAKEAWAY
+Encourage students to explain concepts in their own words and connect them to familiar digital services.

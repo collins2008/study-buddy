@@ -1,0 +1,1110 @@
+{
+  "course": "COS 201",
+  "topic": "Data Types, Variables & Declarations",
+  "summary": "Covers fundamental data representations in C including basic types (int, float, double, char), type modifiers (unsigned, signed, short, long), identifier rules and case sensitivity, variable declarations vs definitions, multiple declarations in a single line, constants using #define vs the const qualifier, sizeof operator, escape sequences, and conversion specifiers in formatted I/O.",
+  "key_terms": [
+    {
+      "term": "Variable",
+      "definition": "A named location in computer memory that holds a value which can be retrieved and modified during execution."
+    },
+    {
+      "term": "Identifier",
+      "definition": "A token composed of letters, digits, and underscores that does not begin with a digit and is not a reserved keyword."
+    },
+    {
+      "term": "Keyword",
+      "definition": "A reserved word in C that has a fixed grammatical meaning to the compiler and cannot be redefined by the programmer."
+    },
+    {
+      "term": "Constant",
+      "definition": "An immutable value defined either via the preprocessor #define directive or with the const type qualifier."
+    },
+    {
+      "term": "Conversion Specifier",
+      "definition": "A placeholder in a format control string (such as %d, %f, %c) instructing printf or scanf how to format or interpret data."
+    },
+    {
+      "term": "Truncation",
+      "definition": "The automatic discarding of fractional parts when a floating-point value is assigned to an integer variable."
+    },
+    {
+      "term": "Address Operator (&)",
+      "definition": "A unary operator that returns the memory address of its operand, required when reading primitive scalars with scanf."
+    },
+    {
+      "term": "Macro",
+      "definition": "An identifier defined by #define that is substituted textually by the preprocessor before compilation begins."
+    },
+    {
+      "term": "Escape Sequence",
+      "definition": "A character combination beginning with a backslash (\\) used to represent non-printing or control characters such as newline (\\n) and tab (\\t)."
+    },
+    {
+      "term": "sizeof Operator",
+      "definition": "A compile-time unary operator that returns the memory size in bytes required to store an object or type."
+    }
+  ],
+  "questions": [
+    {
+      "id": "cos201-dt-001",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "syntax",
+        "declarations",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following is the correct way to declare a float variable in C?",
+      "options": [
+        "float x;",
+        "int x;",
+        "float x();",
+        "double x;"
+      ],
+      "answer": 0,
+      "explanation": "In C, declaring a single-precision floating-point variable requires the keyword 'float' followed by a valid identifier and a statement terminator semicolon (;). 'float x();' declares a function prototype taking no specified arguments and returning float.",
+      "why_wrong": {
+        "1": "'int x;' declares an integer variable, not a floating-point variable.",
+        "2": "'float x();' declares a function prototype that returns float, not a variable.",
+        "3": "'double x;' declares a double-precision floating-point variable, which typically occupies 8 bytes rather than the standard 4-byte float."
+      },
+      "source": "COS 201 Midterm Type B, Q1; Deitel Ch 2.3",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-002",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "syntax",
+        "keywords",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following is a valid C keyword?",
+      "options": [
+        "main",
+        "return",
+        "printf",
+        "integer"
+      ],
+      "answer": 1,
+      "explanation": "'return' is one of the 32 standard C keywords defined in ANSI C89/ISO C99. 'main' is a standard function name, 'printf' is a standard library function in stdio.h, and 'integer' is not a C keyword (the keyword is 'int').",
+      "why_wrong": {
+        "0": "'main' is the standard identifier where execution begins, but it is an identifier, not a reserved C keyword.",
+        "2": "'printf' is an external function provided by the C Standard I/O library (<stdio.h>), not a keyword.",
+        "3": "'integer' does not exist in C syntax; the keyword for integer types is 'int'."
+      },
+      "source": "COS 201 Midterm Type B, Q2; Deitel Fig 2.15",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-003",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "declarations",
+        "multiple-variables",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following is the correct way to declare multiple integer variables in a single line?",
+      "options": [
+        "int x, y, z;",
+        "int x; y; z;",
+        "int x y z;",
+        "int x:y:z;"
+      ],
+      "answer": 0,
+      "explanation": "Multiple variables of the same type can be declared in a single statement by separating each identifier with a comma and ending the statement with a semicolon: 'int x, y, z;'.",
+      "why_wrong": {
+        "1": "'int x; y; z;' is invalid because 'y;' and 'z;' are treated as separate statements where y and z lack type specifiers.",
+        "2": "'int x y z;' is a syntax error because whitespace alone cannot separate identifier tokens in a declaration list.",
+        "3": "Colons are used in bit-field declarations and labels, not for separating variable names."
+      },
+      "source": "COS 201 Midterm Type B, Q24; Deitel Ch 2.3",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-004",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "constants",
+        "preprocessor",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following is correct for defining a symbolic constant using the preprocessor in C?",
+      "options": [
+        "#define PI 3.14",
+        "const PI = 3.14;",
+        "define PI 3.14",
+        "constant PI=3.14;"
+      ],
+      "answer": 0,
+      "explanation": "Preprocessor directives begin with '#' and do not use an assignment operator '=' or a terminating semicolon. The standard syntax is '#define IDENTIFIER replacement_text'.",
+      "why_wrong": {
+        "1": "'const PI = 3.14;' lacks a type specifier (such as double or float). In standard C99/C11, explicit types are mandatory.",
+        "2": "Preprocessor directives must begin with the '#' symbol; 'define' without '#' causes a compiler error.",
+        "3": "'constant' is not a C keyword."
+      },
+      "source": "COS 201 Midterm Type B, Q26; Deitel Ch 2.3",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-005",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "constants",
+        "const-qualifier",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following is correct syntax to declare a constant integer in C?",
+      "options": [
+        "const int x = 5;",
+        "int const x = 5;",
+        "#define x 5",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "In C, both 'const int x = 5;' and 'int const x = 5;' declare a type-checked read-only integer variable using the const qualifier. Additionally, '#define x 5' creates a preprocessor symbolic constant. Therefore, all three are valid mechanisms.",
+      "why_wrong": {
+        "0": "While valid, it is not the only correct option; both 'int const' and '#define' are also valid.",
+        "1": "While valid ('const' can appear before or after the type specifier), options A and C are also valid.",
+        "2": "While '#define' defines an integer literal replacement, const declarations are also valid."
+      },
+      "source": "COS 201 Midterm Type B, Q38; Deitel Ch 2.3",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-006",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "type-casting",
+        "truncation",
+        "printf"
+      ],
+      "question": "What will be the exact output of the following C program?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 5.95;\n    float b = 2;\n    printf(\"%d, %.1f\\n\", a, b);\n    return 0;\n}",
+      "options": [
+        "5, 2.0",
+        "6, 2.0",
+        "5, 2",
+        "Compilation Error"
+      ],
+      "answer": 0,
+      "explanation": "When the floating-point literal 5.95 is assigned to the integer variable 'a', C performs implicit truncation (discarding the fractional part), resulting in 5 (no rounding). The integer 2 assigned to float 'b' becomes 2.0f, and '%.1f' prints it with 1 decimal place as 2.0.",
+      "why_wrong": {
+        "1": "C integer assignment does NOT round up to 6; it strictly truncates toward zero.",
+        "2": "'%.1f' requires printing one decimal digit, so it outputs '2.0', not '2'.",
+        "3": "Implicit narrowing conversions are standard in C and generate at most a warning, not a compilation error."
+      },
+      "source": "Deitel Ch 2.5, 3.8",
+      "verified": true,
+      "verified_output": "5, 2.0\n"
+    },
+    {
+      "id": "cos201-dt-007",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "macro",
+        "precedence",
+        "preprocessor"
+      ],
+      "question": "What will be the output of the following C program?",
+      "code": "#include <stdio.h>\n#define VALUE 5 + 2\nint main(void) {\n    int result = VALUE * 4;\n    printf(\"%d\\n\", result);\n    return 0;\n}",
+      "options": [
+        "28",
+        "13",
+        "20",
+        "Compilation Error"
+      ],
+      "answer": 1,
+      "explanation": "#define performs pure textual replacement before compilation. 'VALUE * 4' expands literally to '5 + 2 * 4'. Due to operator precedence, multiplication occurs before addition: 2 * 4 = 8, and 5 + 8 = 13. To obtain 28, the macro definition must be parenthesized: '#define VALUE (5 + 2)'.",
+      "why_wrong": {
+        "0": "28 is the classic trap assuming (5 + 2) is evaluated first. Without parentheses, macro substitution is raw text: 5 + 2 * 4.",
+        "2": "20 would occur if (5 * 4) were evaluated, ignoring + 2.",
+        "3": "The syntax is completely valid C."
+      },
+      "source": "Deitel Ch 2.3, 14.3",
+      "verified": true,
+      "verified_output": "13\n"
+    },
+    {
+      "id": "cos201-dt-008",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "char",
+        "ascii",
+        "printf"
+      ],
+      "question": "What will be the output of the following C program?",
+      "code": "#include <stdio.h>\nint main(void) {\n    char ch = 'B';\n    printf(\"%c %d\\n\", ch + 2, ch + 2);\n    return 0;\n}",
+      "options": [
+        "D 68",
+        "B 66",
+        "D D",
+        "Error"
+      ],
+      "answer": 0,
+      "explanation": "In C, character literals are integral values representing ASCII codes. 'B' has ASCII code 66. Adding 2 yields 68. Format specifier '%c' interprets 68 as character 'D', while '%d' prints the numerical value 68.",
+      "why_wrong": {
+        "1": "66 is 'B'; 'B' + 2 evaluates to 68 ('D').",
+        "2": "'%d' prints a decimal integer, not the character representation.",
+        "3": "Character arithmetic is fully defined in C and widely tested."
+      },
+      "source": "Deitel Ch 2.3, Ch 8",
+      "verified": true,
+      "verified_output": "D 68\n"
+    },
+    {
+      "id": "cos201-dt-009",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "literals",
+        "hex",
+        "octal"
+      ],
+      "question": "What will be the output of the following C program?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int hex = 0x1A;\n    int oct = 012;\n    printf(\"%d %d\\n\", hex, oct);\n    return 0;\n}",
+      "options": [
+        "26 10",
+        "1A 12",
+        "26 12",
+        "16 10"
+      ],
+      "answer": 0,
+      "explanation": "In C, integer literals with prefix '0x' or '0X' are hexadecimal (0x1A = 1*16 + 10 = 26). Integer literals starting with a leading '0' are octal (012 = 1*8 + 2 = 10). Both are printed in decimal via '%d'.",
+      "why_wrong": {
+        "1": "'%d' outputs decimal numbers, not literal string tokens like '1A'.",
+        "2": "Octal 012 is base-8 (1*8 + 2 = 10), not decimal 12.",
+        "3": "0x1A is 26, not 16."
+      },
+      "source": "Deitel Ch 2.3, Appendix E",
+      "verified": true,
+      "verified_output": "26 10\n"
+    },
+    {
+      "id": "cos201-dt-010",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "sizeof",
+        "char",
+        "types"
+      ],
+      "question": "What is guaranteed by the ISO C standard to be the output of the following code snippet?",
+      "code": "#include <stdio.h>\nint main(void) {\n    printf(\"%zu\\n\", sizeof(char));\n    return 0;\n}",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "Architecture-dependent"
+      ],
+      "answer": 0,
+      "explanation": "By definition in the ISO C Standard, sizeof(char) is ALWAYS exactly 1. All other data type sizes in C are expressed as multiples of the size of char.",
+      "why_wrong": {
+        "1": "char is never 2 bytes in standard C byte accounting.",
+        "2": "4 is typical for int or float, not char.",
+        "3": "While int and pointer sizes are architecture-dependent, sizeof(char) is strictly guaranteed by the standard to be 1."
+      },
+      "source": "Deitel Ch 14.5; ISO C Standard 6.5.3.4",
+      "verified": true,
+      "verified_output": "1\n"
+    },
+    {
+      "id": "cos201-dt-011",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_output",
+      "difficulty": 2,
+      "tags": [
+        "escape-sequences",
+        "printf"
+      ],
+      "question": "What is the output of the following printf statement in C?",
+      "code": "#include <stdio.h>\nint main(void) {\n    printf(\"\\\"A\\\\B\\\"\\n\");\n    return 0;\n}",
+      "options": [
+        "\"A\\B\"",
+        "\\\"A\\\\B\\\"",
+        "A\\B",
+        "\"AB\""
+      ],
+      "answer": 0,
+      "explanation": "The escape sequence \\\" prints a literal double quote (\"), and \\\\ prints a literal single backslash (\\). Thus, \"\\\"A\\\\B\\\"\\n\" outputs: \"A\\B\" followed by a newline.",
+      "why_wrong": {
+        "1": "The backslashes act as escape indicators and are not printed verbatim when preceding '\"' or '\\'.",
+        "2": "The escaped quotes are printed; they are not stripped.",
+        "3": "The single backslash between A and B is printed."
+      },
+      "source": "Deitel Fig 2.2",
+      "verified": true,
+      "verified_output": "\"A\\B\"\n"
+    },
+    {
+      "id": "cos201-dt-012",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "identifiers",
+        "syntax"
+      ],
+      "question": "Which of the following is an INVALID variable identifier in C?",
+      "options": [
+        "3rd_student",
+        "_student_score",
+        "student_3",
+        "STUDENT"
+      ],
+      "answer": 0,
+      "explanation": "In C, identifiers must begin with an alphabetic letter (a-z, A-Z) or an underscore (_). They cannot begin with a numeric digit. Therefore, '3rd_student' is lexical syntax error.",
+      "why_wrong": {
+        "1": "Identifiers may legally begin with an underscore (_).",
+        "2": "Digits are allowed anywhere in an identifier except as the very first character.",
+        "3": "Uppercase letters are valid; C identifiers are case-sensitive."
+      },
+      "source": "Deitel Ch 2.3",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-013",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "modifiers",
+        "unsigned"
+      ],
+      "question": "What is the primary difference between a signed int and an unsigned int in C?",
+      "options": [
+        "unsigned int can only represent non-negative numbers, doubling the maximum positive range compared to signed int.",
+        "unsigned int takes up more memory bytes than signed int.",
+        "signed int cannot represent negative numbers.",
+        "unsigned int can store floating-point fractions."
+      ],
+      "answer": 0,
+      "explanation": "Both signed int and unsigned int occupy the same amount of memory (typically 4 bytes). However, an unsigned int reinterprets the most significant sign bit as a magnitude bit, shifting the range from [-2^31, 2^31 - 1] to [0, 2^32 - 1].",
+      "why_wrong": {
+        "1": "They occupy identical storage size (typically 32 bits).",
+        "2": "signed int explicitly represents both positive and negative values.",
+        "3": "Neither int type stores floating-point fractions; both are integer types."
+      },
+      "source": "Deitel Ch 14.2",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-014",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "true_false_why",
+      "difficulty": 2,
+      "tags": [
+        "identifiers",
+        "rules"
+      ],
+      "question": "Is the following statement True or False? In C, identifiers may begin with an underscore (_), but cannot begin with a number.",
+      "tf_answer": true,
+      "options": [
+        "True, because the lexical rules permit letters and underscores as the first character, but digits are prohibited in the initial position.",
+        "False, because underscores are strictly reserved for compiler internals and cause a syntax error if written by the programmer.",
+        "False, because modern C allows identifiers to start with digits provided they contain letters.",
+        "True, but only in variable names, not function names."
+      ],
+      "why_options": [
+        "C lexical grammar specifies an identifier as (letter | '_')(letter | digit | '_')*.",
+        "Programmer identifiers can start with '_', though it is discouraged to avoid collisions with system libraries.",
+        "Identifiers starting with digits are interpreted by the lexical analyzer as numeric constants, causing syntax errors.",
+        "The identifier syntax rules apply universally to variable, function, and struct names."
+      ],
+      "why_answer": 0,
+      "explanation": "In C, valid identifiers consist of letters, digits, and underscores, but the first character must strictly be a letter or an underscore. An initial digit would cause the tokenizer to treat the token as a numeric constant.",
+      "why_wrong": {
+        "1": "Underscores are legally allowed at the start of programmer identifiers, though not recommended for library reasons.",
+        "2": "No version of C permits identifiers to begin with digits.",
+        "3": "The lexical rules apply identically to all identifiers in C."
+      },
+      "source": "Deitel Ch 2.3; ANSI C Standard Section 6.4.2",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-015",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "type_answer",
+      "difficulty": 1,
+      "tags": [
+        "format-specifiers",
+        "io"
+      ],
+      "question": "What is the single-character conversion specifier (excluding the percent sign) used in printf to output a single character in C?",
+      "answer": "c",
+      "accepted_answers": [
+        "c",
+        "%c"
+      ],
+      "explanation": "'%c' is the format specifier for printing or reading a single character in C. For example: printf(\"%c\", 'Z');.",
+      "why_wrong": {},
+      "source": "Deitel Ch 2.3, Fig 2.15",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-016",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "type_answer",
+      "difficulty": 2,
+      "tags": [
+        "format-specifiers",
+        "float"
+      ],
+      "question": "Which format conversion specifier is used in scanf to read a double-precision floating-point number (double) from standard input?",
+      "answer": "%lf",
+      "accepted_answers": [
+        "%lf",
+        "lf"
+      ],
+      "explanation": "In scanf, '%lf' (long float) must be used to read into a variable of type double, whereas '%f' is used for float. In printf, both float and double can use '%f' due to default argument promotions.",
+      "why_wrong": {},
+      "source": "Deitel Ch 2.3, Ch 9",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-017",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_bug",
+      "difficulty": 4,
+      "tags": [
+        "debugging",
+        "scanf",
+        "pointers"
+      ],
+      "question": "Identify the critical runtime bug in the following C code that causes undefined behavior or a segmentation fault:",
+      "code": "#include <stdio.h>\nint main(void) {\n    int age;\n    printf(\"Enter your age: \");\n    scanf(\"%d\", age);\n    printf(\"You are %d years old.\\n\", age);\n    return 0;\n}",
+      "options": [
+        "scanf is missing the address operator (&) before variable 'age', passing uninitialized garbage as a memory address.",
+        "The format specifier '%d' cannot be used with int in scanf.",
+        "The variable 'age' must be declared as float before calling scanf.",
+        "printf cannot follow scanf without an intervening fflush(stdin)."
+      ],
+      "answer": 0,
+      "explanation": "The function scanf requires pointer arguments indicating where to store input values. Writing 'scanf(\"%d\", age);' passes the current uninitialized value of 'age' (garbage) as a memory pointer, causing scanf to write to an arbitrary memory address resulting in undefined behavior or a segmentation fault. The correct call is 'scanf(\"%d\", &age);'.",
+      "why_wrong": {
+        "1": "'%d' is the exact conversion specifier for integer types.",
+        "2": "'age' is an integer quantity; declaring it as float would conflict with '%d'.",
+        "3": "fflush(stdin) is undefined behavior in standard C and unnecessary here."
+      },
+      "source": "Deitel Common Programming Error 2.4",
+      "verified": true,
+      "verified_output": "Bug: missing & in scanf(&age)"
+    },
+    {
+      "id": "cos201-dt-018",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "cloze",
+      "difficulty": 2,
+      "tags": [
+        "cloze",
+        "keywords",
+        "types"
+      ],
+      "question": "Fill in the correct C keywords in the blank positions:",
+      "template": "To declare a variable that holds whole numbers, use the keyword [[blank]], whereas for numbers with single-precision decimal points, use [[blank]]. To create a read-only variable whose value cannot be reassigned, qualify the declaration with [[blank]].",
+      "blanks": [
+        "int",
+        "float",
+        "const"
+      ],
+      "explanation": "'int' denotes standard whole numbers, 'float' single-precision floating-point numbers, and 'const' declares an immutable type qualifier.",
+      "why_wrong": {},
+      "source": "Deitel Ch 2.3",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-019",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "matching",
+      "difficulty": 2,
+      "tags": [
+        "matching",
+        "types",
+        "sizes"
+      ],
+      "question": "Match each C data type / concept with its standard characteristics on modern 32/64-bit systems:",
+      "pairs": [
+        {
+          "left": "char",
+          "right": "Smallest addressable unit, typically 1 byte (8 bits), stores ASCII codes"
+        },
+        {
+          "left": "int",
+          "right": "Standard integer type, typically 4 bytes (32 bits), format %d"
+        },
+        {
+          "left": "double",
+          "right": "Double-precision floating-point, typically 8 bytes, format %lf in scanf"
+        },
+        {
+          "left": "const qualifier",
+          "right": "Enforces compiler-checked immutability on a variable"
+        }
+      ],
+      "explanation": "In standard C, char is guaranteed to be 1 byte, int is typically 4 bytes on 32/64-bit architectures, double provides 64-bit precision, and const designates read-only memory objects.",
+      "why_wrong": {},
+      "source": "Deitel Ch 2.3, Ch 14",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-020",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "sequencing",
+      "difficulty": 2,
+      "tags": [
+        "sequencing",
+        "lifecycle"
+      ],
+      "question": "Order the lifecycle steps of a C variable from source definition to value retrieval:",
+      "steps": [
+        "Specify variable name and data type in declaration",
+        "Compiler allocates memory storage at a specific address",
+        "Initialize variable with an initial value or input via scanf",
+        "Retrieve or evaluate variable value in expressions or printf"
+      ],
+      "explanation": "A variable must first be declared/defined with a type and identifier. The compiler allocates its memory offset. It is then initialized (or written into), and subsequently read during expressions or output.",
+      "why_wrong": {},
+      "source": "Deitel Ch 2.3, 2.4",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-021",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "explain",
+      "difficulty": 3,
+      "tags": [
+        "theory",
+        "constants",
+        "preprocessor"
+      ],
+      "question": "Compare and contrast defining a constant using '#define MAX 100' versus 'const int MAX = 100;'. Explain at least two key technical differences.",
+      "answer": "1. Mechanism: #define is a preprocessor macro directive that performs blind textual replacement before compilation without type checking or allocating memory. 'const int' creates a real, typed variable placed in read-only storage and enforced by the compiler's type system.\n2. Scope & Debugging: #define has file scope from the point of definition until #undef, ignoring block scopes, and the symbol does not appear in debugger symbol tables. 'const int' respects C block scope and is visible to symbolic debuggers.\n3. Address: A const variable has a memory address (&MAX), whereas a literal substituted by #define has no memory address.",
+      "marking_points": [
+        "Explains that #define is a preprocessor text replacement without type checking",
+        "Explains that const int is a compiler-enforced typed read-only variable",
+        "Mentions scoping differences or debugger visibility or addressability (&)"
+      ],
+      "explanation": "Understanding the difference between preprocessor textual replacement and compiler type-qualified const variables is a foundational concept tested in university C programming exams.",
+      "why_wrong": {},
+      "source": "Deitel Ch 2.3, Ch 14",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-022",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_write",
+      "difficulty": 3,
+      "tags": [
+        "code_write",
+        "c-programming"
+      ],
+      "question": "Write a complete C main function that declares three variables: an integer 'units' initialized to 45, a float 'rate' initialized to 12.5f, and a float 'total'. Calculate 'total = units * rate' and print the result using printf formatted to 2 decimal places.",
+      "code_lang": "c",
+      "reference_solution": "#include <stdio.h>\nint main(void) {\n    int units = 45;\n    float rate = 12.5f;\n    float total = units * rate;\n    printf(\"Total: %.2f\\n\", total);\n    return 0;\n}",
+      "marking_points": [
+        "Includes <stdio.h> and declares int main(void)",
+        "Correctly declares int units = 45 and float rate = 12.5f",
+        "Calculates total = units * rate",
+        "Uses printf with '%.2f' format specifier to output 2 decimal places",
+        "Returns 0 from main"
+      ],
+      "explanation": "Demonstrates declaration, mixed-type arithmetic promotion (int promotes to float during multiplication), and precise float formatting with '%.2f'.",
+      "why_wrong": {},
+      "source": "Deitel Ch 2.3",
+      "verified": true,
+      "verified_output": "Total: 562.50\n"
+    },
+    {
+      "id": "cos201-dt-023",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "initialization",
+        "variables",
+        "printf"
+      ],
+      "question": "What is the output of the following C program?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 10, b = 20;\n    int c = a + b;\n    a = 5;\n    printf(\"%d %d\\n\", c, a);\n    return 0;\n}",
+      "options": [
+        "30 5",
+        "25 5",
+        "30 10",
+        "Compilation Error"
+      ],
+      "answer": 0,
+      "explanation": "In C, variable evaluation is by value at the moment the statement runs. Variable 'c' receives 10 + 20 = 30. Modifying 'a = 5' afterwards has no effect on 'c'. The output is '30 5'.",
+      "why_wrong": {
+        "1": "'c' does not dynamically recompute when 'a' is modified.",
+        "2": "'a' was reassigned to 5 before printing.",
+        "3": "Sequential assignment statements are completely valid in C."
+      },
+      "source": "Deitel Ch 2.4",
+      "verified": true,
+      "verified_output": "30 5\n"
+    },
+    {
+      "id": "cos201-dt-024",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_output",
+      "difficulty": 4,
+      "tags": [
+        "char",
+        "overflow",
+        "two-complement"
+      ],
+      "question": "What will be printed by the following code on a system with 8-bit two's-complement signed char?",
+      "code": "#include <stdio.h>\nint main(void) {\n    signed char c = 127;\n    c++;\n    printf(\"%d\\n\", c);\n    return 0;\n}",
+      "options": [
+        "-128",
+        "128",
+        "0",
+        "Undefined"
+      ],
+      "answer": 0,
+      "explanation": "In an 8-bit two's-complement system, signed char ranges from -128 to +127 (binary 01111111). Incrementing by 1 produces binary 10000000, which evaluates to -128 in standard two's-complement rollover.",
+      "why_wrong": {
+        "1": "128 cannot fit in a signed 8-bit char whose maximum value is 127.",
+        "2": "0 would only occur on overflow of an unsigned char at 255.",
+        "3": "While signed overflow is technically undefined in ISO C, on GCC x86/ARM hardware with standard two's complement it yields -128."
+      },
+      "source": "Deitel Ch 14.2",
+      "verified": true,
+      "verified_output": "-128\n"
+    },
+    {
+      "id": "cos201-dt-025",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "syntax",
+        "declarations"
+      ],
+      "question": "What is the problem with the declaration 'int a = b = c = 10;' inside a C function if b and c were not previously declared?",
+      "options": [
+        "Compilation error: 'b' and 'c' are undeclared identifiers.",
+        "It is completely valid in ANSI C and initializes all three to 10.",
+        "Only 'a' is initialized to 10; 'b' and 'c' are initialized to 0.",
+        "It compiles but causes a runtime crash."
+      ],
+      "answer": 0,
+      "explanation": "In C, you cannot chain assignment initialization for variables that have not yet been declared in that statement. 'int a = b = c = 10;' attempts to evaluate 'c = 10', but 'c' has no type declaration. The correct C syntax is: 'int a = 10, b = 10, c = 10;' or declaring them first.",
+      "why_wrong": {
+        "1": "C requires explicit type declarations for all identifiers before use.",
+        "2": "The compiler rejects the statement at compile time before any runtime execution.",
+        "3": "It is a compile-time failure, not a runtime crash."
+      },
+      "source": "Deitel Ch 2.3",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-026",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "sizeof",
+        "char",
+        "literals"
+      ],
+      "question": "What will be printed by the following C program?",
+      "code": "#include <stdio.h>\nint main(void) {\n    printf(\"%zu %zu\\n\", sizeof('A'), sizeof(\"A\"));\n    return 0;\n}",
+      "options": [
+        "4 2",
+        "1 1",
+        "1 2",
+        "4 1"
+      ],
+      "answer": 0,
+      "explanation": "In standard C (unlike C++), character constants like 'A' have type int, so sizeof('A') == sizeof(int) (typically 4 bytes). A string literal \"A\" is an array of 2 chars: 'A' and the terminating null character '\\0', so sizeof(\"A\") == 2.",
+      "why_wrong": {
+        "1": "'A' is an integer character constant in C (sizeof(int)), not sizeof(char).",
+        "2": "In C++, sizeof('A') is 1, but in C it is sizeof(int) (typically 4). Also \"A\" includes the null terminator (2 bytes).",
+        "3": "\"A\" contains 2 bytes ('A' + '\\0'), not 1."
+      },
+      "source": "Deitel Ch 8.2; ISO C Standard 6.4.4.4",
+      "verified": true,
+      "verified_output": "4 2\n"
+    },
+    {
+      "id": "cos201-dt-027",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "format-specifiers",
+        "octal",
+        "hex"
+      ],
+      "question": "Which conversion specifier is used in printf to print an integer in unsigned hexadecimal format using lowercase letters (a-f)?",
+      "options": [
+        "%x",
+        "%h",
+        "%X",
+        "%o"
+      ],
+      "answer": 0,
+      "explanation": "'%x' prints an integer in unsigned hexadecimal using lowercase letters (a-f). '%X' uses uppercase letters (A-F), '%o' prints in octal, and '%h' is a length modifier for short, not a standalone conversion specifier.",
+      "why_wrong": {
+        "1": "'%h' is a length modifier (e.g. %hd for short int), not a conversion specifier.",
+        "2": "'%X' prints hex digits in uppercase (A-F).",
+        "3": "'%o' prints in octal (base 8)."
+      },
+      "source": "Deitel Ch 9.4",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-dt-fc01",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "types"
+      ],
+      "front": "What is the size and format specifier of a standard 'char' in C?",
+      "back": "Size: 1 byte (8 bits). Format specifier: %c.",
+      "explanation": "Guaranteed by the ISO C standard to have sizeof(char) == 1.",
+      "question": "What is the size and format specifier of a standard 'char' in C?",
+      "answer": "Size: 1 byte (8 bits). Format specifier: %c."
+    },
+    {
+      "id": "cos201-dt-fc02",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "keywords"
+      ],
+      "front": "Are 'main' and 'printf' keywords in C?",
+      "back": "No. They are standard identifiers (a function name and a library function), NOT reserved language keywords.",
+      "explanation": "Keywords are reserved syntax words like int, return, if, while.",
+      "question": "Are 'main' and 'printf' keywords in C?",
+      "answer": "No. They are standard identifiers (a function name and a library function), NOT reserved language keywords."
+    },
+    {
+      "id": "cos201-dt-fc03",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "identifiers"
+      ],
+      "front": "What are the rules for a valid C identifier?",
+      "back": "Consists of letters, digits, and underscores (_). Must NOT begin with a digit. Must NOT be a C keyword. Case-sensitive.",
+      "explanation": "E.g. '_count1' is valid, '1count' is invalid.",
+      "question": "What are the rules for a valid C identifier?",
+      "answer": "Consists of letters, digits, and underscores (_). Must NOT begin with a digit. Must NOT be a C keyword. Case-sensitive."
+    },
+    {
+      "id": "cos201-dt-fc04",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "constants"
+      ],
+      "front": "What happens if you place a semicolon after a #define directive? (e.g. #define PI 3.14;)",
+      "back": "The semicolon becomes part of the replacement text, causing unexpected syntax errors in expressions (e.g. x = PI * 2 becomes x = 3.14; * 2).",
+      "explanation": "Preprocessor macros do not use semicolons.",
+      "question": "What happens if you place a semicolon after a #define directive? (e.g. #define PI 3.14;)",
+      "answer": "The semicolon becomes part of the replacement text, causing unexpected syntax errors in expressions (e.g. x = PI * 2 becomes x = 3.14; * 2)."
+    },
+    {
+      "id": "cos201-dt-fc05",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "types"
+      ],
+      "front": "What is the difference between float and double in C?",
+      "back": "Float is single-precision (~6 decimal digits, typically 4 bytes, %f). Double is double-precision (~15 decimal digits, typically 8 bytes, %lf in scanf).",
+      "explanation": "Double provides higher precision and wider exponent range.",
+      "question": "What is the difference between float and double in C?",
+      "answer": "Float is single-precision (~6 decimal digits, typically 4 bytes, %f). Double is double-precision (~15 decimal digits, typically 8 bytes, %lf in scanf)."
+    },
+    {
+      "id": "cos201-dt-fc06",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "io"
+      ],
+      "front": "Why does scanf require the '&' operator for scalar variables?",
+      "back": "'&' passes the variable's memory address (pointer), allowing scanf to store user input directly into that memory location.",
+      "explanation": "C passes arguments by value; passing the address is how scanf modifies caller memory.",
+      "question": "Why does scanf require the '&' operator for scalar variables?",
+      "answer": "'&' passes the variable's memory address (pointer), allowing scanf to store user input directly into that memory location."
+    },
+    {
+      "id": "cos201-dt-fc07",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "modifiers"
+      ],
+      "front": "What is the effect of the 'unsigned' modifier on an integer?",
+      "back": "It restricts the variable to non-negative numbers, doubling the positive range (e.g. 0 to 4,294,967,295 for 32-bit int) and uses format specifier %u.",
+      "explanation": "The sign bit is treated as a magnitude bit.",
+      "question": "What is the effect of the 'unsigned' modifier on an integer?",
+      "answer": "It restricts the variable to non-negative numbers, doubling the positive range (e.g. 0 to 4,294,967,295 for 32-bit int) and uses format specifier %u."
+    },
+    {
+      "id": "cos201-dt-fc08",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "initialization"
+      ],
+      "front": "What value does an uninitialized local variable hold in C?",
+      "back": "Indeterminate 'garbage' value (whatever random bits currently reside in that allocated stack memory).",
+      "explanation": "Local (automatic) variables are not zero-initialized by default in C.",
+      "question": "What value does an uninitialized local variable hold in C?",
+      "answer": "Indeterminate 'garbage' value (whatever random bits currently reside in that allocated stack memory)."
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "cos201-dt-cs01",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "title": "Nile Student Bursary Billing Engine",
+      "scenario": "A software engineering student at Nile University is commissioned to write a billing module in C that computes semester tuition fees. The module accepts an integer number of credit units, a float tuition rate per unit, and a constant university administrative fee of 25,000 Naira defined using #define. During early code testing, calculations produce strange negative numbers and incorrect decimal figures due to variable typing and format specifier mistakes.",
+      "sub_questions": [
+        {
+          "id": "cos201-dt-cs01-q1",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "types"
+          ],
+          "question": "If 'units' is declared as an unsigned int and assigned 18, and 'rate' is float assigned 12000.50f, what data type does the expression (units * rate) evaluate to during computation?",
+          "options": [
+            "float",
+            "unsigned int",
+            "double",
+            "long int"
+          ],
+          "answer": 0,
+          "explanation": "Under C's usual arithmetic conversions (type promotions), when an integer operand meets a floating-point operand, the integer is implicitly converted to float before the multiplication is executed.",
+          "why_wrong": {
+            "1": "The integer promotes to float to prevent loss of precision.",
+            "2": "Neither operand is double, so promotion stops at float.",
+            "3": "Integer types promote upward to floating types in mixed arithmetic."
+          },
+          "source": "Deitel Ch 3.8",
+          "verified": true,
+          "verified_output": ""
+        },
+        {
+          "id": "cos201-dt-cs01-q2",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "constants"
+          ],
+          "question": "The student wrote '#define ADMIN_FEE 25000;' with a trailing semicolon. What happens when the compiler encounters 'total = tuition + ADMIN_FEE * 2;'?",
+          "options": [
+            "It expands to 'total = tuition + 25000; * 2;', resulting in a syntax error.",
+            "The compiler automatically discards the semicolon during preprocessing.",
+            "It computes correctly because semicolons in macros are ignored.",
+            "It compiles cleanly but ignores the multiplication."
+          ],
+          "answer": 0,
+          "explanation": "Preprocessor macros do not strip punctuation. The text '25000;' replaces ADMIN_FEE verbatim, producing 'total = tuition + 25000; * 2;', which is an illegal syntax error on the stray '* 2;'.",
+          "why_wrong": {
+            "1": "The preprocessor does not parse C syntax or strip semicolons; it is a mechanical string replacer.",
+            "2": "Semicolons are never ignored by the preprocessor.",
+            "3": "It fails at the compilation stage immediately following preprocessing."
+          },
+          "source": "Deitel Ch 14.3",
+          "verified": true,
+          "verified_output": ""
+        },
+        {
+          "id": "cos201-dt-cs01-q3",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "code_output"
+          ],
+          "question": "The developer tests the following snippet for calculating unit discount. What is printed?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int registered_units = 15;\n    int min_threshold = 20;\n    float ratio = registered_units / min_threshold;\n    printf(\"Ratio: %.2f\\n\", ratio);\n    return 0;\n}",
+          "options": [
+            "Ratio: 0.00",
+            "Ratio: 0.75",
+            "Ratio: 1.00",
+            "Compilation Error"
+          ],
+          "answer": 0,
+          "explanation": "Both 'registered_units' (15) and 'min_threshold' (20) are integers. Therefore, 15 / 20 performs integer division, which evaluates to 0 (truncated). Only after the integer division is 0 promoted to float 0.00f. To get 0.75, cast one operand: (float)registered_units / min_threshold.",
+          "why_wrong": {
+            "1": "0.75 is the classic student trap! Integer division truncates before float assignment.",
+            "2": "15 / 20 does not round up to 1; C truncates toward zero.",
+            "3": "This is completely valid C syntax."
+          },
+          "source": "Deitel Ch 2.5",
+          "verified": true,
+          "verified_output": "Ratio: 0.00\n"
+        }
+      ]
+    },
+    {
+      "id": "cos201-dt-cs02",
+      "course": "COS 201",
+      "topic": "data_types_variables",
+      "title": "Embedded Microcontroller Sensor Register Mapping",
+      "scenario": "In a lab project at Nile University, students configure an 8-bit sensor reading temperature and status flags. The sensor register returns a signed 8-bit character value, an unsigned 16-bit timestamp, and an integer calibration constant.",
+      "sub_questions": [
+        {
+          "id": "cos201-dt-cs02-q1",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "unsigned",
+            "types"
+          ],
+          "question": "An unsigned char variable holds sensor raw flags. What is the valid range of numerical values an 8-bit unsigned char can store?",
+          "options": [
+            "0 to 255",
+            "-128 to 127",
+            "-256 to 255",
+            "0 to 65535"
+          ],
+          "answer": 0,
+          "explanation": "An 8-bit byte has 2^8 = 256 distinct bit patterns. Without a sign bit (unsigned), the range is 0 to 2^8 - 1, which is 0 to 255. A signed char stores -128 to +127.",
+          "why_wrong": {
+            "1": "-128 to 127 is the range of a signed 8-bit char (two's complement).",
+            "2": "Unsigned values cannot store negative numbers.",
+            "3": "0 to 65535 is the range of a 16-bit unsigned short or integer."
+          },
+          "source": "Deitel Ch 14.2",
+          "verified": true,
+          "verified_output": ""
+        },
+        {
+          "id": "cos201-dt-cs02-q2",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "code_output",
+          "difficulty": 4,
+          "tags": [
+            "scenario",
+            "char",
+            "overflow"
+          ],
+          "question": "What is the exact output of the following C code snippet on a standard two's complement system?",
+          "code": "#include <stdio.h>\nint main(void) {\n    signed char temp = 127;\n    temp++;\n    printf(\"%d\\n\", temp);\n    return 0;\n}",
+          "options": [
+            "-128",
+            "128",
+            "0",
+            "Compilation Error"
+          ],
+          "answer": 0,
+          "explanation": "A signed char has range -128 to +127. 127 in binary is 01111111. Adding 1 produces 10000000, which in two's complement arithmetic represents -128.",
+          "why_wrong": {
+            "1": "128 exceeds the positive range of a signed 8-bit integer.",
+            "2": "0 would only occur if overflowing 255 in an unsigned 8-bit type.",
+            "3": "Signed integer overflow in C is an arithmetic rollover on two's complement systems."
+          },
+          "source": "Deitel Ch 14.2",
+          "verified": true,
+          "verified_output": "-128\n"
+        }
+      ]
+    }
+  ]
+}

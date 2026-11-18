@@ -1,0 +1,147 @@
+=== SLIDE 1 ===
+IT
+INTRODUCTION TO
+INFORMATION TECHNOLOGY
+IFT 205 • 2 UNITS
+Zakariyya Abdullahi
+Assistant Lecturer
+Block- E Room 119
+Zakariyya.adamu@nileuniversity.edu.ng
+IFT 205 • Introduction to Information Technology    |    1
+=== SLIDE 2 ===
+Course Information
+IFT 205 • Introduction to Information Technology
+Course Unit
+2 Units30 Lecture Hours0 Practical Hours
+Course Focus
+Foundations of ITTechnology, data, networks, systems and 
+applications
+Approach
+Theory + demonstrationsReal-world examplesCase discussions
+Designed to build a broad understanding of Information Technology before students move into more specialised areas.
+Emphasis is on concepts, applications, responsible use of technology and practical understanding.
+IFT 205 • Introduction to Information Technology    |    2
+=== SLIDE 3 ===
+Course Description
+Introduces the foundations, scope and evolution of Information Technology.
+Explores hardware, software, networking, Internet technologies and information management.
+Examines how IT is applied in education, banking, healthcare, government and business.
+Introduces security, privacy, policy, ethical and social issues surrounding IT.
+Provides an overview of emerging areas such as data mining, visualisation, NLP and Blockchain.
+IFT 205 • Introduction to Information Technology    |    3
+=== SLIDE 4 ===
+Learning Outcomes
+Explain the history and development of Information Technology.
+Describe major domains where IT is applied.
+Identify IT and related disciplines such as networking, information management, programming and web technologies.
+Analyse basic security, privacy, policy and social issues associated with IT.
+Compare fundamental structures of computer networks and the Internet.
+IFT 205 • Introduction to Information Technology    |    4
+=== SLIDE 5 ===
+Major Course Themes
+Hardware
+Computers, CPU, memory, storage
+ and I/O
+Software
+Operating systems, applications and
+ utilities
+Networking
+Connectivity, devices, LAN/WAN and
+ wireless
+Information
+Data, processing, information quality and 
+management
+Internet
+Protocols, addressing, DNS and online 
+services
+People & Society
+Security, privacy, ethics, policy and impact
+IFT 205 • Introduction to Information Technology    |    5
+=== SLIDE 6 ===
+15-Week Course Roadmap
+WEEK 1
+IT Foundations
+WEEK 2
+Hardware
+WEEK 3
+Software
+WEEK 4
+Networking
+WEEK 5
+Internet
+WEEK 6
+IT Systems
+WEEK 7
+Data & Information
+WEEK 8
+IT Disciplines
+WEEK 9
+Application Domains
+WEEK 10
+Security & Privacy
+WEEK 11
+Emerging IT
+WEEK 12
+Integration
+WEEK 13
+Case Study
+WEEK 14
+Presentations
+WEEK 15
+Revision
+IFT 205 • Introduction to Information Technology    |    7
+=== SLIDE 7 ===
+Recommended Teaching Approach
+Explain
+Short, clear concept explanation.
+Visualise
+Use diagrams, screenshots and simple models.
+Demonstrate
+Show technology on a laptop/phone.
+Discuss
+Use Nigerian and university examples.
+Apply
+Give a short individual or group task.
+Review
+End with recap questions and a quick quiz.
+IFT 205 • Introduction to Information Technology    |    7
+=== SLIDE 8 ===
+Suggested Classroom Assessment Activities
+Short quizzes after major topic blocks
+Hardware/software identification exercises
+Network and Internet concept diagrams
+Data-to-information spreadsheet activity
+IT application-domain case studies
+Security and privacy case discussions
+Group presentation on an integrated IT environment
+Note: Use the department-approved assessment percentages for formal grading.
+IFT 205 • Introduction to Information Technology    |    8
+=== SLIDE 9 ===
+Student Expectations
+Attend lectures and participate in discussions.
+Bring a laptop/phone when practical demonstrations require it.
+Ask questions and seek clarification early.
+Complete short activities and assignments on time.
+Use technology responsibly and respect academic integrity.
+Connect concepts learned in class with real IT systems around you.
+IFT 205 • Introduction to Information Technology    |    9
+=== SLIDE 10 ===
+Be PunctualArrive on time and be ready before the lecture begins.
+Pay AttentionListen to the lecturer and avoid activities that distract you or others.
+Respect EveryoneTreat the lecturer and fellow students politely, even when you disagree.
+Participate ActivelyAsk relevant questions, contribute to discussions, and participate in class activities.
+Submit Assignment on TimeLate submission attract stated penalty.
+Keep the Classroom CleanDispose of waste properly and leave your learning environment neat.
+Class Etiquette & Expectations
+=== SLIDE 11 ===
+ASSESSMENT & GRADING
+=== SLIDE 12 ===
+COURSE CODE;
+=== SLIDE 13 ===
+Recommended Textbooks
+
+Shelly, G. B., & Vermaat, M. E. Discovering Computers: Tools, Apps, Devices, and the Impact of Technology. Cengage Learning.
+Stair, R. M., & Reynolds, G. W. Principles of Information Systems. Cengage Learning.
+Williams, B. K. Using Information Technology: A Practical Introduction to Computers & Communications. McGraw-Hill.
+Beekman, G. Digital Planet: Tomorrow's Technology and You. Pearson.
+Morley, D., & Parker, C. S. Understanding Computers: Today and Tomorrow. Cengage Learning.

@@ -1,0 +1,312 @@
+=== SLIDE 1 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Human-Computer Interface
+=== SLIDE 2 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+3. Know Thy User
+In this module you will learn about:
+User Analysis: what do you need to know about the users?
+Task Analysis: What are the user’s goals? What tasks do they perform?
+Environment analysis: What are the user’s surroundings and what effect do they have on performing a task?
+Recruiting users: where you can find them
+What usability specifications you will choose for rating your site/software
+=== SLIDE 3 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+3.2 User Analysis: Why Do We Need To Do It?
+Reduce development and maintenance costs
+Keep customers
+Increase sales
+=== SLIDE 4 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Examples
+Redesign of an IBM site increased sales 400% within the first month
+IBM site: 84% reduction in use of Help button, meaning users were not lost as often
+Frugal Fun: 1400% increase in sales after website redesign
+Dell: reduced calls to (very expensive) telephone support
+=== SLIDE 5 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+User characteristics: learning style
+Do-then-read (an active user believes that only wimps read manuals)
+Read-then-do (what manual writers seem to assume)
+=== SLIDE 6 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+User characteristics: tool preferences
+Do your users know drop-down menus? 
+Do they prefer mouse or keyboard? (Some advanced users hate the mouse: it slows them down.)
+Do they know frames? Popup windows? Search?
+You won’t believe how different new users are, compared to you, until you watch them
+=== SLIDE 7 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+So watch them
+Sit and observe in an Intro to Computing lab
+Teach your grandmother how to use e-mail
+From a discreet distance, observe behavior at an ATM: super-efficient, plodding, befuddled, enraged
+=== SLIDE 8 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+User characteristics: physical differences
+Age (use larger fonts for older people)
+Sex (consider your target group: e.g., more women than men buy lipstick)
+Vision limitations, such as color blindness
+Other physical limitations that might restrict movement
+Small children don’t have good fine-muscle control: see big buttons on next slide
+=== SLIDE 9 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Example 1-Big buttons for little people
+=== SLIDE 10 ===
+What do you see?
+03: Know Thy User
+=== SLIDE 11 ===
+2- Adjusting Font size and Contrast for visually challenged users.
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+=== SLIDE 12 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+User characteristics: cultural differences
+Education (reading level)
+Profession (specialized vocabularies)
+Corporate style: what are you trying to convey to whom?
+=== SLIDE 13 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+High-fashion cosmetics have a style . . .
+=== SLIDE 14 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+A bank site has a very different style
+=== SLIDE 15 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+User characteristics: knowledge of job
+Is your site used daily on the job, or it is used at home for recreation or a hobby?
+Is there a specialized vocabulary?
+If in an office, how does work on your site fit in with other activities? Could your user answer that question?
+Does your user do the same job all day? Bored?
+If for personal use, what is the purpose?
+To inform
+To entertain
+To sell
+=== SLIDE 16 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+User characteristics: application familiarity
+Novice
+Faces a frightening unknown; timid, nervous, in no mood to explore your goodies
+Advanced Beginner
+Less fear: knows basics; still impatient at having to learn how to do tasks.
+Competent Performer 
+Can diagnose simple problems and can perform a complex series of tasks
+Expert
+Small group. Can diagnose complex problems. Has a mental model of the application. Not typical users.
+=== SLIDE 17 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+User characteristics: primary and secondary users
+Primary user: the person who actively uses the site:
+Airline reservation clerk
+Help desk staff
+Secondary user: the person being served by a primary user:
+Airline passenger
+Customer who called the support line
+=== SLIDE 18 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+User characteristics: getting information
+How can you learn the characteristics of your users?
+Not managers. Managers are not users. They may think they know users, but they aren’t users.
+Not developers. The worst. Of course they can see that button the users can’t see: they put it there.
+=== SLIDE 19 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Getting information, continued
+Good sources:
+Users themselves, preferably in their workplace. The Gold Standard.
+Customer service and technical support. They deal with users as their job.
+=== SLIDE 20 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+3.3 Task Analysis: Overview
+Goals, tasks, and actions
+Workflow Analysis
+Job analysis
+Task list
+Task sequence
+Task hierarchies
+Procedural analysis
+Techniques for observing and listening to users
+=== SLIDE 21 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Goals, tasks, and actions
+Goal: Get to mountain vacation
+Tasks: Rent car, drive, get repairs
+Action: Get gas
+=== SLIDE 22 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Tasks and actions
+Why is getting repairs a task, but getting gas an action?
+Because at this level of granularity, getting gas cannot be broken down into smaller components
+But if you are getting gas at a self-service station, and you’ve never done it before, and the instructions are hopeless . . . well, sure, for you that’s a task
+The goal/task/action distinction is useful, but should not be applied rigidly
+Contextualize to identify actions and tasks
+=== SLIDE 23 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Example: goal, task, and action
+Goal: on the Internet, buy either a purple stuffed dinosaur or a set of blocks for your two-year-old niece. Your sister says either would be fine.
+=== SLIDE 24 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Example, continued
+Task 1: Choose between a stuffed toy and a set of building blocks
+Action 1: Check several Web sites for purple stuffed dinosaurs
+Action 2: Check on the availability of the new TalkingBlox building blocks set
+Action 3: Decide on one of these, based on price, availability, delivery, and option of gift wrap
+=== SLIDE 25 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Example, continued
+Task 2: Buy chosen toy
+Action 1: Put toy into website’s shopping cart
+Action 2: Fill out billing and shipping information, making sure to check “gift wrap” 
+Task 3: Call sister; tell her that a present is on its way
+=== SLIDE 26 ===
+Example: Hierarchical task model
+03: Know Thy User
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 27 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Techniques for observing and listening to users
+Think aloud: talk while doing the job
+Talk right after 
+Role playing 
+Cueing recall with videotape
+Focus groups
+Mailed surveys
+=== SLIDE 28 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Think aloud: the Gold Standard
+Samples of facilitating remarks:
+“Could you tell me what options you are considering?”
+“Is anything in particular puzzling you?”
+“What might you do next?”
+=== SLIDE 29 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Think aloud: the Gold Standard
+BUT: No feedback, positive or negative
+No answers or hints
+If users get stuck, have them go on
+Neutral demeanor at all times
+=== SLIDE 30 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Talk right after
+Sometimes talking while doing the work is not feasible
+=== SLIDE 31 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Talk right after
+Talking right after may be best alternative to thinking aloud
+=== SLIDE 32 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Role playing
+Some things happen so infrequently that there is  no way to observe the user
+Some one may be able to play the role of a user in that situation
+Example: a helpdesk person can’t talk to you and the customer at the same time.
+But the helpdesk person could talk with an interviewer—not a real customer—obviously, with the interviewer playing the role of user. 
+It is possible for the interviewer (you) to say “Out of role!” and ask about what was just said during role playing.
+=== SLIDE 33 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Cueing recall with video
+After getting written permissions, tape the user at work
+This records the user interacting with others in a normal work setting
+Later, play the tape and have the user explain what was going on
+=== SLIDE 34 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Focus group: good if you can make it work, but has problems
+Requires a skilled and experienced leader
+One or two people may dominate
+Some people may get into side conversations
+May work if very well done
+=== SLIDE 35 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Mailed survey / Online survey: good if you can make it work, but has problems
+Very difficult to write good questions
+What’s really hard about writing questions is avoiding leading questions. 
+Choice of mail list can bias results
+A return rate of 10% is extremely good; 1-2% is typical
+May report on what people think they do, not what they actually do
+And inexpensive
+=== SLIDE 36 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+3.4 Environment Analysis
+Where do people use your interface? Many variations:
+An outdoor ATM in a cold location where people wear gloves while using it (need huge buttons)
+On a combination cell phone/wireless browser, with a tiny display (need tiny fingers!)
+In a location where direct sun can hit your display, making it hard to read
+In an extremely noisy factory, where any sound you add would be impossible to understand
+Observe your users in their own setting
+=== SLIDE 37 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+3.5 Recruiting Users
+If product is in use, test with real current users:
+Employees
+Customers
+Temp agencies
+In college, post notice or ask a professor to announce
+Provide incentives:
+Coffee mugs, T-shirts
+$$$
+Not family or friends: they won’t be critical enough
+=== SLIDE 38 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+3.6 Usability Specifications
+Performance measures
+Preference measures
+=== SLIDE 39 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Performance measures: a sampling
+Time to locate a book at the Barnes & Noble website
+Time to fill in customer information and place order
+Number of times the Back Button is used, indicating that user cannot find desired information
+Number of clicks to find the time of a TV show
+Percentage of tasks completed correctly
+Number of calls to support line
+Number of complaints, negative facial expressions, or regressive behaviors (screaming at monitor, etc.)
+=== SLIDE 40 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Preference measures
+Often obtained using a Likert Scale
+=== SLIDE 41 ===
+03: Know Thy User
+Copyright © 2004 by Prentice Hall
+Summary
+In this module you have learned that:
+It is hard to over-emphasize the importance of a user-centric approach to website development 
+Usability can be quantified and measured (key idea)
+There is no good substitute for watching, interviewing, or videotaping real users, in their place of work
+Usability specifications should be set at the beginning of the project
+There is a fundamental difference between performance measures and preference measures
+It is crucial to observe users in their own environment

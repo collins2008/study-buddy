@@ -1,0 +1,76 @@
+NILE UNIVERSITY OF NIGERIA
+INFORMATION TECHNOLOGY DEPARTMENT
+INTRODUCTION TO WEB TECHNOLOGY
+TAKE HOME PRACTICALS
+200L IFT
+HTML Basics: Tags, Elements, Attributes and Page Structure
+Course: Introduction to Web Technology (IFT 203)
+1. Practical Overview
+In this practical, you will create your first simple web page using HTML. You will type the code yourself, save it as an HTML file, open it in a web browser, observe the output, and complete the exercises without copying blindly.
+2. Learning Outcomes
+Explain the difference between an HTML tag, an element and an attribute.
+Recognise the main parts of a complete HTML document.
+Create and save a basic HTML file in Visual Studio Code (VS Code) or another text editor.
+Open the page in a browser and check the output.
+Modify headings, paragraphs, links and image-related attributes.
+3. Before You Begin
+A computer with Visual Studio Code (VS Code) or Notepad.
+A web browser such as Google Chrome, Microsoft Edge or Firefox.
+A folder on your computer where you will save your work.
+Important: HTML is written in a text editor. The browser displays the result. You do not need internet access for this basic practical.
+4. Understand These Three Terms
+A. HTML tag
+A tag is the markup written inside angle brackets. Most common HTML elements use an opening tag and a closing tag. For example, <p> is an opening paragraph tag and </p> is a closing paragraph tag. The forward slash (/) indicates the closing tag.
+In this example, <p> opens the paragraph, and </p> closes it.
+B. HTML element
+An element usually consists of an opening tag, the content, and a closing tag. In the example below, the whole line—including the tags and the words—is the paragraph element.
+Opening tag: <h1>    |    Content: Welcome to My Website    |    Closing tag: </h1>
+C. HTML attribute
+An attribute provides extra information about an HTML element. It is normally written inside the opening tag, as a name followed by an equals sign and a value in quotation marks.
+Here, href is the attribute name and https://www.example.com is its value. The browser uses href to know where the link should take the user. The words “Visit Example” are the clickable text.
+Quick Comparison
+Remember: the symbols < and > are called angle brackets. They surround HTML tag names. A closing tag usually has a forward slash / before the tag name.
+5. The Full HTML Structure
+Type the following code exactly into a new file. Do not include the line numbers or the explanation text.
+6. Explanation of Each Part
+<!DOCTYPE html> — Tells the browser that the document uses modern HTML (HTML5). It is a declaration, not a normal HTML element.
+<html lang="en"> — The root element. It contains the page's HTML. lang="en" identifies English as the page language.
+<head> — Starts the head section, which contains information about the page rather than the main visible page content.
+<meta charset="UTF-8"> — Sets the character encoding so letters and symbols can be displayed correctly.
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> — Helps the page scale properly on phones and other screen sizes.
+<title>My First Web Page</title> — Sets the title shown on the browser tab. It is not the main heading inside the page.
+</head> — Closes the head section.
+<body> — Starts the body. The visible page content, such as headings, paragraphs and links, goes here.
+<h1>...</h1> — Creates the main, level-one heading. A page may have multiple headings, but use heading levels in a logical order.
+<p>...</p> — Creates a paragraph of text.
+<h2>...</h2> — Creates a second-level heading, usually a subsection under the main heading.
+<a href="https://www.example.com">...</a> — Creates a hyperlink. The href attribute stores the destination address.
+</body> — Closes the visible-content section.
+</html> — Closes the root HTML element and marks the end of the document.
+7. Practical Activity: Create and View Your Page
+Create a folder called HTML_Practical_1 in your Documents folder.
+Open VS Code. Select File → Open Folder and open HTML_Practical_1.
+Create a new file and name it index.html. Make sure it ends with .html, not .txt.
+Type the complete code in Section 5. Check that every opening tag has the correct closing tag where required.
+Save the file using Ctrl + S.
+Open the folder and double-click index.html, or right-click the file and choose Open with your browser.
+Observe the page. The browser tab should show “My First Web Page”. The main page should show a large heading, paragraphs, a smaller heading and a link.
+Return to VS Code, change the text inside the first <h1> element to your own title, save, and refresh the browser.
+8. Your Independent Tasks
+Complete all tasks yourself. Use the sample code as a guide, but make your own changes.
+Change the main heading to “Welcome to [Your Name]’s Web Page”. Replace [Your Name] with your name.
+Write a paragraph introducing yourself. Include your programme or department and one interest.
+Add an <h2> heading called “My Goals”. Under it, write a paragraph describing one learning goal.
+Add another paragraph describing one way you use the internet for learning or communication.
+Add a link to https://www.wikipedia.org with the clickable text “Visit Wikipedia”. Use the href attribute correctly.
+Change the page title inside the <title> element to “[Your Name] - My First Website”.
+Add a third-level heading using <h3> called “A Skill I Want to Learn”, followed by a paragraph naming the skill.
+Save your file, refresh the browser and confirm that all your changes appear.
+9. Final Self-Check
+☐  I saved my file as index.html.
+☐  I included <!DOCTYPE html>, <html>, <head> and <body>.
+☐  I can explain the difference between a tag, an element and an attribute.
+☐  I changed the sample text to my own information.
+☐  I opened the page in a browser and checked the output.
+☐  I saved my HTML file and captured a screenshot.
+Work independently, test your code, and learn by making changes.

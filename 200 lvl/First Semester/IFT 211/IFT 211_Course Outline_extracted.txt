@@ -1,0 +1,43 @@
+IFT 211 (Digital Logic Design)
+Course Outline
+
+Introduction to information representation and number systems.
+
+1.
+2. Boolean algebra and switching theory.
+3. Manipulation and minimisation of completely and incompletely 
+
+specified Boolean functions.
+
+4. Physical properties of gates: fan-in, fan-out, propagation delay, 
+
+timing diagrams and tri-state drivers.
+
+5. Combinational circuits design using multiplexers, decoders, 
+
+comparators and adders.
+
+6. Sequential circuit analysis and design, basic flip-flops, clocking and 
+timing diagrams. Registers, counters, RAMs, ROMs, PLAs, PLDs, and 
+FPGAs. 
+
+1
+
+Course Outline: Lab Work
+
+1. Simple combinational gates (AND, OR, NOT, NAND, NOR)
+2. Combinational circuits design using multiplexers, decoders, 
+
+comparators and adders.
+
+3. Sequential circuit analysis and design using basic flip-flops (S-R, J-K, 
+
+D, T flip-flops)
+
+4. Demonstration of registers, counters, RAMs, ROMs, PLAs, PLDs, and 
+
+FPGAs
+
+2
+
+

@@ -1,0 +1,526 @@
+import json
+import os
+
+topic_data = {
+    "course": "IFT 205",
+    "topic": "operating_systems_software",
+    "title": "Operating Systems, System vs Application Software",
+    "summary": "Exhaustive exploration of computer software architectures and operating systems. Distinguishes System Software (Operating Systems, Device Drivers, Utilities, Firmware) from Application Software (General-purpose, Specialised, Custom/Bespoke). Analyzes the five core functions of modern Operating Systems: Process Management (multitasking, scheduling, thread states), Memory Management (virtual memory, paging), Device Management (drivers, interrupts), File System Management (hierarchies, paths, permissions, formats), and Security/Access Control. Detailed comparison of User Interfaces (GUI vs CLI trade-offs). Emphasizes lecturer-flagged real-world procedures: step-by-step clean installation of an Operating System (bootable USB creation, BIOS/UEFI boot device priority, MBR vs GPT partitioning, file system formatting) and disk formatting mechanics (Quick Format vs Full Format sector zeroing). Explores software licensing models (Proprietary, Open-Source, Freeware, Shareware) and the security risks of software piracy.",
+    "key_terms": [
+        {"term": "Operating System (OS)", "definition": "Core system software that manages computer hardware, memory, execution processes, file systems, and provides user interfaces and application platforms."},
+        {"term": "Device Driver", "definition": "A dedicated, low-level system program enabling the operating system and hardware peripherals to communicate seamlessly."},
+        {"term": "Utility Software", "definition": "System programs designed to maintain, optimize, diagnose, configure, and secure computer hardware, data, and software environments."},
+        {"term": "Graphical User Interface (GUI)", "definition": "A visual interface utilizing the WIMP paradigm (Windows, Icons, Menus, Pointers) allowing users to interact via pointing devices."},
+        {"term": "Command Line Interface (CLI)", "definition": "A text-based user interface where operators execute tasks by typing structured commands into a shell prompt."},
+        {"term": "Disk Formatting", "definition": "The process of preparing a storage partition for use by writing a file system structure (e.g. NTFS, ext4) and allocating data indexing tables."},
+        {"term": "Absolute File Path", "definition": "The complete, unambiguous directory path specifying a file's exact location from the root directory or drive letter."},
+        {"term": "Open-Source Software (OSS)", "definition": "Software whose original source code is publicly accessible, granting users legal rights to inspect, modify, and redistribute."}
+    ],
+    "questions": [
+        {
+            "id": "ift205-ops-001",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "mcq",
+            "difficulty": 1,
+            "tags": ["software_categories", "system_software"],
+            "question": "Which of the following programs is classified strictly as SYSTEM software rather than application software?",
+            "options": [
+                "Microsoft Windows Operating System",
+                "Microsoft Excel Spreadsheet",
+                "Adobe Premiere Pro Video Editor",
+                "Mozilla Firefox Web Browser"
+            ],
+            "answer": 0,
+            "explanation": "An operating system (such as Microsoft Windows, Linux, or macOS) is system software because it directly manages computer hardware resources (CPU, RAM, storage, peripherals) and provides the underlying platform required for applications to run. Spreadsheets, video editors, and web browsers are application software designed for specific user tasks.",
+            "why_wrong": {
+                "1": "Spreadsheets are general-purpose application software used for calculation and data presentation.",
+                "2": "A video editor is specialized application software for digital media production.",
+                "3": "A web browser is application software used for retrieving and viewing web documents."
+            },
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 3-4",
+            "verified": True,
+            "verified_output": "Microsoft Windows is system software."
+        },
+        {
+            "id": "ift205-ops-002",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "multi_select",
+            "difficulty": 2,
+            "tags": ["os_functions", "architecture"],
+            "question": "Which of the following constitute the FIVE fundamental core functions performed by a modern computer Operating System? (Select FIVE)",
+            "options": [
+                "Process Management (starting, scheduling, and halting programs)",
+                "Memory Management (allocating and tracking RAM usage)",
+                "Device Management (communicating with peripherals via drivers)",
+                "File System Management (organizing files, directories, and permissions)",
+                "Security and Access Control (authenticating users and enforcing privileges)",
+                "Graphic Design and Vector Illustration Rendering",
+                "Automated Soldering of Microchip Capacitors"
+            ],
+            "answer": [0, 1, 2, 3, 4],
+            "explanation": "The five universally recognized pillars of operating system functionality are: Process Management, Memory Management, Device/IO Management, File System Management, and Security/Access Control. Graphic design is an application domain, and chip soldering is a hardware manufacturing process.",
+            "why_wrong": {
+                "5": "Vector illustration is performed by application programs like Adobe Illustrator or Inkscape, not the core OS.",
+                "6": "Soldering is physical hardware fabrication, not an operating system software service."
+            },
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 5; Student Notebook",
+            "verified": True,
+            "verified_output": "Five core OS functions."
+        },
+        {
+            "id": "ift205-ops-003",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "matching",
+            "difficulty": 3,
+            "tags": ["ui_comparison", "gui_vs_cli"],
+            "question": "Match each User Interface (UI) paradigm to its primary operational characteristic:",
+            "options": [
+                "Graphical User Interface (GUI)",
+                "Command Line Interface (CLI)",
+                "Touchscreen Interface",
+                "Voice User Interface (VUI)"
+            ],
+            "answer": {
+                "Graphical User Interface (GUI)": "Employs Windows, Icons, Menus, and Pointers (WIMP); highly intuitive for novices but consumes substantial RAM and GPU processing overhead.",
+                "Command Line Interface (CLI)": "Executes typed text commands with strict syntax; consumes minimal system resources and enables powerful automated batch scripting.",
+                "Touchscreen Interface": "Uses direct finger gestures (tap, pinch, swipe) directly on display glass; primary interface on modern mobile phones and tablets.",
+                "Voice User Interface (VUI)": "Interprets spoken natural language audio through acoustic models and natural language processing."
+            },
+            "explanation": "GUIs offer visual accessibility via WIMP; CLIs provide rapid, lightweight, scriptable control for technical administrators; Touchscreens support direct tactile mobile interaction; VUIs use speech recognition.",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 6; Student Notebook Hint",
+            "verified": True,
+            "verified_output": "Matched UI paradigms."
+        },
+        {
+            "id": "ift205-ops-004",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "sequencing",
+            "difficulty": 3,
+            "tags": ["os_installation", "lecturer_note"],
+            "question": "Arrange the chronological steps required to perform a clean installation of an Operating System onto a newly assembled desktop computer:",
+            "options": [
+                "Create a bootable installation USB flash drive using an official OS ISO image",
+                "Insert USB drive, power on PC, and access BIOS/UEFI firmware to configure the boot order priority",
+                "Boot into OS setup wizard, agree to license terms, and select Custom (Clean) installation",
+                "Partition the target storage drive and format the partition with the appropriate file system (e.g. NTFS)",
+                "Complete the file installation process and configure Out-of-Box Experience (OOBE) user accounts and drivers"
+            ],
+            "answer": [0, 1, 2, 3, 4],
+            "explanation": "A clean OS installation follows this strict progression: 1. Create bootable USB media, 2. Set BIOS/UEFI boot order, 3. Launch OS installer wizard, 4. Partition and format storage media, 5. Complete file installation and OOBE configuration.",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "Student Notebook Image 21.47.02 ('How to install a new window OS')",
+            "verified": True,
+            "verified_output": "Installation sequence: USB media -> BIOS boot order -> Installer -> Partition/Format -> OOBE"
+        },
+        {
+            "id": "ift205-ops-005",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["disk_formatting", "quick_vs_full_format"],
+            "question": "What is the critical technical distinction between executing a 'Quick Format' versus a 'Full Format' on a secondary hard drive in Windows?",
+            "options": [
+                "A Quick Format merely rewrites the file system table (MFT) making the drive appear empty without checking for disk errors, whereas a Full Format rewrites the file table AND scans every sector for bad blocks while zeroing data.",
+                "A Quick Format permanently destroys data using electromagnetic pulses, whereas a Full Format merely changes the desktop wallpaper.",
+                "A Quick Format is designed for solid-state drives, whereas a Full Format can only be executed on mechanical magnetic tape drives.",
+                "There is zero difference; Quick Format is simply Microsoft marketing terminology for Full Format."
+            ],
+            "answer": 0,
+            "explanation": "As emphasized in the lecturer notes on disk formatting: A Quick Format reconstructs the Master File Table (MFT) or File Allocation Table (FAT) and root directory, marking all sectors as free for overwriting, but leaves underlying data intact until overwritten and does NOT check for bad sectors. A Full Format scans each individual physical sector for bad blocks (reallocating damaged sectors) and writes zeros across the partition, making it much more thorough and slower.",
+            "why_wrong": {
+                "1": "Quick format uses standard software file system allocation; it does not generate electromagnetic pulses.",
+                "2": "Both Quick and Full format are standard disk partitioning utilities applicable to HDDs and SSDs.",
+                "3": "The two formatting modes have completely different operational depths and sector checking behaviors."
+            },
+            "marking_points": [],
+            "source": "Student Notebook Image 21.47.02 ('How to format windows'); Systems Text",
+            "verified": True,
+            "verified_output": "Quick Format rebuilds file tables; Full Format also scans sectors."
+        },
+        {
+            "id": "ift205-ops-006",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["file_paths", "absolute_vs_relative"],
+            "question": "Which of the following represents an ABSOLUTE file path on a Windows computer operating system?",
+            "options": [
+                "C:\\Users\\Student\\Documents\\COS201\\assignment1.c",
+                "..\\images\\banner.png",
+                "subfolder\\notes.txt",
+                ".\\data.csv"
+            ],
+            "answer": 0,
+            "explanation": "An absolute file path specifies the complete location from the system root directory or root drive letter (e.g. `C:\\Users\\Student\\...`). Relative paths (such as `..\\images\\banner.png` or `.\\data.csv`) depend entirely upon the application's current working directory.",
+            "why_wrong": {
+                "1": "'..\\' indicates moving up one level from the current directory, making it a relative path.",
+                "2": "'subfolder\\' assumes a directory under the current working folder, making it relative.",
+                "3": "'.\\' denotes the current directory, making it relative."
+            },
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 11",
+            "verified": True,
+            "verified_output": "C:\\Users\\Student\\... is an absolute path."
+        },
+        {
+            "id": "ift205-ops-007",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "cloze",
+            "difficulty": 2,
+            "tags": ["software_licensing", "open_source"],
+            "question": "Software whose copyright holder provides the human-readable source code to everyone under a license that grants rights to study, change, and distribute is called {{c1::open-source}} software. In contrast, software that is distributed at zero financial cost while retaining closed source code is termed {{c2::freeware}}, whereas commercially restricted closed software is termed {{c3::proprietary}}.",
+            "options": ["open-source", "freeware", "proprietary", "shareware", "firmware", "malware"],
+            "answer": ["open-source", "freeware", "proprietary"],
+            "explanation": "Open-source software (e.g. Linux, VLC) provides public source code with modification rights. Freeware (e.g. Adobe Acrobat Reader) costs nothing to download but keeps its source code closed. Proprietary software (e.g. Microsoft Office, Windows) restricts code access, modification, and redistribution.",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 18",
+            "verified": True,
+            "verified_output": "open-source, freeware, proprietary"
+        },
+        {
+            "id": "ift205-ops-008",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "true_false_why",
+            "difficulty": 2,
+            "tags": ["device_drivers", "hardware_abstraction"],
+            "question": "A newly purchased USB laser printer can function perfectly and print formatted documents on any computer without requiring an operating system device driver.",
+            "options": [
+                "True — modern USB printers communicate via universal electrical telemetry that automatically bypasses operating system software layers.",
+                "False — an operating system requires a specific device driver program that translates standard high-level print commands into the exact low-level control codes and raster data recognized by that printer's hardware controller."
+            ],
+            "answer": 1,
+            "explanation": "A device driver is specialized system software acting as a bridge between the operating system and a specific hardware device. Without a driver (whether pre-installed, class-compliant, or downloaded), the OS cannot communicate the printer's specific resolution, page geometry, or printing protocol.",
+            "why_wrong": {
+                "0": "Hardware cannot interpret operating system commands without a software translation driver."
+            },
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 16",
+            "verified": True,
+            "verified_output": "False. Device drivers are required."
+        },
+        {
+            "id": "ift205-ops-009",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["utilities", "disk_management"],
+            "question": "Which system utility program is designed to consolidate fragmented file blocks scattered across non-contiguous sectors of a mechanical hard drive to improve file access speed?",
+            "options": [
+                "Disk Defragmenter / Drive Optimizer",
+                "Antivirus Signature Scanner",
+                "System Dynamic Link Library Loader",
+                "Memory Cache Pager"
+            ],
+            "answer": 0,
+            "explanation": "Disk Defragmenter rearranges fragmented files on a mechanical hard drive so that file clusters occupy contiguous physical sectors, minimizing mechanical drive head movement and boosting read speeds. (Note: defragmentation is unnecessary and counterproductive on SSDs).",
+            "why_wrong": {
+                "1": "Antivirus scanners identify malicious code signatures, not file sector fragmentation.",
+                "2": "A DLL loader links shared library code in memory at program startup.",
+                "3": "The memory pager swaps pages between RAM and swap storage, not reorganizing HDD sectors."
+            },
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 15",
+            "verified": True,
+            "verified_output": "Disk Defragmenter."
+        },
+        {
+            "id": "ift205-ops-010",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "type_answer",
+            "difficulty": 2,
+            "tags": ["file_systems", "windows_standard"],
+            "question": "What is the standard, primary default file system used by modern Microsoft Windows operating systems on internal hard drives and SSDs?",
+            "answer": "NTFS",
+            "accepted_answers": ["NTFS", "New Technology File System"],
+            "explanation": "NTFS (New Technology File System) is the proprietary default file system for modern Windows versions (Windows 10, 11, Server), providing security permissions (ACLs), file encryption (EFS), journaling, and large volume support.",
+            "marking_points": [
+                "Identifies 'NTFS' or 'New Technology File System'."
+            ],
+            "source": "Software and Operating Systems Slide 9; Textbook",
+            "verified": True,
+            "verified_output": "NTFS"
+        },
+        {
+            "id": "ift205-ops-011",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["software_piracy", "security_risks"],
+            "question": "From a cybersecurity and IT systems perspective, why does university policy strictly prohibit students and staff from installing 'cracked' proprietary software from unauthorized download sites?",
+            "options": [
+                "Cracking tools and patchers frequently bundle stealth malware (such as keystroke loggers, trojans, and botnet clients), and cracked software cannot receive official vendor security updates.",
+                "Cracked software generates radioactive electromagnetic interference that damages the laptop's Wi-Fi antenna.",
+                "Cracked software causes the CPU fan to reverse direction and blow hot air into the motherboard.",
+                "Cracked software automatically converts the computer's hard drive from NTFS to FAT12."
+            ],
+            "answer": 0,
+            "explanation": "As noted in Lecture Slide 19: 'Using cracked software exposes devices to malware, security vulnerabilities from missing patches, and legal/ethical liabilities.' Hackers frequently embed trojans and credential stealers inside software crack tools.",
+            "why_wrong": {
+                "1": "Software execution cannot create radioactive emissions or physically damage antennas.",
+                "2": "Software does not reverse motor wiring in cooling fans.",
+                "3": "File system structures are not arbitrarily degraded to FAT12 by cracked applications."
+            },
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 19",
+            "verified": True,
+            "verified_output": "Malware bundles and lack of security patches."
+        },
+        {
+            "id": "ift205-ops-012",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "explain",
+            "difficulty": 3,
+            "tags": ["os_memory_management", "virtual_memory"],
+            "question": "Explain the concept of 'Virtual Memory' in an operating system, detailing what happens when physical RAM is fully exhausted by active applications.",
+            "options": [],
+            "answer": "Virtual Memory is a memory management technique employed by the operating system that extends physical RAM using a designated portion of secondary storage (e.g., the Windows paging file `pagefile.sys` or Linux swap space). When physical RAM becomes exhausted by multiple active programs, the OS memory manager identifies inactive memory blocks (pages) and writes ('pages out') them to secondary storage to free up physical RAM for high-priority active processes. When an inactive application is foregrounded, its pages are swapped back into RAM. While virtual memory prevents programs from crashing due to memory exhaustion, excessive swapping leads to 'thrashing', severely slowing down system responsiveness because secondary storage is orders of magnitude slower than physical RAM.",
+            "explanation": "Virtual memory uses secondary storage as an overflow area for RAM. Prevents crashes but causes disk thrashing if overused.",
+            "why_wrong": {},
+            "marking_points": [
+                "Defines virtual memory as using secondary storage to simulate additional RAM.",
+                "Explains the paging mechanism (swapping inactive memory pages to disk).",
+                "Highlights that it prevents 'out of memory' crashes when opening many programs.",
+                "Explains that secondary storage is much slower than RAM, causing system lag/thrashing during heavy paging."
+            ],
+            "source": "Software and Operating Systems Slide 5; Systems Theory",
+            "verified": True,
+            "verified_output": "Virtual memory and paging mechanics."
+        },
+        {
+            "id": "ift205-ops-013",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["virtualization", "vm_concept"],
+            "question": "A software engineer runs a guest Linux Ubuntu environment inside a software window on their physical Apple macOS laptop. What technology makes this possible?",
+            "options": [
+                "Virtualization (using a Virtual Machine / Hypervisor)",
+                "Physical Dual-Core Magnetic Inversion",
+                "Analog BIOS Overclocking",
+                "Direct Memory Paging via USB"
+            ],
+            "answer": 0,
+            "explanation": "Virtualization uses a software layer called a hypervisor (such as VirtualBox, VMware, or UTM) to simulate virtual hardware (virtual CPU, RAM, disk, NIC), allowing a guest operating system (Ubuntu) to run in isolation on top of the host operating system (macOS).",
+            "why_wrong": {
+                "1": "Magnetic inversion is a fictitious hardware concept.",
+                "2": "BIOS overclocking increases clock frequencies, not hosting guest OS instances.",
+                "3": "USB paging does not create virtual operating system isolation."
+            },
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 22",
+            "verified": True,
+            "verified_output": "Virtualization via Hypervisor / VM."
+        },
+        {
+            "id": "ift205-ops-014",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["file_permissions", "security"],
+            "question": "In a multi-user operating system (like Linux or Windows Server), what specific permission is required for a user to execute a compiled shell script or executable binary file?",
+            "options": [
+                "Execute permission (x)",
+                "Read-only archive permission (a)",
+                "Write-only append permission (w)",
+                "System hidden file permission (h)"
+            ],
+            "answer": 0,
+            "explanation": "The Execute permission (x in Linux/UNIX permissions `rwx`) grants the system permission to load the file into memory as an executable process. Read (r) allows viewing contents, and Write (w) allows modifying contents.",
+            "why_wrong": {
+                "1": "Archive permission is a backup attribute flag, not an execution grant.",
+                "2": "Write-only allows altering data but forbids process execution.",
+                "3": "Hidden permission simply conceals the file icon in file explorers."
+            },
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 12",
+            "verified": True,
+            "verified_output": "Execute permission (x)."
+        },
+        {
+            "id": "ift205-ops-015",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "true_false_why",
+            "difficulty": 2,
+            "tags": ["os_troubleshooting", "system_restart"],
+            "question": "Restarting a frozen operating system or crashed computer device is a valid, recommended first troubleshooting step rather than an amateur superstition.",
+            "options": [
+                "False — restarting physically degrades the motherboard capacitors and causes permanent file corruption in the BIOS chip.",
+                "True — restarting flushes volatile RAM, terminates runaway or deadlocked processes, clears leaked memory allocations, and reloads core system drivers into a clean initial state."
+            ],
+            "answer": 1,
+            "explanation": "As noted in Lecture Slide 24: 'Restart the application or device when safe and appropriate.' Restarting is a foundational diagnostic step because it purges erratic volatile memory state, eliminates deadlocked threads, resets hardware peripheral registers, and starts system services afresh.",
+            "why_wrong": {
+                "0": "Standard software restarts are safe and do not degrade motherboard capacitors or BIOS chips."
+            },
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 24",
+            "verified": True,
+            "verified_output": "True. Restarting clears volatile memory and deadlocks."
+        },
+        {
+            "id": "ift205-ops-016",
+            "course": "IFT 205",
+            "topic": "operating_systems_software",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["firmware", "bios_uefi"],
+            "question": "Which low-level software program is permanently stored on a non-volatile ROM/flash memory chip on the motherboard, executing the Power-On Self-Test (POST) and initializing essential hardware before the operating system kernel is loaded?",
+            "options": [
+                "BIOS / UEFI firmware",
+                "Windows Device Manager utility",
+                "NTFS Master File Table (MFT)",
+                "Dynamic Host Configuration Protocol (DHCP)"
+            ],
+            "answer": 0,
+            "explanation": "The BIOS (Basic Input/Output System) or modern UEFI (Unified Extensible Firmware Interface) is firmware stored in a non-volatile motherboard chip. When power is turned on, it runs POST to test RAM, CPU, and devices, and then locates the bootable drive to load the OS kernel into memory.",
+            "why_wrong": {
+                "1": "Device Manager is a high-level Windows administrative utility, not firmware.",
+                "2": "The MFT is a file system structure on a formatted NTFS storage drive, not motherboard firmware.",
+                "3": "DHCP is a network protocol for assigning IP addresses."
+            },
+            "marking_points": [],
+            "source": "Software and Operating Systems Slide 16; Student Notebook Hint",
+            "verified": True,
+            "verified_output": "BIOS / UEFI firmware."
+        }
+    ],
+    "case_studies": [
+        {
+            "id": "ift205-ops-cs1",
+            "scenario": "A student purchases a refurbished laptop from a computer market in Computer Village, Lagos. The laptop turns on and displays a desktop, but runs sluggishly and displays suspicious browser popups. The student decides to wipe the computer completely and perform a fresh, clean installation of Windows 11. The student prepares a bootable USB drive using the official Microsoft Media Creation Tool on another computer. However, when the USB drive is plugged into the refurbished laptop and powered on, the laptop ignores the USB and boots directly back into the old infected Windows desktop.",
+            "sub_questions": [
+                {
+                    "id": "ift205-ops-cs1-q1",
+                    "course": "IFT 205",
+                    "topic": "operating_systems_software",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case_study", "bios_boot_order"],
+                    "question": "Why did the laptop fail to boot into the Windows 11 installation wizard from the USB drive?",
+                    "options": [
+                        "The laptop's BIOS/UEFI firmware boot order was configured to prioritize the internal hard drive ahead of external USB devices.",
+                        "Windows 11 cannot physically boot from a USB flash drive under any circumstances.",
+                        "The laptop's CPU lacks an Arithmetic Logic Unit.",
+                        "The laptop screen resolution was too low to display the USB drive."
+                    ],
+                    "answer": 0,
+                    "explanation": "By default, motherboard BIOS/UEFI firmware checks the internal hard drive first. To boot from installation media, the user must enter BIOS/UEFI settings (pressing F2, F12, or Del during boot) and adjust the boot sequence to place the USB drive as the first priority device.",
+                    "why_wrong": {
+                        "1": "Windows installers are routinely booted from USB flash drives.",
+                        "2": "All CPUs contain an ALU.",
+                        "3": "Screen resolution does not prevent firmware boot device detection."
+                    },
+                    "marking_points": [],
+                    "source": "Student Notebook Image 21.47.02 ('How to install a new window OS')",
+                    "verified": True,
+                    "verified_output": "BIOS/UEFI boot order prioritized internal drive."
+                },
+                {
+                    "id": "ift205-ops-cs1-q2",
+                    "course": "IFT 205",
+                    "topic": "operating_systems_software",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case_study", "clean_install_disk_steps"],
+                    "question": "Once the student boots into the Windows 11 installer, describe the exact partition management and disk formatting steps they must perform on the setup screen to ensure all traces of the previous user's infected files are eradicated.",
+                    "options": [],
+                    "answer": "To guarantee complete eradication of the previous infected installation, the student must select the 'Custom: Install Windows only (advanced)' installation option rather than 'Upgrade'. On the disk partition management screen, they must select every existing partition on the primary drive (System, Recovery, MSR, and Primary data partitions) and click 'Delete' until only unallocated space remains (e.g. 'Drive 0 Unallocated Space'). They then select this unallocated space and click 'New' to create a clean partition table (GPT for UEFI), which automatically partitions and formats the new primary partition with a fresh NTFS file system, ensuring zero legacy malware files or infected bootloader sectors persist.",
+                    "explanation": "Select Custom install, delete all partitions to Unallocated Space, create new partitions with fresh NTFS formatting.",
+                    "why_wrong": {},
+                    "marking_points": [
+                        "Selects 'Custom: Install Windows only (advanced)' instead of 'Upgrade'.",
+                        "Deletes all existing partitions on the drive down to 'Unallocated Space'.",
+                        "Creates new partition(s) with modern GPT partition table.",
+                        "Formats the new partition with a fresh NTFS file system, eradicating old infected structures."
+                    ],
+                    "source": "Student Notebook Image 21.47.02; Software and Operating Systems Slide 17",
+                    "verified": True,
+                    "verified_output": "Clean install partition deletion and NTFS formatting steps."
+                }
+            ]
+        },
+        {
+            "id": "ift205-ops-cs2",
+            "scenario": "Nile University's Computer Science department is provisioning 40 laboratory workstations. The department head evaluates two operating systems: Microsoft Windows 11 Education (a commercial proprietary OS) and Ubuntu Linux 24.04 LTS (an open-source OS). The lab will be used for introductory programming (C, Python, HTML/CSS), networking labs, and database management. The budget committee highlights that university software licensing costs must be managed responsibly, while faculty members want students to have full access to developer command-line tools without artificial vendor restrictions.",
+            "sub_questions": [
+                {
+                    "id": "ift205-ops-cs2-q1",
+                    "course": "IFT 205",
+                    "topic": "operating_systems_software",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case_study", "os_selection"],
+                    "question": "What is the primary financial and licensing advantage of deploying Ubuntu Linux across the 40 lab workstations compared to Windows 11?",
+                    "options": [
+                        "Ubuntu Linux is open-source software distributed freely under open licenses (GPL), eliminating per-workstation operating system licensing fees and allowing unrestricted installation.",
+                        "Ubuntu Linux pays a monthly royalty rebate to universities that install it on more than 20 computers.",
+                        "Windows 11 requires a hardware license dongle plugged into the USB port every 15 minutes.",
+                        "Linux computers do not consume electricity when executing C programs."
+                    ],
+                    "answer": 0,
+                    "explanation": "Linux is open-source software distributed under open licenses like the GNU GPL. It can be installed on an unlimited number of machines with zero operating system licensing fees, saving the university significant software licensing costs.",
+                    "why_wrong": {
+                        "1": "Open-source distributions do not pay monetary rebates to institutions.",
+                        "2": "Windows uses digital product keys, not 15-minute physical USB dongles.",
+                        "3": "All computing hardware requires electricity to run programs."
+                    },
+                    "marking_points": [],
+                    "source": "Software and Operating Systems Slide 18, 21",
+                    "verified": True,
+                    "verified_output": "Ubuntu is open-source and eliminates OS licensing fees."
+                },
+                {
+                    "id": "ift205-ops-cs2-q2",
+                    "course": "IFT 205",
+                    "topic": "operating_systems_software",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case_study", "gui_vs_cli_pedagogy"],
+                    "question": "Compare the pedagogical advantages of training undergraduate computer science students in a Command Line Interface (CLI) environment versus relying exclusively on a Graphical User Interface (GUI).",
+                    "options": [],
+                    "answer": "While a GUI provides intuitive visual navigation suitable for general desktop productivity, exclusive reliance on GUIs hides underlying system mechanisms from computing students. In contrast, training in a CLI environment (like the Linux Bash shell) provides distinct pedagogical advantages: (1) Students interact directly with the operating system kernel, file system hierarchy, process management, and network utilities; (2) Students master shell scripting and automation, allowing them to chain commands, redirect standard I/O streams, and automate complex build and administrative workflows; (3) Most enterprise production servers, cloud instances (AWS, Azure), and high-performance computing clusters operate headless (without a GUI) and are managed entirely via remote CLI (SSH); thus, CLI proficiency is a prerequisite for professional systems administration, DevOps, and backend software engineering.",
+                    "explanation": "GUI is accessible; CLI teaches deep system mechanics, automation/scripting, and prepares students for headless server/cloud administration.",
+                    "why_wrong": {},
+                    "marking_points": [
+                        "Identifies GUI advantages (intuitive, visual WIMP) and limitations (abstracts underlying mechanics).",
+                        "Explains that CLI teaches deep operating system mechanics (file hierarchy, process control, piping).",
+                        "Highlights command automation, shell scripting, and batch execution capabilities in CLI.",
+                        "Emphasizes that enterprise cloud servers and HPC systems are headless and managed via CLI (SSH)."
+                    ],
+                    "source": "Software and Operating Systems Slide 6; Student Notebook Hint",
+                    "verified": True,
+                    "verified_output": "Pedagogical comparison of GUI vs CLI."
+                }
+            ]
+        }
+    ]
+}
+
+out_dir = os.path.join("app", "content", "IFT 205")
+os.makedirs(out_dir, exist_ok=True)
+out_path = os.path.join(out_dir, "operating_systems_software.json")
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(topic_data, f, indent=2)
+
+print(f"Generated {out_path} with {len(topic_data['questions'])} questions and {len(topic_data['case_studies'])} case studies.")

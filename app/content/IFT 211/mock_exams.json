@@ -1,0 +1,2043 @@
+{
+  "course": "IFT 211",
+  "title": "Digital Logic and Design \u2014 Mock Examination Series",
+  "exams": [
+    {
+      "id": "ift211-mock-01",
+      "title": "Mock Exam Alpha: Full 60-Mark Final Examination Standard Simulation",
+      "description": "Comprehensive simulation reflecting the official Nile University First Semester Final Exam format. Features 30 multi-part calculation and design questions weighted across binary/hex conversions, signed 2's complement arithmetic, ASCII byte stream decoding, universal NAND/NOR synthesis, full adders, ripple delays, and K-map 4-corner wraps.",
+      "duration_minutes": 90,
+      "total_marks": 60,
+      "passing_score": 30,
+      "question_count": 30,
+      "questions": [
+        {
+          "id": "ift211-ns-001",
+          "course": "IFT 211",
+          "topic": "Number Systems & Radix Conversions",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "radix",
+            "definition",
+            "basics"
+          ],
+          "question": "What is the radix of a positional number system?",
+          "options": [
+            "The total number of unique digits or symbols available in that system.",
+            "The highest digit value that can appear in that system.",
+            "The number of bits in a single byte.",
+            "The memory address where the number is stored."
+          ],
+          "answer": "The total number of unique digits or symbols available in that system.",
+          "explanation": "The radix (or base) defines the number of distinct digit symbols available in that positional system. For example, binary has a radix of 2 ({0, 1}), and decimal has a radix of 10 ({0..9}).",
+          "why_wrong": {
+            "The highest digit value that can appear in that system.": "The highest single digit value in base b is b - 1, not b itself (e.g., in base 10 the highest digit is 9).",
+            "The number of bits in a single byte.": "A byte is an 8-bit storage unit, independent of the general mathematical definition of radix.",
+            "The memory address where the number is stored.": "A memory address is a pointer location, not a numeral system base."
+          },
+          "marking_points": [
+            "Defines radix as the number of unique digits in the positional system"
+          ],
+          "source": "Digital Logic Lecture Note, Page 1",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "number_systems"
+        },
+        {
+          "id": "ift211-ns-005",
+          "course": "IFT 211",
+          "topic": "Number Systems & Radix Conversions",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "decimal-to-hex",
+            "successive-division"
+          ],
+          "question": "Convert the decimal number 1341 into hexadecimal (base 16) notation.",
+          "options": [
+            "53D",
+            "5313",
+            "D35",
+            "5C3"
+          ],
+          "answer": "53D",
+          "explanation": "Successive division by 16:\n1341 / 16 = 83 with remainder 13. Since remainder 13 corresponds to the hex symbol 'D', LSD is D.\n83 / 16 = 5 with remainder 3.\n5 / 16 = 0 with remainder 5 (MSD).\nReading bottom-to-top: 53D_16.",
+          "why_wrong": {
+            "5313": "Fails to substitute the hex letter 'D' for the value 13.",
+            "D35": "Reads remainders top-to-bottom instead of bottom-to-top.",
+            "5C3": "Uses C (12) instead of D (13)."
+          },
+          "marking_points": [
+            "Divides 1341 by 16 to get 83 R13 (D)",
+            "Divides 83 by 16 to get 5 R3",
+            "Divides 5 by 16 to get 0 R5",
+            "Yields 53D_16"
+          ],
+          "source": "Digital Logic Lecture Note, Page 2",
+          "verified": true,
+          "verified_output": "hex(1341) = 0x53d",
+          "topic_slug": "number_systems"
+        },
+        {
+          "id": "ift211-ns-009",
+          "course": "IFT 211",
+          "topic": "Number Systems & Radix Conversions",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "binary-to-octal",
+            "bit-grouping"
+          ],
+          "question": "Convert the binary number 10110_2 to octal (base 8).",
+          "options": [
+            "26",
+            "22",
+            "32",
+            "16"
+          ],
+          "answer": "26",
+          "explanation": "Starting from the radix point, partition 10110_2 into groups of 3 bits:\nRight triplet: 110_2 = 4 + 2 + 0 = 6_8.\nLeft group: 10_2. Pad with a leading zero on the left: 010_2 = 2_8.\nCombining gives 26_8.",
+          "why_wrong": {
+            "22": "Misinterprets 110_2 as 2.",
+            "32": "Pads incorrectly or groups from left-to-right.",
+            "16": "Computes hexadecimal instead of octal."
+          },
+          "marking_points": [
+            "Pads leftmost group with 0 to make 010",
+            "Converts 010 -> 2 and 110 -> 6 to get 26_8"
+          ],
+          "source": "Digital Logic Lecture Note, Page 4-5",
+          "verified": true,
+          "verified_output": "oct(0b10110) = 0o26",
+          "topic_slug": "number_systems"
+        },
+        {
+          "id": "ift211-ns-013",
+          "course": "IFT 211",
+          "topic": "Number Systems & Radix Conversions",
+          "type": "matching",
+          "difficulty": 2,
+          "tags": [
+            "hex-symbols",
+            "matching"
+          ],
+          "question": "Match each hexadecimal letter symbol to its corresponding decimal value:",
+          "options": [
+            "A: 10, B: 11, C: 12, D: 13, E: 14, F: 15",
+            "A: 11, B: 12, C: 13, D: 14, E: 15, F: 16",
+            "A: 9, B: 10, C: 11, D: 12, E: 13, F: 14",
+            "A: 10, B: 12, C: 14, D: 16, E: 18, F: 20"
+          ],
+          "answer": "A: 10, B: 11, C: 12, D: 13, E: 14, F: 15",
+          "explanation": "In base 16, single-digit positions above 9 are designated by the first six letters of the alphabet: A=10, B=11, C=12, D=13, E=14, F=15.",
+          "why_wrong": {
+            "A: 11, B: 12, C: 13, D: 14, E: 15, F: 16": "Off-by-one error; base 16 cannot have a single digit equal to 16.",
+            "A: 9, B: 10, C: 11, D: 12, E: 13, F: 14": "9 is represented by the decimal numeral '9', not 'A'.",
+            "A: 10, B: 12, C: 14, D: 16, E: 18, F: 20": "Even increments; incorrect values."
+          },
+          "marking_points": [
+            "Maps A through F to 10 through 15 strictly"
+          ],
+          "source": "Digital Logic Lecture Note, Page 1",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "number_systems"
+        },
+        {
+          "id": "ift211-ac-001",
+          "course": "IFT 211",
+          "topic": "Binary Arithmetic & Complements",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "2s-complement",
+            "addition",
+            "exam-past-question"
+          ],
+          "question": "Perform the arithmetic operation (+44) + (+14) in binary using 8-bit 2's complement representation. (As given in Nile University Final Examination)",
+          "options": [
+            "00111010",
+            "00101010",
+            "01001010",
+            "00111110"
+          ],
+          "answer": "00111010",
+          "explanation": "Convert both decimal numbers to 8-bit binary:\n+44 = 32 + 8 + 4 = 00101100_2\n+14 = 8 + 4 + 2 = 00001110_2\nPerform binary addition:\n  00101100\n+ 00001110\n----------\n  00111010_2\nCheck: 32 + 16 + 8 + 2 = 58_10. (+44 + +14 = +58). No overflow occurred (sign bit is 0).",
+          "why_wrong": {
+            "00101010": "Evaluates to 42 in decimal; addition error in bit 4.",
+            "01001010": "Evaluates to 74 in decimal; extraneous carry generated.",
+            "00111110": "Evaluates to 62 in decimal."
+          },
+          "marking_points": [
+            "Converts +44 to 00101100_2",
+            "Converts +14 to 00001110_2",
+            "Performs binary addition to yield 00111010_2 (+58)"
+          ],
+          "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise I, Q1",
+          "verified": true,
+          "verified_output": "bin(44+14) = 00111010",
+          "topic_slug": "arithmetic_complements"
+        },
+        {
+          "id": "ift211-ac-004",
+          "course": "IFT 211",
+          "topic": "Binary Arithmetic & Complements",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "1s-complement",
+            "subtraction",
+            "end-around-carry",
+            "exam-past-question"
+          ],
+          "question": "Using the 1's complement method, perform 1001000_2 - 0111001_2. What is the intermediate sum and final result after handling the end-around carry?",
+          "options": [
+            "Intermediate sum: 10001110; Final result after adding end carry: 0001111",
+            "Intermediate sum: 10001111; Final result: 0001111 (carry discarded)",
+            "Intermediate sum: 00001110; Final result: 0001110",
+            "Intermediate sum: 10011110; Final result: 0011111"
+          ],
+          "answer": "Intermediate sum: 10001110; Final result after adding end carry: 0001111",
+          "explanation": "1. 1's complement of subtrahend 0111001 is 1000110.\n2. Add minuend and 1's complement:\n    1001000\n  + 1000110\n  ---------\n   10001110\n3. Because an end carry (the leading 1) is produced, the result is positive. Add this end-around carry to the LSB:\n    0001110\n  +       1\n  ---------\n    0001111_2 (15_10).",
+          "why_wrong": {
+            "Intermediate sum: 10001111; Final result: 0001111 (carry discarded)": "This describes 2's complement subtraction, not 1's complement.",
+            "Intermediate sum: 00001110; Final result: 0001110": "Omits the end-around carry addition.",
+            "Intermediate sum: 10011110; Final result: 0011111": "Addition error in intermediate stage."
+          },
+          "marking_points": [
+            "Inverts subtrahend to 1000110",
+            "Computes sum 10001110",
+            "Adds end-around carry 1 to LSB to yield 0001111"
+          ],
+          "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise I, Q2",
+          "verified": true,
+          "verified_output": "0001110 + 1 = 0001111",
+          "topic_slug": "arithmetic_complements"
+        },
+        {
+          "id": "ift211-ac-007",
+          "course": "IFT 211",
+          "topic": "Binary Arithmetic & Complements",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "range",
+            "formulas",
+            "2s-complement"
+          ],
+          "question": "What is the representable integer dynamic range for an n-bit word using 2's complement representation?",
+          "options": [
+            "-2^(n-1) to +(2^(n-1) - 1)",
+            "-(2^(n-1) - 1) to +(2^(n-1) - 1)",
+            "-2^n to +(2^n - 1)",
+            "0 to 2^n - 1"
+          ],
+          "answer": "-2^(n-1) to +(2^(n-1) - 1)",
+          "explanation": "Because 2's complement has only one zero (00...0), the unused bit pattern 100...0 represents one additional negative number: -2^(n-1). Thus, the range is -2^(n-1) to +(2^(n-1) - 1).",
+          "why_wrong": {
+            "-(2^(n-1) - 1) to +(2^(n-1) - 1)": "This is the symmetric range for 1's complement and sign-magnitude due to dual zeroes.",
+            "-2^n to +(2^n - 1)": "Requires n+1 bits.",
+            "0 to 2^n - 1": "This is the range for unsigned n-bit integers."
+          },
+          "marking_points": [
+            "Recalls asymmetric range [-2^(n-1), +(2^(n-1) - 1)]"
+          ],
+          "source": "Digital Logic Lecture Note, Page 6-7",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "arithmetic_complements"
+        },
+        {
+          "id": "ift211-ac-011",
+          "course": "IFT 211",
+          "topic": "Binary Arithmetic & Complements",
+          "type": "calculation",
+          "difficulty": 2,
+          "tags": [
+            "sign-magnitude",
+            "encoding"
+          ],
+          "question": "How are (+12)_10 and (-12)_10 represented in an 8-bit sign-magnitude format?",
+          "options": [
+            "(+12) = 00001100, (-12) = 10001100",
+            "(+12) = 00001100, (-12) = 11110011",
+            "(+12) = 00001100, (-12) = 11110100",
+            "(+12) = 10001100, (-12) = 00001100"
+          ],
+          "answer": "(+12) = 00001100, (-12) = 10001100",
+          "explanation": "In 8-bit sign-magnitude, the leftmost bit is the sign (0 for +, 1 for -) and the remaining 7 bits store the binary magnitude of 12 (0001100_2). Thus, +12 = 00001100 and -12 = 10001100.",
+          "why_wrong": {
+            "(+12) = 00001100, (-12) = 11110011": "11110011 is 1's complement representation.",
+            "(+12) = 00001100, (-12) = 11110100": "11110100 is 2's complement representation.",
+            "(+12) = 10001100, (-12) = 00001100": "Reverses the sign bit convention."
+          },
+          "marking_points": [
+            "Maintains magnitude 0001100",
+            "Uses MSB 0 for + and MSB 1 for -"
+          ],
+          "source": "Digital Logic Lecture Note, Page 7",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "arithmetic_complements"
+        },
+        {
+          "id": "ift211-cd-001",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "gray-code",
+            "binary-to-gray",
+            "exam-past-question"
+          ],
+          "question": "Find the Gray code equivalent of the decimal number 21. (As given in Nile University Final Examination, Exercise IV, Question 1a)",
+          "options": [
+            "11111",
+            "10101",
+            "11011",
+            "11110"
+          ],
+          "answer": "11111",
+          "explanation": "1. Convert decimal 21 to binary: 21 = 16 + 4 + 1 = 10101_2.\n2. Convert binary (B4 B3 B2 B1 B0 = 1 0 1 0 1) to Gray code (G4 G3 G2 G1 G0):\n   G4 = B4 = 1\n   G3 = B4 XOR B3 = 1 XOR 0 = 1\n   G2 = B3 XOR B2 = 0 XOR 1 = 1\n   G1 = B2 XOR B1 = 1 XOR 0 = 1\n   G0 = B1 XOR B0 = 0 XOR 1 = 1\nCombining yields 11111_Gray.",
+          "why_wrong": {
+            "10101": "This is the original pure binary representation, not the Gray code.",
+            "11011": "Arithmetic XOR error between B3 and B2.",
+            "11110": "Off-by-one in the LSB G0."
+          },
+          "marking_points": [
+            "Converts decimal 21 to binary 10101_2",
+            "Applies Gi = B(i+1) XOR B(i)",
+            "Derives 11111_Gray"
+          ],
+          "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise IV, Q1a",
+          "verified": true,
+          "verified_output": "bin(21) = 10101 -> gray = 11111",
+          "topic_slug": "bcd_gray_ascii"
+        },
+        {
+          "id": "ift211-cd-003",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "bcd-conversion",
+            "exam-past-question"
+          ],
+          "question": "Convert the BCD number 1001 0001 0100 into its equivalent pure binary representation. (As given in Nile University Final Examination, Exercise IV, Question 2)",
+          "options": [
+            "1110010010",
+            "100100010100",
+            "1110010100",
+            "1101010010"
+          ],
+          "answer": "1110010010",
+          "explanation": "1. Decode each 4-bit BCD nibble to its decimal digit:\n   1001_2 = 9\n   0001_2 = 1\n   0100_2 = 4\n   The decimal number is 914_10.\n2. Convert 914 to pure binary by successive division by 2:\n   914 = 512 + 256 + 128 + 16 + 2\n   = 2^9 + 2^8 + 2^7 + 2^4 + 2^1\n   = 1110010010_2.",
+          "why_wrong": {
+            "100100010100": "Treats BCD as if it were already a pure binary number without conversion.",
+            "1110010100": "Evaluates to 916 decimal; addition error.",
+            "1101010010": "Evaluates to 850 decimal."
+          },
+          "marking_points": [
+            "Decodes BCD nibbles to decimal 914",
+            "Divides 914 by 2 to yield binary 1110010010_2"
+          ],
+          "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise IV, Q2",
+          "verified": true,
+          "verified_output": "bin(914) = 0b1110010010",
+          "topic_slug": "bcd_gray_ascii"
+        },
+        {
+          "id": "ift211-cd-006",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "coding-vs-conversion",
+            "distinction"
+          ],
+          "question": "What is the key distinction between binary conversion and binary coding for the decimal number 13?",
+          "options": [
+            "Binary conversion yields 1101_2 (4 bits), whereas BCD coding yields 0001 0011_BCD (8 bits).",
+            "Binary conversion yields 00010011_2, whereas BCD coding yields 1101.",
+            "Both methods produce the identical 4-bit pattern 1101.",
+            "Binary conversion requires 8 bits while BCD coding requires 4 bits."
+          ],
+          "answer": "Binary conversion yields 1101_2 (4 bits), whereas BCD coding yields 0001 0011_BCD (8 bits).",
+          "explanation": "Conversion expresses the true mathematical magnitude in base 2 (13_10 = 1101_2). Coding replaces each individual decimal symbol with a code word: '1' -> 0001, '3' -> 0011, producing 0001 0011.",
+          "why_wrong": {
+            "Binary conversion yields 00010011_2, whereas BCD coding yields 1101.": "Reverses the definitions.",
+            "Both methods produce the identical 4-bit pattern 1101.": "Conflates pure radix conversion with symbol coding.",
+            "Binary conversion requires 8 bits while BCD coding requires 4 bits.": "BCD requires more bits (8 bits) than pure binary (4 bits)."
+          },
+          "marking_points": [
+            "Differentiates numeric base conversion (1101) from BCD symbol coding (0001 0011)"
+          ],
+          "source": "Digital Logic Lecture Note, Page 12",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "bcd_gray_ascii"
+        },
+        {
+          "id": "ift211-cd-009",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "parity",
+            "even-parity",
+            "error-detection"
+          ],
+          "question": "Given the 3-bit message X Y Z = 1 0 1, what must the Even Parity bit (P) be so that the transmitted 4-bit message has an even number of 1s?",
+          "options": [
+            "0",
+            "1",
+            "Undefined",
+            "Both 0 and 1"
+          ],
+          "answer": "0",
+          "explanation": "The message bits '1 0 1' contain two 1s (an even count). To maintain an even number of 1s in the overall 4-bit word (P X Y Z), the even parity bit P must be 0 (giving 0 1 0 1, which has two 1s).",
+          "why_wrong": {
+            "1": "Setting P=1 would make the total count of 1s equal to 3 (which is odd).",
+            "Undefined": "Parity bit is uniquely determined.",
+            "Both 0 and 1": "Only 0 produces an even count."
+          },
+          "marking_points": [
+            "Counts two 1s in message",
+            "Concludes P = 0 for even parity"
+          ],
+          "source": "Digital Logic Lecture Note, Page 12",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "bcd_gray_ascii"
+        },
+        {
+          "id": "ift211-ba-001",
+          "course": "IFT 211",
+          "topic": "Boolean Algebra & De Morgan's Laws",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "distributive-law",
+            "postulates"
+          ],
+          "question": "Which of the following Boolean identities demonstrates the distribution of OR (+) over AND (\u00b7), which has NO counterpart in ordinary real algebra?",
+          "options": [
+            "A + (B \u00b7 C) = (A + B) \u00b7 (A + C)",
+            "A \u00b7 (B + C) = (A \u00b7 B) + (A \u00b7 C)",
+            "A + (B + C) = (A + B) + C",
+            "A \u00b7 (B \u00b7 C) = (A \u00b7 B) \u00b7 C"
+          ],
+          "answer": "A + (B \u00b7 C) = (A + B) \u00b7 (A + C)",
+          "explanation": "In ordinary arithmetic, addition does not distribute over multiplication (e.g., 2 + (3*4) = 14 != (2+3)*(2+4) = 30). In Boolean algebra, however, Postulate 4b guarantees that OR distributes over AND: A + BC = (A+B)(A+C).",
+          "why_wrong": {
+            "A \u00b7 (B + C) = (A \u00b7 B) + (A \u00b7 C)": "This is multiplication distributing over addition, which is true in both Boolean algebra and ordinary algebra.",
+            "A + (B + C) = (A + B) + C": "This is the Associative Law of addition/OR.",
+            "A \u00b7 (B \u00b7 C) = (A \u00b7 B) \u00b7 C": "This is the Associative Law of multiplication/AND."
+          },
+          "marking_points": [
+            "Identifies A + BC = (A+B)(A+C) as unique Boolean distributivity"
+          ],
+          "source": "Digital Logic Lecture Note, Page 23-24",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "boolean_algebra_theorems"
+        },
+        {
+          "id": "ift211-ba-004",
+          "course": "IFT 211",
+          "topic": "Boolean Algebra & De Morgan's Laws",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "absorption",
+            "simplification"
+          ],
+          "question": "Simplify the Boolean expression: F = A + A' \u00b7 B.",
+          "options": [
+            "A + B",
+            "A \u00b7 B",
+            "A",
+            "B"
+          ],
+          "answer": "A + B",
+          "explanation": "Method 1 (Distributive Law): A + A'B = (A + A')(A + B). Since A + A' = 1 (Postulate 5a), this becomes 1 \u00b7 (A + B) = A + B.\nMethod 2 (Truth Table): When A=1, F=1. When A=0, F=B. Thus F = A + B.",
+          "why_wrong": {
+            "A \u00b7 B": "Incorrect reduction; when A=1 and B=0, A+A'B = 1, but A\u00b7B = 0.",
+            "A": "Forgets the contribution of B when A=0.",
+            "B": "Forgets that when A=1 the expression is 1 regardless of B."
+          },
+          "marking_points": [
+            "Applies distributivity: (A+A')(A+B)",
+            "Replaces A+A' with 1",
+            "Arrives at A + B"
+          ],
+          "source": "Digital Logic Lecture Note, Page 24-25",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "boolean_algebra_theorems"
+        },
+        {
+          "id": "ift211-ba-007",
+          "course": "IFT 211",
+          "topic": "Boolean Algebra & De Morgan's Laws",
+          "type": "calculation",
+          "difficulty": 4,
+          "tags": [
+            "algebraic-proof",
+            "step-by-step"
+          ],
+          "question": "Using Boolean algebra postulates, prove the Absorption Theorem: X + X \u00b7 Y = X. What is the correct step-by-step algebraic deduction?",
+          "options": [
+            "X + XY = X\u00b71 + XY (by Identity 2b) = X\u00b7(1 + Y) (by Distributive 4b) = X\u00b7(1) (by Dominance 2a) = X (by Identity 2b)",
+            "X + XY = (X + X) \u00b7 (X + Y) = X \u00b7 (X + Y) = X + Y",
+            "X + XY = X \u00b7 Y + X = Y + X \u00b7 X = Y + X",
+            "X + XY = 1 + XY = X"
+          ],
+          "answer": "X + XY = X\u00b71 + XY (by Identity 2b) = X\u00b7(1 + Y) (by Distributive 4b) = X\u00b7(1) (by Dominance 2a) = X (by Identity 2b)",
+          "explanation": "1. Replace X with X\u00b71 using the identity element postulate (Postulate 2b).\n2. Factor out X using the distributive law: X\u00b7(1 + Y).\n3. By the dominance theorem, 1 + Y = 1.\n4. X\u00b7(1) = X by identity.",
+          "why_wrong": {
+            "X + XY = (X + X) \u00b7 (X + Y)...": "Incorrectly evaluates to X+Y.",
+            "X + XY = X \u00b7 Y + X...": "Circular manipulation without simplification.",
+            "X + XY = 1 + XY = X": "Invalid substitution of 1 for X."
+          },
+          "marking_points": [
+            "Expresses X as X\u00b71",
+            "Factors X(1+Y)",
+            "Applies 1+Y = 1",
+            "Arrives at X"
+          ],
+          "source": "Digital Logic Lecture Note, Page 24",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "boolean_algebra_theorems"
+        },
+        {
+          "id": "ift211-ba-010",
+          "course": "IFT 211",
+          "topic": "Boolean Algebra & De Morgan's Laws",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "cloze",
+            "identities"
+          ],
+          "question": "In Boolean algebra, the additive identity element is ___ (because A + ___ = A), and the multiplicative identity element is ___ (because A \u00b7 ___ = A).",
+          "options": [
+            "0; 0; 1; 1",
+            "1; 1; 0; 0",
+            "A; A; A'; A'",
+            "0; 1; 1; 0"
+          ],
+          "answer": "0; 0; 1; 1",
+          "explanation": "0 added to any variable leaves it unchanged (A + 0 = A), making 0 the identity element for OR. 1 multiplied by any variable leaves it unchanged (A \u00b7 1 = A), making 1 the identity element for AND.",
+          "why_wrong": {
+            "1; 1; 0; 0": "Reverses the additive and multiplicative identities.",
+            "A; A; A'; A'": "Variables are not identity constants.",
+            "0; 1; 1; 0": "Swaps the equation slots."
+          },
+          "marking_points": [
+            "Identifies 0 as OR identity and 1 as AND identity"
+          ],
+          "source": "Digital Logic Lecture Note, Page 23",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "boolean_algebra_theorems"
+        },
+        {
+          "id": "ift211-lg-001",
+          "course": "IFT 211",
+          "topic": "Logic Gates & Universal Implementations",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "primary-gates",
+            "lecturer-hint"
+          ],
+          "question": "Which of the following sets of logic gates are classified as the PRIMARY logic gates? (As highlighted in lecturer notes)",
+          "options": [
+            "OR, AND, NOT",
+            "NAND, NOR",
+            "XOR, XNOR",
+            "AND, NAND, OR"
+          ],
+          "answer": "OR, AND, NOT",
+          "explanation": "According to fundamental digital logic and lecturer exam notes: the primary gates are OR, AND, and NOT. NAND and NOR are universal gates, while XOR and XNOR are derived gates.",
+          "why_wrong": {
+            "NAND, NOR": "These are universal gates, not primary gates.",
+            "XOR, XNOR": "These are derived/secondary arithmetic gates.",
+            "AND, NAND, OR": "NAND is a derived universal gate, not a primary gate."
+          },
+          "marking_points": [
+            "Names OR, AND, NOT as primary gates"
+          ],
+          "source": "Lecturer Notebook Hint & Digital Logic Lecture Note, Page 16",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "logic_gates_universal"
+        },
+        {
+          "id": "ift211-lg-003",
+          "course": "IFT 211",
+          "topic": "Logic Gates & Universal Implementations",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "nand-synthesis",
+            "gate-count"
+          ],
+          "question": "How many 2-input NAND gates are required to construct a 2-input OR gate (F = A + B)?",
+          "options": [
+            "3",
+            "2",
+            "1",
+            "4"
+          ],
+          "answer": "3",
+          "explanation": "By De Morgan's Law: A + B = (A' \u00b7 B')'.\n1. Invert A using 1 NAND gate with tied inputs: A' = (A \u00b7 A)'.\n2. Invert B using 1 NAND gate with tied inputs: B' = (B \u00b7 B)'.\n3. Feed A' and B' into a 3rd NAND gate: (A' \u00b7 B')' = (A')' + (B')' = A + B.\nTotal: exactly 3 NAND gates.",
+          "why_wrong": {
+            "2": "2 NAND gates produce an AND gate (NAND followed by an inverter NAND), not an OR gate.",
+            "1": "1 NAND gate produces (AB)', which is a NAND function, not OR.",
+            "4": "4 NAND gates can build an XOR or NOR gate, but OR only requires 3."
+          },
+          "marking_points": [
+            "Uses 2 NAND gates to invert inputs A and B",
+            "Uses 1 NAND gate to combine A' and B'",
+            "Total = 3 NAND gates"
+          ],
+          "source": "Digital Logic Lecture Note, Page 17",
+          "verified": true,
+          "verified_output": "NAND_OR = 3 gates",
+          "topic_slug": "logic_gates_universal"
+        },
+        {
+          "id": "ift211-lg-006",
+          "course": "IFT 211",
+          "topic": "Logic Gates & Universal Implementations",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "demorgan-gates",
+            "negative-logic",
+            "circuit-analysis"
+          ],
+          "question": "According to De Morgan's theorem, an active-low input OR gate (Negative-OR, which inverts both inputs before ORing) is functionally identical to which standard gate?",
+          "options": [
+            "NAND gate",
+            "NOR gate",
+            "AND gate",
+            "XOR gate"
+          ],
+          "answer": "NAND gate",
+          "explanation": "Negative-OR computes A' + B'. By De Morgan's Second Law, A' + B' = (A \u00b7 B)'. (A \u00b7 B)' is the definition of a NAND gate. Therefore, a NAND gate can be drawn as an AND gate with an inverted output bubble OR as an OR gate with inverted input bubbles.",
+          "why_wrong": {
+            "NOR gate": "A NOR gate is equivalent to a Negative-AND (A' \u00b7 B').",
+            "AND gate": "An AND gate computes A \u00b7 B without inversion.",
+            "XOR gate": "An XOR gate computes A'B + AB'."
+          },
+          "marking_points": [
+            "Equates Negative-OR (A' + B') to NAND (AB)' via De Morgan"
+          ],
+          "source": "Digital Logic Lecture Note, Page 17",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "logic_gates_universal"
+        },
+        {
+          "id": "ift211-lg-010",
+          "course": "IFT 211",
+          "topic": "Logic Gates & Universal Implementations",
+          "type": "sequencing",
+          "difficulty": 3,
+          "tags": [
+            "synthesis-steps",
+            "nand-conversion"
+          ],
+          "question": "Arrange the correct sequence of steps to convert an arbitrary two-level AND-OR (Sum-of-Products) circuit into an all-NAND circuit:",
+          "options": [
+            "Start with the Sum-of-Products (AND-OR) expression -> Apply double negation to the entire expression -> Use De Morgan's Law to convert the outer OR gate into a NAND gate -> Replace the first-level AND gates and second-level OR gate directly with NAND gates",
+            "Replace all OR gates with AND gates -> Invert all inputs -> Remove inverters",
+            "Convert to Product-of-Sums -> Remove all AND gates -> Add XOR gates",
+            "Invert all literals -> Connect inputs to NOR gates -> Add pull-up resistors"
+          ],
+          "answer": "Start with the Sum-of-Products (AND-OR) expression -> Apply double negation to the entire expression -> Use De Morgan's Law to convert the outer OR gate into a NAND gate -> Replace the first-level AND gates and second-level OR gate directly with NAND gates",
+          "explanation": "Because (A + B)'' = ((A)' \u00b7 (B)')', double complementing an AND-OR circuit and applying De Morgan to the inner complement turns the OR into a NAND of NANDs. In a two-level AND-OR circuit, both levels simply become NAND gates.",
+          "why_wrong": {
+            "Replace all OR gates with AND gates...": "Arbitrary substitution alters the logic truth table.",
+            "Convert to Product-of-Sums...": "Product-of-Sums directly maps to NOR-NOR logic, not NAND-NAND.",
+            "Invert all literals...": "Incorrect procedure."
+          },
+          "marking_points": [
+            "Double complement SOP",
+            "Apply De Morgan to outer OR",
+            "Substitute all gates with NANDs"
+          ],
+          "source": "Digital Logic Lecture Note, Page 17 & 28",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "logic_gates_universal"
+        },
+        {
+          "id": "ift211-cc-001",
+          "course": "IFT 211",
+          "topic": "Combinational Circuits & Truth Tables",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "combinational-definition",
+            "properties"
+          ],
+          "question": "What is the defining characteristic of a COMBINATIONAL logic circuit compared to a sequential circuit?",
+          "options": [
+            "Its outputs at any instant depend solely on the present combination of inputs, with no memory elements or feedback paths.",
+            "It contains flip-flops and clock signals that store previous internal states.",
+            "Its outputs depend on both present inputs and the past sequence of clock pulses.",
+            "It can only be built using microprocessor instructions."
+          ],
+          "answer": "Its outputs at any instant depend solely on the present combination of inputs, with no memory elements or feedback paths.",
+          "explanation": "Combinational circuits are memoryless: the output vector Y(t) is purely a Boolean function of current input vector X(t). Sequential circuits, by contrast, incorporate storage elements (latches/flip-flops) and feedback loops.",
+          "why_wrong": {
+            "It contains flip-flops and clock signals that store previous internal states.": "This describes sequential logic circuits, not combinational ones.",
+            "Its outputs depend on both present inputs and the past sequence of clock pulses.": "This is the definition of a sequential state machine.",
+            "It can only be built using microprocessor instructions.": "Combinational circuits are hardware gate arrangements, not software programs."
+          },
+          "marking_points": [
+            "States memoryless operation",
+            "Highlights outputs depend solely on present inputs"
+          ],
+          "source": "Digital Logic Lecture Note, Page 26",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "combinational_circuits"
+        },
+        {
+          "id": "ift211-cc-004",
+          "course": "IFT 211",
+          "topic": "Combinational Circuits & Truth Tables",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "ripple-carry",
+            "propagation-delay",
+            "gate-delay"
+          ],
+          "question": "In a 32-bit Ripple Carry Adder constructed from Full Adders, assuming each Full Adder has a carry propagation delay of 2 gate delays and the initial stage requires 1 sum delay to the first carry, what is the total gate delay to calculate the final 32nd carry and sum?",
+          "options": [
+            "63 gate delays",
+            "32 gate delays",
+            "64 gate delays",
+            "128 gate delays"
+          ],
+          "answer": "63 gate delays",
+          "explanation": "According to the course notes (Page 58): A 32-bit ripple carry adder requires 31 carry ripple computations across stages 0 to 30, with each stage taking 2 gate delays, plus the final stage sum calculation (1 gate delay). Total delay = 31 \u00d7 2 + 1 = 63 gate delays (or 2N - 1 for N=32).",
+          "why_wrong": {
+            "32 gate delays": "Assumes only 1 gate delay per full adder stage instead of 2.",
+            "64 gate delays": "Neglects that the final stage sum does not wait for a subsequent carry generation.",
+            "128 gate delays": "Overestimates delays by assuming 4 gates per stage in serial."
+          },
+          "marking_points": [
+            "Calculates 31 carry stages * 2 = 62 delays",
+            "Adds final sum stage = 63 delays"
+          ],
+          "source": "Digital Logic Lecture Note, Page 58",
+          "verified": true,
+          "verified_output": "31 * 2 + 1 = 63",
+          "topic_slug": "combinational_circuits"
+        },
+        {
+          "id": "ift211-cc-007",
+          "course": "IFT 211",
+          "topic": "Combinational Circuits & Truth Tables",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "decoder",
+            "specification",
+            "msi"
+          ],
+          "question": "A 3-to-8 binary decoder has 3 input select lines (a2, a1, a0). When the inputs are a2=1, a1=0, a0=1 (binary 5), which output line is asserted HIGH?",
+          "options": [
+            "Output line x5",
+            "Output line x3",
+            "Output line x6",
+            "All output lines simultaneously"
+          ],
+          "answer": "Output line x5",
+          "explanation": "A binary decoder decodes the binary value n = (101)_2 = 5 decimal. Exactly one corresponding output minterm line x5 = a2 \u00b7 a1' \u00b7 a0 is driven to logic 1, while all other seven output lines remain at logic 0.",
+          "why_wrong": {
+            "Output line x3": "Binary 101 is 5, not 3 (011).",
+            "Output line x6": "Binary 101 is 5, not 6 (110).",
+            "All output lines simultaneously": "A decoder by definition activates exactly one line corresponding to the binary address."
+          },
+          "marking_points": [
+            "Decodes 101_2 as decimal 5",
+            "Asserts line x5"
+          ],
+          "source": "Digital Logic Lecture Note, Page 63",
+          "verified": true,
+          "verified_output": "101_2 = 5 -> x5=1",
+          "topic_slug": "combinational_circuits"
+        },
+        {
+          "id": "ift211-cc-010",
+          "course": "IFT 211",
+          "topic": "Combinational Circuits & Truth Tables",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "circuit-tracing",
+            "nile-exam-exercise-vi",
+            "boolean-derivation"
+          ],
+          "question": "In Nile University Final Exam Exercise VI, a logic circuit has three inputs A, B, C and produces output X = (A \u2295 B) + (B \u00b7 C'). What is the value of X when input vector is A = 1, B = 1, C = 0?",
+          "options": [
+            "X = 1",
+            "X = 0",
+            "X is indeterminate",
+            "X oscillates"
+          ],
+          "answer": "X = 1",
+          "explanation": "Evaluate intermediate nodes step by step:\n1. Node 1: A \u2295 B = 1 \u2295 1 = 0 (since both inputs are identical).\n2. Node 2: C' = 0' = 1.\n3. Node 3: B \u00b7 C' = 1 \u00b7 1 = 1.\n4. Output X = (Node 1) + (Node 3) = 0 + 1 = 1.\nTherefore, X = 1.",
+          "why_wrong": {
+            "X = 0": "Incorrectly evaluates 1 + 0 = 0 or misses that B\u00b7C' evaluates to 1.",
+            "X is indeterminate": "Combinational circuit with definite inputs produces a definite deterministic logic output.",
+            "X oscillates": "There are no feedback loops in this circuit to cause oscillation."
+          },
+          "marking_points": [
+            "Evaluates 1 XOR 1 = 0",
+            "Evaluates 1 AND NOT(0) = 1",
+            "Calculates 0 OR 1 = 1"
+          ],
+          "source": "Nile University Final Exam, Exercise VI",
+          "verified": true,
+          "verified_output": "(1 ^ 1) | (1 & ~0) = 0 | 1 = 1",
+          "topic_slug": "combinational_circuits"
+        },
+        {
+          "id": "ift211-km-001",
+          "course": "IFT 211",
+          "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "gray-code",
+            "kmap-coordinates",
+            "adjacency"
+          ],
+          "question": "Why are the row and column coordinates of a Karnaugh map sequenced as 00, 01, 11, 10 rather than the standard binary counting order 00, 01, 10, 11?",
+          "options": [
+            "To ensure that adjacent cells differ by only one binary variable (Hamming distance of 1), allowing algebraic simplification via A + A' = 1.",
+            "Because standard binary numbers cannot represent three-variable logic functions.",
+            "Because digital ICs cannot decode the binary number 10 before 11.",
+            "It is purely an aesthetic convention with no mathematical significance."
+          ],
+          "answer": "To ensure that adjacent cells differ by only one binary variable (Hamming distance of 1), allowing algebraic simplification via A + A' = 1.",
+          "explanation": "Gray code ensures unit distance adjacency. If standard binary (01 to 10) were used, both bits would change simultaneously (distance 2), destroying visual adjacency and preventing the elimination of variables using x + x' = 1.",
+          "why_wrong": {
+            "Because standard binary numbers cannot represent three-variable logic functions.": "Binary easily represents any number of variables.",
+            "Because digital ICs cannot decode the binary number 10 before 11.": "ICs decode binary in any designated sequence.",
+            "It is purely an aesthetic convention with no mathematical significance.": "Single-bit adjacency is the mathematical foundation of K-map visual minimization."
+          },
+          "marking_points": [
+            "Names single-bit change / Hamming distance of 1",
+            "Explains elimination of changing variable"
+          ],
+          "source": "Digital Logic Lecture Note, Page 36-37",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "karnaugh_maps"
+        },
+        {
+          "id": "ift211-km-003",
+          "course": "IFT 211",
+          "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "four-corners",
+            "wrap-around",
+            "simplification"
+          ],
+          "question": "In a 4-variable Karnaugh map with inputs A, B (rows) and C, D (columns), which simplified product term is formed by grouping the four corner cells: m0 (0000), m2 (0010), m8 (1000), and m10 (1010)?",
+          "options": [
+            "B' \u00b7 D'",
+            "A' \u00b7 C'",
+            "B \u00b7 D",
+            "A' \u00b7 B' \u00b7 C' \u00b7 D'"
+          ],
+          "answer": "B' \u00b7 D'",
+          "explanation": "Evaluating the four corners:\n- Rows 00 (A'B') and 10 (AB') share variable B' (A changes from 0 to 1, so A is eliminated).\n- Columns 00 (C'D') and 10 (CD') share variable D' (C changes from 0 to 1, so C is eliminated).\nCombining the common row and column literals yields: B' \u00b7 D'.",
+          "why_wrong": {
+            "A' \u00b7 C'": "A' and C' are not common to rows 10 and columns 10.",
+            "B \u00b7 D": "The corner indices have B=0 and D=0, requiring inverted literals B' and D'.",
+            "A' \u00b7 B' \u00b7 C' \u00b7 D'": "This is only cell m0, failing to group all 4 corners."
+          },
+          "marking_points": [
+            "Identifies common row literal B'",
+            "Identifies common column literal D'",
+            "Combines to B'D'"
+          ],
+          "source": "Digital Logic Lecture Note, Page 37 & 42",
+          "verified": true,
+          "verified_output": "m0, m2, m8, m10 = B' & D'",
+          "topic_slug": "karnaugh_maps"
+        },
+        {
+          "id": "ift211-km-005",
+          "course": "IFT 211",
+          "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "pos-simplification",
+            "de-morgan"
+          ],
+          "question": "To obtain the minimal Product-of-Sums (POS) expression using a K-map, one groups adjacent 0s to obtain F' = AB + CD + BD'. What is the corresponding minimal POS expression for F?",
+          "options": [
+            "F = (A' + B')(C' + D')(B' + D)",
+            "F = (A + B)(C + D)(B + D')",
+            "F = A'B' + C'D' + B'D",
+            "F = (AB)' \u00b7 (CD)' \u00b7 (BD')'"
+          ],
+          "answer": "F = (A' + B')(C' + D')(B' + D)",
+          "explanation": "To get F in POS form, apply De Morgan's Law to F':\nF = (F')' = (AB + CD + BD')'\nBy De Morgan's Law: (X + Y + Z)' = X' \u00b7 Y' \u00b7 Z'\n(AB)' = (A' + B')\n(CD)' = (C' + D')\n(BD')' = (B' + D)\nMultiplying together gives: F = (A' + B')(C' + D')(B' + D).",
+          "why_wrong": {
+            "F = (A + B)(C + D)(B + D')": "Neglected to invert the individual literals when applying De Morgan.",
+            "F = A'B' + C'D' + B'D": "This is in Sum-of-Products form, not Product-of-Sums.",
+            "F = (AB)' \u00b7 (CD)' \u00b7 (BD')'": "Unsimplified expression with NAND factors rather than maxterm sum factors."
+          },
+          "marking_points": [
+            "Applies De Morgan to F' = AB + CD + BD'",
+            "Produces (A'+B')(C'+D')(B'+D)"
+          ],
+          "source": "Digital Logic Lecture Note, Page 43",
+          "verified": true,
+          "verified_output": "~(AB + CD + BD') = (~A|~B)&(~C|~D)&(~B|D)",
+          "topic_slug": "karnaugh_maps"
+        },
+        {
+          "id": "ift211-pe-001",
+          "course": "IFT 211",
+          "topic": "Past Exam Synthesis & Multi-Topic Problem Solving",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-exercise-i",
+            "2s-complement",
+            "addition"
+          ],
+          "question": "In Nile Final Exam Exercise I(a), perform the signed arithmetic operation (+44) + (+14) in binary using 8-bit 2's complement representation. What is the 8-bit binary result and its decimal equivalent?",
+          "options": [
+            "00111010_2 (= +58_10)",
+            "00111100_2 (= +60_10)",
+            "10111010_2 (= -70_10)",
+            "00011110_2 (= +30_10)"
+          ],
+          "answer": "00111010_2 (= +58_10)",
+          "explanation": "Convert to 8-bit binary:\n+44 = 32 + 8 + 4 = 00101100_2\n+14 = 8 + 4 + 2 = 00001110_2\nAdd:\n  00101100\n+ 00001110\n----------\n  00111010_2\nCheck: 32 + 16 + 8 + 2 = +58_10. Correct (+44 + 14 = +58). MSB is 0, indicating a positive number within the 8-bit signed range [-128, +127].",
+          "why_wrong": {
+            "00111100_2 (= +60_10)": "Carry error in the 2s and 4s bit positions.",
+            "10111010_2 (= -70_10)": "Mistakenly inverts the sign bit.",
+            "00011110_2 (= +30_10)": "This is (+44) - (+14), not addition."
+          },
+          "marking_points": [
+            "Converts +44 to 00101100",
+            "Converts +14 to 00001110",
+            "Adds in binary: 00111010",
+            "Confirms decimal +58"
+          ],
+          "source": "Nile University Final Exam, Exercise I(a)",
+          "verified": true,
+          "verified_output": "44 + 14 = 58 -> bin(58) = 00111010",
+          "topic_slug": "past_exam_synthesis"
+        },
+        {
+          "id": "ift211-pe-004",
+          "course": "IFT 211",
+          "topic": "Past Exam Synthesis & Multi-Topic Problem Solving",
+          "type": "calculation",
+          "difficulty": 2,
+          "tags": [
+            "nile-exam-exercise-ii",
+            "radix-conversion",
+            "binary-hex"
+          ],
+          "question": "In Nile Final Exam Exercise II, convert: (a) decimal 51_10 to binary, and (b) binary 11011010_2 to hexadecimal.",
+          "options": [
+            "(a) 00110011_2, (b) DA_16",
+            "(a) 00110101_2, (b) DB_16",
+            "(a) 00110011_2, (b) AD_16",
+            "(a) 01010001_2, (b) CA_16"
+          ],
+          "answer": "(a) 00110011_2, (b) DA_16",
+          "explanation": "(a) Decimal 51 to binary:\n51 = 32 + 16 + 2 + 1 = 00110011_2.\n(b) Binary 11011010 to hexadecimal:\nSplit into two 4-bit nibbles:\n1101_2 = 8 + 4 + 1 = 13 = D_16\n1010_2 = 8 + 2 = 10 = A_16\nCombining gives: DA_16.",
+          "why_wrong": {
+            "(a) 00110101_2, (b) DB_16": "00110101 is decimal 53, not 51.",
+            "(a) 00110011_2, (b) AD_16": "Reverses the nibble order (wrote AD instead of DA).",
+            "(a) 01010001_2, (b) CA_16": "01010001 is BCD representation of 51, not pure binary."
+          },
+          "marking_points": [
+            "Converts 51 to 00110011_2",
+            "Groups 1101 1010 into D and A",
+            "Combines to DA_16"
+          ],
+          "source": "Nile University Final Exam, Exercise II",
+          "verified": true,
+          "verified_output": "bin(51) = 00110011; hex(0b11011010) = DA",
+          "topic_slug": "past_exam_synthesis"
+        },
+        {
+          "id": "ift211-pe-006",
+          "course": "IFT 211",
+          "topic": "Past Exam Synthesis & Multi-Topic Problem Solving",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-exercise-iv",
+            "gray-code",
+            "conversions"
+          ],
+          "question": "In Nile Final Exam Exercise IV: (a) Find the Gray code equivalent of decimal 21_10, and (b) Find the binary equivalent of Gray code 11101_Gray.",
+          "options": [
+            "(a) 11111_Gray, (b) 10110_2 (= 22_10)",
+            "(a) 10101_Gray, (b) 11101_2 (= 29_10)",
+            "(a) 11010_Gray, (b) 10011_2 (= 19_10)",
+            "(a) 11111_Gray, (b) 11001_2 (= 25_10)"
+          ],
+          "answer": "(a) 11111_Gray, (b) 10110_2 (= 22_10)",
+          "explanation": "(a) Decimal 21 to binary = 10101_2 (B4=1, B3=0, B2=1, B1=0, B0=1).\nGray code conversion:\nG4 = B4 = 1\nG3 = B4 \u2295 B3 = 1 \u2295 0 = 1\nG2 = B3 \u2295 B2 = 0 \u2295 1 = 1\nG1 = B2 \u2295 B1 = 1 \u2295 0 = 1\nG0 = B1 \u2295 B0 = 0 \u2295 1 = 1\nResult = 11111_Gray.\n\n(b) Gray code 11101_Gray to binary (G4=1, G3=1, G2=1, G1=0, G0=1):\nB4 = G4 = 1\nB3 = B4 \u2295 G3 = 1 \u2295 1 = 0\nB2 = B3 \u2295 G2 = 0 \u2295 1 = 1\nB1 = B2 \u2295 G1 = 1 \u2295 0 = 1\nB0 = B1 \u2295 G0 = 1 \u2295 1 = 0\nBinary result = 10110_2 (which is 16 + 4 + 2 = 22_10).",
+          "why_wrong": {
+            "(a) 10101_Gray, (b) 11101_2...": "Assumes Gray code is identical to binary.",
+            "(a) 11010_Gray, (b) 10011_2...": "Parity and XOR calculation mistakes.",
+            "(a) 11111_Gray, (b) 11001_2...": "Wrongly converts Gray bit G2."
+          },
+          "marking_points": [
+            "Converts 21 to binary 10101",
+            "Calculates Gray = 11111",
+            "Converts Gray 11101 to binary 10110"
+          ],
+          "source": "Nile University Final Exam, Exercise IV(a, b)",
+          "verified": true,
+          "verified_output": "Gray(21) = 11111; Bin(11101_G) = 10110 = 22",
+          "topic_slug": "past_exam_synthesis"
+        }
+      ]
+    },
+    {
+      "id": "ift211-mock-02",
+      "title": "Mock Exam Beta: Advanced Challenge & Multi-Topic Mastery Simulation",
+      "description": "High-rigor exam simulation emphasizing analytical speed and edge-case mastery: 1's complement end-around carries, fractional binary conversions, multi-variable De Morgan theorems, priority encoder arbitration, signed ALU overflow flags (V = C7 \u2295 C8), and BCD don't-care K-map optimization.",
+      "duration_minutes": 90,
+      "total_marks": 60,
+      "passing_score": 30,
+      "question_count": 30,
+      "questions": [
+        {
+          "id": "ift211-ns-003",
+          "course": "IFT 211",
+          "topic": "Number Systems & Radix Conversions",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "binary-to-hex",
+            "exam-past-question",
+            "nibbles"
+          ],
+          "question": "What is the hexadecimal equivalent of the binary number 11011010? (As given in Nile University Final Examination)",
+          "options": [
+            "DA",
+            "6D",
+            "A6",
+            "26"
+          ],
+          "answer": "DA",
+          "explanation": "Partition the 8-bit binary number into two 4-bit nibbles starting from the right: 1101 and 1010. Convert each nibble: 1101_2 = 8 + 4 + 1 = 13 = D_16, and 1010_2 = 8 + 2 = 10 = A_16. Thus, 11011010_2 = DA_16.",
+          "why_wrong": {
+            "6D": "Grouping in reverse or misinterpreting 1101 as 6.",
+            "A6": "Reverses the order of nibbles (1010 1101 would be AD_16).",
+            "26": "Octal confusion or decimal miscalculation."
+          },
+          "marking_points": [
+            "Partitions into 4-bit nibbles: 1101 and 1010",
+            "Converts 1101 -> D and 1010 -> A"
+          ],
+          "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise II, Q2",
+          "verified": true,
+          "verified_output": "hex(0b11011010) = 0xda",
+          "topic_slug": "number_systems"
+        },
+        {
+          "id": "ift211-ns-007",
+          "course": "IFT 211",
+          "topic": "Number Systems & Radix Conversions",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "hex-to-decimal",
+            "polynomial-expansion"
+          ],
+          "question": "What is the decimal equivalent of the hexadecimal number 4B3_16?",
+          "options": [
+            "1203",
+            "1024",
+            "1176",
+            "1219"
+          ],
+          "answer": "1203",
+          "explanation": "Using polynomial expansion:\n4B3_16 = 4 * 16^2 + B * 16^1 + 3 * 16^0\n= 4 * 256 + 11 * 16 + 3 * 1\n= 1024 + 176 + 3 = 1203_10.",
+          "why_wrong": {
+            "1024": "Value of the MSB 4 * 256 alone.",
+            "1176": "Calculates 4 * 256 + 10 * 16 (using A=10 instead of B=11).",
+            "1219": "Uses C=12 instead of B=11 (1024 + 192 + 3 = 1219)."
+          },
+          "marking_points": [
+            "Substitutes B = 11",
+            "Computes 4 * 256 = 1024",
+            "Computes 11 * 16 = 176",
+            "Sums to 1203"
+          ],
+          "source": "Digital Logic Lecture Note, Page 4",
+          "verified": true,
+          "verified_output": "int('4B3', 16) = 1203",
+          "topic_slug": "number_systems"
+        },
+        {
+          "id": "ift211-ns-011",
+          "course": "IFT 211",
+          "topic": "Number Systems & Radix Conversions",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "concepts",
+            "fractional-conversion",
+            "binary"
+          ],
+          "question": "Statement: Any terminating decimal fraction (such as 0.1_10) will always produce a finite terminating binary fraction.",
+          "options": [
+            "False: A decimal fraction terminates in binary only if its reduced denominator is a power of 2 (e.g. 0.1_10 becomes an infinite repeating binary sequence).",
+            "True: Every finite decimal fraction converts into an exact finite binary fraction of at most 8 bits.",
+            "True: Successive multiplication by 2 is guaranteed to reach 0.0 for all rational fractions.",
+            "False: Only integer numbers can be represented in binary, fractions are impossible in digital logic."
+          ],
+          "answer": "False: A decimal fraction terminates in binary only if its reduced denominator is a power of 2 (e.g. 0.1_10 becomes an infinite repeating binary sequence).",
+          "explanation": "A fraction in base 10 terminates in base 2 if and only if the denominator in lowest terms has prime factors of 2 only. For 0.1 = 1/10 = 1/(2*5), the factor of 5 causes 0.1_10 to become an infinite periodic repeating binary fraction: 0.0001100110011..._2.",
+          "why_wrong": {
+            "True: Every finite decimal fraction converts into an exact finite binary fraction of at most 8 bits.": "Factually wrong; numbers like 0.1 or 0.2 repeat infinitely in binary.",
+            "True: Successive multiplication by 2 is guaranteed to reach 0.0 for all rational fractions.": "It cycles indefinitely in a periodic loop for denominators with factors other than 2.",
+            "False: Only integer numbers can be represented in binary, fractions are impossible in digital logic.": "Digital computers represent fractions via fixed-point and floating-point binary formats."
+          },
+          "marking_points": [
+            "Identifies denominator power-of-two rule for binary termination"
+          ],
+          "source": "Digital Logic Lecture Note, Page 3",
+          "verified": true,
+          "verified_output": "0.1 in binary repeats: 0.000110011...",
+          "topic_slug": "number_systems"
+        },
+        {
+          "id": "ift211-ns-015",
+          "course": "IFT 211",
+          "topic": "Number Systems & Radix Conversions",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "arbitrary-base",
+            "polynomial-expansion"
+          ],
+          "question": "What is the decimal equivalent of the number 123 in base 4 (123_4)?",
+          "options": [
+            "27",
+            "23",
+            "31",
+            "19"
+          ],
+          "answer": "27",
+          "explanation": "Using positional polynomial expansion for base 4:\n123_4 = 1 * 4^2 + 2 * 4^1 + 3 * 4^0\n= 1 * 16 + 2 * 4 + 3 * 1\n= 16 + 8 + 3 = 27_10.",
+          "why_wrong": {
+            "23": "Calculates 16 + 4 + 3 = 23 (treating middle digit as 1).",
+            "31": "Calculates using base 5 (25 + 10 + 3 - incorrect).",
+            "19": "Computes 16 + 3 (omits middle term)."
+          },
+          "marking_points": [
+            "Multiplies 1 * 16 = 16",
+            "Multiplies 2 * 4 = 8",
+            "Adds 3 * 1 = 3",
+            "Sums to 27"
+          ],
+          "source": "Digital Logic Lecture Note, Page 1",
+          "verified": true,
+          "verified_output": "int('123', 4) = 27",
+          "topic_slug": "number_systems"
+        },
+        {
+          "id": "ift211-ac-002",
+          "course": "IFT 211",
+          "topic": "Binary Arithmetic & Complements",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "2s-complement",
+            "subtraction",
+            "exam-past-question"
+          ],
+          "question": "Perform the arithmetic operation (+44) + (-14) in binary using 8-bit 2's complement representation. (As given in Nile University Final Examination)",
+          "options": [
+            "00011110",
+            "00101110",
+            "10011110",
+            "00011100"
+          ],
+          "answer": "00011110",
+          "explanation": "1. Find 8-bit binary for +44: 00101100_2.\n2. Find 8-bit 2's complement for -14:\n   +14 = 00001110_2\n   1's comp = 11110001_2\n   2's comp = 11110001 + 1 = 11110010_2.\n3. Add +44 and -14:\n    00101100\n  + 11110010\n  ----------\n   100011110_2\n4. In 8-bit arithmetic, discard the 9th carry-out bit:\n   Result = 00011110_2.\nCheck: 16 + 8 + 4 + 2 = 30_10 (+44 - 14 = +30).",
+          "why_wrong": {
+            "00101110": "Evaluates to 46 in decimal; failed to negate 14.",
+            "10011110": "Includes the carry-out as the MSB, falsely interpreting the result as negative.",
+            "00011100": "Evaluates to 28 in decimal; off-by-two addition error."
+          },
+          "marking_points": [
+            "Converts -14 to 2's complement 11110010_2",
+            "Adds 00101100 + 11110010",
+            "Discards end-carry to obtain 00011110_2 (+30)"
+          ],
+          "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise I, Q1",
+          "verified": true,
+          "verified_output": "bin((44 - 14) & 0xff) = 00011110",
+          "topic_slug": "arithmetic_complements"
+        },
+        {
+          "id": "ift211-ac-005",
+          "course": "IFT 211",
+          "topic": "Binary Arithmetic & Complements",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "zero-representation",
+            "comparison",
+            "concepts"
+          ],
+          "question": "Why is the 2's complement representation universally preferred over 1's complement and sign-magnitude in modern digital computer hardware?",
+          "options": [
+            "It has only one unique representation for zero (00000000) and standard binary addition hardware directly performs subtraction.",
+            "It can represent twice as many positive numbers as 1's complement.",
+            "It eliminates the need for binary logic gates in arithmetic units.",
+            "It does not require carry propagation across bits during addition."
+          ],
+          "answer": "It has only one unique representation for zero (00000000) and standard binary addition hardware directly performs subtraction.",
+          "explanation": "Sign-magnitude and 1's complement suffer from two zeroes (+0 and -0), which complicates equality comparison logic. Furthermore, 1's complement requires end-around carry circuitry. 2's complement has a single zero and allows the exact same adder circuit to perform A - B by computing A + (-B).",
+          "why_wrong": {
+            "It can represent twice as many positive numbers as 1's complement.": "The positive range is identical: 0 to +(2^(n-1) - 1). 2's complement only gains one extra negative number (-2^(n-1)).",
+            "It eliminates the need for binary logic gates in arithmetic units.": "Logic gates are fundamentally required in all digital hardware.",
+            "It does not require carry propagation across bits during addition.": "Addition still requires carry propagation (ripple-carry or carry-lookahead)."
+          },
+          "marking_points": [
+            "Identifies single representation of zero",
+            "Identifies adder reuse for subtraction"
+          ],
+          "source": "Digital Logic Lecture Note, Page 7-8",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "arithmetic_complements"
+        },
+        {
+          "id": "ift211-ac-008",
+          "course": "IFT 211",
+          "topic": "Binary Arithmetic & Complements",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "10s-complement",
+            "decimal-subtraction"
+          ],
+          "question": "Using the 10's complement method, perform the decimal subtraction: 48032 - 391. (As worked in lecture notes)",
+          "options": [
+            "47641",
+            "47642",
+            "48423",
+            "46641"
+          ],
+          "answer": "47641",
+          "explanation": "1. Equalize digit length: minuend x = 48032 (5 digits); subtrahend y = 00391 (pad with leading zeros).\n2. 9's complement of 00391 = 99999 - 00391 = 99608.\n3. 10's complement of y = 99608 + 1 = 99609.\n4. Add x and 10's complement of y:\n    48032\n  + 99609\n  -------\n   147641\n5. Drop the leading carry '1': Result = 47641.",
+          "why_wrong": {
+            "47642": "Added 1 twice.",
+            "48423": "Added rather than subtracted.",
+            "46641": "Borrow error in manual subtraction."
+          },
+          "marking_points": [
+            "Pads subtrahend to 00391",
+            "Computes 10's complement as 99609",
+            "Sums to 147641 and drops leading 1 to get 47641"
+          ],
+          "source": "Digital Logic Lecture Note, Page 6",
+          "verified": true,
+          "verified_output": "48032 - 391 = 47641",
+          "topic_slug": "arithmetic_complements"
+        },
+        {
+          "id": "ift211-ac-012",
+          "course": "IFT 211",
+          "topic": "Binary Arithmetic & Complements",
+          "type": "calculation",
+          "difficulty": 2,
+          "tags": [
+            "1s-complement",
+            "encoding"
+          ],
+          "question": "How is (-12)_10 represented in an 8-bit 1's complement format?",
+          "options": [
+            "11110011",
+            "10001100",
+            "11110100",
+            "11110010"
+          ],
+          "answer": "11110011",
+          "explanation": "+12 in 8-bit binary is 00001100. Inverting all 8 bits gives 11110011_2, which is the 1's complement representation of -12.",
+          "why_wrong": {
+            "10001100": "Sign-magnitude representation of -12.",
+            "11110100": "2's complement representation of -12.",
+            "11110010": "Mis-inversion at bit 1."
+          },
+          "marking_points": [
+            "Inverts all 8 bits of 00001100 to yield 11110011"
+          ],
+          "source": "Digital Logic Lecture Note, Page 7",
+          "verified": true,
+          "verified_output": "~0b00001100 & 0xff = 0b11110011",
+          "topic_slug": "arithmetic_complements"
+        },
+        {
+          "id": "ift211-cd-002",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "gray-code",
+            "gray-to-binary",
+            "exam-past-question"
+          ],
+          "question": "What is the binary equivalent of the Gray code number 11101? (As given in Nile University Final Examination, Exercise IV, Question 1b)",
+          "options": [
+            "10110",
+            "10111",
+            "11010",
+            "10011"
+          ],
+          "answer": "10110",
+          "explanation": "Convert Gray (G4 G3 G2 G1 G0 = 1 1 1 0 1) to binary (B4 B3 B2 B1 B0):\nB4 = G4 = 1\nB3 = B4 XOR G3 = 1 XOR 1 = 0\nB2 = B3 XOR G2 = 0 XOR 1 = 1\nB1 = B2 XOR G1 = 1 XOR 0 = 1\nB0 = B1 XOR G0 = 1 XOR 1 = 0\nResult = 10110_2 (which equals decimal 22).",
+          "why_wrong": {
+            "10111": "Error in the LSB calculation (1 XOR 1 = 0, not 1).",
+            "11010": "XORed adjacent Gray bits instead of using previously generated binary bit.",
+            "10011": "Bit 2 calculation error."
+          },
+          "marking_points": [
+            "Sets B4 = G4 = 1",
+            "Sequentially computes B3=0, B2=1, B1=1, B0=0 using B(i+1) XOR G(i)",
+            "Yields 10110_2"
+          ],
+          "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise IV, Q1b",
+          "verified": true,
+          "verified_output": "gray(11101) -> bin(10110) = 22",
+          "topic_slug": "bcd_gray_ascii"
+        },
+        {
+          "id": "ift211-cd-004",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "type_answer",
+          "difficulty": 3,
+          "tags": [
+            "ascii-decoding",
+            "exam-past-question"
+          ],
+          "question": "Convert the following 8-bit binary stream into text using ASCII codes (Space = 032_10 = 00100000_2; Hyphen = 045_10 = 00101101_2; Digits '0'-'9' = 48-57):\n\n`01000011 01101111 01100100 01100101 01100100 00100000 00101101 00100000 00110000 00110010 00110001 00110001`\n\n(As given in Nile University Final Examination, Exercise III)",
+          "options": [],
+          "answer": "Coded - 0211",
+          "explanation": "Decoding each 8-bit byte:\n- 01000011 = 67 -> 'C'\n- 01101111 = 111 -> 'o'\n- 01100100 = 100 -> 'd'\n- 01100101 = 101 -> 'e'\n- 01100100 = 100 -> 'd'\n- 00100000 = 32 -> ' '\n- 00101101 = 45 -> '-'\n- 00100000 = 32 -> ' '\n- 00110000 = 48 -> '0'\n- 00110010 = 50 -> '2'\n- 00110001 = 49 -> '1'\n- 00110001 = 49 -> '1'\nConcatenating the characters yields: 'Coded - 0211'.",
+          "why_wrong": {},
+          "marking_points": [
+            "Translates first 5 bytes to 'Coded'",
+            "Translates next 3 bytes to ' - '",
+            "Translates final 4 bytes to '0211'",
+            "Combines to exact string 'Coded - 0211'"
+          ],
+          "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise III",
+          "verified": true,
+          "verified_output": "ASCII stream translates to 'Coded - 0211'",
+          "topic_slug": "bcd_gray_ascii"
+        },
+        {
+          "id": "ift211-cd-008",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "gray-code",
+            "unit-distance",
+            "applications"
+          ],
+          "question": "Why is Gray code predominantly used instead of standard binary in mechanical optical shaft encoders?",
+          "options": [
+            "Because adjacent positions differ by only one bit, preventing spurious transitional errors caused by mechanical sensor misalignment.",
+            "Because Gray code circuits do not require logic gates.",
+            "Because Gray code allows faster arithmetic multiplication.",
+            "Because Gray code uses fewer tracks on the optical disc."
+          ],
+          "answer": "Because adjacent positions differ by only one bit, preventing spurious transitional errors caused by mechanical sensor misalignment.",
+          "explanation": "In standard binary, transitioning from 3 (011) to 4 (100) changes all three bits simultaneously. Because mechanical sensors switch at slightly different microsecond thresholds, intermediate false states like 111 (7) or 000 (0) can be read erroneously. In Gray code, only a single bit changes per transition (010 to 110), completely eliminating transitional glitches.",
+          "why_wrong": {
+            "Because Gray code circuits do not require logic gates.": "Logic gates are still required to process Gray code.",
+            "Because Gray code allows faster arithmetic multiplication.": "Gray code is non-weighted and non-arithmetic; arithmetic is harder in Gray code.",
+            "Because Gray code uses fewer tracks on the optical disc.": "Both require exactly n tracks for 2^n positions."
+          },
+          "marking_points": [
+            "Explains unit distance property prevents transitional read glitches in sensors"
+          ],
+          "source": "Digital Logic Lecture Note, Page 12-13",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "bcd_gray_ascii"
+        },
+        {
+          "id": "ift211-cd-010",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "true_false_why",
+          "difficulty": 3,
+          "tags": [
+            "parity",
+            "limitations"
+          ],
+          "question": "Statement: A single parity bit appended to a binary message can detect any communication error where 2 bits are simultaneously corrupted.",
+          "options": [
+            "False: If an even number of bits (such as 2 bits) are corrupted, the total count of 1s changes by an even amount (+2, 0, or -2), leaving the parity unchanged and the error completely undetectable.",
+            "True: Parity checking detects all bit errors regardless of how many bits flip.",
+            "True: The receiver compares the parity against a checksum polynomial that corrects dual-bit errors.",
+            "False: Parity bits can only detect errors in decimal digits, not binary messages."
+          ],
+          "answer": "False: If an even number of bits (such as 2 bits) are corrupted, the total count of 1s changes by an even amount (+2, 0, or -2), leaving the parity unchanged and the error completely undetectable.",
+          "explanation": "Single-bit parity only detects an odd number of flipped bits. Two simultaneous bit errors cancel out each other's effect on total parity, meaning the error slips through unnoticed.",
+          "why_wrong": {
+            "True: Parity checking detects all bit errors regardless of how many bits flip.": "Parity fundamentally fails on even numbers of bit flips.",
+            "True: The receiver compares the parity against a checksum polynomial that corrects dual-bit errors.": "Single parity bits carry no polynomial or error-correcting capability (Hamming codes are required for that).",
+            "False: Parity bits can only detect errors in decimal digits, not binary messages.": "Parity operates directly on binary bit streams."
+          },
+          "marking_points": [
+            "Explains that 2 flipped bits preserve even/odd parity count, rendering error undetectable"
+          ],
+          "source": "Digital Logic Lecture Note, Page 12",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "bcd_gray_ascii"
+        },
+        {
+          "id": "ift211-ba-002",
+          "course": "IFT 211",
+          "topic": "Boolean Algebra & De Morgan's Laws",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "demorgan",
+            "simplification"
+          ],
+          "question": "Apply De Morgan's Laws to simplify the complemented expression: F = (A + B' \u00b7 C)'.",
+          "options": [
+            "A' \u00b7 (B + C')",
+            "A' \u00b7 B \u00b7 C'",
+            "A' + B \u00b7 C'",
+            "A \u00b7 (B' + C)"
+          ],
+          "answer": "A' \u00b7 (B + C')",
+          "explanation": "1. Treat (B' \u00b7 C) as a single sub-expression X, so F = (A + X)'.\n2. By De Morgan's first law: (A + X)' = A' \u00b7 X'.\n3. Substitute X = B' \u00b7 C: F = A' \u00b7 (B' \u00b7 C)'.\n4. Apply De Morgan's second law to (B' \u00b7 C)': (B' \u00b7 C)' = (B')' + C' = B + C'.\n5. Final simplified expression: A' \u00b7 (B + C').",
+          "why_wrong": {
+            "A' \u00b7 B \u00b7 C'": "Failed to apply De Morgan's law to the product (B' \u00b7 C)' (it becomes an OR sum B + C', not an AND product).",
+            "A' + B \u00b7 C'": "Changed outer operator incorrectly to OR.",
+            "A \u00b7 (B' + C)": "Failed to complement literal A."
+          },
+          "marking_points": [
+            "Applies (A+X)' = A'X'",
+            "Applies (B'C)' = B + C'",
+            "Yields A'(B + C')"
+          ],
+          "source": "Digital Logic Lecture Note, Page 24",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "boolean_algebra_theorems"
+        },
+        {
+          "id": "ift211-ba-005",
+          "course": "IFT 211",
+          "topic": "Boolean Algebra & De Morgan's Laws",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "simplification",
+            "consensus"
+          ],
+          "question": "Simplify the expression: F = A \u00b7 B + A \u00b7 B' + B \u00b7 C.",
+          "options": [
+            "A + B \u00b7 C",
+            "A \u00b7 B + B \u00b7 C",
+            "A \u00b7 C",
+            "B + C"
+          ],
+          "answer": "A + B \u00b7 C",
+          "explanation": "1. Factor the common term A from the first two terms: A \u00b7 B + A \u00b7 B' = A \u00b7 (B + B').\n2. By Postulate 5a, B + B' = 1, so A \u00b7 (1) = A.\n3. The expression simplifies to: A + B \u00b7 C.",
+          "why_wrong": {
+            "A \u00b7 B + B \u00b7 C": "Failed to combine A\u00b7B and A\u00b7B'.",
+            "A \u00b7 C": "Incorrect factorization.",
+            "B + C": "Dropped term A erroneously."
+          },
+          "marking_points": [
+            "Factors A(B + B')",
+            "Substitutes B + B' = 1",
+            "Yields A + BC"
+          ],
+          "source": "Digital Logic Lecture Note, Page 25",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "boolean_algebra_theorems"
+        },
+        {
+          "id": "ift211-ba-008",
+          "course": "IFT 211",
+          "topic": "Boolean Algebra & De Morgan's Laws",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "demorgan",
+            "verbal-rule"
+          ],
+          "question": "State De Morgan's two laws in clear English words without using mathematical symbols.",
+          "options": [],
+          "answer": "Law 1: The complement of a logical sum (OR operation) of two or more variables is equal to the logical product (AND operation) of their individual complements. Law 2: The complement of a logical product (AND operation) of two or more variables is equal to the logical sum (OR operation) of their individual complements.",
+          "explanation": "Informally: 'Break the line, change the sign' \u2014 invert the overall function by inverting individual inputs and swapping AND with OR.",
+          "why_wrong": {},
+          "marking_points": [
+            "States complement of OR sum equals AND product of complements",
+            "States complement of AND product equals OR sum of complements",
+            "Explains operator interchange between AND and OR"
+          ],
+          "source": "Digital Logic Lecture Note, Page 24",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "boolean_algebra_theorems"
+        },
+        {
+          "id": "ift211-ba-009",
+          "course": "IFT 211",
+          "topic": "Boolean Algebra & De Morgan's Laws",
+          "type": "matching",
+          "difficulty": 2,
+          "tags": [
+            "matching",
+            "laws"
+          ],
+          "question": "Match each Boolean equation to its corresponding law:",
+          "options": [
+            "(A')' = A: Involution; A + A = A: Idempotent; A + 1 = 1: Dominance; (A+B)' = A'B': De Morgan",
+            "(A')' = A: Idempotent; A + A = A: Involution; A + 1 = 1: De Morgan; (A+B)' = A'B': Dominance",
+            "(A')' = A: Dominance; A + A = A: De Morgan; A + 1 = 1: Involution; (A+B)' = A'B': Idempotent",
+            "(A')' = A: De Morgan; A + A = A: Dominance; A + 1 = 1: Idempotent; (A+B)' = A'B': Involution"
+          ],
+          "answer": "(A')' = A: Involution; A + A = A: Idempotent; A + 1 = 1: Dominance; (A+B)' = A'B': De Morgan",
+          "explanation": "Double negation is Involution; variable combined with itself is Idempotent; bound by 1 is Dominance; complement distribution is De Morgan.",
+          "why_wrong": {
+            "(A')' = A: Idempotent...": "Confuses double negation with self-combination.",
+            "(A')' = A: Dominance...": "Mismatches laws.",
+            "(A')' = A: De Morgan...": "Mismatches all laws."
+          },
+          "marking_points": [
+            "Accurately maps Involution, Idempotent, Dominance, and De Morgan"
+          ],
+          "source": "Digital Logic Lecture Note, Page 23-24",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "boolean_algebra_theorems"
+        },
+        {
+          "id": "ift211-lg-002",
+          "course": "IFT 211",
+          "topic": "Logic Gates & Universal Implementations",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "universal-gates",
+            "definition",
+            "lecturer-hint"
+          ],
+          "question": "Why are NAND and NOR classified as UNIVERSAL gates in digital circuit design?",
+          "options": [
+            "Because any arbitrary Boolean function (including NOT, AND, and OR) can be constructed exclusively using only NAND gates or only NOR gates.",
+            "Because they can operate at universal voltages from 1V to 1000V.",
+            "Because they do not require power supply connections to operate.",
+            "Because they contain built-in microprocessors that execute software code."
+          ],
+          "answer": "Because any arbitrary Boolean function (including NOT, AND, and OR) can be constructed exclusively using only NAND gates or only NOR gates.",
+          "explanation": "A universal gate is mathematically and functionally complete: repeated interconnection of that single gate type alone can realize negation (NOT), conjunction (AND), and disjunction (OR), enabling entire computers to be manufactured using only NAND or only NOR silicon.",
+          "why_wrong": {
+            "Because they can operate at universal voltages from 1V to 1000V.": "Fabrication limits operational voltage to standard logic levels (e.g. 1.8V to 5V).",
+            "Because they do not require power supply connections to operate.": "All active digital ICs require Vcc and Ground power connections.",
+            "Because they contain built-in microprocessors that execute software code.": "Logic gates are hardware switching circuits, not microprocessors."
+          },
+          "marking_points": [
+            "Explains functional completeness: can synthesize all basic gates without other ICs"
+          ],
+          "source": "Lecturer Notebook Hint & Digital Logic Lecture Note, Page 16-17",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "logic_gates_universal"
+        },
+        {
+          "id": "ift211-lg-004",
+          "course": "IFT 211",
+          "topic": "Logic Gates & Universal Implementations",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "nor-synthesis",
+            "gate-count"
+          ],
+          "question": "How many 2-input NOR gates are required to construct a 2-input AND gate (F = A \u00b7 B)?",
+          "options": [
+            "3",
+            "2",
+            "1",
+            "4"
+          ],
+          "answer": "3",
+          "explanation": "By De Morgan's Law: A \u00b7 B = (A' + B')'.\n1. Invert A using 1 NOR gate with tied inputs: A' = (A + A)'.\n2. Invert B using 1 NOR gate with tied inputs: B' = (B + B)'.\n3. Feed A' and B' into a 3rd NOR gate: (A' + B')' = (A')' \u00b7 (B')' = A \u00b7 B.\nTotal: exactly 3 NOR gates.",
+          "why_wrong": {
+            "2": "2 NOR gates produce an OR gate (NOR followed by an inverter NOR), not an AND gate.",
+            "1": "1 NOR gate produces (A+B)', which is NOR, not AND.",
+            "4": "4 NOR gates can build an XNOR or NAND gate, but AND only requires 3."
+          },
+          "marking_points": [
+            "Uses 2 NOR gates to invert inputs A and B",
+            "Uses 1 NOR gate to combine A' and B'",
+            "Total = 3 NOR gates"
+          ],
+          "source": "Digital Logic Lecture Note, Page 17-18",
+          "verified": true,
+          "verified_output": "NOR_AND = 3 gates",
+          "topic_slug": "logic_gates_universal"
+        },
+        {
+          "id": "ift211-lg-007",
+          "course": "IFT 211",
+          "topic": "Logic Gates & Universal Implementations",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "fan-out",
+            "electrical-loading",
+            "calculation"
+          ],
+          "question": "A standard TTL NAND gate driver has a rated high-level output current I_OH of 0.4 mA and drives standard load gates each requiring an input current I_IH of 0.04 mA. In the low state, it can sink I_OL = 16 mA while each load sinks I_IL = 1.6 mA. What is the maximum allowable fan-out of this gate?",
+          "options": [
+            "10",
+            "4",
+            "16",
+            "40"
+          ],
+          "answer": "10",
+          "explanation": "Fan-out is constrained by the minimum of high-state fan-out and low-state fan-out:\nHigh state fan-out = I_OH / I_IH = 0.4 mA / 0.04 mA = 10.\nLow state fan-out = I_OL / I_IL = 16 mA / 1.6 mA = 10.\nTherefore, the maximum reliable fan-out is exactly 10 standard loads.",
+          "why_wrong": {
+            "4": "Underestimates driving capability.",
+            "16": "Takes only I_OL without dividing by the per-input current I_IL (1.6 mA).",
+            "40": "Incorrectly divides 16 mA by 0.4 mA across disparate logic states."
+          },
+          "marking_points": [
+            "Calculates high state: 0.4 / 0.04 = 10",
+            "Calculates low state: 16 / 1.6 = 10",
+            "Concludes maximum fan-out = 10"
+          ],
+          "source": "Digital Logic Lecture Note, Page 21-22",
+          "verified": true,
+          "verified_output": "Fan-out = 10",
+          "topic_slug": "logic_gates_universal"
+        },
+        {
+          "id": "ift211-lg-009",
+          "course": "IFT 211",
+          "topic": "Logic Gates & Universal Implementations",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "logic-families",
+            "cmos",
+            "ecl",
+            "ttl"
+          ],
+          "question": "Which digital logic family is distinguished by having the lowest static power consumption, making it ideal for battery-operated portable devices?",
+          "options": [
+            "CMOS (Complementary Metal-Oxide-Semiconductor)",
+            "ECL (Emitter-Coupled Logic)",
+            "TTL (Transistor-Transistor Logic)",
+            "RTL (Resistor-Transistor Logic)"
+          ],
+          "answer": "CMOS (Complementary Metal-Oxide-Semiconductor)",
+          "explanation": "CMOS utilizes complementary pairs of p-channel and n-channel MOSFETs. In any static state, one transistor of each pair is off, resulting in near-zero static DC current draw and extremely low power dissipation.",
+          "why_wrong": {
+            "ECL (Emitter-Coupled Logic)": "ECL consumes the highest power because transistors operate constantly in the active, non-saturated region.",
+            "TTL (Transistor-Transistor Logic)": "TTL draws continuous current through internal resistors and bipolar transistors.",
+            "RTL (Resistor-Transistor Logic)": "RTL is an obsolete family that dissipated substantial power across resistors."
+          },
+          "marking_points": [
+            "Selects CMOS as lowest power dissipation logic family"
+          ],
+          "source": "Digital Logic Lecture Note, Page 21",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "logic_gates_universal"
+        },
+        {
+          "id": "ift211-cc-002",
+          "course": "IFT 211",
+          "topic": "Combinational Circuits & Truth Tables",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "half-adder",
+            "equations"
+          ],
+          "question": "What are the Boolean equations for the Sum (S) and Carry (C) outputs of a 1-bit Half Adder with inputs A and B?",
+          "options": [
+            "Sum = A \u2295 B (or A'B + AB'), Carry = A \u00b7 B",
+            "Sum = A \u00b7 B, Carry = A + B",
+            "Sum = A + B, Carry = A \u2295 B",
+            "Sum = (A \u00b7 B)', Carry = A' + B'"
+          ],
+          "answer": "Sum = A \u2295 B (or A'B + AB'), Carry = A \u00b7 B",
+          "explanation": "Adding two single bits produces: 0+0=0 (S=0, C=0); 0+1=1 (S=1, C=0); 1+0=1 (S=1, C=0); 1+1=10_2 (S=0, C=1). Therefore, S is 1 when inputs differ (XOR: A'B + AB') and C is 1 only when both are 1 (AND: AB).",
+          "why_wrong": {
+            "Sum = A \u00b7 B, Carry = A + B": "Reverses the logical roles of Carry and Sum.",
+            "Sum = A + B, Carry = A \u2295 B": "Inclusive OR would produce 1 for 1+1, which violates binary arithmetic (1+1=0 with carry 1).",
+            "Sum = (A \u00b7 B)', Carry = A' + B'": "These represent NAND and Negative-OR functions, not arithmetic addition."
+          },
+          "marking_points": [
+            "Sum = A XOR B",
+            "Carry = A AND B"
+          ],
+          "source": "Digital Logic Lecture Note, Page 55",
+          "verified": true,
+          "verified_output": "S = A ^ B, C = A & B",
+          "topic_slug": "combinational_circuits"
+        },
+        {
+          "id": "ift211-cc-005",
+          "course": "IFT 211",
+          "topic": "Combinational Circuits & Truth Tables",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "adder-subtractor",
+            "xor-control",
+            "mode-control"
+          ],
+          "question": "In a 4-bit binary Adder-Subtractor circuit, what is the role of the Mode Control line (M) connected to one input of an XOR gate on each B bit and to the C0 carry-in?",
+          "options": [
+            "When M=0, B bits pass unchanged and C0=0 (performing A + B); When M=1, B bits are inverted (1's complement) and C0=1 (adding 1), achieving 2's complement subtraction A + B' + 1 = A - B.",
+            "When M=1, the circuit shuts off power to prevent negative results.",
+            "When M=0, it multiplies A by B; When M=1, it divides A by B.",
+            "When M=1, it computes 9's complement BCD subtraction."
+          ],
+          "answer": "When M=0, B bits pass unchanged and C0=0 (performing A + B); When M=1, B bits are inverted (1's complement) and C0=1 (adding 1), achieving 2's complement subtraction A + B' + 1 = A - B.",
+          "explanation": "An XOR gate behaves as a programmable inverter: B \u2295 0 = B (identity) and B \u2295 1 = B' (inversion). When M=1, B is complemented and Cin=1 is injected into the LSB, exactly realizing 2's complement subtraction (A + B' + 1 = A - B) without requiring separate subtractor circuits.",
+          "why_wrong": {
+            "When M=1, the circuit shuts off power...": "Hardware does not power down; it reconfigures mathematically.",
+            "When M=0, it multiplies A by B...": "Adders perform addition and subtraction, not multiplication.",
+            "When M=1, it computes 9's complement...": "This is binary 2's complement, not decimal 9's complement."
+          },
+          "marking_points": [
+            "M=0 yields B and Cin=0 (addition)",
+            "M=1 yields B' and Cin=1 (2's complement subtraction)"
+          ],
+          "source": "Digital Logic Lecture Note, Page 59",
+          "verified": true,
+          "verified_output": "M=0: A+B; M=1: A+~B+1 = A-B",
+          "topic_slug": "combinational_circuits"
+        },
+        {
+          "id": "ift211-cc-009",
+          "course": "IFT 211",
+          "topic": "Combinational Circuits & Truth Tables",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "multiplexer",
+            "mux-synthesis",
+            "function-generator"
+          ],
+          "question": "A multiplexer has 4 data inputs (D0, D1, D2, D3) and 2 select lines (S1, S0). To implement the Boolean function F(A, B) = A'B + AB' (XOR function) where select lines S1 = A and S0 = B, what logic values must be connected to inputs D0, D1, D2, D3?",
+          "options": [
+            "D0=0, D1=1, D2=1, D3=0",
+            "D0=1, D1=0, D2=0, D3=1",
+            "D0=0, D1=0, D2=1, D3=1",
+            "D0=1, D1=1, D2=0, D3=0"
+          ],
+          "answer": "D0=0, D1=1, D2=1, D3=0",
+          "explanation": "For a 4-to-1 MUX: F = S1'S0'D0 + S1'S0D1 + S1S0'D2 + S1S0D3.\nAssigning S1=A, S0=B:\n- For AB = 00: F = 0 \u2295 0 = 0 -> D0 must be 0.\n- For AB = 01: F = 0 \u2295 1 = 1 -> D1 must be 1.\n- For AB = 10: F = 1 \u2295 0 = 1 -> D2 must be 1.\n- For AB = 11: F = 1 \u2295 1 = 0 -> D3 must be 0.\nTherefore, the required data inputs are D0=0, D1=1, D2=1, D3=0.",
+          "why_wrong": {
+            "D0=1, D1=0, D2=0, D3=1": "This implements XNOR (AB + A'B'), the complement of XOR.",
+            "D0=0, D1=0, D2=1, D3=1": "This implements the projection function F = A.",
+            "D0=1, D1=1, D2=0, D3=0": "This implements F = A'."
+          },
+          "marking_points": [
+            "Evaluates truth table for XOR at minterms m0, m1, m2, m3",
+            "Matches D0=0, D1=1, D2=1, D3=0"
+          ],
+          "source": "Digital Logic Lecture Note, Page 60-61",
+          "verified": true,
+          "verified_output": "D = [0, 1, 1, 0]",
+          "topic_slug": "combinational_circuits"
+        },
+        {
+          "id": "ift211-cc-011",
+          "course": "IFT 211",
+          "topic": "Combinational Circuits & Truth Tables",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "circuit-tracing",
+            "nile-exam-exercise-vi",
+            "minterm-count"
+          ],
+          "question": "For the logic expression from Nile Exam Exercise VI: X = (A \u2295 B) + (B \u00b7 C'), for how many of the 8 possible 3-bit input combinations (A, B, C) does X evaluate to 1?",
+          "options": [
+            "5 combinations",
+            "4 combinations",
+            "6 combinations",
+            "3 combinations"
+          ],
+          "answer": "5 combinations",
+          "explanation": "Evaluate all 8 rows of the truth table for X = A'B + AB' + BC':\n- 000: (0^0) + 0 = 0\n- 001: (0^0) + 0 = 0\n- 010: (0^1) + (1\u00b71) = 1 + 1 = 1\n- 011: (0^1) + (1\u00b70) = 1 + 0 = 1\n- 100: (1^0) + 0 = 1 + 0 = 1\n- 101: (1^0) + 0 = 1 + 0 = 1\n- 110: (1^1) + (1\u00b71) = 0 + 1 = 1\n- 111: (1^1) + (1\u00b70) = 0 + 0 = 0\nX is 1 for inputs: 010, 011, 100, 101, 110 (minterms m2, m3, m4, m5, m6). Total = exactly 5 combinations.",
+          "why_wrong": {
+            "4 combinations": "Misses minterm m6 (110) where A^B=0 but B\u00b7C'=1.",
+            "6 combinations": "Incorrectly includes minterm m7 (111).",
+            "3 combinations": "Only counts cases where A^B=1 and ignores B\u00b7C'."
+          },
+          "marking_points": [
+            "Evaluates all 8 rows",
+            "Identifies minterms m2, m3, m4, m5, m6 as 1",
+            "Concludes total = 5"
+          ],
+          "source": "Nile University Final Exam, Exercise VI",
+          "verified": true,
+          "verified_output": "Rows with X=1: [2, 3, 4, 5, 6], Count = 5",
+          "topic_slug": "combinational_circuits"
+        },
+        {
+          "id": "ift211-km-002",
+          "course": "IFT 211",
+          "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "group-size",
+            "literal-reduction"
+          ],
+          "question": "In a 4-variable Karnaugh map (variables A, B, C, D), how many literals are contained in the simplified product term obtained from a valid rectangular group of 8 adjacent cells?",
+          "options": [
+            "1 literal",
+            "2 literals",
+            "3 literals",
+            "4 literals"
+          ],
+          "answer": "1 literal",
+          "explanation": "According to the K-map reduction rule (Page 37):\n- 1 cell = 4 literals (0 variables eliminated)\n- 2 cells (group of 2^1) = 3 literals (1 variable eliminated)\n- 4 cells (group of 2^2) = 2 literals (2 variables eliminated)\n- 8 cells (group of 2^3) = 1 literal (3 variables eliminated)\n- 16 cells (group of 2^4) = 0 literals (constant 1).\nTherefore, a group of 8 cells yields a single-literal term.",
+          "why_wrong": {
+            "2 literals": "A group of 4 cells yields 2 literals, not 8.",
+            "3 literals": "A group of 2 cells yields 3 literals.",
+            "4 literals": "An isolated single cell yields 4 literals."
+          },
+          "marking_points": [
+            "Eliminates 3 variables for group of 8",
+            "Leaves 4 - 3 = 1 literal"
+          ],
+          "source": "Digital Logic Lecture Note, Page 37",
+          "verified": true,
+          "verified_output": "4 - log2(8) = 4 - 3 = 1 literal",
+          "topic_slug": "karnaugh_maps"
+        },
+        {
+          "id": "ift211-km-004",
+          "course": "IFT 211",
+          "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "essential-prime-implicant",
+            "definitions",
+            "analysis"
+          ],
+          "question": "What is the defining criterion of an ESSENTIAL Prime Implicant (EPI)?",
+          "options": [
+            "It is a prime implicant that covers at least one '1' (minterm) that is not covered by any other prime implicant.",
+            "It is any group of 8 or more cells on the map.",
+            "It is a prime implicant that contains only uncomplemented variables.",
+            "It is a prime implicant that covers don't-care conditions exclusively."
+          ],
+          "answer": "It is a prime implicant that covers at least one '1' (minterm) that is not covered by any other prime implicant.",
+          "explanation": "An Essential Prime Implicant is indispensable: because it contains at least one minterm covered by no other prime implicant, omitting it would leave that minterm uncovered, resulting in an incomplete Boolean function.",
+          "why_wrong": {
+            "It is any group of 8 or more cells on the map.": "Groups of 2 or 4 cells can also be essential prime implicants.",
+            "It is a prime implicant that contains only uncomplemented variables.": "EPIs can contain complemented or uncomplemented variables.",
+            "It is a prime implicant that covers don't-care conditions exclusively.": "A group containing only don't-cares should never be selected."
+          },
+          "marking_points": [
+            "Defines EPI as covering a 1 not covered by any other PI"
+          ],
+          "source": "Digital Logic Lecture Note, Page 38",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "karnaugh_maps"
+        },
+        {
+          "id": "ift211-km-008",
+          "course": "IFT 211",
+          "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "majority-function",
+            "3-variable-kmap"
+          ],
+          "question": "Simplify the 3-variable Majority Function M(a, b, c) = \u03a3m(3, 5, 6, 7) using a 3-variable Karnaugh map. What is the minimal Sum-of-Products expression?",
+          "options": [
+            "M = ab + bc + ac",
+            "M = a + b + c",
+            "M = abc + a'b'c'",
+            "M = ab' + bc' + a'c"
+          ],
+          "answer": "M = ab + bc + ac",
+          "explanation": "In a 3-variable K-map for inputs a (row) and bc (columns):\n- m3 is row 0, col 11 (a'bc)\n- m5 is row 1, col 01 (ab'c)\n- m6 is row 1, col 11 (abc') [note: row 1 col 10 is m6, col 11 is m7]\n- m7 is row 1, col 11 (abc)\nGrouping pairs of 1s:\n1. Group m3 (011) and m7 (111) -> bc\n2. Group m5 (101) and m7 (111) -> ac\n3. Group m6 (110) and m7 (111) -> ab\nAll three pairs overlap at minterm m7 (111). M = ab + bc + ac.",
+          "why_wrong": {
+            "M = a + b + c": "Represents a simple 3-input OR gate.",
+            "M = abc + a'b'c'": "Contains only the all-1s and all-0s minterms.",
+            "M = ab' + bc' + a'c": "Contains inverted minterms."
+          },
+          "marking_points": [
+            "Pairs m3 and m7 -> bc",
+            "Pairs m5 and m7 -> ac",
+            "Pairs m6 and m7 -> ab",
+            "Combines to ab + bc + ac"
+          ],
+          "source": "Digital Logic Lecture Note, Page 39-40",
+          "verified": true,
+          "verified_output": "M = ab + bc + ac",
+          "topic_slug": "karnaugh_maps"
+        },
+        {
+          "id": "ift211-pe-002",
+          "course": "IFT 211",
+          "topic": "Past Exam Synthesis & Multi-Topic Problem Solving",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-exercise-i",
+            "2s-complement",
+            "signed-subtraction"
+          ],
+          "question": "In Nile Final Exam Exercise I(a), perform the operation (+44) + (-14) in binary using 8-bit 2's complement representation. What is the 8-bit result after handling the end carry?",
+          "options": [
+            "00011110_2 (= +30_10)",
+            "10011110_2 (= -98_10)",
+            "00011111_2 (= +31_10)",
+            "11100010_2 (= -30_10)"
+          ],
+          "answer": "00011110_2 (= +30_10)",
+          "explanation": "1. +44 = 00101100_2.\n2. -14 in 2's complement: +14 = 00001110_2 -> 1's comp = 11110001 -> 2's comp = 11110010_2.\n3. Add:\n  00101100 (+44)\n+ 11110010 (-14)\n----------\n1 00011110\n4. In 2's complement, the end carry of 1 is DISCARDED.\n5. Result = 00011110_2 = 16 + 8 + 4 + 2 = +30_10. Correct (+44 - 14 = +30).",
+          "why_wrong": {
+            "10011110_2 (= -98_10)": "Kept the end carry in the sign bit position.",
+            "00011111_2 (= +31_10)": "Wrongly added the end carry back to LSB (confusing 2's complement with 1's complement end-around carry).",
+            "11100010_2 (= -30_10)": "Produced -30 instead of +30."
+          },
+          "marking_points": [
+            "Finds 2's complement of -14 = 11110010",
+            "Adds 00101100 + 11110010 = 1 00011110",
+            "Discards end carry to yield 00011110",
+            "Confirms decimal +30"
+          ],
+          "source": "Nile University Final Exam, Exercise I(a)",
+          "verified": true,
+          "verified_output": "44 - 14 = 30 -> bin(30) = 00011110",
+          "topic_slug": "past_exam_synthesis"
+        },
+        {
+          "id": "ift211-pe-003",
+          "course": "IFT 211",
+          "topic": "Past Exam Synthesis & Multi-Topic Problem Solving",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-exercise-i",
+            "1s-complement",
+            "end-around-carry"
+          ],
+          "question": "In Nile Final Exam Exercise I(b), perform binary subtraction 1001000_2 - 111001_2 using the 1's complement method. What is the intermediate sum and final difference after handling the end-around carry?",
+          "options": [
+            "Intermediate sum = 1001110_2; Adding end-around carry yields final difference 0001111_2 (= 15_10)",
+            "Intermediate sum = 1001111_2; Discarding carry yields 0001111_2",
+            "Final difference = 0010000_2 (= 16_10)",
+            "Final difference = 1110001_2"
+          ],
+          "answer": "Intermediate sum = 1001110_2; Adding end-around carry yields final difference 0001111_2 (= 15_10)",
+          "explanation": "Pad subtrahend to 7 bits: Minuend = 1001000_2 (72_10), Subtrahend = 0111001_2 (57_10).\n1. Take 1's complement of subtrahend: 1000110_2.\n2. Add to minuend:\n  1001000\n+ 1000110\n---------\n1 0001110 (Intermediate sum = 0001110 with end carry 1)\n3. In 1's complement, an end carry indicates a positive result and MUST be added to LSB (end-around carry):\n  0001110 + 1 = 0001111_2 (= 15_10).\nCheck: 72 - 57 = 15. Verified.",
+          "why_wrong": {
+            "Intermediate sum = 1001111_2; Discarding carry...": "Discarding end carry is 2's complement procedure, not 1's complement.",
+            "Final difference = 0010000_2 (= 16_10)": "Off by 1 arithmetic error.",
+            "Final difference = 1110001_2": "Forgot to add the end carry and complemented the result."
+          },
+          "marking_points": [
+            "Finds 1's complement of 0111001 = 1000110",
+            "Adds to 1001000 = 1 0001110",
+            "Adds end-around carry: 0001110 + 1 = 0001111",
+            "Confirms 15 decimal"
+          ],
+          "source": "Nile University Final Exam, Exercise I(b)",
+          "verified": true,
+          "verified_output": "72 - 57 = 15 -> bin(15) = 1111",
+          "topic_slug": "past_exam_synthesis"
+        },
+        {
+          "id": "ift211-pe-007",
+          "course": "IFT 211",
+          "topic": "Past Exam Synthesis & Multi-Topic Problem Solving",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-exercise-iv",
+            "bcd-to-binary"
+          ],
+          "question": "In Nile Final Exam Exercise IV(c), convert the BCD number 1001 0001 0100_BCD into an equivalent pure binary number.",
+          "options": [
+            "1110010010_2",
+            "100100010100_2",
+            "1011010010_2",
+            "1100101000_2"
+          ],
+          "answer": "1110010010_2",
+          "explanation": "Step 1: Decode each 4-bit BCD nibble into decimal digits:\n- 1001_2 = 9\n- 0001_2 = 1\n- 0100_2 = 4\nDecimal number = 914_10.\nStep 2: Convert decimal 914 to pure binary by successive powers of 2:\n914 = 512 + 256 + 128 + 16 + 2\n= 2^9 + 2^8 + 2^7 + 2^4 + 2^1\n= 1110010010_2.\nNotice: BCD represents digits; you cannot simply treat the BCD bits as pure binary!",
+          "why_wrong": {
+            "100100010100_2": "Common student blunder: directly copied the BCD bit string as if it were a binary integer (representing 2324_10 instead of 914_10).",
+            "1011010010_2": "Arithmetic conversion error (equals 722_10).",
+            "1100101000_2": "Equals 808_10."
+          },
+          "marking_points": [
+            "Decodes BCD to decimal 914",
+            "Converts 914 to binary 1110010010"
+          ],
+          "source": "Nile University Final Exam, Exercise IV(c)",
+          "verified": true,
+          "verified_output": "BCD 1001 0001 0100 = 914 -> bin(914) = 1110010010",
+          "topic_slug": "past_exam_synthesis"
+        }
+      ]
+    }
+  ]
+}

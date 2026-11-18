@@ -1,0 +1,642 @@
+COMPUTER NETWORKS,
+THE INTERNET & DIGITAL
+COMMUNICATION
+
+How devices connect, how the Internet works, and how people 
+communicate and collaborate online
+
+ZAKARIYYA ABDULLAHI ADAMU
+
+ASSISTANT LECTURER
+
+Zakariyya.adamu@nileuniversity.edu.ng
+
+INTRODUCTION TO INFORMATION TECHNOLOGY
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Learning outcomes
+
+Explain what a computer network is and why organisations connect devices.
+
+Distinguish LAN, WAN and wireless networks, and identify common network devices.
+
+Explain bandwidth, data transmission, connectivity and factors that affect network performance.
+
+Describe the Internet, the World Wide Web, websites, web pages, browsers and search engines.
+
+Explain how email, messaging, video conferencing and collaboration platforms support communication.
+
+Apply the concepts to home, university, business and public-service situations.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+02
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Why connectivity matters
+
+Modern work depends on devices exchanging information. Connectivity allows people, systems 
+and organisations to share resources and communicate across distances.
+
+Share resources
+
+Exchange information
+
+Access services
+
+Several computers can use shared 
+printers, files, storage and Internet 
+access.
+
+Staff and students can send 
+messages, access records and work 
+on shared documents.
+
+People can bank, learn, shop, apply 
+for services and attend meetings 
+online.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+03
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+What is a computer network?
+
+A computer network is a group of two or more computing devices connected so they can 
+exchange data and share resources using agreed communication rules.
+
+Laptop
+
+Printer
+
+Network
+switch
+
+Desktop PC
+
+A switch connects devices within a local network and directs data to the appropriate destination.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+04
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Basic components of a network
+
+End devices: laptops, phones, desktops, printers, servers and smart devices.
+
+Network devices: routers, switches, access points, modems and firewalls.
+
+Transmission media: Ethernet cables, fibre-optic cables and wireless radio signals.
+
+Network software: operating systems, drivers, network services and management tools.
+
+Protocols: rules that define how devices address, format, send and receive data.
+
+Shared resources: files, applications, printers, storage and Internet connections.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+05
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Types of networks: LAN, MAN and WAN
+
+LAN — Local Area Network
+
+Connects devices in a limited area 
+such as a home, office, school 
+building or computer laboratory.
+
+Example: computers and printers in 
+a university lab.
+
+MAN — Metropolitan Area 
+Network
+Connects networks across a town 
+or city.
+
+Example: an organisation linking 
+offices in different parts of Abuja.
+
+WAN — Wide Area Network
+
+Connects networks over large 
+geographical areas, such as regions 
+or countries.
+
+Example: a bank linking branches 
+across Nigeria.
+
+A WAN can connect multiple LANs. The Internet is the best-known global network of interconnected networks.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+06
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Wired and wireless networks
+
+Wired connection
+
+Wireless connection
+
+Uses physical cables, commonly Ethernet copper cable or 
+fibre optics.
+
+Uses radio signals, commonly Wi-Fi, Bluetooth or mobile 
+networks.
+
+Advantages: stable connection, predictable performance 
+and less radio interference.
+
+Advantages: mobility, easier expansion and fewer cables.
+
+Limitations: cable installation, limited mobility and 
+physical port requirements.
+
+Limitations: interference, signal coverage limits and 
+security risks if poorly configured.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+07
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Common wireless technologies
+
+Wi-Fi connects devices to a local network and often to the Internet through a wireless access point or router.
+
+Bluetooth supports short-range connections for headphones, keyboards, speakers and other accessories.
+
+Mobile networks (3G, 4G and 5G) provide wide-area wireless connectivity through cellular towers and operators.
+
+A hotspot allows a phone or dedicated device to share mobile Internet with nearby devices over Wi-Fi.
+
+Satellite Internet can provide connectivity where terrestrial networks are limited.
+
+Technologies differ in range, speed, coverage, cost, power use and purpose.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+08
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Network devices: what do they do?
+
+Router
+
+Switch
+
+Wireless access point
+
+Connects networks and forwards data 
+between them.
+
+Connects devices within a LAN and 
+forwards data appropriately.
+
+Allows Wi-Fi devices to join a wired local 
+network.
+
+Modem / ONT
+
+Firewall
+
+Network interface card
+
+Provides access to an ISP's cable, DSL or 
+fibre network.
+
+Monitors and filters traffic according to 
+security rules.
+
+Provides a device with a wired or wireless 
+network connection.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+09
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+How devices connect to the Internet
+
+A laptop or phone connects to a Wi-Fi router or wired network.
+
+The router manages local connections and forwards traffic towards the Internet connection.
+
+A modem or optical network terminal (ONT) provides the access link, depending on the service.
+
+The Internet Service Provider (ISP) connects the customer link to wider Internet networks.
+
+Exact equipment depends on the type of Internet service and the provider's installation.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+10
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Bandwidth, speed and latency
+
+Bandwidth
+
+Throughput
+
+Latency
+
+Maximum data-carrying capacity of 
+a connection, usually measured in 
+bits per second (bps), such as Mbps 
+or Gbps.
+
+Actual rate of successful data 
+transfer achieved in practice. Often 
+lower than advertised bandwidth.
+
+Time data takes to travel from 
+source to destination or a 
+measuring point. Low latency 
+matters for live calls.
+
+Analogy: bandwidth is road width; throughput is the traffic moving; latency is the delay before a vehicle 
+reaches its destination.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+11
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+What affects network performance?
+
+Available bandwidth and the number of users sharing the connection.
+
+Distance from a Wi-Fi access point, walls, interference and physical obstructions.
+
+Network congestion at home, in an organisation or within the service provider's network.
+
+Quality and age of routers, switches, cables, access points and end devices.
+
+Server performance and the size or design of the service being accessed.
+
+Latency, packet loss and unstable connections can affect calls, streaming and online applications.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+12
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+IP addresses, domain names and DNS
+
+An IP address identifies a device or network interface for communication on an IP network. Example IPv4 format: 
+192.168.1.20.
+
+A domain name is a human-readable name used to locate an Internet service. Example: example.com.
+
+DNS (Domain Name System) translates domain names into IP addresses used to reach services.
+
+When a user enters a website name, the device can ask DNS for the corresponding address before connecting to 
+the website server.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+13
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+What is the Internet?
+
+The Internet is a worldwide system of interconnected computer networks that communicate using the Internet 
+Protocol (IP) suite.
+
+Its infrastructure includes routers, fibre-optic cables, mobile networks, data centres, servers and undersea cables.
+
+Protocols such as IP, TCP, UDP, DNS, HTTP and HTTPS help devices exchange data.
+
+The Internet supports websites, email, messaging, cloud storage, streaming, online banking and video calls.
+
+The Internet is the underlying network infrastructure; it supports many different services.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+14
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Internet vs World Wide Web
+
+Internet
+
+World Wide Web (WWW)
+
+The global network infrastructure connecting devices 
+and networks. It supports the Web, email, messaging, 
+file transfer, voice and video communication.
+
+A system of interlinked web pages and resources 
+accessed over the Internet, commonly using browsers 
+and HTTP/HTTPS. Websites are part of the Web, not the 
+whole Internet.
+
+Simple comparison: the Internet is the road network; the Web is one type of service that travels on it.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+15
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Websites, web pages and web servers
+
+A web page is a single document or resource displayed in a browser. It may contain text, images, links, audio or 
+video.
+
+A website is a collection of related web pages and resources usually organised under a domain name.
+
+A web server is a computer or software service that stores, processes or delivers website content to users' 
+browsers.
+
+Example: a university website may contain separate pages for admissions, programmes, staff, news, contact 
+details and student services.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+16
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+How a website loads in a browser
+
+1. Enter web
+address
+
+2. DNS finds
+server address
+
+3. Browser sends
+HTTP request
+
+4. Server returns
+page resources
+
+5. Browser displays
+web page
+
+The browser may request HTML, CSS, JavaScript, images and fonts to display the complete page.
+
+HTTPS encrypts data exchanged between the browser and website server, helping protect information in transit.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+17
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Web browsers and search engines
+
+A web browser is software used to access and display websites.
+
+Examples of browsers: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari and Opera.
+
+A search engine is an online service that helps users find relevant web pages and information.
+
+Examples of search engines: Google Search, Bing and DuckDuckGo.
+
+Search engines discover, index and rank web content in response to user queries.
+
+A browser is the tool used to visit websites; a search engine helps users find them.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+18
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL 
+Email: electronic mail
+COMMUNICATION
+
+Email is a digital communication service for sending and 
+receiving messages and attachments over computer 
+networks.
+An email address commonly follows the form 
+username@domain.com. Example: 
+student@example.edu.ng.
+Message fields include To, Cc, Bcc, Subject and message 
+body. Attachments can include documents, images and 
+PDFs.
+SMTP is used to send email; IMAP or POP3 can be used by 
+clients to access or retrieve messages.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  
+
+LECTURE NOTES
+
+Good practice: use a clear subject, professional language, 
+
+check recipients and attachments, and avoid suspicious 
+
+1
+
+9
+
+links.
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Instant messaging and online messaging
+
+One-to-one chat supports direct messages between two people for quick questions, reminders and short updates.
+
+Group messaging allows several participants to share messages, files and announcements in a group or channel.
+
+Organisations use business messaging for customer support, notifications and team coordination.
+
+Examples include WhatsApp, Telegram, Signal, Microsoft Teams chat and Slack. Features and privacy protections 
+vary.
+
+Use the right channel: urgent matters may need a call; formal decisions may need email or an approved record.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+20
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Video conferencing and online meetings
+
+Video conferencing enables people in different locations to communicate in real time using audio, video, screen 
+sharing and chat.
+
+Common features include meeting links, participant controls, screen sharing, captions and chat. Recording 
+depends on permission and policy.
+
+Examples include Zoom, Google Meet, Microsoft Teams and Webex.
+
+Requirements include reliable Internet, microphone, speakers or headset and a suitable device. A camera may be 
+optional.
+
+Example: a lecturer can teach remote students, share slides and answer questions.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+21
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Digital collaboration and cloud tools
+
+Shared documents allow authorised users to edit or comment on the same file.
+
+Cloud storage keeps files on remote servers so users can access them across approved devices.
+
+Project-management tools organise tasks, owners, deadlines and progress.
+
+Team platforms combine chat, meetings, file sharing, calendars and channels.
+
+Version history can help users review or restore earlier changes to a document.
+
+Examples include Microsoft 365, Google Workspace, Dropbox, Trello and Slack.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+22
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Digital communication: choosing the right channel
+
+Channel
+
+Best suited to
+
+Example
+
+Email
+
+Formal, detailed or documented communication Official notice or assignment brief
+
+Instant message
+
+Quick updates and short conversations
+
+Confirming a meeting time
+
+Video conference
+
+Live discussion, teaching or demonstrations
+
+Remote lecture or project meeting
+
+Shared document
+
+Joint drafting, review and feedback
+
+Several staff editing a report
+
+Website / portal
+
+Publishing information for many users
+
+University admission information
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+23
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Online safety, privacy and responsible use
+
+Use strong, unique passwords and multi-factor authentication where available.
+
+Keep operating systems, browsers, routers and security software updated.
+
+Be alert to phishing messages, fake websites, suspicious attachments and impersonation.
+
+Use HTTPS for sensitive transactions, but remember HTTPS alone does not prove a site is trustworthy.
+
+Limit personal information shared online and review privacy and meeting settings.
+
+Use secure Wi-Fi; avoid sensitive transactions on untrusted public networks unless appropriately protected.
+
+Respect copyright, professional conduct, institutional policies and other people's privacy.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+24
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Putting it together: a university connectivity example
+
+A university wants staff and students to access online learning, digital libraries, email, student 
+records and video lectures.
+
+Student & staff
+devices
+
+Campus LAN
+& Wi-Fi
+
+Router &
+firewall
+
+ISP
+
+Internet
+
+Network services
+
+Internet services
+
+User outcomes
+
+IP addressing, DNS, Wi-Fi access and 
+secure routing.
+
+Website, email, LMS, cloud files and 
+video meetings.
+
+Access course materials, submit work 
+and communicate remotely.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+25
+
+COMPUTER NETWORKS, THE INTERNET & DIGITAL COMMUNICATION
+
+Revision, discussion and short assessment
+
+1. What is a computer network? Give two examples of devices that may be connected.
+
+2. Differentiate LAN and WAN using a university or bank example.
+
+3. Explain the roles of a router, switch and wireless access point.
+
+4. Distinguish bandwidth, throughput and latency.
+
+5. Explain the difference between the Internet and the World Wide Web.
+
+6. What is the difference between a web browser and a search engine?
+
+7. State two advantages and two risks of digital communication tools.
+
+8. Recommend suitable channels for a formal notice, urgent update and group project.
+
+INTRODUCTION TO INFORMATION TECHNOLOGY  •  LECTURE NOTES
+
+26
+
+

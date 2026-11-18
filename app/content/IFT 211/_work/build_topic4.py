@@ -1,0 +1,541 @@
+import json
+import os
+
+def build_topic4():
+    topic_data = {
+        "course": "IFT 211",
+        "topic": "Boolean Algebra & De Morgan's Laws",
+        "summary": "This topic covers formal Boolean algebra postulates and theorems introduced by George Boole and formalized by Claude Shannon for digital switching circuits. Key principles include the duality principle, distributivity of OR over AND (A + BC = (A+B)(A+C)), absorption theorems (A + AB = A and A + A'B = A + B), De Morgan's laws for breaking and combining negations, and systematic algebraic reduction of complex logic functions.",
+        "key_terms": [
+            {"term": "Postulate of Distributivity", "definition": "In Boolean algebra, AND distributes over OR (A(B+C) = AB + AC) AND OR distributes over AND (A + BC = (A+B)(A+C)), a property distinct from ordinary real arithmetic."},
+            {"term": "De Morgan's Laws", "definition": "Fundamental duality theorems stating: (1) the complement of a sum equals the product of the complements (A+B)' = A'B', and (2) the complement of a product equals the sum of the complements (AB)' = A' + B'."},
+            {"term": "Principle of Duality", "definition": "The theorem stating that any valid Boolean relation remains true if AND and OR operators are interchanged, and 0 and 1 are interchanged, leaving variable literals unchanged."},
+            {"term": "Absorption Law", "definition": "The simplification identities A + AB = A and A(A + B) = A, where the single literal A completely absorbs the redundant product or sum term."},
+            {"term": "Involution Law", "definition": "The double negation theorem stating that complementing a variable twice returns its original logical value: (A')' = A."},
+            {"term": "Idempotent Law", "definition": "The property where combining a variable with itself under AND or OR yields the variable unchanged: A + A = A and A * A = A."},
+            {"term": "Dominance (Boundedness)", "definition": "The property where 1 dominates an OR operation (A + 1 = 1) and 0 dominates an AND operation (A * 0 = 0)."},
+            {"term": "Consensus Theorem", "definition": "The simplification identity AB + A'C + BC = AB + A'C, where the term BC is redundant because it is covered by the consensus of AB and A'C."}
+        ],
+        "questions": [
+            {
+                "id": "ift211-ba-001",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "mcq",
+                "difficulty": 2,
+                "tags": ["distributive-law", "postulates"],
+                "question": "Which of the following Boolean identities demonstrates the distribution of OR (+) over AND (·), which has NO counterpart in ordinary real algebra?",
+                "options": [
+                    "A + (B · C) = (A + B) · (A + C)",
+                    "A · (B + C) = (A · B) + (A · C)",
+                    "A + (B + C) = (A + B) + C",
+                    "A · (B · C) = (A · B) · C"
+                ],
+                "answer": "A + (B · C) = (A + B) · (A + C)",
+                "explanation": "In ordinary arithmetic, addition does not distribute over multiplication (e.g., 2 + (3*4) = 14 != (2+3)*(2+4) = 30). In Boolean algebra, however, Postulate 4b guarantees that OR distributes over AND: A + BC = (A+B)(A+C).",
+                "why_wrong": {
+                    "A · (B + C) = (A · B) + (A · C)": "This is multiplication distributing over addition, which is true in both Boolean algebra and ordinary algebra.",
+                    "A + (B + C) = (A + B) + C": "This is the Associative Law of addition/OR.",
+                    "A · (B · C) = (A · B) · C": "This is the Associative Law of multiplication/AND."
+                },
+                "marking_points": ["Identifies A + BC = (A+B)(A+C) as unique Boolean distributivity"],
+                "source": "Digital Logic Lecture Note, Page 23-24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-002",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "calculation",
+                "difficulty": 3,
+                "tags": ["demorgan", "simplification"],
+                "question": "Apply De Morgan's Laws to simplify the complemented expression: F = (A + B' · C)'.",
+                "options": [
+                    "A' · (B + C')",
+                    "A' · B · C'",
+                    "A' + B · C'",
+                    "A · (B' + C)"
+                ],
+                "answer": "A' · (B + C')",
+                "explanation": "1. Treat (B' · C) as a single sub-expression X, so F = (A + X)'.\n2. By De Morgan's first law: (A + X)' = A' · X'.\n3. Substitute X = B' · C: F = A' · (B' · C)'.\n4. Apply De Morgan's second law to (B' · C)': (B' · C)' = (B')' + C' = B + C'.\n5. Final simplified expression: A' · (B + C').",
+                "why_wrong": {
+                    "A' · B · C'": "Failed to apply De Morgan's law to the product (B' · C)' (it becomes an OR sum B + C', not an AND product).",
+                    "A' + B · C'": "Changed outer operator incorrectly to OR.",
+                    "A · (B' + C)": "Failed to complement literal A."
+                },
+                "marking_points": ["Applies (A+X)' = A'X'", "Applies (B'C)' = B + C'", "Yields A'(B + C')"],
+                "source": "Digital Logic Lecture Note, Page 24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-003",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "calculation",
+                "difficulty": 3,
+                "tags": ["duality", "theorems"],
+                "question": "What is the dual of the Boolean expression: A · B + A' · (B + C)?",
+                "options": [
+                    "(A + B) · (A' + B · C)",
+                    "(A' + B') · (A + B' · C')",
+                    "(A + B) + (A' + B · C)",
+                    "A · B · A' · (B + C)"
+                ],
+                "answer": "(A + B) · (A' + B · C)",
+                "explanation": "By the Principle of Duality:\n1. Replace every AND (·) with OR (+).\n2. Replace every OR (+) with AND (·).\n3. Keep all variables and their complements strictly as they are (do NOT invert A or A').\nIn A · B + A' · (B + C):\n- A · B becomes (A + B)\n- The outer + becomes ·\n- A' · (B + C) becomes (A' + B · C)\nCombining yields: (A + B) · (A' + B · C).",
+                "why_wrong": {
+                    "(A' + B') · (A + B' · C')": "Common misconception: inverting variable literals. Duality changes OPERATORS and constants, NOT variables.",
+                    "(A + B) + (A' + B · C)": "Failed to change the outer + to ·.",
+                    "A · B · A' · (B + C)": "Failed to convert inner terms."
+                },
+                "marking_points": ["Changes · to + and + to ·", "Preserves literal signs strictly (A and A' stay intact)"],
+                "source": "Digital Logic Lecture Note, Page 23-24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-004",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "calculation",
+                "difficulty": 3,
+                "tags": ["absorption", "simplification"],
+                "question": "Simplify the Boolean expression: F = A + A' · B.",
+                "options": [
+                    "A + B",
+                    "A · B",
+                    "A",
+                    "B"
+                ],
+                "answer": "A + B",
+                "explanation": "Method 1 (Distributive Law): A + A'B = (A + A')(A + B). Since A + A' = 1 (Postulate 5a), this becomes 1 · (A + B) = A + B.\nMethod 2 (Truth Table): When A=1, F=1. When A=0, F=B. Thus F = A + B.",
+                "why_wrong": {
+                    "A · B": "Incorrect reduction; when A=1 and B=0, A+A'B = 1, but A·B = 0.",
+                    "A": "Forgets the contribution of B when A=0.",
+                    "B": "Forgets that when A=1 the expression is 1 regardless of B."
+                },
+                "marking_points": ["Applies distributivity: (A+A')(A+B)", "Replaces A+A' with 1", "Arrives at A + B"],
+                "source": "Digital Logic Lecture Note, Page 24-25",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-005",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "calculation",
+                "difficulty": 3,
+                "tags": ["simplification", "consensus"],
+                "question": "Simplify the expression: F = A · B + A · B' + B · C.",
+                "options": [
+                    "A + B · C",
+                    "A · B + B · C",
+                    "A · C",
+                    "B + C"
+                ],
+                "answer": "A + B · C",
+                "explanation": "1. Factor the common term A from the first two terms: A · B + A · B' = A · (B + B').\n2. By Postulate 5a, B + B' = 1, so A · (1) = A.\n3. The expression simplifies to: A + B · C.",
+                "why_wrong": {
+                    "A · B + B · C": "Failed to combine A·B and A·B'.",
+                    "A · C": "Incorrect factorization.",
+                    "B + C": "Dropped term A erroneously."
+                },
+                "marking_points": ["Factors A(B + B')", "Substitutes B + B' = 1", "Yields A + BC"],
+                "source": "Digital Logic Lecture Note, Page 25",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-006",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "mcq",
+                "difficulty": 2,
+                "tags": ["dominance", "laws"],
+                "question": "According to the Dominance (Boundedness) Laws of Boolean algebra, what are the results of A + 1 and A · 0?",
+                "options": [
+                    "A + 1 = 1; A · 0 = 0",
+                    "A + 1 = A; A · 0 = A",
+                    "A + 1 = A; A · 0 = 0",
+                    "A + 1 = 0; A · 0 = 1"
+                ],
+                "answer": "A + 1 = 1; A · 0 = 0",
+                "explanation": "In logical OR (+), if any input is 1, the output is unconditionally 1 regardless of A (1 dominates OR). In logical AND (·), if any input is 0, the output is unconditionally 0 regardless of A (0 dominates AND).",
+                "why_wrong": {
+                    "A + 1 = A; A · 0 = A": "Conflates dominance with identity laws (A + 0 = A and A · 1 = A).",
+                    "A + 1 = A; A · 0 = 0": "A + 1 is always 1, not A.",
+                    "A + 1 = 0; A · 0 = 1": "Inverts truth values completely."
+                },
+                "marking_points": ["Identifies A + 1 = 1 and A * 0 = 0"],
+                "source": "Digital Logic Lecture Note, Page 23-24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-007",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "calculation",
+                "difficulty": 4,
+                "tags": ["algebraic-proof", "step-by-step"],
+                "question": "Using Boolean algebra postulates, prove the Absorption Theorem: X + X · Y = X. What is the correct step-by-step algebraic deduction?",
+                "options": [
+                    "X + XY = X·1 + XY (by Identity 2b) = X·(1 + Y) (by Distributive 4b) = X·(1) (by Dominance 2a) = X (by Identity 2b)",
+                    "X + XY = (X + X) · (X + Y) = X · (X + Y) = X + Y",
+                    "X + XY = X · Y + X = Y + X · X = Y + X",
+                    "X + XY = 1 + XY = X"
+                ],
+                "answer": "X + XY = X·1 + XY (by Identity 2b) = X·(1 + Y) (by Distributive 4b) = X·(1) (by Dominance 2a) = X (by Identity 2b)",
+                "explanation": "1. Replace X with X·1 using the identity element postulate (Postulate 2b).\n2. Factor out X using the distributive law: X·(1 + Y).\n3. By the dominance theorem, 1 + Y = 1.\n4. X·(1) = X by identity.",
+                "why_wrong": {
+                    "X + XY = (X + X) · (X + Y)...": "Incorrectly evaluates to X+Y.",
+                    "X + XY = X · Y + X...": "Circular manipulation without simplification.",
+                    "X + XY = 1 + XY = X": "Invalid substitution of 1 for X."
+                },
+                "marking_points": ["Expresses X as X·1", "Factors X(1+Y)", "Applies 1+Y = 1", "Arrives at X"],
+                "source": "Digital Logic Lecture Note, Page 24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-008",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "explain",
+                "difficulty": 3,
+                "tags": ["demorgan", "verbal-rule"],
+                "question": "State De Morgan's two laws in clear English words without using mathematical symbols.",
+                "options": [],
+                "answer": "Law 1: The complement of a logical sum (OR operation) of two or more variables is equal to the logical product (AND operation) of their individual complements. Law 2: The complement of a logical product (AND operation) of two or more variables is equal to the logical sum (OR operation) of their individual complements.",
+                "explanation": "Informally: 'Break the line, change the sign' — invert the overall function by inverting individual inputs and swapping AND with OR.",
+                "why_wrong": {},
+                "marking_points": [
+                    "States complement of OR sum equals AND product of complements",
+                    "States complement of AND product equals OR sum of complements",
+                    "Explains operator interchange between AND and OR"
+                ],
+                "source": "Digital Logic Lecture Note, Page 24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-009",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "matching",
+                "difficulty": 2,
+                "tags": ["matching", "laws"],
+                "question": "Match each Boolean equation to its corresponding law:",
+                "options": [
+                    "(A')' = A: Involution; A + A = A: Idempotent; A + 1 = 1: Dominance; (A+B)' = A'B': De Morgan",
+                    "(A')' = A: Idempotent; A + A = A: Involution; A + 1 = 1: De Morgan; (A+B)' = A'B': Dominance",
+                    "(A')' = A: Dominance; A + A = A: De Morgan; A + 1 = 1: Involution; (A+B)' = A'B': Idempotent",
+                    "(A')' = A: De Morgan; A + A = A: Dominance; A + 1 = 1: Idempotent; (A+B)' = A'B': Involution"
+                ],
+                "answer": "(A')' = A: Involution; A + A = A: Idempotent; A + 1 = 1: Dominance; (A+B)' = A'B': De Morgan",
+                "explanation": "Double negation is Involution; variable combined with itself is Idempotent; bound by 1 is Dominance; complement distribution is De Morgan.",
+                "why_wrong": {
+                    "(A')' = A: Idempotent...": "Confuses double negation with self-combination.",
+                    "(A')' = A: Dominance...": "Mismatches laws.",
+                    "(A')' = A: De Morgan...": "Mismatches all laws."
+                },
+                "marking_points": ["Accurately maps Involution, Idempotent, Dominance, and De Morgan"],
+                "source": "Digital Logic Lecture Note, Page 23-24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-010",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "cloze",
+                "difficulty": 2,
+                "tags": ["cloze", "identities"],
+                "question": "In Boolean algebra, the additive identity element is ___ (because A + ___ = A), and the multiplicative identity element is ___ (because A · ___ = A).",
+                "options": [
+                    "0; 0; 1; 1",
+                    "1; 1; 0; 0",
+                    "A; A; A'; A'",
+                    "0; 1; 1; 0"
+                ],
+                "answer": "0; 0; 1; 1",
+                "explanation": "0 added to any variable leaves it unchanged (A + 0 = A), making 0 the identity element for OR. 1 multiplied by any variable leaves it unchanged (A · 1 = A), making 1 the identity element for AND.",
+                "why_wrong": {
+                    "1; 1; 0; 0": "Reverses the additive and multiplicative identities.",
+                    "A; A; A'; A'": "Variables are not identity constants.",
+                    "0; 1; 1; 0": "Swaps the equation slots."
+                },
+                "marking_points": ["Identifies 0 as OR identity and 1 as AND identity"],
+                "source": "Digital Logic Lecture Note, Page 23",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            # Flashcards for Topic 4
+            {
+                "id": "ift211-ba-fc01",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "demorgan", "first-law"],
+                "question": "What is De Morgan's First Law (Complement of an OR sum)?",
+                "options": [],
+                "answer": "(A + B)' = A' · B'\n(In general: (A1 + A2 + ... + An)' = A1' · A2' · ... · An')",
+                "explanation": "The NOR of inputs is equivalent to an AND gate with inverted inputs (negative-AND).",
+                "why_wrong": {},
+                "marking_points": ["States (A+B)' = A'B'"],
+                "source": "Digital Logic Lecture Note, Page 24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-fc02",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "demorgan", "second-law"],
+                "question": "What is De Morgan's Second Law (Complement of an AND product)?",
+                "options": [],
+                "answer": "(A · B)' = A' + B'\n(In general: (A1 · A2 · ... · An)' = A1' + A2' + ... + An')",
+                "explanation": "The NAND of inputs is equivalent to an OR gate with inverted inputs (negative-OR).",
+                "why_wrong": {},
+                "marking_points": ["States (AB)' = A' + B'"],
+                "source": "Digital Logic Lecture Note, Page 24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-fc03",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "duality", "definition"],
+                "question": "How do you form the dual of a Boolean expression?",
+                "options": [],
+                "answer": "Interchange all AND (·) and OR (+) operators, and interchange all 0s and 1s. Do NOT invert the variable literals.",
+                "explanation": "Variables stay in their original complemented or uncomplemented states.",
+                "why_wrong": {},
+                "marking_points": ["Swap + and ·, swap 0 and 1, keep variables unchanged"],
+                "source": "Digital Logic Lecture Note, Page 23",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-fc04",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "absorption", "identity"],
+                "question": "What does the expression A + A · B reduce to, and by what theorem?",
+                "options": [],
+                "answer": "It reduces to A, by the Absorption Theorem.",
+                "explanation": "Proof: A(1 + B) = A(1) = A.",
+                "why_wrong": {},
+                "marking_points": ["Result is A", "Names Absorption Theorem"],
+                "source": "Digital Logic Lecture Note, Page 24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-fc05",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "distributive", "identity"],
+                "question": "What is the expansion of A + (B · C) according to the Boolean distributive law?",
+                "options": [],
+                "answer": "(A + B) · (A + C)",
+                "explanation": "In Boolean algebra, OR distributes over AND.",
+                "why_wrong": {},
+                "marking_points": ["States (A+B)(A+C)"],
+                "source": "Digital Logic Lecture Note, Page 23-24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-fc06",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "complements", "postulate"],
+                "question": "What are the values of A + A' and A · A'?",
+                "options": [],
+                "answer": "A + A' = 1 (Tautology)\nA · A' = 0 (Contradiction)",
+                "explanation": "A variable ORed with its complement is always true; ANDed with its complement is always false.",
+                "why_wrong": {},
+                "marking_points": ["A + A' = 1", "A * A' = 0"],
+                "source": "Digital Logic Lecture Note, Page 23",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-fc07",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "idempotent", "theorems"],
+                "question": "What are the Idempotent Laws for a Boolean variable A?",
+                "options": [],
+                "answer": "A + A = A\nA · A = A",
+                "explanation": "Repeated inputs under the same logical operation do not alter the outcome.",
+                "why_wrong": {},
+                "marking_points": ["States A + A = A and A * A = A"],
+                "source": "Digital Logic Lecture Note, Page 23-24",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ba-fc08",
+                "course": "IFT 211",
+                "topic": "Boolean Algebra & De Morgan's Laws",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "consensus", "theorem"],
+                "question": "What is the Consensus Theorem in Sum-of-Products form?",
+                "options": [],
+                "answer": "A · B + A' · C + B · C = A · B + A' · C",
+                "explanation": "The term B·C is redundant and can be eliminated because it is covered by the consensus of AB and A'C.",
+                "why_wrong": {},
+                "marking_points": ["Recalls AB + A'C + BC = AB + A'C"],
+                "source": "Digital Logic Lecture Note, Page 25",
+                "verified": True,
+                "verified_output": "N/A"
+            }
+        ],
+        "case_studies": [
+            {
+                "id": "ift211-ba-cs01",
+                "scenario": "A control engineer at Nile University is designing an automatic emergency shutdown circuit for a high-pressure reactor autoclave. The safety logic receives three binary sensor signals: Pressure High (P), Temperature High (T), and Operator Manual Override (M). The raw specification states the alarm F must trigger if:\nF = P · T · M + P · T · M' + P' · T · M",
+                "sub_questions": [
+                    {
+                        "id": "ift211-ba-cs01-q1",
+                        "course": "IFT 211",
+                        "topic": "Boolean Algebra & De Morgan's Laws",
+                        "type": "calculation",
+                        "difficulty": 3,
+                        "tags": ["case-study", "simplification", "safety-circuit"],
+                        "question": "Simplify the shutdown function F = P · T · M + P · T · M' + P' · T · M using Boolean algebra theorems to its minimal Sum-of-Products form.",
+                        "options": [
+                            "P · T + T · M",
+                            "P · T · M",
+                            "P + T + M",
+                            "P · M + T"
+                        ],
+                        "answer": "P · T + T · M",
+                        "explanation": "1. Group the first two terms: P · T · M + P · T · M' = P · T · (M + M').\n2. Since M + M' = 1, this simplifies to P · T.\n3. The expression is now: P · T + P' · T · M.\n4. Factor out T: T · (P + P' · M).\n5. By absorption/distributivity (P + P'M = P + M), this becomes: T · (P + M) = P · T + T · M.",
+                        "why_wrong": {
+                            "P · T · M": "Far too restrictive; fails to trigger when M=0 but P=1 and T=1.",
+                            "P + T + M": "Triggers on any single sensor, causing false plant shutdowns.",
+                            "P · M + T": "Incorrect factorization."
+                        },
+                        "marking_points": ["Combines PTM + PTM' to PT", "Reduces PT + P'TM to T(P + P'M)", "Applies P + P'M = P + M to reach PT + TM"],
+                        "source": "Digital Logic Boolean Reduction Scenario",
+                        "verified": True,
+                        "verified_output": "PTM + PTM' + P'TM = PT + TM = T(P + M)"
+                    },
+                    {
+                        "id": "ift211-ba-cs01-q2",
+                        "course": "IFT 211",
+                        "topic": "Boolean Algebra & De Morgan's Laws",
+                        "type": "mcq",
+                        "difficulty": 3,
+                        "tags": ["case-study", "gate-reduction", "hardware"],
+                        "question": "How many total logic gate inputs are saved by implementing the simplified function F = T · (P + M) instead of the original unsimplified circuit F = P · T · M + P · T · M' + P' · T · M?",
+                        "options": [
+                            "Original requires three 3-input AND gates plus one 3-input OR gate (12 inputs); simplified requires one 2-input OR gate and one 2-input AND gate (4 inputs), saving 8 gate inputs.",
+                            "It saves 2 inputs.",
+                            "Both circuits require the identical number of gate inputs.",
+                            "The simplified circuit requires more gates because of parentheses."
+                        ],
+                        "answer": "Original requires three 3-input AND gates plus one 3-input OR gate (12 inputs); simplified requires one 2-input OR gate and one 2-input AND gate (4 inputs), saving 8 gate inputs.",
+                        "explanation": "Unsimplified: 3 AND gates * 3 inputs = 9 inputs, plus 1 OR gate with 3 inputs = 12 total inputs (excluding inverters). Simplified F = T · (P + M): 1 OR gate (2 inputs) + 1 AND gate (2 inputs) = 4 inputs. 12 - 4 = 8 gate inputs saved, reducing IC package count, propagation delay, and cost.",
+                        "why_wrong": {
+                            "It saves 2 inputs.": "Underestimates hardware savings.",
+                            "Both circuits require the identical number of gate inputs.": "Ignores algebraic minimization impact.",
+                            "The simplified circuit requires more gates because of parentheses.": "Parentheses represent circuit factoring, which reduces gate count."
+                        },
+                        "marking_points": ["Counts 12 inputs in unsimplified circuit", "Counts 4 inputs in simplified circuit", "Calculates net reduction of 8 inputs"],
+                        "source": "Digital Logic Circuit Reduction Scenario",
+                        "verified": True,
+                        "verified_output": "12 inputs vs 4 inputs = 8 inputs saved"
+                    }
+                ]
+            },
+            {
+                "id": "ift211-ba-cs02",
+                "scenario": "A digital avionics engineer is designing a flight warning indicator that monitors active-low cabin door latch sensors: Front Door Closed (A'), Rear Door Closed (B'), and Cargo Hatch Closed (C'). An alarm sounds when ANY door is NOT closed. The engineer derives the alarm condition: Alarm = (A' · B' · C')'.",
+                "sub_questions": [
+                    {
+                        "id": "ift211-ba-cs02-q1",
+                        "course": "IFT 211",
+                        "topic": "Boolean Algebra & De Morgan's Laws",
+                        "type": "calculation",
+                        "difficulty": 3,
+                        "tags": ["case-study", "demorgan", "active-low"],
+                        "question": "Apply De Morgan's Law to convert Alarm = (A' · B' · C')' into an equivalent active-high expression without an outer complement.",
+                        "options": [
+                            "A + B + C",
+                            "A' + B' + C'",
+                            "A · B · C",
+                            "(A + B + C)'"
+                        ],
+                        "answer": "A + B + C",
+                        "explanation": "Applying De Morgan's Law for product complementation: (X · Y · Z)' = X' + Y' + Z'. Here X = A', Y = B', Z = C'. Therefore: (A' · B' · C')' = (A')' + (B')' + (C')'. By the involution law (double negation), (X')' = X. Thus: (A')' + (B')' + (C')' = A + B + C. The alarm activates if Door A is open (A=1) OR Door B is open (B=1) OR Cargo C is open (C=1).",
+                        "why_wrong": {
+                            "A' + B' + C'": "Failed to apply involution to the doubly-negated literals (A')'.",
+                            "A · B · C": "Failed to change the AND operator to OR.",
+                            "(A + B + C)'": "Retained an outer complement erroneously."
+                        },
+                        "marking_points": ["Applies (X·Y·Z)' = X' + Y' + Z'", "Applies involution (X')' = X", "Arrives at A + B + C"],
+                        "source": "Digital Logic Avionics Scenario",
+                        "verified": True,
+                        "verified_output": "(A'B'C')' = A + B + C"
+                    },
+                    {
+                        "id": "ift211-ba-cs02-q2",
+                        "course": "IFT 211",
+                        "topic": "Boolean Algebra & De Morgan's Laws",
+                        "type": "mcq",
+                        "difficulty": 3,
+                        "tags": ["case-study", "gate-equivalence", "nand-or"],
+                        "question": "What standard hardware gate directly realizes the function (A' · B' · C')' using the original active-low signals A', B', and C' directly as inputs?",
+                        "options": [
+                            "A 3-input NAND gate",
+                            "A 3-input NOR gate",
+                            "A 3-input AND gate",
+                            "A 3-input XOR gate"
+                        ],
+                        "answer": "A 3-input NAND gate",
+                        "explanation": "A NAND gate computes the complement of the AND product of its inputs. If the inputs fed to the gate are A', B', and C', the NAND gate directly produces (A' · B' · C')' without needing any external inverters.",
+                        "why_wrong": {
+                            "A 3-input NOR gate": "A NOR gate computes (A' + B' + C')', not the complement of a product.",
+                            "A 3-input AND gate": "An AND gate computes A' · B' · C' without the inversion.",
+                            "A 3-input XOR gate": "An XOR gate computes odd parity, not NAND logic."
+                        },
+                        "marking_points": ["Identifies NAND gate as product-complement operator"],
+                        "source": "Digital Logic Gate Realization Scenario",
+                        "verified": True,
+                        "verified_output": "N/A"
+                    }
+                ]
+            }
+        ]
+    }
+
+    out_file = r'c:\Users\Collins Ibilibor\Downloads\Study Buddy\app\content\IFT 211\boolean_algebra_theorems.json'
+    with open(out_file, 'w', encoding='utf-8') as f:
+        json.dump(topic_data, f, indent=2)
+
+    total_qs = len(topic_data['questions']) + sum(len(cs.get('sub_questions', [])) for cs in topic_data.get('case_studies', []))
+    print(f"Successfully generated {out_file} with {total_qs} total questions ({len(topic_data['questions'])} main, {len(topic_data['case_studies'])} case studies).")
+
+if __name__ == '__main__':
+    build_topic4()

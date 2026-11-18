@@ -1,0 +1,642 @@
+import json
+import os
+
+def build_topic2():
+    topic_data = {
+        "course": "IFT 211",
+        "topic": "Binary Arithmetic & Complements",
+        "summary": "This topic covers signed number representations (Sign-Magnitude, 1's Complement, and 2's Complement), radix and diminished radix complement arithmetic, and the three canonical subtraction methods (Direct Borrow, 1's Complement with End-Around Carry, and 2's Complement with Discarded Carry). Key competencies include signed addition/subtraction, overflow condition detection, zero redundancy analysis, and 8-bit dynamic range boundaries.",
+        "key_terms": [
+            {"term": "1's Complement (Diminished Radix)", "definition": "A binary representation formed by bitwise inverting all bits (0 to 1 and 1 to 0), characterized by having both positive zero (+0) and negative zero (-0)."},
+            {"term": "2's Complement (Radix Complement)", "definition": "A binary representation formed by inverting all bits and adding 1, featuring a single unique zero (00000000) and enabling standard binary addition circuits to execute subtraction."},
+            {"term": "End-Around Carry", "definition": "In 1's complement subtraction, an end-carry generated from the MSB addition must be added back to the LSB to yield the correct positive magnitude."},
+            {"term": "Discarded Carry", "definition": "In 2's complement subtraction, an end-carry generated from the MSB addition is simply ignored/discarded when the result is positive."},
+            {"term": "Arithmetic Overflow", "definition": "An erroneous condition occurring when an arithmetic operation on two signed numbers of like signs produces a result that exceeds the representable dynamic range, causing the sign bit to flip."},
+            {"term": "Sign-Magnitude", "definition": "A signed format where the leftmost bit indicates the sign (0 for positive, 1 for negative) and the remaining n-1 bits represent the absolute magnitude."},
+            {"term": "Dynamic Range (2's Complement)", "definition": "The span of representable integers for an n-bit word in 2's complement, strictly given by [-2^(n-1), +(2^(n-1) - 1)]. For 8 bits, this is [-128, +127]."},
+            {"term": "Ten's Complement", "definition": "The radix complement in the decimal system, formed by adding 1 to the 9's complement (diminished radix complement) of a number."}
+        ],
+        "questions": [
+            {
+                "id": "ift211-ac-001",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "calculation",
+                "difficulty": 3,
+                "tags": ["2s-complement", "addition", "exam-past-question"],
+                "question": "Perform the arithmetic operation (+44) + (+14) in binary using 8-bit 2's complement representation. (As given in Nile University Final Examination)",
+                "options": [
+                    "00111010",
+                    "00101010",
+                    "01001010",
+                    "00111110"
+                ],
+                "answer": "00111010",
+                "explanation": "Convert both decimal numbers to 8-bit binary:\n+44 = 32 + 8 + 4 = 00101100_2\n+14 = 8 + 4 + 2 = 00001110_2\nPerform binary addition:\n  00101100\n+ 00001110\n----------\n  00111010_2\nCheck: 32 + 16 + 8 + 2 = 58_10. (+44 + +14 = +58). No overflow occurred (sign bit is 0).",
+                "why_wrong": {
+                    "00101010": "Evaluates to 42 in decimal; addition error in bit 4.",
+                    "01001010": "Evaluates to 74 in decimal; extraneous carry generated.",
+                    "00111110": "Evaluates to 62 in decimal."
+                },
+                "marking_points": ["Converts +44 to 00101100_2", "Converts +14 to 00001110_2", "Performs binary addition to yield 00111010_2 (+58)"],
+                "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise I, Q1",
+                "verified": True,
+                "verified_output": "bin(44+14) = 00111010"
+            },
+            {
+                "id": "ift211-ac-002",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "calculation",
+                "difficulty": 3,
+                "tags": ["2s-complement", "subtraction", "exam-past-question"],
+                "question": "Perform the arithmetic operation (+44) + (-14) in binary using 8-bit 2's complement representation. (As given in Nile University Final Examination)",
+                "options": [
+                    "00011110",
+                    "00101110",
+                    "10011110",
+                    "00011100"
+                ],
+                "answer": "00011110",
+                "explanation": "1. Find 8-bit binary for +44: 00101100_2.\n2. Find 8-bit 2's complement for -14:\n   +14 = 00001110_2\n   1's comp = 11110001_2\n   2's comp = 11110001 + 1 = 11110010_2.\n3. Add +44 and -14:\n    00101100\n  + 11110010\n  ----------\n   100011110_2\n4. In 8-bit arithmetic, discard the 9th carry-out bit:\n   Result = 00011110_2.\nCheck: 16 + 8 + 4 + 2 = 30_10 (+44 - 14 = +30).",
+                "why_wrong": {
+                    "00101110": "Evaluates to 46 in decimal; failed to negate 14.",
+                    "10011110": "Includes the carry-out as the MSB, falsely interpreting the result as negative.",
+                    "00011100": "Evaluates to 28 in decimal; off-by-two addition error."
+                },
+                "marking_points": ["Converts -14 to 2's complement 11110010_2", "Adds 00101100 + 11110010", "Discards end-carry to obtain 00011110_2 (+30)"],
+                "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise I, Q1",
+                "verified": True,
+                "verified_output": "bin((44 - 14) & 0xff) = 00011110"
+            },
+            {
+                "id": "ift211-ac-003",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "calculation",
+                "difficulty": 3,
+                "tags": ["subtraction", "binary-borrow", "exam-past-question"],
+                "question": "Perform the binary subtraction 1001000_2 - 111001_2 using direct binary borrowing. (As given in Nile University Final Examination)",
+                "options": [
+                    "0001111",
+                    "0010111",
+                    "0001101",
+                    "0011111"
+                ],
+                "answer": "0001111",
+                "explanation": "Pad 111001 to 7 bits: 0111001_2.\nIn decimal: 1001000_2 = 64 + 8 = 72_10; 0111001_2 = 32 + 16 + 8 + 1 = 57_10.\nDifference = 72 - 57 = 15_10 = 0001111_2.\nColumn-by-column with borrow:\n  1001000\n- 0111001\n---------\nBit 0: 0 - 1 -> borrow from bit 3 (cascade: bit 3 becomes 0, bits 2 and 1 become 1, bit 0 becomes 2) -> 2 - 1 = 1.\nBit 1: 1 - 0 = 1.\nBit 2: 1 - 0 = 1.\nBit 3: 0 - 1 -> borrow from bit 6 -> 2 - 1 = 1.\nBit 4: 1 - 1 = 0.\nBit 5: 1 - 1 = 0.\nBit 6: 0 - 0 = 0.\nResult: 0001111_2 (15_10).",
+                "why_wrong": {
+                    "0010111": "Evaluates to 23; borrowing error at bit 3.",
+                    "0001101": "Evaluates to 13; arithmetic error at bit 1.",
+                    "0011111": "Evaluates to 31; missed propagation of borrow."
+                },
+                "marking_points": ["Aligns 1001000 and 0111001", "Executes borrowing across zeroes correctly", "Arrives at 0001111_2 (15)"],
+                "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise I, Q2",
+                "verified": True,
+                "verified_output": "bin(0b1001000 - 0b111001) = 0b1111"
+            },
+            {
+                "id": "ift211-ac-004",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "calculation",
+                "difficulty": 3,
+                "tags": ["1s-complement", "subtraction", "end-around-carry", "exam-past-question"],
+                "question": "Using the 1's complement method, perform 1001000_2 - 0111001_2. What is the intermediate sum and final result after handling the end-around carry?",
+                "options": [
+                    "Intermediate sum: 10001110; Final result after adding end carry: 0001111",
+                    "Intermediate sum: 10001111; Final result: 0001111 (carry discarded)",
+                    "Intermediate sum: 00001110; Final result: 0001110",
+                    "Intermediate sum: 10011110; Final result: 0011111"
+                ],
+                "answer": "Intermediate sum: 10001110; Final result after adding end carry: 0001111",
+                "explanation": "1. 1's complement of subtrahend 0111001 is 1000110.\n2. Add minuend and 1's complement:\n    1001000\n  + 1000110\n  ---------\n   10001110\n3. Because an end carry (the leading 1) is produced, the result is positive. Add this end-around carry to the LSB:\n    0001110\n  +       1\n  ---------\n    0001111_2 (15_10).",
+                "why_wrong": {
+                    "Intermediate sum: 10001111; Final result: 0001111 (carry discarded)": "This describes 2's complement subtraction, not 1's complement.",
+                    "Intermediate sum: 00001110; Final result: 0001110": "Omits the end-around carry addition.",
+                    "Intermediate sum: 10011110; Final result: 0011111": "Addition error in intermediate stage."
+                },
+                "marking_points": ["Inverts subtrahend to 1000110", "Computes sum 10001110", "Adds end-around carry 1 to LSB to yield 0001111"],
+                "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise I, Q2",
+                "verified": True,
+                "verified_output": "0001110 + 1 = 0001111"
+            },
+            {
+                "id": "ift211-ac-005",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "mcq",
+                "difficulty": 2,
+                "tags": ["zero-representation", "comparison", "concepts"],
+                "question": "Why is the 2's complement representation universally preferred over 1's complement and sign-magnitude in modern digital computer hardware?",
+                "options": [
+                    "It has only one unique representation for zero (00000000) and standard binary addition hardware directly performs subtraction.",
+                    "It can represent twice as many positive numbers as 1's complement.",
+                    "It eliminates the need for binary logic gates in arithmetic units.",
+                    "It does not require carry propagation across bits during addition."
+                ],
+                "answer": "It has only one unique representation for zero (00000000) and standard binary addition hardware directly performs subtraction.",
+                "explanation": "Sign-magnitude and 1's complement suffer from two zeroes (+0 and -0), which complicates equality comparison logic. Furthermore, 1's complement requires end-around carry circuitry. 2's complement has a single zero and allows the exact same adder circuit to perform A - B by computing A + (-B).",
+                "why_wrong": {
+                    "It can represent twice as many positive numbers as 1's complement.": "The positive range is identical: 0 to +(2^(n-1) - 1). 2's complement only gains one extra negative number (-2^(n-1)).",
+                    "It eliminates the need for binary logic gates in arithmetic units.": "Logic gates are fundamentally required in all digital hardware.",
+                    "It does not require carry propagation across bits during addition.": "Addition still requires carry propagation (ripple-carry or carry-lookahead)."
+                },
+                "marking_points": ["Identifies single representation of zero", "Identifies adder reuse for subtraction"],
+                "source": "Digital Logic Lecture Note, Page 7-8",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-006",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "calculation",
+                "difficulty": 3,
+                "tags": ["overflow", "2s-complement", "range"],
+                "question": "In an 8-bit 2's complement arithmetic logic unit (ALU), what happens when the operation (+80) + (+70) is performed?",
+                "options": [
+                    "An arithmetic overflow occurs: 01010000 + 01000110 = 10010110, which yields a negative result (-106) instead of +150.",
+                    "No overflow occurs; the result is correctly represented as positive 150.",
+                    "The ALU halts with a division-by-zero hardware exception.",
+                    "The result wraps around to 00000000."
+                ],
+                "answer": "An arithmetic overflow occurs: 01010000 + 01000110 = 10010110, which yields a negative result (-106) instead of +150.",
+                "explanation": "In 8-bit 2's complement, the maximum representable positive number is +(2^7 - 1) = +127. Adding +80 (01010000) and +70 (01000110) yields 10010110_2. The MSB is 1, meaning the hardware interprets this as negative: -(2's comp of 10010110) = -(01101001 + 1) = -106_10. Because two positive operands yielded a negative result, an overflow flag is set.",
+                "why_wrong": {
+                    "No overflow occurs; the result is correctly represented as positive 150.": "8-bit signed range cannot exceed +127; 150 cannot fit.",
+                    "The ALU halts with a division-by-zero hardware exception.": "This is an addition operation, not division.",
+                    "The result wraps around to 00000000.": "Wrap-around yields 10010110 (-106), not zero."
+                },
+                "marking_points": ["Calculates 80 + 70 = 150 which exceeds +127", "Identifies sum 10010110 as negative (-106)", "Flags overflow condition"],
+                "source": "Digital Logic Lecture Note, Page 8",
+                "verified": True,
+                "verified_output": "0x50 + 0x46 = 0x96 = -106 (signed 8-bit)"
+            },
+            {
+                "id": "ift211-ac-007",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "mcq",
+                "difficulty": 2,
+                "tags": ["range", "formulas", "2s-complement"],
+                "question": "What is the representable integer dynamic range for an n-bit word using 2's complement representation?",
+                "options": [
+                    "-2^(n-1) to +(2^(n-1) - 1)",
+                    "-(2^(n-1) - 1) to +(2^(n-1) - 1)",
+                    "-2^n to +(2^n - 1)",
+                    "0 to 2^n - 1"
+                ],
+                "answer": "-2^(n-1) to +(2^(n-1) - 1)",
+                "explanation": "Because 2's complement has only one zero (00...0), the unused bit pattern 100...0 represents one additional negative number: -2^(n-1). Thus, the range is -2^(n-1) to +(2^(n-1) - 1).",
+                "why_wrong": {
+                    "-(2^(n-1) - 1) to +(2^(n-1) - 1)": "This is the symmetric range for 1's complement and sign-magnitude due to dual zeroes.",
+                    "-2^n to +(2^n - 1)": "Requires n+1 bits.",
+                    "0 to 2^n - 1": "This is the range for unsigned n-bit integers."
+                },
+                "marking_points": ["Recalls asymmetric range [-2^(n-1), +(2^(n-1) - 1)]"],
+                "source": "Digital Logic Lecture Note, Page 6-7",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-008",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "calculation",
+                "difficulty": 3,
+                "tags": ["10s-complement", "decimal-subtraction"],
+                "question": "Using the 10's complement method, perform the decimal subtraction: 48032 - 391. (As worked in lecture notes)",
+                "options": [
+                    "47641",
+                    "47642",
+                    "48423",
+                    "46641"
+                ],
+                "answer": "47641",
+                "explanation": "1. Equalize digit length: minuend x = 48032 (5 digits); subtrahend y = 00391 (pad with leading zeros).\n2. 9's complement of 00391 = 99999 - 00391 = 99608.\n3. 10's complement of y = 99608 + 1 = 99609.\n4. Add x and 10's complement of y:\n    48032\n  + 99609\n  -------\n   147641\n5. Drop the leading carry '1': Result = 47641.",
+                "why_wrong": {
+                    "47642": "Added 1 twice.",
+                    "48423": "Added rather than subtracted.",
+                    "46641": "Borrow error in manual subtraction."
+                },
+                "marking_points": ["Pads subtrahend to 00391", "Computes 10's complement as 99609", "Sums to 147641 and drops leading 1 to get 47641"],
+                "source": "Digital Logic Lecture Note, Page 6",
+                "verified": True,
+                "verified_output": "48032 - 391 = 47641"
+            },
+            {
+                "id": "ift211-ac-009",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "mcq",
+                "difficulty": 2,
+                "tags": ["overflow-detection", "hardware", "logic"],
+                "question": "In digital hardware, how is an arithmetic overflow in 2's complement addition detected using carry bits?",
+                "options": [
+                    "Overflow = Carry-in into MSB XOR Carry-out from MSB (C_in ^ C_out)",
+                    "Overflow = Carry-out from MSB AND Carry-in into MSB",
+                    "Overflow occurs whenever there is a carry-out from the MSB",
+                    "Overflow occurs whenever the result is zero"
+                ],
+                "answer": "Overflow = Carry-in into MSB XOR Carry-out from MSB (C_in ^ C_out)",
+                "explanation": "Overflow occurs when the sign bit receives an improper carry. If there is a carry into the MSB without a carry out, or a carry out without a carry in, C_in != C_out, so C_in XOR C_out = 1. A normal positive carry produces both a carry-in and carry-out, yielding XOR = 0 (no overflow).",
+                "why_wrong": {
+                    "Overflow = Carry-out from MSB AND Carry-in into MSB": "When both are 1, no overflow has occurred (e.g. -1 + -1 = -2).",
+                    "Overflow occurs whenever there is a carry-out from the MSB": "Carry-out occurs in virtually all negative additions without implying overflow (e.g. -5 + +10 has carry out = 1, but result +5 is correct).",
+                    "Overflow occurs whenever the result is zero": "Zero is a valid result within range."
+                },
+                "marking_points": ["Identifies XOR between C_in and C_out of MSB"],
+                "source": "Digital Logic Lecture Note, Page 8",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-010",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "explain",
+                "difficulty": 3,
+                "tags": ["subtraction-comparison", "exam-written"],
+                "question": "Compare the handling of the end-carry bit between 1's complement subtraction and 2's complement subtraction when subtracting a smaller number from a larger positive number.",
+                "options": [],
+                "answer": "In 1's complement subtraction, an end-carry generated from the MSB indicates a positive result, and this end-carry must be added back to the least significant bit (LSB) — a process known as 'end-around carry' — to obtain the exact magnitude. In 2's complement subtraction, an end-carry generated from the MSB also confirms a positive result, but this carry is simply ignored or discarded because adding 1 was already incorporated when forming the 2's complement before the addition.",
+                "explanation": "Because 2's complement is 1's complement + 1, the '+1' is already embedded in the subtrahend, so no end-around carry is needed.",
+                "why_wrong": {},
+                "marking_points": [
+                    "States 1's complement requires adding end-carry to LSB (end-around carry)",
+                    "States 2's complement simply discards the end-carry",
+                    "Notes that in both methods an end carry signifies a positive result",
+                    "Explains that 2's complement pre-adds 1 during complementation"
+                ],
+                "source": "Digital Logic Lecture Note, Page 6-7",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-011",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "calculation",
+                "difficulty": 2,
+                "tags": ["sign-magnitude", "encoding"],
+                "question": "How are (+12)_10 and (-12)_10 represented in an 8-bit sign-magnitude format?",
+                "options": [
+                    "(+12) = 00001100, (-12) = 10001100",
+                    "(+12) = 00001100, (-12) = 11110011",
+                    "(+12) = 00001100, (-12) = 11110100",
+                    "(+12) = 10001100, (-12) = 00001100"
+                ],
+                "answer": "(+12) = 00001100, (-12) = 10001100",
+                "explanation": "In 8-bit sign-magnitude, the leftmost bit is the sign (0 for +, 1 for -) and the remaining 7 bits store the binary magnitude of 12 (0001100_2). Thus, +12 = 00001100 and -12 = 10001100.",
+                "why_wrong": {
+                    "(+12) = 00001100, (-12) = 11110011": "11110011 is 1's complement representation.",
+                    "(+12) = 00001100, (-12) = 11110100": "11110100 is 2's complement representation.",
+                    "(+12) = 10001100, (-12) = 00001100": "Reverses the sign bit convention."
+                },
+                "marking_points": ["Maintains magnitude 0001100", "Uses MSB 0 for + and MSB 1 for -"],
+                "source": "Digital Logic Lecture Note, Page 7",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-012",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "calculation",
+                "difficulty": 2,
+                "tags": ["1s-complement", "encoding"],
+                "question": "How is (-12)_10 represented in an 8-bit 1's complement format?",
+                "options": [
+                    "11110011",
+                    "10001100",
+                    "11110100",
+                    "11110010"
+                ],
+                "answer": "11110011",
+                "explanation": "+12 in 8-bit binary is 00001100. Inverting all 8 bits gives 11110011_2, which is the 1's complement representation of -12.",
+                "why_wrong": {
+                    "10001100": "Sign-magnitude representation of -12.",
+                    "11110100": "2's complement representation of -12.",
+                    "11110010": "Mis-inversion at bit 1."
+                },
+                "marking_points": ["Inverts all 8 bits of 00001100 to yield 11110011"],
+                "source": "Digital Logic Lecture Note, Page 7",
+                "verified": True,
+                "verified_output": "~0b00001100 & 0xff = 0b11110011"
+            },
+            {
+                "id": "ift211-ac-013",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "matching",
+                "difficulty": 2,
+                "tags": ["representations", "zero-matching"],
+                "question": "Match each signed numeral system to its representation(s) of zero in an 8-bit word:",
+                "options": [
+                    "Sign-Magnitude: 00000000 (+0) and 10000000 (-0); 1's Complement: 00000000 (+0) and 11111111 (-0); 2's Complement: 00000000 only",
+                    "Sign-Magnitude: 00000000 only; 1's Complement: 11111111 only; 2's Complement: 00000000 and 10000000",
+                    "Sign-Magnitude: 11111111 and 00000000; 1's Complement: 00000000 only; 2's Complement: 10000000 only",
+                    "Sign-Magnitude: 00000000 only; 1's Complement: 00000000 only; 2's Complement: 00000000 only"
+                ],
+                "answer": "Sign-Magnitude: 00000000 (+0) and 10000000 (-0); 1's Complement: 00000000 (+0) and 11111111 (-0); 2's Complement: 00000000 only",
+                "explanation": "Sign-magnitude negates by setting MSB=1 (giving 10000000 for -0). 1's complement inverts all bits (giving 11111111 for -0). 2's complement adds 1 to 11111111, producing 100000000 which discards the 9th bit to leave 00000000, leaving exactly one zero.",
+                "why_wrong": {
+                    "Sign-Magnitude: 00000000 only...": "Sign-magnitude has two distinct zeros.",
+                    "Sign-Magnitude: 11111111 and 00000000...": "11111111 is 1's complement, not sign-magnitude.",
+                    "Sign-Magnitude: 00000000 only; 1's Complement: 00000000 only...": "Fails to identify dual-zero redundancy."
+                },
+                "marking_points": ["Correctly associates zero bit patterns across all three systems"],
+                "source": "Digital Logic Lecture Note, Page 6-7",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-014",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "cloze",
+                "difficulty": 2,
+                "tags": ["cloze", "complement-shortcut"],
+                "question": "A fast shortcut to find the 2's complement of a binary number directly without inverting and adding 1 is: starting from the least significant bit (rightmost bit), leave all zeros and the ___ unchanged, and then ___ all remaining bits to the left.",
+                "options": [
+                    "first 1; invert",
+                    "first 0; keep",
+                    "last 1; duplicate",
+                    "MSB; shift"
+                ],
+                "answer": "first 1; invert",
+                "explanation": "Inspection shortcut: scan from right to left. Leave all trailing zeros and the very first '1' untouched. Then invert every subsequent bit to the left of that first '1'. For example: 01011000 -> trailing 000 and first 1 stay '1000'; remaining 0101 inverts to 1010 -> 10101000_2.",
+                "why_wrong": {
+                    "first 0; keep": "Incorrect logic.",
+                    "last 1; duplicate": "Wrong direction.",
+                    "MSB; shift": "Shifting changes magnitude."
+                },
+                "marking_points": ["Identifies 'first 1' preservation and 'invert' remaining bits"],
+                "source": "Digital Logic Lecture Note, Page 7",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            # Flashcards for Topic 2
+            {
+                "id": "ift211-ac-fc01",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "negation", "2s-comp"],
+                "question": "How do you form the 2's complement of a binary number?",
+                "options": [],
+                "answer": "Invert all bits (form 1's complement), then add 1 to the least significant bit (LSB).",
+                "explanation": "Shortcut: copy bits from right to left up to and including the first 1, then invert all remaining bits.",
+                "why_wrong": {},
+                "marking_points": ["Invert bits and add 1"],
+                "source": "Digital Logic Lecture Note, Page 7",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-fc02",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "range", "8-bit"],
+                "question": "What are the minimum and maximum decimal values representable in an 8-bit 2's complement system?",
+                "options": [],
+                "answer": "Minimum: -128 (10000000_2)\nMaximum: +127 (01111111_2)",
+                "explanation": "Range is [-2^7, +(2^7 - 1)] = [-128, +127].",
+                "why_wrong": {},
+                "marking_points": ["States -128 to +127"],
+                "source": "Digital Logic Lecture Note, Page 7",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-fc03",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "overflow", "conditions"],
+                "question": "Under what circumstance can arithmetic overflow occur during addition in 2's complement?",
+                "options": [],
+                "answer": "Overflow can occur ONLY when adding two numbers of the SAME sign: two positives yielding a negative, or two negatives yielding a positive. Adding numbers of opposite signs NEVER overflows.",
+                "explanation": "Opposite signs result in a sum whose absolute magnitude is smaller than the largest operand.",
+                "why_wrong": {},
+                "marking_points": ["States only occurs when adding operands of like signs"],
+                "source": "Digital Logic Lecture Note, Page 8",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-fc04",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "zero", "comparison"],
+                "question": "How many representations of zero exist in Sign-Magnitude, 1's Complement, and 2's Complement?",
+                "options": [],
+                "answer": "Sign-Magnitude: 2 (+0 and -0)\n1's Complement: 2 (+0 and -0)\n2's Complement: 1 unique zero (00000000)",
+                "explanation": "The single zero of 2's complement eliminates test ambiguity.",
+                "why_wrong": {},
+                "marking_points": ["Identifies two zeroes in sign-mag and 1's comp, one in 2's comp"],
+                "source": "Digital Logic Lecture Note, Page 6-7",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-fc05",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "subtraction", "1s-comp"],
+                "question": "In 1's complement subtraction, what does an end-carry signify, and what action must be taken?",
+                "options": [],
+                "answer": "An end-carry signifies that the result is POSITIVE. The carry must be added back to the LSB (end-around carry).",
+                "explanation": "If no carry is generated, the result is negative, and taking the 1's complement of the sum reveals its magnitude.",
+                "why_wrong": {},
+                "marking_points": ["States positive result and end-around carry addition"],
+                "source": "Digital Logic Lecture Note, Page 6",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-fc06",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "subtraction", "2s-comp"],
+                "question": "In 2's complement subtraction, what does an end-carry signify, and what action must be taken?",
+                "options": [],
+                "answer": "An end-carry signifies that the result is POSITIVE. The carry is simply DISCARDED.",
+                "explanation": "If no carry is generated, the result is negative; taking the 2's complement of the sum gives the true magnitude.",
+                "why_wrong": {},
+                "marking_points": ["States positive result and carry is discarded"],
+                "source": "Digital Logic Lecture Note, Page 6",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-fc07",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "diminished-radix", "definition"],
+                "question": "What is the diminished radix complement of a decimal number called, and how is it found?",
+                "options": [],
+                "answer": "The 9's complement. It is found by subtracting each digit of the number from 9.",
+                "explanation": "Formula: (10^n - 1) - N, which equals a string of 9s minus the number.",
+                "why_wrong": {},
+                "marking_points": ["Names 9's complement and subtract each digit from 9"],
+                "source": "Digital Logic Lecture Note, Page 6",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "ift211-ac-fc08",
+                "course": "IFT 211",
+                "topic": "Binary Arithmetic & Complements",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "radix-comp", "definition"],
+                "question": "What is the relationship between the radix complement and the diminished radix complement in any base?",
+                "options": [],
+                "answer": "Radix Complement = Diminished Radix Complement + 1.",
+                "explanation": "Example: 10's complement = 9's complement + 1; 2's complement = 1's complement + 1.",
+                "why_wrong": {},
+                "marking_points": ["States Radix Comp = Diminished Radix Comp + 1"],
+                "source": "Digital Logic Lecture Note, Page 6",
+                "verified": True,
+                "verified_output": "N/A"
+            }
+        ],
+        "case_studies": [
+            {
+                "id": "ift211-ac-cs01",
+                "scenario": "An aerospace computing student at Nile University is programming an 8-bit flight guidance microcontroller. Flight sensor altitude adjustments require adding and subtracting signed coordinate corrections (+44, +14, -14, and -44 meters). The ALU executes arithmetic strictly in 8-bit 2's complement.",
+                "sub_questions": [
+                    {
+                        "id": "ift211-ac-cs01-q1",
+                        "course": "IFT 211",
+                        "topic": "Binary Arithmetic & Complements",
+                        "type": "calculation",
+                        "difficulty": 3,
+                        "tags": ["case-study", "2s-complement", "negative-addition"],
+                        "question": "What 8-bit binary pattern results when the altitude calculator adds (-44) + (-14)?",
+                        "options": [
+                            "11000110",
+                            "00111010",
+                            "11000111",
+                            "10111010"
+                        ],
+                        "answer": "11000110",
+                        "explanation": "1. Find -44 in 8-bit 2's complement:\n   +44 = 00101100_2 -> 1's comp = 11010011 -> 2's comp = 11010100_2.\n2. Find -14 in 8-bit 2's complement:\n   +14 = 00001110_2 -> 1's comp = 11110001 -> 2's comp = 11110010_2.\n3. Add:\n    11010100 (-44)\n  + 11110010 (-14)\n  ---------------\n   111000110\n4. Discard 9th carry bit: 11000110_2.\nCheck: 2's comp of 11000110 is 00111001 + 1 = 00111010_2 = 58. Since MSB=1, value is -58_10.",
+                        "why_wrong": {
+                            "00111010": "Positive 58; omitted negative sign encoding.",
+                            "11000111": "Off-by-one in LSB addition.",
+                            "10111010": "Signed magnitude representation (-58), not 2's complement."
+                        },
+                        "marking_points": ["Converts -44 to 11010100", "Converts -14 to 11110010", "Adds and discards end-carry to yield 11000110 (-58)"],
+                        "source": "Nile University Exam Scenario",
+                        "verified": True,
+                        "verified_output": "bin((-44 - 14) & 0xff) = 11000110"
+                    },
+                    {
+                        "id": "ift211-ac-cs01-q2",
+                        "course": "IFT 211",
+                        "topic": "Binary Arithmetic & Complements",
+                        "type": "mcq",
+                        "difficulty": 3,
+                        "tags": ["case-study", "overflow", "range"],
+                        "question": "If an altitude sensor correction attempts to calculate (-70) + (-65) in this 8-bit system, what occurs?",
+                        "options": [
+                            "Overflow occurs: the sum -135 falls outside the representable range [-128, +127], resulting in a positive number (+121).",
+                            "No overflow occurs; the result is correctly stored as negative 135.",
+                            "The system clips the value to -128 automatically.",
+                            "Underflow exception is thrown because both numbers are negative."
+                        ],
+                        "answer": "Overflow occurs: the sum -135 falls outside the representable range [-128, +127], resulting in a positive number (+121).",
+                        "explanation": "The minimum 8-bit signed integer is -128. Adding -70 (10111010) and -65 (10111111) gives sum -135. In binary: 10111010 + 10111111 = 101111001. Discarding end-carry yields 01111001_2 = +121_10 (MSB flipped to 0). Adding two negative numbers resulting in a positive number triggers the arithmetic overflow flag.",
+                        "why_wrong": {
+                            "No overflow occurs; the result is correctly stored as negative 135.": "8-bit signed words cannot represent -135.",
+                            "The system clips the value to -128 automatically.": "Standard ALUs wrap around unless saturating arithmetic logic is explicitly implemented.",
+                            "Underflow exception is thrown because both numbers are negative.": "Underflow occurs in floating-point when magnitude is too small near zero; this is integer overflow."
+                        },
+                        "marking_points": ["Identifies -135 < -128 boundary violation", "Explains sign bit flips to positive 01111001 (+121)", "Confirms overflow flag"],
+                        "source": "Digital Logic Lecture Note, Page 8",
+                        "verified": True,
+                        "verified_output": "(-70 - 65) & 0xff = 0x79 = +121"
+                    }
+                ]
+            },
+            {
+                "id": "ift211-ac-cs02",
+                "scenario": "A digital telecommunications receiver buffer contains two 7-bit words: X = 0111001_2 (57 decimal) and Y = 1001000_2 (72 decimal). The packet header processor must compute X - Y (a negative outcome) using 2's complement subtraction.",
+                "sub_questions": [
+                    {
+                        "id": "ift211-ac-cs02-q1",
+                        "course": "IFT 211",
+                        "topic": "Binary Arithmetic & Complements",
+                        "type": "calculation",
+                        "difficulty": 4,
+                        "tags": ["case-study", "2s-comp-subtraction", "negative-result"],
+                        "question": "What 7-bit binary word is obtained when computing X + (2's complement of Y)?",
+                        "options": [
+                            "1110001",
+                            "0001111",
+                            "1000111",
+                            "1100001"
+                        ],
+                        "answer": "1110001",
+                        "explanation": "1. Y = 1001000_2 (72_10).\n2. Form 7-bit 2's complement of Y:\n   1's comp = 0110111\n   2's comp = 0110111 + 1 = 0111000_2.\n3. Add X (0111001) + 2's comp of Y (0111000):\n    0111001\n  + 0111000\n  ---------\n    1110001_2.\nNotice NO end-carry is generated, confirming the result is negative.",
+                        "why_wrong": {
+                            "0001111": "This is the absolute magnitude (+15), not the 2's complement encoded negative result.",
+                            "1000111": "Incorrect addition.",
+                            "1100001": "Missed carry at bit 4."
+                        },
+                        "marking_points": ["Finds 2's comp of 1001000 as 0111000", "Adds 0111001 + 0111000 to get 1110001", "Notes absence of end-carry"],
+                        "source": "Nile University Exam Scenario (Reversed Exercise I Q2)",
+                        "verified": True,
+                        "verified_output": "bin((57 - 72) & 0x7f) = 1110001"
+                    },
+                    {
+                        "id": "ift211-ac-cs02-q2",
+                        "course": "IFT 211",
+                        "topic": "Binary Arithmetic & Complements",
+                        "type": "explain",
+                        "difficulty": 4,
+                        "tags": ["case-study", "negative-interpretation", "2s-comp"],
+                        "question": "How does the receiver convert the raw sum 1110001_2 into its final true signed decimal value?",
+                        "options": [],
+                        "answer": "Because no end-carry was generated during addition, the result is negative. To find the true decimal magnitude, take the 2's complement of the sum: invert 1110001 to get 0001110, then add 1 to get 0001111_2 (which equals 15 decimal). Finally, prepend the negative sign, yielding -15 decimal (confirming 57 - 72 = -15).",
+                        "explanation": "When A < B in 2's complement subtraction, no carry is produced, and the result is in 2's complement form.",
+                        "why_wrong": {},
+                        "marking_points": [
+                            "Observes that absence of end-carry confirms negative result",
+                            "Inverts 1110001 to 0001110",
+                            "Adds 1 to reach 0001111 (15 decimal)",
+                            "Concludes final result is -15"
+                        ],
+                        "source": "Digital Logic Lecture Note, Page 6-7",
+                        "verified": True,
+                        "verified_output": "N/A"
+                    }
+                ]
+            }
+        ]
+    }
+
+    out_file = r'c:\Users\Collins Ibilibor\Downloads\Study Buddy\app\content\IFT 211\arithmetic_complements.json'
+    with open(out_file, 'w', encoding='utf-8') as f:
+        json.dump(topic_data, f, indent=2)
+
+    total_qs = len(topic_data['questions']) + sum(len(cs.get('sub_questions', [])) for cs in topic_data.get('case_studies', []))
+    print(f"Successfully generated {out_file} with {total_qs} total questions ({len(topic_data['questions'])} main, {len(topic_data['case_studies'])} case studies).")
+
+if __name__ == '__main__':
+    build_topic2()

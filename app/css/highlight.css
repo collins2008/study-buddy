@@ -1,0 +1,46 @@
+/* Syntax Highlighting Styles (Offline) */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1rem;
+  background: #0d0d18;
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Cascadia Code', Consolas, Monaco, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-radius: 8px;
+}
+
+.hljs-keyword, .hljs-selector-tag, .hljs-subst {
+  color: #c792ea;
+  font-weight: 600;
+}
+
+.hljs-string, .hljs-title, .hljs-section, .hljs-attribute, .hljs-literal, .hljs-template-tag, .hljs-template-variable, .hljs-type {
+  color: #c3e88d;
+}
+
+.hljs-comment, .hljs-quote, .hljs-deletion, .hljs-meta {
+  color: #637777;
+  font-style: italic;
+}
+
+.hljs-number, .hljs-regexp, .hljs-link {
+  color: #f78c6c;
+}
+
+.hljs-variable, .hljs-name, .hljs-tag {
+  color: #ff5370;
+}
+
+.hljs-function, .hljs-class .hljs-title {
+  color: #82aaff;
+}
+
+.hljs-attr {
+  color: #ffcb6b;
+}
+
+.hljs-built_in, .hljs-symbol, .hljs-bullet {
+  color: #89ddff;
+}

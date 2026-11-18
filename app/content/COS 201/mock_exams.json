@@ -1,0 +1,2474 @@
+{
+  "course": "COS 201",
+  "title": "Computer Programming I (C Language)",
+  "exams": [
+    {
+      "id": "cos201-mock-01",
+      "title": "Mock Exam 1: Nile Midterm Official Blueprint Simulator",
+      "description": "Standard 40-question midterm simulation adhering to Nile University Department of Software Engineering standards. Covers all 9 topics with proportional weighting.",
+      "duration_minutes": 60,
+      "total_marks": 40,
+      "passing_score": 20,
+      "question_count": 40,
+      "questions": [
+        {
+          "id": "cos201-dt-001",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "syntax",
+            "declarations",
+            "midterm-past-q"
+          ],
+          "question": "Which of the following is the correct way to declare a float variable in C?",
+          "options": [
+            "float x;",
+            "int x;",
+            "float x();",
+            "double x;"
+          ],
+          "answer": 0,
+          "explanation": "In C, declaring a single-precision floating-point variable requires the keyword 'float' followed by a valid identifier and a statement terminator semicolon (;). 'float x();' declares a function prototype taking no specified arguments and returning float.",
+          "why_wrong": {
+            "1": "'int x;' declares an integer variable, not a floating-point variable.",
+            "2": "'float x();' declares a function prototype that returns float, not a variable.",
+            "3": "'double x;' declares a double-precision floating-point variable, which typically occupies 8 bytes rather than the standard 4-byte float."
+          },
+          "source": "COS 201 Midterm Type B, Q1; Deitel Ch 2.3",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "data_types_variables"
+        },
+        {
+          "id": "cos201-dt-006",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "type-casting",
+            "truncation",
+            "printf"
+          ],
+          "question": "What will be the exact output of the following C program?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int a = 5.95;\n    float b = 2;\n    printf(\"%d, %.1f\\n\", a, b);\n    return 0;\n}",
+          "options": [
+            "5, 2.0",
+            "6, 2.0",
+            "5, 2",
+            "Compilation Error"
+          ],
+          "answer": 0,
+          "explanation": "When the floating-point literal 5.95 is assigned to the integer variable 'a', C performs implicit truncation (discarding the fractional part), resulting in 5 (no rounding). The integer 2 assigned to float 'b' becomes 2.0f, and '%.1f' prints it with 1 decimal place as 2.0.",
+          "why_wrong": {
+            "1": "C integer assignment does NOT round up to 6; it strictly truncates toward zero.",
+            "2": "'%.1f' requires printing one decimal digit, so it outputs '2.0', not '2'.",
+            "3": "Implicit narrowing conversions are standard in C and generate at most a warning, not a compilation error."
+          },
+          "source": "Deitel Ch 2.5, 3.8",
+          "verified": true,
+          "verified_output": "5, 2.0\n",
+          "topic_slug": "data_types_variables"
+        },
+        {
+          "id": "cos201-dt-011",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "code_output",
+          "difficulty": 2,
+          "tags": [
+            "escape-sequences",
+            "printf"
+          ],
+          "question": "What is the output of the following printf statement in C?",
+          "code": "#include <stdio.h>\nint main(void) {\n    printf(\"\\\"A\\\\B\\\"\\n\");\n    return 0;\n}",
+          "options": [
+            "\"A\\B\"",
+            "\\\"A\\\\B\\\"",
+            "A\\B",
+            "\"AB\""
+          ],
+          "answer": 0,
+          "explanation": "The escape sequence \\\" prints a literal double quote (\"), and \\\\ prints a literal single backslash (\\). Thus, \"\\\"A\\\\B\\\"\\n\" outputs: \"A\\B\" followed by a newline.",
+          "why_wrong": {
+            "1": "The backslashes act as escape indicators and are not printed verbatim when preceding '\"' or '\\'.",
+            "2": "The escaped quotes are printed; they are not stripped.",
+            "3": "The single backslash between A and B is printed."
+          },
+          "source": "Deitel Fig 2.2",
+          "verified": true,
+          "verified_output": "\"A\\B\"\n",
+          "topic_slug": "data_types_variables"
+        },
+        {
+          "id": "cos201-dt-020",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "sequencing",
+          "difficulty": 2,
+          "tags": [
+            "sequencing",
+            "lifecycle"
+          ],
+          "question": "Order the lifecycle steps of a C variable from source definition to value retrieval:",
+          "steps": [
+            "Specify variable name and data type in declaration",
+            "Compiler allocates memory storage at a specific address",
+            "Initialize variable with an initial value or input via scanf",
+            "Retrieve or evaluate variable value in expressions or printf"
+          ],
+          "explanation": "A variable must first be declared/defined with a type and identifier. The compiler allocates its memory offset. It is then initialized (or written into), and subsequently read during expressions or output.",
+          "why_wrong": {},
+          "source": "Deitel Ch 2.3, 2.4",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "data_types_variables"
+        },
+        {
+          "id": "cos201-op-001",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_output",
+          "difficulty": 2,
+          "tags": [
+            "increment",
+            "pre-increment",
+            "midterm-past-q"
+          ],
+          "question": "What will be the output of the following C code?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int x = 2;\n    printf(\"%d\\n\", ++x);\n    return 0;\n}",
+          "options": [
+            "2",
+            "3",
+            "1",
+            "Error"
+          ],
+          "answer": 1,
+          "explanation": "'++x' is a pre-increment operator. It increments the value of 'x' from 2 to 3 first, and then supplies the updated value 3 to printf.",
+          "why_wrong": {
+            "0": "2 would be the output if post-increment 'x++' were used.",
+            "2": "Pre-increment adds 1 to x, it does not subtract.",
+            "3": "Pre-increment inside printf is standard, valid C syntax."
+          },
+          "source": "COS 201 Midterm Type B, Q3; Deitel Ch 3.12",
+          "verified": true,
+          "verified_output": "3\n",
+          "topic_slug": "operators_expressions"
+        },
+        {
+          "id": "cos201-op-007",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "increment",
+            "syntax",
+            "midterm-past-q"
+          ],
+          "question": "Which of the following is correct to increment an integer variable x by 1 in C?",
+          "options": [
+            "x = x + 1;",
+            "x++;",
+            "++x;",
+            "All of the above"
+          ],
+          "answer": 3,
+          "explanation": "In standalone statements, all three constructs ('x = x + 1;', 'x++;', and '++x;') increment the value stored in variable x by exactly 1.",
+          "why_wrong": {
+            "0": "While correct, options B and C are also fully valid.",
+            "1": "While correct, options A and C are also fully valid.",
+            "2": "While correct, options A and B are also fully valid."
+          },
+          "source": "COS 201 Midterm Type B, Q20; Deitel Ch 3.12",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "operators_expressions"
+        },
+        {
+          "id": "cos201-op-012",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "increment",
+            "compound-assignment",
+            "midterm-past-q"
+          ],
+          "question": "Which of the following is correct to increment a variable x by 2 in C?",
+          "options": [
+            "x += 2;",
+            "x = x + 2;",
+            "x++ + x++;",
+            "Both A and B"
+          ],
+          "answer": 3,
+          "explanation": "Both 'x += 2;' (compound addition assignment) and 'x = x + 2;' cleanly increment x by 2. Writing 'x++ + x++;' modifies x multiple times in an unsequenced expression, which causes Undefined Behavior in C.",
+          "why_wrong": {
+            "0": "'x += 2;' is correct, but 'x = x + 2;' is also correct, making 'Both A and B' the comprehensive choice.",
+            "1": "'x = x + 2;' is correct, but 'x += 2;' is also correct.",
+            "2": "'x++ + x++;' invokes undefined behavior due to modifying the same scalar variable twice without an intervening sequence point."
+          },
+          "source": "COS 201 Midterm Type B, Q34; Deitel Ch 3.11",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "operators_expressions"
+        },
+        {
+          "id": "cos201-op-021",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_write",
+          "difficulty": 3,
+          "tags": [
+            "code_write",
+            "ternary"
+          ],
+          "question": "Write a complete C main function that declares three integer variables: num1 = 45, num2 = 72, and max. Using a single ternary operator expression, assign the larger of num1 and num2 to max, and print 'Max: %d\\n'.",
+          "code_lang": "c",
+          "reference_solution": "#include <stdio.h>\nint main(void) {\n    int num1 = 45;\n    int num2 = 72;\n    int max = (num1 > num2) ? num1 : num2;\n    printf(\"Max: %d\\n\", max);\n    return 0;\n}",
+          "marking_points": [
+            "Declares num1 = 45 and num2 = 72",
+            "Uses ternary operator (num1 > num2) ? num1 : num2",
+            "Assigns result to variable max",
+            "Prints result using printf with format specifier %d",
+            "Returns 0 from main"
+          ],
+          "explanation": "Demonstrates concise conditional selection using the ternary operator without if-else statements.",
+          "why_wrong": {},
+          "source": "Deitel Ch 3.5",
+          "verified": true,
+          "verified_output": "Max: 72\n",
+          "topic_slug": "operators_expressions"
+        },
+        {
+          "id": "cos201-cf-001",
+          "course": "COS 201",
+          "topic": "control_flow_selection",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "syntax",
+            "if-else",
+            "midterm-past-q"
+          ],
+          "question": "Which of the following is the correct syntax for an if-else if-else structure in C?",
+          "options": [
+            "if (condition) {} else if (condition) {} else {}",
+            "if (condition) {} elseif (condition) {} else {}",
+            "if condition {} else if condition {} else {}",
+            "if () {} else () {} elseif () {}"
+          ],
+          "answer": 0,
+          "explanation": "In C, conditions must be enclosed in parentheses '()', the keyword is 'else if' (two separate words, not 'elseif'), and optional compound statements are enclosed in braces '{}'.",
+          "why_wrong": {
+            "1": "'elseif' is a single word used in PHP/Visual Basic; C strictly uses two words: 'else if'.",
+            "2": "C requires parentheses around conditions; omitting them is a syntax error.",
+            "3": "'else' does not take a condition, and 'elseif' is not a C keyword."
+          },
+          "source": "COS 201 Midterm Type B, Q12; Deitel Ch 3.6",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "control_flow_selection"
+        },
+        {
+          "id": "cos201-cf-005",
+          "course": "COS 201",
+          "topic": "control_flow_selection",
+          "type": "code_output",
+          "difficulty": 2,
+          "tags": [
+            "switch",
+            "default",
+            "midterm-past-q"
+          ],
+          "question": "What will be the output of the following C code?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int x = 3;\n    switch (x) {\n        case 1:\n            printf(\"One\\n\");\n            break;\n        case 2:\n            printf(\"Two\\n\");\n            break;\n        default:\n            printf(\"Other\\n\");\n    }\n    return 0;\n}",
+          "options": [
+            "One",
+            "Two",
+            "Other",
+            "Error"
+          ],
+          "answer": 2,
+          "explanation": "The value of 'x' is 3. Neither 'case 1:' nor 'case 2:' matches. Control transfers to the 'default:' label, printing 'Other'.",
+          "why_wrong": {
+            "0": "Case 1 does not match x = 3.",
+            "1": "Case 2 does not match x = 3.",
+            "3": "Default handling is a core feature of switch statements, not an error."
+          },
+          "source": "COS 201 Midterm Type B, Q37; Deitel Ch 4.7",
+          "verified": true,
+          "verified_output": "Other\n",
+          "topic_slug": "control_flow_selection"
+        },
+        {
+          "id": "cos201-cf-009",
+          "course": "COS 201",
+          "topic": "control_flow_selection",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "switch",
+            "types",
+            "compiler-error"
+          ],
+          "question": "Which of the following data types CANNOT be used as the controlling expression in a C switch statement?",
+          "options": [
+            "float",
+            "int",
+            "char",
+            "enum"
+          ],
+          "answer": 0,
+          "explanation": "The C standard requires the controlling expression of a switch statement to have an integer type (or an enumeration type, which maps to integer). Floating-point types ('float', 'double') are not allowed in switch statements.",
+          "why_wrong": {
+            "1": "'int' is the standard type used in switch expressions.",
+            "2": "'char' is an integral type (representing ASCII integer codes) and is fully legal.",
+            "3": "'enum' identifiers are integral constants and legal in switch statements."
+          },
+          "source": "Deitel Ch 4.7; ISO C Standard 6.8.4.2",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "control_flow_selection"
+        },
+        {
+          "id": "cos201-cf-018",
+          "course": "COS 201",
+          "topic": "control_flow_selection",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "theory",
+            "dangling-else",
+            "braces"
+          ],
+          "question": "Explain the 'dangling else' problem in C and how using compound statement braces ({ }) prevents subtle logic bugs.",
+          "answer": "1. Definition: The dangling else problem occurs when nested if statements are written without braces and an else clause is present. The grammar rule of C stipulates that an else is always bound to the nearest preceding open if.\n2. Danger: Indentation might mislead the programmer into believing the else belongs to the outer if, when in reality the compiler binds it to the inner if.\n3. Solution: Wrapping the inner or outer statements in explicit braces { } removes all ambiguity and forces the compiler to bind the else exactly where intended.",
+          "marking_points": [
+            "States that an else binds to the nearest preceding unmatched if by default",
+            "Explains that visual indentation does not change compiler grammar binding",
+            "Explains that explicit braces { } strictly control block scope and eliminate ambiguity"
+          ],
+          "explanation": "A cornerstone concept in control flow design.",
+          "why_wrong": {},
+          "source": "Deitel Ch 3.6",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "control_flow_selection"
+        },
+        {
+          "id": "cos201-lp-002",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "code_output",
+          "difficulty": 2,
+          "tags": [
+            "do-while",
+            "post-test",
+            "midterm-past-q"
+          ],
+          "question": "What will be the output of the following C code?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int x = 0;\n    do {\n        printf(\"%d \", x);\n        x++;\n    }\n    while (x < 2);\n    return 0;\n}",
+          "options": [
+            "0 1 ",
+            "0 ",
+            "1 2 ",
+            "0 1 2 "
+          ],
+          "answer": 0,
+          "explanation": "1. Iteration 1: prints '0 ', x increments to 1. Condition '1 < 2' is true.\n2. Iteration 2: prints '1 ', x increments to 2. Condition '2 < 2' is false, terminating the loop.\nOutput is '0 1 '.",
+          "why_wrong": {
+            "1": "x=1 satisfies '1 < 2', so a second iteration executes.",
+            "2": "x starts at 0, not 1.",
+            "3": "When x becomes 2, the condition fails before 2 can be printed."
+          },
+          "source": "COS 201 Midterm Type B, Q9; Deitel Ch 4.8",
+          "verified": true,
+          "verified_output": "0 1 ",
+          "topic_slug": "loops_iteration"
+        },
+        {
+          "id": "cos201-lp-006",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "for",
+            "expressions",
+            "midterm-past-q"
+          ],
+          "question": "What will be the output of the following C code?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int i = 0;\n    for (i = 0; i < 3; i++) {\n        printf(\"%d \", i * 2);\n    }\n    return 0;\n}",
+          "options": [
+            "0 2 4 ",
+            "0 1 2 ",
+            "2 4 6 ",
+            "1 3 5 "
+          ],
+          "answer": 0,
+          "explanation": "Loop iterations run for i = 0, 1, 2:\n- i = 0: prints 0 * 2 = 0\n- i = 1: prints 1 * 2 = 2\n- i = 2: prints 2 * 2 = 4\nWhen i becomes 3, the loop stops. Output is '0 2 4 '.",
+          "why_wrong": {
+            "1": "0 1 2 is the value of i, but the code prints i * 2.",
+            "2": "2 4 6 would print if i ran from 1 to 3.",
+            "3": "1 3 5 are odd numbers."
+          },
+          "source": "COS 201 Midterm Type B, Q35; Deitel Ch 4.3",
+          "verified": true,
+          "verified_output": "0 2 4 ",
+          "topic_slug": "loops_iteration"
+        },
+        {
+          "id": "cos201-lp-010",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "code_bug",
+          "difficulty": 4,
+          "tags": [
+            "bugs",
+            "infinite-loop",
+            "semicolon"
+          ],
+          "question": "What severe bug is present in the following C code?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int i = 0;\n    while (i < 5);\n    {\n        printf(\"%d \", i);\n        i++;\n    }\n    return 0;\n}",
+          "options": [
+            "Infinite loop: the stray semicolon after 'while (i < 5);' forms an empty loop body where 'i' is never incremented.",
+            "Syntax error: semicolons are forbidden after while headers.",
+            "The code compiles and correctly prints '0 1 2 3 4 '.",
+            "The code outputs '5' and exits."
+          ],
+          "answer": 0,
+          "explanation": "Placing a semicolon directly after 'while (i < 5);' creates a null statement as the loop body. The program repeatedly tests '0 < 5', which is always true, and never reaches the block containing 'i++'. This results in an infinite busy loop.",
+          "why_wrong": {
+            "1": "It is syntactically legal C, but logically disastrous.",
+            "2": "The block is never entered because the program hangs in the infinite null loop.",
+            "3": "The loop condition never becomes false."
+          },
+          "source": "Deitel Common Programming Error 3.10",
+          "verified": true,
+          "verified_output": "Infinite loop bug confirmed",
+          "topic_slug": "loops_iteration"
+        },
+        {
+          "id": "cos201-lp-015",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "cloze",
+            "loops"
+          ],
+          "question": "Fill in the correct C keywords for repetition control:",
+          "template": "A loop that tests its condition after execution is the [[blank]] loop. To abort a loop completely, use [[blank]], whereas to skip only the current iteration, use [[blank]].",
+          "blanks": [
+            "do-while",
+            "break",
+            "continue"
+          ],
+          "explanation": "do-while is post-test, break terminates the loop, continue skips the current iteration.",
+          "why_wrong": {},
+          "source": "Deitel Ch 4",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "loops_iteration"
+        },
+        {
+          "id": "cos201-fn-001",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "functions",
+            "void",
+            "syntax",
+            "midterm-past-q"
+          ],
+          "question": "Which of the following is a valid way to define a function returning void in C?",
+          "options": [
+            "void func() {}",
+            "func void() {}",
+            "void func;",
+            "return void func() {}"
+          ],
+          "answer": 0,
+          "explanation": "In C, a function definition begins with the return type ('void'), followed by the function identifier ('func'), parameter list in parentheses '()', and the code body in braces '{}'.",
+          "why_wrong": {
+            "1": "The return type must precede the function name, not appear inside or after.",
+            "2": "'void func;' is a variable declaration or incomplete statement without parentheses and body.",
+            "3": "'return' is a jump statement inside a function, not part of a function definition header."
+          },
+          "source": "COS 201 Midterm Type B, Q6; Deitel Ch 5.3",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "functions_modular"
+        },
+        {
+          "id": "cos201-fn-005",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "recursion",
+            "call-stack",
+            "tracing"
+          ],
+          "question": "What is the output of the following recursive countdown function?",
+          "code": "#include <stdio.h>\nvoid countdown(int n) {\n    if (n <= 0) return;\n    printf(\"%d \", n);\n    countdown(n - 1);\n}\nint main(void) {\n    countdown(3);\n    printf(\"\\n\");\n    return 0;\n}",
+          "options": [
+            "3 2 1 ",
+            "1 2 3 ",
+            "3 2 1 0 ",
+            "0 1 2 3 "
+          ],
+          "answer": 0,
+          "explanation": "- countdown(3): prints '3 ', calls countdown(2)\n- countdown(2): prints '2 ', calls countdown(1)\n- countdown(1): prints '1 ', calls countdown(0)\n- countdown(0): hits base case 'n <= 0' and returns.\nOutput is '3 2 1 '.",
+          "why_wrong": {
+            "1": "'1 2 3 ' would occur if printf were placed after the recursive call.",
+            "2": "'n <= 0' returns before printing 0.",
+            "3": "The recursion unwinds after reaching 0."
+          },
+          "source": "Deitel Ch 5.14",
+          "verified": true,
+          "verified_output": "3 2 1 \n",
+          "topic_slug": "functions_modular"
+        },
+        {
+          "id": "cos201-fn-009",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "cloze",
+            "functions"
+          ],
+          "question": "Fill in the correct terms for C function concepts:",
+          "template": "A function declaration that informs the compiler of a function's signature before its use is called a function [[blank]]. In C, function arguments are passed by [[blank]]. A local variable that preserves its value across calls is declared using the keyword [[blank]].",
+          "blanks": [
+            "prototype",
+            "value",
+            "static"
+          ],
+          "explanation": "Prototype declares the signature, C passes arguments by value, and static retains local state across calls.",
+          "why_wrong": {},
+          "source": "Deitel Ch 5",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "functions_modular"
+        },
+        {
+          "id": "cos201-fn-013",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "theory",
+            "pass-by-value",
+            "pointers"
+          ],
+          "question": "Explain why C is described as strictly 'pass-by-value', and how programmers achieve the effect of 'pass-by-reference' when a function needs to modify a caller variable.",
+          "answer": "1. Pass-by-Value Nature: In C, all arguments passed into functions are evaluated and their values copied into local parameter variables. The function has no direct access to the caller's memory variable.\n2. Simulating Pass-by-Reference: To allow a function to modify a caller's variable, the programmer passes the memory address of the variable using the address-of operator (&x). The function parameter is declared as a pointer (int *ptr). By dereferencing the pointer (*ptr = new_val), the function writes directly into the caller's memory.",
+          "marking_points": [
+            "Explains that C passes copies of argument values by default",
+            "States that the address of the variable (&x) must be passed to simulate pass-by-reference",
+            "Explains that the function receives a pointer and dereferences it (*ptr) to modify caller memory"
+          ],
+          "explanation": "Foundational understanding bridging functions to pointer mechanics.",
+          "why_wrong": {},
+          "source": "Deitel Ch 5.5, Ch 7.4",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "functions_modular"
+        },
+        {
+          "id": "cos201-arr-001",
+          "course": "COS 201",
+          "topic": "arrays_1d_2d",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "arrays",
+            "indexing",
+            "past_exam"
+          ],
+          "question": "In C, if an array is declared as `int arr[10];`, what is the index of the first element and the index of the last element?",
+          "options": [
+            "First element is 1, last element is 10",
+            "First element is 0, last element is 9",
+            "First element is 0, last element is 10",
+            "First element is 1, last element is 9"
+          ],
+          "answer": 1,
+          "explanation": "C uses 0-based indexing for all arrays. An array of size N has indices running strictly from 0 to N - 1. Thus, for an array of 10 elements, the first index is 0 and the last valid index is 9.",
+          "why_wrong": {
+            "0": "1-based indexing is used by languages like MATLAB or Fortran, not C.",
+            "2": "Index 10 is out of bounds; accessing arr[10] accesses the 11th element, causing undefined behavior.",
+            "3": "C does not start counting elements from index 1."
+          },
+          "source": "Deitel C How to Program, Chapter 6; Nile Past Exam Q11",
+          "verified": true,
+          "verified_output": "(Language conceptual rule)",
+          "topic_slug": "arrays_1d_2d"
+        },
+        {
+          "id": "cos201-arr-005",
+          "course": "COS 201",
+          "topic": "arrays_1d_2d",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "arrays",
+            "functions",
+            "pass_by_reference",
+            "past_exam"
+          ],
+          "question": "What is the exact output of the following C program?\n\n```c\n#include <stdio.h>\n\nvoid doubleElements(int arr[], int size) {\n    for (int i = 0; i < size; i++) {\n        arr[i] *= 2;\n    }\n}\n\nint main(void) {\n    int vals[3] = {2, 4, 6};\n    doubleElements(vals, 3);\n    printf(\"%d %d %d\", vals[0], vals[1], vals[2]);\n    return 0;\n}\n```",
+          "options": [
+            "4 8 12",
+            "2 4 6",
+            "0 0 0",
+            "Compilation error: cannot pass array without &"
+          ],
+          "answer": 0,
+          "explanation": "When an array name is passed to a function in C, it decays to a pointer pointing to its first element (`&arr[0]`). Because the function receives the actual memory address of the array, any modifications made to `arr[i]` within the function directly alter the original array elements in `main`. Thus vals becomes {4, 8, 12}.",
+          "why_wrong": {
+            "1": "Scalar variables in C are passed by value, but array arguments decay to pointers and their elements ARE modified.",
+            "2": "The elements were multiplied by 2, not cleared.",
+            "3": "Passing array name directly without & is the standard syntax for passing arrays in C."
+          },
+          "source": "Deitel C How to Program, Section 6.6; Nile Past Exam Q31",
+          "verified": true,
+          "verified_output": "4 8 12",
+          "topic_slug": "arrays_1d_2d"
+        },
+        {
+          "id": "cos201-arr-010",
+          "course": "COS 201",
+          "topic": "arrays_1d_2d",
+          "type": "code_bug",
+          "difficulty": 3,
+          "tags": [
+            "arrays",
+            "debugging",
+            "off_by_one",
+            "bounds"
+          ],
+          "question": "Identify the serious defect in the following code snippet and specify the correction:\n\n```c\n#define SIZE 5\nint scores[SIZE];\nfor (int i = 0; i <= SIZE; i++) {\n    scores[i] = i * 10;\n}\n```",
+          "options": [
+            "The loop condition `i <= SIZE` iterates 6 times, writing out-of-bounds to `scores[5]`; change to `i < SIZE`",
+            "The macro `SIZE 5` requires a semicolon at the end",
+            "Array indexing cannot use variable `i`; literal constants must be used",
+            "The loop must count backwards from `SIZE` to `0`"
+          ],
+          "answer": 0,
+          "explanation": "An array declared as `int scores[5]` has valid indices 0, 1, 2, 3, and 4. The loop condition `i <= SIZE` (where SIZE is 5) causes the loop to execute when `i == 5`. Attempting to write `scores[5]` is an out-of-bounds memory write, causing undefined behavior. The loop condition must be `i < SIZE`.",
+          "why_wrong": {
+            "1": "Putting a semicolon in `#define SIZE 5;` creates a syntax error wherever `SIZE` is expanded in array declarations.",
+            "2": "Array subscripts can be any valid integer expression, including variables like `i`.",
+            "3": "Loops can traverse forward or backward; forward is standard."
+          },
+          "source": "Deitel C How to Program, Section 6.3",
+          "verified": true,
+          "verified_output": "(Static code analysis defect)",
+          "topic_slug": "arrays_1d_2d"
+        },
+        {
+          "id": "cos201-arr-014",
+          "course": "COS 201",
+          "topic": "arrays_1d_2d",
+          "type": "matching",
+          "difficulty": 2,
+          "tags": [
+            "arrays",
+            "terminology",
+            "syntax"
+          ],
+          "question": "Match each array concept with its correct description or syntax:",
+          "options": [
+            "int a[10] = {0};",
+            "sizeof(a) / sizeof(a[0])",
+            "a[row][col]",
+            "const int a[]"
+          ],
+          "answer": {
+            "int a[10] = {0};": "Initializes all 10 elements to zero",
+            "sizeof(a) / sizeof(a[0])": "Calculates number of elements in a static array",
+            "a[row][col]": "Accesses element in row-major 2D array",
+            "const int a[]": "Read-only array parameter protected from callee modification"
+          },
+          "explanation": "These four idiomatic C constructs represent zero initialization, dynamic length calculation of static arrays, 2D indexing, and read-only function contracts.",
+          "why_wrong": {},
+          "source": "Deitel C How to Program, Chapter 6",
+          "verified": true,
+          "verified_output": "(Matching concept map)",
+          "topic_slug": "arrays_1d_2d"
+        },
+        {
+          "id": "cos201-ptr-001",
+          "course": "COS 201",
+          "topic": "pointers_memory",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "pointers",
+            "declaration",
+            "syntax",
+            "past_exam"
+          ],
+          "question": "In the declaration `int *ptr;`, what does `*` signify and what does `ptr` store?",
+          "options": [
+            "`*` indicates ptr is a pointer variable, and ptr stores the memory address of an integer",
+            "`*` is the multiplication operator, initializing ptr to 0",
+            "`*` indicates ptr stores a floating-point number",
+            "`*` indicates ptr is a constant variable that cannot be changed"
+          ],
+          "answer": 0,
+          "explanation": "In a declaration, the asterisk `*` indicates that the variable being declared is a pointer. Here, `int *ptr;` designates `ptr` as a variable capable of storing the memory address of an integer.",
+          "why_wrong": {
+            "1": "In a type declaration, `*` is a type modifier designating pointer type, not arithmetic multiplication.",
+            "2": "`int *` indicates a pointer to an `int`, not a float.",
+            "3": "Pointers are mutable by default; making a pointer constant requires the `const` keyword."
+          },
+          "source": "Deitel C How to Program, Section 7.3; Nile Past Exam Q32",
+          "verified": true,
+          "verified_output": "(Language specification rule)",
+          "topic_slug": "pointers_memory"
+        },
+        {
+          "id": "cos201-ptr-005",
+          "course": "COS 201",
+          "topic": "pointers_memory",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "pointers",
+            "pointer_arithmetic",
+            "scaling",
+            "memory"
+          ],
+          "question": "On a computer where `sizeof(int)` is 4 bytes, if pointer `p` holds the memory address `0x1000`, what address does the expression `p + 3` evaluate to?",
+          "options": [
+            "0x100C (or 0x1000 + 12 bytes)",
+            "0x1003 (or 0x1000 + 3 bytes)",
+            "0x1007 (or 0x1000 + 7 bytes)",
+            "0x1010 (or 0x1000 + 16 bytes)"
+          ],
+          "answer": 0,
+          "explanation": "Pointer arithmetic in C is automatically scaled by the size of the underlying data type. Incrementing a pointer `p` of type `T*` by integer `k` adds `k * sizeof(T)` bytes to the memory address. Here, `3 * sizeof(int) = 3 * 4 = 12 bytes` (which is `0xC` in hexadecimal), so the resulting address is `0x100C`.",
+          "why_wrong": {
+            "1": "Pointer arithmetic does not advance by raw single bytes unless `p` is a `char*`.",
+            "2": "7 bytes is an arbitrary number with no relationship to 4-byte integers.",
+            "3": "16 bytes corresponds to adding 4 integers, not 3."
+          },
+          "source": "Deitel C How to Program, Section 7.6",
+          "verified": true,
+          "verified_output": "(Pointer arithmetic specification rule)",
+          "topic_slug": "pointers_memory"
+        },
+        {
+          "id": "cos201-ptr-010",
+          "course": "COS 201",
+          "topic": "pointers_memory",
+          "type": "code_output",
+          "difficulty": 4,
+          "tags": [
+            "pointers",
+            "precedence",
+            "dereference",
+            "post_increment"
+          ],
+          "question": "What is printed by the following code?\n\n```c\n#include <stdio.h>\n\nint main(void) {\n    int nums[] = {3, 7, 11};\n    int *ptr = nums;\n    int total = *ptr++;\n    total += *ptr;\n    printf(\"%d\", total);\n    return 0;\n}\n```",
+          "options": [
+            "10",
+            "6",
+            "14",
+            "18"
+          ],
+          "answer": 0,
+          "explanation": "In `*ptr++`, postfix `++` has higher precedence than `*`. Postfix `++` increments `ptr` to point to the next element (`nums[1]`), but the expression yields the original pointer value prior to increment. Thus `*ptr++` dereferences `nums[0]` (3). After this statement, `ptr` points to `nums[1]`. Next, `total += *ptr;` adds `nums[1]` (7) to total (3). `3 + 7 = 10`.",
+          "why_wrong": {
+            "1": "6 would happen if `*ptr` was incremented rather than the pointer address (`(*ptr)++`).",
+            "2": "14 would be 7 + 7.",
+            "3": "18 would be 7 + 11."
+          },
+          "source": "Deitel C How to Program, Section 7.6",
+          "verified": true,
+          "verified_output": "10",
+          "topic_slug": "pointers_memory"
+        },
+        {
+          "id": "cos201-ptr-014",
+          "course": "COS 201",
+          "topic": "pointers_memory",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "pointers",
+            "syntax",
+            "matching"
+          ],
+          "question": "Match each pointer expression with its precise meaning:",
+          "options": [
+            "&var",
+            "*ptr",
+            "ptr + 1",
+            "const int *p"
+          ],
+          "answer": {
+            "&var": "Memory address of variable var",
+            "*ptr": "Value stored at address in ptr",
+            "ptr + 1": "Address of the next element scaled by data type size",
+            "const int *p": "Pointer to read-only integer data"
+          },
+          "explanation": "These four expressions embody address-of, dereferencing, pointer arithmetic scaling, and pointer-to-constant qualifiers.",
+          "why_wrong": {},
+          "source": "Deitel C How to Program, Chapter 7",
+          "verified": true,
+          "verified_output": "(Concept map)",
+          "topic_slug": "pointers_memory"
+        },
+        {
+          "id": "cos201-str-001",
+          "course": "COS 201",
+          "topic": "strings_char_arrays",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "strings",
+            "null_terminator",
+            "initialization",
+            "past_exam"
+          ],
+          "question": "In C, what is the problem with declaring `char arr[5] = \"hello\";`?",
+          "options": [
+            "There is no room for the terminating null character `\\0`, so `arr` is not a valid null-terminated C string",
+            "String literals can only be assigned to pointer variables, not arrays",
+            "Array size 5 is too large for a 5-letter word",
+            "The double quotes are illegal in C; single quotes must enclose words"
+          ],
+          "answer": 0,
+          "explanation": "In C, string literals contain an implicit terminating null character `\\0`. The word `\"hello\"` has 5 characters plus 1 null terminator, requiring at least 6 bytes. Initializing an array of size 5 with `\"hello\"` leaves no space for `\\0`. In standard C, this creates an unterminated character array that causes buffer overreads when passed to functions like `printf(\"%s\")` or `strlen()`.",
+          "why_wrong": {
+            "1": "Assigning string literals to character arrays (`char s[] = \"...\";`) is standard C.",
+            "2": "5 bytes is too small (not too large) because the null terminator requires the 6th byte.",
+            "3": "Double quotes denote string literals in C; single quotes denote individual character constants."
+          },
+          "source": "Deitel C How to Program, Section 8.2; Nile Past Exam Q4",
+          "verified": true,
+          "verified_output": "(Language specification rule)",
+          "topic_slug": "strings_char_arrays"
+        },
+        {
+          "id": "cos201-str-005",
+          "course": "COS 201",
+          "topic": "strings_char_arrays",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "strings",
+            "strcmp",
+            "lexicographical"
+          ],
+          "question": "What is printed by this program?\n\n```c\n#include <stdio.h>\n#include <string.h>\n\nint main(void) {\n    char s1[] = \"apple\";\n    char s2[] = \"banana\";\n    int res = strcmp(s1, s2);\n    if (res < 0) {\n        printf(\"s1 before s2\");\n    } else if (res > 0) {\n        printf(\"s1 after s2\");\n    } else {\n        printf(\"equal\");\n    }\n    return 0;\n}\n```",
+          "options": [
+            "s1 before s2",
+            "s1 after s2",
+            "equal",
+            "Compilation error"
+          ],
+          "answer": 0,
+          "explanation": "`strcmp()` compares strings lexicographically based on ASCII character codes. At index 0, 'a' (ASCII 97) is less than 'b' (ASCII 98). The difference 'a' - 'b' is negative, so `strcmp` returns a negative number (`< 0`). Thus `s1 before s2` is printed.",
+          "why_wrong": {
+            "1": "s1 ('apple') precedes s2 ('banana') alphabetically, so res is negative.",
+            "2": "'apple' and 'banana' are not identical.",
+            "3": "`strcmp` is standard in `<string.h>` and compiles cleanly."
+          },
+          "source": "Deitel C How to Program, Section 8.5",
+          "verified": true,
+          "verified_output": "s1 before s2",
+          "topic_slug": "strings_char_arrays"
+        },
+        {
+          "id": "cos201-str-009",
+          "course": "COS 201",
+          "topic": "strings_char_arrays",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "strings",
+            "strcpy",
+            "security",
+            "buffer_overflow"
+          ],
+          "question": "Why is `strcpy()` considered dangerous for secure programming, and what should be used instead?",
+          "options": [
+            "`strcpy()` does not check if the destination buffer is large enough, causing memory corruption / buffer overflow; safer alternatives like `strncpy()` or bounded copy loops should be used",
+            "`strcpy()` converts all letters to lowercase automatically",
+            "`strcpy()` fails to copy the terminating null character",
+            "`strcpy()` only works with single-character variables"
+          ],
+          "answer": 0,
+          "explanation": "`strcpy(dest, src)` copies characters until it encounters `'\\0'` in `src`. If `src` is larger than the memory allocated for `dest`, it writes past the buffer boundary into adjacent stack or heap memory. This classic buffer overflow defect can crash programs or be exploited for remote code execution.",
+          "why_wrong": {
+            "1": "`strcpy` copies characters byte-for-byte without case conversion.",
+            "2": "`strcpy` explicitly copies the terminating null character.",
+            "3": "`strcpy` operates on strings, not single characters."
+          },
+          "source": "Deitel C How to Program, Section 8.4",
+          "verified": true,
+          "verified_output": "(Software security principle)",
+          "topic_slug": "strings_char_arrays"
+        },
+        {
+          "id": "cos201-str-013",
+          "course": "COS 201",
+          "topic": "strings_char_arrays",
+          "type": "matching",
+          "difficulty": 2,
+          "tags": [
+            "strings",
+            "library",
+            "functions"
+          ],
+          "question": "Match each `<string.h>` function with its operation:",
+          "options": [
+            "strlen(s)",
+            "strcpy(dest, src)",
+            "strcat(dest, src)",
+            "strcmp(s1, s2)"
+          ],
+          "answer": {
+            "strlen(s)": "Returns number of characters preceding the null terminator",
+            "strcpy(dest, src)": "Copies source string to destination buffer including '\\0'",
+            "strcat(dest, src)": "Appends source string to the end of destination string",
+            "strcmp(s1, s2)": "Lexicographically compares two strings (0 if identical)"
+          },
+          "explanation": "These four functions constitute the core string manipulation library in C.",
+          "why_wrong": {},
+          "source": "Deitel C How to Program, Chapter 8",
+          "verified": true,
+          "verified_output": "(Function map)",
+          "topic_slug": "strings_char_arrays"
+        },
+        {
+          "id": "cos201-mid-003",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "operators",
+            "increment",
+            "code-tracing",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int x = 2;\n    printf(\"%d\", ++x);\n    return 0;\n}\n```",
+          "options": [
+            "2",
+            "3",
+            "1",
+            "Error"
+          ],
+          "answer": "3",
+          "explanation": "The prefix increment operator (++x) increments the value of x from 2 to 3 first, and then evaluates to the new incremented value (3), which is passed to printf.",
+          "why_wrong": {
+            "2": "This would be the output if post-increment (x++) had been used, which evaluates before incrementing.",
+            "1": "Confusion with decrement operator (--x).",
+            "Error": "The syntax is completely valid C."
+          },
+          "marking_points": [
+            "Applies prefix increment semantics: increment before evaluation"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 3",
+          "verified": true,
+          "verified_output": "3",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-005",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "loops",
+            "while",
+            "iteration",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int a = 1;\n    while(a < 4) {\n        printf(\"%d \", a);\n        a++;\n    }\n    return 0;\n}\n```",
+          "options": [
+            "1 2 3",
+            "1 2 3 4",
+            "0 1 2",
+            "2 3 4"
+          ],
+          "answer": "1 2 3",
+          "explanation": "The loop starts with a=1. Iteration 1 prints '1 ' and a becomes 2. Iteration 2 prints '2 ' and a becomes 3. Iteration 3 prints '3 ' and a becomes 4. When a=4, condition (4 < 4) is false, so the loop terminates without printing 4.",
+          "why_wrong": {
+            "1 2 3 4": "Off-by-one error; assumes condition is '<=' instead of strictly '<'.",
+            "0 1 2": "Assumes a starts at 0 instead of 1.",
+            "2 3 4": "Assumes a was incremented prior to the first print."
+          },
+          "marking_points": [
+            "Traces while loop termination condition strictly at a=4"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 5",
+          "verified": true,
+          "verified_output": "1 2 3 ",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-007",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "operators",
+            "division",
+            "integer-truncation",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int a = 5, b = 2;\n    printf(\"%d\", a / b);\n    return 0;\n}\n```",
+          "options": [
+            "2",
+            "2.5",
+            "3",
+            "Error"
+          ],
+          "answer": "2",
+          "explanation": "Both 'a' and 'b' are integers. In C, integer division (5 / 2) truncates the fractional portion, yielding the integer 2. No floating-point promotion occurs.",
+          "why_wrong": {
+            "2.5": "Mathematical division result; C integer division does NOT produce floating-point numbers.",
+            "3": "Rounds up instead of truncating towards zero.",
+            "Error": "Valid integer division."
+          },
+          "marking_points": [
+            "Applies integer division truncation rule"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 7",
+          "verified": true,
+          "verified_output": "2",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-015",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "operators",
+            "precedence",
+            "arithmetic",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int a = 3, b = 4;\n    printf(\"%d\", a + b * 2);\n    return 0;\n}\n```",
+          "options": [
+            "14",
+            "11",
+            "10",
+            "7"
+          ],
+          "answer": "11",
+          "explanation": "Multiplication (*) has higher precedence than addition (+). Thus, b * 2 is evaluated first (4 * 2 = 8), followed by addition (3 + 8 = 11).",
+          "why_wrong": {
+            "14": "Evaluates left-to-right ignoring operator precedence: (3 + 4) * 2 = 7 * 2 = 14.",
+            "10": "Arithmetic miscalculation.",
+            "7": "Evaluates a + b only without multiplying."
+          },
+          "marking_points": [
+            "Applies precedence: multiplication before addition"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 15",
+          "verified": true,
+          "verified_output": "11",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-019",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "control-flow",
+            "switch",
+            "branching",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int a = 5;\n    switch(a) {\n        case 1: printf(\"One\"); break;\n        case 5: printf(\"Five\"); break;\n        default: printf(\"Other\");\n    }\n    return 0;\n}\n```",
+          "options": [
+            "One",
+            "Five",
+            "Other",
+            "Error"
+          ],
+          "answer": "Five",
+          "explanation": "Variable 'a' has value 5. Execution jumps directly to 'case 5:', printing 'Five'. The 'break' statement terminates the switch block, preventing fallthrough into default.",
+          "why_wrong": {
+            "One": "Only executes if a == 1.",
+            "Other": "Only executes if no cases match or if a matching case falls through.",
+            "Error": "Completely valid switch statement syntax."
+          },
+          "marking_points": [
+            "Matches switch expression to case 5 and halts at break"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 19",
+          "verified": true,
+          "verified_output": "Five",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-023",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "operators",
+            "logical-or",
+            "short-circuit",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int x = 0;\n    if(x || 1)\n        printf(\"True\");\n    else\n        printf(\"False\");\n    return 0;\n}\n```",
+          "options": [
+            "True",
+            "False",
+            "0",
+            "1"
+          ],
+          "answer": "True",
+          "explanation": "In the expression (x || 1), x is 0 (false) but the right operand is 1 (true). For logical OR (||), if either operand is non-zero, the overall condition evaluates to 1 (true), executing the 'if' branch.",
+          "why_wrong": {
+            "False": "Assumes both operands must be true (confusion with logical AND &&).",
+            "0": "The code prints the string literal 'True', not an integer.",
+            "1": "The code prints 'True', not the numeric truth value."
+          },
+          "marking_points": [
+            "Evaluates (0 || 1) as true (1) and prints 'True'"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 23",
+          "verified": true,
+          "verified_output": "True",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-031",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "arrays",
+            "indexing",
+            "code-tracing",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int arr[3] = {10, 20, 30};\n    printf(\"%d\", arr[0] + arr[2]);\n    return 0;\n}\n```",
+          "options": [
+            "10",
+            "30",
+            "40",
+            "20"
+          ],
+          "answer": "40",
+          "explanation": "With 0-based indexing: arr[0] is 10 and arr[2] is 30. Adding them yields 10 + 30 = 40.",
+          "why_wrong": {
+            "10": "Value of arr[0] alone.",
+            "30": "Value of arr[2] alone.",
+            "20": "Value of arr[1] alone."
+          },
+          "marking_points": [
+            "Indexes arr[0]=10 and arr[2]=30, computing 10+30=40"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 31",
+          "verified": true,
+          "verified_output": "40",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-039",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "operators",
+            "ternary",
+            "relational",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int x = 1, y = 2;\n    printf(\"%d\", x < y ? y : x);\n    return 0;\n}\n```",
+          "options": [
+            "1",
+            "2",
+            "0",
+            "Error"
+          ],
+          "answer": "2",
+          "explanation": "Condition (x < y) evaluates (1 < 2), which is true (1). Because condition is true, the first expression (y) is evaluated and returned. y has value 2.",
+          "why_wrong": {
+            "1": "Value of x; this would be returned if x < y were false.",
+            "0": "Confuses result with boolean evaluation.",
+            "Error": "Valid ternary conditional invocation."
+          },
+          "marking_points": [
+            "Evaluates condition (1 < 2) as true and selects y=2"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 39",
+          "verified": true,
+          "verified_output": "2",
+          "topic_slug": "midterm_past_questions"
+        }
+      ]
+    },
+    {
+      "id": "cos201-mock-02",
+      "title": "Mock Exam 2: Deep Tracing & Pointer Mastery Challenge",
+      "description": "High-intensity 40-question exam emphasizing code output prediction, pointer indirection, array indexing, and subtle C pitfalls.",
+      "duration_minutes": 60,
+      "total_marks": 40,
+      "passing_score": 24,
+      "question_count": 40,
+      "questions": [
+        {
+          "id": "cos201-dt-003",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "declarations",
+            "multiple-variables",
+            "midterm-past-q"
+          ],
+          "question": "Which of the following is the correct way to declare multiple integer variables in a single line?",
+          "options": [
+            "int x, y, z;",
+            "int x; y; z;",
+            "int x y z;",
+            "int x:y:z;"
+          ],
+          "answer": 0,
+          "explanation": "Multiple variables of the same type can be declared in a single statement by separating each identifier with a comma and ending the statement with a semicolon: 'int x, y, z;'.",
+          "why_wrong": {
+            "1": "'int x; y; z;' is invalid because 'y;' and 'z;' are treated as separate statements where y and z lack type specifiers.",
+            "2": "'int x y z;' is a syntax error because whitespace alone cannot separate identifier tokens in a declaration list.",
+            "3": "Colons are used in bit-field declarations and labels, not for separating variable names."
+          },
+          "source": "COS 201 Midterm Type B, Q24; Deitel Ch 2.3",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "data_types_variables"
+        },
+        {
+          "id": "cos201-dt-009",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "literals",
+            "hex",
+            "octal"
+          ],
+          "question": "What will be the output of the following C program?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int hex = 0x1A;\n    int oct = 012;\n    printf(\"%d %d\\n\", hex, oct);\n    return 0;\n}",
+          "options": [
+            "26 10",
+            "1A 12",
+            "26 12",
+            "16 10"
+          ],
+          "answer": 0,
+          "explanation": "In C, integer literals with prefix '0x' or '0X' are hexadecimal (0x1A = 1*16 + 10 = 26). Integer literals starting with a leading '0' are octal (012 = 1*8 + 2 = 10). Both are printed in decimal via '%d'.",
+          "why_wrong": {
+            "1": "'%d' outputs decimal numbers, not literal string tokens like '1A'.",
+            "2": "Octal 012 is base-8 (1*8 + 2 = 10), not decimal 12.",
+            "3": "0x1A is 26, not 16."
+          },
+          "source": "Deitel Ch 2.3, Appendix E",
+          "verified": true,
+          "verified_output": "26 10\n",
+          "topic_slug": "data_types_variables"
+        },
+        {
+          "id": "cos201-dt-014",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "identifiers",
+            "rules"
+          ],
+          "question": "Is the following statement True or False? In C, identifiers may begin with an underscore (_), but cannot begin with a number.",
+          "tf_answer": true,
+          "options": [
+            "True, because the lexical rules permit letters and underscores as the first character, but digits are prohibited in the initial position.",
+            "False, because underscores are strictly reserved for compiler internals and cause a syntax error if written by the programmer.",
+            "False, because modern C allows identifiers to start with digits provided they contain letters.",
+            "True, but only in variable names, not function names."
+          ],
+          "why_options": [
+            "C lexical grammar specifies an identifier as (letter | '_')(letter | digit | '_')*.",
+            "Programmer identifiers can start with '_', though it is discouraged to avoid collisions with system libraries.",
+            "Identifiers starting with digits are interpreted by the lexical analyzer as numeric constants, causing syntax errors.",
+            "The identifier syntax rules apply universally to variable, function, and struct names."
+          ],
+          "why_answer": 0,
+          "explanation": "In C, valid identifiers consist of letters, digits, and underscores, but the first character must strictly be a letter or an underscore. An initial digit would cause the tokenizer to treat the token as a numeric constant.",
+          "why_wrong": {
+            "1": "Underscores are legally allowed at the start of programmer identifiers, though not recommended for library reasons.",
+            "2": "No version of C permits identifiers to begin with digits.",
+            "3": "The lexical rules apply identically to all identifiers in C."
+          },
+          "source": "Deitel Ch 2.3; ANSI C Standard Section 6.4.2",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "data_types_variables"
+        },
+        {
+          "id": "cos201-dt-025",
+          "course": "COS 201",
+          "topic": "data_types_variables",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "syntax",
+            "declarations"
+          ],
+          "question": "What is the problem with the declaration 'int a = b = c = 10;' inside a C function if b and c were not previously declared?",
+          "options": [
+            "Compilation error: 'b' and 'c' are undeclared identifiers.",
+            "It is completely valid in ANSI C and initializes all three to 10.",
+            "Only 'a' is initialized to 10; 'b' and 'c' are initialized to 0.",
+            "It compiles but causes a runtime crash."
+          ],
+          "answer": 0,
+          "explanation": "In C, you cannot chain assignment initialization for variables that have not yet been declared in that statement. 'int a = b = c = 10;' attempts to evaluate 'c = 10', but 'c' has no type declaration. The correct C syntax is: 'int a = 10, b = 10, c = 10;' or declaring them first.",
+          "why_wrong": {
+            "1": "C requires explicit type declarations for all identifiers before use.",
+            "2": "The compiler rejects the statement at compile time before any runtime execution.",
+            "3": "It is a compile-time failure, not a runtime crash."
+          },
+          "source": "Deitel Ch 2.3",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "data_types_variables"
+        },
+        {
+          "id": "cos201-op-003",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_output",
+          "difficulty": 2,
+          "tags": [
+            "arithmetic",
+            "division",
+            "truncation",
+            "midterm-past-q"
+          ],
+          "question": "What will be the output of the following C code?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int a = 5, b = 2;\n    printf(\"%d\\n\", a / b);\n    return 0;\n}",
+          "options": [
+            "2",
+            "2.5",
+            "3",
+            "Error"
+          ],
+          "answer": 0,
+          "explanation": "In C, when both operands of the division operator '/' are integers, integer division is performed. The fractional part is truncated (discarded), yielding 2. It does not produce a floating-point result or round up to 3.",
+          "why_wrong": {
+            "1": "2.5 is the mathematical result, but integer division in C truncates all decimals.",
+            "2": "C does not round 2.5 up to 3; it truncates toward zero.",
+            "3": "Dividing two non-zero integers is completely valid C syntax."
+          },
+          "source": "COS 201 Midterm Type B, Q7; Deitel Ch 2.5",
+          "verified": true,
+          "verified_output": "2\n",
+          "topic_slug": "operators_expressions"
+        },
+        {
+          "id": "cos201-op-009",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_output",
+          "difficulty": 2,
+          "tags": [
+            "ternary",
+            "evaluation",
+            "midterm-past-q"
+          ],
+          "question": "What will be the output of the following C code?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int x = 2, y = 3;\n    printf(\"%d\\n\", x > y ? x : y);\n    return 0;\n}",
+          "options": [
+            "2",
+            "3",
+            "0",
+            "Error"
+          ],
+          "answer": 1,
+          "explanation": "The condition 'x > y' (2 > 3) is false (0). The ternary operator selects the expression after the colon ':', which is 'y' (3). Thus 3 is printed.",
+          "why_wrong": {
+            "0": "2 is 'x', which is only selected if x > y is true.",
+            "2": "The ternary evaluates to the chosen operand's value, not boolean 0.",
+            "3": "Using ternary expressions inside printf arguments is fully standard C."
+          },
+          "source": "COS 201 Midterm Type B, Q25; Deitel Ch 3.5",
+          "verified": true,
+          "verified_output": "3\n",
+          "topic_slug": "operators_expressions"
+        },
+        {
+          "id": "cos201-op-016",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_bug",
+          "difficulty": 3,
+          "tags": [
+            "assignment",
+            "equality",
+            "common-bug"
+          ],
+          "question": "What is the logical bug and resulting output in the following C code snippet?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int status = 0;\n    if (status = 1)\n        printf(\"Active\\n\");\n    else\n        printf(\"Inactive\\n\");\n    return 0;\n}",
+          "options": [
+            "Bug: '=' was used instead of '==', which assigns 1 to status and always prints 'Active'.",
+            "Bug: 'status = 1' produces a syntax error because assignment is forbidden in conditions.",
+            "Bug: 'Active' is printed because status was initially 0.",
+            "No bug: C interprets '=' as equality inside if conditions."
+          ],
+          "answer": 0,
+          "explanation": "Writing 'status = 1' inside the if condition is an assignment, not a comparison. It assigns 1 to 'status' and evaluates to the assigned value (1, which is true in C). As a result, the if condition always succeeds and prints 'Active'. The intended comparison was 'status == 1'.",
+          "why_wrong": {
+            "1": "Assignment inside if conditions is legal C syntax (though dangerous), generating a compiler warning, not an error.",
+            "2": "Initial value 0 is overwritten by the assignment.",
+            "3": "'=' is never interpreted as equality in C."
+          },
+          "source": "Deitel Common Programming Error 2.11",
+          "verified": true,
+          "verified_output": "Active\n",
+          "topic_slug": "operators_expressions"
+        },
+        {
+          "id": "cos201-op-024",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "bitwise",
+            "logical"
+          ],
+          "question": "What is the output of the following C program comparing bitwise '&' and logical '&&'?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int a = 1, b = 2;\n    int log_res = (a && b);\n    int bit_res = (a & b);\n    printf(\"%d %d\\n\", log_res, bit_res);\n    return 0;\n}",
+          "options": [
+            "1 0",
+            "1 1",
+            "0 0",
+            "2 0"
+          ],
+          "answer": 0,
+          "explanation": "Logical AND '&&' treats any non-zero value as true: (1 && 2) -> true (1). Bitwise AND '&' compares bits: 01 (binary 1) & 10 (binary 2) = 00 (binary 0). Output is '1 0'.",
+          "why_wrong": {
+            "1": "Bitwise 1 & 2 has no overlapping 1-bits, so it evaluates to 0, not 1.",
+            "2": "Logical AND of two positive numbers is 1 (true), not 0.",
+            "3": "Logical operators produce boolean results 0 or 1, not 2."
+          },
+          "source": "Deitel Ch 10.5",
+          "verified": true,
+          "verified_output": "1 0\n",
+          "topic_slug": "operators_expressions"
+        },
+        {
+          "id": "cos201-cf-003",
+          "course": "COS 201",
+          "topic": "control_flow_selection",
+          "type": "code_output",
+          "difficulty": 2,
+          "tags": [
+            "switch",
+            "case",
+            "break",
+            "midterm-past-q"
+          ],
+          "question": "What will be the output of the following C code?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int a = 5;\n    switch (a) {\n        case 1:\n            printf(\"One\\n\");\n            break;\n        case 5:\n            printf(\"Five\\n\");\n            break;\n        default:\n            printf(\"Other\\n\");\n    }\n    return 0;\n}",
+          "options": [
+            "One",
+            "Five",
+            "Other",
+            "Error"
+          ],
+          "answer": 1,
+          "explanation": "The controlling expression 'a' has value 5, which matches 'case 5:'. The statement 'printf(\"Five\\n\");' executes, followed by 'break;' which immediately exits the switch statement.",
+          "why_wrong": {
+            "0": "'One' is associated with case 1, not case 5.",
+            "2": "'Other' is the default branch, which is only reached if no case label matches or if fallthrough occurs.",
+            "3": "The switch syntax is standard and clean."
+          },
+          "source": "COS 201 Midterm Type B, Q19; Deitel Ch 4.7",
+          "verified": true,
+          "verified_output": "Five\n",
+          "topic_slug": "control_flow_selection"
+        },
+        {
+          "id": "cos201-cf-007",
+          "course": "COS 201",
+          "topic": "control_flow_selection",
+          "type": "code_output",
+          "difficulty": 4,
+          "tags": [
+            "dangling-else",
+            "syntax",
+            "traps"
+          ],
+          "question": "What will be printed by the following program containing the classic 'dangling else' construct?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int x = 5, y = 2;\n    if (x > 10)\n        if (y > 5)\n            printf(\"Both\\n\");\n    else\n        printf(\"Neither\\n\");\n    return 0;\n}",
+          "options": [
+            "No output",
+            "Neither",
+            "Both",
+            "Compilation Error"
+          ],
+          "answer": 0,
+          "explanation": "In C, an 'else' always associates with the closest preceding unmatched 'if' (here, 'if (y > 5)'), regardless of visual indentation! Because the outer condition 'x > 10' (5 > 10) is false, the entire inner if-else structure is completely bypassed. Nothing is printed at all.",
+          "why_wrong": {
+            "1": "'Neither' is the intended output only if braces had tied the else to 'if (x > 10)'. Without braces, the else belongs to the inner if.",
+            "2": "'Both' requires x > 10 and y > 5.",
+            "3": "Dangling else is valid syntax in C; the compiler resolves it via nearest-if binding."
+          },
+          "source": "Deitel Ch 3.6",
+          "verified": true,
+          "verified_output": "(No output produced)",
+          "topic_slug": "control_flow_selection"
+        },
+        {
+          "id": "cos201-cf-014",
+          "course": "COS 201",
+          "topic": "control_flow_selection",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "cloze",
+            "control-flow"
+          ],
+          "question": "Fill in the correct C keywords for selection control structures:",
+          "template": "A single-selection statement begins with [[blank]], while a multi-way branch testing constant expressions begins with [[blank]]. Inside a switch statement, the catch-all label that runs when no case matches is [[blank]].",
+          "blanks": [
+            "if",
+            "switch",
+            "default"
+          ],
+          "explanation": "'if' begins single-selection, 'switch' multiple-selection, and 'default' is the catch-all case.",
+          "why_wrong": {},
+          "source": "Deitel Ch 3.3, 4.7",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "control_flow_selection"
+        },
+        {
+          "id": "cos201-cf-017",
+          "course": "COS 201",
+          "topic": "control_flow_selection",
+          "type": "code_write",
+          "difficulty": 3,
+          "tags": [
+            "code_write",
+            "switch"
+          ],
+          "question": "Write a complete C main function that declares an integer variable 'choice = 2'. Using a switch statement on 'choice', print 'Add\\n' for case 1, 'Delete\\n' for case 2, and 'Invalid\\n' for default. Include all necessary break statements.",
+          "code_lang": "c",
+          "reference_solution": "#include <stdio.h>\nint main(void) {\n    int choice = 2;\n    switch (choice) {\n        case 1:\n            printf(\"Add\\n\");\n            break;\n        case 2:\n            printf(\"Delete\\n\");\n            break;\n        default:\n            printf(\"Invalid\\n\");\n            break;\n    }\n    return 0;\n}",
+          "marking_points": [
+            "Declares choice = 2",
+            "Implements switch (choice)",
+            "Handles case 1 with printf(\"Add\\n\") and break",
+            "Handles case 2 with printf(\"Delete\\n\") and break",
+            "Handles default with printf(\"Invalid\\n\")",
+            "Returns 0 from main"
+          ],
+          "explanation": "Standard switch control structure testing case labels and break termination.",
+          "why_wrong": {},
+          "source": "Deitel Ch 4.7",
+          "verified": true,
+          "verified_output": "Delete\n",
+          "topic_slug": "control_flow_selection"
+        },
+        {
+          "id": "cos201-lp-004",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "for",
+            "accumulator",
+            "midterm-past-q"
+          ],
+          "question": "What will be the output of the following C code?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int x = 0;\n    for (int i = 0; i < 3; i++) {\n        x += i;\n    }\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+          "options": [
+            "3",
+            "2",
+            "6",
+            "0"
+          ],
+          "answer": 0,
+          "explanation": "The loop runs for i = 0, 1, 2:\n- i = 0: x = 0 + 0 = 0\n- i = 1: x = 0 + 1 = 1\n- i = 2: x = 1 + 2 = 3\nWhen i becomes 3, '3 < 3' is false. printf outputs 3.",
+          "why_wrong": {
+            "1": "2 is the final value of i, not the accumulated sum x.",
+            "2": "6 would be the result if i <= 3 was used (0 + 1 + 2 + 3 = 6).",
+            "3": "x is updated in iterations 1 and 2, so it does not remain 0."
+          },
+          "source": "COS 201 Midterm Type B, Q17; Deitel Ch 4.3",
+          "verified": true,
+          "verified_output": "3\n",
+          "topic_slug": "loops_iteration"
+        },
+        {
+          "id": "cos201-lp-008",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "continue",
+            "loops",
+            "flow"
+          ],
+          "question": "What will be the output of the following C program containing a continue statement?",
+          "code": "#include <stdio.h>\nint main(void) {\n    for (int i = 1; i <= 5; i++) {\n        if (i == 3)\n            continue;\n        printf(\"%d \", i);\n    }\n    return 0;\n}",
+          "options": [
+            "1 2 4 5 ",
+            "1 2 ",
+            "1 2 3 4 5 ",
+            "4 5 "
+          ],
+          "answer": 0,
+          "explanation": "When i == 3, 'continue;' executes, which immediately skips the printf statement for that iteration and jumps to the increment step 'i++'. Thus, 3 is skipped while 1, 2, 4, 5 are printed: '1 2 4 5 '.",
+          "why_wrong": {
+            "1": "'1 2 ' would be printed if 'break;' was used instead of 'continue;'.",
+            "2": "3 cannot be printed because the continue statement skips it.",
+            "3": "Iterations for i = 1 and 2 execute normally before i reaches 3."
+          },
+          "source": "Deitel Ch 4.9",
+          "verified": true,
+          "verified_output": "1 2 4 5 ",
+          "topic_slug": "loops_iteration"
+        },
+        {
+          "id": "cos201-lp-014",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "type_answer",
+          "difficulty": 1,
+          "tags": [
+            "keywords",
+            "loops"
+          ],
+          "question": "Which C keyword is used inside a loop body to skip the remaining statements of the current iteration and immediately begin the next cycle?",
+          "answer": "continue",
+          "accepted_answers": [
+            "continue",
+            "continue;"
+          ],
+          "explanation": "'continue' skips to the next iteration of the enclosing loop.",
+          "why_wrong": {},
+          "source": "Deitel Ch 4.9",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "loops_iteration"
+        },
+        {
+          "id": "cos201-lp-018",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "code_write",
+          "difficulty": 3,
+          "tags": [
+            "code_write",
+            "loops",
+            "factorial"
+          ],
+          "question": "Write a complete C main function that calculates the factorial of 5 using a for loop and prints 'Factorial: 120\\n'.",
+          "code_lang": "c",
+          "reference_solution": "#include <stdio.h>\nint main(void) {\n    int n = 5;\n    int fact = 1;\n    for (int i = 1; i <= n; i++) {\n        fact *= i;\n    }\n    printf(\"Factorial: %d\\n\", fact);\n    return 0;\n}",
+          "marking_points": [
+            "Initializes fact = 1",
+            "Uses loop running from 1 up to n (5)",
+            "Accumulates product using fact *= i",
+            "Prints result formatted as 'Factorial: %d\\n'",
+            "Returns 0 from main"
+          ],
+          "explanation": "Standard accumulator multiplication loop.",
+          "why_wrong": {},
+          "source": "Deitel Ch 4.4",
+          "verified": true,
+          "verified_output": "Factorial: 120\n",
+          "topic_slug": "loops_iteration"
+        },
+        {
+          "id": "cos201-fn-003",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "pass-by-value",
+            "scope",
+            "parameters"
+          ],
+          "question": "What will be printed by the following C program demonstrating pass-by-value parameter semantics?",
+          "code": "#include <stdio.h>\nvoid modify(int x) {\n    x = x + 10;\n}\nint main(void) {\n    int a = 5;\n    modify(a);\n    printf(\"%d\\n\", a);\n    return 0;\n}",
+          "options": [
+            "5",
+            "15",
+            "10",
+            "Compilation Error"
+          ],
+          "answer": 0,
+          "explanation": "In C, scalar variables are passed strictly by value. Function 'modify' receives a private copy of 'a' in its parameter 'x'. Changing 'x = x + 10' alters only the local stack copy inside 'modify'. The original variable 'a' in main remains 5.",
+          "why_wrong": {
+            "1": "15 would occur if C used pass-by-reference. C strictly uses pass-by-value for scalars unless pointers are explicitly passed.",
+            "2": "a is initialized to 5, not 10.",
+            "3": "The code is completely valid C."
+          },
+          "source": "Deitel Ch 5.5",
+          "verified": true,
+          "verified_output": "5\n",
+          "topic_slug": "functions_modular"
+        },
+        {
+          "id": "cos201-fn-007",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "code_output",
+          "difficulty": 4,
+          "tags": [
+            "recursion",
+            "call-stack",
+            "unwinding"
+          ],
+          "question": "What is the output of the following recursive function where the printf statement follows the recursive call?",
+          "code": "#include <stdio.h>\nvoid print_back(int n) {\n    if (n == 0) return;\n    print_back(n - 1);\n    printf(\"%d \", n);\n}\nint main(void) {\n    print_back(3);\n    printf(\"\\n\");\n    return 0;\n}",
+          "options": [
+            "1 2 3 ",
+            "3 2 1 ",
+            "0 1 2 3 ",
+            "3 2 1 0 "
+          ],
+          "answer": 0,
+          "explanation": "Because printf is after 'print_back(n - 1)', calls are pushed onto the call stack: print_back(3) -> print_back(2) -> print_back(1) -> print_back(0). When print_back(0) returns, the stack unwinds in reverse order (LIFO): n=1 prints, then n=2 prints, then n=3 prints: '1 2 3 '.",
+          "why_wrong": {
+            "1": "'3 2 1 ' would occur if printf were called before the recursive step.",
+            "2": "print_back(0) returns without printing 0.",
+            "3": "Stack unwinding executes the printf in ascending order."
+          },
+          "source": "Deitel Ch 5.14",
+          "verified": true,
+          "verified_output": "1 2 3 \n",
+          "topic_slug": "functions_modular"
+        },
+        {
+          "id": "cos201-fn-010",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "matching",
+          "difficulty": 2,
+          "tags": [
+            "matching",
+            "scope",
+            "storage"
+          ],
+          "question": "Match each variable classification with its lifetime and visibility:",
+          "pairs": [
+            {
+              "left": "Automatic local variable",
+              "right": "Created on block entry, destroyed on block exit"
+            },
+            {
+              "left": "Static local variable",
+              "right": "Retains value across calls; visible only within defining block"
+            },
+            {
+              "left": "Global variable",
+              "right": "Created at startup, destroyed at shutdown; visible across whole file"
+            },
+            {
+              "left": "Function prototype",
+              "right": "Enables compiler signature and parameter type verification"
+            }
+          ],
+          "explanation": "Summarizes C scope and storage duration rules.",
+          "why_wrong": {},
+          "source": "Deitel Ch 5.11, 5.12",
+          "verified": true,
+          "verified_output": "",
+          "topic_slug": "functions_modular"
+        },
+        {
+          "id": "cos201-fn-012",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "code_write",
+          "difficulty": 3,
+          "tags": [
+            "code_write",
+            "functions"
+          ],
+          "question": "Write a complete C program with a function 'int power(int base, int exp)' that computes base^exp for positive exp using a loop, and a main function that calls power(2, 4) and prints 'Result: 16\\n'.",
+          "code_lang": "c",
+          "reference_solution": "#include <stdio.h>\nint power(int base, int exp) {\n    int result = 1;\n    for (int i = 0; i < exp; i++) {\n        result *= base;\n    }\n    return result;\n}\nint main(void) {\n    printf(\"Result: %d\\n\", power(2, 4));\n    return 0;\n}",
+          "marking_points": [
+            "Defines int power(int base, int exp) returning int",
+            "Initializes accumulator result = 1",
+            "Computes power via loop multiplying by base exp times",
+            "Returns result from power function",
+            "Main prints 'Result: 16\\n'"
+          ],
+          "explanation": "Standard function design and implementation.",
+          "why_wrong": {},
+          "source": "Deitel Ch 5.4",
+          "verified": true,
+          "verified_output": "Result: 16\n",
+          "topic_slug": "functions_modular"
+        },
+        {
+          "id": "cos201-arr-003",
+          "course": "COS 201",
+          "topic": "arrays_1d_2d",
+          "type": "code_output",
+          "difficulty": 2,
+          "tags": [
+            "arrays",
+            "initialization",
+            "partial_initialization",
+            "past_exam"
+          ],
+          "question": "What is the exact output of the following C program?\n\n```c\n#include <stdio.h>\n\nint main(void) {\n    int arr[5] = {10, 20};\n    printf(\"%d %d %d\", arr[0], arr[1], arr[2]);\n    return 0;\n}\n```",
+          "options": [
+            "10 20 0",
+            "10 20 20",
+            "10 20 [garbage value]",
+            "Compilation error"
+          ],
+          "answer": 0,
+          "explanation": "In C, if an array is partially initialized (fewer initializers than elements in the declared size), all remaining uninitialized elements are automatically set to zero. Here, arr[0]=10, arr[1]=20, and arr[2], arr[3], arr[4] are all initialized to 0.",
+          "why_wrong": {
+            "1": "Uninitialized elements in a partial initializer list are zeroed, not duplicated from preceding elements.",
+            "2": "Only completely uninitialized local arrays contain garbage values; once ANY initializer is provided, the remainder are guaranteed to be 0.",
+            "3": "Partial array initialization is fully standard and valid C syntax."
+          },
+          "source": "Deitel C How to Program, Section 6.4; Nile Past Exam Q21",
+          "verified": true,
+          "verified_output": "10 20 0",
+          "topic_slug": "arrays_1d_2d"
+        },
+        {
+          "id": "cos201-arr-008",
+          "course": "COS 201",
+          "topic": "arrays_1d_2d",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "multidimensional_arrays",
+            "functions",
+            "parameters",
+            "past_exam"
+          ],
+          "question": "Which of the following function prototypes is VALID when accepting a 2-dimensional array of 3 columns in C?",
+          "options": [
+            "void process(int arr[][3], int rows);",
+            "void process(int arr[][], int rows);",
+            "void process(int arr[3][], int cols);",
+            "void process(int [][]arr, int rows);"
+          ],
+          "answer": 0,
+          "explanation": "When passing a 2D array to a function, the compiler needs to know the number of columns to correctly calculate element memory offsets (`row * cols + col`). Therefore, the column dimension is MANDATORY, while the row dimension (first bracket) may be left empty. `int arr[][3]` is valid.",
+          "why_wrong": {
+            "1": "`arr[][]` causes a compiler error ('array type has incomplete element type') because the column dimension is missing.",
+            "2": "`arr[3][]` is invalid C syntax; the first dimension may be omitted, but subsequent dimensions cannot.",
+            "3": "`int [][]arr` is Java/C# syntax, completely illegal in C."
+          },
+          "source": "Deitel C How to Program, Section 6.9; Nile Past Exam Q36",
+          "verified": true,
+          "verified_output": "(Language syntax rule)",
+          "topic_slug": "arrays_1d_2d"
+        },
+        {
+          "id": "cos201-arr-012",
+          "course": "COS 201",
+          "topic": "arrays_1d_2d",
+          "type": "code_trace",
+          "difficulty": 4,
+          "tags": [
+            "arrays",
+            "algorithms",
+            "reversal",
+            "two_pointer"
+          ],
+          "question": "Trace the array elements during execution of this reversal function with array `{1, 2, 3, 4, 5}`:\n\n```c\n#include <stdio.h>\n\nvoid reverse(int a[], int n) {\n    int start = 0, end = n - 1;\n    while (start < end) {\n        int temp = a[start];\n        a[start] = a[end];\n        a[end] = temp;\n        start++;\n        end--;\n    }\n}\n```\nWhat is printed after calling `reverse(a, 5)`?",
+          "options": [
+            "5 4 3 2 1",
+            "1 2 3 4 5",
+            "5 2 3 4 1",
+            "5 4 3 4 5"
+          ],
+          "answer": 0,
+          "explanation": "Iteration 1: start=0, end=4. Swap a[0] (1) and a[4] (5). Array: {5, 2, 3, 4, 1}. start becomes 1, end becomes 3.\nIteration 2: start=1, end=3. Swap a[1] (2) and a[3] (4). Array: {5, 4, 3, 2, 1}. start becomes 2, end becomes 2.\nIteration 3: start=2, end=2. Condition `start < end` is false (2 < 2 is false). Loop terminates.\nFinal array: 5 4 3 2 1.",
+          "why_wrong": {
+            "1": "The array was reversed in-place, not left unchanged.",
+            "2": "This represents only the first swap (iteration 1).",
+            "3": "This is what would happen if a[end] was overwritten without storing a temporary copy."
+          },
+          "source": "Deitel C How to Program, Section 6.8",
+          "verified": true,
+          "verified_output": "5 4 3 2 1",
+          "topic_slug": "arrays_1d_2d"
+        },
+        {
+          "id": "cos201-arr-016",
+          "course": "COS 201",
+          "topic": "arrays_1d_2d",
+          "type": "code_write",
+          "difficulty": 3,
+          "tags": [
+            "arrays",
+            "coding",
+            "search",
+            "linear_search"
+          ],
+          "question": "Write a C function `int linearSearch(const int arr[], int size, int key)` that iterates through `arr` to find `key`. If found, return its index; if not found after inspecting all elements, return `-1`.",
+          "options": [],
+          "answer": "int linearSearch(const int arr[], int size, int key) {\n    for (int i = 0; i < size; i++) {\n        if (arr[i] == key) {\n            return i;\n        }\n    }\n    return -1;\n}",
+          "explanation": "Iterates from index 0 to size - 1. Compares each element with key. Returns immediately on match; returns -1 if loop finishes without finding key.",
+          "why_wrong": {},
+          "marking_points": [
+            "Correct function signature with const int arr[], int size, int key returning int",
+            "Loop runs from i = 0 strictly to i < size",
+            "Compares arr[i] == key correctly",
+            "Returns i immediately upon finding key",
+            "Returns -1 outside and after the loop completes"
+          ],
+          "source": "Deitel C How to Program, Section 6.7",
+          "verified": true,
+          "verified_output": "(Reference code specification)",
+          "topic_slug": "arrays_1d_2d"
+        },
+        {
+          "id": "cos201-ptr-003",
+          "course": "COS 201",
+          "topic": "pointers_memory",
+          "type": "code_output",
+          "difficulty": 2,
+          "tags": [
+            "pointers",
+            "dereference",
+            "mutation"
+          ],
+          "question": "What is the exact output of the following C code snippet?\n\n```c\n#include <stdio.h>\n\nint main(void) {\n    int val = 5;\n    int *ptr = &val;\n    *ptr = *ptr * 4;\n    printf(\"val=%d *ptr=%d\", val, *ptr);\n    return 0;\n}\n```",
+          "options": [
+            "val=20 *ptr=20",
+            "val=5 *ptr=20",
+            "val=20 *ptr=5",
+            "val=5 *ptr=5"
+          ],
+          "answer": 0,
+          "explanation": "`ptr` holds the memory address of `val` (`&val`). Modifying `*ptr = *ptr * 4;` alters the memory location where `val` lives, setting it to 5 * 4 = 20. Because `val` and `*ptr` refer to the exact same memory location, both evaluate to 20.",
+          "why_wrong": {
+            "1": "Assigning through `*ptr` directly modifies `val` in place.",
+            "2": "Both `val` and `*ptr` reference the exact same memory cell.",
+            "3": "The multiplication `*ptr * 4` was successfully executed and stored."
+          },
+          "source": "Deitel C How to Program, Section 7.3",
+          "verified": true,
+          "verified_output": "val=20 *ptr=20",
+          "topic_slug": "pointers_memory"
+        },
+        {
+          "id": "cos201-ptr-008",
+          "course": "COS 201",
+          "topic": "pointers_memory",
+          "type": "mcq",
+          "difficulty": 4,
+          "tags": [
+            "pointers",
+            "const",
+            "syntax",
+            "types"
+          ],
+          "question": "Consider the declarations:\n1) `const int *ptr1;`\n2) `int * const ptr2 = &x;`\nWhich statement accurately describes their mutability?",
+          "options": [
+            "`ptr1` is a pointer to constant integer (the data cannot change, but the pointer can point elsewhere); `ptr2` is a constant pointer (the address cannot change, but the data can be modified)",
+            "`ptr1` is a constant pointer; `ptr2` is a pointer to a constant integer",
+            "Both `ptr1` and `ptr2` prevent modifications to both the address and the integer value",
+            "Neither declaration enforces any restriction in standard C"
+          ],
+          "answer": 0,
+          "explanation": "Rule: read declarations right-to-left. `const int *ptr1` -> `ptr1` is a pointer to `int const` (data is constant: `*ptr1 = 5;` is illegal, but `ptr1 = &y;` is legal). `int * const ptr2` -> `ptr2` is a `const` pointer to `int` (pointer is constant: `ptr2 = &y;` is illegal, but `*ptr2 = 5;` is legal).",
+          "why_wrong": {
+            "1": "This reverses the two meanings.",
+            "2": "To freeze both pointer and data, one must write `const int * const ptr`.",
+            "3": "`const` is strictly enforced by the C compiler, causing compilation errors on violation."
+          },
+          "source": "Deitel C How to Program, Section 7.5",
+          "verified": true,
+          "verified_output": "(Language specification rule)",
+          "topic_slug": "pointers_memory"
+        },
+        {
+          "id": "cos201-ptr-012",
+          "course": "COS 201",
+          "topic": "pointers_memory",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "pointers",
+            "cloze",
+            "operators"
+          ],
+          "question": "Complete the statements on pointer operators and memory:\n\nThe [[&]] operator is known as the address-of operator. The [[*]] operator performs indirection or dereferencing. A pointer initialized to [[NULL]] points to no valid memory address. When dynamically allocated heap memory is no longer needed, it must be returned using the [[free]] function to avoid memory leaks.",
+          "answer": [
+            "&",
+            "*",
+            "NULL",
+            "free"
+          ],
+          "explanation": "`&` yields the memory address, `*` accesses the value stored at that address, `NULL` represents a safe unassigned pointer state, and `free()` deallocates heap memory.",
+          "why_wrong": {},
+          "source": "Deitel C How to Program, Chapter 7",
+          "verified": true,
+          "verified_output": "(Conceptual terminology)",
+          "topic_slug": "pointers_memory"
+        },
+        {
+          "id": "cos201-ptr-016",
+          "course": "COS 201",
+          "topic": "pointers_memory",
+          "type": "code_write",
+          "difficulty": 3,
+          "tags": [
+            "pointers",
+            "coding",
+            "pointer_arithmetic"
+          ],
+          "question": "Write a C function `int sumArrayPtr(const int *start, int size)` that computes and returns the sum of all elements using pure pointer arithmetic (advancing a pointer with `*start` and `start++`), without using the array subscript bracket notation `[]`.",
+          "options": [],
+          "answer": "int sumArrayPtr(const int *start, int size) {\n    int sum = 0;\n    const int *end = start + size;\n    while (start < end) {\n        sum += *start;\n        start++;\n    }\n    return sum;\n}",
+          "explanation": "Advances pointer `start` through memory until it reaches `start + size`. Accumulates `*start` into sum.",
+          "why_wrong": {},
+          "marking_points": [
+            "Correct function header returning int with const int *start and int size",
+            "Initializes sum accumulator variable to 0",
+            "Advances pointer using start++ or *(start + i)",
+            "Avoids array subscript bracket [] notation",
+            "Returns the computed sum correctly"
+          ],
+          "source": "Deitel C How to Program, Section 7.7",
+          "verified": true,
+          "verified_output": "(Reference code specification)",
+          "topic_slug": "pointers_memory"
+        },
+        {
+          "id": "cos201-str-003",
+          "course": "COS 201",
+          "topic": "strings_char_arrays",
+          "type": "code_output",
+          "difficulty": 2,
+          "tags": [
+            "strings",
+            "strlen",
+            "sizeof",
+            "memory"
+          ],
+          "question": "What is the output of the following C program?\n\n```c\n#include <stdio.h>\n#include <string.h>\n\nint main(void) {\n    char greeting[] = \"Nile\";\n    printf(\"len=%zu size=%zu\", strlen(greeting), sizeof(greeting));\n    return 0;\n}\n```",
+          "options": [
+            "len=4 size=5",
+            "len=5 size=5",
+            "len=4 size=4",
+            "len=5 size=4"
+          ],
+          "answer": 0,
+          "explanation": "`strlen()` counts characters preceding the null terminator `'\\0'` (which is 4 characters: 'N', 'i', 'l', 'e'). `sizeof()` returns the total memory allocated to the array in bytes, which includes the terminating `'\\0'` (4 + 1 = 5 bytes). Thus `len=4 size=5`.",
+          "why_wrong": {
+            "1": "strlen() does NOT count the terminating '\\0'.",
+            "2": "sizeof(greeting) includes the null terminator byte.",
+            "3": "strlen is 4, but sizeof is 5, not the reverse."
+          },
+          "source": "Deitel C How to Program, Section 8.3",
+          "verified": true,
+          "verified_output": "len=4 size=5",
+          "topic_slug": "strings_char_arrays"
+        },
+        {
+          "id": "cos201-str-007",
+          "course": "COS 201",
+          "topic": "strings_char_arrays",
+          "type": "mcq",
+          "difficulty": 4,
+          "tags": [
+            "strings",
+            "pointers",
+            "literals",
+            "memory_segment"
+          ],
+          "question": "What is the key difference between `char s1[] = \"hello\";` and `char *s2 = \"hello\";` when attempting to modify the first character (`s1[0] = 'H';` vs `s2[0] = 'H';`)?",
+          "options": [
+            "`s1` is a mutable array copied to the local stack, so modifying `s1[0]` is legal; `s2` points directly to a read-only string literal, so modifying `s2[0]` causes undefined behavior (segmentation fault)",
+            "`s2` is mutable while `s1` is read-only",
+            "Both statements produce a compile-time syntax error",
+            "Both statements are completely safe and identical in behavior"
+          ],
+          "answer": 0,
+          "explanation": "`char s1[] = \"hello\";` allocates a 6-byte array on the stack and copies the characters into it, allowing unrestricted modification. In contrast, `char *s2 = \"hello\";` creates a pointer pointing to the string literal stored in the executable's read-only data segment (`.rodata`). Writing to read-only memory violates OS page permissions, causing an immediate segmentation fault at runtime.",
+          "why_wrong": {
+            "1": "String literals are immutable, while stack arrays are mutable.",
+            "2": "Both declarations compile cleanly in standard C without syntax errors.",
+            "3": "Modifying a string literal pointer at runtime crashes modern operating systems."
+          },
+          "source": "Deitel C How to Program, Section 8.2",
+          "verified": true,
+          "verified_output": "(Memory segmentation architecture)",
+          "topic_slug": "strings_char_arrays"
+        },
+        {
+          "id": "cos201-str-011",
+          "course": "COS 201",
+          "topic": "strings_char_arrays",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "strings",
+            "cloze",
+            "library"
+          ],
+          "question": "Fill in the correct functions and delimiters for C strings:\n\nAll C strings are terminated by the [[\\0]] character. The header file containing string utility functions is [[string.h]]. To determine the length of a string excluding the null terminator, use [[strlen]]. To safely read an entire line including spaces from stdin, the [[fgets]] function is preferred over scanf.",
+          "answer": [
+            "\\0",
+            "string.h",
+            "strlen",
+            "fgets"
+          ],
+          "explanation": "C strings require '\\0' as sentinel delimiter, use `<string.h>` for string operations, `strlen` to count length, and `fgets` for secure bounded input with spaces.",
+          "why_wrong": {},
+          "source": "Deitel C How to Program, Chapter 8",
+          "verified": true,
+          "verified_output": "(Terminology cloze)",
+          "topic_slug": "strings_char_arrays"
+        },
+        {
+          "id": "cos201-str-015",
+          "course": "COS 201",
+          "topic": "strings_char_arrays",
+          "type": "code_write",
+          "difficulty": 3,
+          "tags": [
+            "strings",
+            "coding",
+            "strlen",
+            "pointer"
+          ],
+          "question": "Write a C function `size_t myStrlen(const char *s)` that calculates and returns the length of string `s` (excluding the null terminator) without calling `<string.h>` functions.",
+          "options": [],
+          "answer": "size_t myStrlen(const char *s) {\n    size_t count = 0;\n    while (*s != '\\0') {\n        count++;\n        s++;\n    }\n    return count;\n}",
+          "explanation": "Loops through pointer *s, incrementing count and advancing pointer s until reaching '\\0'.",
+          "why_wrong": {},
+          "marking_points": [
+            "Correct function header returning size_t with const char *s",
+            "Initializes counter to 0",
+            "Loops until *s == '\\0'",
+            "Advances pointer (s++) and increments counter (count++)",
+            "Returns total count"
+          ],
+          "source": "Deitel C How to Program, Section 8.3",
+          "verified": true,
+          "verified_output": "(Reference code specification)",
+          "topic_slug": "strings_char_arrays"
+        },
+        {
+          "id": "cos201-mid-009",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "loops",
+            "do-while",
+            "post-test",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int x = 0;\n    do {\n        printf(\"%d \", x);\n        x++;\n    } while(x < 2);\n    return 0;\n}\n```",
+          "options": [
+            "0",
+            "0 1",
+            "1 2",
+            "0 1 2"
+          ],
+          "answer": "0 1",
+          "explanation": "Iteration 1: prints '0 ', x increments to 1. Condition (1 < 2) is true, loop repeats. Iteration 2: prints '1 ', x increments to 2. Condition (2 < 2) is false, loop terminates. Total output: '0 1 '.",
+          "why_wrong": {
+            "0": "Assumes loop only executes once.",
+            "1 2": "Assumes x is incremented before printing.",
+            "0 1 2": "Off-by-one error; assumes condition checked before or inclusive of 2."
+          },
+          "marking_points": [
+            "Traces do-while post-test execution for exactly 2 passes"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 9",
+          "verified": true,
+          "verified_output": "0 1 ",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-011",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "arrays",
+            "indexing",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int arr[3] = {1, 2, 3};\n    printf(\"%d\", arr[2]);\n    return 0;\n}\n```",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "Error"
+          ],
+          "answer": "3",
+          "explanation": "C arrays are 0-indexed: arr[0] is 1, arr[1] is 2, and arr[2] is 3. Accessing arr[2] prints 3.",
+          "why_wrong": {
+            "1": "arr[0] is 1; assumes 1-based indexing where arr[1] is first.",
+            "2": "arr[1] is 2.",
+            "Error": "arr[2] is completely within the 3-element bounds (indices 0, 1, 2)."
+          },
+          "marking_points": [
+            "Applies 0-based array indexing to retrieve third element at index 2"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 11",
+          "verified": true,
+          "verified_output": "3",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-017",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "loops",
+            "for-loop",
+            "accumulation",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int x = 0;\n    for(int i = 0; i < 3; i++) {\n        x += i;\n    }\n    printf(\"%d\", x);\n    return 0;\n}\n```",
+          "options": [
+            "2",
+            "3",
+            "1",
+            "0"
+          ],
+          "answer": "3",
+          "explanation": "The loop executes for i = 0, 1, 2. When i=0: x += 0 (x=0). When i=1: x += 1 (x=1). When i=2: x += 2 (x=3). Loop terminates when i=3. The final value printed is 3.",
+          "why_wrong": {
+            "2": "Assumes only the last value of i is stored into x instead of being accumulated.",
+            "1": "Stops accumulation early.",
+            "0": "Assumes the loop did not execute or x remained unmutated."
+          },
+          "marking_points": [
+            "Traces accumulation: 0 + 0 + 1 + 2 = 3"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 17",
+          "verified": true,
+          "verified_output": "3",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-021",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "arrays",
+            "indexing",
+            "arithmetic",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int arr[4] = {2, 4, 6, 8};\n    printf(\"%d\", arr[1] + arr[3]);\n    return 0;\n}\n```",
+          "options": [
+            "6",
+            "12",
+            "10",
+            "8"
+          ],
+          "answer": "12",
+          "explanation": "With 0-based indexing: arr[0]=2, arr[1]=4, arr[2]=6, arr[3]=8. arr[1] is 4 and arr[3] is 8. Their sum is 4 + 8 = 12.",
+          "why_wrong": {
+            "6": "Sum of arr[0] + arr[1] (2 + 4 = 6).",
+            "10": "Sum of arr[1] + arr[2] (4 + 6 = 10) or arr[0] + arr[3] (2 + 8 = 10).",
+            "8": "Value of arr[3] alone."
+          },
+          "marking_points": [
+            "Extracts arr[1]=4 and arr[3]=8 and computes sum = 12"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 21",
+          "verified": true,
+          "verified_output": "12",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-025",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "operators",
+            "ternary",
+            "evaluation",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int x = 2, y = 3;\n    printf(\"%d\", x > y ? x : y);\n    return 0;\n}\n```",
+          "options": [
+            "2",
+            "3",
+            "0",
+            "Error"
+          ],
+          "answer": "3",
+          "explanation": "Condition (x > y) is (2 > 3), which is false (0). When the condition is false, the ternary operator evaluates and returns the expression after the colon (:), which is y (3).",
+          "why_wrong": {
+            "2": "Value of x; this would be returned if (x > y) were true.",
+            "0": "Confuses the result with the Boolean truth value (0) of the comparison.",
+            "Error": "Valid inline ternary operator in printf."
+          },
+          "marking_points": [
+            "Evaluates condition (2 > 3) as false and returns y (3)"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 25",
+          "verified": true,
+          "verified_output": "3",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-027",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "loops",
+            "post-increment",
+            "iteration",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int i = 1;\n    while(i <= 3) {\n        printf(\"%d \", i++);\n    }\n    return 0;\n}\n```",
+          "options": [
+            "1 2 3",
+            "1 2 3 4",
+            "0 1 2",
+            "2 3 4"
+          ],
+          "answer": "1 2 3",
+          "explanation": "Because post-increment (i++) is used, printf receives the current value of i before the increment occurs: pass 1 prints 1 (i becomes 2); pass 2 prints 2 (i becomes 3); pass 3 prints 3 (i becomes 4). Condition (4 <= 3) is false, so loop terminates. Output: '1 2 3 '.",
+          "why_wrong": {
+            "2 3 4": "This would occur if pre-increment (++i) had been used.",
+            "1 2 3 4": "Assumes i <= 3 is evaluated after post-increment inside the body.",
+            "0 1 2": "Assumes 0-based initial value."
+          },
+          "marking_points": [
+            "Traces post-increment within printf: prints current value then increments"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 27",
+          "verified": true,
+          "verified_output": "1 2 3 ",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-033",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "operators",
+            "logical-and",
+            "control-flow",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int x = 1, y = 0;\n    if(x && y)\n        printf(\"Yes\");\n    else\n        printf(\"No\");\n    return 0;\n}\n```",
+          "options": [
+            "Yes",
+            "No",
+            "1",
+            "0"
+          ],
+          "answer": "No",
+          "explanation": "In the logical AND expression (x && y), x is 1 (true) and y is 0 (false). Because logical AND requires both operands to be non-zero to be true, (1 && 0) evaluates to 0 (false). The 'else' branch executes, printing 'No'.",
+          "why_wrong": {
+            "Yes": "Assumes true if any operand is true (confusion with logical OR ||).",
+            "1": "Prints string literal 'No', not integer.",
+            "0": "Prints string literal 'No', not numeric result."
+          },
+          "marking_points": [
+            "Evaluates logical AND (1 && 0) as false, printing 'No'"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 33",
+          "verified": true,
+          "verified_output": "No",
+          "topic_slug": "midterm_past_questions"
+        },
+        {
+          "id": "cos201-mid-035",
+          "course": "COS 201",
+          "topic": "Midterm Past Questions (Reconstruction & Deep Breakdown)",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "loops",
+            "for-loop",
+            "code-tracing",
+            "midterm-2024"
+          ],
+          "question": "What will be the output of the following code?\n\n```c\n#include <stdio.h>\nint main() {\n    int i = 0;\n    for(i = 0; i < 3; i++) {\n        printf(\"%d \", i * 2);\n    }\n    return 0;\n}\n```",
+          "options": [
+            "0 2 4",
+            "0 1 2",
+            "2 4 6",
+            "1 3 5"
+          ],
+          "answer": "0 2 4",
+          "explanation": "The loop iterates for i = 0, 1, 2. When i=0: 0*2 = 0. When i=1: 1*2 = 2. When i=2: 2*2 = 4. When i=3: condition (3 < 3) is false. Total output: '0 2 4 '.",
+          "why_wrong": {
+            "0 1 2": "Prints the index i directly without multiplying by 2.",
+            "2 4 6": "Assumes i starts at 1 instead of 0.",
+            "1 3 5": "Odd numbers sequence; incorrect arithmetic."
+          },
+          "marking_points": [
+            "Multiplies loop index by 2 across iterations 0, 1, 2"
+          ],
+          "source": "Nile University COS 201 Midterm Exam (Type B), Question 35",
+          "verified": true,
+          "verified_output": "0 2 4 ",
+          "topic_slug": "midterm_past_questions"
+        }
+      ]
+    }
+  ]
+}

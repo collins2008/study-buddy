@@ -1,0 +1,442 @@
+import json
+import os
+
+topic_data = {
+    "course": "IFT 203",
+    "topic": "Internet, WWW, Protocols & Client-Server",
+    "summary": "This topic establishes the foundational architecture of the modern web ecosystem. The Internet represents the global hardware infrastructure of interconnected computer networks communicating via TCP/IP, whereas the World Wide Web (WWW) is an information-sharing service operating atop the Internet, invented by Sir Tim Berners-Lee in 1989. Students master critical distinctions: web browsers (client software that fetches and renders HTML/CSS/JS) versus search engines (server-side indexing and query systems), static web pages versus dynamic web applications, and front-end client execution versus back-end server processing. The Uniform Resource Locator (URL) provides global addressing, resolved by the hierarchical Domain Name System (DNS) into IP addresses. The web functions via the client-server architecture governed by the HyperText Transfer Protocol (HTTP) and its cryptographically secured variant (HTTPS over TLS port 443).",
+    "key_terms": [
+        {
+            "term": "The Internet",
+            "definition": "The global physical network of billions of interconnected computers, routers, fiber-optic lines, and wireless links communicating via the standardized TCP/IP protocol suite."
+        },
+        {
+            "term": "World Wide Web (WWW)",
+            "definition": "An information system operating on top of the Internet that allows documents and other web resources to be interlinked by hyperlinks and accessed via URLs using HTTP/HTTPS."
+        },
+        {
+            "term": "Web Browser",
+            "definition": "A software application installed on an end-user device that requests, retrieves, parses, and renders HTML documents, stylesheets, and scripts from web servers into interactive graphical displays."
+        },
+        {
+            "term": "Search Engine",
+            "definition": "A server-side web software system (e.g., Google, Bing) that uses automated web crawlers to discover, index, and rank web pages, returning searchable results based on user queries."
+        },
+        {
+            "term": "Client-Server Architecture",
+            "definition": "A distributed computing model where client applications (e.g., browsers) send requests over a network to centralized server applications that process requests and return responses."
+        },
+        {
+            "term": "Domain Name System (DNS)",
+            "definition": "A hierarchical, distributed naming system that translates human-friendly alphanumeric domain names (e.g., nileuniversity.edu.ng) into machine-routable IP addresses."
+        },
+        {
+            "term": "Uniform Resource Locator (URL)",
+            "definition": "A standard global address reference used to identify and locate a specific digital resource (page, image, API endpoint) on the World Wide Web."
+        },
+        {
+            "term": "HTTPS (HTTP Secure)",
+            "definition": "The secure version of HTTP that encrypts communications between browser and server using Transport Layer Security (TLS/SSL) over default TCP port 443."
+        }
+    ],
+    "questions": [
+        {
+            "id": "ift203-wa-001",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "mcq",
+            "difficulty": 1,
+            "tags": ["internet", "www", "terminology", "nile-lecture"],
+            "question": "What is the fundamental difference between the 'Internet' and the 'World Wide Web' (WWW)?",
+            "options": [
+                "The Internet and the World Wide Web are identical synonyms that refer to the exact same software program",
+                "The Internet is the global physical network infrastructure of interconnected computers, while the World Wide Web is an information service of interlinked hypertext documents operating on top of the Internet",
+                "The Internet was invented by Tim Berners-Lee in 1989, while the Web was created by the US military in 1969",
+                "The Internet is only used for sending emails, while the Web is used exclusively for streaming videos"
+            ],
+            "answer": 1,
+            "explanation": "As emphasized in IFT 203 Lecture 2 and notebook notes, the Internet is the physical network of networks connecting hardware devices worldwide via TCP/IP. The World Wide Web (WWW) is an application-level information space of interlinked documents created by Tim Berners-Lee in 1989 that runs on top of the Internet infrastructure.",
+            "why_wrong": {
+                "0": "They are not synonyms; confusing the physical network with the web application layer is a major student misconception.",
+                "2": "The chronology is reversed: the Internet evolved from ARPANET (1969), whereas the WWW was invented by Tim Berners-Lee at CERN in 1989.",
+                "3": "The Internet supports dozens of protocols (SMTP, FTP, SSH, VoIP), and the Web supports text, audio, video, graphics, and interactive apps."
+            },
+            "source": "IFT 203 Slide 2: Basic Terminologies; Lecturer Notes"
+        },
+        {
+            "id": "ift203-wa-002",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["browser", "search-engine", "terminology", "nile-hint"],
+            "question": "Which of the following correctly distinguishes a 'Web Browser' from a 'Search Engine'?",
+            "options": [
+                "Google Chrome is a search engine, while Google.com is a web browser",
+                "A web browser is a local client software application used to view and render web pages (e.g., Firefox, Safari), whereas a search engine is a remote website/service that indexes and locates information on the web (e.g., Google, Bing)",
+                "Search engines require local installation on your hard drive, whereas web browsers only exist in the cloud",
+                "A web browser stores all websites in the world on your smartphone memory"
+            ],
+            "answer": 1,
+            "explanation": "A web browser (Chrome, Edge, Firefox, Safari) is client software installed on a device that connects to web servers, parses HTML/CSS/JS, and renders pages visually. A search engine (Google, Bing) is a remote web service that crawls the web, indexes content into huge server databases, and responds to search queries.",
+            "why_wrong": {
+                "0": "Google Chrome is the browser (software client), while Google.com is the search engine (website).",
+                "2": "Search engines run on massive server clusters in data centers; browsers are installed on the local device.",
+                "3": "Browsers fetch individual web pages on demand; they do not store the entire World Wide Web on your device."
+            },
+            "source": "IFT 203 Slide 2; Lecturer Notebook Hints"
+        },
+        {
+            "id": "ift203-wa-003",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["webpage", "website", "webapp", "nile-lecture"],
+            "question": "How does a 'Web Application' (e.g., the Nile University Student Registration Portal) differ from a traditional 'Static Website' (e.g., a simple company contact brochure)?",
+            "options": [
+                "A web application only contains text and cannot display images",
+                "A web application is interactive, performs dynamic server-side business logic, processes user input, and interacts with databases, whereas a static website displays pre-written, identical content to all visitors",
+                "A static website requires user login and password authentication, while a web application does not",
+                "Static websites are written in Python, while web applications can only be written in plain HTML"
+            ],
+            "answer": 1,
+            "explanation": "A static website serves fixed HTML/CSS files stored on the server disk identically to every visitor. A web application is an interactive software program (like Nile Portal or Gmail) where user actions trigger dynamic server computations, database reads/writes, session tracking, and customized UI rendering.",
+            "why_wrong": {
+                "0": "Web applications feature rich multimedia, interactive forms, graphics, and dynamic data visualization.",
+                "2": "Static websites generally do not support user authentication or sessions because they lack dynamic server-side state processing.",
+                "3": "Static websites are written in HTML/CSS; web applications utilize server-side languages (Python, PHP, Node.js) combined with databases."
+            },
+            "source": "IFT 203 Slide 2; Lecturer Notes"
+        },
+        {
+            "id": "ift203-wa-004",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["url", "dns", "web-architecture"],
+            "question": "Examine the following URL: `https://portal.nileuniversity.edu.ng:443/students/results?semester=first#grades`. Which breakdown correctly identifies its components?",
+            "options": [
+                "Protocol: `http`, Domain: `students`, Path: `results`, Port: `80`, Query: `#grades`",
+                "Protocol: `https`, Subdomain: `portal`, Domain: `nileuniversity.edu.ng`, Port: `443`, Path: `/students/results`, Query string: `semester=first`, Fragment: `grades`",
+                "Protocol: `ftp`, TLD: `portal`, Domain: `results`, Fragment: `?semester=first`",
+                "Domain: `https://portal`, Port: `8080`, Query: `/students/results`"
+            ],
+            "answer": 1,
+            "explanation": "In standard URL anatomy: `https` is the scheme/protocol; `portal` is the subdomain; `nileuniversity.edu.ng` is the domain (with `.ng` as ccTLD); `443` is the port; `/students/results` is the resource path; `?semester=first` is the query string parameter; and `#grades` is the fragment identifier (hash anchor targeting an in-page element).",
+            "why_wrong": {
+                "0": "The protocol is `https`, not `http`; the port specified is `443`, not `80`; and `#grades` is a fragment, not a query.",
+                "2": "The protocol is `https`, not `ftp`; `portal` is a subdomain, not a TLD.",
+                "3": "`https` is a protocol, not part of the domain; port 443 is specified, not 8080."
+            },
+            "source": "IFT 203 Slide 2; RFC 3986 Uniform Resource Identifier"
+        },
+        {
+            "id": "ift203-wa-005",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "matching",
+            "difficulty": 3,
+            "tags": ["protocols", "networking", "matching"],
+            "question": "Match each web networking protocol to its primary responsibility in web architecture:",
+            "options": [
+                {"left": "HTTP", "right": "Application-layer protocol for transferring hypertext requests and responses in plain text over port 80"},
+                {"left": "HTTPS", "right": "Application-layer protocol encrypted with TLS/SSL for secure transactions over port 443"},
+                {"left": "TCP", "right": "Transport-layer protocol establishing reliable, ordered, error-checked packet stream delivery via 3-way handshakes"},
+                {"left": "IP", "right": "Internet-layer protocol responsible for addressing packets and routing them across network boundaries"},
+                {"left": "DNS", "right": "Hierarchical naming service translating human-readable hostnames into numeric IP addresses"}
+            ],
+            "answer": [
+                {"left": "HTTP", "right": "Application-layer protocol for transferring hypertext requests and responses in plain text over port 80"},
+                {"left": "HTTPS", "right": "Application-layer protocol encrypted with TLS/SSL for secure transactions over port 443"},
+                {"left": "TCP", "right": "Transport-layer protocol establishing reliable, ordered, error-checked packet stream delivery via 3-way handshakes"},
+                {"left": "IP", "right": "Internet-layer protocol responsible for addressing packets and routing them across network boundaries"},
+                {"left": "DNS", "right": "Hierarchical naming service translating human-readable hostnames into numeric IP addresses"}
+            ],
+            "explanation": "These protocols represent the foundational communication stack of the Internet and Web, spanning the Application, Transport, and Internet layers.",
+            "why_wrong": {},
+            "source": "IFT 203 Slide 2; Kurose & Ross Computer Networking"
+        },
+        {
+            "id": "ift203-wa-006",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "sequencing",
+            "difficulty": 3,
+            "tags": ["http-lifecycle", "request-response", "sequencing"],
+            "question": "Arrange the steps of the HTTP Web Page Retrieval Lifecycle in correct chronological order, starting from the user entering a web address:",
+            "options": [
+                "User types a website URL into the browser address bar and hits Enter",
+                "Browser queries local cache and DNS servers to resolve the domain name into an IP address",
+                "Browser establishes a TCP connection with the target server via a 3-way handshake (SYN, SYN-ACK, ACK)",
+                "Browser transmits an HTTP GET request header and body to the destination web server",
+                "Web server processes the request and returns an HTTP response containing a status code (e.g., 200 OK) and HTML payload",
+                "Browser engine parses the HTML markup, builds the Document Object Model (DOM), requests external CSS/JS, and renders the visual page"
+            ],
+            "answer": [
+                "User types a website URL into the browser address bar and hits Enter",
+                "Browser queries local cache and DNS servers to resolve the domain name into an IP address",
+                "Browser establishes a TCP connection with the target server via a 3-way handshake (SYN, SYN-ACK, ACK)",
+                "Browser transmits an HTTP GET request header and body to the destination web server",
+                "Web server processes the request and returns an HTTP response containing a status code (e.g., 200 OK) and HTML payload",
+                "Browser engine parses the HTML markup, builds the Document Object Model (DOM), requests external CSS/JS, and renders the visual page"
+            ],
+            "explanation": "The standard web page access lifecycle proceeds from user input to DNS address resolution, TCP transport handshake, HTTP application request, server response generation, and final client browser parsing and DOM rendering.",
+            "why_wrong": {},
+            "source": "IFT 203 Slide 2; MDN Web Docs: How the Web Works"
+        },
+        {
+            "id": "ift203-wa-007",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["https", "security", "encryption"],
+            "question": "A student logs into a university portal connected over unencrypted `http://` while connected to a public campus Wi-Fi hotspot. What security vulnerability is the student directly exposed to?",
+            "options": [
+                "The student's monitor screen resolution will permanently degrade",
+                "An attacker on the same local Wi-Fi network running a packet sniffer (e.g., Wireshark) can capture the student's username, password, and session cookies in clear, readable plain text",
+                "The browser will automatically uninstall itself from the student's laptop",
+                "The student's Wi-Fi router will overheat and explode"
+            ],
+            "answer": 1,
+            "explanation": "Standard HTTP transmits all data in unencrypted clear text over port 80. Any malicious eavesdropper on the same network segment can intercept network packets (packet sniffing) and read sensitive credentials, form submissions, and authentication cookies. HTTPS prevents this by encrypting all traffic using TLS.",
+            "why_wrong": {
+                "0": "Network protocols do not alter hardware screen resolution.",
+                "2": "Browsers do not uninstall themselves when loading unencrypted HTTP websites.",
+                "3": "Software protocol transmission cannot cause physical hardware router explosions."
+            },
+            "source": "IFT 203 Slide 2; Web Security Fundamentals"
+        },
+        {
+            "id": "ift203-wa-008",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "multi_select",
+            "difficulty": 3,
+            "tags": ["frontend", "backend", "fullstack"],
+            "question": "Which of the following technologies and responsibilities are classified under 'Front-End (Client-Side) Web Development'? (Select ALL that apply)",
+            "options": [
+                "Writing HTML markup to structure semantic headings, paragraphs, and forms",
+                "Writing CSS rules to style layouts, color schemes, and responsive mobile flexboxes",
+                "Connecting directly to MySQL database tables using root credentials to store user passwords",
+                "Writing client-side JavaScript to validate form inputs in the browser before submission"
+            ],
+            "answer": [0, 1, 3],
+            "explanation": "Front-end development encompasses HTML (structure), CSS (presentation), and JavaScript (client-side interactivity and validation) executing directly in the user's browser. Directly connecting to databases with root credentials from client-side code is a critical security violation; database access is strictly a Back-End server responsibility.",
+            "why_wrong": {
+                "2": "Connecting to databases and executing SQL is strictly a back-end server operation. Exposing database credentials in front-end client code would allow any user to read or drop entire databases."
+            },
+            "source": "IFT 203 Slide 2; MDN Client-Side vs Server-Side Overview"
+        },
+        {
+            "id": "ift203-wa-fc01",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "internet-vs-www"],
+            "question": "What is the primary difference between the Internet and the World Wide Web?",
+            "answer": "The Internet is the global physical network of connected computers communicating via TCP/IP. The World Wide Web (WWW) is an information-sharing service of interlinked hypertext documents that runs ON TOP OF the Internet.",
+            "explanation": "Core exam terminology highlighted in IFT 203 Slide 2.",
+            "why_wrong": {},
+            "source": "IFT 203 Slide 2"
+        },
+        {
+            "id": "ift203-wa-fc02",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "browser-vs-searchengine"],
+            "question": "Explain the difference between a Web Browser and a Search Engine.",
+            "answer": "A Web Browser is software installed on your local computer/phone (e.g., Chrome, Edge) that retrieves and displays web pages. A Search Engine is an online website/service (e.g., Google, Bing) that indexes web pages and helps users find information.",
+            "explanation": "Explicit exam hint in lecturer notebook notes.",
+            "why_wrong": {},
+            "source": "IFT 203 Slide 2; Lecturer Notebook Hints"
+        },
+        {
+            "id": "ift203-wa-fc03",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "dns"],
+            "question": "What is DNS (Domain Name System), and why is it called the phonebook of the Internet?",
+            "answer": "DNS is a distributed database that translates human-friendly domain names (e.g., nileuniversity.edu.ng) into machine-readable IP addresses (e.g., 104.21.54.212) required for network routing.",
+            "explanation": "Without DNS, users would have to memorize 32-bit IP numbers for every website.",
+            "why_wrong": {},
+            "source": "IFT 203 Slide 2"
+        },
+        {
+            "id": "ift203-wa-fc04",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "http-vs-https"],
+            "question": "Compare HTTP and HTTPS in terms of security and default network ports.",
+            "answer": "HTTP transmits data in plain text over TCP port 80 (vulnerable to interception). HTTPS encrypts all communication using TLS/SSL over TCP port 443 (securing passwords, personal data, and credit cards).",
+            "explanation": "HTTPS is mandatory for all modern production web applications.",
+            "why_wrong": {},
+            "source": "IFT 203 Slide 2"
+        },
+        {
+            "id": "ift203-wa-fc05",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "client-server"],
+            "question": "What is the Client-Server model in web architecture?",
+            "answer": "A distributed computing structure where client devices (browsers) request web resources or services, and centralized server computers process the requests and return the appropriate responses.",
+            "explanation": "The fundamental architectural foundation of the World Wide Web.",
+            "why_wrong": {},
+            "source": "IFT 203 Slide 2"
+        },
+        {
+            "id": "ift203-wa-fc06",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "url-structure"],
+            "question": "Name the five major components of a standard URL.",
+            "answer": "1. Protocol/Scheme (e.g., https://), 2. Domain/Host (e.g., www.nileuniversity.edu.ng), 3. Port (e.g., :443), 4. Path to resource (e.g., /portal/login), and 5. Query string parameters (e.g., ?user=student).",
+            "explanation": "Governed by RFC 3986 URI specification.",
+            "why_wrong": {},
+            "source": "IFT 203 Slide 2"
+        },
+        {
+            "id": "ift203-wa-fc07",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "static-vs-dynamic"],
+            "question": "What is the key difference between a Static Web Page and a Dynamic Web Page?",
+            "answer": "A Static page is pre-written and saved on the server disk, delivering the exact same content to all visitors. A Dynamic page is generated at runtime by server scripts (PHP, Node.js) querying a database to show customized content.",
+            "explanation": "Static pages are fast; dynamic pages provide personalized interactive portals.",
+            "why_wrong": {},
+            "source": "IFT 203 Slide 2"
+        },
+        {
+            "id": "ift203-wa-fc08",
+            "course": "IFT 203",
+            "topic": "Internet, WWW, Protocols & Client-Server",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["flashcard", "frontend-vs-backend"],
+            "question": "Distinguish between Front-End and Back-End web development.",
+            "answer": "Front-End: Client-side development creating the visual interface, structure, and interactivity running inside the user's browser (HTML, CSS, JS).\nBack-End: Server-side development handling business logic, authentication, and database storage (Python, PHP, Node.js, SQL).",
+            "explanation": "Explicit exam hint in lecturer notebook notes.",
+            "why_wrong": {},
+            "source": "IFT 203 Slide 2; Lecturer Notebook Hints"
+        }
+    ],
+    "case_studies": [
+        {
+            "id": "ift203-wa-cs01",
+            "scenario": "A student attempts to access Nile University's exam results portal by typing `https://portal.nileuniversity.edu.ng` into their browser. However, the browser immediately displays the error: `DNS_PROBE_FINISHED_NXDOMAIN`. When the student tests their connection by navigating to `https://www.google.com`, the page loads instantly. Meanwhile, the IT systems administrator confirms that the web server hosting the portal is running normally and can be reached directly via its IP address `104.21.54.212`.",
+            "sub_questions": [
+                {
+                    "id": "ift203-wa-cs01-q1",
+                    "course": "IFT 203",
+                    "topic": "Internet, WWW, Protocols & Client-Server",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case-study", "dns", "network-troubleshooting"],
+                    "question": "What does the error `DNS_PROBE_FINISHED_NXDOMAIN` mean, and where is the breakdown occurring?",
+                    "options": [
+                        "The student's laptop battery has run out of electrical power",
+                        "The Domain Name System (DNS) failed to resolve the hostname `portal.nileuniversity.edu.ng` into an IP address (Non-Existent Domain), likely due to an expired domain registration or misconfigured DNS A-record",
+                        "The web server's hard drive was physically stolen",
+                        "The browser has decided to permanently block all universities in Nigeria"
+                    ],
+                    "answer": 1,
+                    "explanation": "`NXDOMAIN` stands for Non-Existent Domain. Because Google loads normally and the server is reachable by direct IP, the physical Internet connection and the server hardware are functioning. The breakdown is located specifically in the DNS resolution layer: DNS nameservers have no valid 'A' or 'CNAME' record mapping the subdomain `portal.nileuniversity.edu.ng` to the server's IP address.",
+                    "why_wrong": {
+                        "0": "If laptop battery was dead, the laptop would be powered off and Google could not load.",
+                        "2": "The administrator confirmed the server is running and accessible via direct IP address.",
+                        "3": "Browsers do not have built-in geolocation censorship rules blocking universities."
+                    },
+                    "source": "RFC 1035 Domain Names; Web Architecture Diagnostics"
+                },
+                {
+                    "id": "ift203-wa-cs01-q2",
+                    "course": "IFT 203",
+                    "topic": "Internet, WWW, Protocols & Client-Server",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case-study", "dns-resolution", "troubleshooting"],
+                    "question": "Explain the step-by-step hierarchical DNS resolution lookup that occurs when a browser resolves `portal.nileuniversity.edu.ng`, and state what temporary workaround the administrator can instruct the student to apply in their local operating system `hosts` file.",
+                    "marking_points": [
+                        "Step 1: Browser and OS local DNS cache check.",
+                        "Step 2: Resolving nameserver (ISP/Google 8.8.8.8) queries Root Nameserver (.) -> TLD Nameserver (.ng) -> Authoritative Nameserver (nileuniversity.edu.ng).",
+                        "Step 3: Missing or misconfigured 'A' record returned as NXDOMAIN.",
+                        "Step 4: Local Workaround: Adding an entry `104.21.54.212 portal.nileuniversity.edu.ng` to the local OS `hosts` file (`/etc/hosts` or `C:\\Windows\\System32\\drivers\\etc\\hosts`) to bypass DNS lookups."
+                    ],
+                    "answer": "1. Hierarchical DNS Resolution Flow:\n- The browser first checks its internal cache and the local operating system DNS resolver cache.\n- If uncached, the query is forwarded to the Recursive DNS Resolver (e.g., ISP DNS or 8.8.8.8).\n- The recursive resolver queries the Root DNS Server (.), which points to the `.ng` country-code TLD server.\n- The `.ng` TLD server delegates the query to Nile University's authoritative nameservers.\n- The authoritative nameserver searches its zone file for an 'A' record matching `portal`. If missing or misconfigured, it returns `NXDOMAIN`.\n2. Local Diagnostic Workaround:\n- The administrator can instruct the student to open their operating system `hosts` file (located at `C:\\Windows\\System32\\drivers\\etc\\hosts` on Windows or `/etc/hosts` on Linux/macOS) as Administrator.\n- By appending the line `104.21.54.212 portal.nileuniversity.edu.ng`, the student's operating system overrides network DNS queries and routes browser requests directly to the server IP.",
+                    "explanation": "Understanding DNS recursion and local hosts file resolution enables instant diagnosis of domain routing failures.",
+                    "why_wrong": {},
+                    "source": "Kurose & Ross Computer Networking; RFC 1035"
+                }
+            ]
+        },
+        {
+            "id": "ift203-wa-cs02",
+            "scenario": "Nile University is redesigning its online presence. The marketing director wants a public 5-page informational website showcasing university history, faculties, campus photo galleries, and contact information. Concurrently, the registrar demands an online Course Registration and Fee Payment Portal where 12,000 students log in concurrently, select course sections, pay via credit card, and print stamped matriculation dockets. The junior web developer proposes building BOTH systems as a single, static HTML/CSS website hosted on a free GitHub Pages static web hosting tier.",
+            "sub_questions": [
+                {
+                    "id": "ift203-wa-cs02-q1",
+                    "course": "IFT 203",
+                    "topic": "Internet, WWW, Protocols & Client-Server",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case-study", "static-vs-dynamic", "architecture"],
+                    "question": "Why is the junior developer's proposal to host the Student Registration and Payment Portal on a static web hosting tier (GitHub Pages) technically impossible?",
+                    "options": [
+                        "Because GitHub Pages prohibits displaying photos of university campuses",
+                        "Because static hosting servers only return pre-saved flat files; they cannot execute server-side scripting (e.g., PHP/Node.js), cannot connect to secure relational databases to update student enrollments, and cannot process secure financial transactions",
+                        "Because static websites only work when connected via dial-up telephone modems",
+                        "Because GitHub Pages requires all students to write their exams in C programming language"
+                    ],
+                    "answer": 1,
+                    "explanation": "Static web hosting platforms like GitHub Pages serve pre-rendered HTML, CSS, and client-side assets only. They lack server-side runtimes (PHP, Python, Java) and persistent database engines (MySQL, PostgreSQL) necessary to authenticate credentials, execute transactional course seat reservation locks, and securely process payment gateway API callbacks.",
+                    "why_wrong": {
+                        "0": "GitHub Pages happily hosts photo galleries and informational pages.",
+                        "2": "Static websites run over standard high-speed broadband and 4G/5G connections.",
+                        "3": "GitHub Pages is language-agnostic for static files and has nothing to do with C programming exams."
+                    },
+                    "source": "IFT 203 Slide 2; Web Application Architecture"
+                },
+                {
+                    "id": "ift203-wa-cs02-q2",
+                    "course": "IFT 203",
+                    "topic": "Internet, WWW, Protocols & Client-Server",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case-study", "architecture-separation", "cdn-and-security"],
+                    "question": "Propose an optimal architectural decoupling strategy for the university: explain how the marketing website and the student portal should be hosted differently, and evaluate the performance and security benefits.",
+                    "marking_points": [
+                        "Architectural decoupling: Separate the public marketing site (`www.nileuniversity.edu.ng`) from the transactional student portal (`portal.nileuniversity.edu.ng`).",
+                        "Static site architecture: Host the marketing brochure on a Content Delivery Network (CDN) / static edge storage for lightning-fast global delivery, zero database load, and immunity to server-side attacks.",
+                        "Dynamic application architecture: Host the portal on a scalable multi-tier dynamic server cluster (Web/App servers + Database cluster) protected by HTTPS, a Web Application Firewall (WAF), and secure VPC subnetting.",
+                        "Non-functional benefits: Massive traffic surges on the marketing site during convocation will not crash student portal registration databases, and a security breach of the marketing site cannot compromise student academic records."
+                    ],
+                    "answer": "1. Architectural Decoupling:\n- The marketing brochure is hosted at `www.nileuniversity.edu.ng` as a pre-rendered static website deployed on a Content Delivery Network (CDN) edge network.\n- The student registration and payment engine is isolated at a dedicated subdomain `portal.nileuniversity.edu.ng` backed by dynamic application servers (e.g., Node.js/Django) and a relational database cluster.\n2. Performance Benefits:\n- The marketing site delivers sub-100ms global response times with near-zero hosting costs, serving cached static assets directly from edge POPs without hitting server CPUs or databases.\n- Dynamic server resources are fully reserved for transactional database queries (course seat allocation, grade lookups) during peak registration periods.\n3. Security & Fault Tolerance Benefits:\n- Traffic spikes on the public marketing site (e.g., convocation announcements) cannot exhaust database connections on the registration portal.\n- Complete security isolation: A defacement or compromise of the static marketing content cannot leak student grades, financial transactions, or database records located in the secure backend VPC.",
+                    "explanation": "Separating static brochure sites on CDNs from dynamic transactional portals on secure clusters optimizes performance, cost, and security.",
+                    "why_wrong": {},
+                    "source": "IFT 203 Slide 2; Modern Web Architecture & CDN Principles"
+                }
+            ]
+        }
+    ]
+}
+
+out_file = r"c:\Users\Collins Ibilibor\Downloads\Study Buddy\app\content\IFT 203\internet_web_architecture.json"
+with open(out_file, "w", encoding="utf-8") as f:
+    json.dump(topic_data, f, indent=2)
+
+print(f"Successfully generated {out_file} with {len(topic_data['questions']) + sum(len(cs['sub_questions']) for cs in topic_data.get('case_studies', []))} total questions.")

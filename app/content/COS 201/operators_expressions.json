@@ -1,0 +1,1038 @@
+{
+  "course": "COS 201",
+  "topic": "Operators, Precedence & Expressions",
+  "summary": "Covers arithmetic operators, integer division and truncation, modulus rules, pre-increment vs post-increment, relational and equality operators, logical operators and short-circuit evaluation, the conditional (ternary) operator, compound assignment operators, and full operator precedence hierarchies in C expressions.",
+  "key_terms": [
+    {
+      "term": "Pre-increment (++x)",
+      "definition": "Increments the operand variable before its value is evaluated in the enclosing expression."
+    },
+    {
+      "term": "Post-increment (x++)",
+      "definition": "Evaluates the current value of the operand variable first, then increments it after the expression evaluation."
+    },
+    {
+      "term": "Short-Circuit Evaluation",
+      "definition": "A mechanism in logical operators (&& and ||) where evaluation ceases as soon as the outcome of the expression is determined."
+    },
+    {
+      "term": "Ternary Operator (?:)",
+      "definition": "C's three-operand conditional operator having syntax 'condition ? expr1 : expr2'."
+    },
+    {
+      "term": "Modulus Operator (%)",
+      "definition": "Computes the remainder of integer division; invalid when applied to floating-point numbers."
+    },
+    {
+      "term": "Compound Assignment",
+      "definition": "Shorthand operators (+=, -=, *=, /=, %=) that combine an arithmetic operation with assignment."
+    },
+    {
+      "term": "Operator Precedence",
+      "definition": "The formal rules determining the order in which different operators are evaluated in an unparenthesized expression."
+    },
+    {
+      "term": "Associativity",
+      "definition": "The direction (left-to-right or right-to-left) in which operators of the same precedence level are evaluated."
+    }
+  ],
+  "questions": [
+    {
+      "id": "cos201-op-001",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 2,
+      "tags": [
+        "increment",
+        "pre-increment",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 2;\n    printf(\"%d\\n\", ++x);\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "1",
+        "Error"
+      ],
+      "answer": 1,
+      "explanation": "'++x' is a pre-increment operator. It increments the value of 'x' from 2 to 3 first, and then supplies the updated value 3 to printf.",
+      "why_wrong": {
+        "0": "2 would be the output if post-increment 'x++' were used.",
+        "2": "Pre-increment adds 1 to x, it does not subtract.",
+        "3": "Pre-increment inside printf is standard, valid C syntax."
+      },
+      "source": "COS 201 Midterm Type B, Q3; Deitel Ch 3.12",
+      "verified": true,
+      "verified_output": "3\n"
+    },
+    {
+      "id": "cos201-op-002",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "increment",
+        "post-increment"
+      ],
+      "question": "What will be the output of the following C program?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 2;\n    printf(\"%d \", x++);\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "2 3",
+        "3 3",
+        "2 2",
+        "3 4"
+      ],
+      "answer": 0,
+      "explanation": "'x++' is post-increment. The current value (2) is passed to the first printf before 'x' is incremented to 3. In the subsequent statement, 'x' evaluates to 3. Thus '2 3' is printed.",
+      "why_wrong": {
+        "1": "3 3 would be printed if pre-increment '++x' had been used.",
+        "2": "x is incremented after the first printf, so the second printf cannot print 2.",
+        "3": "x is only incremented once."
+      },
+      "source": "Deitel Ch 3.12",
+      "verified": true,
+      "verified_output": "2 3\n"
+    },
+    {
+      "id": "cos201-op-003",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 2,
+      "tags": [
+        "arithmetic",
+        "division",
+        "truncation",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 5, b = 2;\n    printf(\"%d\\n\", a / b);\n    return 0;\n}",
+      "options": [
+        "2",
+        "2.5",
+        "3",
+        "Error"
+      ],
+      "answer": 0,
+      "explanation": "In C, when both operands of the division operator '/' are integers, integer division is performed. The fractional part is truncated (discarded), yielding 2. It does not produce a floating-point result or round up to 3.",
+      "why_wrong": {
+        "1": "2.5 is the mathematical result, but integer division in C truncates all decimals.",
+        "2": "C does not round 2.5 up to 3; it truncates toward zero.",
+        "3": "Dividing two non-zero integers is completely valid C syntax."
+      },
+      "source": "COS 201 Midterm Type B, Q7; Deitel Ch 2.5",
+      "verified": true,
+      "verified_output": "2\n"
+    },
+    {
+      "id": "cos201-op-004",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "relational",
+        "equality",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following operators is used in C to compare two values for equality?",
+      "options": [
+        "=",
+        "==",
+        "+=",
+        "&&"
+      ],
+      "answer": 1,
+      "explanation": "'==' is the equality operator in C used to test if two expressions evaluate to the same value. '=' is the assignment operator, '+=' is addition assignment, and '&&' is logical AND.",
+      "why_wrong": {
+        "0": "'=' is the assignment operator that stores a value into a variable.",
+        "2": "'+=' is a compound assignment operator that increments a variable by an amount.",
+        "3": "'&&' is the logical AND operator that connects two boolean conditions."
+      },
+      "source": "COS 201 Midterm Type B, Q8; Deitel Ch 2.6",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-005",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 2,
+      "tags": [
+        "precedence",
+        "arithmetic",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 3, b = 4;\n    printf(\"%d\\n\", a + b * 2);\n    return 0;\n}",
+      "options": [
+        "14",
+        "11",
+        "10",
+        "7"
+      ],
+      "answer": 1,
+      "explanation": "Multiplication '*' has higher operator precedence than addition '+'. Therefore, 'b * 2' is evaluated first (4 * 2 = 8), followed by addition 'a + 8' (3 + 8 = 11).",
+      "why_wrong": {
+        "0": "14 is obtained if addition is evaluated first: (3 + 4) * 2 = 7 * 2 = 14.",
+        "2": "10 represents an arbitrary arithmetic error.",
+        "3": "7 would be (3 + 4)."
+      },
+      "source": "COS 201 Midterm Type B, Q15; Deitel Ch 2.5",
+      "verified": true,
+      "verified_output": "11\n"
+    },
+    {
+      "id": "cos201-op-006",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "ternary",
+        "syntax",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following correctly uses the conditional (ternary) operator in C?",
+      "options": [
+        "a > b ? x = y : x = z;",
+        "if(a > b) x = y else x = z;",
+        "a > b : x = y ? x = z;",
+        "x = a > b ? y : z;"
+      ],
+      "answer": 3,
+      "explanation": "The standard ternary syntax in C is 'variable = condition ? expr1 : expr2;'. Here, 'x = a > b ? y : z;' assigns y to x if a > b is true, or z to x if false.",
+      "why_wrong": {
+        "0": "In C, '=' has lower precedence than '?:', so 'a > b ? x = y : x = z' is syntactically invalid without parentheses.",
+        "1": "This is an if-else statement without required semicolons, not the ternary operator.",
+        "2": "The colon (:) and question mark (?) are reversed."
+      },
+      "source": "COS 201 Midterm Type B, Q18; Deitel Ch 3.5",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-007",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "increment",
+        "syntax",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following is correct to increment an integer variable x by 1 in C?",
+      "options": [
+        "x = x + 1;",
+        "x++;",
+        "++x;",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "In standalone statements, all three constructs ('x = x + 1;', 'x++;', and '++x;') increment the value stored in variable x by exactly 1.",
+      "why_wrong": {
+        "0": "While correct, options B and C are also fully valid.",
+        "1": "While correct, options A and C are also fully valid.",
+        "2": "While correct, options A and B are also fully valid."
+      },
+      "source": "COS 201 Midterm Type B, Q20; Deitel Ch 3.12",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-008",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 2,
+      "tags": [
+        "logical",
+        "short-circuit",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 0;\n    if (x || 1)\n        printf(\"True\\n\");\n    else\n        printf(\"False\\n\");\n    return 0;\n}",
+      "options": [
+        "True",
+        "False",
+        "0",
+        "1"
+      ],
+      "answer": 0,
+      "explanation": "The logical OR operator '||' evaluates to true (1) if either operand is non-zero. Since the right operand is 1 (non-zero/true), the condition (0 || 1) is true, and 'True' is printed.",
+      "why_wrong": {
+        "1": "False is only reached if both operands evaluate to 0.",
+        "2": "The printf statement outputs the text 'True', not numeric 0.",
+        "3": "The printf statement outputs the text 'True', not numeric 1."
+      },
+      "source": "COS 201 Midterm Type B, Q23; Deitel Ch 4.10",
+      "verified": true,
+      "verified_output": "True\n"
+    },
+    {
+      "id": "cos201-op-009",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 2,
+      "tags": [
+        "ternary",
+        "evaluation",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 2, y = 3;\n    printf(\"%d\\n\", x > y ? x : y);\n    return 0;\n}",
+      "options": [
+        "2",
+        "3",
+        "0",
+        "Error"
+      ],
+      "answer": 1,
+      "explanation": "The condition 'x > y' (2 > 3) is false (0). The ternary operator selects the expression after the colon ':', which is 'y' (3). Thus 3 is printed.",
+      "why_wrong": {
+        "0": "2 is 'x', which is only selected if x > y is true.",
+        "2": "The ternary evaluates to the chosen operand's value, not boolean 0.",
+        "3": "Using ternary expressions inside printf arguments is fully standard C."
+      },
+      "source": "COS 201 Midterm Type B, Q25; Deitel Ch 3.5",
+      "verified": true,
+      "verified_output": "3\n"
+    },
+    {
+      "id": "cos201-op-010",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "modulus",
+        "remainder",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following operators is used for the modulus (remainder) operation in C?",
+      "options": [
+        "%",
+        "/",
+        "*",
+        "+"
+      ],
+      "answer": 0,
+      "explanation": "The percent sign '%' is the modulus operator in C. It returns the remainder of integer division between its left and right operands.",
+      "why_wrong": {
+        "1": "'/' is the division operator.",
+        "2": "'*' is the multiplication operator.",
+        "3": "'+' is the addition operator."
+      },
+      "source": "COS 201 Midterm Type B, Q30; Deitel Ch 2.5",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-011",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 2,
+      "tags": [
+        "logical",
+        "and",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 1, y = 0;\n    if (x && y)\n        printf(\"Yes\\n\");\n    else\n        printf(\"No\\n\");\n    return 0;\n}",
+      "options": [
+        "Yes",
+        "No",
+        "1",
+        "0"
+      ],
+      "answer": 1,
+      "explanation": "The logical AND operator '&&' requires both operands to be non-zero (true). Since 'y' is 0, the expression '1 && 0' evaluates to false, triggering the else clause to print 'No'.",
+      "why_wrong": {
+        "0": "Yes would require both x and y to be non-zero.",
+        "2": "The code outputs the string 'No', not 1.",
+        "3": "The code outputs the string 'No', not 0."
+      },
+      "source": "COS 201 Midterm Type B, Q33; Deitel Ch 4.10",
+      "verified": true,
+      "verified_output": "No\n"
+    },
+    {
+      "id": "cos201-op-012",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "increment",
+        "compound-assignment",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following is correct to increment a variable x by 2 in C?",
+      "options": [
+        "x += 2;",
+        "x = x + 2;",
+        "x++ + x++;",
+        "Both A and B"
+      ],
+      "answer": 3,
+      "explanation": "Both 'x += 2;' (compound addition assignment) and 'x = x + 2;' cleanly increment x by 2. Writing 'x++ + x++;' modifies x multiple times in an unsequenced expression, which causes Undefined Behavior in C.",
+      "why_wrong": {
+        "0": "'x += 2;' is correct, but 'x = x + 2;' is also correct, making 'Both A and B' the comprehensive choice.",
+        "1": "'x = x + 2;' is correct, but 'x += 2;' is also correct.",
+        "2": "'x++ + x++;' invokes undefined behavior due to modifying the same scalar variable twice without an intervening sequence point."
+      },
+      "source": "COS 201 Midterm Type B, Q34; Deitel Ch 3.11",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-013",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 2,
+      "tags": [
+        "ternary",
+        "evaluation",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 1, y = 2;\n    printf(\"%d\\n\", x < y ? y : x);\n    return 0;\n}",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "Error"
+      ],
+      "answer": 1,
+      "explanation": "The condition 'x < y' (1 < 2) is true. In a ternary expression 'cond ? expr1 : expr2', when the condition is true, expr1 is selected. Here expr1 is 'y' (2). Therefore, 2 is printed.",
+      "why_wrong": {
+        "0": "1 is 'x', which would be selected only if x < y were false.",
+        "2": "The ternary yields the evaluated expression, not 0.",
+        "3": "The syntax is valid standard C."
+      },
+      "source": "COS 201 Midterm Type B, Q39; Deitel Ch 3.5",
+      "verified": true,
+      "verified_output": "2\n"
+    },
+    {
+      "id": "cos201-op-014",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 4,
+      "tags": [
+        "logical",
+        "short-circuit",
+        "side-effects"
+      ],
+      "question": "What is the exact output of the following program demonstrating C's short-circuit behavior?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 0, b = 5;\n    if (a && ++b)\n        printf(\"Branch1\\n\");\n    printf(\"a=%d b=%d\\n\", a, b);\n    return 0;\n}",
+      "options": [
+        "a=0 b=5",
+        "a=0 b=6",
+        "Branch1\\na=0 b=6",
+        "Compilation Error"
+      ],
+      "answer": 0,
+      "explanation": "In logical AND '&&', if the left operand evaluates to 0 (false), the entire expression is guaranteed false. C guarantees short-circuit evaluation: the right operand '++b' is NEVER executed. Consequently, 'b' remains 5, and 'a=0 b=5' is printed.",
+      "why_wrong": {
+        "1": "b=6 assumes '++b' was executed. Due to short-circuiting, it is completely skipped.",
+        "2": "The if-branch is false, so 'Branch1' cannot print.",
+        "3": "Expressions with side effects in if conditions are standard C."
+      },
+      "source": "Deitel Ch 4.10",
+      "verified": true,
+      "verified_output": "a=0 b=5\n"
+    },
+    {
+      "id": "cos201-op-015",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "modulus",
+        "negative",
+        "c99"
+      ],
+      "question": "What will be printed by the following C program under the C99/C11 standard?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int r1 = -13 % 5;\n    int r2 = 13 % -5;\n    printf(\"%d %d\\n\", r1, r2);\n    return 0;\n}",
+      "options": [
+        "-3 3",
+        "-3 -3",
+        "3 3",
+        "2 -2"
+      ],
+      "answer": 0,
+      "explanation": "Under standard C (C99 and later), the sign of the remainder resulting from the '%' operator matches the sign of the numerator (dividend): (-13) % 5 == -3, and 13 % (-5) == 3.",
+      "why_wrong": {
+        "1": "r2 has a positive numerator (13), so its remainder is positive (+3), not -3.",
+        "2": "r1 has a negative numerator (-13), so its remainder is negative (-3).",
+        "3": "13 / 5 is 2 with remainder 3, not 2."
+      },
+      "source": "Deitel Ch 2.5; ISO C99 6.5.5",
+      "verified": true,
+      "verified_output": "-3 3\n"
+    },
+    {
+      "id": "cos201-op-016",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_bug",
+      "difficulty": 3,
+      "tags": [
+        "assignment",
+        "equality",
+        "common-bug"
+      ],
+      "question": "What is the logical bug and resulting output in the following C code snippet?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int status = 0;\n    if (status = 1)\n        printf(\"Active\\n\");\n    else\n        printf(\"Inactive\\n\");\n    return 0;\n}",
+      "options": [
+        "Bug: '=' was used instead of '==', which assigns 1 to status and always prints 'Active'.",
+        "Bug: 'status = 1' produces a syntax error because assignment is forbidden in conditions.",
+        "Bug: 'Active' is printed because status was initially 0.",
+        "No bug: C interprets '=' as equality inside if conditions."
+      ],
+      "answer": 0,
+      "explanation": "Writing 'status = 1' inside the if condition is an assignment, not a comparison. It assigns 1 to 'status' and evaluates to the assigned value (1, which is true in C). As a result, the if condition always succeeds and prints 'Active'. The intended comparison was 'status == 1'.",
+      "why_wrong": {
+        "1": "Assignment inside if conditions is legal C syntax (though dangerous), generating a compiler warning, not an error.",
+        "2": "Initial value 0 is overwritten by the assignment.",
+        "3": "'=' is never interpreted as equality in C."
+      },
+      "source": "Deitel Common Programming Error 2.11",
+      "verified": true,
+      "verified_output": "Active\n"
+    },
+    {
+      "id": "cos201-op-017",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "calculation",
+      "difficulty": 3,
+      "tags": [
+        "precedence",
+        "arithmetic",
+        "calculation"
+      ],
+      "question": "What is the evaluated integer value of the C expression: 2 + 3 * 4 - 8 / 2 % 3?",
+      "answer": "13",
+      "tolerance": 0,
+      "explanation": "Evaluating strictly by C operator precedence:\n1. Multiplicative operators (*, /, %) from left-to-right:\n   - 3 * 4 = 12\n   - 8 / 2 = 4\n   - 4 % 3 = 1\n2. The expression simplifies to: 2 + 12 - 1\n3. Additive operators (+, -) from left-to-right:\n   - 2 + 12 = 14\n   - 14 - 1 = 13.",
+      "why_wrong": {},
+      "source": "Deitel Ch 2.5",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-018",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "cloze",
+      "difficulty": 2,
+      "tags": [
+        "cloze",
+        "operators"
+      ],
+      "question": "Fill in the correct C operators in the text below:",
+      "template": "To compute the integer remainder of division, C uses the [[blank]] operator. To test whether two values are equal, use the [[blank]] operator, whereas the logical negation operator is [[blank]].",
+      "blanks": [
+        "%",
+        "==",
+        "!"
+      ],
+      "explanation": "'%' is modulus, '==' is equality comparison, and '!' is logical NOT.",
+      "why_wrong": {},
+      "source": "Deitel Ch 2.5, 2.6",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-019",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "matching",
+      "difficulty": 3,
+      "tags": [
+        "precedence",
+        "associativity",
+        "matching"
+      ],
+      "question": "Match each operator group with its evaluation precedence and associativity in C:",
+      "pairs": [
+        {
+          "left": "Multiplicative (*, /, %)",
+          "right": "Higher than addition; associates Left-to-Right"
+        },
+        {
+          "left": "Unary (++, --, !, sizeof)",
+          "right": "High precedence; associates Right-to-Left"
+        },
+        {
+          "left": "Conditional Ternary (?:)",
+          "right": "Lower than logical OR; associates Right-to-Left"
+        },
+        {
+          "left": "Assignment (=, +=, *=)",
+          "right": "Lowest among arithmetic/relational; associates Right-to-Left"
+        }
+      ],
+      "explanation": "Unary, ternary, and assignment operators associate Right-to-Left in C, whereas binary arithmetic and relational operators associate Left-to-Right.",
+      "why_wrong": {},
+      "source": "Deitel Fig 2.10, Fig 3.14",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-020",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "sequencing",
+      "difficulty": 3,
+      "tags": [
+        "sequencing",
+        "precedence"
+      ],
+      "question": "Order the sub-expression evaluations in C for: total = a + b * (c - d) / e;",
+      "steps": [
+        "Evaluate parentheses (c - d)",
+        "Multiply b by the parenthesized difference",
+        "Divide the multiplication result by e",
+        "Add a to the quotient",
+        "Assign the final sum to total"
+      ],
+      "explanation": "Parentheses (c - d) evaluate first. Multiplicative operators * and / then proceed left-to-right (multiply b, then divide by e). Addition (+ a) occurs next, and finally assignment (=) stores the result.",
+      "why_wrong": {},
+      "source": "Deitel Ch 2.5",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-021",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_write",
+      "difficulty": 3,
+      "tags": [
+        "code_write",
+        "ternary"
+      ],
+      "question": "Write a complete C main function that declares three integer variables: num1 = 45, num2 = 72, and max. Using a single ternary operator expression, assign the larger of num1 and num2 to max, and print 'Max: %d\\n'.",
+      "code_lang": "c",
+      "reference_solution": "#include <stdio.h>\nint main(void) {\n    int num1 = 45;\n    int num2 = 72;\n    int max = (num1 > num2) ? num1 : num2;\n    printf(\"Max: %d\\n\", max);\n    return 0;\n}",
+      "marking_points": [
+        "Declares num1 = 45 and num2 = 72",
+        "Uses ternary operator (num1 > num2) ? num1 : num2",
+        "Assigns result to variable max",
+        "Prints result using printf with format specifier %d",
+        "Returns 0 from main"
+      ],
+      "explanation": "Demonstrates concise conditional selection using the ternary operator without if-else statements.",
+      "why_wrong": {},
+      "source": "Deitel Ch 3.5",
+      "verified": true,
+      "verified_output": "Max: 72\n"
+    },
+    {
+      "id": "cos201-op-022",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "explain",
+      "difficulty": 2,
+      "tags": [
+        "theory",
+        "increment"
+      ],
+      "question": "Explain the difference between pre-increment (++x) and post-increment (x++) in C. Provide a short code example illustrating when their evaluated values differ.",
+      "answer": "1. In pre-increment (++x), the variable is incremented before its value is used in the enclosing expression.\n2. In post-increment (x++), the current value of the variable is used in the enclosing expression first, and then the variable is incremented.\n3. Example:\n   int a = 5, b = 5;\n   int x = ++a; // a becomes 6, x becomes 6\n   int y = b++; // y becomes 5, b becomes 6\n   Here, x and y receive different values even though both a and b end up as 6.",
+      "marking_points": [
+        "Explains that pre-increment updates the variable before evaluation in the expression",
+        "Explains that post-increment evaluates the original value first, incrementing afterward",
+        "Provides a clear code example showing the value difference"
+      ],
+      "explanation": "This distinction is one of the most frequently tested core C concepts across Nigerian universities.",
+      "why_wrong": {},
+      "source": "Deitel Ch 3.12",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-023",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 4,
+      "tags": [
+        "relational",
+        "chaining",
+        "traps"
+      ],
+      "question": "What will be the output of the following C program?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 25;\n    if (10 < x < 20)\n        printf(\"InRange\\n\");\n    else\n        printf(\"OutRange\\n\");\n    return 0;\n}",
+      "options": [
+        "InRange",
+        "OutRange",
+        "Compilation Error",
+        "Undefined"
+      ],
+      "answer": 0,
+      "explanation": "In mathematics, '10 < x < 20' checks if x is between 10 and 20. But in C, relational operators associate Left-to-Right! '10 < x' (10 < 25) evaluates to 1 (true). Then the expression becomes '1 < 20', which is also true (1)! Thus the if-condition succeeds and prints 'InRange', even though 25 is not less than 20. In C, range checking must be written as: (10 < x && x < 20).",
+      "why_wrong": {
+        "1": "OutRange would be correct mathematically, but C evaluates (10 < 25) -> 1, then (1 < 20) -> 1.",
+        "2": "This is completely valid C syntax, though a notorious logic trap.",
+        "3": "Behavior is fully defined by ISO C operator associativity."
+      },
+      "source": "Deitel Ch 2.6, Ch 4.10",
+      "verified": true,
+      "verified_output": "InRange\n"
+    },
+    {
+      "id": "cos201-op-024",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "bitwise",
+        "logical"
+      ],
+      "question": "What is the output of the following C program comparing bitwise '&' and logical '&&'?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 1, b = 2;\n    int log_res = (a && b);\n    int bit_res = (a & b);\n    printf(\"%d %d\\n\", log_res, bit_res);\n    return 0;\n}",
+      "options": [
+        "1 0",
+        "1 1",
+        "0 0",
+        "2 0"
+      ],
+      "answer": 0,
+      "explanation": "Logical AND '&&' treats any non-zero value as true: (1 && 2) -> true (1). Bitwise AND '&' compares bits: 01 (binary 1) & 10 (binary 2) = 00 (binary 0). Output is '1 0'.",
+      "why_wrong": {
+        "1": "Bitwise 1 & 2 has no overlapping 1-bits, so it evaluates to 0, not 1.",
+        "2": "Logical AND of two positive numbers is 1 (true), not 0.",
+        "3": "Logical operators produce boolean results 0 or 1, not 2."
+      },
+      "source": "Deitel Ch 10.5",
+      "verified": true,
+      "verified_output": "1 0\n"
+    },
+    {
+      "id": "cos201-op-025",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "modulus",
+        "types",
+        "compiler-error"
+      ],
+      "question": "What happens when the modulus operator '%' is used with floating-point operands in C (e.g. 5.5 % 2)?",
+      "options": [
+        "Compilation error: operands must be of integral type.",
+        "It computes the fractional remainder 1.5.",
+        "It automatically truncates operands to integers before computing remainder.",
+        "It causes a runtime arithmetic crash."
+      ],
+      "answer": 0,
+      "explanation": "In C, the operands of the modulus operator '%' MUST have integer types (char, int, short, long). Applying '%' to float or double results in a compile-time error. (To compute remainder of floating-point numbers, the math library function 'fmod' from <math.h> must be used).",
+      "why_wrong": {
+        "1": "C does not support floating remainder via '%'; you must call fmod().",
+        "2": "The compiler does not implicitly convert floats to integers for '%'; it rejects the code.",
+        "3": "It is caught at compile-time, not at runtime."
+      },
+      "source": "Deitel Ch 2.5; ISO C Standard 6.5.5",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-op-fc01",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "modulus"
+      ],
+      "question": "What does the modulus operator '%' do in C and what restriction does it have?",
+      "answer": "It returns the remainder of integer division. Restriction: Both operands MUST be integer types (illegal on float/double).",
+      "explanation": "E.g. 10 % 3 == 1."
+    },
+    {
+      "id": "cos201-op-fc02",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "increment"
+      ],
+      "question": "What is the difference between '++x' and 'x++'?",
+      "answer": "'++x' increments first, then returns new value. 'x++' returns current value first, then increments.",
+      "explanation": "Pre-increment vs post-increment."
+    },
+    {
+      "id": "cos201-op-fc03",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "logical"
+      ],
+      "question": "What is short-circuit evaluation in C logical operators?",
+      "answer": "In '&&', if the first operand is 0 (false), the second is NOT evaluated. In '||', if the first operand is non-zero (true), the second is NOT evaluated.",
+      "explanation": "Guarantees no evaluation of right side when left side dictates outcome."
+    },
+    {
+      "id": "cos201-op-fc04",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "ternary"
+      ],
+      "question": "What is the syntax and purpose of the conditional (ternary) operator?",
+      "answer": "Syntax: condition ? expr1 : expr2. If condition is true, evaluates to expr1; else evaluates to expr2.",
+      "explanation": "Only ternary operator in C."
+    },
+    {
+      "id": "cos201-op-fc05",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "equality"
+      ],
+      "question": "What is the danger of writing 'if (x = 0)' instead of 'if (x == 0)'?",
+      "answer": "'x = 0' assigns 0 to x and evaluates to 0 (false), so the branch NEVER executes. '==' performs comparison.",
+      "explanation": "A classic C source bug."
+    },
+    {
+      "id": "cos201-op-fc06",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "precedence"
+      ],
+      "question": "Between '*' and '+', which operator has higher precedence?",
+      "answer": "Multiplication '*' has higher precedence than addition '+'.",
+      "explanation": "Parentheses can be used to override default precedence."
+    },
+    {
+      "id": "cos201-op-fc07",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "associativity"
+      ],
+      "question": "What is the associativity of assignment operators (=, +=, *=) in C?",
+      "answer": "Right-to-Left (e.g. a = b = c = 5 evaluates c=5 first, then b=5, then a=5).",
+      "explanation": "Unlike arithmetic operators which are Left-to-Right."
+    },
+    {
+      "id": "cos201-op-fc08",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "compound"
+      ],
+      "question": "What is 'x += 5' equivalent to in C?",
+      "answer": "'x = x + 5' (adds 5 to the current value of x and stores result back in x).",
+      "explanation": "Compound assignment operator."
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "cos201-op-cs01",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "title": "Automated Nile Exam Grading Engine & Point Calculation",
+      "scenario": "A student in the Software Engineering department writes a grading snippet in C that converts raw scores into bonus points, computes remaining questions, and evaluates pass/fail status using ternary and compound assignment expressions. The code experiences unexpected results during test runs due to precedence and short-circuit misconceptions.",
+      "sub_questions": [
+        {
+          "id": "cos201-op-cs01-q1",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "compound",
+            "precedence"
+          ],
+          "question": "What is the output of the following score calculation snippet?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int score = 50;\n    int bonus = 5;\n    score += bonus * 2;\n    printf(\"Score: %d\\n\", score);\n    return 0;\n}",
+          "options": [
+            "Score: 60",
+            "Score: 110",
+            "Score: 55",
+            "Score: 100"
+          ],
+          "answer": 0,
+          "explanation": "In compound assignment 'score += bonus * 2', the entire right-hand expression 'bonus * 2' is evaluated first (5 * 2 = 10). Then 'score += 10' executes: 50 + 10 = 60.",
+          "why_wrong": {
+            "1": "110 would occur if (score + bonus) * 2 was evaluated: (50 + 5) * 2 = 110.",
+            "2": "bonus is multiplied by 2, so it cannot be 55.",
+            "3": "100 is an arbitrary computation error."
+          },
+          "source": "Deitel Ch 3.11",
+          "verified": true,
+          "verified_output": "Score: 60\n"
+        },
+        {
+          "id": "cos201-op-cs01-q2",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_output",
+          "difficulty": 4,
+          "tags": [
+            "scenario",
+            "ternary",
+            "nested"
+          ],
+          "question": "What is printed by the nested ternary grade evaluation snippet?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int mark = 75;\n    char grade = (mark >= 70) ? 'A' : (mark >= 60) ? 'B' : 'F';\n    printf(\"Grade: %c\\n\", grade);\n    return 0;\n}",
+          "options": [
+            "Grade: A",
+            "Grade: B",
+            "Grade: F",
+            "Compilation Error"
+          ],
+          "answer": 0,
+          "explanation": "The outer condition 'mark >= 70' (75 >= 70) is true. Therefore, the ternary operator directly evaluates to 'A' and does not evaluate the false branch '(mark >= 60) ? 'B' : 'F'.",
+          "why_wrong": {
+            "1": "Grade B is only evaluated if mark < 70.",
+            "2": "Grade F is only evaluated if mark < 60.",
+            "3": "Nested ternary expressions are completely valid standard C."
+          },
+          "source": "Deitel Ch 3.5",
+          "verified": true,
+          "verified_output": "Grade: A\n"
+        },
+        {
+          "id": "cos201-op-cs01-q3",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_output",
+          "difficulty": 4,
+          "tags": [
+            "scenario",
+            "short-circuit",
+            "logical"
+          ],
+          "question": "To award grace points, the system executes the following validation check. What will be printed?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int attendance = 85;\n    int grace = 0;\n    if (attendance > 80 || ++grace)\n        printf(\"Eligible: %d\\n\", grace);\n    return 0;\n}",
+          "options": [
+            "Eligible: 0",
+            "Eligible: 1",
+            "Eligible",
+            "No output"
+          ],
+          "answer": 0,
+          "explanation": "In logical OR '||', the left operand is 'attendance > 80' (85 > 80), which evaluates to true (1). Because the first operand is true, C short-circuits: the right operand '++grace' is never evaluated. Thus 'grace' remains 0, printing 'Eligible: 0'.",
+          "why_wrong": {
+            "1": "Eligible: 1 is the trap if you assume ++grace was evaluated. Short-circuit skips ++grace.",
+            "2": "The format string prints 'Eligible: %d' with the value.",
+            "3": "The if-condition is true, so output is produced."
+          },
+          "source": "Deitel Ch 4.10",
+          "verified": true,
+          "verified_output": "Eligible: 0\n"
+        }
+      ]
+    },
+    {
+      "id": "cos201-op-cs02",
+      "course": "COS 201",
+      "topic": "operators_expressions",
+      "title": "Robotics Motor Speed Controller Logic",
+      "scenario": "A robotics control unit at Nile University monitors twin DC motor speeds and battery charge. Logic expressions regulate acceleration and safety cutoff limits.",
+      "sub_questions": [
+        {
+          "id": "cos201-op-cs02-q1",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "modulus",
+            "loops"
+          ],
+          "question": "A pulse generator pulses a motor every 3 clock cycles. What will this snippet output?",
+          "code": "#include <stdio.h>\nint main(void) {\n    for (int t = 1; t <= 6; t++) {\n        if (t % 3 == 0)\n            printf(\"%d \", t);\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+          "options": [
+            "3 6 ",
+            "1 2 4 5 ",
+            "0 3 6 ",
+            "3 "
+          ],
+          "answer": 0,
+          "explanation": "The modulus condition 't % 3 == 0' is true when t is an exact multiple of 3. In the range 1 to 6, this occurs at t=3 and t=6. Thus '3 6 ' is printed.",
+          "why_wrong": {
+            "1": "1, 2, 4, 5 are the values where remainder is non-zero.",
+            "2": "Loop starts at t = 1, so t = 0 is never evaluated.",
+            "3": "t = 6 also satisfies 6 % 3 == 0."
+          },
+          "source": "Deitel Ch 2.5",
+          "verified": true,
+          "verified_output": "3 6 \n"
+        },
+        {
+          "id": "cos201-op-cs02-q2",
+          "course": "COS 201",
+          "topic": "operators_expressions",
+          "type": "code_output",
+          "difficulty": 4,
+          "tags": [
+            "scenario",
+            "increment",
+            "expressions"
+          ],
+          "question": "What is the output of the following speed synchronization step?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int speed = 10;\n    int target = ++speed + 5;\n    printf(\"speed=%d target=%d\\n\", speed, target);\n    return 0;\n}",
+          "options": [
+            "speed=11 target=16",
+            "speed=10 target=15",
+            "speed=11 target=15",
+            "speed=10 target=16"
+          ],
+          "answer": 0,
+          "explanation": "'++speed' increments speed from 10 to 11 first. Then 11 + 5 = 16 is assigned to target. Both variables reflect this: speed=11, target=16.",
+          "why_wrong": {
+            "1": "speed was incremented, so it cannot remain 10.",
+            "2": "target is 11 + 5 = 16, not 15.",
+            "3": "speed was incremented to 11."
+          },
+          "source": "Deitel Ch 3.12",
+          "verified": true,
+          "verified_output": "speed=11 target=16\n"
+        }
+      ]
+    }
+  ]
+}

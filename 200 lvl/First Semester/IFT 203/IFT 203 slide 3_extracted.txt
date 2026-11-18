@@ -1,0 +1,580 @@
+=== SLIDE 1 ===
+IFT 203 • INTRODUCTION TO WEB TECHNOLOGY
+Introduction to HTML
+and Web Page Structure
+HTML syntax • tags • elements • attributes • document structure • headings and paragraphs
+ZAKARIYY ABDULLAHI ADAMU
+ASSISTANT LECTURER
+Zakariyya.adamu@nileuniversity.edu.ng
+Prepared by Zakariyya Abdullahi Adamu
+=== SLIDE 2 ===
+Learning outcomes
+• Define HTML and explain its role in web pages.
+• Recognise tags, elements, attributes and syntax.
+• Explain doctype, html, head and body.
+• Read headings and paragraphs and predict browser output.
+UNDERSTAND
+Explain what each part does.
+READ
+Identify tags and attributes.
+PREDICT
+Describe browser output.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+02
+=== SLIDE 3 ===
+The big picture: how a web page appears
+• A browser reads HTML and builds a page from its elements.
+• HTML describes structure and meaning; it is not a programming language.
+• CSS controls presentation; JavaScript adds behaviour.
+HTML SOURCE
+<h1>Welcome</h1>
+<p>HTML structures content.</p>
+Browser preview
+Welcome
+HTML structures content.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+03
+=== SLIDE 4 ===
+What is HTML?
+• HTML
+means HyperText Markup Language.
+• HyperText connects documents using links.
+• Markup uses tags to label content such as headings and paragraphs.
+• Example: <h1>Welcome</h1> marks Welcome as a top-level heading.
+HTML SOURCE
+<h1>Welcome</h1>
+<p>Learn HTML.</p>
+Browser preview
+Welcome
+Learn HTML.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+04
+=== SLIDE 5 ===
+Why HTML matters
+• Provides structure for ordinary web pages.
+• Organises text, links, images, forms, tables and media.
+• Supports browsers and accessibility tools.
+• Works with CSS and JavaScript but is useful on its own.
+HTML SOURCE
+<h1>Course</h1>
+<p>Week one</p>
+Browser preview
+Course
+Week one
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+05
+=== SLIDE 6 ===
+HTML vs CSS vs JavaScript
+• HTML = structure and meaning.
+• CSS = colour, spacing, layout and fonts.
+• JavaScript = behaviour and interaction.
+• Analogy: frame, decoration and moving machinery.
+HTML
+Structure and meaning.
+CSS
+Visual presentation.
+JavaScript
+Behaviour and interaction.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+06
+=== SLIDE 7 ===
+How a browser handles HTML
+• 1. The browser opens or receives an HTML file.
+• 2. It reads the markup and builds a document structure (DOM).
+• 3. It displays visible content from the body.
+• 4. CSS and JavaScript may affect appearance and behaviour.
+HTML SOURCE
+<html>
+  <body>
+    <h1>Hello</h1>
+  </body>
+</html>
+Browser preview
+Hello
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+07
+=== SLIDE 8 ===
+HTML file and filename
+• HTML documents commonly use .html or .htm.
+• Example filename: index.html
+• The file contains plain text and HTML markup.
+• A browser can open it directly; no web server is needed for these examples.
+HTML SOURCE
+index.html
+first-page.html
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+08
+=== SLIDE 9 ===
+HTML syntax: basic pattern
+• Most elements use an opening tag, content and a closing tag.
+• Tag names are written inside angle brackets.
+• A closing tag usually begins with a forward slash (/).
+• Correct spelling and nesting help the browser interpret the page.
+HTML SOURCE
+<p>Hello students.</p>
+Browser preview
+Hello students.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+09
+=== SLIDE 10 ===
+Tags, elements and content
+• Tag:
+markup such as <p> or </p>.
+• Content:
+text or other content between tags.
+• Element:
+the complete unit, often opening tag + content + closing tag.
+HTML SOURCE
+<p>Hello students.</p>
+Browser preview
+Hello students.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+10
+=== SLIDE 11 ===
+Opening and closing tags
+• Opening tag: <p>
+• Content: Hello students.
+• Closing tag: </p>
+• The slash in </p> marks the end of the paragraph element.
+HTML SOURCE
+<p>Hello students.</p>
+Browser preview
+Hello students.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+11
+=== SLIDE 12 ===
+Nested elements
+• Elements can be placed inside other elements.
+• The inner element is a child; the outer element is its parent.
+• Close nested elements in reverse order.
+• Indentation makes the structure easier to read.
+HTML SOURCE
+<p>Learn <strong>HTML</strong>
+   today.</p>
+Browser preview
+Learn HTML today.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+12
+=== SLIDE 13 ===
+Correct nesting: compare
+• Correct: <p>Learn <strong>HTML</strong> today.</p>
+• Incorrect: <p>Learn <strong>HTML</p></strong>
+• The strong element should close before the paragraph.
+• Browsers may repair errors, but do not rely on it.
+HTML SOURCE
+<p>Learn <strong>HTML</strong> today.</p>
+Browser preview
+Learn HTML today.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+13
+=== SLIDE 14 ===
+Attributes: extra information
+• Attributes provide additional information about an element.
+• They are written in the opening tag.
+• Most use name="value" syntax.
+• Attribute values are usually enclosed in straight quotation marks.
+HTML SOURCE
+<p title="A helpful note">Hover over this text.</p>
+Browser preview
+Hover over this text.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+14
+=== SLIDE 15 ===
+Attribute anatomy
+• In <a href="https://example.com">Visit Example</a>:
+• a = element name; href = attribute name.
+• https://example.com = attribute value.
+• Visit Example = visible link text.
+HTML SOURCE
+<a href="https://example.com">Visit Example</a>
+Browser preview
+Visit Example
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+15
+=== SLIDE 16 ===
+Common attributes to recognise
+• id identifies one element; class groups elements.
+• href gives a link destination.
+• src gives the source of media such as an image.
+• alt provides text alternative for an image; title offers advisory information.
+HTML SOURCE
+<img src="campus.jpg"
+     alt="Students on campus">
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+16
+=== SLIDE 17 ===
+Boolean and quoted attributes
+• Some attributes are Boolean: their presence means true.
+• Example: <input disabled> marks a control as disabled.
+• Text values commonly use quotation marks: title="Course note".
+• Avoid curly “smart quotes” in code.
+HTML SOURCE
+<input disabled>
+<p title="Course note">Read this</p>
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+17
+=== SLIDE 18 ===
+The HTML document skeleton
+• A basic document contains doctype, html root, head and body.
+• Head contains metadata not normally shown as page content.
+• Body contains the content users see.
+• Consistent indentation makes structure clear.
+HTML SOURCE
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+  </body>
+</html>
+Browser preview
+Hello
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+18
+=== SLIDE 19 ===
+DOCTYPE: why it is there
+• <!DOCTYPE html> tells the browser to use modern HTML standards mode.
+• It is a declaration, not an ordinary HTML element.
+• Place it at the very beginning.
+• It helps avoid legacy quirks mode.
+HTML SOURCE
+<!DOCTYPE html>
+<html lang="en">
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+19
+=== SLIDE 20 ===
+The <html> root element
+• The html element wraps the whole document.
+• Head and body are normally placed inside it.
+• lang identifies the page's main language.
+• Example: <html lang="en"> ... </html>
+HTML SOURCE
+<html lang="en">
+  <head>...</head>
+  <body>...</body>
+</html>
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+20
+=== SLIDE 21 ===
+The <head> element
+• Head contains metadata about the document.
+• Common children include title, meta and stylesheet links.
+• Most head content is not shown as page text.
+• The title usually appears in the browser tab.
+HTML SOURCE
+<head>
+  <title>Course Notes</title>
+  <meta charset="UTF-8">
+</head>
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+21
+=== SLIDE 22 ===
+The <title> and <meta> elements
+• <title> sets the document title.
+• <meta charset="UTF-8"> declares character encoding.
+• UTF-8 supports a wide range of characters and symbols.
+• Title belongs in head, not body.
+HTML SOURCE
+<title>Introduction to HTML</title>
+<meta charset="UTF-8">
+Introduction to HTML
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+22
+=== SLIDE 23 ===
+The <body> element
+• Body holds the page's visible content.
+• Headings, paragraphs, lists, links and images usually appear here.
+• A document normally has one body element.
+• If content is missing, check that it is inside body.
+HTML SOURCE
+<body>
+  <h1>Welcome</h1>
+  <p>Start here.</p>
+</body>
+Welcome
+Start here.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+23
+=== SLIDE 24 ===
+Full example: first HTML page
+• Read from the doctype to the closing html tag.
+• Title is inside head.
+• Heading and paragraph are inside body.
+• Save as first-page.html and open it in a browser.
+HTML SOURCE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My First Page</title>
+</head>
+<body>
+  <h1>My First Page</h1>
+  <p>I am learning HTML step by step.</p>
+</body>
+</html>
+My First Page
+My First Page
+I am learning HTML step by step.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+24
+=== SLIDE 25 ===
+What will the browser show?
+• A large heading reads “My First Page”.
+• Below it is the paragraph “I am learning HTML step by step.”
+• The browser tab title is “My First Page”.
+• The angle-bracket tags are not displayed as ordinary text.
+HTML SOURCE
+<h1>My First Page</h1>
+<p>I am learning HTML step by step.</p>
+Browser preview
+My First Page
+I am learning HTML step by step.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+25
+=== SLIDE 26 ===
+HTML headings: h1 to h6
+• HTML provides six heading levels: h1 through h6.
+• h1 is the highest-level heading; h6 is the lowest.
+• Choose levels based on document structure, not size alone.
+• Browsers normally show headings in progressively smaller sizes.
+HTML SOURCE
+<h1>Course title</h1>
+<h2>Main topic</h2>
+<h3>Subtopic</h3>
+Browser preview
+Course title
+Main topic 
+Subtopic
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+26
+=== SLIDE 27 ===
+Heading hierarchy
+• Use headings to create a meaningful outline.
+• Example: h1 = course title; h2 = main section; h3 = subsection.
+• Do not choose levels only for their default font size.
+• A clear hierarchy helps readers scan the page.
+HTML SOURCE
+<h1>HTML Basics</h1>
+<h2>Tags</h2>
+<h3>Opening and closing tags</h3>
+Browser preview
+HTML Basics
+Tags 
+Opening and closing tags
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+27
+=== SLIDE 28 ===
+Paragraphs with <p>
+• The p element marks a paragraph of text.
+• Browsers normally leave space around paragraphs.
+• Use a separate p element for each paragraph.
+• Use CSS later when you need exact spacing or layout.
+HTML SOURCE
+<p>HTML gives a page structure.</p>
+<p>CSS styles the page.</p>
+Browser preview
+HTML gives a page structure.
+
+CSS styles the page.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+28
+=== SLIDE 29 ===
+Whitespace: source vs browser
+• Extra spaces and line breaks in ordinary text are usually collapsed.
+• A new source-code line does not automatically create a new paragraph.
+• Use separate p elements for separate ideas.
+• CSS and special elements can control line breaks later.
+HTML SOURCE
+<p>First line
+Second line</p>
+<p>New paragraph</p>
+Browser preview
+First line Second line
+
+New paragraph
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+29
+=== SLIDE 30 ===
+Headings and paragraphs: example
+• Use one h1, then h2 headings for main sections.
+• Place paragraphs below the heading they describe.
+• Indentation is for humans; tags define structure.
+• The browser adds default spacing and heading sizes.
+HTML SOURCE
+<h1>Introduction to HTML</h1>
+<h2>What is HTML?</h2>
+<p>HTML structures web content.</p>
+<h2>Why learn it?</h2>
+<p>It helps organise a web page.</p>
+Browser preview
+Introduction to HTML
+What is HTML?
+HTML structures web content.
+Why learn it?
+It helps organise a web page.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+30
+=== SLIDE 31 ===
+Common beginner mistakes
+• Forgetting a required closing tag or nesting tags incorrectly.
+• Putting title in body instead of head.
+• Using curly quotation marks in attributes.
+• Saving as .txt instead of .html.
+• Expecting source line breaks to match browser output.
+HTML SOURCE
+<h1>My page</h1>
+<p>My first paragraph.</p>
+Browser preview
+My page
+My first paragraph.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+31
+=== SLIDE 32 ===
+Void elements
+• Some elements do not wrap text and have no closing tag.
+• Examples: br, img, meta and hr.
+• br creates a line break; use it when meaningful.
+• hr represents a thematic break and often appears as a horizontal line.
+HTML SOURCE
+<p>Line one<br>Line two</p>
+<hr>
+Browser preview
+Line one
+Line two
+────────────
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+32
+=== SLIDE 33 ===
+Text formatting: strong and em
+• strong marks strong importance; browsers often show bold.
+• em marks stress emphasis; browsers often show italic.
+• Use them for meaning, not just appearance.
+• Example: <strong>Important:</strong> submit your work.
+HTML SOURCE
+<p><strong>Important:</strong> submit your work.</p>
+<p><em>Read carefully.</em></p>
+Browser preview
+Important: submit your work.
+Read carefully.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+33
+=== SLIDE 34 ===
+Links: a first look
+• The a element creates a hyperlink.
+• href identifies where the link leads.
+• Link text should explain the destination or action.
+• A link can point to another page, a file or a section.
+HTML SOURCE
+<a href="https://example.com">Open Example</a>
+Browser preview
+Open Example
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+34
+=== SLIDE 35 ===
+Reading HTML step by step
+• 1. Find doctype and html root.
+• 2. Locate head; identify title and metadata.
+• 3. Locate body and list visible elements in order.
+• 4. Identify each element's tag, content and attributes.
+• 5. Predict the result before checking the preview.
+HTML SOURCE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Page</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+</body>
+</html>
+My page
+Welcome
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+35
+=== SLIDE 36 ===
+Debugging: why is my page blank?
+• Check the filename ends with .html.
+• Check you opened the correct file.
+• Check visible content is inside body.
+• Check spelling, nesting and quotation marks.
+• Save changes and refresh the browser.
+FILENAME
+Is it saved as .html?
+STRUCTURE
+Is content inside body?
+REFRESH
+Save changes, then refresh.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+36
+=== SLIDE 37 ===
+Mini case study: student profile
+• Goal: create a simple page about a student.
+• Use h1 for the student's name.
+• Use h2 for “About me” and “Interests”.
+• Use paragraphs for the information.
+• Give the document a descriptive title.
+HTML SOURCE
+<h1>Student Profile</h1>
+<h2>About me</h2>
+<p>My name is Amina.</p>
+<h2>Interests</h2>
+<p>I enjoy reading and design.</p>
+.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+37
+=== SLIDE 38 ===
+Guided practice without a lab
+• Underline opening tags and circle closing tags.
+• Box attributes and write their values beside them.
+• Predict the heading, paragraph and tab title.
+• This can be done on paper or from projected slides.
+HTML SOURCE
+<h1>My page</h1>
+<p>My first paragraph.</p>
+Browser preview
+My page
+My first paragraph.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+38
+=== SLIDE 39 ===
+Worked example: complete profile page
+• The code combines document structure, headings, paragraphs and a link.
+• Title is metadata and appears in the browser tab.
+• h1 and p appear in the body.
+• href provides the link destination.
+HTML SOURCE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Student Profile</title>
+</head>
+<body>
+  <h1>Amina Yusuf</h1>
+  <p>I am learning web design.</p>
+  <a href="https://example.com">Learn more</a>
+</body>
+</html>
+Student Profile
+Amina Yusuf
+I am learning web design.
+Learn more
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+39
+=== SLIDE 40 ===
+Knowledge check and take-home task
+• 1. Expand HTML and explain its purpose.
+• 2. Distinguish a tag, an element and an attribute.
+• 3. State two differences between head and body.
+• 4. What is the role of <!DOCTYPE html>?
+• 5. Write a page with title, one h1 and two paragraphs.
+• Take-home: draw the document tree and describe the output.
+REVISE
+Explain every part of the HTML skeleton.
+WRITE
+Create one h1 and two p elements on paper.
+EXPLAIN
+Describe what the browser should display.
+IFT 203 • Introduction to Web Technology • Zakariyya Abdullahi Adamu
+40

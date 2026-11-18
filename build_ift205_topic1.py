@@ -1,0 +1,549 @@
+import json
+import os
+
+topic_data = {
+    "course": "IFT 205",
+    "topic": "it_foundations_building_blocks",
+    "title": "IT Foundations: Hardware, Software & People",
+    "summary": "Covers the fundamental architecture and social components of Information Technology. Distinguishes raw unorganized data from processed contextualized information. Analyzes the three core building blocks of IT: Hardware (physical circuitry and peripherals), Software (programs and instructions), and People (users and IT professionals). Examines the four-stage Information Processing Cycle (Input, Processing, Output, Storage), data processing paradigms (Batch vs Real-time/OLTP), and critical data quality dimensions (Accuracy, Completeness, Consistency, Timeliness). Contrasts computers, networks, and the global Internet, while distinguishing networks, networking practices, and networkers.",
+    "key_terms": [
+        {"term": "Information Technology (IT)", "definition": "The use of computers, storage, networking, and software to create, process, store, secure, and exchange electronic data and information."},
+        {"term": "Data", "definition": "Raw, unorganized, and unprocessed facts, figures, symbols, or observations without inherent context."},
+        {"term": "Information", "definition": "Data that has been processed, organized, structured, or contextualized to possess meaning and value for decision-making."},
+        {"term": "Information Processing Cycle", "definition": "The sequential four-stage cycle of Input, Processing, Output, and Storage that transforms raw data into actionable information."},
+        {"term": "Batch Processing", "definition": "A computing method where transactions or data items are collected over a time period and processed collectively in a scheduled run."},
+        {"term": "Real-time Processing", "definition": "Immediate data processing where transactions are handled instantaneously as they occur, ensuring up-to-the-second records."},
+        {"term": "Data Validation", "definition": "Automated programmatic checks ensuring input data adheres to specified constraints, ranges, formats, and types before acceptance."},
+        {"term": "Data Verification", "definition": "The process of checking that entered data matches the authentic original source document (e.g., proofreading or double data entry)."}
+    ],
+    "questions": [
+        {
+            "id": "ift205-fnd-001",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "mcq",
+            "difficulty": 1,
+            "tags": ["it_foundations", "data_vs_information"],
+            "question": "Which of the following best defines the fundamental relationship between data and information?",
+            "options": [
+                "Data is raw, unorganized facts that become information once processed and structured into a meaningful context.",
+                "Information consists of raw sensor readings that become data once stored inside a hard disk drive.",
+                "Data and information are completely interchangeable technical terms referring to any digital binary stream.",
+                "Data represents human knowledge, while information refers exclusively to automated machine instructions."
+            ],
+            "answer": 0,
+            "explanation": "Data refers to raw, unformatted, and unprocessed facts, symbols, or observations (e.g. '82, 94, 76'). When these facts are processed, organized, and given context (e.g. 'Midterm test scores for COS 201 with an average of 84%'), they become meaningful information.",
+            "why_wrong": {
+                "1": "Reverses the hierarchy; sensor readings are raw data, not information.",
+                "2": "Data and information are distinct concepts in computer science; data is raw input, information is refined output.",
+                "3": "Conflates human cognitive knowledge with raw data; data is unstructured facts, not high-level human knowledge."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 3; Week 5 Slide 3",
+            "verified": True,
+            "verified_output": "Data is processed into meaningful information."
+        },
+        {
+            "id": "ift205-fnd-002",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "multi_select",
+            "difficulty": 2,
+            "tags": ["it_building_blocks", "foundations"],
+            "question": "According to foundational IT theory, which of the following represent the THREE essential building blocks of any complete Information Technology system? (Select THREE)",
+            "options": [
+                "Hardware (physical devices and electronic circuitry)",
+                "Software (operating systems, programs, and instructions)",
+                "People / Users (human operators, administrators, and decision-makers)",
+                "Cryptocurrency (digital monetary exchange layers)",
+                "Analog Paper Filing Cabinets (traditional physical storage)"
+            ],
+            "answer": [0, 1, 2],
+            "explanation": "An IT system requires three interconnected building blocks: Hardware (the physical machinery), Software (the logical instructions executed by hardware), and People (the users, administrators, and stakeholders who operate systems and utilize information).",
+            "why_wrong": {
+                "3": "Cryptocurrency is an application of distributed ledger technology, not a foundational IT building block.",
+                "4": "Physical paper cabinets are manual legacy storage methods, not a core digital IT building block."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 4; Student Notebook",
+            "verified": True,
+            "verified_output": "Hardware, Software, and People."
+        },
+        {
+            "id": "ift205-fnd-003",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "true_false_why",
+            "difficulty": 3,
+            "tags": ["hardware", "computer_nature"],
+            "question": "A digital computer can execute instructions and process data in its internal registers without any electrical energy source.",
+            "options": [
+                "True — internal mechanical components and solid-state silicon gates can process instructions purely through optical ambient light.",
+                "False — a digital computer fundamentally relies on electrical voltage levels (high and low potentials) across semiconductor transistors to represent and manipulate binary states."
+            ],
+            "answer": 1,
+            "explanation": "Digital computers are electronic devices built from semiconductor transistors that represent binary 1s and 0s via discrete electrical voltage thresholds. Without electrical power (mains or battery), the logic gates cannot operate, memory cells lose state, and no processing can occur.",
+            "why_wrong": {
+                "0": "Silicon semiconductor logic gates require an active electrical potential difference to switch states; they cannot function without electricity."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 12; Student Notebook Hint",
+            "verified": True,
+            "verified_output": "False. Computers fundamentally require electrical power."
+        },
+        {
+            "id": "ift205-fnd-004",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "sequencing",
+            "difficulty": 2,
+            "tags": ["information_processing_cycle"],
+            "question": "Arrange the four fundamental stages of the Information Processing Cycle in their correct chronological operational sequence:",
+            "options": [
+                "Input (capturing raw data from peripheral devices or sensors)",
+                "Processing (manipulating, calculating, and evaluating data via the CPU)",
+                "Output (generating human-readable or machine-usable results)",
+                "Storage (persisting data and results to secondary non-volatile media for future access)"
+            ],
+            "answer": [0, 1, 2, 3],
+            "explanation": "The standard Information Processing Cycle begins with Input (capturing raw data), continues to Processing (the CPU transforming data into information), produces Output (presenting results), and commits to Storage (retaining files for future retrieval).",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "Week 5 Slide 13",
+            "verified": True,
+            "verified_output": "Input -> Processing -> Output -> Storage"
+        },
+        {
+            "id": "ift205-fnd-005",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["processing_methods", "batch_vs_realtime"],
+            "question": "A national bank runs end-of-month interest calculations for 5,000,000 savings accounts during a scheduled window at midnight on Sunday. Which processing paradigm is being utilized, and why is it preferred here?",
+            "options": [
+                "Batch processing; it consolidates large volumes of non-time-critical transactions for execution during off-peak hours without interrupting daytime services.",
+                "Real-time processing; each account must trigger instant microsecond notification alerts to cardholders at the exact second the calendar flips.",
+                "Ad-hoc manual processing; bank accountants must review and type each interest figure individually to guarantee mathematical compliance.",
+                "Multiprogramming cache-bursting; computations are offloaded to distributed mobile phones of banking customers."
+            ],
+            "answer": 0,
+            "explanation": "Batch processing collects transactions over an accumulation interval and processes them as a single consolidated batch during off-peak hours (e.g., midnight Sunday). This maximizes system throughput and CPU utilization without competing with interactive daytime customer queries.",
+            "why_wrong": {
+                "1": "Real-time processing handles single transactions instantaneously upon occurrence (e.g. ATM withdrawal), which would cause excessive load if forced on 5M bulk interest calculations concurrently.",
+                "2": "Manual calculation for millions of accounts is computationally impossible and prone to severe human error.",
+                "3": "Multiprogramming cache-bursting is a fictitious term not describing banking database architectures."
+            },
+            "marking_points": [],
+            "source": "Week 5 Slide 15",
+            "verified": True,
+            "verified_output": "Batch processing for bulk scheduled operations."
+        },
+        {
+            "id": "ift205-fnd-006",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["processing_methods", "real_time"],
+            "question": "When a passenger books the final remaining seat on an international flight via an airline mobile app, which processing mode must the reservation system strictly employ to prevent another user from booking the identical seat simultaneously?",
+            "options": [
+                "Real-time / Online Transaction Processing (OLTP)",
+                "Batch processing executed once every 24 hours at midnight",
+                "Deferred spooling queue processing",
+                "Offline asynchronous file backup"
+            ],
+            "answer": 0,
+            "explanation": "Seat reservations require immediate Real-time / Online Transaction Processing (OLTP). As soon as the transaction initiates, database records are locked and updated instantly across all distributed channels to prevent overbooking / race conditions.",
+            "why_wrong": {
+                "1": "Batch processing would allow hundreds of users to book the same single seat throughout the day before midnight reconciliation.",
+                "2": "Spooling is a temporary queueing mechanism (such as for printers), not a concurrency-safe reservation paradigm.",
+                "3": "Offline asynchronous processing fails to synchronize immediate inventory state."
+            },
+            "marking_points": [],
+            "source": "Week 5 Slide 15",
+            "verified": True,
+            "verified_output": "Real-time / OLTP processing."
+        },
+        {
+            "id": "ift205-fnd-007",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "matching",
+            "difficulty": 3,
+            "tags": ["data_quality_dimensions"],
+            "question": "Match each data quality dimension to its defining operational characteristic:",
+            "options": [
+                "Accuracy",
+                "Completeness",
+                "Consistency",
+                "Timeliness"
+            ],
+            "answer": {
+                "Accuracy": "Recorded data values correctly reflect real-world facts without factual or computational errors.",
+                "Completeness": "All required mandatory fields and records are populated with zero missing essential elements.",
+                "Consistency": "Data stored across multiple tables or distributed databases agrees without contradictory values.",
+                "Timeliness": "Data is current, up to date, and available within the operational timeframe required for decision-making."
+            },
+            "explanation": "Data quality dimensions govern whether information is fit for its intended purpose: Accuracy ensures correctness; Completeness ensures absence of blank omissions; Consistency ensures synchronization across systems; Timeliness ensures data is recent enough to act upon.",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "Week 5 Slides 17-19",
+            "verified": True,
+            "verified_output": "Matched data quality dimensions."
+        },
+        {
+            "id": "ift205-fnd-008",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["data_validation", "data_verification"],
+            "question": "What is the critical distinction between Data Validation and Data Verification during input operations?",
+            "options": [
+                "Validation is an automated programmatic check ensuring data conforms to rules (e.g., format or range), whereas verification checks whether entered data matches the authentic original source document.",
+                "Validation is performed manually by data entry clerks, whereas verification is an automatic electrical check performed by the CPU's ALU.",
+                "Validation ensures data is encrypted before transmission, whereas verification checks whether the hard disk drive has sufficient sector capacity.",
+                "Validation and verification are identical concepts with no operational difference."
+            ],
+            "answer": 0,
+            "explanation": "Data Validation consists of software rules (e.g., checking if age is between 0 and 120, or if an email contains '@'). However, invalid data can pass validation if it is well-formed but factually wrong (typing age 25 instead of true age 52). Data Verification confirms that the entered data actually matches the source document (via double entry or visual proofreading).",
+            "why_wrong": {
+                "1": "Inverts the mechanisms; validation is software-automated, verification often requires human proofreading or dual-entry reconciliation.",
+                "2": "Encryption and disk capacity are security and hardware concerns, not the definitions of input validation and verification.",
+                "3": "They are fundamentally distinct quality assurance stages."
+            },
+            "marking_points": [],
+            "source": "Week 5 Slide 16",
+            "verified": True,
+            "verified_output": "Validation checks rules; verification checks authentic source match."
+        },
+        {
+            "id": "ift205-fnd-009",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "cloze",
+            "difficulty": 2,
+            "tags": ["data_representation", "bits_bytes"],
+            "question": "The smallest unit of digital data is the {{c1::bit}}, which represents a binary 0 or 1. A collection of exactly 8 bits forms a {{c2::byte}}, which can represent up to {{c3::256}} distinct bit combinations.",
+            "options": ["bit", "byte", "256", "nibble", "128", "word"],
+            "answer": ["bit", "byte", "256"],
+            "explanation": "A bit (binary digit) holds two states ($0$ or $1$). Eight bits make a byte. With 8 bits, $2^8 = 256$ unique permutations ($00000000_2$ to $11111111_2$) can be represented, allowing encoding of numbers 0–255 or standard ASCII characters.",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "Week 5 Slides 5-6",
+            "verified": True,
+            "verified_output": "bit, byte, 256"
+        },
+        {
+            "id": "ift205-fnd-010",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["terminology", "lecturer_notes"],
+            "question": "In the student lecture notes, the lecturer explicitly highlighted the conceptual differences among 'Networks', 'Networking', and 'Networkers'. Which statement accurately reflects these distinctions?",
+            "options": [
+                "A network is the interconnected infrastructure of devices; networking is the active process/practice of connecting and managing them; networkers are the human engineers who design and maintain them.",
+                "A network is a single software application; networking refers only to social gatherings; networkers are automated hardware switches.",
+                "Networks and networking are identical physical cables, while networkers refers to Wi-Fi radio antenna towers.",
+                "A network refers to computer processors; networking refers to RAM bus channels; networkers refers to compiler software."
+            ],
+            "answer": 0,
+            "explanation": "As noted directly in the lecture sessions: 'Network' is the interconnected structure of hardware/software devices; 'Networking' is the activity, communication discipline, and protocol implementation; and 'Networkers' are the technical personnel who configure and sustain the network.",
+            "why_wrong": {
+                "1": "Trivially confuses computing infrastructure with social networking events and misidentifies hardware switches as human networkers.",
+                "2": "A network is not merely physical cables, and networkers are human beings, not antennas.",
+                "3": "Incorrectly maps networking concepts to CPU/RAM internal bus architecture."
+            },
+            "marking_points": [],
+            "source": "Student Notebook Image 21.46.54; IFT205_Week2 Slide 25",
+            "verified": True,
+            "verified_output": "Network (infrastructure), Networking (process), Networkers (people)."
+        },
+        {
+            "id": "ift205-fnd-011",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "type_answer",
+            "difficulty": 2,
+            "tags": ["data_representation", "units"],
+            "question": "A half-byte, consisting of exactly 4 bits, is known technically in computer science as a what?",
+            "answer": "nibble",
+            "accepted_answers": ["nibble", "nybble"],
+            "explanation": "A group of 4 bits is called a nibble (or nybble). A nibble can represent $2^4 = 16$ unique values, which corresponds exactly to a single hexadecimal digit (0 to F).",
+            "marking_points": [
+                "Identifies 'nibble' or 'nybble' as a 4-bit data unit."
+            ],
+            "source": "Week 5 Slide 6",
+            "verified": True,
+            "verified_output": "nibble"
+        },
+        {
+            "id": "ift205-fnd-012",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["hardware_categories"],
+            "question": "Which of the following hardware devices is classified strictly as an INPUT device?",
+            "options": [
+                "Flatbed optical document scanner",
+                "Laser printer",
+                "Liquid Crystal Display (LCD) monitor",
+                "Active audio speaker"
+            ],
+            "answer": 0,
+            "explanation": "An optical scanner captures physical images/documents and converts them into digital electrical signals sent INTO the computer, making it strictly an input device. Printers, monitors, and speakers are output devices.",
+            "why_wrong": {
+                "1": "A laser printer receives data from the computer and produces a physical hard copy, making it an output device.",
+                "2": "An LCD monitor displays visual information generated by the GPU, making it an output device.",
+                "3": "An audio speaker converts electronic signals into acoustic sound waves, making it an output device."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 6; Week 5 Slide 13",
+            "verified": True,
+            "verified_output": "Flatbed optical document scanner is an input device."
+        },
+        {
+            "id": "ift205-fnd-013",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["hardware_categories", "communication_devices"],
+            "question": "A Network Interface Card (NIC) is installed in a university desktop computer. Into which primary hardware functional category does the NIC fall?",
+            "options": [
+                "Communication / Connectivity device",
+                "Primary volatile storage device",
+                "Arithmetic Logic processing unit",
+                "Electro-mechanical hard copy output device"
+            ],
+            "answer": 0,
+            "explanation": "A Network Interface Card (NIC) handles communication between the computer and transmission media (Ethernet cable or Wi-Fi radio frequencies), classifying it as a communication/connectivity hardware device.",
+            "why_wrong": {
+                "1": "RAM is primary volatile storage, not a NIC.",
+                "2": "The ALU is an internal sub-component of the CPU, not an expansion communication card.",
+                "3": "Printers and plotters produce hard copies, not network cards."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 6, 25",
+            "verified": True,
+            "verified_output": "Communication / Connectivity device."
+        },
+        {
+            "id": "ift205-fnd-014",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "explain",
+            "difficulty": 3,
+            "tags": ["computer_vs_network_vs_internet"],
+            "question": "In university examinations, students often confuse 'Computer', 'Computer Network', and 'The Internet'. Explain the precise architectural relationship and distinction among these three concepts.",
+            "options": [],
+            "answer": "A Computer is an autonomous electronic device that accepts input, processes data via instructions, and produces output/storage. A Computer Network is formed when two or more distinct computers are interconnected via communication media (wired or wireless) and protocols to exchange data and share resources (e.g. printers, files). The Internet is the global, publicly accessible 'network of networks' interconnecting millions of heterogeneous local, enterprise, and governmental networks worldwide via the TCP/IP protocol suite.",
+            "explanation": "A standalone computer operates in isolation. Interconnecting two or more computers creates a Local or Wide Area Network. The Internet is the worldwide federation of interconnected networks communicating through standard protocols.",
+            "why_wrong": {},
+            "marking_points": [
+                "Defines Computer as an individual autonomous electronic data-processing machine.",
+                "Defines Computer Network as two or more interconnected computers sharing resources and communicating via protocols.",
+                "Defines The Internet as the global worldwide interconnection of multiple disparate networks running TCP/IP.",
+                "Explicitly articulates the hierarchical scaling: individual computer -> local interconnected network -> global Internet."
+            ],
+            "source": "IFT205_Week2 Slide 3, 25; Week 6 Slide 4, 13; Student Notebook",
+            "verified": True,
+            "verified_output": "Computer vs Network vs Internet."
+        },
+        {
+            "id": "ift205-fnd-015",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "true_false_why",
+            "difficulty": 3,
+            "tags": ["it_foundations", "people_role"],
+            "question": "True or False: Because modern computing hardware and artificial intelligence software are highly autonomous, 'People' are no longer classified as a core component of Information Technology systems.",
+            "options": [
+                "True — modern automated servers run unattended in headless data centers without requiring any human presence.",
+                "False — people remain an indispensable pillar of IT systems as system architects, administrators, data providers, ethical decision-makers, and final consumers of processed information."
+            ],
+            "answer": 1,
+            "explanation": "Technology is created to serve human objectives. Without people to formulate requirements, input operational data, interpret analytical dashboards, maintain infrastructure, and enact business decisions, hardware and software have no economic or organisational purpose.",
+            "why_wrong": {
+                "0": "Unattended data centers still require software engineers, systems administrators, cybersecurity analysts, and end-users to justify and maintain their existence."
+            },
+            "marking_points": [],
+            "source": "IFT205_Week2 Slide 4",
+            "verified": True,
+            "verified_output": "False. People are an essential building block."
+        },
+        {
+            "id": "ift205-fnd-016",
+            "course": "IFT 205",
+            "topic": "it_foundations_building_blocks",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["data_representation", "units"],
+            "question": "If a student types a plain text sentence containing exactly 40 standard ASCII characters (including spaces and punctuation), approximately how much memory storage is occupied by the text string?",
+            "options": [
+                "40 bytes (320 bits)",
+                "5 bytes (40 bits)",
+                "320 bytes (2,560 bits)",
+                "4 kilobytes (4,096 bytes)"
+            ],
+            "answer": 0,
+            "explanation": "In standard ASCII encoding, each single alphanumeric character, space, or punctuation symbol occupies exactly 1 byte (8 bits). Therefore, 40 characters require $40 \\times 1 = 40$ bytes, which equals $40 \\times 8 = 320$ bits.",
+            "why_wrong": {
+                "1": "Divides 40 by 8, mistakenly treating characters as single bits instead of bytes.",
+                "2": "Multiplies 40 characters by 8 bytes each, confusing bits with bytes.",
+                "3": "Dramatically overestimates file overhead by treating bytes as kilobytes."
+            },
+            "marking_points": [],
+            "source": "Week 5 Slide 6, 21",
+            "verified": True,
+            "verified_output": "40 bytes (320 bits)."
+        }
+    ],
+    "case_studies": [
+        {
+            "id": "ift205-fnd-cs1",
+            "scenario": "Nile University Medical Clinic is transitioning from manual paper charts to an integrated Clinic Information System (CIS). The clinic director purchases 12 desktop workstations with barcode scanners and thermal prescription printers, buys an off-the-shelf patient management software suite, and hires an IT systems officer. During the first week of deployment, doctors complain that prescription dosages are occasionally entered with typos (e.g. typing '500g' instead of '500mg' of Paracetamol) because the software accepts any typed text in the dosage field without checking bounds. Furthermore, nurses notice that patient blood pressure records entered at the triage desk do not immediately appear in the doctor's consultation room until the systems officer runs an end-of-day database sync script at 6:00 PM.",
+            "sub_questions": [
+                {
+                    "id": "ift205-fnd-cs1-q1",
+                    "course": "IFT 205",
+                    "topic": "it_foundations_building_blocks",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case_study", "it_building_blocks"],
+                    "question": "In this clinical scenario, which of the three fundamental IT building blocks was neglected regarding the staff's preparedness and initial workflow setup?",
+                    "options": [
+                        "The People / Users block; medical staff lacked adequate user training, standard operating procedures, and change management before clinical rollout.",
+                        "The Hardware block; desktop computers cannot physically communicate with barcode scanners.",
+                        "The Electricity block; power generation was completely absent in the hospital ward.",
+                        "The Software block; commercial off-the-shelf software cannot be run on desktop PCs."
+                    ],
+                    "answer": 0,
+                    "explanation": "The failure to train clinicians, establish input procedures, and adapt workflows reflects a failure in the People/User building block of IT. Technology fails when the human organizational component is ignored.",
+                    "why_wrong": {
+                        "1": "The clinic successfully purchased and installed 12 working desktop computers and scanners.",
+                        "2": "Electricity was present as the machines and thermal printers were actively operating.",
+                        "3": "Commercial medical software runs regularly on standard desktop operating systems."
+                    },
+                    "marking_points": [],
+                    "source": "IFT205_Week2 Slide 4",
+                    "verified": True,
+                    "verified_output": "People / Users block neglected."
+                },
+                {
+                    "id": "ift205-fnd-cs1-q2",
+                    "course": "IFT 205",
+                    "topic": "it_foundations_building_blocks",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case_study", "data_validation"],
+                    "question": "To prevent dangerous dosage errors such as typing '500g' instead of '500mg', what specific IT input control must the software developers configure in the prescription form?",
+                    "options": [
+                        "Data Validation rules (specifically range checking and numeric unit drop-down constraints)",
+                        "High-speed batch spooling across secondary tape drives",
+                        "Upgrading the triage workstations from 8 GB RAM to 64 GB RAM",
+                        "Replacing all wired Ethernet cables with satellite Wi-Fi routers"
+                    ],
+                    "answer": 0,
+                    "explanation": "Data validation enforces constraints at data entry (e.g. allowable numerical ranges such as 5–1000 and fixed units mg/ml via drop-down menus), rejecting out-of-bounds input before committing it to the database.",
+                    "why_wrong": {
+                        "1": "Batch spooling queues data; it does nothing to prevent incorrect medical dosage typing.",
+                        "2": "RAM size affects multitasking capacity, not logical field verification.",
+                        "3": "Cable replacement has zero impact on application form validation logic."
+                    },
+                    "marking_points": [],
+                    "source": "Week 5 Slide 16",
+                    "verified": True,
+                    "verified_output": "Data validation rules."
+                },
+                {
+                    "id": "ift205-fnd-cs1-q3",
+                    "course": "IFT 205",
+                    "topic": "it_foundations_building_blocks",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case_study", "batch_vs_realtime"],
+                    "question": "Analyze why the 6:00 PM end-of-day batch sync represents an unacceptable data processing model for triage blood pressure records, and specify the required architecture.",
+                    "options": [],
+                    "answer": "In an acute medical environment, vital signs (blood pressure, heart rate) captured at triage must be immediately available to the consulting physician while the patient is physically in the examination room. Delaying updates until a 6:00 PM batch run violates the 'Timeliness' dimension of data quality and endangers patient safety by depriving doctors of critical diagnostic information during consultation. The clinic must migrate from batch processing to Real-time Online Transaction Processing (OLTP) on a centralized, networked client-server database.",
+                    "explanation": "Batch processing is designed for non-urgent bulk jobs (e.g. payroll). Healthcare consultations require real-time immediate visibility.",
+                    "why_wrong": {},
+                    "marking_points": [
+                        "Explains that triage vitals are time-sensitive data required immediately during patient consultation.",
+                        "Identifies that end-of-day batch processing severely compromises the 'Timeliness' dimension of data quality.",
+                        "Highlights clinical safety risks (e.g. prescribing medication without seeing emergency hypertensive crisis vitals).",
+                        "Recommends migrating to Real-time / OLTP processing across a shared local database."
+                    ],
+                    "source": "Week 5 Slide 15, 18",
+                    "verified": True,
+                    "verified_output": "Batch vs Real-time in clinic triage."
+                }
+            ]
+        },
+        {
+            "id": "ift205-fnd-cs2",
+            "scenario": "A fast-growing retail chain in Abuja operates 5 supermarket branches. Each branch has 6 Point-of-Sale (POS) cash registers, a local server, and a barcode inventory scanner. At checkout, scanning a product's barcode instantly deducts item count from local shelf inventory and prints an itemized receipt. However, the store's central warehouse in Idu Industrial Area only updates headquarters supply levels when a CSV file is emailed by each store manager at the end of the business day. Recently, the warehouse ran completely out of baby formula because three different stores experienced huge simultaneous surges in morning sales that were not visible to procurement officers until nightfall.",
+            "sub_questions": [
+                {
+                    "id": "ift205-fnd-cs2-q1",
+                    "course": "IFT 205",
+                    "topic": "it_foundations_building_blocks",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case_study", "processing_architecture"],
+                    "question": "Which processing model operates at the checkout cash register, and which operates between the stores and the central warehouse?",
+                    "options": [
+                        "Real-time processing at the POS cash registers; Batch processing between the retail stores and the central warehouse.",
+                        "Batch processing at the POS cash registers; Real-time processing between the retail stores and the central warehouse.",
+                        "Both the POS registers and the central warehouse operate in real-time processing.",
+                        "Both the POS registers and the central warehouse operate in manual analog batch filing."
+                    ],
+                    "answer": 0,
+                    "explanation": "The cash register acts in real-time (immediately deducting local inventory and printing receipts per customer). Meanwhile, emailing a consolidated CSV once a day is classic batch processing, creating an information lag at headquarters.",
+                    "why_wrong": {
+                        "1": "Reverses the modes; registers cannot be batch because customers cannot wait until midnight for checkout receipts.",
+                        "2": "If the warehouse operated in real-time, the procurement officers would have observed the morning surge immediately.",
+                        "3": "Digital POS registers and CSV files are electronic computing systems, not manual analog paper."
+                    },
+                    "marking_points": [],
+                    "source": "Week 5 Slide 15",
+                    "verified": True,
+                    "verified_output": "Real-time at POS; Batch to warehouse."
+                },
+                {
+                    "id": "ift205-fnd-cs2-q2",
+                    "course": "IFT 205",
+                    "topic": "it_foundations_building_blocks",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case_study", "data_quality"],
+                    "question": "Which specific dimension of data quality failed between the branches and the central warehouse, causing the stockout, and how can an integrated IT network resolve it?",
+                    "options": [],
+                    "answer": "The data quality dimension that failed is 'Timeliness' (currency). Although the inventory data was accurate within each individual branch store, the central warehouse database was obsolete by several hours, preventing timely procurement. By connecting all 5 branch stores to the central warehouse via an integrated Wide Area Network (WAN) using real-time database replication or cloud-based enterprise inventory software, every sale at any POS will instantly decrement central stock levels, providing immediate visibility and triggering automated restock re-order points.",
+                    "explanation": "Data was accurate locally but lacked timeliness centrally. An interconnected WAN provides real-time visibility.",
+                    "why_wrong": {},
+                    "marking_points": [
+                        "Identifies 'Timeliness' (or currency) as the primary failing data quality dimension.",
+                        "Explains how batch CSV delay created a multi-hour information blind spot at headquarters.",
+                        "Proposes an interconnected WAN or cloud inventory solution.",
+                        "Notes that real-time synchronization enables automated reorder triggers to prevent stockouts."
+                    ],
+                    "source": "Week 5 Slide 18; Week 6 Slide 5",
+                    "verified": True,
+                    "verified_output": "Timeliness failure resolved by WAN real-time sync."
+                }
+            ]
+        }
+    ]
+}
+
+out_dir = os.path.join("app", "content", "IFT 205")
+os.makedirs(out_dir, exist_ok=True)
+out_path = os.path.join(out_dir, "it_foundations_building_blocks.json")
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(topic_data, f, indent=2)
+
+print(f"Generated {out_path} with {len(topic_data['questions'])} questions and {len(topic_data['case_studies'])} case studies.")

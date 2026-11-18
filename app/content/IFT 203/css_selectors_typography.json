@@ -1,0 +1,535 @@
+{
+  "course": "IFT 203",
+  "topic": "CSS Selectors, Specificity & Typography",
+  "summary": "This topic explores styling web documents using Cascading Style Sheets (CSS3). It covers the three methods of attaching styles (Inline, Internal, and External `<link>`), establishing why external stylesheets are the industry standard for maintainability and browser caching. Students master selector syntax: Universal (`*`), Type (`p`), Class (`.name`), ID (`#name`), and Combinators (descendant `A B`, direct child `A > B`, adjacent sibling `A + B`, general sibling `A ~ B`). The core mathematical foundation of CSS is Specificity\u2014represented as a 4-tier tuple (inline: 1000, ID: 100, class/pseudo-class: 10, element: 1)\u2014which dictates which rule wins when multiple styles target the same element. Finally, the topic examines color models (Hex, RGB, RGBA with opacity) and scalable typography, comparing absolute units (`px`) with accessible relative units (`rem` based on root font size vs `em` based on parent font size), and defining robust font-family fallback stacks.",
+  "key_terms": [
+    {
+      "term": "CSS Specificity",
+      "definition": "The algorithm browsers use to determine which CSS property declaration applies to an element when multiple conflicting rules match, calculated across four tiers: Inline styles (1000) > IDs (100) > Classes/Pseudo-classes (10) > Elements/Pseudo-elements (1)."
+    },
+    {
+      "term": "External Stylesheet",
+      "definition": "A separate file containing CSS rules (.css) linked to HTML documents via <link rel='stylesheet' href='styles.css'> in the <head>, separating presentation from structure and enabling browser caching."
+    },
+    {
+      "term": "Descendant Selector (A B)",
+      "definition": "A CSS combinator that matches any element B that is nested inside element A, regardless of how deep in the DOM hierarchy it is located."
+    },
+    {
+      "term": "Child Selector (A > B)",
+      "definition": "A CSS combinator that matches only direct, immediate child elements B whose direct parent is element A."
+    },
+    {
+      "term": "rem Unit (Root EM)",
+      "definition": "A relative unit of measurement equal to the computed font-size of the root <html> element (default 16px). Unlike 'em', 'rem' does not compound inside nested elements."
+    },
+    {
+      "term": "em Unit",
+      "definition": "A relative unit of measurement equal to the computed font-size of the element's immediate parent; when nested, 'em' compounds multiplicatively."
+    },
+    {
+      "term": "The Cascade",
+      "definition": "The set of rules governing how conflicting styles are resolved based on origin (user agent vs author), specificity, and source order (later rules override earlier rules of equal specificity)."
+    },
+    {
+      "term": "!important",
+      "definition": "A CSS declaration modifier that forces a property to take precedence over all normal cascade and specificity rules; considered an architectural code smell when overused."
+    }
+  ],
+  "questions": [
+    {
+      "id": "ift203-cs-001",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "css-linking",
+        "external-css",
+        "nile-lecture"
+      ],
+      "question": "Why is 'External CSS' (using `<link rel=\"stylesheet\" href=\"styles.css\">`) considered the undisputed software engineering best practice over 'Inline CSS' for commercial multi-page websites?",
+      "options": [
+        "Because external CSS is the only method that can render red text",
+        "Because external CSS cleanly separates presentation from HTML structure, allows thousands of pages to share a unified visual theme, and enables browsers to cache the stylesheet once to drastically accelerate page loading speeds",
+        "Because inline styles are strictly prohibited by the CPU processor hardware",
+        "Because external CSS automatically translates HTML code into C programming language"
+      ],
+      "answer": 1,
+      "explanation": "External stylesheets adhere to the Separation of Concerns principle. Storing styles in a dedicated `.css` file allows hundreds of HTML pages to link to a single stylesheet (simplifying site-wide redesigns) and allows client browsers to cache the file after the first request, saving bandwidth and boosting performance. Inline styles violate DRY (Don't Repeat Yourself) and severely degrade maintainability.",
+      "why_wrong": {
+        "0": "Inline, internal, and external CSS can all render red text identically.",
+        "2": "CPUs do not execute CSS directly; web browser rendering engines parse CSS.",
+        "3": "CSS is a style sheet language; it has nothing to do with compiling C code."
+      },
+      "source": "IFT 203 Week 6 Slides: Creating, Connecting and Styling Webpages"
+    },
+    {
+      "id": "ift203-cs-002",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "specificity",
+        "calculation",
+        "selectors"
+      ],
+      "question": "Which of the following CSS selectors has the HIGHEST specificity value and will take precedence when styling an anchor link?",
+      "options": [
+        "`header nav a` (3 element selectors)",
+        "`nav a.active` (1 class + 2 element selectors)",
+        "`#main-nav a` (1 ID + 1 element selector)",
+        "`a:hover` (1 pseudo-class + 1 element selector)"
+      ],
+      "answer": 2,
+      "explanation": "Calculating specificity (Inline, ID, Class, Element):\n- `header nav a`: (0, 0, 0, 3) = score 3\n- `nav a.active`: (0, 0, 1, 2) = score 12\n- `#main-nav a`: (0, 1, 0, 1) = score 101\n- `a:hover`: (0, 0, 1, 1) = score 11\nBecause specificity is evaluated hierarchically from left to right, `#main-nav a` possesses 1 ID selector (worth 100), overwhelmingly beating all class and element selectors.",
+      "why_wrong": {
+        "0": "`header nav a` has zero IDs and zero classes; its specificity is only 3.",
+        "1": "`nav a.active` has 1 class and 2 elements (score 12), which is lower than an ID (score 100+).",
+        "3": "`a:hover` has 1 pseudo-class and 1 element (score 11), lower than an ID selector."
+      },
+      "source": "IFT 203 Week 6 Slides; MDN Specificity"
+    },
+    {
+      "id": "ift203-cs-003",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "html_render",
+      "difficulty": 3,
+      "tags": [
+        "cascade",
+        "source-order",
+        "html-render"
+      ],
+      "question": "Consider the following HTML and CSS declarations:\n```html\n<style>\n  .alert {\n    color: red;\n  }\n  .warning {\n    color: blue;\n  }\n</style>\n<p class=\"warning alert\">Registration deadline approaching!</p>\n```\nWhat color will the paragraph text be rendered on screen, and why?",
+      "options": [
+        "Red, because `alert` is listed first in the HTML `class=\"warning alert\"` attribute",
+        "Blue, because `.warning` is declared later in the CSS stylesheet source order than `.alert`",
+        "Purple, because the browser blends red and blue together",
+        "Black, because conflicting class names cancel each other out"
+      ],
+      "answer": 1,
+      "explanation": "Both selectors (`.alert` and `.warning`) have identical specificity: 1 class selector (0, 0, 1, 0). The order of class names inside the HTML attribute (`class=\"warning alert\"`) has ZERO effect on CSS priority. Under the CSS Cascade, when two competing rules have equal specificity, the rule that appears LATER in the CSS source code wins. Because `.warning { color: blue; }` is written after `.alert { color: red; }`, the color is blue.",
+      "why_wrong": {
+        "0": "The order of class names in the HTML `class` attribute does not influence CSS cascade priority.",
+        "2": "Browsers do not mix colors; one CSS rule completely overrides the other.",
+        "3": "Conflicting rules do not cancel out to black; the cascade resolves the conflict deterministically."
+      },
+      "source": "IFT 203 Week 6 Slides; W3C CSS Cascading and Inheritance"
+    },
+    {
+      "id": "ift203-cs-004",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "code_bug",
+      "difficulty": 3,
+      "tags": [
+        "combinators",
+        "child-vs-descendant",
+        "syntax-bug"
+      ],
+      "question": "A student wants to style ONLY the direct paragraph children of a section, but not paragraphs nested inside inner card divs:\n```html\n<section id=\"hero\">\n  <p>Direct paragraph 1</p>\n  <div class=\"card\">\n    <p>Nested card paragraph</p>\n  </div>\n</section>\n```\nThe student wrote: `#hero p { color: green; }`. What is the bug, and what combinator should be used instead?",
+      "options": [
+        "`#hero p` is a descendant selector that matches ALL `<p>` tags at any depth inside `#hero` (including the inner card paragraph); to target ONLY direct children, use the Child Combinator: `#hero > p`",
+        "The student should use `#hero + p` to target all paragraphs",
+        "The student should use `#hero ~ p` to target all paragraphs",
+        "IDs cannot be combined with element selectors in CSS"
+      ],
+      "answer": 0,
+      "explanation": "A space (`A B`) is the Descendant Combinator, matching all matching elements regardless of nesting depth. The child combinator (`A > B`) matches only immediate direct children. `#hero > p` selects `Direct paragraph 1`, but ignores `<p>` inside `<div class=\"card\">` because its direct parent is the `div`, not the `section`.",
+      "why_wrong": {
+        "1": "`+` is the adjacent sibling combinator, which targets elements immediately following another element.",
+        "2": "`~` is the general sibling combinator, which targets siblings, not children.",
+        "3": "IDs can be combined freely with element selectors (e.g., `#hero > p`, `#hero div.card`)."
+      },
+      "source": "IFT 203 Week 6 Slides; MDN CSS Combinators"
+    },
+    {
+      "id": "ift203-cs-005",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "matching",
+      "difficulty": 3,
+      "tags": [
+        "selectors",
+        "symbols",
+        "matching"
+      ],
+      "question": "Match each CSS selector symbol to its exact classification and function:",
+      "options": [
+        {
+          "left": "#",
+          "right": "ID selector: targets a unique element by its id attribute (specificity 100)"
+        },
+        {
+          "left": ".",
+          "right": "Class selector: targets elements by their class attribute (specificity 10)"
+        },
+        {
+          "left": ">",
+          "right": "Child combinator: targets only immediate direct child elements"
+        },
+        {
+          "left": "+",
+          "right": "Adjacent sibling combinator: targets an element immediately preceded by another"
+        },
+        {
+          "left": ":",
+          "right": "Pseudo-class prefix: targets elements in a specific temporary state (e.g., :hover)"
+        }
+      ],
+      "answer": [
+        {
+          "left": "#",
+          "right": "ID selector: targets a unique element by its id attribute (specificity 100)"
+        },
+        {
+          "left": ".",
+          "right": "Class selector: targets elements by their class attribute (specificity 10)"
+        },
+        {
+          "left": ">",
+          "right": "Child combinator: targets only immediate direct child elements"
+        },
+        {
+          "left": "+",
+          "right": "Adjacent sibling combinator: targets an element immediately preceded by another"
+        },
+        {
+          "left": ":",
+          "right": "Pseudo-class prefix: targets elements in a specific temporary state (e.g., :hover)"
+        }
+      ],
+      "explanation": "These symbols constitute the core syntax of CSS selectors and combinators evaluated in Nile University IFT 203 examinations.",
+      "why_wrong": {},
+      "source": "IFT 203 Week 6 Slides"
+    },
+    {
+      "id": "ift203-cs-006",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "sequencing",
+      "difficulty": 3,
+      "tags": [
+        "specificity-hierarchy",
+        "sequencing"
+      ],
+      "question": "Order the following CSS selector types from LOWEST specificity (least powerful) to HIGHEST specificity (most powerful):",
+      "options": [
+        "Universal selector: * (Specificity 0,0,0,0)",
+        "Element/Type selector: p, h1 (Specificity 0,0,0,1)",
+        "Class selector: .highlight (Specificity 0,0,1,0)",
+        "ID selector: #navbar (Specificity 0,1,0,0)",
+        "Inline style attribute: style=\"...\" (Specificity 1,0,0,0)"
+      ],
+      "answer": [
+        "Universal selector: * (Specificity 0,0,0,0)",
+        "Element/Type selector: p, h1 (Specificity 0,0,0,1)",
+        "Class selector: .highlight (Specificity 0,0,1,0)",
+        "ID selector: #navbar (Specificity 0,1,0,0)",
+        "Inline style attribute: style=\"...\" (Specificity 1,0,0,0)"
+      ],
+      "explanation": "Standard W3C specificity hierarchy: Universal (0) < Element (1) < Class/Pseudo-class (10) < ID (100) < Inline Style (1000).",
+      "why_wrong": {},
+      "source": "IFT 203 Week 6 Slides; W3C CSS Specificity"
+    },
+    {
+      "id": "ift203-cs-007",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "typography",
+        "rem-vs-em",
+        "units"
+      ],
+      "question": "What is the primary advantage of using `rem` (Root EM) units instead of `em` units for sizing typography on a responsive web page?",
+      "options": [
+        "`rem` units make text permanently un-editable by hackers",
+        "`rem` scales relative to the root `<html>` font size (default 16px) and avoids the compounding multiplication problem of `em` inside deeply nested elements",
+        "`rem` units only work on Apple Mac computers",
+        "`em` units can only be used for image widths, not font sizes"
+      ],
+      "answer": 1,
+      "explanation": "Because `em` is relative to its immediate parent font size, nesting lists or divs with `font-size: 1.2em` causes text to compound exponentially ($1.2 \\times 1.2 \\times 1.2...$), growing uncontrollably. In contrast, `rem` always references the root `<html>` element, providing consistent, predictable typography scaling across the entire design while honoring user browser accessibility font size settings.",
+      "why_wrong": {
+        "0": "CSS measurement units have zero relation to cybersecurity or hacker prevention.",
+        "2": "`rem` is an open W3C standard supported across all modern web browsers on all operating systems.",
+        "3": "`em` is widely used for typography, padding, and margins."
+      },
+      "source": "IFT 203 Week 6 Slides; MDN CSS Values and Units"
+    },
+    {
+      "id": "ift203-cs-008",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "multi_select",
+      "difficulty": 3,
+      "tags": [
+        "font-family",
+        "typography-best-practices"
+      ],
+      "question": "Which of the following represent sound software engineering best practices for CSS typography and font styling? (Select ALL that apply)",
+      "options": [
+        "Always terminate a `font-family` declaration with a generic font family fallback (e.g., `sans-serif`, `serif`, or `monospace`) so the browser can fall back gracefully if custom fonts fail to load",
+        "Quote font names containing spaces (e.g., `'Times New Roman'`, `'Open Sans'`) so the CSS parser does not break the token",
+        "Set `text-decoration: none;` on anchor links when custom styling navigation bars to remove default underlines",
+        "Use 50 different font families on a single webpage to make it look exciting"
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Best practices dictate: always provide generic family fallbacks (`sans-serif`, `serif`), enclose multi-word font names in quotes, and use `text-decoration: none` to clean up navigation menus. Using 50 different font families destroys design cohesion, slows down page loading with massive font downloads, and degrades readability.",
+      "why_wrong": {
+        "3": "Using dozens of different fonts is a grotesque design anti-pattern that destroys performance and visual consistency."
+      },
+      "source": "IFT 203 Week 6 Slides; MDN Styling Text"
+    },
+    {
+      "id": "ift203-cs-fc01",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "css-rule-syntax"
+      ],
+      "question": "What are the components of a CSS rule? Provide the terminology.",
+      "answer": "A CSS rule consists of a `Selector` (e.g., `h1`) and a `Declaration Block` `{ }`. Inside the block are one or more `Declarations`, each consisting of a `Property` (e.g., `color`) and a `Value` (e.g., `navy`), separated by a colon and ended with a semicolon.",
+      "explanation": "Foundational syntax covered in IFT 203 Week 6 Slide 1.",
+      "why_wrong": {},
+      "source": "IFT 203 Week 6 Slides"
+    },
+    {
+      "id": "ift203-cs-fc02",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "link-tag"
+      ],
+      "question": "Write the exact HTML code to connect an external stylesheet named `main.css`.",
+      "answer": "`<link rel=\"stylesheet\" href=\"main.css\">` placed inside the `<head>` section of the HTML document.",
+      "explanation": "Core exam question from IFT 203 lecture and practical exercises.",
+      "why_wrong": {},
+      "source": "IFT 203 Week 6 Slides"
+    },
+    {
+      "id": "ift203-cs-fc03",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "class-vs-id-css"
+      ],
+      "question": "How do class selectors and ID selectors differ in CSS syntax and specificity?",
+      "answer": "Class selector: prefixed with a dot (`.card`), reusable on multiple elements, specificity score of 10.\nID selector: prefixed with a hash (`#navbar`), unique to one element per page, specificity score of 100.",
+      "explanation": "Crucial rule: ID is 10 times more specific than a class.",
+      "why_wrong": {},
+      "source": "IFT 203 Week 6 Slides"
+    },
+    {
+      "id": "ift203-cs-fc04",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "specificity-tuple"
+      ],
+      "question": "What is the 4-tier specificity tuple (a, b, c, d)?",
+      "answer": "a = Inline styles (1000)\nb = ID selectors (100)\nc = Class, attribute, and pseudo-class selectors (10)\nd = Element and pseudo-element selectors (1)\nEvaluated left to right; higher tier always wins.",
+      "explanation": "The standard W3C specificity scoring metric.",
+      "why_wrong": {},
+      "source": "IFT 203 Week 6 Slides; W3C Specificity"
+    },
+    {
+      "id": "ift203-cs-fc05",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "descendant-vs-child"
+      ],
+      "question": "Differentiate between `div p` and `div > p`.",
+      "answer": "`div p` (Descendant): Matches ANY `<p>` inside `<div>`, at any nested depth.\n`div > p` (Child): Matches ONLY `<p>` elements that are direct, immediate children of `<div>`.",
+      "explanation": "Combinator distinction tested frequently in web technology exams.",
+      "why_wrong": {},
+      "source": "IFT 203 Week 6 Slides"
+    },
+    {
+      "id": "ift203-cs-fc06",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "rem-unit"
+      ],
+      "question": "What is a `rem` unit, and what is its default pixel equivalent?",
+      "answer": "A `rem` (Root EM) is a relative unit equal to the font-size of the root `<html>` element. By default in standard browsers, 1rem = 16px. Thus, 2rem = 32px and 0.5rem = 8px.",
+      "explanation": "Standard unit for responsive typography and accessible web design.",
+      "why_wrong": {},
+      "source": "IFT 203 Week 6 Slides"
+    },
+    {
+      "id": "ift203-cs-fc07",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "rgba-color"
+      ],
+      "question": "What is `rgba(255, 0, 0, 0.5)` and what does the fourth parameter represent?",
+      "answer": "It represents red color with 50% opacity/transparency. The fourth parameter ('a' for Alpha) ranges from 0.0 (completely transparent) to 1.0 (completely opaque).",
+      "explanation": "Color models covered in IFT 203 Week 6.",
+      "why_wrong": {},
+      "source": "IFT 203 Week 6 Slides"
+    },
+    {
+      "id": "ift203-cs-fc08",
+      "course": "IFT 203",
+      "topic": "CSS Selectors, Specificity & Typography",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "important-flag"
+      ],
+      "question": "What does `!important` do in CSS, and why should it be avoided?",
+      "answer": "It overrides all normal specificity and cascade rules. It should be avoided because it breaks the natural cascade, makes debugging CSS nightmares, and forces other developers to use even more `!important` declarations.",
+      "explanation": "Recognized architectural anti-pattern in frontend development.",
+      "why_wrong": {},
+      "source": "IFT 203 Week 6 Slides; MDN Specificity"
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "ift203-cs-cs01",
+      "scenario": "A frontend developer on the Nile University student portal project is tasked with updating the submit button color to red for the 'Drop Course' warning action. The developer adds a new CSS class:\n```css\n.btn-danger {\n  background-color: red;\n}\n```\nAnd applies it to the HTML button: `<button id=\"confirm-drop\" class=\"btn-danger\">Drop Course</button>`.\nHowever, the button stubbornly remains GREEN. Upon inspecting the styles in Chrome DevTools, the developer finds an existing rule in the core stylesheet:\n```css\n#confirm-drop {\n  background-color: green;\n}\n```\nA frustrated junior developer suggests appending `!important` to `.btn-danger`.",
+      "sub_questions": [
+        {
+          "id": "ift203-cs-cs01-q1",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "specificity-war",
+            "devtools"
+          ],
+          "question": "Why did `.btn-danger` fail to change the button color to red?",
+          "options": [
+            "Because the browser does not support the color red on Tuesdays",
+            "Because `#confirm-drop` is an ID selector with a specificity of (0,1,0,0) (score 100), which completely overrules the class selector `.btn-danger` with a specificity of only (0,0,1,0) (score 10)",
+            "Because button elements cannot have background colors in CSS",
+            "Because the word 'danger' is blocked by university proxy filters"
+          ],
+          "answer": 1,
+          "explanation": "Under W3C CSS Specificity rules, an ID selector (`#confirm-drop`) carries a specificity weight of 100, which completely overpowers a class selector (`.btn-danger`, weight 10), regardless of source code order. The class selector cannot override an ID on the same element without increasing its specificity.",
+          "why_wrong": {
+            "0": "CSS rendering engines do not have day-of-the-week restrictions.",
+            "2": "`background-color` is a standard, fully supported CSS property on `<button>` elements.",
+            "3": "Network proxies filter HTTP packets; they do not edit CSS class names."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN Specificity"
+        },
+        {
+          "id": "ift203-cs-cs01-q2",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "specificity-architecture",
+            "clean-css"
+          ],
+          "question": "Explain why using `!important` to solve this issue is a poor architectural practice, and provide two clean, maintainable engineering solutions to resolve the styling conflict.",
+          "marking_points": [
+            "Identifies why `!important` is harmful: Breaks the natural cascade, escalates 'specificity wars', and forces subsequent overrides to also require `!important`.",
+            "Solution 1 (Refactor base styles): Remove the ID selector `#confirm-drop` from the base stylesheet and restyle using utility classes (e.g., `.btn { background-color: green; } .btn.btn-danger { background-color: red; }`).",
+            "Solution 2 (Specificity matching/chaining): Target the element using an ID-qualified selector (e.g., `#confirm-drop.btn-danger` or `button#confirm-drop`) which achieves specificity (0,1,1,0), cleanly overriding the base ID rule.",
+            "States the principle of keeping CSS specificity flat for enterprise maintainability."
+          ],
+          "answer": "1. Why `!important` is an Anti-Pattern:\nAppending `!important` breaks the natural cascading flow of CSS. It creates technical debt by initiating a 'specificity arms race'\u2014any future theme changes or modal dialogs targeting this button will also be forced to use `!important`, making the codebase brittle and unmaintainable.\n\n2. Two Clean Engineering Solutions:\n- Solution 1: Refactor Base Styles to Classes (Best Practice): Remove the ID selector from the CSS entirely. IDs should be reserved for JavaScript DOM access and in-page anchor links, not styling hooks. Re-author the base style as a class `.btn` and state modifier `.btn-danger`. Because both are classes, source order allows `.btn-danger` to win naturally:\n```css\n.btn { background-color: green; }\n.btn-danger { background-color: red; }\n```\n- Solution 2: Chain Selector to Match Specificity (Quick Fix): If the base ID cannot be edited immediately, chain the class to the ID in the override selector: `#confirm-drop.btn-danger { background-color: red; }`. This gives a specificity score of (0,1,1,0) (score 110), which cleanly defeats the base ID selector (0,1,0,0) (score 100) without resorting to `!important`.",
+          "explanation": "Disciplined frontend engineering keeps specificity low and avoids `!important` hacks.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; CSS Architecture Guidelines"
+        }
+      ]
+    },
+    {
+      "id": "ift203-cs-cs02",
+      "scenario": "A student builds a responsive portal for Nile University with nested cards and sidebars. In their CSS, the student uses `em` units for all typography:\n```css\nbody { font-size: 16px; }\n.card { font-size: 1.25em; }\n.comment { font-size: 1.25em; }\n.reply { font-size: 1.25em; }\n```\nWhen comments have nested replies (a reply inside a comment inside a card), the text in the innermost reply balloons to a gigantic, distorted size on screen.",
+      "sub_questions": [
+        {
+          "id": "ift203-cs-cs02-q1",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "em-compounding",
+            "typography-math"
+          ],
+          "question": "What is the EXACT computed font size (in pixels) of text inside a `.reply` nested within a `.comment` inside a `.card`?",
+          "options": [
+            "20px",
+            "31.25px (16px * 1.25 * 1.25 * 1.25)",
+            "16px",
+            "125px"
+          ],
+          "answer": 1,
+          "explanation": "`em` is relative to its immediate parent font size, causing compounding multiplication: Base body is 16px $\\to$ `.card` is $16 \\times 1.25 = 20\\text{px} \\to$ `.comment` inside card is $20 \\times 1.25 = 25\\text{px} \\to$ `.reply` inside comment is $25 \\times 1.25 = 31.25\\text{px}$. This compounding explosion is the classic flaw of nested `em` typography.",
+          "why_wrong": {
+            "0": "20px is the size of the outer `.card`, ignoring the nested comment and reply multiplications.",
+            "2": "16px is the base body font size.",
+            "3": "125px incorrectly multiplies 16 by 125."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN CSS Values & Units"
+        },
+        {
+          "id": "ift203-cs-cs02-q2",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "rem-refactoring",
+            "font-stack"
+          ],
+          "question": "Refactor this typography system to use `rem` units, and define a comprehensive `font-family` stack that provides web-safe fallbacks for Windows, macOS, and Linux systems.",
+          "marking_points": [
+            "Explains how switching to `rem` fixes the bug: `rem` always references root `<html>` (16px), preventing compounding so nested elements stay at a predictable, controlled size.",
+            "Provides refactored code with modular rem sizes (e.g., `font-size: 1rem;`, `font-size: 1.125rem;`).",
+            "Provides a robust system font stack with multi-word quoting and generic fallback (e.g., `font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;`).",
+            "Explains why font stacks must terminate in generic `sans-serif` or `serif`."
+          ],
+          "answer": "1. Refactoring to `rem` Units:\nBy replacing `em` with `rem`, font sizes are computed relative to the root `<html>` font size (default 16px) rather than the parent. This permanently eliminates the compounding bug, guaranteeing that `.reply` text remains a predictable, readable size regardless of nesting depth:\n```css\n:root {\n  font-size: 16px;\n}\n\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;\n  font-size: 1rem; /* Exactly 16px */\n  line-height: 1.5;\n}\n\n.card {\n  font-size: 1rem;\n}\n\n.comment {\n  font-size: 0.95rem; /* ~15.2px */\n}\n\n.reply {\n  font-size: 0.9rem; /* ~14.4px - stays clean regardless of nesting! */\n}\n```\n\n2. Robust System Font Stack:\n- `font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;`\n- `-apple-system` and `BlinkMacSystemFont` target modern Apple macOS/iOS system fonts (San Francisco).\n- `'Segoe UI'` targets modern Windows 10/11 system font.\n- `Roboto` targets Android and ChromeOS.\n- `Helvetica` and `Arial` serve as universal web-safe cross-platform fallbacks.\n- The generic `sans-serif` keyword ensures that even if all named fonts fail to load, the browser will render a clean, proportional sans-serif typeface.",
+          "explanation": "Switching to rem units eliminates compounding bugs while system font stacks provide native performance without web font download latency.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; Modern CSS Typography Best Practices"
+        }
+      ]
+    }
+  ]
+}

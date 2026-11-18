@@ -1,0 +1,468 @@
+=== SLIDE 1 ===
+IFT 203 • INTRODUCTION TO WEB TECHNOLOGY
+HTML: STRUCTURE AND CONTENT
+Build the foundation of a webpage: document structure, text, links, images, lists, tables, forms and semantic HTML.
+ZAKARIYYA ABDULLAHI ADAMU
+ASSISTANT LECTURER
+Zakariyya.adamu@nileuniversity.edu.ng
+=== SLIDE 2 ===
+What is HTML and why do websites need it?
+• HTML means HyperText Markup Language. It is the standard language used to describe the structure and meaning of information on a webpage.
+HyperText
+text or other content that can connect users to another page or resource through a link.
+Markup
+labels called tags identify what each piece of content represents, such as a heading, paragraph, image or form.
+HTML is not a programming language
+it mainly describes content and its structure; it does not perform general-purpose calculations or decisions.
+Think of a website as a house
+HTML is the rooms, doors and walls; CSS is the paint and decoration; JavaScript is the switches and moving parts.
+KEY IDEA: HTML gives content a meaningful structure that browsers can interpret.
+=== SLIDE 3 ===
+HTML elements, tags and attributes
+• An element is a complete unit, usually made up of an opening tag, content and a closing tag.
+Opening tag
+starts an element, for example <p>. Closing tag: ends it, for example </p>.
+Content
+the text or other elements placed between the opening and closing tags.
+Attribute
+extra information written inside an opening tag, usually as name="value". For example, href identifies a link destination.
+Some elements are void elements
+they do not wrap content and do not need closing tags, such as img, br and input.
+• Correct nesting means closing an inner element before closing its parent element.
+KEY IDEA: Tags mark the structure; attributes provide additional details.
+=== SLIDE 4 ===
+A complete first HTML page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Webpage</title>
+</head>
+<body>
+  <h1>Welcome to IT 203</h1>
+  <p>This is my first webpage.</p>
+</body>
+</html>
+WHAT EACH PART DOES
+• <!DOCTYPE html> tells the browser to use modern HTML standards.
+• <html lang="en"> is the root element; lang identifies the main language.
+• <head> contains information about the document, not the main visible page content.
+• charset="UTF-8" supports a wide range of letters and symbols.
+• viewport helps the page use the device screen width on phones and tablets.
+• <title> supplies the text shown on the browser tab.
+• <body> contains the content users see; h1 is the main heading and p is a paragraph.
+=== SLIDE 5 ===
+What should appear in the browser?
+●  ●  ●     Browser preview — local project
+Welcome to IT 203
+This is my first webpage.
+INTERPRETATION: The browser displays one large main heading followed by a paragraph. The title appears in the browser tab, not as a heading inside the page.
+=== SLIDE 6 ===
+Headings, paragraphs and emphasis
+<h1>Student Portal</h1>
+<h2>Admission Information</h2>
+<p>Welcome to the university admission page.</p>
+<p><strong>Application deadline:</strong> 30 June.</p>
+<p><em>Read the instructions carefully.</em></p>
+WHAT EACH PART DOES
+• h1 identifies the main subject of the page.
+• h2 introduces a subsection under the main heading.
+• p groups a complete thought into a paragraph.
+• strong marks the deadline label as important.
+• em gives emphasis to the instruction.
+• The browser supplies default styling, but CSS can later change the appearance.
+=== SLIDE 7 ===
+Browser output: text hierarchy
+●  ●  ●     Browser preview — local project
+Student Portal
+Admission Information
+Welcome to the university admission page.
+Application deadline: 30 June.
+Read the instructions carefully.
+INTERPRETATION: The headings appear larger and more prominent than paragraph text. Strong and emphasis have their own default visual treatment.
+=== SLIDE 8 ===
+Links and website navigation
+• A hyperlink connects one page or resource to another. Links make the web a network of connected information.
+• The a element creates a link. Its href attribute gives the destination address.
+• A relative URL points to a file within the same website, such as about.html. An absolute URL includes the full web address.
+• Link text should describe the destination. “View admission requirements” is clearer than “click here”.
+• Navigation menus commonly use links to connect Home, About, Services and Contact pages.
+• When linking to another website, check that the destination is correct and trustworthy.
+KEY IDEA: The href attribute tells the browser where the link should go.
+=== SLIDE 9 ===
+Creating links between website pages
+<h1>University Website</h1>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<p>Choose a page from the navigation links.</p>
+WHAT EACH PART DOES
+• h1 introduces the website.
+• nav groups links that are used for navigation.
+• each a element creates one clickable link.
+• href="about.html" points to a page in the same project folder.
+• The text between the tags is what the visitor sees and clicks.
+• Create the three HTML files in the same folder for these relative links to work.
+=== SLIDE 10 ===
+Browser output: navigation links
+IFT 203  |  WEEK 1  |  BROWSER OUTPUT
+●  ●  ●     Browser preview — local project
+University Website
+Home     About     Contact
+Choose a page from the navigation links.
+INTERPRETATION: The three link labels appear on the page. Selecting About opens about.html if that file exists at the specified path.
+=== SLIDE 11 ===
+Images and alternative text
+• The img element places an image in a webpage. It is a void element and does not wrap text.
+• src specifies the image file or URL. The path must match the location and spelling of the actual file.
+• alt provides alternative text that can be read by assistive technologies and may appear if the image cannot load.
+• Use meaningful alt text for informative images. A decorative image can use an empty alt value.
+• Width and height can reserve space and help the browser display the image at an appropriate size.
+• Organise image files in a folder such as images/ so the project remains easy to manage.
+KEY IDEA: A correct image path and useful alt text are both important.
+=== SLIDE 12 ===
+Adding an image to a webpage
+<h1>Our Campus</h1>
+<img src="images/campus.jpg"
+     alt="Main university campus building"
+     width="500">
+<p>The campus provides learning facilities.</p>
+WHAT EACH PART DOES
+• h1 introduces the image topic.
+• src points to campus.jpg inside the images folder.
+• alt describes the important information in the image.
+• width sets the displayed width to 500 pixels; the browser normally keeps the image proportions.
+• p provides a caption-like explanatory paragraph.
+• If the picture is missing, check the folder name, file name and extension.
+=== SLIDE 13 ===
+Browser output: image placement
+●  ●  ●     Browser preview — local project
+Our Campus
+[Image: Main university campus building]
+The campus provides learning facilities.
+INTERPRETATION: The image appears between the heading and paragraph when the file path is correct. The placeholder represents the expected image area.
+=== SLIDE 14 ===
+Lists: presenting related information
+• An unordered list uses ul when the order of items is not important, such as a list of services.
+• An ordered list uses ol when sequence matters, such as steps in a registration process.
+• Each list item is placed inside an li element.
+• A description list uses dl with dt for a term and dd for its explanation.
+• Lists make related information easier to scan than placing every item in a long paragraph.
+• Lists can be nested when a main item contains smaller sub-items.
+KEY IDEA: Choose the list type according to whether sequence matters.
+=== SLIDE 15 ===
+Creating ordered and unordered lists
+<h2>Services</h2>
+<ul>
+  <li>Student registration</li>
+  <li>Library services</li>
+  <li>Online learning</li>
+</ul>
+<h2>Registration steps</h2>
+<ol>
+  <li>Create an account</li>
+  <li>Complete the form</li>
+  <li>Submit documents</li>
+</ol>
+WHAT EACH PART DOES
+• ul begins a list whose order is not essential.
+• each li represents one list item.
+• ol begins a numbered list because the steps follow a sequence.
+• The browser supplies bullets or numbers automatically.
+• Closing tags keep the list structure clear.
+• Use lists for grouped items, not merely to add decorative bullets.
+=== SLIDE 16 ===
+Browser output: two list types
+●  ●  ●     Browser preview — local project
+Services
+• Student registration
+• Library services
+• Online learning
+Registration steps
+1. Create an account   2. Complete the form   3. Submit documents
+INTERPRETATION: The unordered list uses bullets, while the ordered list uses numbers to communicate sequence.
+=== SLIDE 17 ===
+Tables: presenting data in rows and columns
+• An HTML table is suitable for information that naturally belongs in rows and columns, such as a timetable or results sheet.
+• table is the overall container. tr creates a table row.
+• th creates a header cell; td creates an ordinary data cell.
+• thead can group header rows, tbody can group the main data and tfoot can group summary rows.
+• Use tables for tabular data, not as the main method of arranging an entire webpage.
+• For accessibility, identify column or row headings clearly so users can understand what each value represents.
+KEY IDEA: A table organises related data; it is not a general page-layout tool.
+=== SLIDE 18 ===
+Building a simple student table
+<table>
+  <tr>
+    <th>Student</th>
+    <th>Programme</th>
+  </tr>
+  <tr>
+    <td>Amina</td>
+    <td>Information Technology</td>
+  </tr>
+  <tr>
+    <td>Yusuf</td>
+    <td>Computer Science</td>
+  </tr>
+</table>
+WHAT EACH PART DOES
+• table starts the table structure.
+• each tr creates a new row.
+• th identifies a heading cell for a column.
+• td contains ordinary information for that row.
+• The browser places the values into aligned cells.
+• CSS can add borders, spacing and colours to improve readability.
+=== SLIDE 19 ===
+Browser output: student information table
+IFT 203  |  WEEK 1  |  BROWSER OUTPUT
+●  ●  ●     Browser preview — local project
+Student                 Programme
+Amina                   Information Technology
+Yusuf                   Computer Science
+INTERPRETATION: The information is organised into two columns and three rows. Styling such as borders is not included yet.
+=== SLIDE 20 ===
+Forms: collecting information from users
+• A form provides controls through which a visitor can enter or select information.
+• form groups the controls. input creates controls such as text boxes, email fields, passwords and checkboxes.
+• label identifies the purpose of a control. Connecting label to input improves usability and accessibility.
+• The name attribute identifies submitted data; the type attribute determines the kind of input expected.
+• button can submit a form. Required fields can be marked with the required attribute.
+• HTML can provide basic browser validation, but important data must also be checked securely on a server.
+KEY IDEA: A form is the webpage’s structured way of collecting user input.
+=== SLIDE 21 ===
+A simple admission enquiry form
+<form>
+  <label for="fullname">Full name:</label>
+  <input id="fullname" name="fullname" type="text" required>
+  <label for="email">Email address:</label>
+  <input id="email" name="email" type="email" required>
+  <button type="submit">Send enquiry</button>
+</form>
+WHAT EACH PART DOES
+• form groups the controls into one form.
+• label explains what information should be entered.
+• for="fullname" matches the input id="fullname".
+• type="text" accepts ordinary text; type="email" expects an email-like value.
+• name identifies the field when form data is submitted.
+• required asks the browser to prevent submission when the field is empty.
+• The button submits the form; a server or script is needed to process the data.
+=== SLIDE 22 ===
+Browser output: enquiry form
+●  ●  ●     Browser preview — local project
+Full name:
+[ Text entry field ]
+Email address:
+[ Email entry field ]
+[ Send enquiry ]
+INTERPRETATION: The visitor sees two labelled fields and a submit button. The browser can check that required fields are not empty.
+=== SLIDE 23 ===
+Semantic HTML and accessible pages
+• Semantic HTML uses elements whose names communicate the role of the content.
+• header commonly contains introductory content or a site heading; nav contains navigation links.
+• main identifies the main content of the page. section groups a related topic, while article represents a self-contained item.
+• footer contains closing or supplementary information about a page or section.
+• Semantic elements help browsers, search tools and assistive technologies understand page organisation.
+• Accessibility also requires meaningful link text, image alternatives, labels for form controls and a logical heading order.
+KEY IDEA: Choose elements for their meaning, not only for how they look.
+=== SLIDE 24 ===
+The DIV element: grouping content into sections
+Meaning
+div is a generic block-level container. It groups related HTML elements when no more specific semantic element is suitable.
+Why it is used
+developers commonly use div to group a heading, paragraph, image and button so that CSS can style them together.
+Block behaviour
+a div normally starts on a new line and takes the available width of its parent container.
+Class and ID
+div elements are often given class or id attributes so CSS and JavaScript can identify them.
+Important distinction
+div does not tell the browser what the grouped content means. Use header, nav, main, section, article or footer when one of those meanings is appropriate.
+KEY IDEA: Use div for grouping and layout; use semantic elements when the content has a clear meaning.
+=== SLIDE 25 ===
+DIV in VS Code: grouping a profile card
+<div class="student-card">
+  <h2>Amina Yusuf</h2>
+  <p>Programme: Information Technology</p>
+  <p>Level: 200</p>
+</div>
+LINE-BY-LINE EXPLANATION
+• div opens a generic container and closes after all grouped content.
+• class="student-card" gives the container a reusable name for CSS.
+• h2 is the heading inside the container.
+• The paragraphs contain related student details.
+• CSS can style the entire card through the .student-card selector.
+• The div itself does not announce that this is a student profile; it simply groups the content.
+=== SLIDE 26 ===
+Browser output: a grouped DIV card
+●  ●  ●     Browser preview
+Amina Yusuf
+Programme: Information Technology
+Level: 200
+INTERPRETATION: The text appears as ordinary page content. The grouping becomes visually obvious when CSS adds a border, background or spacing.
+=== SLIDE 27 ===
+DIV and SPAN: understanding the difference
+DIV
+a generic block-level container commonly used to group larger sections or several elements.
+SPAN
+a generic inline container used to identify a small part of text or content inside a line.
+Example of div
+grouping a complete student information card or a website content area.
+Example of span
+highlighting one word, a price, a status label or a few words inside a paragraph.
+• Neither div nor span provides semantic meaning by itself. They are useful hooks for CSS and JavaScript.
+• Do not use div or span everywhere. Prefer meaningful HTML elements when they describe the content more accurately.
+KEY IDEA: DIV groups blocks of content; SPAN targets a small inline part of content.
+=== SLIDE 28 ===
+SPAN in VS Code: highlighting part of a sentence
+<p>
+  Your application status is
+  <span class="approved">Approved</span>.
+</p>
+LINE-BY-LINE EXPLANATION
+• p creates the paragraph.
+• span wraps only the word Approved; the rest of the sentence remains outside it.
+• class="approved" provides a reusable selector for CSS.
+• The span does not create a new paragraph or force a new line.
+• CSS could make the word green, bold or place it inside a small badge.
+• This is a typical use of span: applying a style to a small piece of inline content.
+=== SLIDE 29 ===
+Browser output: SPAN inside a paragraph
+●  ●  ●     Browser preview
+Your application status is Approved.
+Only the word Approved receives the special style when CSS is added.
+INTERPRETATION: The word remains part of the same sentence. SPAN does not create a separate block.
+=== SLIDE 30 ===
+Semantic HTML: meaning, purpose and examples
+• Semantic HTML uses elements whose names describe the role or meaning of the content they contain.
+header
+introductory content for a page or section, such as a site title or introductory heading.
+nav
+a group of major navigation links that help visitors move around a website.
+main
+the central, unique content of the page. A page normally has one main element.
+section
+a thematic grouping of related content, usually introduced by a heading.
+article
+a self-contained item that could make sense on its own, such as a news story, blog post or forum contribution.
+footer
+closing or supplementary information for a page or section, such as contact details or copyright information.
+KEY IDEA: Semantic elements describe what a part of the page represents, not just how it looks.
+=== SLIDE 31 ===
+Semantic HTML in VS Code: a department webpage
+<header>
+  <h1>IT Department</h1>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+</nav>
+<main>
+  <section>
+    <h2>Our Programmes</h2>
+    <p>We offer IT-related programmes.</p>
+  </section>
+  <article>
+    <h2>Department News</h2>
+    <p>Registration is now open.</p>
+  </article>
+</main>
+<footer>
+  <p>Contact the department.</p>
+</footer>
+LINE-BY-LINE EXPLANATION
+• header groups introductory page content and the main department heading.
+• nav groups the main links used to move between pages.
+• main identifies the central content of this webpage.
+• section groups information about the department programmes.
+• article contains a self-contained news item.
+• footer contains supplementary closing information.
+• These elements make the document structure easier for people and software to understand.
+=== SLIDE 32 ===
+Browser output: semantic page structure
+●  ●  ●     Browser preview
+IT Department
+Home     About
+Our Programmes
+We offer IT-related programmes.
+Department News
+Registration is now open.
+Contact the department.
+INTERPRETATION: The browser displays the content in document order. Semantic elements communicate the role of each region even when default styling looks simple.
+=== SLIDE 33 ===
+Semantic HTML versus DIV: when should each be used?
+• Use header when the content is introductory, such as a page heading or a section introduction.
+• Use nav when a group of links provides important site or page navigation.
+• Use main for the primary content of the document; avoid using several main elements for unrelated regions.
+• Use section when the content forms a distinct topic or thematic group and normally has a heading.
+• Use article for independent content that could be distributed or understood separately, such as a news item.
+• Use div when you only need a neutral container for layout or styling and no semantic element accurately describes it.
+• Do not choose semantic elements merely because they sound modern. Choose the element that best describes the content.
+KEY IDEA: Semantic HTML improves structure; DIV remains useful for neutral grouping.
+=== SLIDE 34 ===
+HTML comments and special characters
+• Comments are notes written in the HTML source for developers. Browsers do not display comments as normal page content.
+• An HTML comment begins with <!-- and ends with -->. Comments can explain sections or temporarily document code.
+• Character entities display reserved characters or symbols that could otherwise be interpreted as markup.
+• &lt; displays the less-than sign; &gt; displays the greater-than sign; &amp; displays an ampersand.
+• &nbsp; creates a non-breaking space, which keeps adjacent words together. Use it sparingly; CSS is better for layout spacing.
+• &copy; displays the copyright symbol. Named entities and numeric character references can represent many other characters.
+KEY IDEA: Comments explain source code; character entities display special characters safely.
+=== SLIDE 35 ===
+Comments and character entities in HTML
+<!-- Main heading for the page -->
+<h1>Learning HTML</h1>
+
+<p>HTML uses tags such as &lt;h1&gt; and &lt;p&gt;.</p>
+<p>Research &amp; Development</p>
+<p>&copy; 2026 IT Department</p>
+LINE-BY-LINE EXPLANATION
+• The comment is visible in the source code but not in the normal browser page.
+• h1 creates the visible heading.
+• &lt; and &gt; display angle brackets as text rather than treating them as HTML tags.
+• &amp; displays the ampersand character.
+• &copy; displays the copyright symbol.
+• These examples are useful when teaching HTML syntax or displaying text that contains reserved characters.
+=== SLIDE 36 ===
+Browser output: comments and entities
+●  ●  ●     Browser preview
+Learning HTML
+HTML uses tags such as <h1> and <p>.
+Research & Development
+© 2026 IT Department
+INTERPRETATION: The comment does not appear. The entities are displayed as their corresponding characters.
+=== SLIDE 37 ===
+HTML attributes students should recognise
+id
+gives one element a unique identifier within the page, often used by CSS, JavaScript or links to page sections.
+class
+assigns one or more reusable class names to an element for styling or scripting.
+href
+specifies the destination of a hyperlink or linked resource.
+src
+specifies the source location of an embedded resource such as an image or script.
+alt
+provides alternative text for an image when it cannot be seen or loaded.
+title
+provides advisory information, often shown as a tooltip by browsers.
+• Other useful attributes include name, value, type, placeholder, required, width, height, target and lang.
+KEY IDEA: Attributes provide extra information and are written inside the opening tag.
+=== SLIDE 38 ===
+Important HTML syntax: quick reference for students
+Document
+<!DOCTYPE html>, <html>, <head>, <title> and <body> form the basic page structure.
+Text
+<h1> to <h6>, <p>, <strong>, <em> and <br> organise written content.
+Grouping
+<div> is a generic block container; <span> is a generic inline container.
+Navigation and media
+<a href=""> creates a link; <img src="" alt=""> embeds an image.
+Lists and tables
+<ul>, <ol>, <li>, <table>, <tr>, <th> and <td> organise related information.
+Forms
+<form>, <label>, <input>, <textarea>, <select>, <option> and <button> collect user input.
+Semantics
+<header>, <nav>, <main>, <section>, <article> and <footer> describe page regions.
+KEY IDEA: Students should recognise the purpose and basic syntax of these common HTML elements.

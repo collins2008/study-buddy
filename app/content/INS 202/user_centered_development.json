@@ -1,0 +1,615 @@
+{
+  "course": "INS 202",
+  "topic": "user_centered_development",
+  "title": "User-Centered Development (UCD) & Prototyping",
+  "summary": "In-depth treatment of User-Centered Development (UCD) methodologies, task analysis, and prototyping strategies. Analyzes the four sequential stages of UCD: Needs Analysis, User and Task Analysis, Functional Analysis, and Requirements/Prototyping. Details the cognitive Task Analysis hierarchy: Goals (high-level objectives), Tasks (structured activities), and Actions (atomic, indivisible physical movements). Thoroughly evaluates user research techniques, enshrining the Think Aloud protocol as the 'Gold Standard' of user observation with strict evaluator neutrality (zero hints or positive/negative feedback), while explaining why managers are never substitutes for actual frontline users. Resolves the traditional 'Implementation Paradox' through prototyping. Exhaustively categorizes prototypes across multiple dimensions: Fidelity (Low-Fidelity paper wireframes maximizing rapid iteration vs High-Fidelity interactive tools like Figma), Dimensional Scope (Horizontal broad/shallow prototypes vs Vertical narrow/deep functional slices), System Coverage (Global, Local, Isolated), and Lifecycle (Throwaway vs Evolutionary).",
+  "key_terms": [
+    {
+      "term": "User-Centered Development (UCD)",
+      "definition": "A software development methodology where systems are iteratively designed, prototyped, and evaluated based on real user needs and workflows."
+    },
+    {
+      "term": "Think Aloud Protocol",
+      "definition": "The 'Gold Standard' usability observation technique where users verbalize their ongoing thought process while performing realistic tasks, observed without evaluator intervention."
+    },
+    {
+      "term": "Goal (Task Analysis)",
+      "definition": "The overarching high-level state or objective that a user desires to accomplish using an interactive system."
+    },
+    {
+      "term": "Action (Task Analysis)",
+      "definition": "An atomic, indivisible physical movement or input operation that cannot be decomposed into smaller constituent parts at the chosen analysis granularity."
+    },
+    {
+      "term": "Horizontal Prototype",
+      "definition": "A prototype providing broad coverage across many system features but with shallow, surface-level functional depth."
+    },
+    {
+      "term": "Vertical Prototype",
+      "definition": "A prototype presenting only a narrow set of features but implementing deep, fully developed backend functionality."
+    },
+    {
+      "term": "Wireframe",
+      "definition": "A low-fidelity schematic illustration focusing on space allocation, content hierarchy, and functionality, devoid of colors, fonts, or branding."
+    },
+    {
+      "term": "Implementation Paradox",
+      "definition": "The traditional software dilemma where interfaces cannot be tested until implemented, yet implementation is too expensive to discard when usability defects are uncovered."
+    }
+  ],
+  "questions": [
+    {
+      "id": "ins202-ucd-001",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "sequencing",
+      "difficulty": 2,
+      "tags": [
+        "ucd_stages",
+        "lifecycle"
+      ],
+      "question": "Arrange the four foundational stages of the User-Centered Development (UCD) methodology in their correct chronological sequence:",
+      "options": [
+        "Needs Analysis (summarizing system nature, target users, and business benefits)",
+        "User and Task Analysis (modeling user personas, workflows, and task hierarchies)",
+        "Functional Analysis (specifying the system functions required to support tasks)",
+        "Requirements & Prototyping (iteratively building and evaluating interface prototypes)"
+      ],
+      "answer": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "As defined in Module 01 Slide 31: UCD progresses sequentially through: 1. Needs analysis, 2. User and task analysis, 3. Functional analysis, and 4. Requirements and prototyping.",
+      "why_wrong": {},
+      "marking_points": [],
+      "source": "Module 01 Slide 31",
+      "verified": true,
+      "verified_output": "Needs -> User/Task -> Functional -> Requirements/Prototyping"
+    },
+    {
+      "id": "ins202-ucd-002",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "explain",
+      "difficulty": 3,
+      "tags": [
+        "task_analysis",
+        "hierarchy"
+      ],
+      "question": "In Hierarchical Task Analysis (HTA), distinguish clearly between a 'Goal', a 'Task', and an 'Action'. Provide a concrete real-world e-commerce example illustrating the relationship among all three levels.",
+      "options": [],
+      "answer": "In Hierarchical Task Analysis: (1) A Goal is the high-level, overarching objective or desired end-state the user wishes to achieve (e.g. 'Purchase a birthday gift for a 5-year-old nephew'); (2) A Task is a structured composite operational activity required to make progress toward that goal (e.g. 'Search and select a Lego building set', 'Enter delivery shipping details'); (3) An Action is an atomic, indivisible physical movement or sensory operation that cannot be decomposed into smaller sub-components at the chosen level of analysis (e.g. 'Click the Add to Cart button', 'Type the 3-digit CVV credit card code'). Thus, Goals are broken down into multiple Tasks, which in turn are executed through a sequence of granular physical Actions.",
+      "explanation": "Goal is the high-level end-state; Task is a composite activity; Action is an atomic indivisible physical step.",
+      "why_wrong": {},
+      "marking_points": [
+        "Defines Goal as the high-level overarching objective or end-state.",
+        "Defines Task as a structured operational activity advancing toward the goal.",
+        "Defines Action as an atomic, indivisible physical movement or input operation.",
+        "Provides a valid concrete example connecting Goal -> Task -> Action (e.g. purchasing a gift -> selecting item -> clicking button)."
+      ],
+      "source": "Module 03 Slides 20-25",
+      "verified": true,
+      "verified_output": "Goal, Task, Action hierarchy explained."
+    },
+    {
+      "id": "ins202-ucd-003",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "user_research",
+        "think_aloud"
+      ],
+      "question": "During a usability evaluation session utilizing the 'Think Aloud' protocol, what is the strict professional conduct rule required of the test facilitator?",
+      "options": [
+        "Remain strictly neutral, provide zero hints or answers, offer zero positive or negative feedback, and use only neutral facilitating prompts like 'Tell me what you are looking at right now'.",
+        "Immediately take the mouse away from the user whenever they click the wrong menu and show them the correct path.",
+        "Applaud loudly every time the user clicks a button to encourage their self-esteem.",
+        "Instruct the user to memorize the database entity-relationship diagram before beginning."
+      ],
+      "answer": 0,
+      "explanation": "As emphasized in Module 03 Slide 29: 'The Gold Standard... BUT: No feedback, positive or negative; No answers or hints.' If the facilitator provides hints, the validity of the usability test is destroyed because real end-users will not have an engineer standing over their shoulder in production.",
+      "why_wrong": {
+        "1": "Taking the mouse away invalidates the empirical usability evaluation.",
+        "2": "Praising the user introduces experimental bias and Hawthorne effects.",
+        "3": "Users should test interfaces without prior technical schema memorization."
+      },
+      "marking_points": [],
+      "source": "Module 03 Slides 27-29",
+      "verified": true,
+      "verified_output": "Strict neutrality, zero hints, zero feedback."
+    },
+    {
+      "id": "ins202-ucd-004",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "true_false_why",
+      "difficulty": 2,
+      "tags": [
+        "user_research",
+        "managers_rule"
+      ],
+      "question": "When designing a new enterprise inventory management software system for a logistics company, interviewing corporate department managers is an acceptable, complete substitute for observing frontline warehouse workers.",
+      "options": [
+        "True \u2014 corporate managers understand daily floor operations with 100% precision and make all technical decisions.",
+        "False \u2014 'Managers are NOT users.' Managers often hold idealized or flawed assumptions about daily workflows; the Gold Standard of user research is directly observing frontline workers in their authentic operational workplace."
+      ],
+      "answer": 1,
+      "explanation": "As stated verbatim in Module 03 Slide 18: 'How can you learn the characteristics of your users? Not managers. Managers are not users. They may think they know users, but they aren't users. Good sources: Users themselves, preferably in their workplace. The Gold Standard.'",
+      "why_wrong": {
+        "0": "Managers frequently overlook practical workarounds, environmental frictions, and physical ergonomics encountered by frontline staff."
+      },
+      "marking_points": [],
+      "source": "Module 03 Slides 18-19",
+      "verified": true,
+      "verified_output": "False. Managers are not users."
+    },
+    {
+      "id": "ins202-ucd-005",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "matching",
+      "difficulty": 3,
+      "tags": [
+        "prototyping_dimensions",
+        "scope"
+      ],
+      "question": "Match each prototype classification to its defining dimensional scope:",
+      "options": [
+        "Horizontal Prototype",
+        "Vertical Prototype",
+        "Global Prototype",
+        "Local Prototype"
+      ],
+      "answer": {
+        "Horizontal Prototype": "Broad feature coverage across the system, but shallow depth (screens are linked at top level, but underlying logic is non-functional).",
+        "Vertical Prototype": "Narrow feature coverage (only one or two specific features), but deep, fully functional operational logic implemented.",
+        "Global Prototype": "A comprehensive prototype exhibiting both breadth and depth across the entire web application architecture.",
+        "Local Prototype": "An isolated mockup constructed specifically to test design alternatives for a contentious design impasse or difficult issue."
+      },
+      "explanation": "Horizontal = broad and shallow; Vertical = narrow and deep; Global = full breadth and depth; Local = resolving a specific design conflict.",
+      "why_wrong": {},
+      "marking_points": [],
+      "source": "Module 07 Slides 10-12",
+      "verified": true,
+      "verified_output": "Matched Horizontal, Vertical, Global, Local prototypes."
+    },
+    {
+      "id": "ins202-ucd-006",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "prototyping_theory",
+        "implementation_paradox"
+      ],
+      "question": "What is the 'Implementation Paradox' in software engineering that prototyping is specifically designed to resolve?",
+      "options": [
+        "Traditional development asserts that you cannot test an interface until you write the code, yet implementing production code is so expensive and schedule-consuming that teams cannot afford to redo it when usability mistakes appear.",
+        "Software can only be compiled on computers manufactured in 1953.",
+        "Users always refuse to use computers that have more than 64 GB of RAM.",
+        "Operating system kernels cannot execute instructions unless all prototypes are drawn with blue ink."
+      ],
+      "answer": 0,
+      "explanation": "As formulated in Module 07 Slides 3\u20134, 16: 'Traditional software development: you can't test until you implement. Implementation is expensive... If testing is postponed until implementation is complete, there are no resources and no time to do it over when an interface design mistake is uncovered.' Prototyping breaks this paradox by testing mockups before code is written.",
+      "why_wrong": {
+        "1": "Modern software compiles on modern microprocessors.",
+        "2": "Users routinely use modern high-RAM computers without objection.",
+        "3": "Ink colors have zero relationship to operating system kernel execution."
+      },
+      "marking_points": [],
+      "source": "Module 07 Slides 3-4, 16",
+      "verified": true,
+      "verified_output": "The Implementation Paradox."
+    },
+    {
+      "id": "ins202-ucd-007",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "multi_select",
+      "difficulty": 3,
+      "tags": [
+        "low_fidelity_advantages",
+        "paper_prototypes"
+      ],
+      "question": "Which of the following represent established advantages of using Low-Fidelity (paper/sketch) prototypes during the early stages of interface design? (Select THREE)",
+      "options": [
+        "Extremely fast and inexpensive to create and modify (using simple paper, pencil, and eraser)",
+        "Zero risk of stakeholders or management mistaking the prototype for a finished production system",
+        "Maximizes the number of rapid design iterations before committing engineering resources to code",
+        "Accurately benchmarks millisecond network latency and database query response times",
+        "Automatically compiles directly into native ARM64 assembly language"
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Low-fidelity prototypes are fast, cheap, easy to revise with a pencil, encourage honest user criticism (since they don't look 'finished'), and allow rapid iterations. However, paper cannot simulate real system response times, and paper does not compile into assembly code.",
+      "why_wrong": {
+        "3": "Paper prototypes cannot simulate system response times (as noted in Module 07 Slide 22).",
+        "4": "Paper sketches have no software compiler integration."
+      },
+      "marking_points": [],
+      "source": "Module 07 Slides 19-22",
+      "verified": true,
+      "verified_output": "Fast/cheap, no mistaken completion, maximizes iteration cycles."
+    },
+    {
+      "id": "ins202-ucd-008",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "type_answer",
+      "difficulty": 2,
+      "tags": [
+        "wireframes",
+        "definition"
+      ],
+      "question": "What is the technical term for a schematic page illustration that focuses strictly on space allocation, content hierarchy, and functionality, deliberately omitting all visual styling, colors, and finished graphics?",
+      "answer": "wireframe",
+      "accepted_answers": [
+        "wireframe",
+        "wireframing",
+        "wire frame",
+        "wire-frame"
+      ],
+      "explanation": "A wireframe is a low-fidelity illustration focusing on spatial layout, functionality, and information prioritization without visual styling or graphics.",
+      "marking_points": [
+        "Identifies 'wireframe' or 'wireframing'."
+      ],
+      "source": "Module 07 Slide 8",
+      "verified": true,
+      "verified_output": "wireframe"
+    },
+    {
+      "id": "ins202-ucd-009",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "prototyping_lifecycle",
+        "throwaway_vs_evolutionary"
+      ],
+      "question": "What is the critical distinction between a 'Throwaway Prototype' and an 'Evolutionary Prototype'?",
+      "options": [
+        "A Throwaway Prototype is built solely to explore requirements and test interface ideas before being discarded entirely; an Evolutionary Prototype is built with production-quality code that is continuously refined until it becomes the final product.",
+        "A Throwaway Prototype is written in HTML5, while an Evolutionary Prototype can only be drawn with wooden charcoal on papyrus.",
+        "A Throwaway Prototype is tested with real users, while an Evolutionary Prototype is tested exclusively by automated robots.",
+        "There is zero distinction; both prototypes are discarded into a trash can at the end of the day."
+      ],
+      "answer": 0,
+      "explanation": "As defined in Module 07 Slide 9: 'Evolutionary: the prototype eventually becomes the product.' In contrast, a Throwaway (or rapid) prototype is constructed cheaply to test specific design hypotheses and is discarded before production engineering begins.",
+      "why_wrong": {
+        "1": "Charcoal on papyrus is an absurd medium for software engineering.",
+        "2": "Both prototype models can and should involve human user testing.",
+        "3": "An evolutionary prototype survives and evolves into the finished software."
+      },
+      "marking_points": [],
+      "source": "Module 07 Slide 9; Software Engineering Principles",
+      "verified": true,
+      "verified_output": "Throwaway is discarded; Evolutionary becomes the product."
+    },
+    {
+      "id": "ins202-ucd-010",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "cloze",
+      "difficulty": 2,
+      "tags": [
+        "user_personas",
+        "primary_users"
+      ],
+      "question": "In user analysis, a {{c1::primary}} user is an individual who directly and actively operates the interactive software on a daily basis (such as an airline ticket check-in clerk), whereas a {{c2::secondary}} user interacts with the system only intermittently or receives indirect reports generated by the system (such as a regional supervisor).",
+      "options": [
+        "primary",
+        "secondary",
+        "tertiary",
+        "administrator",
+        "developer",
+        "stakeholder"
+      ],
+      "answer": [
+        "primary",
+        "secondary"
+      ],
+      "explanation": "Primary users interact directly with the software as their core tool. Secondary users rely on its outputs or use it only occasionally for administrative oversight.",
+      "why_wrong": {},
+      "marking_points": [],
+      "source": "Module 03 Slide 17",
+      "verified": true,
+      "verified_output": "primary, secondary"
+    },
+    {
+      "id": "ins202-ucd-011",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "environment_analysis",
+        "context_of_use"
+      ],
+      "question": "An IT team designs an automated kiosk for a car wash and outdoor maintenance facility. In winter, temperatures drop below freezing and operators wear thick leather gloves. How must the Environment Analysis influence the interface design?",
+      "options": [
+        "The interface must feature oversized physical push buttons or large touch target hitboxes (e.g. 80x80px+) with high physical spacing, avoiding precise multi-finger gestures or stylus inputs.",
+        "The interface should require users to type tiny 8-point italic text using a miniature trackball.",
+        "The interface should use pure red text on dark maroon backgrounds.",
+        "The interface should require voice commands in a roaring 110-decibel environment."
+      ],
+      "answer": 0,
+      "explanation": "As noted in Module 03 Slide 36: 'Environment Analysis... An outdoor ATM in a cold location where people wear gloves while using it (need huge buttons).' Physical working conditions directly dictate input modalities and target sizing.",
+      "why_wrong": {
+        "1": "Tiny 8pt fonts and miniature trackballs are impossible to manipulate with thick leather gloves.",
+        "2": "Maroon on dark red violates WCAG contrast standards.",
+        "3": "A 110-dB noise floor drowns out acoustic voice recognition."
+      },
+      "marking_points": [],
+      "source": "Module 03 Slide 36",
+      "verified": true,
+      "verified_output": "Oversized buttons and large hitboxes for gloved hands."
+    },
+    {
+      "id": "ins202-ucd-012",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "true_false_why",
+      "difficulty": 2,
+      "tags": [
+        "usability_roi",
+        "ibm_case"
+      ],
+      "question": "A formal website redesign driven by User-Centered Development at IBM increased product sales by 400% in the first month and caused an 84% reduction in the use of the 'Help' button.",
+      "options": [
+        "False \u2014 IBM reported that user-centered redesign had zero impact on commercial metrics.",
+        "True \u2014 by conducting user analysis and aligning navigation with real user workflows, IBM achieved a 400% sales surge and an 84% plunge in users feeling lost enough to click Help."
+      ],
+      "answer": 1,
+      "explanation": "As cited directly in Module 03 Slide 4: 'Examples: Redesign of an IBM site increased sales 400% within the first month; IBM site: 84% reduction in use of Help button, meaning users were not lost as often.'",
+      "why_wrong": {
+        "0": "The empirical business data conclusively proved dramatic sales growth and usability gains."
+      },
+      "marking_points": [],
+      "source": "Module 03 Slide 4",
+      "verified": true,
+      "verified_output": "True. IBM sales up 400%, Help clicks down 84%."
+    },
+    {
+      "id": "ins202-ucd-013",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "user_observation",
+        "talk_after"
+      ],
+      "question": "When observing an intensive care surgeon performing an emergency operation using a computerized robotic surgical console, which user research technique is most appropriate instead of the 'Think Aloud' protocol?",
+      "options": [
+        "Talk Right After (Retrospective Interview) or Video-Cued Recall, because forcing the surgeon to verbalize thoughts during critical surgery would dangerously divide cognitive attention.",
+        "Interrupting the surgeon every 10 seconds with a megaphone to ask survey questions.",
+        "Conducting a 40-person public focus group inside the sterile operating room.",
+        "Sending a mailed paper postal questionnaire to the patient during the operation."
+      ],
+      "answer": 0,
+      "explanation": "As stated in Module 03 Slide 30\u201331: 'Sometimes talking while doing the work is not feasible... Talking right after may be best alternative to thinking aloud.' In high-stress or life-critical tasks, thinking aloud introduces dangerous cognitive interference, so retrospective review is preferred.",
+      "why_wrong": {
+        "1": "Megaphone interruptions endanger patient life and violate surgical protocol.",
+        "2": "Focus groups inside sterile surgical rooms contaminate the operating field.",
+        "3": "Anesthetized patients cannot complete postal surveys during surgery."
+      },
+      "marking_points": [],
+      "source": "Module 03 Slide 30-33",
+      "verified": true,
+      "verified_output": "Talk Right After / Video-Cued Recall."
+    },
+    {
+      "id": "ins202-ucd-014",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "type_answer",
+      "difficulty": 2,
+      "tags": [
+        "user_learning_styles"
+      ],
+      "question": "In user analysis, users who immediately begin clicking and exploring interactive features without ever consulting documentation are classified as having which learning style?",
+      "answer": "do-then-read",
+      "accepted_answers": [
+        "do-then-read",
+        "do then read",
+        "active user"
+      ],
+      "explanation": "As categorized in Module 03 Slide 5: 'Do-then-read (an active user believes that only wimps read manuals)' vs 'Read-then-do (what manual writers seem to assume)'.",
+      "marking_points": [
+        "Identifies 'do-then-read' (or 'active user')."
+      ],
+      "source": "Module 03 Slide 5",
+      "verified": true,
+      "verified_output": "do-then-read"
+    },
+    {
+      "id": "ins202-ucd-015",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "prototyping_fidelity",
+        "high_fidelity_risks"
+      ],
+      "question": "What is a major psychological disadvantage of presenting a High-Fidelity interactive mockup (built in Figma or Webflow) to stakeholders in the very first week of conceptual design?",
+      "options": [
+        "Stakeholders often get distracted debating superficial visual styling (like button shades and logo placement) rather than core information architecture, and management may mistakenly assume the underlying software is nearly complete.",
+        "High-fidelity prototypes physically melt the computer's graphics card.",
+        "High-fidelity prototypes can only be viewed in black and white.",
+        "Stakeholders will refuse to look at the prototype unless they are provided with an acoustic gramophone."
+      ],
+      "answer": 0,
+      "explanation": "As taught in Module 07: High-fidelity prototypes look polished. When shown too early, stakeholders focus on aesthetic polish (colors, icons) rather than fundamental task flows and structure, and executives frequently mistake the interactive facade for finished backend software.",
+      "why_wrong": {
+        "1": "Figma runs safely in standard web browsers and does not melt hardware.",
+        "2": "High-fidelity mockups feature full rich color palettes.",
+        "3": "Gramophones are antique 19th-century audio players."
+      },
+      "marking_points": [],
+      "source": "Module 07 Slide 18-22",
+      "verified": true,
+      "verified_output": "Distraction by superficial aesthetics and mistaken completion."
+    },
+    {
+      "id": "ins202-ucd-016",
+      "course": "INS 202",
+      "topic": "user_centered_development",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "user_personas",
+        "purpose"
+      ],
+      "question": "What is a 'User Persona' in User-Centered Development?",
+      "options": [
+        "A realistic, composite archetype representing a specific target user segment, detailed with goals, skills, pain points, and behavioral patterns.",
+        "A fictional superhero character created by graphic artists for comic book merchandise.",
+        "An automated bot script that generates spam clicks on a website.",
+        "A hardware microprocessor chip installed in a router."
+      ],
+      "answer": 0,
+      "explanation": "A user persona is an empirical composite representation of a distinct user segment synthesized from user research data, giving the development team a concrete human reference point to guide design decisions.",
+      "why_wrong": {
+        "1": "Personas are evidence-based user archetypes, not fictional superheroes.",
+        "2": "Spam bots are automated scripts, not human personas.",
+        "3": "Processors are physical silicon chips."
+      },
+      "marking_points": [],
+      "source": "Module 03 Slides 8-17; UCD Principles",
+      "verified": true,
+      "verified_output": "Composite archetype representing a target user segment."
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "ins202-ucd-cs1",
+      "scenario": "A federal government ministry in Abuja commissions a software development agency to build an online Passport Renewal Portal for 20,000,000 citizens. The agency adopts a traditional Waterfall engineering approach: they spend 9 months writing backend Java database code and building complex encryption layers without conducting any user research or building interface prototypes. One month before public launch, the agency shows the finished portal to the Minister. The Minister discovers that citizens must manually upload passport photos scaled to exactly 312x398 pixels with a file size between 42.5 KB and 45.0 KB, or the form crashes with an unhandled server error. When tested with 10 citizens, 9 of them fail to renew their passport. The agency tells the Minister it will cost 250,000,000 Naira and take 8 months to rewrite the frontend.",
+      "sub_questions": [
+        {
+          "id": "ins202-ucd-cs1-q1",
+          "course": "INS 202",
+          "topic": "user_centered_development",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "implementation_paradox"
+          ],
+          "question": "Which classic software development failure trap did the agency fall into by postponing user testing until after full system implementation?",
+          "options": [
+            "The Implementation Paradox (implementation was so expensive and time-consuming that discovering fundamental interface flaws at the end resulted in massive budget and schedule crises).",
+            "Failure of the CPU's Arithmetic Logic Unit to add binary numbers.",
+            "Violation of the Class C private IPv4 addressing standard.",
+            "Failure to format the database server hard drive with FAT12."
+          ],
+          "answer": 0,
+          "explanation": "The agency fell victim to the Implementation Paradox (Module 07 Slide 3, 16): they postponed user testing until after writing complex backend code, making redesign prohibitively expensive and schedule-destroying.",
+          "why_wrong": {
+            "1": "The CPU's ALU functioned correctly; the failure was architectural and methodological.",
+            "2": "IPv4 addressing is a networking parameter unrelated to software development lifecycles.",
+            "3": "FAT12 is an obsolete floppy disk file system."
+          },
+          "marking_points": [],
+          "source": "Module 07 Slides 3-4, 16",
+          "verified": true,
+          "verified_output": "The Implementation Paradox."
+        },
+        {
+          "id": "ins202-ucd-cs2-q2",
+          "course": "INS 202",
+          "topic": "user_centered_development",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "ucd_remediation"
+          ],
+          "question": "Construct a four-phase User-Centered Development (UCD) plan that the agency should have followed from Day 1 to avoid this multi-million Naira disaster.",
+          "options": [],
+          "answer": "The agency should have executed the four standard UCD phases: (1) Phase 1: Needs Analysis \u2014 Define the core citizen goal (renew passport with zero friction) and business metrics (target >90% first-time completion rate); (2) Phase 2: User and Task Analysis \u2014 Conduct interviews and observations with diverse Nigerian citizens across age groups, education levels, and device types (mobile smartphones vs desktops); identify that citizens take photos with phones rather than specialized photo editing tools; (3) Phase 3: Low-Fidelity Prototyping & Form Design \u2014 Create paper wireframes and interactive mockups; design an automated browser-based cropping and auto-resizing tool that accepts any standard smartphone selfie and automatically formats it to passport dimensions, eliminating pixel math for citizens; (4) Phase 4: Usability Testing via Think Aloud Protocol \u2014 Test low- and medium-fidelity prototypes with real citizens in an iterative loop, discovering photo upload confusion in Week 3 (costing zero engineering code rewrite) instead of Month 9.",
+          "explanation": "Applies the 4 UCD phases: Needs Analysis, User/Task Analysis, Prototyping (auto-crop), and early Think Aloud usability testing.",
+          "why_wrong": {},
+          "marking_points": [
+            "Phase 1 (Needs Analysis): Establishes citizen renewal goals and completion metrics.",
+            "Phase 2 (User/Task Analysis): Identifies smartphone photo taking habits and lack of desktop photo editing tools.",
+            "Phase 3 (Prototyping): Designs automated photo cropping/compression to remove user friction.",
+            "Phase 4 (Iterative Testing): Uses Think Aloud user testing in early weeks to flush out issues before code implementation."
+          ],
+          "source": "Module 01 Slide 31; Module 03 Slides 8-29; Module 07 Slide 14-17",
+          "verified": true,
+          "verified_output": "Four-phase UCD plan: Needs, User/Task, Prototyping, Think Aloud testing."
+        }
+      ]
+    },
+    {
+      "id": "ins202-ucd-cs2",
+      "scenario": "A development team at Nile University builds an interactive mobile campus navigation app for incoming 100-level freshmen. The team builds a Low-Fidelity paper prototype on index cards and tests it with 8 freshmen using the Think Aloud protocol. The facilitator notices that when students search for 'Faculty of Computing', all 8 students immediately tap a drawn icon of a computer monitor, but get confused because the design team placed 'Faculty of Computing' under an icon of an open book. Furthermore, 6 out of 8 students ask if they can see walking distances in minutes rather than meters. In response, the team erases the book sketch, draws a monitor icon, adds walking minutes, and tests with 4 more freshmen within 45 minutes.",
+      "sub_questions": [
+        {
+          "id": "ins202-ucd-cs2-q1",
+          "course": "INS 202",
+          "topic": "user_centered_development",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "low_fi_iteration_speed"
+          ],
+          "question": "What primary advantage of Low-Fidelity prototyping is demonstrated by the team's ability to fix icons and re-test within 45 minutes?",
+          "options": [
+            "Extreme modification speed using simple physical materials (pencil and eraser), enabling rapid iterative refinement at near-zero monetary and schedule cost.",
+            "The paper prototype automatically compiled into an iOS Swift application.",
+            "Paper prototypes eliminate the need for computer monitors forever.",
+            "The paper cards generated high-speed microwave radio frequencies."
+          ],
+          "answer": 0,
+          "explanation": "As stated in Module 07 Slide 21: 'It is fast to change. Erasing one link name and writing in another is far quicker with a pencil than with any web-authoring tool. It maximizes the number of times the design is refined before anything is committed to implementation.'",
+          "why_wrong": {
+            "1": "Paper cards do not compile into Swift or binary code.",
+            "2": "Paper prototypes are early requirements elicitation tools, not permanent computing replacements.",
+            "3": "Paper cannot emit microwave frequencies."
+          },
+          "marking_points": [],
+          "source": "Module 07 Slide 21",
+          "verified": true,
+          "verified_output": "Extreme modification speed and rapid iteration."
+        },
+        {
+          "id": "ins202-ucd-cs2-q2",
+          "course": "INS 202",
+          "topic": "user_centered_development",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "horizontal_vs_vertical_transition"
+          ],
+          "question": "Explain how the team should transition from this initial paper prototype to a Horizontal Prototype in Figma, and contrast what this new prototype will test compared to a Vertical Prototype.",
+          "options": [],
+          "answer": "Transition and Prototype Contrasts: (1) Transition to Figma Horizontal Prototype: After validating the information architecture and icon metaphors with paper, the team should create an interactive digital wireframe in Figma. This Horizontal Prototype will provide broad breadth across all top-level campus screens (Home, Faculty Directory, Interactive Map, Cafeteria Menu, Timetables) with clickable navigation links, but shallow depth (simulated data, no live GPS integration or live database queries). This allows the team to evaluate site-level navigation flow, visual hierarchy, and mobile layout consistency; (2) Contrast with a Vertical Prototype: If the team needs to evaluate the complex indoor pathfinding algorithm or GPS location tracking accuracy, they would build a Vertical Prototype: a single-screen application with narrow feature breadth (only the map navigation function) but deep, fully coded backend integration (real GPS sensors and live routing math).",
+          "explanation": "Horizontal prototype in Figma tests broad navigation and layout; Vertical prototype tests deep GPS pathfinding math.",
+          "why_wrong": {},
+          "marking_points": [
+            "Explains transitioning validated paper concepts to a digital interactive wireframe in Figma.",
+            "Defines the Horizontal Prototype's role: broad feature coverage with shallow functionality to test navigation and layout.",
+            "Defines the Vertical Prototype's role: narrow feature scope with deep technical/database/algorithmic execution.",
+            "Gives concrete campus app examples (horizontal = all top-level menus; vertical = deep GPS pathfinding routing logic)."
+          ],
+          "source": "Module 07 Slides 10-12",
+          "verified": true,
+          "verified_output": "Transition to Figma horizontal prototype and vertical prototype contrast."
+        }
+      ]
+    }
+  ]
+}

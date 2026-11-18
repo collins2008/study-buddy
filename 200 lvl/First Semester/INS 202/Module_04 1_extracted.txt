@@ -1,0 +1,372 @@
+=== SLIDE 1 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Human-Computer Interface
+=== SLIDE 2 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+4. Content Organization
+In this module you will learn about:
+Organizational schemes: classification systems for organizing content into groups
+Organizational structures: defining the relationships among the groups
+Research and interview techniques: How to discover a way to organize things so people can find what they want
+Controlled vocabularies and thesaurius
+=== SLIDE 3 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+You have a mass of content that you want your users to be able to find
+Graphic overview: scheme and structure
+Fact 1
+Fact 13
+Fact 12
+Fact 11
+Fact 10
+Fact 9
+Fact 8
+Fact 5
+Fact 7
+Fact 6
+Fact 3
+Fact 4
+Fact 2
+Fact 14
+Fact 15
+Fact 16
+Fact 17
+Fact 18
+Fact 19
+Fact 20
+=== SLIDE 4 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+How to Organize so Users Can Find Things?
+First, group related things, forming the groups in terms of the way users think. (How? Keep reading.)
+Fact 13
+Fact 8
+Fact 14
+Fact 15
+Fact 19
+Fact 10
+Fact 2
+Fact 17
+Fact 12
+Fact 5
+Fact 3
+Fact 4
+Fact 1
+Fact 11
+Fact 9
+Fact 7
+Fact 6
+Fact 16
+Fact 18
+Fact 20
+=== SLIDE 5 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+This is an organizational scheme
+Now give names to the groups, or have the users do that
+Fact 13
+Fact 8
+Fact 14
+Fact 15
+Fact 19
+Fact 10
+Fact 2
+Fact 17
+Fact 12
+Fact 5
+Fact 3
+Fact 4
+Fact 1
+Fact 11
+Fact 9
+Fact 7
+Fact 6
+Fact 16
+Fact 18
+Fact 20
+Group D
+Group C
+Group A
+Group B
+Group E
+=== SLIDE 6 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Next: how do the groups relate to each other?
+Perhaps in a hierarchy:
+=== SLIDE 7 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+How do the groups relate to each other, continued
+Perhaps with hyperlinks:
+=== SLIDE 8 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Those are two organizational structures
+Remember:
+A scheme groups similar things together
+A structure shows how those groups are related
+
+End of introductory overview; now let’s get back to the details of organizational schemes and organizational structures
+And how we discover how users think: how they see the groupings
+=== SLIDE 9 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+4.2 Organizational Schemes
+Familiar in everyday life:
+Phone book
+Appointment book
+Shopping mall diagram with store locations
+
+You don’t ask a user, “What are your categories?” of course. Nobody would know what you were talking about. 
+Later in the module we study how to get at that information.
+=== SLIDE 10 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+These are exact organizational schemes
+Alphabetical:
+An alphabetical organizational scheme uses the alphabet as the basis for ordering content items. The author index in a library is an example. A phone book
+Chronological:
+A chronological organizational scheme uses time to order the content items. Examples include appointment books and history books.
+Geographical:
+The geographical organizational scheme, uses location as the method for ordering items. Examples include floor plans and weather maps. shopping mall diagram
+=== SLIDE 11 ===
+For the following examples, identify its organizational scheme.
+Television listing 
+Index in an e-book 
+Map of hiking trails 
+Calendar of events for example. World Cup
+
+
+Not always possible to use/apply exact organizational scheme
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 12 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Not always possible
+Where can I find sardines packed in water, with no salt added?
+In the canned fish section?
+In the dietetic foods section?
+=== SLIDE 13 ===
+An exact organizational scheme vs. an ambiguous organizational scheme
+An exact organizational scheme categorizes content items into mutually exclusive groups. Each item belongs to exactly one category and there is no doubt as to which category it is. 
+In computer science terms, an exact organizational scheme performs a sort based on an attribute of the content item such as name, time, or location.
+In contrast, ambiguous organizational schemes do not have clear-cut categorization rules. 
+This is due in part to the inherent ambiguity of natural language.  
+Categorization is an ongoing process: Initially a group decides on the scheme. As new content items arise, human catalogers place them into categories
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 14 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Supermarket is an example of an ambiguous organizational scheme
+“Ambiguous” often has a negative connotation, which is not intended here. We use it to describe organizational situations where there is more than one reasonable way to group things
+We identify four types of ambiguous organizational schemes:
+Topical 
+Task-oriented
+Audience-specific
+Metaphor-driven
+=== SLIDE 15 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Topical organizational scheme
+Organizes content by subject
+Examples:
+Library subject index
+Encyclopedia
+Chapter titles in textbooks
+Website home pages (usually combined with other schemes as well)
+=== SLIDE 16 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Task-Oriented Organizational Scheme
+Organizes content by what user wants to do.
+Task-specific schemes organize items by functionality or service they provide. 
+This type of scheme is often used to organize menus in software.
+=== SLIDE 17 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Task-oriented organizational scheme
+Example: Autobytel.com
+=== SLIDE 18 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Audience-specific organizational scheme
+Useful when there are two or more distinct user groups
+User may navigate to appropriate page and bookmark it
+=== SLIDE 19 ===
+04: Content Organization
+Audience-specific organizational scheme
+Example: Bank of Montreal
+Specific audiences
+Copyright © 2004 by Prentice Hall
+=== SLIDE 20 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Metaphor-driven organizational scheme
+Shows group by a visual metaphor.
+Not many examples, because it is difficult to find metaphors that will work with all users.
+Possible example: pet supply store:
+Be careful: well-intentioned metaphors/icons can utterly fail to convey meaning
+=== SLIDE 21 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+See the problem?
+This is a hamster, but what if your user thinks it’s a rat, and hates rats?
+=== SLIDE 22 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Hybrid organizational scheme
+Combines multiple organizational schemes
+Quite common, but must be done with care to avoid confusion
+Example: Nordstrom: https://www.nordstrom.com/
+=== SLIDE 23 ===
+04: Content Organization
+Hybrid organizational scheme example
+Copyright © 2004 by Prentice Hall
+=== SLIDE 24 ===
+Can you think of any advantage(s) of ambiguous organizational schemes?
+Sometimes users don’t have the exact term for what they want, and unfortunately, exact organizational schemes are not useful in this situation. 
+When searching through information that has an ambiguous organizational scheme it is easy to encounter items related to or associated with an initial search term. 
+These can lead to the standard term and the desired information.
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 25 ===
+Can you name the organizational scheme in each of the following examples
+Business Directory In Nigeria, Yellow Pages – Phone book
+A stock brokerage home page that gives users the options of getting a stock quote, buying, selling or searching a stock, and the ability to review their portfolios.
+A home page for a tile manufacturer that has links for customers, retailers, distributors and suppliers.
+A music streaming site offering selections in Rock, Pop, Country and Western, Jazz, and Classical.
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 26 ===
+Here is an example of a hybrid organization. What can you to do improve it?
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 27 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+4.3 Organizational Structures
+Review:
+Organizational schemes create groups
+Organizational structures define the relations between groups
+=== SLIDE 28 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Types of organizational structures
+Hierarchy
+Hypertext
+Database
+=== SLIDE 29 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Hierarchical organizational structure
+Structuring by rank or level
+A tree, in computer science terms
+=== SLIDE 30 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+An organization chart is a hierarchy
+Manufacturing
+Marketing
+Distribution
+Research
+President
+E
+A
+B
+C
+D
+Etc.
+=== SLIDE 31 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Definitions
+Breadth of a hierarchy: the number of links available at each level
+Depth of a hierarchy: the number of levels
+Broad shallow hierarchies offer many choices at each level
+Narrow deep hierarchies require many clicks to get to the bottom level
+Users prefer broad shallow hierarchies
+=== SLIDE 32 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Hypertext organizational structures
+A hypertext structure consists of items of information and connecting links
+Almost always combined with other structures
+Consists of adding links to a page
+Hard to find a commercial website that does not use hypertext
+=== SLIDE 33 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Database organizational structures
+Database organizational structure provides a bottom-up view, whereas a hierarchy provides a top-down
+Both have their place
+In a database structure the user fills in data, and is then taken directly to the right page. One click, when it works ideally.
+=== SLIDE 34 ===
+04: Content Organization
+Database example: selecting a car
+Copyright © 2004 by Prentice Hall
+=== SLIDE 35 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+=== SLIDE 36 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Controlled vocabulary
+Predetermined set of terms that describe a specific domain
+There are no synonyms
+Only one term describes a concept
+Can help combat the ambiguity of English
+=== SLIDE 37 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Thesaurus
+Contains 
+Synonyms 
+Broader terms 
+Narrower terms 
+Variants
+Used in conjunction with a controlled vocabulary, makes searching more effective
+=== SLIDE 38 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+4.5 Research and Interview Techniques
+Problem: how do you know what your users’ categories are?
+Will they look for a sweater under Winter Wear or under Men’s Clothing?
+What do they expect to find under “About Us”?
+What can you put on the home page for a college that will lead most directly to the tuition?
+You don’t know!
+Not until you ask your users . . .
+. . . who, of course, have no idea what you mean by “What are your categories?”
+=== SLIDE 39 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Card sorting provides an answer
+Devise a list of about 40 questions that a user might have
+Write each question on a card; number cards on back
+Ask each user to sort the cards into piles, where the cards in each pile seem related to each other
+Ask the user to give a name to each pile
+Do this with ten or more users
+Do statistical analysis of the clustering in the groups
+=== SLIDE 40 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Cluster analysis
+Can be done “be eyeball,” just looking at the piles for patterns
+Much better: use cluster analysis software
+Check out this website (https://condor.depaul.edu/jtoro/cardzort/programs.htm ) to download CardZort, by Jorge Toro of DePaul University
+=== SLIDE 41 ===
+04: Content Organization
+Copyright © 2004 by Prentice Hall
+Summary
+In this module you learned about:
+Organizational schemes: classification systems for organizing content into groups:
+Exact: Alphabetical, Chronological, Geographical
+Ambiguous: Topical, Task-oriented, Audience-specific, metaphor-driven 
+Organizational structures: defining the relationships among the groups:
+Hierarchy, Hypertext, Database
+Controlled vocabularies and thesauri
+Card sorting

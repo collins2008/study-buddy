@@ -1,0 +1,2063 @@
+{
+  "course": "IFT 203",
+  "title": "Introduction to Web Technology Mock Examinations",
+  "exams": [
+    {
+      "id": "ift203-mock-alpha",
+      "title": "Mock Exam Alpha: Web Fundamentals & HTML5/CSS3 Mastery Simulation",
+      "description": "Comprehensive 40-question examination testing Internet vs WWW architecture, semantic HTML5 document structures, forms with binary file uploads, tables with colspan/rowspan math, and CSS box-model geometry.",
+      "duration_minutes": 90,
+      "total_marks": 100,
+      "passing_score": 60,
+      "question_count": 40,
+      "questions": [
+        {
+          "id": "ift203-bm-001",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "box-model",
+            "calculation",
+            "content-box"
+          ],
+          "question": "A `<div>` element has the following CSS rules applied:\n```css\ndiv {\n  box-sizing: content-box;\n  width: 250px;\n  padding: 20px;\n  border: 5px solid black;\n  margin: 15px;\n}\n```\nWhat is the TOTAL rendered horizontal space (in pixels) that this element occupies on the web page (including outer margins)?",
+          "options": [
+            "250px",
+            "300px",
+            "330px",
+            "290px"
+          ],
+          "answer": 2,
+          "explanation": "Under `box-sizing: content-box`:\n- Content width = 250px\n- Left + Right Padding = 20px + 20px = 40px\n- Left + Right Border = 5px + 5px = 10px\n- Total Element Width = 250 + 40 + 10 = 300px\n- Left + Right Margin = 15px + 15px = 30px\n- Total Horizontal Space Occupied = 300px + 30px = 330px.",
+          "why_wrong": {
+            "0": "250px is only the inner content width, ignoring all padding, borders, and margins.",
+            "1": "300px is the element's border-box width, but omits the 30px horizontal margins.",
+            "3": "290px incorrectly subtracts or miscalculates the padding and border values."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN The Box Model",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-003",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "margin-collapsing",
+            "calculation",
+            "layout"
+          ],
+          "question": "Two paragraph elements are stacked vertically in normal document flow. Paragraph 1 has `margin-bottom: 35px;`. Paragraph 2 has `margin-top: 20px;`. Under standard CSS margin collapsing rules, what is the EXACT vertical pixel distance between the borders of the two paragraphs?",
+          "options": [
+            "55px (35px + 20px)",
+            "35px",
+            "15px (35px - 20px)",
+            "20px"
+          ],
+          "answer": 1,
+          "explanation": "In CSS, adjacent vertical margins between block-level elements in normal document flow undergo 'Margin Collapsing': they do not add together ($35 + 20 \\ne 55$). Instead, the margins collapse into a single space equal to the LARGER of the two margin values: $\\max(35, 20) = 35\\text{px}$.",
+          "why_wrong": {
+            "0": "55px is the most common student trap; vertical margins collapse rather than sum together.",
+            "2": "15px incorrectly subtracts the two values.",
+            "3": "20px is the smaller margin; the cascade selects the maximum value (35px)."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN Mastering Margin Collapsing",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-005",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "positioning",
+            "matching",
+            "coordinates"
+          ],
+          "question": "Match each CSS `position` value to its exact reference origin for coordinates (`top`, `left`, etc.):",
+          "options": [
+            {
+              "left": "static",
+              "right": "Normal document flow; top/left/z-index properties have zero effect"
+            },
+            {
+              "left": "relative",
+              "right": "Positioned offset from its own normal flow position, retaining its original footprint"
+            },
+            {
+              "left": "absolute",
+              "right": "Removed from flow; positioned relative to nearest non-static positioned ancestor"
+            },
+            {
+              "left": "fixed",
+              "right": "Removed from flow; positioned relative to browser viewport, staying stationary on scroll"
+            },
+            {
+              "left": "sticky",
+              "right": "Toggles between relative and fixed positioning based on the user's scroll position"
+            }
+          ],
+          "answer": [
+            {
+              "left": "static",
+              "right": "Normal document flow; top/left/z-index properties have zero effect"
+            },
+            {
+              "left": "relative",
+              "right": "Positioned offset from its own normal flow position, retaining its original footprint"
+            },
+            {
+              "left": "absolute",
+              "right": "Removed from flow; positioned relative to nearest non-static positioned ancestor"
+            },
+            {
+              "left": "fixed",
+              "right": "Removed from flow; positioned relative to browser viewport, staying stationary on scroll"
+            },
+            {
+              "left": "sticky",
+              "right": "Toggles between relative and fixed positioning based on the user's scroll position"
+            }
+          ],
+          "explanation": "These five positioning schemes dictate how elements are placed and shifted relative to the normal flow, ancestors, or viewport.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; MDN Position",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-007",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "code_bug",
+          "difficulty": 3,
+          "tags": [
+            "absolute-positioning",
+            "syntax-bug",
+            "layout"
+          ],
+          "question": "A developer attempts to position a 'Close' badge in the top-right corner of a card container:\n```html\n<div class=\"card\">\n  <button class=\"close-btn\">X</button>\n  <h3>Card Title</h3>\n</div>\n```\nWith CSS:\n```css\n.card {\n  width: 300px;\n  height: 200px;\n}\n.close-btn {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n}\n```\nInstead of appearing in the top-right corner of the card, the button jumps to the very top-right corner of the ENTIRE browser window. What is the bug, and how is it fixed?",
+          "options": [
+            "The button needs `display: none;`",
+            "An element with `position: absolute` searches up the DOM tree for the nearest ancestor with `position != static`; because `.card` has default `position: static`, the button escaped to the `<body>` viewport. Fix: Add `position: relative;` to `.card`",
+            "`position: absolute` is deprecated in CSS3 and must be replaced with `float: right`",
+            "The `top` and `right` values should be negative numbers"
+          ],
+          "answer": 1,
+          "explanation": "This is one of the most famous CSS bugs in web development. An absolutely positioned element is positioned relative to its nearest *positioned* ancestor (an ancestor whose position is anything other than `static`). Because `.card` has the default `position: static`, the button jumps all the way up to the initial containing block (`<html>` / viewport). Adding `position: relative;` to `.card` establishes the necessary positioning context.",
+          "why_wrong": {
+            "0": "`display: none` would completely hide the close button.",
+            "2": "`position: absolute` is an active, indispensable modern standard.",
+            "3": "Negative values would shift the button outside the viewport entirely."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN Absolute Positioning Context",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-fc01",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "box-model"
+          ],
+          "question": "Name the four concentric components of the CSS Box Model from inside out.",
+          "answer": "1. Content, 2. Padding, 3. Border, 4. Margin.",
+          "explanation": "Core definition from IFT 203 Week 6.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-fc03",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "margin-collapse"
+          ],
+          "question": "What is Margin Collapsing?",
+          "answer": "When two adjacent vertical margins meet in normal document flow, they collapse into a single margin equal to the larger of the two values, rather than adding together.",
+          "explanation": "Applies strictly to vertical margins in block layout; horizontal margins never collapse.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-fc05",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "display-vs-visibility"
+          ],
+          "question": "Contrast `display: none` with `visibility: hidden`.",
+          "answer": "`display: none` removes the element completely from document layout (no space allocated).\n`visibility: hidden` hides the element visually, but preserves its exact width, height, and blank space in the layout.",
+          "explanation": "Commonly examined CSS layout property distinction.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-fc07",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "position-fixed"
+          ],
+          "question": "What does `position: fixed` do, and what is a common use case?",
+          "answer": "It removes the element from document flow and positions it relative to the browser viewport. The element remains in the exact same screen position even when the user scrolls the page. Common use case: persistent top navigation bars or floating action buttons.",
+          "explanation": "Frequently used for sticky UI headers and sidebars.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-cs01-q1",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "box-model-bug",
+            "calculation"
+          ],
+          "question": "Calculate the actual rendered width of EACH card under default `content-box`, and explain why the 3 cards failed to fit side-by-side in the 900px container.",
+          "options": [
+            "Each card is 300px; they failed because CSS prohibits 3 cards in one row",
+            "Each card rendered width is 344px (300px width + 40px padding + 4px border); three cards require 1032px, which exceeds the 900px container by 132px, forcing line wrapping",
+            "Each card rendered width is 260px; they failed because the container was too wide",
+            "Each card rendered width is 900px"
+          ],
+          "answer": 1,
+          "explanation": "Under default `box-sizing: content-box`: $\\text{Card Width} = 300\\text{px} + 2(20\\text{px padding}) + 2(2\\text{px border}) = 344\\text{px}$. For three cards, the total width required is $344 \\times 3 = 1032\\text{px}$. Because $1032\\text{px} > 900\\text{px}$, the browser cannot fit them on one line and wraps them onto subsequent lines.",
+          "why_wrong": {
+            "0": "300px is the content width alone, ignoring padding and borders under `content-box`.",
+            "2": "Padding and borders expand the box; they do not shrink it.",
+            "3": "900px is the container width, not the individual card width."
+          },
+          "source": "IFT 203 Week 6 Slides; Box Model Geometry",
+          "topic_slug": "css_box_model_layout",
+          "scenario": "A student builds a 3-column course summary grid for the Nile University computer science department:\n```html\n<div class=\"container\">\n  <div class=\"card\">COS 201</div>\n  <div class=\"card\">IFT 203</div>\n  <div class=\"card\">SEN 201</div>\n</div>\n```\nWith CSS:\n```css\n.container {\n  width: 900px;\n}\n.card {\n  display: inline-block;\n  width: 300px;\n  padding: 20px;\n  border: 2px solid #ccc;\n}\n```\nThe student expects all three cards to sit side-by-side in a single 900px row. Instead, each card drops onto a new line, stacking vertically."
+        },
+        {
+          "id": "ift203-bm-cs02-q1",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "fixed-position-offset",
+            "z-index"
+          ],
+          "question": "Why did the page heading disappear underneath the navbar, and what CSS rule fixes Bug 1?",
+          "options": [
+            "The heading was deleted by the browser; fix by rewriting the HTML",
+            "`position: fixed` removes the navbar from the normal document flow, so subsequent content moves up to occupy the top of the viewport. Fix: Add `padding-top: 60px;` (or margin) to `body` or `<main>` to push page content down below the fixed navbar height",
+            "The heading color matched the navbar; fix by changing heading text color to green",
+            "The heading was too long; fix by shortening the course title"
+          ],
+          "answer": 1,
+          "explanation": "When an element is assigned `position: fixed`, it is completely removed from document flow and no longer reserves space on the page canvas. The subsequent normal flow content (`<body>` / `<main>`) starts at the very top (`y = 0`), slipping under the 60px navbar. Adding `padding-top: 60px;` to `body` restores the necessary clearance.",
+          "why_wrong": {
+            "0": "The HTML heading exists in the DOM; it is merely visually obscured by the overlapping navbar.",
+            "2": "Changing text color does not fix physical overlap caused by zero flow clearance.",
+            "3": "Title length does not resolve the 60px flow collapse."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN Fixed Positioning",
+          "topic_slug": "css_box_model_layout",
+          "scenario": "On the Nile University Exam Portal, developers implement a sticky top navigation bar:\n```css\n.navbar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 60px;\n  background: #003366;\n}\n```\nTwo severe usability bugs emerge: (1) The top 60px of page content (the main heading `<h1>Student Exam Schedule</h1>`) is hidden underneath the fixed navbar when the page loads; (2) When a student opens a dropdown menu from the navbar, the dropdown disappears BEHIND an embedded course video player on the page."
+        },
+        {
+          "id": "ift203-cs-001",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "css-linking",
+            "external-css",
+            "nile-lecture"
+          ],
+          "question": "Why is 'External CSS' (using `<link rel=\"stylesheet\" href=\"styles.css\">`) considered the undisputed software engineering best practice over 'Inline CSS' for commercial multi-page websites?",
+          "options": [
+            "Because external CSS is the only method that can render red text",
+            "Because external CSS cleanly separates presentation from HTML structure, allows thousands of pages to share a unified visual theme, and enables browsers to cache the stylesheet once to drastically accelerate page loading speeds",
+            "Because inline styles are strictly prohibited by the CPU processor hardware",
+            "Because external CSS automatically translates HTML code into C programming language"
+          ],
+          "answer": 1,
+          "explanation": "External stylesheets adhere to the Separation of Concerns principle. Storing styles in a dedicated `.css` file allows hundreds of HTML pages to link to a single stylesheet (simplifying site-wide redesigns) and allows client browsers to cache the file after the first request, saving bandwidth and boosting performance. Inline styles violate DRY (Don't Repeat Yourself) and severely degrade maintainability.",
+          "why_wrong": {
+            "0": "Inline, internal, and external CSS can all render red text identically.",
+            "2": "CPUs do not execute CSS directly; web browser rendering engines parse CSS.",
+            "3": "CSS is a style sheet language; it has nothing to do with compiling C code."
+          },
+          "source": "IFT 203 Week 6 Slides: Creating, Connecting and Styling Webpages",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-003",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "html_render",
+          "difficulty": 3,
+          "tags": [
+            "cascade",
+            "source-order",
+            "html-render"
+          ],
+          "question": "Consider the following HTML and CSS declarations:\n```html\n<style>\n  .alert {\n    color: red;\n  }\n  .warning {\n    color: blue;\n  }\n</style>\n<p class=\"warning alert\">Registration deadline approaching!</p>\n```\nWhat color will the paragraph text be rendered on screen, and why?",
+          "options": [
+            "Red, because `alert` is listed first in the HTML `class=\"warning alert\"` attribute",
+            "Blue, because `.warning` is declared later in the CSS stylesheet source order than `.alert`",
+            "Purple, because the browser blends red and blue together",
+            "Black, because conflicting class names cancel each other out"
+          ],
+          "answer": 1,
+          "explanation": "Both selectors (`.alert` and `.warning`) have identical specificity: 1 class selector (0, 0, 1, 0). The order of class names inside the HTML attribute (`class=\"warning alert\"`) has ZERO effect on CSS priority. Under the CSS Cascade, when two competing rules have equal specificity, the rule that appears LATER in the CSS source code wins. Because `.warning { color: blue; }` is written after `.alert { color: red; }`, the color is blue.",
+          "why_wrong": {
+            "0": "The order of class names in the HTML `class` attribute does not influence CSS cascade priority.",
+            "2": "Browsers do not mix colors; one CSS rule completely overrides the other.",
+            "3": "Conflicting rules do not cancel out to black; the cascade resolves the conflict deterministically."
+          },
+          "source": "IFT 203 Week 6 Slides; W3C CSS Cascading and Inheritance",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-005",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "selectors",
+            "symbols",
+            "matching"
+          ],
+          "question": "Match each CSS selector symbol to its exact classification and function:",
+          "options": [
+            {
+              "left": "#",
+              "right": "ID selector: targets a unique element by its id attribute (specificity 100)"
+            },
+            {
+              "left": ".",
+              "right": "Class selector: targets elements by their class attribute (specificity 10)"
+            },
+            {
+              "left": ">",
+              "right": "Child combinator: targets only immediate direct child elements"
+            },
+            {
+              "left": "+",
+              "right": "Adjacent sibling combinator: targets an element immediately preceded by another"
+            },
+            {
+              "left": ":",
+              "right": "Pseudo-class prefix: targets elements in a specific temporary state (e.g., :hover)"
+            }
+          ],
+          "answer": [
+            {
+              "left": "#",
+              "right": "ID selector: targets a unique element by its id attribute (specificity 100)"
+            },
+            {
+              "left": ".",
+              "right": "Class selector: targets elements by their class attribute (specificity 10)"
+            },
+            {
+              "left": ">",
+              "right": "Child combinator: targets only immediate direct child elements"
+            },
+            {
+              "left": "+",
+              "right": "Adjacent sibling combinator: targets an element immediately preceded by another"
+            },
+            {
+              "left": ":",
+              "right": "Pseudo-class prefix: targets elements in a specific temporary state (e.g., :hover)"
+            }
+          ],
+          "explanation": "These symbols constitute the core syntax of CSS selectors and combinators evaluated in Nile University IFT 203 examinations.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-007",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "typography",
+            "rem-vs-em",
+            "units"
+          ],
+          "question": "What is the primary advantage of using `rem` (Root EM) units instead of `em` units for sizing typography on a responsive web page?",
+          "options": [
+            "`rem` units make text permanently un-editable by hackers",
+            "`rem` scales relative to the root `<html>` font size (default 16px) and avoids the compounding multiplication problem of `em` inside deeply nested elements",
+            "`rem` units only work on Apple Mac computers",
+            "`em` units can only be used for image widths, not font sizes"
+          ],
+          "answer": 1,
+          "explanation": "Because `em` is relative to its immediate parent font size, nesting lists or divs with `font-size: 1.2em` causes text to compound exponentially ($1.2 \\times 1.2 \\times 1.2...$), growing uncontrollably. In contrast, `rem` always references the root `<html>` element, providing consistent, predictable typography scaling across the entire design while honoring user browser accessibility font size settings.",
+          "why_wrong": {
+            "0": "CSS measurement units have zero relation to cybersecurity or hacker prevention.",
+            "2": "`rem` is an open W3C standard supported across all modern web browsers on all operating systems.",
+            "3": "`em` is widely used for typography, padding, and margins."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN CSS Values and Units",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-fc01",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "css-rule-syntax"
+          ],
+          "question": "What are the components of a CSS rule? Provide the terminology.",
+          "answer": "A CSS rule consists of a `Selector` (e.g., `h1`) and a `Declaration Block` `{ }`. Inside the block are one or more `Declarations`, each consisting of a `Property` (e.g., `color`) and a `Value` (e.g., `navy`), separated by a colon and ended with a semicolon.",
+          "explanation": "Foundational syntax covered in IFT 203 Week 6 Slide 1.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-fc03",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "class-vs-id-css"
+          ],
+          "question": "How do class selectors and ID selectors differ in CSS syntax and specificity?",
+          "answer": "Class selector: prefixed with a dot (`.card`), reusable on multiple elements, specificity score of 10.\nID selector: prefixed with a hash (`#navbar`), unique to one element per page, specificity score of 100.",
+          "explanation": "Crucial rule: ID is 10 times more specific than a class.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-fc05",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "descendant-vs-child"
+          ],
+          "question": "Differentiate between `div p` and `div > p`.",
+          "answer": "`div p` (Descendant): Matches ANY `<p>` inside `<div>`, at any nested depth.\n`div > p` (Child): Matches ONLY `<p>` elements that are direct, immediate children of `<div>`.",
+          "explanation": "Combinator distinction tested frequently in web technology exams.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-fc07",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "rgba-color"
+          ],
+          "question": "What is `rgba(255, 0, 0, 0.5)` and what does the fourth parameter represent?",
+          "answer": "It represents red color with 50% opacity/transparency. The fourth parameter ('a' for Alpha) ranges from 0.0 (completely transparent) to 1.0 (completely opaque).",
+          "explanation": "Color models covered in IFT 203 Week 6.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-cs01-q1",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "specificity-war",
+            "devtools"
+          ],
+          "question": "Why did `.btn-danger` fail to change the button color to red?",
+          "options": [
+            "Because the browser does not support the color red on Tuesdays",
+            "Because `#confirm-drop` is an ID selector with a specificity of (0,1,0,0) (score 100), which completely overrules the class selector `.btn-danger` with a specificity of only (0,0,1,0) (score 10)",
+            "Because button elements cannot have background colors in CSS",
+            "Because the word 'danger' is blocked by university proxy filters"
+          ],
+          "answer": 1,
+          "explanation": "Under W3C CSS Specificity rules, an ID selector (`#confirm-drop`) carries a specificity weight of 100, which completely overpowers a class selector (`.btn-danger`, weight 10), regardless of source code order. The class selector cannot override an ID on the same element without increasing its specificity.",
+          "why_wrong": {
+            "0": "CSS rendering engines do not have day-of-the-week restrictions.",
+            "2": "`background-color` is a standard, fully supported CSS property on `<button>` elements.",
+            "3": "Network proxies filter HTTP packets; they do not edit CSS class names."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN Specificity",
+          "topic_slug": "css_selectors_typography",
+          "scenario": "A frontend developer on the Nile University student portal project is tasked with updating the submit button color to red for the 'Drop Course' warning action. The developer adds a new CSS class:\n```css\n.btn-danger {\n  background-color: red;\n}\n```\nAnd applies it to the HTML button: `<button id=\"confirm-drop\" class=\"btn-danger\">Drop Course</button>`.\nHowever, the button stubbornly remains GREEN. Upon inspecting the styles in Chrome DevTools, the developer finds an existing rule in the core stylesheet:\n```css\n#confirm-drop {\n  background-color: green;\n}\n```\nA frustrated junior developer suggests appending `!important` to `.btn-danger`."
+        },
+        {
+          "id": "ift203-cs-cs02-q1",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "em-compounding",
+            "typography-math"
+          ],
+          "question": "What is the EXACT computed font size (in pixels) of text inside a `.reply` nested within a `.comment` inside a `.card`?",
+          "options": [
+            "20px",
+            "31.25px (16px * 1.25 * 1.25 * 1.25)",
+            "16px",
+            "125px"
+          ],
+          "answer": 1,
+          "explanation": "`em` is relative to its immediate parent font size, causing compounding multiplication: Base body is 16px $\\to$ `.card` is $16 \\times 1.25 = 20\\text{px} \\to$ `.comment` inside card is $20 \\times 1.25 = 25\\text{px} \\to$ `.reply` inside comment is $25 \\times 1.25 = 31.25\\text{px}$. This compounding explosion is the classic flaw of nested `em` typography.",
+          "why_wrong": {
+            "0": "20px is the size of the outer `.card`, ignoring the nested comment and reply multiplications.",
+            "2": "16px is the base body font size.",
+            "3": "125px incorrectly multiplies 16 by 125."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN CSS Values & Units",
+          "topic_slug": "css_selectors_typography",
+          "scenario": "A student builds a responsive portal for Nile University with nested cards and sidebars. In their CSS, the student uses `em` units for all typography:\n```css\nbody { font-size: 16px; }\n.card { font-size: 1.25em; }\n.comment { font-size: 1.25em; }\n.reply { font-size: 1.25em; }\n```\nWhen comments have nested replies (a reply inside a comment inside a card), the text in the innermost reply balloons to a gigantic, distorted size on screen."
+        },
+        {
+          "id": "ift203-ft-001",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "forms",
+            "get-vs-post",
+            "http-methods",
+            "security"
+          ],
+          "question": "A student builds a university login form with `<form action=\"login.php\" method=\"GET\">`. What security vulnerability and behavioral defect immediately occurs when a user submits their password?",
+          "options": [
+            "The server will refuse to turn on its cooling fans",
+            "The student's password is appended directly to the browser URL address bar in clear readable text (e.g., `login.php?user=aliyu&pass=secret123`), storing it in browser history, proxy server logs, and displaying it on screen",
+            "The browser will automatically delete the student's operating system",
+            "The form will only submit if the student writes the password backwards"
+          ],
+          "answer": 1,
+          "explanation": "Form submissions using `method=\"GET\"` append all form inputs directly onto the URL as query parameters. This exposes passwords in browser address bars, browser history, server access logs, and HTTP referer headers. Login forms, passwords, and sensitive financial transactions MUST always use `method=\"POST\"`.",
+          "why_wrong": {
+            "0": "HTTP methods are software protocol mechanisms; they do not control physical server cooling hardware.",
+            "2": "Submitting a GET form does not delete operating system files.",
+            "3": "Browsers submit string values exactly as typed; they do not reverse text."
+          },
+          "source": "IFT 203 Week 5 Slides; Practice Codes Docx; MDN Form Methods",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-003",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "code_bug",
+          "difficulty": 3,
+          "tags": [
+            "radio-buttons",
+            "form-controls",
+            "syntax-bug"
+          ],
+          "question": "A student writes this markup for a student gender selection field:\n```html\n<p>Select Gender:</p>\n<input type=\"radio\" id=\"male\" name=\"gender_male\" value=\"Male\">\n<label for=\"male\">Male</label>\n<input type=\"radio\" id=\"female\" name=\"gender_female\" value=\"Female\">\n<label for=\"female\">Female</label>\n```\nWhen testing, users notice that clicking 'Female' does NOT deselect 'Male', allowing both radio buttons to be selected simultaneously. What is the bug and the exact fix?",
+          "options": [
+            "Radio buttons cannot be used inside `<p>` tags; they must be wrapped in `<table>`",
+            "The radio buttons have different `name` attributes (`gender_male` and `gender_female`); all radio buttons in a mutually exclusive group MUST share the exact same `name` attribute (e.g., `name=\"gender\"`)",
+            "The `<label>` tags should use `class` instead of `for`",
+            "Radio buttons in HTML5 are deprecated and replaced by `<textarea>`"
+          ],
+          "answer": 1,
+          "explanation": "In HTML, the browser groups radio buttons based on their `name` attribute. For radio buttons to be mutually exclusive (selecting one deselects others in the group), they must share the identical `name` attribute value (e.g., `name=\"gender\"`). Because the student gave them different names, the browser treated them as two unrelated, independent inputs.",
+          "why_wrong": {
+            "0": "Radio buttons are completely valid inside `<p>`, `<div>`, or `<fieldset>` tags.",
+            "2": "The `for` attribute in `<label>` correctly matches the input `id` to bind accessibility; replacing it with `class` would break accessibility.",
+            "3": "Radio buttons are a fundamental, active HTML5 standard control and are not deprecated."
+          },
+          "source": "IFT 203 Week 5 Slides; Practice Codes Docx: Student Registration Form",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-005",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "form-elements",
+            "matching",
+            "html5-controls"
+          ],
+          "question": "Match each HTML form element or attribute to its defining functional behavior:",
+          "options": [
+            {
+              "left": "<textarea>",
+              "right": "Provides a multi-line text input field, requiring an explicit closing tag"
+            },
+            {
+              "left": "<select> & <option>",
+              "right": "Creates a drop-down selection menu for choosing one or more items"
+            },
+            {
+              "left": "<fieldset> & <legend>",
+              "right": "Groups logically related form controls inside a visual border with a caption title"
+            },
+            {
+              "left": "required",
+              "right": "HTML5 boolean attribute preventing form submission if the input field is left empty"
+            },
+            {
+              "left": "placeholder",
+              "right": "Displays faint hint text inside an input field that disappears as soon as the user begins typing"
+            }
+          ],
+          "answer": [
+            {
+              "left": "<textarea>",
+              "right": "Provides a multi-line text input field, requiring an explicit closing tag"
+            },
+            {
+              "left": "<select> & <option>",
+              "right": "Creates a drop-down selection menu for choosing one or more items"
+            },
+            {
+              "left": "<fieldset> & <legend>",
+              "right": "Groups logically related form controls inside a visual border with a caption title"
+            },
+            {
+              "left": "required",
+              "right": "HTML5 boolean attribute preventing form submission if the input field is left empty"
+            },
+            {
+              "left": "placeholder",
+              "right": "Displays faint hint text inside an input field that disappears as soon as the user begins typing"
+            }
+          ],
+          "explanation": "These elements and attributes are the standard building blocks of interactive HTML5 forms covered in Nile IFT 203 lectures and take-home practicals.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 5 Slides; Practice Codes Docx",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-007",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "disabled-vs-readonly",
+            "form-submission",
+            "attributes"
+          ],
+          "question": "A form contains two non-editable fields:\n`Field A: <input type=\"text\" name=\"matric\" value=\"2024/001\" readonly>`\n`Field B: <input type=\"text\" name=\"role\" value=\"Student\" disabled>`\nWhen the user clicks the submit button, what data is sent to the backend server?",
+          "options": [
+            "Neither Field A nor Field B will be submitted",
+            "`matric=2024/001` will be submitted, but `role` will NOT be submitted at all",
+            "`role=Student` will be submitted, but `matric` will NOT be submitted",
+            "Both `matric` and `role` will be submitted normally"
+          ],
+          "answer": 1,
+          "explanation": "This is a classic web examiner trap. The `readonly` attribute prevents the user from altering the text, but the field's `name` and `value` ARE included in form submission. In contrast, the `disabled` attribute grays out the field AND completely excludes the field from form submission (it is not sent in the HTTP payload).",
+          "why_wrong": {
+            "0": "`readonly` fields are always submitted with the form data.",
+            "2": "`disabled` fields are omitted from form payloads; `role` is not sent.",
+            "3": "`disabled` prevents Field B from being transmitted to the server."
+          },
+          "source": "IFT 203 Week 5 Slides; W3C Form Submission Specification",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-fc01",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "get-vs-post"
+          ],
+          "question": "What is the difference between `method=\"GET\"` and `method=\"POST\"` in an HTML form?",
+          "answer": "GET appends data to the URL query string (visible, cached, ~2KB limit, for searches/lookups).\nPOST sends data in the HTTP request body (invisible in URL, uncached, no size limits, mandatory for logins, passwords, and file uploads).",
+          "explanation": "Crucial distinction tested in all web development exams.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 5 Slides",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-fc03",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "radio-buttons"
+          ],
+          "question": "How do you make a group of `<input type=\"radio\">` buttons mutually exclusive?",
+          "answer": "By giving all radio buttons in that group the EXACT same `name` attribute (e.g., `name=\"level\"`). The browser then permits only one option to be checked at a time.",
+          "explanation": "Common student bug when creating forms.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 5 Slides",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-fc05",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "colspan-rowspan"
+          ],
+          "question": "Explain the difference between `colspan` and `rowspan` in an HTML table.",
+          "answer": "`colspan=\"n\"` merges a cell horizontally across $n$ columns.\n`rowspan=\"n\"` merges a cell vertically down across $n$ rows.",
+          "explanation": "Essential for creating complex academic timetables and report grids.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 5 Slides",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-fc07",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "image-alt"
+          ],
+          "question": "Why is the `alt` attribute mandatory on all `<img>` tags?",
+          "answer": "1. Accessibility: Screen readers read the alt text aloud to visually impaired users.\n2. Fallback: Displays description if the image file fails to load.\n3. SEO: Enables search engine web crawlers to index image content.",
+          "explanation": "Core W3C accessibility rule.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 4 & 5 Slides",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-cs01-q1",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "form-debugging",
+            "registration-page"
+          ],
+          "question": "Which set of modifications completely resolves ALL THREE defects in this student registration form?",
+          "options": [
+            "Change method to `POST`, add `enctype=\"multipart/form-data\"`, change password input to `type=\"password\"`, and unify radio buttons to `name=\"level\"`",
+            "Change `action=\"register.php\"` to `action=\"register.html\"` and delete the submit button",
+            "Wrap the inputs in `<b>` tags and change `type=\"file\"` to `type=\"text\"`",
+            "Change method to `PUT` and remove all `name` attributes"
+          ],
+          "answer": 0,
+          "explanation": "To fix all three bugs: (1) Setting `method=\"POST\"` and `type=\"password\"` protects passwords from URL leakage and masks characters; (2) Unifying radio names to `name=\"level\"` enforces mutual exclusivity; (3) Adding `enctype=\"multipart/form-data\"` enables proper binary photo uploading.",
+          "why_wrong": {
+            "1": "Targeting `.html` and deleting the submit button makes the form un-submittable.",
+            "2": "Visual bold tags and changing file to text destroys the photo upload capability.",
+            "3": "Removing `name` attributes prevents ANY form data from being submitted to the server."
+          },
+          "source": "IFT 203 Practice Codes Docx; Week 5 Slides",
+          "topic_slug": "html_forms_tables_media",
+          "scenario": "A student submits their take-home practical code for the Nile University Student Registration Webpage (based on `Practice_codes.docx`). The form code contains three critical issues:\n```html\n<form action=\"register.php\" method=\"GET\">\n  <label>Full Name:</label>\n  <input type=\"text\" name=\"fullname\"><br>\n  <label>Create Password:</label>\n  <input type=\"text\" name=\"password\"><br>\n  <label>Level:</label>\n  <input type=\"radio\" name=\"lvl_100\" value=\"100\"> 100L\n  <input type=\"radio\" name=\"lvl_200\" value=\"200\"> 200L<br>\n  <label>Passport Photo:</label>\n  <input type=\"file\" name=\"passport\"><br>\n  <input type=\"submit\" value=\"Register\">\n</form>\n```\nWhen testing: (1) The user password appears in plain text on screen and in the URL; (2) The user can select both 100L and 200L simultaneously; (3) The server receives only the string filename of the photo rather than the uploaded image data."
+        },
+        {
+          "id": "ift203-ft-cs02-q1",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "tables",
+            "rowspan-colspan-grid"
+          ],
+          "question": "If 'Assembly / Break' occurs at 11-12 PM across ALL THREE DAYS (Monday, Tuesday, Wednesday), and the developer wants to represent it with a single merged table cell in a table where Days are columns and Time periods are rows, which attribute must be used?",
+          "options": [
+            "`rowspan=\"3\"`",
+            "`colspan=\"3\"`",
+            "`cellpadding=\"3\"`",
+            "`border=\"3\"`"
+          ],
+          "answer": 1,
+          "explanation": "Because Days (Monday, Tuesday, Wednesday) are columns, merging across all three days within the 11-12 PM row is horizontal spanning across columns, which requires `colspan=\"3\"`.",
+          "why_wrong": {
+            "0": "`rowspan=\"3\"` would merge vertically down across three different time periods on a single day.",
+            "2": "`cellpadding` controls internal pixel padding, not column merging.",
+            "3": "`border=\"3\"` sets border line thickness, not cell span."
+          },
+          "source": "IFT 203 Week 5 Slides; Take-Home Practical 1",
+          "topic_slug": "html_forms_tables_media",
+          "scenario": "A departmental administrator is creating the official 200-Level First Semester Timetable grid in HTML for the Department of Information Technology. The timetable spans 4 periods (9-10 AM, 10-11 AM, 11-12 PM, 12-1 PM) across Monday, Tuesday, and Wednesday. The schedule has three special constraints: (1) On Monday, 'COS 201 Practical Lab' occupies a double period (9-11 AM); (2) Every day at 11-12 PM, all students attend a university-wide 'Assembly / Break'; (3) The table must be accessible with caption and semantic headers."
+        },
+        {
+          "id": "ift203-hs-001",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "doctype",
+            "html5",
+            "syntax",
+            "nile-lecture"
+          ],
+          "question": "What is the primary technical function of the `<!DOCTYPE html>` declaration at the beginning of an HTML document?",
+          "options": [
+            "It connects the HTML file to a remote cloud database server",
+            "It instructs the web browser's rendering engine to parse and render the document in standard HTML5 mode rather than legacy 'quirks mode'",
+            "It imports external JavaScript libraries automatically",
+            "It encrypts the HTML source code so users cannot inspect it"
+          ],
+          "answer": 1,
+          "explanation": "The `<!DOCTYPE html>` declaration is a document type instruction informing the browser's HTML parser that the document is written in modern HTML5. Without this declaration, browsers fall back into 'quirks mode', attempting to emulate 1990s Netscape/IE bugs and breaking modern CSS layouts.",
+          "why_wrong": {
+            "0": "HTML cannot connect directly to databases; database connectivity requires server-side languages.",
+            "2": "JavaScript libraries are imported using the `<script>` tag, not the DOCTYPE declaration.",
+            "3": "HTML source code is transmitted in plain text and cannot be encrypted by a DOCTYPE tag."
+          },
+          "source": "IFT 203 Slide 3: Introduction to HTML and Web Page Structure; MDN Doctype",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-003",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "semantic-text",
+            "formatting",
+            "accessibility"
+          ],
+          "question": "In modern HTML5 web standards, what is the exact difference between the `<strong>` element and the `<b>` element?",
+          "options": [
+            "`<b>` renders text in red color, while `<strong>` renders text in blue color",
+            "`<strong>` conveys semantic importance and urgency (which assistive screen readers emphasize with a changed tone of voice), whereas `<b>` is purely presentational styling with zero semantic meaning",
+            "`<strong>` can only be used inside tables, while `<b>` can only be used inside headings",
+            "There is no difference whatsoever; both are identical and `<b>` is preferred in HTML5"
+          ],
+          "answer": 1,
+          "explanation": "In HTML5, `<strong>` represents strong semantic importance, seriousness, or urgency, prompting screen readers to alter pitch or volume to indicate emphasis. In contrast, `<b>` simply applies visual bold styling without conveying any added semantic weight to search engines or screen readers.",
+          "why_wrong": {
+            "0": "Neither tag alters font color by default; both render in bold black text unless styled with CSS.",
+            "2": "Both tags can be used across any text context in an HTML document.",
+            "3": "HTML5 explicitly distinguishes semantic tags from presentational tags, recommending `<strong>` over `<b>` whenever meaning is intended."
+          },
+          "source": "IFT 203 Slide 3; HTML Basics Week 4 Slides",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-005",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "semantic-tags",
+            "landmarks",
+            "matching"
+          ],
+          "question": "Match each HTML5 semantic element to its correct architectural purpose:",
+          "options": [
+            {
+              "left": "<header>",
+              "right": "Contains introductory content, site logo, or navigational aids for a page or section"
+            },
+            {
+              "left": "<nav>",
+              "right": "Designates a major block of navigational links"
+            },
+            {
+              "left": "<main>",
+              "right": "Encapsulates the dominant, central content unique to this individual document (only one per page)"
+            },
+            {
+              "left": "<article>",
+              "right": "Represents a complete, self-contained composition that is independently syndicatable (e.g., a blog post)"
+            },
+            {
+              "left": "<aside>",
+              "right": "Represents content tangentially related to the main content (e.g., sidebars or related links)"
+            },
+            {
+              "left": "<footer>",
+              "right": "Contains closing information such as author copyright, terms of service, and contact details"
+            }
+          ],
+          "answer": [
+            {
+              "left": "<header>",
+              "right": "Contains introductory content, site logo, or navigational aids for a page or section"
+            },
+            {
+              "left": "<nav>",
+              "right": "Designates a major block of navigational links"
+            },
+            {
+              "left": "<main>",
+              "right": "Encapsulates the dominant, central content unique to this individual document (only one per page)"
+            },
+            {
+              "left": "<article>",
+              "right": "Represents a complete, self-contained composition that is independently syndicatable (e.g., a blog post)"
+            },
+            {
+              "left": "<aside>",
+              "right": "Represents content tangentially related to the main content (e.g., sidebars or related links)"
+            },
+            {
+              "left": "<footer>",
+              "right": "Contains closing information such as author copyright, terms of service, and contact details"
+            }
+          ],
+          "explanation": "These six elements form the core semantic landmark hierarchy introduced in HTML5 to replace generic non-semantic `<div>` structures.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3 & Week 5 Slides; W3C Semantic Structure",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-007",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "code_bug",
+          "difficulty": 3,
+          "tags": [
+            "syntax-bug",
+            "attributes",
+            "w3c-validator"
+          ],
+          "question": "Examine this HTML snippet written by a student for a university portal:\n```html\n<div id=\"profile\" class=\"card\">\n  <h2>Student Profile</h2>\n  <p>Name: Aliyu</p>\n</div>\n<div id=\"profile\" class=\"card\">\n  <h2>Student Profile</h2>\n  <p>Name: Fatima</p>\n</div>\n```\nWhat critical HTML standard violation exists in this snippet, and how must it be corrected?",
+          "options": [
+            "The `card` class cannot be applied to more than one `<div>`; classes must be globally unique",
+            "The `id=\"profile\"` attribute is duplicated on multiple elements; the `id` attribute MUST be strictly unique across the entire document, so the second profile must use a unique id (e.g., `id=\"profile-fatima\"`) or share styling via the class instead",
+            "`<h2>` headings cannot be placed inside `<div>` containers",
+            "`<p>` tags must always be closed with a `<br>` tag"
+          ],
+          "answer": 1,
+          "explanation": "A foundational rule of HTML and DOM standards is that the `id` attribute MUST be unique within the entire document. Duplicating `id=\"profile\"` causes W3C validation failures, breaks CSS `#profile` target specificity, and causes JavaScript `document.getElementById('profile')` to fail unpredictably by only returning the first element.",
+          "why_wrong": {
+            "0": "The `class` attribute is explicitly designed to be reused across multiple elements.",
+            "2": "Headings are block-level elements that are completely valid inside `<div>` containers.",
+            "3": "`<p>` tags are container elements closed with `</p>`; closing with `<br>` is invalid syntax."
+          },
+          "source": "IFT 203 Slide 3; W3C HTML5 Specification",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-fc01",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "doctype"
+          ],
+          "question": "What does `<!DOCTYPE html>` do, and where must it appear?",
+          "answer": "It informs the web browser that the document is written in modern HTML5, forcing the rendering engine to render in standards mode. It MUST appear on the very first line of the document before the `<html>` tag.",
+          "explanation": "Standard opening declaration required in all HTML5 documents.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-fc03",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "block-vs-inline"
+          ],
+          "question": "How do Block-Level elements differ from Inline elements?",
+          "answer": "Block elements start on a new line and expand to fill the full width of their parent (e.g., `<div>`, `<p>`, `<h1>`). Inline elements stay in-line with surrounding text and only take up the width of their content (e.g., `<span>`, `<a>`, `<strong>`).",
+          "explanation": "Core layout concept tested heavily in web exams.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-fc05",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "sub-sup"
+          ],
+          "question": "What is the difference between `<sub>` and `<sup>`? Give practical examples.",
+          "answer": "`<sub>` creates subscript text below the baseline (e.g., Chemical formulas: `H<sub>2</sub>O`).\n`<sup>` creates superscript text above the baseline (e.g., Mathematical powers: `x<sup>2</sup>`).",
+          "explanation": "Text formatting tags covered in IFT 203 Slide 3.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-fc07",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "head-vs-body"
+          ],
+          "question": "Contrast the `<head>` element with the `<body>` element.",
+          "answer": "`<head>` contains machine-readable metadata about the page (title, character encoding, viewport, external stylesheet links) that is NOT rendered in the main window.\n`<body>` contains all visible content (text, images, tables, forms) displayed to the user.",
+          "explanation": "The two primary subdivisions of an HTML document.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-cs01-q1",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "accessibility",
+            "semantic-refactoring"
+          ],
+          "question": "Which combination of Semantic HTML5 elements directly resolves the screen reader navigation barrier by establishing navigable landmark regions?",
+          "options": [
+            "Replacing all `<div>` tags with `<span>` tags",
+            "Wrapping the top links in `<nav>`, the main announcement in `<main>` and `<article>`, the heading in `<h1>`, and the bottom in `<footer>`",
+            "Deleting all CSS styles from the server",
+            "Wrapping the entire page inside a `<marquee>` tag"
+          ],
+          "answer": 1,
+          "explanation": "Assistive screen readers allow users to press shortcut keys (e.g., 'H' for next heading, 'D' for next landmark) to jump directly between `<nav>`, `<main>`, `<article>`, and `<footer>` landmarks. Wrapping content in semantic landmarks allows blind students to immediately skip navigation and jump to the `<main>` article.",
+          "why_wrong": {
+            "0": "`<span>` is an inline element with zero semantic landmark capability.",
+            "2": "Deleting CSS does not add structural landmarks to HTML markup.",
+            "3": "`<marquee>` is an obsolete, non-standard tag that creates moving text and severely harms accessibility."
+          },
+          "source": "IFT 203 Slide 3; W3C Web Accessibility Initiative (WAI)",
+          "topic_slug": "html_structure_semantics",
+          "scenario": "A government agency's public scholarship portal is audited for accessibility. The auditor notes that the portal is written as a pure 'div-soup':\n```html\n<div class=\"top\">\n  <div class=\"links\"><a href=\"#\">Home</a> <a href=\"#\">Apply</a></div>\n</div>\n<div class=\"content\">\n  <div class=\"post\">\n    <div class=\"headline\">2026 Nile University Scholarship</div>\n    <div class=\"text\">Applications open Monday...</div>\n  </div>\n</div>\n<div class=\"bottom\">&copy; 2026 Ministry</div>\n```\nBlind applicants using screen readers report that they cannot skip the repetitive header links and cannot find the scholarship announcement without listening to the entire page from top to bottom."
+        },
+        {
+          "id": "ift203-hs-cs02-q1",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "viewport",
+            "mobile-responsive"
+          ],
+          "question": "What missing HTML element in the `<head>` causes the mobile browser to render the page in microscopic zoomed-out desktop canvas mode?",
+          "options": [
+            "Missing `<!DOCTYPE html>`",
+            "`<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">`",
+            "`<meta charset=\"UTF-8\">`",
+            "`<script src=\"jquery.js\"></script>`"
+          ],
+          "answer": 1,
+          "explanation": "Mobile browsers default to a virtual 980px desktop viewport unless instructed otherwise. The `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">` tag tells the mobile browser to match the viewport width to the device's physical screen width and set the scale to 100%, making text readable without manual pinch-to-zoom.",
+          "why_wrong": {
+            "0": "Missing DOCTYPE triggers quirks mode, but does not control mobile device viewport scaling.",
+            "2": "`<meta charset=\"UTF-8\">` defines character encoding, not screen viewport scaling.",
+            "3": "jQuery is a JavaScript library; viewport scaling is controlled natively by the HTML meta tag."
+          },
+          "source": "IFT 203 Slide 3; MDN Using the Viewport Meta Tag",
+          "topic_slug": "html_structure_semantics",
+          "scenario": "A student builds an online CV page for their take-home practical assignment. When viewed on a desktop computer, the page appears clean. However, when tested on a smartphone, two critical issues occur: (1) The text is microscopic because the mobile browser zooms out to fit a default 980px desktop canvas; (2) In the code, the student tried to insert multiple blank lines by typing multiple consecutive `<br>` tags and spaces inside a paragraph, but the browser collapses all whitespace into a single space."
+        }
+      ]
+    },
+    {
+      "id": "ift203-mock-beta",
+      "title": "Mock Exam Beta: Client-Server Architecture, DOM & Web Engineering Simulation",
+      "description": "Rigorous 40-question examination weighted heavily toward Level 3-4 cognitive depth: CSS specificity calculations, Flexbox responsive alignment, DOM event delegation, client-side XSS security, HTTP status code diagnostics, and reverse proxy timeouts.",
+      "duration_minutes": 90,
+      "total_marks": 100,
+      "passing_score": 60,
+      "question_count": 40,
+      "questions": [
+        {
+          "id": "ift203-bm-002",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "border-box",
+            "reset",
+            "layout"
+          ],
+          "question": "Why do modern web developers universally include the reset rule `*, *::before, *::after { box-sizing: border-box; }` at the beginning of their stylesheets?",
+          "options": [
+            "To force all text to be displayed in uppercase letters",
+            "Because under `border-box`, specified `width` and `height` include content, padding, and border, making multi-column grid calculations predictable and preventing layouts from breaking when padding is adjusted",
+            "To remove all colors and images from the web page",
+            "Because `border-box` is required by the Windows operating system to open files"
+          ],
+          "answer": 1,
+          "explanation": "By default (`content-box`), adding padding or borders expands the outer width of an element beyond its defined `width`, which easily breaks percentage-based column grids. `box-sizing: border-box` absorbs padding and borders inside the declared width, so a 50% box remains exactly 50% regardless of internal padding, simplifying responsive web design.",
+          "why_wrong": {
+            "0": "Uppercase text is controlled by `text-transform: uppercase;`, not `box-sizing`.",
+            "2": "`box-sizing` affects box dimension calculations; it does not remove colors or images.",
+            "3": "Operating systems do not require CSS box-sizing rules to open files."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN box-sizing",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-004",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "html_render",
+          "difficulty": 3,
+          "tags": [
+            "display-none",
+            "visibility-hidden",
+            "html-render"
+          ],
+          "question": "What is the key visual and layout difference between applying `display: none;` versus `visibility: hidden;` to an element?",
+          "options": [
+            "`display: none;` turns the element red, while `visibility: hidden;` turns it blue",
+            "`display: none;` removes the element completely from document flow (surrounding elements collapse into its space), whereas `visibility: hidden;` hides the element visually but preserves its exact physical dimensions and blank space in the layout",
+            "There is no difference; both delete the element from the HTML file permanently",
+            "`visibility: hidden;` works only on images, while `display: none;` works only on text"
+          ],
+          "answer": 1,
+          "explanation": "`display: none` un-renders the element completely from the visual layout tree: no space is allocated, and adjacent elements shift to fill the gap. In contrast, `visibility: hidden` makes the element invisible (like a transparent pane of glass), but the box retains its width, height, margins, and layout footprint on the page.",
+          "why_wrong": {
+            "0": "Neither property controls text color; both affect element visibility.",
+            "2": "Neither CSS property alters or deletes the underlying HTML DOM tree.",
+            "3": "Both properties apply universally to any HTML element."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN display vs visibility",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-006",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "sequencing",
+          "difficulty": 2,
+          "tags": [
+            "box-model-layers",
+            "sequencing"
+          ],
+          "question": "Arrange the four concentric layers of the CSS Box Model in sequential order from the INMOST layer to the OUTMOST layer:",
+          "options": [
+            "Content (the inner text, child elements, or image)",
+            "Padding (the transparent interior cushion around the content)",
+            "Border (the outline enclosing the padding and content)",
+            "Margin (the transparent exterior clearance outside the border)"
+          ],
+          "answer": [
+            "Content (the inner text, child elements, or image)",
+            "Padding (the transparent interior cushion around the content)",
+            "Border (the outline enclosing the padding and content)",
+            "Margin (the transparent exterior clearance outside the border)"
+          ],
+          "explanation": "The CSS Box Model is structured strictly from inside to outside: Content -> Padding -> Border -> Margin.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; W3C Box Model",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-008",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "multi_select",
+          "difficulty": 3,
+          "tags": [
+            "flexbox",
+            "alignment",
+            "modern-css"
+          ],
+          "question": "Which of the following statements regarding CSS Flexbox are ACCURATE? (Select ALL that apply)",
+          "options": [
+            "`justify-content` controls the distribution and alignment of flex items along the Main Axis (horizontal by default when `flex-direction: row`)",
+            "`align-items` controls alignment of flex items along the Cross Axis (vertical by default when `flex-direction: row`)",
+            "A child element can be perfectly centered both vertically and horizontally inside a container using: `display: flex; justify-content: center; align-items: center;`",
+            "Flexbox was designed in 1965 for black-and-white televisions"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Options 0, 1, and 2 are core Flexbox principles: `justify-content` governs main-axis alignment, `align-items` governs cross-axis alignment, and combining both with `center` achieves perfect 2-axis centering. Option 3 is humorous nonsense.",
+          "why_wrong": {
+            "3": "CSS Flexbox was developed by the W3C in the 2010s for responsive web layouts, not 1965 televisions."
+          },
+          "source": "IFT 203 Week 6 Slides; W3C CSS Flexible Box Layout",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-fc02",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "border-box"
+          ],
+          "question": "What is `box-sizing: border-box;` and why is it preferred over `content-box`?",
+          "answer": "Under `border-box`, padding and borders are included INSIDE the element's specified width and height. This prevents boxes from expanding unexpectedly and breaking multi-column grid layouts.",
+          "explanation": "Standard universal reset used in modern web engineering.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-fc04",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "inline-block"
+          ],
+          "question": "What is the key advantage of `display: inline-block`?",
+          "answer": "It flows horizontally alongside other text/elements without forcing a line break (like inline), BUT allows setting explicit width, height, and top/bottom padding and margins (like block).",
+          "explanation": "Combines the inline flow with block dimensional control.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-fc06",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "position-absolute"
+          ],
+          "question": "What determines the positioning origin of an element with `position: absolute`?",
+          "answer": "It is positioned relative to its nearest ancestor that has a `position` other than `static` (e.g., `relative`, `absolute`, or `fixed`). If no such ancestor exists, it is positioned relative to the initial containing block (`<html>` / viewport).",
+          "explanation": "Crucial concept for modal dialogs and dropdown menus.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-fc08",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "perfect-centering"
+          ],
+          "question": "Write the three lines of CSS required to perfectly center content inside a container using Flexbox.",
+          "answer": "```css\ndisplay: flex;\njustify-content: center;\nalign-items: center;\n```",
+          "explanation": "The modern industry standard for two-axis centering.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_box_model_layout"
+        },
+        {
+          "id": "ift203-bm-cs01-q2",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "flexbox-refactoring",
+            "responsive"
+          ],
+          "question": "Refactor this layout into modern, responsive CSS using Flexbox and `box-sizing: border-box`, and include a media query that stacks the cards into a single column on mobile devices (screens under 768px).",
+          "marking_points": [
+            "Applies universal box-sizing reset: `*, *::before, *::after { box-sizing: border-box; }`.",
+            "Converts container to Flexbox: `.container { display: flex; flex-wrap: wrap; gap: 20px; max-width: 900px; margin: 0 auto; }`.",
+            "Sizes cards flexibly: `.card { flex: 1 1 calc(33.333% - 20px); padding: 20px; border: 2px solid #ccc; }` or `flex: 1`.",
+            "Adds responsive mobile media query: `@media (max-width: 768px) { .card { flex: 1 1 100%; } }`.",
+            "Explains how `gap` and `border-box` prevent overflow bugs."
+          ],
+          "answer": "```css\n/* Universal border-box reset */\n*, *::before, *::after {\n  box-sizing: border-box;\n}\n\n.container {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 20px;\n  max-width: 900px;\n  margin: 0 auto; /* Centers the container on desktop */\n}\n\n.card {\n  flex: 1 1 calc(33.333% - 14px); /* Equal 3-column distribution accounting for gap */\n  padding: 20px;\n  border: 2px solid #ccc;\n  background-color: #f9f9f9;\n  border-radius: 8px;\n}\n\n/* Mobile Responsive Breakpoint */\n@media screen and (max-width: 768px) {\n  .card {\n    flex: 1 1 100%; /* Stacks cards into a full-width single column on phones */\n  }\n}\n```\n\nExplanation of Fix:\n1. `box-sizing: border-box` ensures that the 20px padding and 2px border are absorbed inside the card's width rather than expanding it.\n2. `display: flex` with `gap: 20px` cleanly spaces cards without buggy inline-block whitespace margins.\n3. The `@media (max-width: 768px)` rule dynamically adjusts card basis to `100%`, providing a seamless responsive transition from a 3-column desktop layout to an accessible single-column mobile view.",
+          "explanation": "Modern Flexbox combined with border-box and media queries provides robust responsive layouts.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; Modern Responsive CSS",
+          "topic_slug": "css_box_model_layout",
+          "scenario": "A student builds a 3-column course summary grid for the Nile University computer science department:\n```html\n<div class=\"container\">\n  <div class=\"card\">COS 201</div>\n  <div class=\"card\">IFT 203</div>\n  <div class=\"card\">SEN 201</div>\n</div>\n```\nWith CSS:\n```css\n.container {\n  width: 900px;\n}\n.card {\n  display: inline-block;\n  width: 300px;\n  padding: 20px;\n  border: 2px solid #ccc;\n}\n```\nThe student expects all three cards to sit side-by-side in a single 900px row. Instead, each card drops onto a new line, stacking vertically."
+        },
+        {
+          "id": "ift203-bm-cs02-q2",
+          "course": "IFT 203",
+          "topic": "CSS Box Model, Flexbox & Responsive Layouts",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "z-index",
+            "stacking-context"
+          ],
+          "question": "Explain the mechanics of `z-index` and Stacking Contexts that caused Bug 2 (dropdown hiding behind the video), and provide the exact CSS fix to ensure the dropdown always renders in front of all page media.",
+          "marking_points": [
+            "Explains Stacking Context and `z-index`: `z-index` controls depth rendering along the z-axis, but only functions on elements that have an explicit `position` other than `static`.",
+            "Explains why video overlapped dropdown: Browser default rendering or native video hardware overlays often create new stacking contexts or have default higher stacking priority.",
+            "Provides the fix: Setting `z-index: 1000;` on `.navbar` (which already has `position: fixed;`) or positioning the dropdown with a high z-index.",
+            "Notes best practice: Creating a disciplined z-index scale (e.g., dropdown: 100, modal: 1000) rather than random numbers like `999999`."
+          ],
+          "answer": "1. Stacking Context & `z-index` Mechanics:\n- `z-index` determines the 3-dimensional stacking order of elements perpendicular to the screen (the Z-axis). Elements with higher z-index values are rendered in front of elements with lower values.\n- Critical Rule: `z-index` ONLY applies to positioned elements (elements where `position` is `relative`, `absolute`, `fixed`, or `sticky`). On default `position: static` elements, `z-index` is ignored by the browser.\n- In Bug 2, the video player element created a separate hardware-accelerated stacking context, rendering in front of the un-elevated navbar dropdown.\n\n2. The CSS Fix:\nAssign a high z-index to the `.navbar` container (which already has `position: fixed;`):\n```css\n.navbar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 60px;\n  background: #003366;\n  z-index: 1000; /* Guarantees navbar and its child dropdowns sit on top of all page elements */\n}\n\n.dropdown-menu {\n  position: absolute;\n  top: 60px;\n  left: 0;\n  z-index: 1001;\n}\n```",
+          "explanation": "Elevating the positioned navbar's z-index resolves visual clipping and maintains consistent modal hierarchy.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; MDN Understanding CSS z-index",
+          "topic_slug": "css_box_model_layout",
+          "scenario": "On the Nile University Exam Portal, developers implement a sticky top navigation bar:\n```css\n.navbar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 60px;\n  background: #003366;\n}\n```\nTwo severe usability bugs emerge: (1) The top 60px of page content (the main heading `<h1>Student Exam Schedule</h1>`) is hidden underneath the fixed navbar when the page loads; (2) When a student opens a dropdown menu from the navbar, the dropdown disappears BEHIND an embedded course video player on the page."
+        },
+        {
+          "id": "ift203-cs-002",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "specificity",
+            "calculation",
+            "selectors"
+          ],
+          "question": "Which of the following CSS selectors has the HIGHEST specificity value and will take precedence when styling an anchor link?",
+          "options": [
+            "`header nav a` (3 element selectors)",
+            "`nav a.active` (1 class + 2 element selectors)",
+            "`#main-nav a` (1 ID + 1 element selector)",
+            "`a:hover` (1 pseudo-class + 1 element selector)"
+          ],
+          "answer": 2,
+          "explanation": "Calculating specificity (Inline, ID, Class, Element):\n- `header nav a`: (0, 0, 0, 3) = score 3\n- `nav a.active`: (0, 0, 1, 2) = score 12\n- `#main-nav a`: (0, 1, 0, 1) = score 101\n- `a:hover`: (0, 0, 1, 1) = score 11\nBecause specificity is evaluated hierarchically from left to right, `#main-nav a` possesses 1 ID selector (worth 100), overwhelmingly beating all class and element selectors.",
+          "why_wrong": {
+            "0": "`header nav a` has zero IDs and zero classes; its specificity is only 3.",
+            "1": "`nav a.active` has 1 class and 2 elements (score 12), which is lower than an ID (score 100+).",
+            "3": "`a:hover` has 1 pseudo-class and 1 element (score 11), lower than an ID selector."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN Specificity",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-004",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "code_bug",
+          "difficulty": 3,
+          "tags": [
+            "combinators",
+            "child-vs-descendant",
+            "syntax-bug"
+          ],
+          "question": "A student wants to style ONLY the direct paragraph children of a section, but not paragraphs nested inside inner card divs:\n```html\n<section id=\"hero\">\n  <p>Direct paragraph 1</p>\n  <div class=\"card\">\n    <p>Nested card paragraph</p>\n  </div>\n</section>\n```\nThe student wrote: `#hero p { color: green; }`. What is the bug, and what combinator should be used instead?",
+          "options": [
+            "`#hero p` is a descendant selector that matches ALL `<p>` tags at any depth inside `#hero` (including the inner card paragraph); to target ONLY direct children, use the Child Combinator: `#hero > p`",
+            "The student should use `#hero + p` to target all paragraphs",
+            "The student should use `#hero ~ p` to target all paragraphs",
+            "IDs cannot be combined with element selectors in CSS"
+          ],
+          "answer": 0,
+          "explanation": "A space (`A B`) is the Descendant Combinator, matching all matching elements regardless of nesting depth. The child combinator (`A > B`) matches only immediate direct children. `#hero > p` selects `Direct paragraph 1`, but ignores `<p>` inside `<div class=\"card\">` because its direct parent is the `div`, not the `section`.",
+          "why_wrong": {
+            "1": "`+` is the adjacent sibling combinator, which targets elements immediately following another element.",
+            "2": "`~` is the general sibling combinator, which targets siblings, not children.",
+            "3": "IDs can be combined freely with element selectors (e.g., `#hero > p`, `#hero div.card`)."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN CSS Combinators",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-006",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "sequencing",
+          "difficulty": 3,
+          "tags": [
+            "specificity-hierarchy",
+            "sequencing"
+          ],
+          "question": "Order the following CSS selector types from LOWEST specificity (least powerful) to HIGHEST specificity (most powerful):",
+          "options": [
+            "Universal selector: * (Specificity 0,0,0,0)",
+            "Element/Type selector: p, h1 (Specificity 0,0,0,1)",
+            "Class selector: .highlight (Specificity 0,0,1,0)",
+            "ID selector: #navbar (Specificity 0,1,0,0)",
+            "Inline style attribute: style=\"...\" (Specificity 1,0,0,0)"
+          ],
+          "answer": [
+            "Universal selector: * (Specificity 0,0,0,0)",
+            "Element/Type selector: p, h1 (Specificity 0,0,0,1)",
+            "Class selector: .highlight (Specificity 0,0,1,0)",
+            "ID selector: #navbar (Specificity 0,1,0,0)",
+            "Inline style attribute: style=\"...\" (Specificity 1,0,0,0)"
+          ],
+          "explanation": "Standard W3C specificity hierarchy: Universal (0) < Element (1) < Class/Pseudo-class (10) < ID (100) < Inline Style (1000).",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; W3C CSS Specificity",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-008",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "multi_select",
+          "difficulty": 3,
+          "tags": [
+            "font-family",
+            "typography-best-practices"
+          ],
+          "question": "Which of the following represent sound software engineering best practices for CSS typography and font styling? (Select ALL that apply)",
+          "options": [
+            "Always terminate a `font-family` declaration with a generic font family fallback (e.g., `sans-serif`, `serif`, or `monospace`) so the browser can fall back gracefully if custom fonts fail to load",
+            "Quote font names containing spaces (e.g., `'Times New Roman'`, `'Open Sans'`) so the CSS parser does not break the token",
+            "Set `text-decoration: none;` on anchor links when custom styling navigation bars to remove default underlines",
+            "Use 50 different font families on a single webpage to make it look exciting"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Best practices dictate: always provide generic family fallbacks (`sans-serif`, `serif`), enclose multi-word font names in quotes, and use `text-decoration: none` to clean up navigation menus. Using 50 different font families destroys design cohesion, slows down page loading with massive font downloads, and degrades readability.",
+          "why_wrong": {
+            "3": "Using dozens of different fonts is a grotesque design anti-pattern that destroys performance and visual consistency."
+          },
+          "source": "IFT 203 Week 6 Slides; MDN Styling Text",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-fc02",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "link-tag"
+          ],
+          "question": "Write the exact HTML code to connect an external stylesheet named `main.css`.",
+          "answer": "`<link rel=\"stylesheet\" href=\"main.css\">` placed inside the `<head>` section of the HTML document.",
+          "explanation": "Core exam question from IFT 203 lecture and practical exercises.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-fc04",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "specificity-tuple"
+          ],
+          "question": "What is the 4-tier specificity tuple (a, b, c, d)?",
+          "answer": "a = Inline styles (1000)\nb = ID selectors (100)\nc = Class, attribute, and pseudo-class selectors (10)\nd = Element and pseudo-element selectors (1)\nEvaluated left to right; higher tier always wins.",
+          "explanation": "The standard W3C specificity scoring metric.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; W3C Specificity",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-fc06",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "rem-unit"
+          ],
+          "question": "What is a `rem` unit, and what is its default pixel equivalent?",
+          "answer": "A `rem` (Root EM) is a relative unit equal to the font-size of the root `<html>` element. By default in standard browsers, 1rem = 16px. Thus, 2rem = 32px and 0.5rem = 8px.",
+          "explanation": "Standard unit for responsive typography and accessible web design.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-fc08",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "important-flag"
+          ],
+          "question": "What does `!important` do in CSS, and why should it be avoided?",
+          "answer": "It overrides all normal specificity and cascade rules. It should be avoided because it breaks the natural cascade, makes debugging CSS nightmares, and forces other developers to use even more `!important` declarations.",
+          "explanation": "Recognized architectural anti-pattern in frontend development.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; MDN Specificity",
+          "topic_slug": "css_selectors_typography"
+        },
+        {
+          "id": "ift203-cs-cs01-q2",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "specificity-architecture",
+            "clean-css"
+          ],
+          "question": "Explain why using `!important` to solve this issue is a poor architectural practice, and provide two clean, maintainable engineering solutions to resolve the styling conflict.",
+          "marking_points": [
+            "Identifies why `!important` is harmful: Breaks the natural cascade, escalates 'specificity wars', and forces subsequent overrides to also require `!important`.",
+            "Solution 1 (Refactor base styles): Remove the ID selector `#confirm-drop` from the base stylesheet and restyle using utility classes (e.g., `.btn { background-color: green; } .btn.btn-danger { background-color: red; }`).",
+            "Solution 2 (Specificity matching/chaining): Target the element using an ID-qualified selector (e.g., `#confirm-drop.btn-danger` or `button#confirm-drop`) which achieves specificity (0,1,1,0), cleanly overriding the base ID rule.",
+            "States the principle of keeping CSS specificity flat for enterprise maintainability."
+          ],
+          "answer": "1. Why `!important` is an Anti-Pattern:\nAppending `!important` breaks the natural cascading flow of CSS. It creates technical debt by initiating a 'specificity arms race'\u2014any future theme changes or modal dialogs targeting this button will also be forced to use `!important`, making the codebase brittle and unmaintainable.\n\n2. Two Clean Engineering Solutions:\n- Solution 1: Refactor Base Styles to Classes (Best Practice): Remove the ID selector from the CSS entirely. IDs should be reserved for JavaScript DOM access and in-page anchor links, not styling hooks. Re-author the base style as a class `.btn` and state modifier `.btn-danger`. Because both are classes, source order allows `.btn-danger` to win naturally:\n```css\n.btn { background-color: green; }\n.btn-danger { background-color: red; }\n```\n- Solution 2: Chain Selector to Match Specificity (Quick Fix): If the base ID cannot be edited immediately, chain the class to the ID in the override selector: `#confirm-drop.btn-danger { background-color: red; }`. This gives a specificity score of (0,1,1,0) (score 110), which cleanly defeats the base ID selector (0,1,0,0) (score 100) without resorting to `!important`.",
+          "explanation": "Disciplined frontend engineering keeps specificity low and avoids `!important` hacks.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; CSS Architecture Guidelines",
+          "topic_slug": "css_selectors_typography",
+          "scenario": "A frontend developer on the Nile University student portal project is tasked with updating the submit button color to red for the 'Drop Course' warning action. The developer adds a new CSS class:\n```css\n.btn-danger {\n  background-color: red;\n}\n```\nAnd applies it to the HTML button: `<button id=\"confirm-drop\" class=\"btn-danger\">Drop Course</button>`.\nHowever, the button stubbornly remains GREEN. Upon inspecting the styles in Chrome DevTools, the developer finds an existing rule in the core stylesheet:\n```css\n#confirm-drop {\n  background-color: green;\n}\n```\nA frustrated junior developer suggests appending `!important` to `.btn-danger`."
+        },
+        {
+          "id": "ift203-cs-cs02-q2",
+          "course": "IFT 203",
+          "topic": "CSS Selectors, Specificity & Typography",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "rem-refactoring",
+            "font-stack"
+          ],
+          "question": "Refactor this typography system to use `rem` units, and define a comprehensive `font-family` stack that provides web-safe fallbacks for Windows, macOS, and Linux systems.",
+          "marking_points": [
+            "Explains how switching to `rem` fixes the bug: `rem` always references root `<html>` (16px), preventing compounding so nested elements stay at a predictable, controlled size.",
+            "Provides refactored code with modular rem sizes (e.g., `font-size: 1rem;`, `font-size: 1.125rem;`).",
+            "Provides a robust system font stack with multi-word quoting and generic fallback (e.g., `font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;`).",
+            "Explains why font stacks must terminate in generic `sans-serif` or `serif`."
+          ],
+          "answer": "1. Refactoring to `rem` Units:\nBy replacing `em` with `rem`, font sizes are computed relative to the root `<html>` font size (default 16px) rather than the parent. This permanently eliminates the compounding bug, guaranteeing that `.reply` text remains a predictable, readable size regardless of nesting depth:\n```css\n:root {\n  font-size: 16px;\n}\n\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;\n  font-size: 1rem; /* Exactly 16px */\n  line-height: 1.5;\n}\n\n.card {\n  font-size: 1rem;\n}\n\n.comment {\n  font-size: 0.95rem; /* ~15.2px */\n}\n\n.reply {\n  font-size: 0.9rem; /* ~14.4px - stays clean regardless of nesting! */\n}\n```\n\n2. Robust System Font Stack:\n- `font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;`\n- `-apple-system` and `BlinkMacSystemFont` target modern Apple macOS/iOS system fonts (San Francisco).\n- `'Segoe UI'` targets modern Windows 10/11 system font.\n- `Roboto` targets Android and ChromeOS.\n- `Helvetica` and `Arial` serve as universal web-safe cross-platform fallbacks.\n- The generic `sans-serif` keyword ensures that even if all named fonts fail to load, the browser will render a clean, proportional sans-serif typeface.",
+          "explanation": "Switching to rem units eliminates compounding bugs while system font stacks provide native performance without web font download latency.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 6 Slides; Modern CSS Typography Best Practices",
+          "topic_slug": "css_selectors_typography",
+          "scenario": "A student builds a responsive portal for Nile University with nested cards and sidebars. In their CSS, the student uses `em` units for all typography:\n```css\nbody { font-size: 16px; }\n.card { font-size: 1.25em; }\n.comment { font-size: 1.25em; }\n.reply { font-size: 1.25em; }\n```\nWhen comments have nested replies (a reply inside a comment inside a card), the text in the innermost reply balloons to a gigantic, distorted size on screen."
+        },
+        {
+          "id": "ift203-ft-002",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "file-upload",
+            "enctype",
+            "forms"
+          ],
+          "question": "When creating an HTML form that includes a passport photograph upload (`<input type=\"file\" name=\"photo\">`), which attribute MUST be explicitly included in the `<form>` opening tag?",
+          "options": [
+            "`enctype=\"text/plain\"`",
+            "`enctype=\"multipart/form-data\"` along with `method=\"POST\"`",
+            "`method=\"GET\"` and `target=\"_blank\"`",
+            "`enctype=\"application/json\"` with `autocomplete=\"off\"`"
+          ],
+          "answer": 1,
+          "explanation": "Standard forms use `application/x-www-form-urlencoded`. To transmit binary files (images, PDFs) to the server, the form MUST specify `enctype=\"multipart/form-data\"` and use `method=\"POST\"`. If omitted, the browser only sends the string name of the file instead of the binary byte data.",
+          "why_wrong": {
+            "0": "`text/plain` sends unencoded text without boundary delimiters, corrupting binary image data.",
+            "2": "`GET` cannot upload binary files because data is restricted to URL strings.",
+            "3": "`application/json` is not a standard native HTML form enctype attribute for binary file streaming."
+          },
+          "source": "IFT 203 Week 5 Slides; Practice Codes: Student Registration Form",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-004",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "html_render",
+          "difficulty": 3,
+          "tags": [
+            "tables",
+            "colspan",
+            "rowspan",
+            "html-render"
+          ],
+          "question": "Analyze the following table code:\n```html\n<table border=\"1\">\n  <tr>\n    <th>Time</th>\n    <th>Monday</th>\n    <th>Tuesday</th>\n  </tr>\n  <tr>\n    <td>9:00 AM</td>\n    <td colspan=\"2\">COS 201 Practical Lab</td>\n  </tr>\n  <tr>\n    <td>11:00 AM</td>\n    <td>IFT 203</td>\n    <td>SEN 201</td>\n  </tr>\n</table>\n```\nHow will the cell containing `COS 201 Practical Lab` be rendered visually?",
+          "options": [
+            "It will be rendered only under Monday, leaving Tuesday's column completely empty",
+            "It will span horizontally across BOTH the Monday and Tuesday columns in the 9:00 AM row",
+            "It will span vertically down into the 11:00 AM row",
+            "It will cause an error and prevent the table from displaying"
+          ],
+          "answer": 1,
+          "explanation": "The attribute `colspan=\"2\"` instructs the table rendering engine to merge that single `<td>` cell horizontally across two column widths. Because the header row defines 3 total columns (Time, Monday, Tuesday), the second row consists of 1 cell for Time plus 1 cell spanning 2 columns, creating a perfectly balanced 3-column table row.",
+          "why_wrong": {
+            "0": "A `colspan=\"2\"` cell explicitly expands across two columns, covering both Monday and Tuesday.",
+            "2": "Vertical spanning across rows is achieved using `rowspan`, not `colspan`.",
+            "3": "`colspan` is a standard HTML table attribute and does not throw errors."
+          },
+          "source": "IFT 203 Week 5 Slides; Take-Home Practical 1",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-006",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "sequencing",
+          "difficulty": 2,
+          "tags": [
+            "tables",
+            "semantic-tables",
+            "sequencing"
+          ],
+          "question": "Order the structural child elements of a fully compliant semantic HTML5 table from top to bottom as they should be nested inside `<table>`:",
+          "options": [
+            "<caption> (accessible title of the table, placed first)</caption>",
+            "<thead> containing <tr> and <th> header cells</thead>",
+            "<tbody> containing <tr> and <td> data rows</tbody>",
+            "<tfoot> containing <tr> and <td> summary or total calculations</tfoot>"
+          ],
+          "answer": [
+            "<caption> (accessible title of the table, placed first)</caption>",
+            "<thead> containing <tr> and <th> header cells</thead>",
+            "<tbody> containing <tr> and <td> data rows</tbody>",
+            "<tfoot> containing <tr> and <td> summary or total calculations</tfoot>"
+          ],
+          "explanation": "In semantic HTML tables: `<caption>` must appear immediately after `<table>`, followed by `<thead>` (headers), `<tbody>` (data rows), and `<tfoot>` (footer totals/summaries).",
+          "why_wrong": {},
+          "source": "IFT 203 Week 5 Slides; W3C HTML5 Table Model",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-008",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "multi_select",
+          "difficulty": 3,
+          "tags": [
+            "links",
+            "images",
+            "accessibility",
+            "security"
+          ],
+          "question": "Which of the following statements represent established W3C web standards and security best practices for hyperlinks and images? (Select ALL that apply)",
+          "options": [
+            "Every `<img>` tag must include an informative `alt` attribute for screen readers and as a fallback if the image fails to load",
+            "When using `<a href=\"...\" target=\"_blank\">` to open an external link in a new tab, you should include `rel=\"noopener noreferrer\"` to prevent the opened page from tampering with your window via the `window.opener` security vulnerability",
+            "To create a clickable email link, use `<a href=\"mailto:info@nileuniversity.edu.ng\">`",
+            "`<img>` tags require an explicit `</img>` closing tag in HTML5"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Options 0, 1, and 2 represent core standards: `alt` is required for accessibility/fallback, `rel=\"noopener noreferrer\"` prevents tab-napping reverse tab-jacking exploits, and `mailto:` is the standard protocol for email links. Option 3 is false because `<img>` is a void element and must NOT have a closing `</img>` tag in HTML5.",
+          "why_wrong": {
+            "3": "`<img>` is a void (empty) element and does not have a closing tag in HTML5."
+          },
+          "source": "IFT 203 Week 4 & 5 Slides; MDN Links & Media",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-fc02",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "enctype"
+          ],
+          "question": "What form attribute is required when uploading files, and what happens if it is omitted?",
+          "answer": "The form MUST specify `enctype=\"multipart/form-data\"` and `method=\"POST\"`. If omitted, the browser defaults to `application/x-www-form-urlencoded` and sends only the filename string, not the actual file contents.",
+          "explanation": "Covered in IFT 203 Week 5 and the Student Registration code practical.",
+          "why_wrong": {},
+          "source": "IFT 203 Practice Codes Docx",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-fc04",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "label-for"
+          ],
+          "question": "What is the purpose of the `<label for=\"xyz\">` element?",
+          "answer": "It binds a text label to an input with `id=\"xyz\"`. It enhances accessibility for screen readers and allows users to click the text label to focus or toggle the input control.",
+          "explanation": "Foundational accessibility practice.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 5 Slides",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-fc06",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "disabled-readonly"
+          ],
+          "question": "What is the key difference between `readonly` and `disabled` on form inputs during submission?",
+          "answer": "A `readonly` field cannot be modified by the user, but its value IS submitted to the server. A `disabled` field is grayed out and its value is NOT submitted to the server.",
+          "explanation": "Frequent exam question regarding form data submission.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 5 Slides",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-fc08",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "target-blank"
+          ],
+          "question": "Why should `<a href=\"...\" target=\"_blank\">` always be paired with `rel=\"noopener noreferrer\"`?",
+          "answer": "For security: without it, the newly opened external page can access your page's JavaScript execution context via `window.opener` and redirect your users to a malicious phishing site (known as reverse tabnabbing).",
+          "explanation": "Important modern web security best practice.",
+          "why_wrong": {},
+          "source": "MDN Web Security; IFT 203 Lecture Notes",
+          "topic_slug": "html_forms_tables_media"
+        },
+        {
+          "id": "ift203-ft-cs01-q2",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "form-refactoring",
+            "html5-validation"
+          ],
+          "question": "Write the complete, refactored HTML code for the student registration form, incorporating accessible `<label for='...'>` associations and HTML5 client-side validation attributes (`required`, `placeholder`, `min`, `max`).",
+          "marking_points": [
+            "Correct form tag: `<form action=\"register.php\" method=\"POST\" enctype=\"multipart/form-data\">`.",
+            "Proper label associations: `<label for=\"name\">Full Name:</label>` matching `<input id=\"name\" type=\"text\" name=\"fullname\" required placeholder=\"Enter full name\">`.",
+            "Masked password: `<input id=\"pass\" type=\"password\" name=\"password\" required minlength=\"8\">`.",
+            "Unified radio names: `<input id=\"l100\" type=\"radio\" name=\"level\" value=\"100\" required>` and `<input id=\"l200\" type=\"radio\" name=\"level\" value=\"200\">`.",
+            "File input with accept restriction: `<input id=\"photo\" type=\"file\" name=\"passport\" accept=\"image/*\" required>`.",
+            "Submit button included."
+          ],
+          "answer": "```html\n<form action=\"register.php\" method=\"POST\" enctype=\"multipart/form-data\">\n  <fieldset>\n    <legend>Student Registration Details</legend>\n    \n    <p>\n      <label for=\"fullname\">Full Name:</label>\n      <input type=\"text\" id=\"fullname\" name=\"fullname\" placeholder=\"e.g. Aliyu Bello\" required>\n    </p>\n    \n    <p>\n      <label for=\"password\">Create Password:</label>\n      <input type=\"password\" id=\"password\" name=\"password\" minlength=\"8\" placeholder=\"Min 8 characters\" required>\n    </p>\n    \n    <p>\n      <span>Academic Level:</span>\n      <input type=\"radio\" id=\"lvl100\" name=\"level\" value=\"100\" required>\n      <label for=\"lvl100\">100 Level</label>\n      <input type=\"radio\" id=\"lvl200\" name=\"level\" value=\"200\">\n      <label for=\"lvl200\">200 Level</label>\n    </p>\n    \n    <p>\n      <label for=\"passport\">Passport Photograph:</label>\n      <input type=\"file\" id=\"passport\" name=\"passport\" accept=\"image/png, image/jpeg\" required>\n    </p>\n    \n    <p>\n      <input type=\"submit\" value=\"Submit Registration\">\n      <input type=\"reset\" value=\"Clear Form\">\n    </p>\n  </fieldset>\n</form>\n```\n\nExplanation of Improvements:\n1. Security: `method=\"POST\"` prevents URL exposure, and `type=\"password\"` masks characters.\n2. Binary Uploads: `enctype=\"multipart/form-data\"` enables real image byte transmission.\n3. Accessibility: Every input has an `id` matching its `<label for=\"...\">`, enabling screen readers and click-to-focus.\n4. Built-in Validation: `required`, `minlength=\"8\"`, and `accept=\"image/*\"` prevent invalid submissions before hitting the server.",
+          "explanation": "Combines security, binary upload encoding, accessible labels, and client-side validation into an exam-grade form implementation.",
+          "why_wrong": {},
+          "source": "IFT 203 Practice Codes Docx; Week 5 Slides",
+          "topic_slug": "html_forms_tables_media",
+          "scenario": "A student submits their take-home practical code for the Nile University Student Registration Webpage (based on `Practice_codes.docx`). The form code contains three critical issues:\n```html\n<form action=\"register.php\" method=\"GET\">\n  <label>Full Name:</label>\n  <input type=\"text\" name=\"fullname\"><br>\n  <label>Create Password:</label>\n  <input type=\"text\" name=\"password\"><br>\n  <label>Level:</label>\n  <input type=\"radio\" name=\"lvl_100\" value=\"100\"> 100L\n  <input type=\"radio\" name=\"lvl_200\" value=\"200\"> 200L<br>\n  <label>Passport Photo:</label>\n  <input type=\"file\" name=\"passport\"><br>\n  <input type=\"submit\" value=\"Register\">\n</form>\n```\nWhen testing: (1) The user password appears in plain text on screen and in the URL; (2) The user can select both 100L and 200L simultaneously; (3) The server receives only the string filename of the photo rather than the uploaded image data."
+        },
+        {
+          "id": "ift203-ft-cs02-q2",
+          "course": "IFT 203",
+          "topic": "HTML Forms, Inputs, Tables & Media Elements",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "table-markup",
+            "semantic-table"
+          ],
+          "question": "Construct the complete, semantically correct HTML table markup for this academic timetable, including `<caption>`, `<thead>`, `<tbody>`, accessible `<th scope=\"col\">` headers, and the merged cells (`rowspan` for the Monday 2-hour lab and `colspan` for the daily assembly).",
+          "marking_points": [
+            "Table root with accessible `<caption>Department of Information Technology - 200L Timetable</caption>`.",
+            "`<thead>` with `<th scope=\"col\">` headers for Time, Monday, Tuesday, Wednesday.",
+            "Row 1 (9-10 AM): Uses `<td rowspan=\"2\">COS 201 Practical Lab</td>` under Monday.",
+            "Row 2 (10-11 AM): Omits the Monday `<td>` cell because it was consumed by the `rowspan` above.",
+            "Row 3 (11-12 PM): Uses `<td colspan=\"3\">University Assembly & Break</td>`.",
+            "Row 4 (12-1 PM): Normal data cells for Monday, Tuesday, Wednesday."
+          ],
+          "answer": "```html\n<table border=\"1\">\n  <caption>Department of Information Technology - 200L First Semester Timetable</caption>\n  <thead>\n    <tr>\n      <th scope=\"col\">Time Period</th>\n      <th scope=\"col\">Monday</th>\n      <th scope=\"col\">Tuesday</th>\n      <th scope=\"col\">Wednesday</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">9:00 - 10:00 AM</th>\n      <td rowspan=\"2\">COS 201 Practical Lab</td>\n      <td>IFT 203</td>\n      <td>IFT 211</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">10:00 - 11:00 AM</th>\n      <!-- Monday cell omitted because rowspan=2 from above occupies this slot -->\n      <td>SEN 201</td>\n      <td>IFT 205</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">11:00 - 12:00 PM</th>\n      <td colspan=\"3\" align=\"center\"><strong>University Assembly & Break</strong></td>\n    </tr>\n    <tr>\n      <th scope=\"row\">12:00 - 1:00 PM</th>\n      <td>INS 202</td>\n      <td>ENT 211</td>\n      <td>Study Hall</td>\n    </tr>\n  </tbody>\n</table>\n```\n\nExplanation of Table Cell Geometry:\n1. In the 9:00 AM row, `rowspan=\"2\"` on COS 201 Practical Lab extends the cell downward through 11:00 AM.\n2. In the 10:00 AM row, the Monday `<td>` is intentionally omitted because the cell above already spans into this row. Retaining a cell here would cause table row overflow.\n3. In the 11:00 AM row, `colspan=\"3\"` spans horizontally across Monday, Tuesday, and Wednesday, creating a unified full-width break row.\n4. Semantic `<caption>`, `<thead>`, `<tbody>`, and `<th scope=\"col|row\">` ensure full accessibility for screen readers.",
+          "explanation": "Demonstrates cell geometry and semantic table structure.",
+          "why_wrong": {},
+          "source": "IFT 203 Week 5 Slides; Take-Home Practical 1",
+          "topic_slug": "html_forms_tables_media",
+          "scenario": "A departmental administrator is creating the official 200-Level First Semester Timetable grid in HTML for the Department of Information Technology. The timetable spans 4 periods (9-10 AM, 10-11 AM, 11-12 PM, 12-1 PM) across Monday, Tuesday, and Wednesday. The schedule has three special constraints: (1) On Monday, 'COS 201 Practical Lab' occupies a double period (9-11 AM); (2) Every day at 11-12 PM, all students attend a university-wide 'Assembly / Break'; (3) The table must be accessible with caption and semantic headers."
+        },
+        {
+          "id": "ift203-hs-002",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "void-elements",
+            "empty-tags",
+            "syntax"
+          ],
+          "question": "Which of the following groups consists EXCLUSIVELY of 'void' (empty) HTML elements that do not possess a closing tag?",
+          "options": [
+            "`<p>`, `<div>`, `<span>`, `<h1>`",
+            "`<img>`, `<br>`, `<hr>`, `<input>`, `<meta>`",
+            "`<form>`, `<button>`, `<textarea>`, `<select>`",
+            "`<header>`, `<nav>`, `<main>`, `<footer>`"
+          ],
+          "answer": 1,
+          "explanation": "Void elements in HTML5 cannot have content and must not have an end tag. Examples include `<img>`, `<br>`, `<hr>`, `<input>`, `<meta>`, `<link>`. All other options are container elements that require both opening and closing tags (e.g., `<p>...</p>`, `<div>...</div>`).",
+          "why_wrong": {
+            "0": "All elements in this group are container elements requiring closing tags (`</p>`, `</div>`, etc.).",
+            "2": "`<form>`, `<button>`, `<textarea>`, and `<select>` are all container elements requiring closing tags.",
+            "3": "Semantic structural landmarks are container elements enclosing child elements."
+          },
+          "source": "IFT 203 Slide 3; W3C HTML5 Specification",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-004",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "html_render",
+          "difficulty": 3,
+          "tags": [
+            "block-vs-inline",
+            "layout",
+            "html-render"
+          ],
+          "question": "Consider the following HTML snippet:\n```html\n<div>\n  <span>Item 1</span>\n  <span>Item 2</span>\n  <p>Item 3</p>\n  <span>Item 4</span>\n</div>\n```\nHow will these four items be rendered visually on the browser screen?",
+          "options": [
+            "All four items will be displayed horizontally on a single unbroken line",
+            "Each of the four items will be placed on its own separate line",
+            "`Item 1` and `Item 2` will appear side-by-side on the first line; `Item 3` will start on a new line; and `Item 4` will start on a third new line below `Item 3`",
+            "`Item 1`, `Item 2`, and `Item 3` will appear on the first line, and `Item 4` on the second line"
+          ],
+          "answer": 2,
+          "explanation": "`<span>` is an inline element, so `Item 1` and `Item 2` sit side-by-side on the same line. `<p>` is a block-level element, which forces a line break before itself, taking the full width on the second line. Because `<p>` is a block element, the subsequent `<span>Item 4</span>` is forced to start on a new, third line below the paragraph.",
+          "why_wrong": {
+            "0": "`<p>` is a block-level element and cannot sit on the same line as preceding or succeeding inline elements.",
+            "1": "`<span>` is inline and does not start on a new line; `Item 1` and `Item 2` share a line.",
+            "3": "`<p>` cannot share a line with preceding inline spans."
+          },
+          "source": "IFT 203 Slide 3; HTML Basics Week 4",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-006",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "sequencing",
+          "difficulty": 2,
+          "tags": [
+            "skeleton",
+            "document-structure",
+            "sequencing"
+          ],
+          "question": "Arrange the elements in the proper order to form a valid, standard HTML5 document skeleton from the very top of the file to the very bottom:",
+          "options": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head><meta charset=\"UTF-8\"><title>Page Title</title></head>",
+            "<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>",
+            "</html>"
+          ],
+          "answer": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head><meta charset=\"UTF-8\"><title>Page Title</title></head>",
+            "<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>",
+            "</html>"
+          ],
+          "explanation": "Every valid HTML5 file begins with `<!DOCTYPE html>`, followed by the root `<html>` tag, the `<head>` metadata container, the visible `<body>` content, and ends with the closing `</html>` tag.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3; HTML Basics Week 4",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-008",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "multi_select",
+          "difficulty": 3,
+          "tags": [
+            "semantic-html",
+            "accessibility",
+            "seo"
+          ],
+          "question": "Why is replacing nested generic `<div>` tags with semantic HTML5 elements (`<header>`, `<nav>`, `<main>`, `<article>`, `<footer>`) considered a software engineering best practice? (Select ALL that apply)",
+          "options": [
+            "It enables assistive technologies (screen readers) to provide keyboard shortcut landmarks for visually impaired users to skip directly to primary navigation or main content",
+            "It improves Search Engine Optimization (SEO) by allowing search web crawlers to accurately index key article text and discard peripheral boilerplate",
+            "It significantly improves code readability and maintainability for developer teams by making the document structure self-documenting",
+            "It makes the web page load 100 times faster because semantic tags do not use electricity"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Semantic HTML5 provides three massive benefits: (1) Accessibility for screen readers and assistive devices, (2) SEO advantages by highlighting content hierarchy for search engine crawlers, and (3) clean, self-documenting maintainability for development teams. The claim about electrical usage is nonsense.",
+          "why_wrong": {
+            "3": "Semantic tags are text tokens parsed by browsers; they have zero relation to electrical physics or 100x speed claims."
+          },
+          "source": "IFT 203 Slide 3; MDN Semantic HTML Guide",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-fc02",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "void-elements"
+          ],
+          "question": "What is a 'Void Element' in HTML? Give 4 examples.",
+          "answer": "An element that has no closing tag and cannot contain any internal text or child elements. Examples: `<img>`, `<br>`, `<hr>`, `<input>`, `<meta>`, `<link>`.",
+          "explanation": "Void elements are defined by the W3C HTML5 specification.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-fc04",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "id-vs-class"
+          ],
+          "question": "Compare the `id` attribute and the `class` attribute in HTML.",
+          "answer": "`id` must be unique across the entire document (only ONE element can have that specific id). `class` can be reused on multiple elements to apply identical styles or JavaScript behaviors.",
+          "explanation": "Crucial rule: id = unique fingerprint, class = shared category.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-fc06",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "semantic-html"
+          ],
+          "question": "What is Semantic HTML, and why is it preferred over `<div>` tags?",
+          "answer": "Using tags that describe the meaning of the content (e.g., `<article>`, `<nav>`, `<header>`) rather than generic containers. It makes pages accessible to screen readers, understandable to search engine crawlers, and easier to maintain.",
+          "explanation": "Foundational principle of modern web engineering.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3; Week 5 Slides",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-fc08",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "viewport-meta"
+          ],
+          "question": "What is the purpose of `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">`?",
+          "answer": "It informs mobile browsers to set the screen width of the viewport to the actual physical width of the device and sets the initial zoom level to 100%, enabling responsive mobile CSS rendering without auto-zooming out.",
+          "explanation": "Mandatory for all modern mobile-responsive web development.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3",
+          "topic_slug": "html_structure_semantics"
+        },
+        {
+          "id": "ift203-hs-cs01-q2",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "semantic-html",
+            "code-refactoring"
+          ],
+          "question": "Rewrite the flawed div-soup code into fully compliant, accessible Semantic HTML5 markup, and explain why your refactored version optimizes both screen-reader accessibility and SEO indexing.",
+          "marking_points": [
+            "Replaces `<div class=\"top\">` and `<div class=\"links\">` with `<header>` containing `<nav>`.",
+            "Replaces `<div class=\"content\">` with `<main>`.",
+            "Replaces `<div class=\"post\">` with `<article>` and converts `<div class=\"headline\">` into a semantic `<h1>`.",
+            "Replaces `<div class=\"bottom\">` with `<footer>`.",
+            "Explains how screen readers utilize landmark regions and how search engines index the primary `<h1>` inside `<article>`."
+          ],
+          "answer": "```html\n<header>\n  <nav aria-label=\"Main Navigation\">\n    <a href=\"#\">Home</a>\n    <a href=\"#\">Apply</a>\n  </nav>\n</header>\n<main>\n  <article>\n    <h1>2026 Nile University Scholarship</h1>\n    <p>Applications open Monday...</p>\n  </article>\n</main>\n<footer>\n  <p>&copy; 2026 Ministry</p>\n</footer>\n```\n\nExplanation of Technical Impact:\n1. Accessibility: Screen readers (e.g., NVDA, JAWS, VoiceOver) recognize `<header>`, `<nav>`, `<main>`, and `<footer>` as primary landmark roles. Users can jump directly to the `<main>` landmark, bypassing repetitive navigation links.\n2. Heading Hierarchy: Replacing `<div class=\"headline\">` with `<h1>` provides a navigable heading anchor for users jumping by heading levels.\n3. Search Engine Optimization (SEO): Search crawlers (e.g., Googlebot) treat content inside `<article>` and `<h1>` as the primary topic of the document, elevating search ranking and generating accurate rich snippet previews in search results.",
+          "explanation": "Semantic landmarks provide immediate accessibility wins and superior search engine discoverability.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3; MDN Semantic HTML Refactoring",
+          "topic_slug": "html_structure_semantics",
+          "scenario": "A government agency's public scholarship portal is audited for accessibility. The auditor notes that the portal is written as a pure 'div-soup':\n```html\n<div class=\"top\">\n  <div class=\"links\"><a href=\"#\">Home</a> <a href=\"#\">Apply</a></div>\n</div>\n<div class=\"content\">\n  <div class=\"post\">\n    <div class=\"headline\">2026 Nile University Scholarship</div>\n    <div class=\"text\">Applications open Monday...</div>\n  </div>\n</div>\n<div class=\"bottom\">&copy; 2026 Ministry</div>\n```\nBlind applicants using screen readers report that they cannot skip the repetitive header links and cannot find the scholarship announcement without listening to the entire page from top to bottom."
+        },
+        {
+          "id": "ift203-hs-cs02-q2",
+          "course": "IFT 203",
+          "topic": "HTML5 Core: Elements, Semantic Tags & Attributes",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "whitespace-collapsing",
+            "pre-tag"
+          ],
+          "question": "Explain the HTML 'whitespace collapsing' rule that caused the student's spacing attempt to fail, and describe two correct ways to preserve formatted spacing or create vertical separation.",
+          "marking_points": [
+            "Explains Whitespace Collapsing: HTML parsers collapse multiple consecutive spaces, tabs, and newline characters in source code into a single space during rendering.",
+            "Solution 1 (Preformatted Text): Using the `<pre>` tag, which renders text in a monospace font and preserves all consecutive spaces and line breaks exactly as typed.",
+            "Solution 2 (CSS Margins): Using CSS `margin-bottom` on paragraph elements rather than spamming multiple `<br>` tags, separating presentation from markup structure.",
+            "Notes non-breaking spaces `&nbsp;` as an inline character entity alternative."
+          ],
+          "answer": "1. Whitespace Collapsing Rule:\nUnder standard W3C HTML parsing rules, any sequence of consecutive whitespace characters (including spaces, tabs, and newline line breaks) within text content is collapsed into a single space. Therefore, typing ten spaces or five blank lines in raw HTML code produces only a single space on screen.\n\n2. Two Correct Solutions:\n- Solution 1: Use the `<pre>` (Preformatted Text) Element: The `<pre>` element instructs the browser engine to preserve every space, tab, and newline exactly as authored in the source file, rendered in a fixed-width monospace font. Ideal for poetry, ASCII art, or code snippets.\n- Solution 2: Use CSS Margins for Vertical Spacing: Best practice dictates separating presentation from structure. Instead of hacking spacing with consecutive `<br><br><br>` tags, the developer should assign CSS margins (e.g., `margin-bottom: 2rem;`) to headings or paragraphs.",
+          "explanation": "HTML collapses whitespace by design; preformatted text and CSS margins provide disciplined layout control.",
+          "why_wrong": {},
+          "source": "IFT 203 Slide 3; HTML Basics Week 4",
+          "topic_slug": "html_structure_semantics",
+          "scenario": "A student builds an online CV page for their take-home practical assignment. When viewed on a desktop computer, the page appears clean. However, when tested on a smartphone, two critical issues occur: (1) The text is microscopic because the mobile browser zooms out to fit a default 980px desktop canvas; (2) In the code, the student tried to insert multiple blank lines by typing multiple consecutive `<br>` tags and spaces inside a paragraph, but the browser collapses all whitespace into a single space."
+        }
+      ]
+    }
+  ]
+}

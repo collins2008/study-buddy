@@ -1,0 +1,1510 @@
+SOFTWARE ENGINEERING CONCEPTS AND PRINCIPLES
+
+1. Introduction to Software Engineering
+
+Software Engineering is a systematic, disciplined, and measurable approach to the
+development, operation, maintenance, and evolution of software systems. It applies
+engineering principles, methods, tools, and processes to produce software that satisfies
+user requirements, meets quality standards, remains maintainable, and is delivered
+within agreed time and budget constraints.
+
+Software Engineering extends beyond programming. Programming focuses primarily
+on writing instructions that a computer can execute, while Software Engineering
+encompasses the entire software life cycle, including requirements analysis, design,
+implementation, testing, deployment, maintenance, project management, and quality
+assurance.
+
+1.1 Definition of software
+Software is a collection of computer programs, procedures, configuration data, and
+associated documentation that enables a computer system to perform specific tasks.
+
+i. Operating systems such as Windows and Linux.
+ii. Web applications such as online banking platforms.
+iii. Mobile applications such as electronic payment applications.
+iv. Enterprise systems such as university management systems.
+v. Embedded software in medical equipment, vehicles, and industrial control systems.
+
+1.2 Why Software Engineering is important
+i. Managing complexity: large applications contain many interconnected components
+
+that must work together.
+
+ii. Improving software quality: engineering methods reduce defects and improve
+
+reliability, usability, security, and performance.
+
+iii. Controlling development costs: planning, estimation, and early defect detection
+
+reduce unnecessary expenditure.
+
+iv. Meeting user requirements: requirements engineering helps ensure that software
+
+addresses actual user needs.
+
+v. Supporting maintenance: well-structured software is easier to modify, repair, and
+
+extend.
+
+vi. Enhancing security: secure development practices help identify and mitigate
+
+vulnerabilities.
+
+vii.
+
+Promoting teamwork: defined roles, standards, and documentation improve
+
+collaboration.
+
+viii. Ensuring timely delivery: project planning and iterative development help teams
+
+manage schedules and changing priorities.
+
+1.3 Software Engineering versus programming
+Software Engineering
+Covers the entire software development
+life cycle.
+Includes
+design,
+maintenance.
+Emphasizes quality,
+project management.
+Commonly involves multidisciplinary
+teams.
+
+requirements,
+testing,
+
+architecture,
+and
+
+deployment,
+
+cost,
+
+risk,
+
+and
+
+Programming
+Primarily involves writing and executing
+code.
+
+Focuses on implementing program logic.
+
+syntax,
+
+algorithms,
+
+Emphasizes
+implementation.
+May be performed by an individual or a
+team.
+
+and
+
+Example: Developing an online university registration system requires interviewing
+students and administrators, defining functional requirements, designing a database,
+implementing the application, testing security and performance, deploying the system,
+and maintaining it. Writing the registration code is only one part of that work.
+
+2. Fundamental Software Engineering Concepts
+
+2.1 Software product
+A software product consists of executable software and supporting materials needed to
+use, operate, configure, and maintain it.
+
+i. Generic products: developed for a broad market, such as accounting applications or
+
+word processors.
+
+ii. Customized products: developed for a particular customer or organization, such as a
+
+university's internal attendance management system.
+
+2.2 Software process
+A software process is a structured set of activities used to develop and maintain
+software. Major activities include software specification, design and implementation,
+validation, and evolution. These activities may be repeated in iterative development.
+
+2.3 Software requirements
+Requirements describe the services a system must provide and the constraints under
+which it must operate.
+
+Functional requirements describe what
+the system should do. Examples for a
+university attendance management system include allowing lecturers to log in,
+recording attendance, and generating reports.
+
+Non-functional requirements specify qualities or constraints. Examples include a
+defined response-time target, restricted access to attendance records, an agreed
+availability target, and compatibility with approved browsers and devices.
+
+2.4 Software architecture
+Software
+their
+the major
+responsibilities, and how they interact. A three-tier university registration application
+may contain the following layers:
+
+architecture describes
+
+components of
+
+system,
+
+a
+
+Layer
+
+Presentation
+
+Application
+
+Data
+
+Responsibilities
+Accepts input and displays
+results
+
+Implements business rules
+and validation
+
+Stores
+information
+
+and
+
+retrieves
+
+Examples
+Web browser or mobile
+interface
+Authentication,
+registration,
+validation
+Student,
+registration databases
+
+course,
+
+course
+
+and
+
+Separating these responsibilities can improve maintainability, testability, and security
+when interfaces are appropriately designed.
+
+2.5 Software design
+Software design transforms requirements into a technical plan for implementation. It
+defines modules, interfaces, data structures, algorithms, and interactions. A good
+design should be understandable, modular, testable, secure, and adaptable to change.
+
+2.6 Software testing
+i. Unit testing: tests an individual function, class, or module.
+ii. Integration testing: tests interactions between components.
+iii. System testing: evaluates the complete integrated application.
+iv. Acceptance testing: determines whether software meets user or business acceptance
+
+criteria.
+
+2.7 Software maintenance
+Software maintenance involves modifying software after delivery to correct faults,
+adapt to environmental changes, improve performance, or prevent future problems.
+
+3. Core Principles of Software Engineering
+
+represents
+
+3.1 Abstraction
+Abstraction
+unnecessary
+implementation details. For example, a bank customer uses an ATM without needing
+to understand the internal banking network or database transactions. Abstraction
+reduces complexity and supports reuse.
+
+characteristics while
+
+essential
+
+hiding
+
+3.2 Modularity
+Modularity divides a system into smaller, manageable,
+relatively independent
+components. A student system might contain registration, course management,
+examinations, fee payment, and reporting modules.
+
+3.3 Encapsulation and information hiding
+Encapsulation combines data and operations in a unit such as a class. Information
+hiding restricts access to internal details and exposes controlled operations. In a bank-
+account class, balance changes should occur through validated methods rather than
+unrestricted direct modification.
+
+3.4 Separation of concerns
+Different responsibilities should be handled independently. A university portal should
+separate interface presentation, authentication, academic business rules, database
+operations, and monitoring.
+
+3.5 High cohesion
+Cohesion describes how closely related the responsibilities within a module are. A
+GradeCalculator module that calculates grades has high cohesion; adding email, user
+management, and payment functions would weaken its focus.
+
+3.6 Low coupling
+Coupling measures dependency between modules. Low coupling means modules
+communicate through clear, stable interfaces and depend as little as practical on one
+another's internal details.
+
+3.7 Reusability
+Reusable components can be applied in multiple contexts without unnecessary
+rebuilding. Examples include authentication services, validation functions, logging
+libraries, and shared APIs.
+
+3.8 Simplicity
+Software should be as simple as reasonably possible while meeting requirements.
+Unnecessary complexity increases defects and maintenance effort. Simplicity does not
+justify ignoring security, reliability, or scalability needs.
+
+3.9 Don't Repeat Yourself (DRY)
+Avoid unnecessary duplication of knowledge or business rules. Centralizing course-
+registration eligibility rules reduces inconsistent updates. Similar-looking code should
+not be combined prematurely if the responsibilities may evolve independently.
+
+3.10 Single Responsibility Principle (SRP)
+A module or class should have one coherent responsibility and one principal reason to
+change. For example, invoice calculation, invoice storage, and email notification can
+be separate responsibilities.
+
+3.11 Open–Closed Principle (OCP)
+Software components should be open for extension but closed for modification. A
+payment system can support new providers through a shared interface without
+repeatedly rewriting stable registration logic.
+
+3.12 Dependency Inversion Principle (DIP)
+High-level business logic should depend on abstractions rather
+than concrete
+implementation details. A registration service can depend on a PaymentGateway
+interface instead of being tied to one provider.
+
+3.13 Principle of least privilege
+Each user, process, or component should receive only the permissions required for its
+duties. Students, lecturers, administrators, and technical staff should have appropriately
+limited access.
+
+3.14 Defensive programming
+Anticipate invalid inputs, unexpected states, and operational failures. Validate input,
+handle connection failures, reject unauthorized requests, and avoid unsafe assumptions
+about external data.
+
+3.15 Continuous improvement
+Review processes using evidence such as defect rates, test results, user feedback,
+delivery performance, and maintenance effort. Use the findings
+to improve
+development practices.
+
+4. Software Development Life Cycle (SDLC)
+The Software Development Life Cycle is a framework for planning, developing,
+testing, deploying, and maintaining software.
+
+Stage
+
+1. Planning and feasibility
+
+2. Requirements analysis
+
+3. System design
+
+4. Implementation
+
+5. Testing and validation
+
+6. Deployment
+
+7. Maintenance and evolution
+
+interfaces,
+
+architecture,
+
+Main activities
+Identify the problem, scope, resources,
+risks, and expected benefits.
+Determine what stakeholders need the
+system to do.
+Define
+models, and component responsibilities.
+Write and integrate program code.
+Check correctness, quality, security, and
+compliance with requirements.
+Release the application into its target
+environment.
+Correct defects, adapt
+improve the system.
+
+to change, and
+
+data
+
+The stages may be performed sequentially, iteratively, incrementally, or in a hybrid
+arrangement. Modern processes often revisit earlier activities as new information
+emerges.
+
+4.1 Planning and feasibility study
+i. Technical feasibility: are the required technologies and skills available?
+ii. Economic feasibility: do expected benefits justify costs?
+iii. Operational feasibility: can the organization operate and support the system?
+iv. Schedule feasibility: can the project be completed within the required time?
+v. Legal and regulatory feasibility: can the system comply with applicable laws,
+
+contracts, licensing, and data-protection obligations?
+
+Example: Before developing an online attendance platform, a university should
+evaluate internet availability, staff training, device requirements, implementation costs,
+student privacy, and system support.
+
+4.2 Requirements analysis
+Requirements analysis translates stakeholder needs into clear, consistent, verifiable
+requirements. Activities include interviews, questionnaires, workshops, observation,
+document analysis, prototyping, and use-case development.
+
+4.3 System design
+System design covers architectural design, database and data-structure design, user-
+interface design, component and class design, API specifications, security, and error
+handling.
+
+4.4 Implementation
+Implementation translates designs into executable code. Good practices include coding
+standards, version control, code reviews, automated tests, documenting important
+decisions, and managing dependencies.
+
+4.5 Testing, deployment, and maintenance
+Testing should be planned throughout development. Deployment may involve
+configuration, database migration,
+training, monitoring, backups, and
+installation,
+rollback planning. Maintenance continues because business rules, platforms, threats,
+and user expectations change.
+
+5. Software Development Process Models
+
+5.1 Waterfall model
+The Waterfall model organizes development
+requirements, design, implementation, testing, deployment, and maintenance.
+
+into largely sequential phases:
+
+Advantages: clear stages and deliverables; straightforward progress tracking; useful
+when requirements are stable. Disadvantages: late changes can be costly, working
+software may arrive late, and misunderstandings may be detected too late. It may suit
+projects with stable, tightly specified requirements.
+
+5.2 Prototyping model
+A prototype is an early representation used to clarify requirements or evaluate design
+alternatives. The team builds a prototype, gathers feedback, refines requirements, and
+develops the production system. A key risk is that a quick prototype may be mistaken
+for production-ready software despite inadequate security, architecture, performance,
+or error handling.
+
+5.3 Iterative and incremental development
+Incremental
+Iterative development
+development delivers functionality in separate portions. A student system might
+deliver authentication and profiles first, followed by course registration, results
+management, and reporting.
+
+improves a system through repeated cycles.
+
+emphasizes
+
+5.4 Agile development
+and
+Agile
+responsiveness to change. Common practices include short cycles, prioritized backlogs,
+continuous integration, automated testing, regular demonstrations, and retrospectives.
+Scrum is one framework used to organize Agile work.
+
+collaboration, working software,
+
+feedback,
+
+customer
+
+Advantages include frequent delivery,
+flexibility, and earlier
+discovery of problems. Limitations include the need for sustained stakeholder
+involvement and the risk of scope instability if changes are poorly managed.
+
+feedback,
+
+regular
+
+5.5 Spiral model
+The Spiral model organizes development around repeated cycles of planning, risk
+analysis, engineering, and evaluation. It can suit projects with substantial technical,
+financial, safety, or operational risks, but effective risk analysis requires expertise and
+resources.
+
+5.6 DevOps
+DevOps promotes collaboration between development and operations to improve
+delivery speed, reliability, and repeatability. Practices include version-controlled
+infrastructure, CI/CD, automated testing and deployment, monitoring, infrastructure as
+code, incident response, and post-incident learning.
+
+5.7 Comparison of process models
+
+Model
+
+Main strength
+
+Main limitation
+
+Waterfall
+
+Prototyping
+
+Iterative/incremental
+
+Agile
+
+Spiral
+
+DevOps practices
+
+Clear
+control
+
+sequential
+
+Late changes can
+be expensive
+
+Clarifies uncertain
+needs
+
+and
+
+Early feedback and
+staged delivery
+Adaptability
+frequent feedback
+Strong emphasis on
+risk
+Repeatable delivery
+and
+operational
+feedback
+
+Prototype may be
+mistaken
+for
+finished software
+Coordination
+across increments
+Requires sustained
+collaboration
+Can be costly and
+complex
+Requires
+automation
+cultural change
+
+and
+
+Appropriate
+context
+Stable,
+defined
+requirements
+
+well-
+
+Unclear
+or workflows
+
+interfaces
+
+divisible
+Systems
+into useful features
+Changing business
+and user needs
+Large or high-risk
+projects
+Systems
+frequent,
+releases
+
+needing
+reliable
+
+No single model
+requirement stability, regulatory constraints, team capability, and delivery needs.
+
+is best for every project. Selection should consider size, risk,
+
+6. Requirements Engineering
+Requirements Engineering is the systematic process of discovering, analyzing,
+documenting, validating, and managing software requirements. Poor requirements can
+lead to technically functional systems that fail to solve the intended problem.
+
+6.1 Activities in requirements engineering
+i. Elicitation: collect information from stakeholders.
+ii. Analysis: identify conflicts, dependencies, ambiguities, and priorities.
+iii. Specification: document agreed requirements.
+iv. Validation: confirm that requirements reflect stakeholder needs.
+v. Management: track and control changes throughout the project.
+
+6.2 Stakeholder identification
+Stakeholders influence, use, fund, operate, or are affected by software. For a university
+attendance system, they may include students, lecturers, level advisers, administrators,
+Heads of Department, university management,
+IT support, and data-protection
+personnel.
+
+6.3 Use cases
+A use case describes how an actor interacts with a system to achieve a goal. Example:
+a lecturer authenticates, selects an authorized course, opens a session, records
+attendance, and saves the records. A precondition is that the lecturer is authorized to
+manage the course; a postcondition is that valid records are stored and available for
+authorized reporting.
+
+6.4 User stories
+A user story often follows this format: “As a [type of user], I want [a capability], so
+that [a benefit].” Example: “As a lecturer, I want to view attendance percentages for
+my course so that I can identify students who may need academic support.”
+Acceptance criteria should make completion verifiable.
+
+6.5 Requirements traceability
+A traceability matrix links requirements to design components, implementation, tests,
+and acceptance evidence.
+
+Requirement ID
+FR-01
+
+Requirement
+Authorized lecturers can Authentication tests
+
+Verification
+
+FR-02
+
+FR-03
+
+NFR-01
+
+can
+
+record
+
+log in.
+Lecturers
+attendance.
+Authorized
+generate reports.
+Records
+protected
+are
+from unauthorized access.
+
+users
+
+can
+
+Functional and integration
+tests
+Reporting
+control tests
+Security tests and access-
+control review
+
+access-
+
+and
+
+6.6 Characteristics of good requirements
+i. Correct
+ii. Clear and unambiguous
+iii. Sufficiently complete
+iv. Consistent
+v. Feasible
+vi. Verifiable
+vii.
+viii. Prioritized where necessary
+Poor requirement: “The system should be fast.” Improved requirement: “Under an
+agreed workload of 500 concurrent users, 95% of attendance-report requests shall
+complete within two seconds.” The workload and measurement environment must also
+be defined.
+
+Traceable
+
+7. Software Design Principles and Design Methods
+
+7.1 Top-down design
+Top-down design begins with the overall system and progressively decomposes it into
+subsystems and modules. A library system might be decomposed into book
+management, member management, and loan management,
+then into search,
+registration, lending, and return functions. It provides an overall view but can spread
+the effects of incorrect assumptions.
+
+7.2 Bottom-up design
+Bottom-up design begins with reusable low-level components and combines them into
+higher-level subsystems. Components might include database access, authentication
+utilities, validation, and logging. It encourages independent testing but can produce
+components that do not fit the architecture if requirements are poorly understood. Both
+approaches are often combined.
+
+7.3 Functional decomposition
+Functional decomposition divides a system into functions and subfunctions. A payroll
+system may contain employee-data processing, salary calculation, tax computation,
+deductions, payment processing, and payslip generation. Excessive decomposition can
+produce too many small functions with complicated dependencies.
+
+7.4 Object-oriented design
+Object-oriented design organizes software around objects that combine state and
+behavior. Four commonly taught concepts are encapsulation, abstraction, inheritance,
+and polymorphism.
+
+Python example:
+
+class Notification:
+
+def send(self, message):
+
+raise NotImplementedError
+
+class EmailNotification(Notification):
+
+def send(self, message):
+
+print("Email:", message)
+
+class SMSNotification(Notification):
+
+def send(self, message):
+
+print("SMS:", message)
+
+def notify_user(service, message):
+
+service.send(message)
+
+notify_user(EmailNotification(), "Registration completed")
+notify_user(SMSNotification(), "Registration completed")
+
+Both notification types support the same operation, send, but implement it differently.
+This illustrates polymorphism and allows additional notification types to be introduced.
+
+7.5 Design patterns
+Pattern
+
+Singleton
+
+Factory Method
+
+Purpose
+Restricts a class to one
+shared
+under
+instance
+defined conditions
+Delegates object creation
+to an extensible creation
+
+Example
+
+Shared
+manager
+
+Creating
+providers
+
+configuration
+
+notification
+
+Observer
+
+Strategy
+
+Adapter
+
+Repository
+
+mechanism
+registered
+Notifies
+dependants when a subject
+changes
+Encapsulates
+interchangeable algorithms
+incompatible
+Makes
+interfaces work together
+Separates data-access logic
+from business logic
+
+Updating a dashboard after
+a result changes
+
+or
+
+grading
+
+Alternative
+payment strategies
+Integrating
+legacy service
+Retrieving student records
+through a repository
+
+external
+
+an
+
+Patterns should solve real design problems. Applying them without a clear need can
+introduce unnecessary complexity.
+
+7.6 UML in software design
+The Unified Modeling Language (UML) provides standardized diagrams
+representing software structure and behavior.
+
+for
+
+Diagram
+
+Class diagram
+
+Use-case diagram
+
+Sequence diagram
+
+Activity diagram
+
+Component diagram
+
+State-machine diagram
+
+Purpose
+Represents classes, attributes, operations,
+and relationships.
+Shows system actors and the goals they
+pursue.
+Shows interactions and message ordering
+between objects over time.
+Models workflows, decisions, parallel
+activities, and process flows.
+Shows software components and their
+dependencies.
+Shows states and transitions triggered by
+events.
+
+8. Software Quality Attributes
+Software quality is the degree to which software satisfies stated and implied
+requirements, user expectations, and relevant quality criteria.
+
+Correctness
+The software produces required results for specified inputs and conditions.
+
+Reliability
+The software performs required functions without failure for a specified period and
+under specified conditions.
+
+Usability
+Users can accomplish tasks effectively, efficiently, and satisfactorily.
+
+Performance efficiency
+The software meets response-time, throughput, and resource-use requirements.
+
+Maintainability
+The software can be analyzed, corrected, modified,
+reasonable effort.
+
+tested, and improved with
+
+Portability
+The software can be transferred between environments with reasonable effort.
+
+Security
+The software protects data and services against unauthorized access, disclosure,
+modification, disruption, and destruction.
+
+Interoperability
+Systems can exchange information and use that information appropriately.
+
+8.1 Software quality measurement
+Quality attribute
+
+Reliability
+
+Usability
+Performance
+
+Maintainability
+
+Security
+
+Availability
+
+Testability
+
+Example metric
+Failure rate or mean time between
+failures
+Task-completion rate and user error rate
+95th-percentile response time
+Change lead time and defect introduction
+rate
+Vulnerability severity and remediation
+time
+Percentage of
+operational
+Extent to which behavior can be verified
+through tests
+
+service
+
+time
+
+the
+
+is
+
+A metric is useful when its definition, measurement method, target, and operating
+conditions are understood.
+
+9. Software Testing and Verification
+Software testing evaluates software behavior and identifies defects under selected
+conditions. Testing provides evidence of quality but cannot prove the absence of every
+possible defect.
+
+9.1 Verification and validation
+Verification asks: “Are we building the product according to its specified requirements
+and design?” Examples include reviews,
+technical
+specifications.
+
+inspections, and tests against
+
+Validation asks: “Are we building a product that meets users' actual needs and
+intended purpose?” Examples include acceptance testing, usability evaluation, and
+operational trials. Both are necessary.
+
+9.2 Testing approaches
+i. Black-box testing: tests externally observable behavior without relying on internal
+
+code structure.
+
+ii. White-box testing: uses knowledge of internal code, logic, branches, and execution
+
+paths.
+
+iii. Grey-box testing: combines external behavior testing with partial knowledge of
+
+internal implementation.
+
+9.3 Functional and non-functional testing
+Functional testing checks whether features behave according to requirements. Non-
+functional testing examines performance, usability, security, accessibility, reliability,
+and compatibility.
+
+9.4 Example: testing course registration
+Test case
+
+Valid registration
+
+Inactive student
+
+Missing prerequisite
+
+valid
+
+student,
+
+Condition
+Active
+course, prerequisites met
+Student account inactive
+Required
+passed
+
+course
+
+not
+
+Expected result
+
+Registration succeeds
+
+Registration is rejected
+
+Registration is rejected
+
+Reject
+according to policy
+
+or
+
+waitlist
+
+Full course
+
+No capacity remains
+
+Duplicate request
+
+Student already registered Duplicate is prevented
+
+Closed registration
+
+Registration period ended
+
+Reject unless authorized
+exception applies
+
+9.5 Regression testing
+Regression testing checks whether new changes have damaged existing functionality.
+the team should retest registration, results
+After changing the grading module,
+reporting, transcript generation, and affected features.
+
+9.6 Test-driven development
+i. Write a test describing desired behavior.
+ii. Run the test and observe it fail.
+iii. Implement the minimum code needed to pass.
+iv. Refactor the code while preserving passing tests.
+Test-driven development encourages testable design and rapid feedback but does not
+replace system, acceptance, security, or performance testing.
+
+9.7 Continuous integration
+Continuous integration frequently integrates changes into a shared codebase and
+automatically runs checks such as builds, unit tests, and static analysis. It helps identify
+integration problems early.
+
+10. Software Project Management
+Software Project Management coordinates people, activities,
+schedules, and budgets to achieve agreed project objectives.
+
+resources,
+
+risks,
+
+10.1 Project planning
+i. Scope and deliverables
+ii. Activities and milestones
+iii. Roles and responsibilities
+iv. Estimated time and cost
+v. Skills and resources
+vi. Risks and mitigation actions
+vii. Communication and reporting arrangements
+viii. Quality assurance and acceptance criteria
+
+10.2 Work Breakdown Structure
+A Work Breakdown Structure (WBS) decomposes a project
+into manageable
+deliverables and work packages. For an attendance system, packages might include
+
+requirements, design,
+deployment, training, and maintenance planning.
+
+authentication,
+
+attendance
+
+recording,
+
+reporting,
+
+testing,
+
+10.3 Cost and effort estimation
+Estimation predicts the resources required to complete a project. Methods include
+expert judgment, analogy with previous projects, parametric models, decomposition,
+and historical productivity data.
+
+Example: if a team estimates 120 person-days of work and plans for three full-time
+developers, a simplified effort-based duration is 120 person-days ÷ 3 persons = 40
+working days. Actual delivery may take longer because of coordination, dependencies,
+leave, rework, and tasks that cannot be parallelized.
+
+10.4 Risk management
+involves identifying risks, assessing likelihood and impact,
+Risk management
+prioritizing them, planning responses, and monitoring changes. Examples include loss
+of a key developer, changing requirements, security vulnerabilities, vendor failure,
+data migration errors, and delayed approvals.
+
+10.5 Version control
+Version control tracks changes to source code and project files. Git is widely used for
+distributed version control, while hosting platforms support collaboration, pull requests,
+issue tracking, and code review. Good practices include meaningful commits,
+descriptive branches, peer review, protected main branches, and never committing
+passwords or secret keys.
+
+10.6 Configuration management
+Software configuration management identifies and controls changes to source code,
+dependencies, build settings, infrastructure definitions, and release configurations. It
+supports reproducible builds, traceability, controlled releases, and rollback.
+
+11. Software Maintenance and Evolution
+Software maintenance is a continuing engineering activity after delivery.
+
+Type
+
+Corrective
+
+Adaptive
+
+Perfective
+
+Purpose
+Fixes defects discovered
+during operation
+
+Accommodates
+environmental changes
+
+Example
+Correcting an error in fee
+balances
+Supporting
+operating
+payment API
+
+a
+system
+
+new
+or
+
+Improves
+
+functionality, Adding
+
+attendance
+
+Preventive
+
+usability, or performance
+
+Reduces
+maintenance risk
+
+future
+
+analytics
+Refactoring fragile code
+and
+upgrading
+unsupported dependencies
+
+11.1 Refactoring
+Refactoring improves the internal structure of existing code without intentionally
+changing externally observable behavior. Examples include extracting repeated logic,
+simplifying conditional statements, and separating unrelated responsibilities. Tests
+help prevent unintended behavior changes.
+
+11.2 Technical debt
+Technical debt is the future cost associated with design or implementation shortcuts,
+outdated dependencies, inadequate testing, or other decisions that make changes harder.
+A technical-debt register can record the issue, impact, proposed remedy, and priority.
+
+12. Software Engineering Ethics and Professional Responsibilities
+
+12.1 Privacy and confidentiality
+Collect, access, use, retain, and disclose personal data only for legitimate and
+authorized purposes. Follow applicable data-protection obligations and implement
+suitable safeguards.
+
+12.2 Security responsibility
+Consider security throughout the life cycle. Practices include threat modeling, secure
+coding, access control, dependency management, vulnerability remediation, and
+incident response.
+
+12.3 Honesty and transparency
+Report defects, limitations, risks, and test results accurately. Do not misrepresent
+system capabilities or claim tests were performed when they were not.
+
+12.4 Professional competence
+Work within one's competence, seek expert guidance when necessary, and continually
+develop technical knowledge.
+
+12.5 Intellectual property
+Respect
+intellectual-property laws.
+
+software licenses, copyright, contractual obligations, and applicable
+
+12.6 Accessibility and fairness
+Consider users with disabilities, limited bandwidth, older devices, and varying digital
+literacy. Evaluate automated decisions for inappropriate bias and unfair effects.
+
+13. Practical Case Study: University Attendance Management System
+
+13.1 Problem statement
+A university currently records student attendance manually. The process consumes
+lecture time, makes it difficult to calculate attendance percentages, and may allow
+inaccurate records. The university intends to develop a
+duplicate entries or
+computerized attendance management system.
+
+13.2 Project objectives
+i. Reduce time required to record attendance.
+ii. Improve accuracy and consistency of attendance records.
+iii. Allow authorized lecturers to access course attendance lists.
+iv. Generate attendance summaries and reports.
+v. Protect student records against unauthorized access and modification.
+
+13.3 Requirements specification
+Functional requirements: authenticate users; maintain student and course records;
+allow authorized lecturers to open attendance sessions; record and update attendance
+according to approved rules; and generate reports for authorized users.
+
+Non-functional requirements: enforce role-based access control; protect sensitive
+information in transit and at rest as appropriate; define measurable response-time and
+availability targets; maintain audit trails for important changes; and support backup
+and recovery.
+
+13.4 Proposed architecture
+Component
+
+User interface
+
+Business logic and API
+
+Database
+
+authorized
+
+and
+
+portal
+
+Responsibilities
+Lecturer
+administrative dashboard
+Authentication,
+attendance rules, reporting
+Users,
+courses,
+students,
+attendance sessions, audit records
+
+session management,
+
+enrolments,
+
+This architecture separates presentation, business logic, and data storage. Each layer
+has a distinct responsibility, supporting modularity and maintainability.
+
+13.5 Applying Software Engineering principles
+Principle
+
+Abstraction
+
+Modularity
+
+Encapsulation
+
+High cohesion
+
+Low coupling
+
+Reusability
+
+Least privilege
+
+Simplicity
+
+Defensive programming
+
+Testability
+
+are
+
+attendance,
+
+reporting,
+separate
+
+Application
+Users interact with attendance functions
+database
+knowing
+without
+implementation.
+Authentication,
+and user management
+modules.
+Attendance records are modified through
+controlled operations.
+The reporting module focuses on report
+generation.
+Reporting uses defined interfaces
+interact with attendance services.
+Authentication and validation services
+can support other university applications.
+Lecturers manage
+authorized
+courses and sessions.
+The
+system
+complexity.
+Invalid IDs, duplicates, and unauthorized
+requests are rejected.
+Automated
+acceptance tests verify attendance rules.
+
+unnecessary
+
+integration,
+
+avoids
+
+unit,
+
+only
+
+and
+
+to
+
+13.6 Development and testing plan
+1. Requirements:
+
+interview lecturers, students, and administrators to establish
+
+attendance policies.
+
+2. Design: develop use cases, database schemas, interface prototypes, and architecture
+
+diagrams.
+
+3. Implementation: build authentication,
+
+attendance
+
+recording,
+
+reporting,
+
+and
+
+administration.
+
+4. Testing: test valid attendance, duplicate records, unauthorized access, network
+
+failures, and report accuracy.
+
+5. Deployment: pilot in selected courses, train users, and prepare support procedures.
+6. Evaluation: measure recording time, error rates, user satisfaction, and reliability.
+
+13.7 Expected outcomes
+If properly designed and implemented, the system can improve recording efficiency,
+reduce administrative errors, simplify reporting, and support academic monitoring. The
+university must also address privacy, identity verification, accessibility, retention, and
+inaccurate or fraudulent records.
+
+14. Common Challenges in Software Engineering
+Challenge
+
+Explanation
+Stakeholders modify needs
+during development
+
+Changing requirements
+
+Poor communication
+
+Teams misunderstand one
+another
+
+Cost overruns
+
+Schedule delays
+
+Software defects
+
+Security vulnerabilities
+
+Technical debt
+
+Integration failures
+
+Poor usability
+
+Inadequate documentation
+
+Actual
+estimates
+
+effort
+
+exceeds
+
+and
+problems
+
+Dependencies
+unexpected
+affect delivery
+Incorrect assumptions or
+implementation errors
+
+Weak design or coding
+exposes systems to attack
+
+Shortcuts increase future
+change costs
+
+Components do not work
+together correctly
+
+Users struggle to complete
+tasks
+Future developers cannot
+system
+understand
+easily
+
+the
+
+change
+
+reviews,
+
+planning,
+
+clear
+shared
+
+data,
+planning,
+
+monitoring,
+risk
+
+Possible solution
+Prioritization,
+control, iterative delivery
+Regular
+documentation,
+terminology
+Historical
+contingency
+scope control
+Milestone
+realistic
+management
+Code reviews, automated
+testing, static analysis
+Threat modeling,
+secure
+development, vulnerability
+testing
+Refactoring,
+upgrades,
+maintenance
+Stable
+continuous
+integration testing
+User research, prototyping,
+accessibility testing
+Maintain
+documentation
+alongside code and design
+changes
+
+dependency
+planned
+
+interfaces,
+integration,
+
+15. Emerging Trends in Software Engineering
+
+15.1 Artificial intelligence-assisted software development
+AI tools can support code generation, explanation, test creation, documentation, and
+defect analysis. AI-generated code must be reviewed and tested because it may contain
+incorrect logic, insecure practices, licensing concerns, or fabricated APIs. Developers
+remain responsible for the quality and suitability of the result.
+
+15.2 Cloud-native software engineering
+Cloud-native systems use technologies and practices designed for cloud environments,
+distributed
+including
+architectures, and automated deployment pipelines. Benefits may include scalability
+and flexibility; challenges include distributed-system complexity, cost control,
+observability, and security configuration.
+
+platforms, managed
+
+orchestration
+
+containers,
+
+services,
+
+an
+
+organize
+
+application
+
+15.3 Microservices architecture
+services
+Microservices
+communicating through defined interfaces. An e-commerce system might separate
+inventory, ordering, payment,
+can support
+independent deployment and scaling but introduce network, consistency, monitoring,
+and distributed-transaction challenges. A modular monolith may be more appropriate
+for smaller systems.
+
+and notifications. Microservices
+
+independent
+
+relatively
+
+as
+
+15.4 DevSecOps
+DevSecOps integrates security into development and operations. Examples include
+automated dependency scanning, secret detection, security testing in CI/CD pipelines,
+infrastructure checks, and continuous vulnerability management.
+
+15.5 Low-code and no-code development
+tools and reusable components to
+Low-code and no-code platforms use visual
+accelerate suitable business applications. They still require requirements analysis,
+access control, data governance, testing, integration management, and maintenance.
+
+15.6 Green software engineering
+Green software engineering considers environmental effects of software operation and
+development. Practices include reducing unnecessary computation, improving resource
+utilization, optimizing data transfer, selecting efficient algorithms, and monitoring
+energy and infrastructure costs.
+
+Practical and application questions
+i. A university intends to replace manual attendance records with a computerized
+system. Identify five functional requirements and five non-functional requirements.
+
+ii. Design a modular architecture for a library management system. Identify the major
+
+modules and explain their responsibilities.
+
+iii. Develop a test-case table for a course-registration function that checks prerequisites,
+
+registration dates, and course capacity.
+
+iv. Explain how high cohesion, low coupling, and information hiding could be applied
+
+to an online banking application.
+
+team repeatedly misses deadlines because requirements change
+A development
+frequently. Recommend a suitable development approach and explain how the team
+should manage changing requirements.
+
+

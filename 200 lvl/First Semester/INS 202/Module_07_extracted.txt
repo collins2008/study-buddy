@@ -1,0 +1,277 @@
+=== SLIDE 1 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Human-Computer Interface
+=== SLIDE 2 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+7. Prototyping
+In this module you will learn about:
+What prototyping is
+The benefits of prototyping
+Low-fidelity and high-fidelity prototypes, and the advantages of each
+How to build prototypes.
+Prototyping tools for UX design.
+=== SLIDE 3 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+7.2 Why Prototype?
+Traditional software development: you can’t test until you implement
+Implementation is expensive, and there is nothing to test until you have made that expenditure of effort and schedule time
+Result: any design errors are built in to the first thing you can test, and it is very expensive to make changes
+Result: design errors, unless they are really bad, are left in the product
+=== SLIDE 4 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Breaking this implementation paradox
+Build a prototype of the basic functionality, especially the interface
+Test the prototype, which will uncover design errors
+Correct the errors
+Repeat until you have a clean design
+A major tool for improving usability
+Heavily used in industry
+=== SLIDE 5 ===
+Goal of prototyping a Web site
+The goal of prototyping is to provide a way to observe aspects of the Web site to evaluate design ideas and to consider alternatives before committing to an implementation.
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+=== SLIDE 6 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+The views of the stakeholders
+Software designers may not adequately understand prototyping
+HCI practitioners may not adequately understand implementation
+The two groups need to talk to each other—early—and prototyping facilitates communication
+=== SLIDE 7 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+The stages in website development
+Design
+One or more prototypes, each followed by testing and redesign
+Implementation
+Site goes live
+=== SLIDE 8 ===
+Wireframing
+A wireframe is an illustration of a page’s interface that focuses on space allocation, prioritization of the page’s content, available functionalities, and behaviors. 
+Wireframes do not include any styling, color, or graphics. 
+They can be low-fidelity (i.e., tend to be abstract because they use simple images to block off space and implement mock content)
+High-fidelity that have a higher level of detail (i.e., include information about each item, including dimensions, behaviors or actions related to the element.
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+=== SLIDE 9 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Two types of prototypes
+Evolutionary: the prototype eventually becomes the product
+Revolutionary, or throwaway: the prototype is used to get the specifications right, then discarded
+=== SLIDE 10 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Horizontal prototype: broad but only top-level
+A horizontal prototype has little depth of functionality (or no functionality) but is broad in terms of the number of features it presents. 
+Useful for presenting an overview or the “big picture” perspective of a site’s “look.”
+=== SLIDE 11 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Vertical prototype: deep, but only some functions
+A vertical prototype presents only a limited number of features, but the functionality of those features is fully developed
+=== SLIDE 12 ===
+Global, Local & Isolated Prototypes
+A global prototype has breadth and depth. It is a prototype of the entire site. 
+A local prototype is used to test design alternatives for a difficult issue. 
+It is a way to resolve problems when discussions on a design choice have come to an impasse. 
+An isolated prototype is not connected to any other pages in the Web site
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+=== SLIDE 13 ===
+Examples: What type of prototype is it?
+Suppose the project team prototypes the home page and the first-level pages.
+Suppose the members of a project team sketch the home page and a template for each of the four levels in the site. They then create prototypes for a single page on each level, and each page is reachable from the prototyped page one level above it.
+The project team has created a single search page for a future database engine, with several fields for specifying search terms and several options for displaying the results.
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+=== SLIDE 14 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Benefits of prototyping
+Improves the chances of creating a usable product, since mistakes and omissions are flushed out early in the development process, not after implementation 
+Higher user satisfaction
+Users are good at criticizing an existing system; they are much less able to imagine how specifications would translate into a product
+Prototyping brings the users into the process at a much earlier stage
+=== SLIDE 15 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Benefits were recognized almost four decades ago
+Maryam Alavi. An Assessment of the Prototyping Approach to Information Systems Development. Communications of the ACM. June, 1984.
+Barry Boehm et. al. Prototyping vs. Specification: A Multi-Project Experiment. IEEE Transactions on Software Engineering. May, 1984.
+Wasserman and Shewmake. The Role of Prototypes in the User Software Engineering Methodology. In Advances in Human-Computer Interaction, H. R. Hartson, Ed. Norwood, NJ: Ablex, 1985.
+=== SLIDE 16 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Implementation is expensive
+So expensive—in people time and schedule time—that in practice it is only done once
+If testing is postponed until implementation is complete, there are no resources and no time to do it over when an interface design mistake is uncovered.
+=== SLIDE 17 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+The core of the problem
+“The vast majority of usability problems come from a single cause: the development team was lacking a key piece of information. If team members had known it earlier, they would have designed to accommodate it and the usability problem would never have occurred.”
+
+Jared Spool, Tara Scanlon, and Carolyn Snyder. Product Usability: Survival Techniques. Proceedings of ACM CHI 98 Conference on Human Factors in Computing Systems.
+=== SLIDE 18 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Disadvantages
+Users may be unfamiliar with the technique. But this situation is improving.
+Prototyping tools for any UX design
+If the prototype is “too good,” management may think that the project is nearly finished, or that the prototype can be converted into the final product.
+=== SLIDE 19 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+The right way: use low-fidelity prototypes
+Inexpensive—in materials cost, people time, and schedule time
+No risk of being mistaken for the final product
+Simple and fast to repeat as lessons are learned
+When interface testing of the prototype is complete, implementation can proceed with confidence
+=== SLIDE 20 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Elements of a paper prototype
+Menu Bar
+ScrollBar
+Secondary Menu
+Opening Contents
+=== SLIDE 21 ===
+Advantages offered by low fidelity prototyping
+It is easy to build. 
+It is not necessary to wait for the developers to create a computer-based prototype. 
+It is fast to change. Erasing one link name and writing in another is far quicker with a pencil than with any web-authoring tool. 
+It maximizes the number of times the design is refined before anything is committed to implementation.
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+=== SLIDE 22 ===
+Disadvantages – Low fidelity Prototypes
+If your low fidelity prototype is made from paper, you may need to create some convention for indicating that an item is “clickable,” since users will not be able to watch the cursor change as it passes over a link.  
+They do not “show” well to management, since they do have a polished look to them. 
+They do not simulate response times accurately.
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+=== SLIDE 23 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Following are some pages by students
+=== SLIDE 24 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+They started with an 18 x 12 drawing pad
+=== SLIDE 25 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Their home page
+=== SLIDE 26 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+User “clicks on” (points to) Clubs button
+=== SLIDE 27 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+The Music page
+=== SLIDE 28 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+One Club page
+=== SLIDE 29 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+The Club Info page for Red No. 5
+=== SLIDE 30 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+A few pages from another student group
+=== SLIDE 31 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+The home page
+Pulldown menu
+=== SLIDE 32 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+A second-level page
+=== SLIDE 33 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Another second-level page
+=== SLIDE 34 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+After prototyping and user testing, this is what their home page looked like
+=== SLIDE 35 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Materials for building a paper prototype
+White, unlined heavy paper or card stock; 11 x 14 or 12 x 18 inches are good sizes
+Regular 8.5 x 11 unlined paper
+5x8 index cards, for taking notes
+Colored paper if you wish
+=== SLIDE 36 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Materials, continued
+Adhesives: rubber cement, Scotch® tape, glue sticks
+Markers of various colors
+Sticky note pads, in various colors and sizes
+Acetate sheets—a few
+Scissors
+=== SLIDE 37 ===
+High Fidelity Prototype
+A hi-fi, coded prototype is a solution that is close to the ready-to-release version of a product.
+Example: a rich and interactive sandbox that allows test participants to explore a product’s different features
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+=== SLIDE 38 ===
+Choosing a Prototyping Tools – Factors to be considered
+Are you looking to create high- or low-fidelity prototypes.
+How often your team collaborate
+Experience: UX Newbie or an experienced designer
+$$$: How much money you are willing to spend on your tools
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+=== SLIDE 39 ===
+Prototyping tools
+Figma: web and desktop, supports collaboration, freemium, low-fidelity wireframes possible
+Adobe XD: desktop, proprietary, 
+Axure: proprietary
+Sketch: Mac OS based, vector based, supports collaboration
+Balsamiq: Easy to use (UX Newbies), low-fidelity wireframes possible, proprietary
+Wireframe.cc: web
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+=== SLIDE 40 ===
+Problems that can occur with high fidelity prototypes
+Correctly functioning software takes too long to build. By the time there is anything that can be used for testing the design, much of the project’s development budget has already been spent. 
+Changes take too long. 
+One bug can destroy a user test. 
+It can create unrealistic expectations in management.
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+=== SLIDE 41 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Evaluation of your prototype
+Evaluation is the subject of the next module
+There you will learn
+The testing setup
+Roles of people involved in testing 
+Procedure for testing
+Interpreting the results
+Reporting the results
+=== SLIDE 42 ===
+07: Prototyping
+Copyright © 2004 by Prentice Hall
+Summary
+In this module you have seen:
+What prototyping is
+The benefits of prototyping: catching design errors early, when they are cheap to fix
+The difference between low-fidelity and high-fidelity prototypes, and the advantages of each
+How to build paper prototypes
+Samples of the paper prototypes of two groups of students in HCI courses

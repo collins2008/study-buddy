@@ -1,0 +1,411 @@
+=== SLIDE 1 ===
+.IFT 203introduction to web technology
+ZAKARIYYA ABDULLAHI ADAMU
+ASSISTANT LECTURER
+zakariyya.adamu@nileuiniversity.edu.ng
+
+OCTOBER, 2026
+Basic Terminologies, Abbreviations & Meanings
+=== SLIDE 2 ===
+Course Description
+This course introduces to web design, covering the basics in the web development. 
+It introduces students to advanced concepts of web technologies. 
+Students will be introduced to front-end design using HTML, CSS and JavaScript
+Explore client-side and server-side programming, database integration, security practices, and modern development frameworks.
+=== SLIDE 3 ===
+Introduction
+Web Development involves multiple technologies, frameworks, and protocols. 
+Below are some of the key terminologies, their definitions, and examples to illustrate each concept.
+=== SLIDE 4 ===
+Web
+The web (World Wide Web or WWW) is a system of interconnected documents and resources accessed via the internet using a web browser. It allows users to browse websites, access information, and interact with online services.
+Example:
+A website like www.nileuniversity.edu.ng contains multiple pages about the university, courses, and admission requirements.
+=== SLIDE 5 ===
+Web Page
+A web page is a single document within a website that is displayed in a web browser.
+A single document on the Web, written in HTML, displayed in a browser.
+Example:
+The homepage of www.google.com is a web page with a search bar.
+https://www.cnn.com/world is a specific page on CNN’s website.
+=== SLIDE 6 ===
+Website
+A website is a collection of web pages stored on a web server and accessible via the internet.
+A collection of related web pages under a single domain name, hosted on a web server.
+Example:
+www.wikipedia.org – A website containing a vast amount of knowledge and articles.
+www.amazon.com – An e-commerce website.
+=== SLIDE 7 ===
+Web Browser
+A web browser is a software application used to access and view/display web pages in websites.
+Examples of Web Browsers:
+Google Chrome
+Mozilla Firefox
+Microsoft Edge
+Safari (Apple Devices)
+Browsers interpret HTML, CSS, and JavaScript to display websites correctly.
+=== SLIDE 8 ===
+URL
+URL = Uniform/Universal Resource Locator
+A URL is the address of a web page on the internet.
+The address used to access a resource on the Web.
+Structure:
+protocol://domain-name/path 
+Example:
+https://sis.nileuniversity.edu.ng/pms/  is the URL for Nile University’s staff page. 
+https://www.example.com/index.html
+=== SLIDE 9 ===
+Domain Name
+A domain name is the human-readable name/address of a website.
+It maps to an IP address of a server on the Internet.
+It makes it easy for users to access websites without remembering numerical IP addresses.
+Instead of typing 142.250.72.238 (Google’s IP), you type google.com.
+Example:
+google.com is the domain name for Google. 
+www.facebook.com is a domain name pointing to Facebook’s server IP.
+=== SLIDE 10 ===
+Domain Name Structure
+A domain name typically consists of two main parts:
+Second-Level Domain (SLD) + Top-Level Domain (TLD)
+
+Example: In google.com
+google = Second-Level Domain (the brand name)
+.com = Top-Level Domain
+Subdomain     Second-Level Domain     Top-Level Domain
+        www                 google                   	    .com
+=== SLIDE 11 ===
+Domain Name Structure
+Top-Level Domain (TLD): The rightmost part of the domain name. 
+Examples: .com, .org. .edu, .net, and so on.
+Second-Level Domain (SLD): The main identifier of the website, usually the brand name.
+Examples: google in google.com, facebook in facebook.com.
+Subdomain: An optional part that comes before the SLD. 
+Example: www in www.google.com 
+Other subdomains can include: mail.google.com (for Gmail) or maps.google.com (for Google Maps).
+Root Domain:The combination of SLD + TLD (e.g., google.com)
+=== SLIDE 12 ===
+Domain Name Structure
+So, which one is the actual domain name?
+The domain name is google.com (SLD + TLD).
+www.google.com is a subdomain of google.com
+www is just a subdomain commonly used to indicate the World Wide Web, but it’s optional. Today, many sites work without it (for example, typing google.com works the same as www.google.com
+In Summary:
+Domain Name: google.com
+Subdomain: www.google.com (points to the same site in most cases).
+=== SLIDE 13 ===
+Domain Name Structure
+=== SLIDE 14 ===
+IP Address
+A unique numerical identifier assigned to a device on a network.
+Example: 
+Google’s IP: 142.250.72.238
+IPv6 Examples
+Some websites also use IPv6 addresses:
+google.com → 2607:f8b0:4004:817::200e
+facebook.com → 2a03:2880:f10a:83:face:b00c:0:25de
+=== SLIDE 15 ===
+IP  Address
+How to Check an IP Address
+Use ping or nslookup commands:
+ping google.com Or nslookup facebook.com
+Or use an online tool like https://www.whatsmydns.net/
+Key Takeaway:
+A domain name (e.g., google.com) is mapped to an IP address so browsers can find the correct server.
+Domain names exist to make the web user-friendly since IPs are hard to remember.
+=== SLIDE 16 ===
+Examples of Websites and Their IP Addresses
+=== SLIDE 17 ===
+Server/Web Server
+A server is a computer that hosts websites and web applications.
+A web server is a computer that stores and delivers web pages when requested by a browser.
+It could also be a program or hardware that stores, processes, and delivers web pages to clients using HTTP/HTTPS.
+Examples:
+Apache (Used for hosting websites)
+Nginx (Efficient for handling high traffic)
+Microsoft IIS (Internet Information Services, used for Windows-based hosting)
+=== SLIDE 18 ===
+Application
+An application (app) is a software program designed to perform specific functions for users.
+Applications can be desktop apps, mobile apps, or web apps.
+Examples:
+Microsoft Word – A desktop application for document processing.
+Instagram – A mobile application for photo sharing.
+Google Docs – A web application for online document editing.
+=== SLIDE 19 ===
+Internet
+A global network of interconnected computers that communicate using standard protocols like TCP/IP.
+Example:
+When you open www.google.com, your device uses the Internet to connect to Google’s servers.
+=== SLIDE 20 ===
+Search Engine
+A search engine is a web-based tool that allows users to search for information on the internet.
+Examples:
+Google (www.google.com) 
+Bing (www.bing.com) 
+Yahoo (www.yahoo.com) 
+NOTE: Search engines use web crawlers and algorithms to index and rank web pages.
+=== SLIDE 21 ===
+Practical Example: Googlebot
+Google uses Googlebot to crawl and index websites.
+If you create a new website and submit it to Google Search Console:
+Googlebot visits your homepage.
+Reads your text, images, and metadata.
+Follows links to other pages (e.g., About Us, Contact).
+Adds your site to Google’s index so it can appear in search results
+=== SLIDE 22 ===
+Web Application
+A web application is a software program that runs on a web server and is accessed via a web browser over the internet.
+Unlike desktop applications, web applications do not require installation on the user's device.
+Example:
+Google Docs – A web-based word processor that allows users to create, edit, and store documents online.
+Facebook – A social media platform accessible through a web browser.
+=== SLIDE 23 ===
+Web Design
+Web design focuses on the visual and user experience (UI/UX) aspects of a website.
+It includes layout, colors, fonts, and user interface elements.
+Example:
+A Travel Website with an attractive homepage, easy navigation, and interactive images to showcase destinations.
+=== SLIDE 24 ===
+Web Development
+Web development is the process of creating and maintaining websites or web applications.
+It includes frontend development, backend development, and database management.
+Example:
+Developing an Online Banking System where users can log in, check their balance, and transfer money.
+=== SLIDE 25 ===
+Frontend, Backend & Full-Stack Development
+Frontend – The user interface (HTML, CSS, JavaScript).
+Backend – Server-side logic (Python, Node.js, PHP).
+Full-Stack – Both frontend and backend development.
+Example:
+Netflix uses a frontend (React.js) and backend (Node.js & Java).
+=== SLIDE 26 ===
+Frontend Development
+The frontend (client-side) is the part of a web application that users see and interact with. It is built using HTML, CSS, and JavaScript.
+The part of a website users interact with (HTML, CSS, JS).
+Example:
+The design and buttons you see on Facebook are frontend elements.
+Login Form (HTML + CSS + JavaScript)
+HTML
+<form>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button type="submit">Login</button>
+</form>
+=== SLIDE 27 ===
+Frontend Development
+CSS
+input {
+    width: 100%;
+    padding: 10px;
+}
+JavaScript
+document.querySelector('button').addEventListener('click', function() {
+    alert('Login clicked');
+});
+=== SLIDE 28 ===
+Backend Development
+The backend (server-side) is responsible for processing requests, handling business logic, and communicating with the database. 
+The server-side logic and database operations that power a website.
+Common backend languages include Node.js, Python, PHP, Ruby, and Java.
+Example:
+When you log in to Gmail, the backend verifies your credentials.
+Node.js Express Server
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+app.listen(3000, () => console.log('Server running on port 3000'));
+=== SLIDE 29 ===
+Static & Dynamic Website
+Static Website 
+A website with fixed content, same for every user.
+Example:
+A personal portfolio site built with only HTML & CSS.
+Dynamic Website
+A website that changes content based on user interaction or database.
+Example:
+Facebook feeds change for each user.
+=== SLIDE 30 ===
+Responsive Design
+A design approach where web pages adjust to different screen sizes.
+Example:
+Using CSS media queries to make a site mobile-friendly:
+
+@media (max-width: 600px) {
+  body { font-size: 14px; }
+} a site mobile-friendly:
+=== SLIDE 31 ===
+Full-Stack Development
+A full-stack developer works on both frontend and backend development.
+Example: A full-stack project could use:
+Frontend: React.js
+Backend: Node.js with Express
+Database: MongoDB
+=== SLIDE 32 ===
+Hyperlink
+A hyperlink (or link) is an element in a web page that, when clicked, takes the user to another page, section, or resource.
+Example:
+Internal Link:
+	<a href="about.html">About Us</a>
+Takes the user to the "About Us" page within the same website.
+=== SLIDE 33 ===
+Hyperlink
+External Link:
+	<a href="https://www.google.com">Visit Google</a>
+Takes the user to an external website (Google).
+
+Anchor Link (Jump to Section on Same Page):
+	<a href="#contact">Go to Contact Section</a>
+=== SLIDE 34 ===
+HTML (Hypertext Markup Language)
+HTML is the standard markup language used to structure web pages. 
+The standard markup language for creating web pages.
+Example: Basic HTML Structure
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Web Page</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is an example paragraph.</p>
+</body>
+</html>
+=== SLIDE 35 ===
+World Wide Web (WWW)
+A system of interlinked hypertext documents accessed through the Internet using web browsers.
+Example:
+Visiting https://www.wikipedia.org is accessing content on the World Wide Web.
+=== SLIDE 36 ===
+CSS (Cascading Style Sheets)
+CSS – Cascading Style Sheets
+A style sheet language used to design and format HTML elements.
+CSS is used to style HTML elements.
+Example:
+Changing Background Color
+body {
+    background-color: lightblue;
+}
+=== SLIDE 37 ===
+JavaScript
+JavaScript is a programming language used to add interactivity and dynamic behavior to web pages.
+Example:
+Alert Message on Button Click
+document.querySelector('button').addEventListener('click', function() {
+    alert('Button clicked!');
+});
+=== SLIDE 38 ===
+HTTP & HTTPS
+HTTP means Hypertext Transfer Protocol
+HTTPS means Hypertext Transfer Protocol Secure
+It is the protocol used for communication between a web browser and a web server.
+A protocol for transferring hypertext documents between a web server and client.
+Example:
+When you type http://example.com, your browser sends an HTTP GET request to fetch the page.
+HTTPS is a secure version of HTTP that uses SSL/TLS encryption.
+HTTP URL: http://example.com 
+HTTPS URL: https://securebank.com
+=== SLIDE 39 ===
+Hosting
+Hosting refers to storing a website on a server so it can be accessed online.
+Example:
+GoDaddy and Hostinger provide hosting services for websites.
+=== SLIDE 40 ===
+Client-Server Model
+A communication structure where the client (browser) requests resources, and the server provides them.
+Example:
+You request index.html from a web server via Chrome (client).
+=== SLIDE 41 ===
+Client-Side vs. Server-Side
+Client-Side – Runs in the user’s browser (HTML, CSS, JavaScript).
+Server-Side – Runs on the web server (PHP, Node.js, Python).
+Example:
+Clicking a “Like” button on Facebook triggers a JavaScript (Client-Side) event, which sends data to the server (Backend Processing).
+=== SLIDE 42 ===
+Responsive Web Design
+A responsive website adjusts its layout to fit different screen sizes.
+Example:
+A news website that looks good on desktops, tablets, and mobile phones.
+=== SLIDE 43 ===
+CMS (Content Management System)
+A CMS is a platform that allows users to build and manage websites without coding.
+Example:
+WordPress and Joomla are CMS platforms used for blogs and e-commerce sites.
+=== SLIDE 44 ===
+Frameworks & Libraries
+Frameworks provide a structure for building web applications.
+Libraries offer reusable code to speed up development.
+Example:
+React.js (Library) – Used for frontend development.
+Django (Framework) – A Python framework for backend development.
+=== SLIDE 45 ===
+Static  vs.  Dynamic Website
+Static Website – Displays fixed content (e.g., HTML pages).
+Dynamic Website – Updates content dynamically using a database.
+Example:
+Static Website: A portfolio website with fixed information.
+Dynamic Website: Facebook, where users see different content based on their profile.
+=== SLIDE 46 ===
+Static  vs.  Dynamic Website
+=== SLIDE 47 ===
+API (Application Programming Interface)
+An API allows different applications to communicate with each other.
+Example:
+Fetching Data from an API (JavaScript)
+fetch('https://api.example.com/users')
+    .then(response => response.json())
+    .then(data => console.log(data));
+=== SLIDE 48 ===
+Database
+A database is used to store and retrieve data for web applications. It can be SQL (MySQL, PostgreSQL) or NoSQL (MongoDB, Firebase).
+Example:
+SQL Query to Retrieve All Users:
+	SELECT * FROM users;
+MongoDB Query:
+	db.users.find({});
+=== SLIDE 49 ===
+Authentication & Authorization
+Authentication verifies user identity (e.g., logging in with username and password).
+Authorization controls what a user can access.
+Example:
+Login with JSON Web Token (JWT)
+const jwt = require('jsonwebtoken');
+const token = jwt.sign({ userId: 123 }, 'secretkey');
+console.log(token);
+=== SLIDE 50 ===
+Responsive Web Design
+Ensures web pages adapt to different screen sizes using CSS media queries.
+Example:
+Making a Web Page Responsive
+@media screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+=== SLIDE 51 ===
+Web Security
+Web applications must be protected from threats like XSS (Cross-Site Scripting), SQL Injection, CSRF (Cross-Site Request Forgery).
+Example:
+Preventing SQL Injection: JavaScrpt:
+db.query("SELECT * FROM users WHERE username = ?", [username]);
+Preventing XSS (HTML):
+<input type="text" value="Safe &lt;script&gt;alert('Hacked')&lt;/script&gt;">
+=== SLIDE 52 ===
+Microservices Architecture
+A microservices approach breaks an application into smaller, independent services.
+Example:
+E-commerce Microservices: 
+User Service: Handles authentication
+Product Service: Manages product listings
+Order Service: Processes customer orders
+=== SLIDE 53 ===
+Abbreviations & meanings
+=== SLIDE 54 ===
+Abbreviations & meanings
+=== SLIDE 55 ===
+Abbreviations & meanings
+=== SLIDE 56 ===
+Conclusion
+Understanding these basic terminologies is essential for developing modern web applications. 
+Each concept plays a key role in ensuring applications are functional, scalable, and secure.

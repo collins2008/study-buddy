@@ -1,0 +1,781 @@
+import json
+import subprocess
+import os
+import tempfile
+
+def compile_and_run(c_code):
+    """Compiles C code using gcc -Wall -Wextra -std=c11, runs it, and returns stdout."""
+    with tempfile.NamedTemporaryFile(suffix='.c', delete=False, mode='w', encoding='utf-8') as f:
+        f.write(c_code)
+        c_file = f.name
+
+    exe_file = c_file.replace('.c', '.exe')
+    try:
+        compile_cmd = ['gcc', '-Wall', '-Wextra', '-std=c11', c_file, '-o', exe_file]
+        res = subprocess.run(compile_cmd, capture_output=True, text=True, timeout=10)
+        if res.returncode != 0:
+            raise RuntimeError(f"Compilation failed:\n{res.stderr}\nCode:\n{c_code}")
+
+        run_res = subprocess.run([exe_file], capture_output=True, text=True, timeout=5)
+        out = run_res.stdout.strip().replace('\r\n', '\n')
+        if not out:
+            out = "(No output produced)"
+        return out
+    finally:
+        if os.path.exists(c_file):
+            try: os.remove(c_file)
+            except: pass
+        if os.path.exists(exe_file):
+            try: os.remove(exe_file)
+            except: pass
+
+def main():
+    print("Compiling and verifying Topic 8 (Strings & Character Arrays) code snippets with GCC...")
+
+    # Snippet 1: strlen vs sizeof
+    code_strlen = """#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char greeting[] = "Nile";
+    printf("len=%zu size=%zu", strlen(greeting), sizeof(greeting));
+    return 0;
+}
+"""
+    out_strlen = compile_and_run(code_strlen)
+
+    # Snippet 2: strcat concatenation
+    code_strcat = """#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char dest[20] = "Study";
+    strcat(dest, "Buddy");
+    printf("%s", dest);
+    return 0;
+}
+"""
+    out_strcat = compile_and_run(code_strcat)
+
+    # Snippet 3: strcmp comparison
+    code_strcmp = """#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char s1[] = "apple";
+    char s2[] = "banana";
+    int res = strcmp(s1, s2);
+    if (res < 0) {
+        printf("s1 before s2");
+    } else if (res > 0) {
+        printf("s1 after s2");
+    } else {
+        printf("equal");
+    }
+    return 0;
+}
+"""
+    out_strcmp = compile_and_run(code_strcmp)
+
+    # Snippet 4: Character manipulation with ctype
+    code_ctype = """#include <stdio.h>
+#include <ctype.h>
+
+int main(void) {
+    char text[] = "Exam2026!";
+    int letters = 0, digits = 0;
+    for (int i = 0; text[i] != '\\0'; i++) {
+        if (isalpha(text[i])) letters++;
+        if (isdigit(text[i])) digits++;
+    }
+    printf("letters=%d digits=%d", letters, digits);
+    return 0;
+}
+"""
+    out_ctype = compile_and_run(code_ctype)
+
+    # Snippet 5: In-place string reversal
+    code_rev = """#include <stdio.h>
+#include <string.h>
+
+void strReverse(char *s) {
+    int i = 0, j = strlen(s) - 1;
+    while (i < j) {
+        char temp = s[i];
+        s[i] = s[j];
+        s[j] = temp;
+        i++;
+        j--;
+    }
+}
+
+int main(void) {
+    char word[] = "radar";
+    strReverse(word);
+    printf("%s", word);
+    return 0;
+}
+"""
+    out_rev = compile_and_run(code_rev)
+
+    # Snippet 6: Case study 1 - bounded string copy
+    code_cs1 = """#include <stdio.h>
+#include <string.h>
+
+void safeCopy(char *dest, const char *src, size_t destSize) {
+    if (destSize == 0) return;
+    size_t i;
+    for (i = 0; i < destSize - 1 && src[i] != '\\0'; i++) {
+        dest[i] = src[i];
+    }
+    dest[i] = '\\0';
+}
+
+int main(void) {
+    char buffer[6];
+    safeCopy(buffer, "ComputerScience", sizeof(buffer));
+    printf("%s", buffer);
+    return 0;
+}
+"""
+    out_cs1 = compile_and_run(code_cs1)
+
+    # Snippet 7: Case study 2 - Palindrome check
+    code_cs2 = """#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+bool isPalindrome(const char *s) {
+    int left = 0, right = strlen(s) - 1;
+    while (left < right) {
+        if (s[left] != s[right]) return false;
+        left++;
+        right--;
+    }
+    return true;
+}
+
+int main(void) {
+    printf("%d %d", isPalindrome("madam"), isPalindrome("nile"));
+    return 0;
+}
+"""
+    out_cs2 = compile_and_run(code_cs2)
+
+    questions = [
+        # cos201-str-001: Past Exam Q4 - char arr[5] = "hello"
+        {
+            "id": "cos201-str-001",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["strings", "null_terminator", "initialization", "past_exam"],
+            "question": "In C, what is the problem with declaring `char arr[5] = \"hello\";`?",
+            "options": [
+                "There is no room for the terminating null character `\\0`, so `arr` is not a valid null-terminated C string",
+                "String literals can only be assigned to pointer variables, not arrays",
+                "Array size 5 is too large for a 5-letter word",
+                "The double quotes are illegal in C; single quotes must enclose words"
+            ],
+            "answer": 0,
+            "explanation": "In C, string literals contain an implicit terminating null character `\\0`. The word `\"hello\"` has 5 characters plus 1 null terminator, requiring at least 6 bytes. Initializing an array of size 5 with `\"hello\"` leaves no space for `\\0`. In standard C, this creates an unterminated character array that causes buffer overreads when passed to functions like `printf(\"%s\")` or `strlen()`.",
+            "why_wrong": {
+                "1": "Assigning string literals to character arrays (`char s[] = \"...\";`) is standard C.",
+                "2": "5 bytes is too small (not too large) because the null terminator requires the 6th byte.",
+                "3": "Double quotes denote string literals in C; single quotes denote individual character constants."
+            },
+            "source": "Deitel C How to Program, Section 8.2; Nile Past Exam Q4",
+            "verified": True,
+            "verified_output": "(Language specification rule)"
+        },
+
+        # cos201-str-002: Null character representation
+        {
+            "id": "cos201-str-002",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "mcq",
+            "difficulty": 1,
+            "tags": ["strings", "null_terminator", "ascii"],
+            "question": "What is the escape sequence and ASCII integer value of the null character used to terminate strings in C?",
+            "options": [
+                "`'\\0'` with integer ASCII value 0",
+                "`'0'` with integer ASCII value 48",
+                "`'\\n'` with integer ASCII value 10",
+                "`NULL` with integer ASCII value -1"
+            ],
+            "answer": 0,
+            "explanation": "The null character in C is represented by the escape sequence `'\\0'`. Its ASCII integer numerical value is exactly 0 (all 8 bits zero). It is completely distinct from the digit character `'0'` (which has ASCII value 48).",
+            "why_wrong": {
+                "1": "`'0'` is the character glyph for zero, having ASCII code 48.",
+                "2": "`'\\n'` is the newline character, having ASCII code 10.",
+                "3": "`NULL` is a pointer constant, not a character."
+            },
+            "source": "Deitel C How to Program, Section 8.2",
+            "verified": True,
+            "verified_output": "(Language specification rule)"
+        },
+
+        # cos201-str-003: strlen vs sizeof
+        {
+            "id": "cos201-str-003",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "code_output",
+            "difficulty": 2,
+            "tags": ["strings", "strlen", "sizeof", "memory"],
+            "question": "What is the output of the following C program?\n\n```c\n#include <stdio.h>\n#include <string.h>\n\nint main(void) {\n    char greeting[] = \"Nile\";\n    printf(\"len=%zu size=%zu\", strlen(greeting), sizeof(greeting));\n    return 0;\n}\n```",
+            "options": [
+                "len=4 size=5",
+                "len=5 size=5",
+                "len=4 size=4",
+                "len=5 size=4"
+            ],
+            "answer": 0,
+            "explanation": "`strlen()` counts characters preceding the null terminator `'\\0'` (which is 4 characters: 'N', 'i', 'l', 'e'). `sizeof()` returns the total memory allocated to the array in bytes, which includes the terminating `'\\0'` (4 + 1 = 5 bytes). Thus `len=4 size=5`.",
+            "why_wrong": {
+                "1": "strlen() does NOT count the terminating '\\0'.",
+                "2": "sizeof(greeting) includes the null terminator byte.",
+                "3": "strlen is 4, but sizeof is 5, not the reverse."
+            },
+            "source": "Deitel C How to Program, Section 8.3",
+            "verified": True,
+            "verified_output": out_strlen
+        },
+
+        # cos201-str-004: strcat string concatenation
+        {
+            "id": "cos201-str-004",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "code_output",
+            "difficulty": 2,
+            "tags": ["strings", "strcat", "library"],
+            "question": "What is the output of the following C code?\n\n```c\n#include <stdio.h>\n#include <string.h>\n\nint main(void) {\n    char dest[20] = \"Study\";\n    strcat(dest, \"Buddy\");\n    printf(\"%s\", dest);\n    return 0;\n}\n```",
+            "options": [
+                "StudyBuddy",
+                "Buddy",
+                "Study",
+                "Study Buddy"
+            ],
+            "answer": 0,
+            "explanation": "`strcat(dest, src)` appends the characters of `src` to `dest`, overwriting the existing null terminator of `dest` and adding a new null terminator at the end. Here, 'Study' + 'Buddy' becomes 'StudyBuddy'.",
+            "why_wrong": {
+                "1": "Overwriting dest would be the behavior of `strcpy`, not `strcat`.",
+                "2": "dest is modified by `strcat`, appending 'Buddy'.",
+                "3": "`strcat` does not insert spaces between strings unless explicitly present in the source string."
+            },
+            "source": "Deitel C How to Program, Section 8.4",
+            "verified": True,
+            "verified_output": out_strcat
+        },
+
+        # cos201-str-005: strcmp comparison logic
+        {
+            "id": "cos201-str-005",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "code_output",
+            "difficulty": 3,
+            "tags": ["strings", "strcmp", "lexicographical"],
+            "question": "What is printed by this program?\n\n```c\n#include <stdio.h>\n#include <string.h>\n\nint main(void) {\n    char s1[] = \"apple\";\n    char s2[] = \"banana\";\n    int res = strcmp(s1, s2);\n    if (res < 0) {\n        printf(\"s1 before s2\");\n    } else if (res > 0) {\n        printf(\"s1 after s2\");\n    } else {\n        printf(\"equal\");\n    }\n    return 0;\n}\n```",
+            "options": [
+                "s1 before s2",
+                "s1 after s2",
+                "equal",
+                "Compilation error"
+            ],
+            "answer": 0,
+            "explanation": "`strcmp()` compares strings lexicographically based on ASCII character codes. At index 0, 'a' (ASCII 97) is less than 'b' (ASCII 98). The difference 'a' - 'b' is negative, so `strcmp` returns a negative number (`< 0`). Thus `s1 before s2` is printed.",
+            "why_wrong": {
+                "1": "s1 ('apple') precedes s2 ('banana') alphabetically, so res is negative.",
+                "2": "'apple' and 'banana' are not identical.",
+                "3": "`strcmp` is standard in `<string.h>` and compiles cleanly."
+            },
+            "source": "Deitel C How to Program, Section 8.5",
+            "verified": True,
+            "verified_output": out_strcmp
+        },
+
+        # cos201-str-006: strcmp equality pitfall
+        {
+            "id": "cos201-str-006",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["strings", "strcmp", "common_mistakes"],
+            "question": "A student writes `if (strcmp(password, \"secret\")) { printf(\"Access Granted\"); }`. What logic error is present?",
+            "options": [
+                "`strcmp` returns 0 when strings are equal, which evaluates to false in an `if` condition; access is granted only when passwords do NOT match",
+                "`strcmp` cannot compare against string literals",
+                "The `if` condition must use single equals `(strcmp = 0)`",
+                "`strcmp` returns 1 when strings are equal"
+            ],
+            "answer": 0,
+            "explanation": "When two strings are identical, `strcmp` returns 0. In C conditional statements, 0 is treated as false, while any non-zero value is true. Therefore, `if (strcmp(...))` executes when strings are UNEQUAL! To test for equality, one must write `if (strcmp(password, \"secret\") == 0)` or `if (!strcmp(...))`.",
+            "why_wrong": {
+                "1": "Passing string literals to `strcmp` is completely valid.",
+                "2": "Single equals is assignment, which would cause a syntax error here.",
+                "3": "`strcmp` returns 0 on match, not 1."
+            },
+            "source": "Deitel C How to Program, Section 8.5",
+            "verified": True,
+            "verified_output": "(Logic design pitfall)"
+        },
+
+        # cos201-str-007: Modifying string literals vs arrays
+        {
+            "id": "cos201-str-007",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "mcq",
+            "difficulty": 4,
+            "tags": ["strings", "pointers", "literals", "memory_segment"],
+            "question": "What is the key difference between `char s1[] = \"hello\";` and `char *s2 = \"hello\";` when attempting to modify the first character (`s1[0] = 'H';` vs `s2[0] = 'H';`)?",
+            "options": [
+                "`s1` is a mutable array copied to the local stack, so modifying `s1[0]` is legal; `s2` points directly to a read-only string literal, so modifying `s2[0]` causes undefined behavior (segmentation fault)",
+                "`s2` is mutable while `s1` is read-only",
+                "Both statements produce a compile-time syntax error",
+                "Both statements are completely safe and identical in behavior"
+            ],
+            "answer": 0,
+            "explanation": "`char s1[] = \"hello\";` allocates a 6-byte array on the stack and copies the characters into it, allowing unrestricted modification. In contrast, `char *s2 = \"hello\";` creates a pointer pointing to the string literal stored in the executable's read-only data segment (`.rodata`). Writing to read-only memory violates OS page permissions, causing an immediate segmentation fault at runtime.",
+            "why_wrong": {
+                "1": "String literals are immutable, while stack arrays are mutable.",
+                "2": "Both declarations compile cleanly in standard C without syntax errors.",
+                "3": "Modifying a string literal pointer at runtime crashes modern operating systems."
+            },
+            "source": "Deitel C How to Program, Section 8.2",
+            "verified": True,
+            "verified_output": "(Memory segmentation architecture)"
+        },
+
+        # cos201-str-008: Character classification with ctype.h
+        {
+            "id": "cos201-str-008",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "code_output",
+            "difficulty": 2,
+            "tags": ["strings", "ctype", "isalpha", "isdigit"],
+            "question": "What is printed by this program?\n\n```c\n#include <stdio.h>\n#include <ctype.h>\n\nint main(void) {\n    char text[] = \"Exam2026!\";\n    int letters = 0, digits = 0;\n    for (int i = 0; text[i] != '\\0'; i++) {\n        if (isalpha(text[i])) letters++;\n        if (isdigit(text[i])) digits++;\n    }\n    printf(\"letters=%d digits=%d\", letters, digits);\n    return 0;\n}\n```",
+            "options": [
+                "letters=4 digits=4",
+                "letters=4 digits=5",
+                "letters=5 digits=4",
+                "letters=8 digits=0"
+            ],
+            "answer": 0,
+            "explanation": "In 'Exam2026!':\nLetters: 'E', 'x', 'a', 'm' = 4\nDigits: '2', '0', '2', '6' = 4\nThe exclamation mark '!' is punctuation (neither letter nor digit). Output: letters=4 digits=4.",
+            "why_wrong": {
+                "1": "There are only four digits (2, 0, 2, 6).",
+                "2": "There are only four letters (E, x, a, m).",
+                "3": "Digits are detected by `isdigit()` and counted separately."
+            },
+            "source": "Deitel C How to Program, Section 8.7",
+            "verified": True,
+            "verified_output": out_ctype
+        },
+
+        # cos201-str-009: Buffer overflow in strcpy vs strncpy
+        {
+            "id": "cos201-str-009",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["strings", "strcpy", "security", "buffer_overflow"],
+            "question": "Why is `strcpy()` considered dangerous for secure programming, and what should be used instead?",
+            "options": [
+                "`strcpy()` does not check if the destination buffer is large enough, causing memory corruption / buffer overflow; safer alternatives like `strncpy()` or bounded copy loops should be used",
+                "`strcpy()` converts all letters to lowercase automatically",
+                "`strcpy()` fails to copy the terminating null character",
+                "`strcpy()` only works with single-character variables"
+            ],
+            "answer": 0,
+            "explanation": "`strcpy(dest, src)` copies characters until it encounters `'\\0'` in `src`. If `src` is larger than the memory allocated for `dest`, it writes past the buffer boundary into adjacent stack or heap memory. This classic buffer overflow defect can crash programs or be exploited for remote code execution.",
+            "why_wrong": {
+                "1": "`strcpy` copies characters byte-for-byte without case conversion.",
+                "2": "`strcpy` explicitly copies the terminating null character.",
+                "3": "`strcpy` operates on strings, not single characters."
+            },
+            "source": "Deitel C How to Program, Section 8.4",
+            "verified": True,
+            "verified_output": "(Software security principle)"
+        },
+
+        # cos201-str-010: In-place string reversal
+        {
+            "id": "cos201-str-010",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "code_output",
+            "difficulty": 3,
+            "tags": ["strings", "reversal", "two_pointer"],
+            "question": "What is printed by this string reversal program?\n\n```c\n#include <stdio.h>\n#include <string.h>\n\nvoid strReverse(char *s) {\n    int i = 0, j = strlen(s) - 1;\n    while (i < j) {\n        char temp = s[i];\n        s[i] = s[j];\n        s[j] = temp;\n        i++;\n        j--;\n    }\n}\n\nint main(void) {\n    char word[] = \"radar\";\n    strReverse(word);\n    printf(\"%s\", word);\n    return 0;\n}\n```",
+            "options": [
+                "radar",
+                "radar\\0",
+                "rad",
+                "Compilation error"
+            ],
+            "answer": 0,
+            "explanation": "'radar' is a palindrome. Reversing 'radar' yields 'radar'. The two pointers swap 'r' with 'r', 'a' with 'a', and meet at 'd'. The string remains 'radar'.",
+            "why_wrong": {
+                "1": "printf with %s stops at '\\0' and does not print literal '\\0'.",
+                "2": "The loop runs for the full length of the string, not just the first half.",
+                "3": "The code is fully standard and valid C."
+            },
+            "source": "Deitel C How to Program, Section 8.3",
+            "verified": True,
+            "verified_output": out_rev
+        },
+
+        # cos201-str-011: Cloze - Strings in C
+        {
+            "id": "cos201-str-011",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "cloze",
+            "difficulty": 2,
+            "tags": ["strings", "cloze", "library"],
+            "question": "Fill in the correct functions and delimiters for C strings:\n\nAll C strings are terminated by the [[\\0]] character. The header file containing string utility functions is [[string.h]]. To determine the length of a string excluding the null terminator, use [[strlen]]. To safely read an entire line including spaces from stdin, the [[fgets]] function is preferred over scanf.",
+            "answer": ["\\0", "string.h", "strlen", "fgets"],
+            "explanation": "C strings require '\\0' as sentinel delimiter, use `<string.h>` for string operations, `strlen` to count length, and `fgets` for secure bounded input with spaces.",
+            "why_wrong": {},
+            "source": "Deitel C How to Program, Chapter 8",
+            "verified": True,
+            "verified_output": "(Terminology cloze)"
+        },
+
+        # cos201-str-012: Sequencing - Reading and Validating a String
+        {
+            "id": "cos201-str-012",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "sequencing",
+            "difficulty": 3,
+            "tags": ["strings", "fgets", "lifecycle"],
+            "question": "Order the steps to safely read a string from user input and remove any trailing newline character:",
+            "options": [
+                "Declare a char array buffer of sufficient size (e.g. `char buf[64];`)",
+                "Call `fgets(buf, sizeof(buf), stdin)` to read input securely",
+                "Compute string length using `size_t len = strlen(buf);`",
+                "Check if `len > 0` and the last character `buf[len - 1] == '\\n'`",
+                "Replace the trailing newline with the null terminator `buf[len - 1] = '\\0';`"
+            ],
+            "answer": [0, 1, 2, 3, 4],
+            "explanation": "Best practice C input: allocate buffer -> read with fgets -> find length with strlen -> check for trailing newline -> overwrite newline with '\\0'.",
+            "why_wrong": {},
+            "source": "Deitel C How to Program, Section 8.3",
+            "verified": True,
+            "verified_output": "(Standard idiom sequence)"
+        },
+
+        # cos201-str-013: Matching - <string.h> functions
+        {
+            "id": "cos201-str-013",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "matching",
+            "difficulty": 2,
+            "tags": ["strings", "library", "functions"],
+            "question": "Match each `<string.h>` function with its operation:",
+            "options": [
+                "strlen(s)",
+                "strcpy(dest, src)",
+                "strcat(dest, src)",
+                "strcmp(s1, s2)"
+            ],
+            "answer": {
+                "strlen(s)": "Returns number of characters preceding the null terminator",
+                "strcpy(dest, src)": "Copies source string to destination buffer including '\\0'",
+                "strcat(dest, src)": "Appends source string to the end of destination string",
+                "strcmp(s1, s2)": "Lexicographically compares two strings (0 if identical)"
+            },
+            "explanation": "These four functions constitute the core string manipulation library in C.",
+            "why_wrong": {},
+            "source": "Deitel C How to Program, Chapter 8",
+            "verified": True,
+            "verified_output": "(Function map)"
+        },
+
+        # cos201-str-014: Written Explain - Null Terminator Importance
+        {
+            "id": "cos201-str-014",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "explain",
+            "difficulty": 3,
+            "tags": ["strings", "null_terminator", "memory", "safety"],
+            "question": "Explain the role of the null character `\\0` in C strings. What catastrophic consequences occur when a string lacks a null terminator and is passed to `printf(\"%s\", str)` or `strlen(str)`?",
+            "options": [],
+            "answer": "In C, strings do not store an explicit length field in metadata. Instead, C relies on the null character `\\0` as a sentinel delimiter to mark the end of the character sequence. Standard library functions like `strlen()` and `printf(\"%s\")` increment through memory one byte at a time until encountering a byte with value 0.\n\nIf a string lacks a null terminator, these functions will continue reading past the end of the allocated array into adjacent unallocated or protected memory (a buffer overread). This results in printing garbage characters, memory corruption, or an operating system segmentation fault crash if a protected memory boundary is crossed.",
+            "explanation": "Covers sentinel delimiter purpose, absence of length metadata, and buffer overread consequences.",
+            "why_wrong": {},
+            "marking_points": [
+                "Identifies '\\0' as the sentinel delimiter signaling the end of the string",
+                "Notes that C strings do not store explicit length metadata",
+                "Explains that string functions loop through memory until reading a 0 byte",
+                "Describes the failure consequence: buffer overread, printing garbage, and potential segmentation fault"
+            ],
+            "source": "Deitel C How to Program, Section 8.2",
+            "verified": True,
+            "verified_output": "(Examiner rubric)"
+        },
+
+        # cos201-str-015: Code Write - Manual strlen
+        {
+            "id": "cos201-str-015",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "code_write",
+            "difficulty": 3,
+            "tags": ["strings", "coding", "strlen", "pointer"],
+            "question": "Write a C function `size_t myStrlen(const char *s)` that calculates and returns the length of string `s` (excluding the null terminator) without calling `<string.h>` functions.",
+            "options": [],
+            "answer": "size_t myStrlen(const char *s) {\n    size_t count = 0;\n    while (*s != '\\0') {\n        count++;\n        s++;\n    }\n    return count;\n}",
+            "explanation": "Loops through pointer *s, incrementing count and advancing pointer s until reaching '\\0'.",
+            "why_wrong": {},
+            "marking_points": [
+                "Correct function header returning size_t with const char *s",
+                "Initializes counter to 0",
+                "Loops until *s == '\\0'",
+                "Advances pointer (s++) and increments counter (count++)",
+                "Returns total count"
+            ],
+            "source": "Deitel C How to Program, Section 8.3",
+            "verified": True,
+            "verified_output": "(Reference code specification)"
+        },
+
+        # Flashcards (8 required)
+        {
+            "id": "cos201-str-fc01",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["strings", "flashcard", "definition"],
+            "question": "What is a string in C?",
+            "answer": "An array of characters terminated by the null character `'\\0'`.",
+            "explanation": "An array of characters terminated by the null character `'\\0'`."
+        },
+        {
+            "id": "cos201-str-fc02",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["strings", "flashcard", "null_terminator"],
+            "question": "What is the ASCII value of the null character `'\\0'`?",
+            "answer": "0 (all 8 bits zero; distinct from character `'0'` which has ASCII code 48).",
+            "explanation": "0 (all 8 bits zero; distinct from character `'0'` which has ASCII code 48)."
+        },
+        {
+            "id": "cos201-str-fc03",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["strings", "flashcard", "strlen"],
+            "question": "Does `strlen()` count the terminating null character `'\\0'`?",
+            "answer": "No. `strlen()` counts only the characters before `'\\0'`.",
+            "explanation": "No. `strlen()` counts only the characters before `'\\0'`."
+        },
+        {
+            "id": "cos201-str-fc04",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["strings", "flashcard", "sizeof"],
+            "question": "What does `sizeof(\"hello\")` evaluate to in C?",
+            "answer": "6 bytes (5 visible characters plus 1 byte for `'\\0'`).",
+            "explanation": "6 bytes (5 visible characters plus 1 byte for `'\\0'`)."
+        },
+        {
+            "id": "cos201-str-fc05",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["strings", "flashcard", "strcmp"],
+            "question": "What does `strcmp(s1, s2)` return when `s1` and `s2` are identical?",
+            "answer": "0 (zero). It returns negative if `s1 < s2` and positive if `s1 > s2`.",
+            "explanation": "0 (zero). It returns negative if `s1 < s2` and positive if `s1 > s2`."
+        },
+        {
+            "id": "cos201-str-fc06",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "flashcard",
+            "difficulty": 3,
+            "tags": ["strings", "flashcard", "literals"],
+            "question": "Why is `char *s = \"hello\"; s[0] = 'H';` dangerous in C?",
+            "answer": "String literals are stored in read-only memory; modifying them causes a segmentation fault.",
+            "explanation": "String literals are stored in read-only memory; modifying them causes a segmentation fault."
+        },
+        {
+            "id": "cos201-str-fc07",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["strings", "flashcard", "fgets"],
+            "question": "Why is `fgets()` preferred over `scanf(\"%s\", str)`?",
+            "answer": "`fgets()` enforces a maximum buffer size preventing buffer overflows and reads spaces.",
+            "explanation": "`fgets()` enforces a maximum buffer size preventing buffer overflows and reads spaces."
+        },
+        {
+            "id": "cos201-str-fc08",
+            "course": "COS 201",
+            "topic": "strings_char_arrays",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["strings", "flashcard", "strcat"],
+            "question": "What does `strcat(dest, src)` do?",
+            "answer": "Appends `src` to the end of `dest`, overwriting `dest`'s null terminator and adding a new `'\\0'`.",
+            "explanation": "Appends `src` to the end of `dest`, overwriting `dest`'s null terminator and adding a new `'\\0'`."
+        }
+    ]
+
+    case_studies = [
+        # Case Study 1: Safe Bounded String Copy
+        {
+            "id": "cos201-str-cs01",
+            "scenario": "A security engineer develops a safe bounded string copy routine `safeCopy(char *dest, const char *src, size_t destSize)` to prevent buffer overflows when copying untrusted input into fixed-size buffers.",
+            "sub_questions": [
+                {
+                    "id": "cos201-str-cs01-q1",
+                    "course": "COS 201",
+                    "topic": "strings_char_arrays",
+                    "type": "code_output",
+                    "difficulty": 3,
+                    "tags": ["strings", "case_study", "safety", "bounds"],
+                    "question": "What is the output of this program when copying `\"ComputerScience\"` into a buffer of size 6?\n\n```c\n#include <stdio.h>\n#include <string.h>\n\nvoid safeCopy(char *dest, const char *src, size_t destSize) {\n    if (destSize == 0) return;\n    size_t i;\n    for (i = 0; i < destSize - 1 && src[i] != '\\0'; i++) {\n        dest[i] = src[i];\n    }\n    dest[i] = '\\0';\n}\n\nint main(void) {\n    char buffer[6];\n    safeCopy(buffer, \"ComputerScience\", sizeof(buffer));\n    printf(\"%s\", buffer);\n    return 0;\n}\n```",
+                    "options": [
+                        "Compu",
+                        "Comput",
+                        "ComputerScience",
+                        "Comp"
+                    ],
+                    "answer": 0,
+                    "explanation": "The destination buffer has size 6. The loop runs while `i < destSize - 1` (i.e. `i < 5`), copying 5 characters: 'C', 'o', 'm', 'p', 'u'. Then `dest[5]` is assigned `'\\0'`. The printed string is `\"Compu\"`.",
+                    "why_wrong": {
+                        "1": "\"Comput\" has 6 characters, leaving no room for the null terminator.",
+                        "2": "The buffer size is only 6 bytes, preventing the full 15-character string from being copied.",
+                        "3": "\"Comp\" has only 4 characters."
+                    },
+                    "source": "Deitel C How to Program, Section 8.4",
+                    "verified": True,
+                    "verified_output": out_cs1
+                },
+                {
+                    "id": "cos201-str-cs01-q2",
+                    "course": "COS 201",
+                    "topic": "strings_char_arrays",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["strings", "case_study", "security", "strncpy"],
+                    "question": "Why is this custom `safeCopy` function safer than the standard library function `strncpy(buffer, \"ComputerScience\", 6)`?",
+                    "options": [],
+                    "answer": "The standard library function `strncpy(dest, src, n)` has a notorious design flaw: if the source string's length is equal to or greater than `n`, `strncpy` does NOT append a terminating null character `'\\0'`. If `buffer` is then passed to functions like `printf(\"%s\")` or `strlen()`, it results in a buffer overread. In contrast, `safeCopy` explicitly reserves the last byte (`destSize - 1`) and always guarantees null termination by setting `dest[i] = '\\0'`, making it safe against buffer overreads.",
+                    "explanation": "strncpy does not null-terminate when src length >= n, whereas safeCopy guarantees termination.",
+                    "why_wrong": {},
+                    "marking_points": [
+                        "Identifies strncpy's flaw: fails to append null terminator when src length >= n",
+                        "Explains the danger: downstream functions experience buffer overreads / crashes",
+                        "Explains safeCopy's guarantee: copies at most destSize - 1 characters",
+                        "Explicitly notes that safeCopy always null-terminates dest[i] = '\\0'"
+                    ],
+                    "source": "Deitel C How to Program, Section 8.4",
+                    "verified": True,
+                    "verified_output": "(Secure API design analysis)"
+                }
+            ]
+        },
+
+        # Case Study 2: Palindrome Verification
+        {
+            "id": "cos201-str-cs02",
+            "scenario": "A bioinformatics algorithm verifies whether short DNA sequences or word tokens read identically forwards and backwards (palindromes) using two converging pointers.",
+            "sub_questions": [
+                {
+                    "id": "cos201-str-cs02-q1",
+                    "course": "COS 201",
+                    "topic": "strings_char_arrays",
+                    "type": "code_output",
+                    "difficulty": 3,
+                    "tags": ["strings", "case_study", "palindrome", "pointers"],
+                    "question": "What is printed by this palindrome checking program?\n\n```c\n#include <stdio.h>\n#include <string.h>\n#include <stdbool.h>\n\nbool isPalindrome(const char *s) {\n    int left = 0, right = strlen(s) - 1;\n    while (left < right) {\n        if (s[left] != s[right]) return false;\n        left++;\n        right--;\n    }\n    return true;\n}\n\nint main(void) {\n    printf(\"%d %d\", isPalindrome(\"madam\"), isPalindrome(\"nile\"));\n    return 0;\n}\n```",
+                    "options": [
+                        "1 0",
+                        "1 1",
+                        "0 0",
+                        "0 1"
+                    ],
+                    "answer": 0,
+                    "explanation": "\"madam\" reads the same backwards, so `isPalindrome(\"madam\")` returns `true` (printed as 1). \"nile\" reversed is \"elin\", which does not match ('n' != 'e'), returning `false` (printed as 0). Output is `1 0`.",
+                    "why_wrong": {
+                        "1": "\"nile\" is not a palindrome.",
+                        "2": "\"madam\" is a valid palindrome.",
+                        "3": "Reverses the results for the two words."
+                    },
+                    "source": "Deitel C How to Program, Section 8.3",
+                    "verified": True,
+                    "verified_output": out_cs2
+                },
+                {
+                    "id": "cos201-str-cs02-q2",
+                    "course": "COS 201",
+                    "topic": "strings_char_arrays",
+                    "type": "explain",
+                    "difficulty": 3,
+                    "tags": ["strings", "case_study", "time_complexity"],
+                    "question": "Analyze the time and space complexity of `isPalindrome`. Why is `left < right` an optimal stopping condition?",
+                    "options": [],
+                    "answer": "The time complexity is O(n), where n is the length of string `s` (O(n) for `strlen` and O(n/2) = O(n) for the pointer comparisons). The auxiliary space complexity is O(1) because no additional memory buffers or copies are allocated.\n\nThe condition `left < right` is optimal because once the pointers meet at the middle character (for odd lengths) or cross each other (for even lengths), all opposing character pairs have already been verified. Continuing further would redundantly re-check the same character pairs.",
+                    "explanation": "Analyzes O(n) time, O(1) space, and explains pointer convergence efficiency.",
+                    "why_wrong": {},
+                    "marking_points": [
+                        "Identifies time complexity as O(n)",
+                        "Identifies auxiliary space complexity as O(1)",
+                        "Explains that pointers converge from ends towards the middle (n/2 comparisons)",
+                        "States that once left >= right, all symmetrical pairs are verified and further checks are redundant"
+                    ],
+                    "source": "Deitel C How to Program, Section 8.3",
+                    "verified": True,
+                    "verified_output": "(Complexity analysis rubric)"
+                }
+            ]
+        }
+    ]
+
+    data = {
+        "course": "COS 201",
+        "topic": "strings_char_arrays",
+        "summary": "In C, strings are represented as 1-dimensional arrays of char terminated by the null character ('\\0', ASCII code 0). C provides no native string object, requiring memory allocations to always include space for the null byte (strlen(s) + 1). Declaring a char array (char s[] = \"...\") produces a mutable stack buffer, whereas a pointer to a literal (char *s = \"...\") points to read-only memory whose mutation triggers a segmentation fault. Standard library functions in <string.h> such as strlen, strcpy, strcat, and strcmp handle string manipulation, but unsafe functions like strcpy and scanf(\"%s\") present buffer overflow hazards that require bounded alternatives like fgets and manual bounds checks. Character inspection and transformation is supported via <ctype.h> functions like isalpha, isdigit, toupper, and tolower.",
+        "key_terms": [
+            {"term": "String in C", "definition": "A contiguous sequence of characters terminated by the null character '\\0'."},
+            {"term": "Null Character ('\\0')", "definition": "The sentinel character with ASCII value 0 marking the end of a C string."},
+            {"term": "strlen()", "definition": "A standard library function that counts the characters in a string excluding '\\0'."},
+            {"term": "sizeof on strings", "definition": "An operator returning the total allocated memory in bytes, including '\\0'."},
+            {"term": "strcmp()", "definition": "A function that lexicographically compares two strings, returning 0 if identical."},
+            {"term": "Buffer Overflow", "definition": "Writing data past the allocated boundaries of a string array, leading to memory corruption."},
+            {"term": "String Literal", "definition": "A sequence of characters enclosed in double quotes stored in read-only executable memory."}
+        ],
+        "questions": questions,
+        "case_studies": case_studies
+    }
+
+    out_path = "c:\\Users\\Collins Ibilibor\\Downloads\\Study Buddy\\app\\content\\COS 201\\strings_char_arrays.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    print(f"Successfully generated {len(questions)} questions and {len(case_studies)} case studies in {out_path}")
+
+if __name__ == "__main__":
+    main()

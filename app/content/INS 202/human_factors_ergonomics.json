@@ -1,0 +1,604 @@
+{
+  "course": "INS 202",
+  "topic": "human_factors_ergonomics",
+  "title": "Human Factors, Cognitive Psychology & Ergonomics",
+  "summary": "Comprehensive examination of human cognitive psychology, sensory perception, motor constraints, and ergonomic principles in interface design. Explores Constructivism (the mind creating abstract intervening models rather than pixel-by-pixel snapshots) and the critical role of context and mindset in visual perception. Thorough treatment of the Five Gestalt Principles: Proximity, Similarity, Symmetry, Continuity/Alignment, and Closure, with concrete layout applications. Details human memory architecture, emphasizing George Miller's (1956) 'Magic Number 7 \u00b1 2' rule, information chunking techniques, and the golden rule of Usability: favoring Recognition over Recall (menus vs commands, bookmarks, auto-complete). Rigorous mathematical and ergonomic analysis of Fitts's Law relating target distance and width to movement time, explaining why screen corners and edges possess infinite target width. Reviews Robert Miller's system response time thresholds (0.1s, 1.0s, 10s) and physical accessibility standards including color blindness and contrast ratios.",
+  "key_terms": [
+    {
+      "term": "Constructivism",
+      "definition": "A cognitive theory asserting that the human mind actively constructs an internal abstract model summarizing sensory data rather than recording exact pixel-by-pixel images."
+    },
+    {
+      "term": "Gestalt Psychology",
+      "definition": "A psychological framework asserting that the human mind perceives visual objects as organized, cohesive wholes rather than disparate collections of parts."
+    },
+    {
+      "term": "Magic Number 7 \u00b1 2",
+      "definition": "George Miller's (1956) cognitive threshold establishing that human short-term working memory can hold only 5 to 9 chunks of information simultaneously."
+    },
+    {
+      "term": "Chunking",
+      "definition": "The cognitive practice of grouping discrete units of information into meaningful, cohesive aggregates to reduce working memory load."
+    },
+    {
+      "term": "Recognition vs Recall",
+      "definition": "The principle that recognizing an option from a visible list requires far less cognitive effort than retrieving information from unassisted memory."
+    },
+    {
+      "term": "Fitts's Law",
+      "definition": "A predictive model of human motor movement stating that the time to acquire a target is a logarithmic function of distance to the target divided by its width."
+    },
+    {
+      "term": "Proximity (Gestalt)",
+      "definition": "The visual perception principle stating that objects positioned physically close together are perceived as belonging to a unified group."
+    },
+    {
+      "term": "Closure (Gestalt)",
+      "definition": "The perceptual tendency of the human visual system to mentally fill in missing contours to perceive an incomplete figure as a complete object."
+    }
+  ],
+  "questions": [
+    {
+      "id": "ins202-hum-001",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "cognitive_psychology",
+        "miller_rule"
+      ],
+      "question": "What is the famous cognitive capacity limit of human short-term (working) memory formulated by psychologist George Miller in 1956?",
+      "options": [
+        "The Magic Number 7, Plus or Minus 2 (5 to 9 chunks of information)",
+        "Exactly 64 megabytes of volatile random access memory",
+        "Infinite simultaneous storage capacity with zero cognitive decay",
+        "Exactly 1 bit of binary sensory data"
+      ],
+      "answer": 0,
+      "explanation": "In his landmark 1956 paper, George Miller demonstrated that human short-term working memory is strictly bottlenecked, capable of holding only $7 \\pm 2$ chunks of information at a single time before older items are overwritten or forgotten.",
+      "why_wrong": {
+        "1": "64 MB is a digital computer storage metric, not biological human short-term memory.",
+        "2": "Human short-term memory is severely constrained and decays in 15\u201330 seconds without rehearsal.",
+        "3": "Humans can hold several multi-symbol concepts, far exceeding a single binary bit."
+      },
+      "marking_points": [],
+      "source": "Module 02 Slide 37",
+      "verified": true,
+      "verified_output": "7 \u00b1 2 chunks (Miller 1956)."
+    },
+    {
+      "id": "ins202-hum-002",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "matching",
+      "difficulty": 3,
+      "tags": [
+        "gestalt_principles",
+        "visual_layout"
+      ],
+      "question": "Match each Gestalt visual perception principle to its defining user interface application:",
+      "options": [
+        "Proximity",
+        "Similarity",
+        "Continuity / Alignment",
+        "Closure"
+      ],
+      "answer": {
+        "Proximity": "Placing input field text labels significantly closer to their corresponding form boxes than to preceding fields so users perceive them as a pair.",
+        "Similarity": "Rendering all clickable primary action buttons in the identical blue pill shape and font across every screen to indicate common functionality.",
+        "Continuity / Alignment": "Left-aligning all headings, paragraph text, and input boxes along a single vertical axis to facilitate smooth, rapid top-to-bottom visual scanning.",
+        "Closure": "Designing an icon or logo using broken or striped lines (like the IBM logo) where the mind automatically fills in the blanks to see complete letters."
+      },
+      "explanation": "Proximity groups by physical distance; Similarity groups by shared visual attributes (color, shape); Continuity aligns along virtual visual axes; Closure mentally connects incomplete outlines.",
+      "why_wrong": {},
+      "marking_points": [],
+      "source": "Module 02 Slides 20-34",
+      "verified": true,
+      "verified_output": "Matched Gestalt principles."
+    },
+    {
+      "id": "ins202-hum-003",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "explain",
+      "difficulty": 3,
+      "tags": [
+        "recognition_vs_recall",
+        "golden_rule"
+      ],
+      "question": "In usability engineering, why is 'Recognition' fundamentally superior to 'Recall' for human users? Contrast how an e-commerce website applies this principle compared to a command line interface.",
+      "options": [],
+      "answer": "Recognition is cognitively superior to Recall because the human brain requires far less mental effort and neural retrieval processing to identify a target item when presented visually among options (Recognition) than to retrieve an item or exact command syntax from scratch without prompts (Recall). An e-commerce website leverages recognition by providing visual product catalogs, drop-down category menus, search auto-complete, and a persistent shopping cart icon showing recent items; users simply recognize what they want. In contrast, a Command Line Interface (CLI) forces the user to rely entirely on recall: the operator must mentally remember the exact command name (e.g. 'tar -xzvf archive.tar.gz'), its mandatory parameter flags, and directory paths without any visible clues, creating high cognitive load and frequent syntax errors.",
+      "explanation": "Recognition provides visual cues reducing cognitive retrieval; Recall requires unprompted memory extraction.",
+      "why_wrong": {},
+      "marking_points": [
+        "Explains that Recognition involves identifying information from visual prompts, which requires low cognitive effort.",
+        "Explains that Recall requires unprompted memory extraction from scratch, imposing heavy cognitive load.",
+        "Shows how e-commerce websites use recognition (menus, visual thumbnails, auto-complete).",
+        "Contrasts with CLI where users must recall exact syntax and parameters from unassisted memory."
+      ],
+      "source": "Module 02 Slide 39, 50",
+      "verified": true,
+      "verified_output": "Recognition vs Recall explanation."
+    },
+    {
+      "id": "ins202-hum-004",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "fitts_law",
+        "motor_ergonomics"
+      ],
+      "question": "According to Fitts's Law, the time required to move a cursor or finger to an interactive target is governed by which mathematical relationship?",
+      "options": [
+        "Target movement time increases with greater Distance (D) to the target and decreases with greater Target Width (W): T = a + b * log2(1 + D/W)",
+        "Target movement time is equal to the CPU clock frequency multiplied by the RAM bus width",
+        "Target movement time is completely independent of button size or distance",
+        "Target movement time decreases when the button is made infinitely tiny"
+      ],
+      "answer": 0,
+      "explanation": "Fitts's Law states: $T = a + b \\log_2(1 + D/W)$. Movement time increases as the target distance ($D$) increases, and decreases as the target size/width ($W$) increases. Making buttons larger and closer reduces acquisition time and user errors.",
+      "why_wrong": {
+        "1": "Fitts's Law is a human biomechanical model of hand/eye movement, not a CPU hardware metric.",
+        "2": "Decades of empirical psychology prove that target distance and width directly dictate movement speed.",
+        "3": "Tiny buttons are difficult to click, causing massive acquisition delays and mis-clicks."
+      },
+      "marking_points": [],
+      "source": "Fitts's Law; Ergonomics Literature; Gerard Kim Text",
+      "verified": true,
+      "verified_output": "T = a + b * log2(1 + D/W)."
+    },
+    {
+      "id": "ins202-hum-005",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "true_false_why",
+      "difficulty": 3,
+      "tags": [
+        "fitts_law",
+        "screen_corners"
+      ],
+      "question": "In a desktop computer graphical interface, the four physical corners and edges of the display monitor represent the easiest, fastest targets to click according to Fitts's Law.",
+      "options": [
+        "False \u2014 corners are the hardest targets because mouse balls get physically stuck in monitor bezels.",
+        "True \u2014 because the mouse cursor physically stops at the boundaries of the display screen and cannot overshoot, the screen edges and corners possess effectively 'infinite width' (W = \u221e), making acquisition extremely fast."
+      ],
+      "answer": 1,
+      "explanation": "In desktop GUIs, the edge of the monitor acts as a physical barrier: a user can throw the mouse cursor forcefully toward a corner without fear of overshooting. Mathematically, the target width is effectively infinite ($W = \\infty$), reducing the Index of Difficulty to near zero. This is why the Windows Start menu is pinned in the bottom-left corner and the macOS menu bar sits on the top edge.",
+      "why_wrong": {
+        "0": "Modern optical mice do not use physical balls, and cursor pinning makes edges effortless to acquire."
+      },
+      "marking_points": [],
+      "source": "Fitts's Law Analysis; Gerard Kim Text",
+      "verified": true,
+      "verified_output": "True. Screen corners have infinite target width."
+    },
+    {
+      "id": "ins202-hum-006",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "cloze",
+      "difficulty": 2,
+      "tags": [
+        "chunking_examples"
+      ],
+      "question": "The cognitive practice of organizing long strings of data into smaller, meaningful groups to ease short-term memory burden is called {{c1::chunking}}. For instance, the 10-digit sequence 0803314492 is easier to remember when formatted as {{c2::080-331-4492}}.",
+      "options": [
+        "chunking",
+        "080-331-4492",
+        "formatting",
+        "paging",
+        "defragmenting",
+        "hashing"
+      ],
+      "answer": [
+        "chunking",
+        "080-331-4492"
+      ],
+      "explanation": "Chunking transforms unmanageable raw sequences into familiar units within George Miller's $7 \\pm 2$ capacity limit (e.g. breaking a 10-digit phone number into three distinct 3-to-4-digit chunks).",
+      "why_wrong": {},
+      "marking_points": [],
+      "source": "Module 02 Slide 37-38",
+      "verified": true,
+      "verified_output": "chunking, 080-331-4492"
+    },
+    {
+      "id": "ins202-hum-007",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "constructivism",
+        "perception_model"
+      ],
+      "question": "Which psychological theory discussed in the lecture asserts that human minds do not store exact, pixel-by-pixel photographic representations of sensory reality, but instead actively construct an intervening abstract model that summarizes what our senses receive?",
+      "options": [
+        "Constructivism",
+        "Behaviorism",
+        "Direct Pixel Rendering",
+        "Electromagnetic Induction"
+      ],
+      "answer": 0,
+      "explanation": "As defined in Module 02 Slide 6: 'Constructivism contends that our minds create or construct an intervening model that abstracts or summarizes the data we receive from our senses. Our brains do not create pixel-by-pixel images.'",
+      "why_wrong": {
+        "1": "Behaviorism focuses purely on observable stimulus-response conditioning without modeling internal mental representations.",
+        "2": "Direct pixel rendering is computer graphics hardware, not human cognitive theory.",
+        "3": "Electromagnetic induction is Michael Faraday's law of physics."
+      },
+      "marking_points": [],
+      "source": "Module 02 Slide 6",
+      "verified": true,
+      "verified_output": "Constructivism."
+    },
+    {
+      "id": "ins202-hum-008",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "context_in_perception",
+        "mindset"
+      ],
+      "question": "A user looking at an ambiguous black-and-white visual figure sees either the letter 'B' or the number '13'. If the symbol is placed between '12' and '14', the user instantly reads '13'. What cognitive phenomenon does this demonstrate?",
+      "options": [
+        "The dominant role of Context and Mindset in human visual perception",
+        "A catastrophic bit-flip in the user's sensory registers",
+        "Failure of the monitor's refresh rate to sync with room lighting",
+        "The mathematical Consensus theorem of Boolean algebra"
+      ],
+      "answer": 0,
+      "explanation": "As highlighted in Module 02 Slides 8\u201315: Context and mindset play a major role in what people perceive. The exact same visual stimuli are interpreted completely differently depending on the surrounding environmental context.",
+      "why_wrong": {
+        "1": "Humans do not experience electronic hardware register bit-flips.",
+        "2": "Perceptual ambiguity is cognitive, not monitor refresh flicker.",
+        "3": "Consensus theorem simplifies Boolean logic gates, not psychological reading context."
+      },
+      "marking_points": [],
+      "source": "Module 02 Slides 8-15",
+      "verified": true,
+      "verified_output": "Context and Mindset in perception."
+    },
+    {
+      "id": "ins202-hum-009",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "matching",
+      "difficulty": 3,
+      "tags": [
+        "response_time_thresholds",
+        "robert_miller"
+      ],
+      "question": "Match Robert Miller's (1968) classic system response time thresholds to their corresponding effect on human user psychology:",
+      "options": [
+        "0.1 second (100 milliseconds)",
+        "1.0 second (1,000 milliseconds)",
+        "10 seconds"
+      ],
+      "answer": {
+        "0.1 second (100 milliseconds)": "Perceived as instantaneous; the user feels that the software is reacting directly to their physical manipulation (essential for direct manipulation and keypress states).",
+        "1.0 second (1,000 milliseconds)": "User notices a brief delay, but their natural mental stream of thought remains uninterrupted; no special loading indicators required.",
+        "10 seconds": "The absolute limit for keeping a user's focused attention on the task; beyond this, the user's attention is diverted and a progress bar is mandatory."
+      },
+      "explanation": "Robert Miller's 1968 benchmarks are foundational in HCI: <0.1s is direct manipulation; 1.0s preserves mental flow; 10s is the breaking point where users abandon focus and switch tabs.",
+      "why_wrong": {},
+      "marking_points": [],
+      "source": "Module 02 Slide 43",
+      "verified": true,
+      "verified_output": "Matched response time thresholds (0.1s, 1s, 10s)."
+    },
+    {
+      "id": "ins202-hum-010",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "type_answer",
+      "difficulty": 2,
+      "tags": [
+        "gestalt_laws",
+        "proximity"
+      ],
+      "question": "Which Gestalt psychology law states that elements that are placed physically close together in visual space are perceived by the human visual system as belonging to a unified, coherent group?",
+      "answer": "Proximity",
+      "accepted_answers": [
+        "Proximity",
+        "Law of Proximity",
+        "principle of proximity"
+      ],
+      "explanation": "The Law of Proximity states that objects placed in close spatial proximity are perceived as a collective group, dominating other visual attributes like color or shape.",
+      "marking_points": [
+        "Identifies 'Proximity' (or 'Law of Proximity')."
+      ],
+      "source": "Module 02 Slide 20-23",
+      "verified": true,
+      "verified_output": "Proximity"
+    },
+    {
+      "id": "ins202-hum-011",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "visual_ergonomics",
+        "color_blindness"
+      ],
+      "question": "Approximately 8% of men possess red-green color vision deficiency (deuteranopia/protanopia). Which interface design practice violates basic visual accessibility for these users?",
+      "options": [
+        "Using pure red and green text colors alone to indicate 'System Error' versus 'System OK' without accompanying icons, text labels, or distinct shapes.",
+        "Providing high-contrast dark mode with white text on black background.",
+        "Underlining text hyperlinks when hovered over by a cursor.",
+        "Using standard sans-serif typography such as Inter or Roboto."
+      ],
+      "answer": 0,
+      "explanation": "Relying on color alone to convey meaning (such as red vs green without secondary signifiers like checkmarks, cross icons, or bold labels) makes interfaces completely unusable for red-green color-blind users who perceive both hues as muddy brownish-yellows.",
+      "why_wrong": {
+        "1": "Dark mode with high contrast enhances readability for many visually impaired users.",
+        "2": "Underlining hyperlinks provides an accessible non-color visual signifier.",
+        "3": "Clean sans-serif fonts are standard accessible typefaces."
+      },
+      "marking_points": [],
+      "source": "Module 02 Slide 50; WCAG Guidelines",
+      "verified": true,
+      "verified_output": "Using red and green alone without icons or labels."
+    },
+    {
+      "id": "ins202-hum-012",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "true_false_why",
+      "difficulty": 2,
+      "tags": [
+        "short_term_memory",
+        "decay"
+      ],
+      "question": "Information stored in human short-term working memory remains permanently available for several days even if the user experiences severe interruptions and performs unrelated mathematical tasks.",
+      "options": [
+        "True \u2014 human short-term memory has the same persistence characteristics as an enterprise solid-state drive.",
+        "False \u2014 short-term memory has rapid decay (typically vanishing within 15 to 30 seconds unless actively refreshed), and distractions readily wipe its contents."
+      ],
+      "answer": 1,
+      "explanation": "Short-term working memory is fragile and volatile. Without continuous rehearsal or external memory aids (such as breadcrumbs, auto-saved drafts, or post-it notes), items decay rapidly in 15\u201330 seconds and are easily displaced by interruptions.",
+      "why_wrong": {
+        "0": "Human short-term memory is biologically fragile and decays almost immediately upon interruption."
+      },
+      "marking_points": [],
+      "source": "Module 02 Slide 35-36, 42",
+      "verified": true,
+      "verified_output": "False. Short-term memory decays in 15-30 seconds."
+    },
+    {
+      "id": "ins202-hum-013",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "visual_hierarchy",
+        "alignment"
+      ],
+      "question": "Why do professional HCI style guides strongly advise against using centered text alignment for long, multi-line paragraph reading passages?",
+      "options": [
+        "Because centered text creates ragged, irregular left margins, forcing the user's eye to waste time searching for the start of every single line rather than following a predictable vertical anchor line.",
+        "Because centered text causes laser printers to run out of toner twice as fast.",
+        "Because centered text cannot be displayed on liquid crystal monitors.",
+        "Because centered text automatically triggers a 404 HTTP server error."
+      ],
+      "answer": 0,
+      "explanation": "Left-aligned text creates a smooth, continuous vertical axis along the left margin. Centered multi-line text forces the reader's eyes to locate a different starting coordinate on every line, causing visual fatigue and slowing reading speed.",
+      "why_wrong": {
+        "1": "Text alignment has zero effect on toner consumption.",
+        "2": "All digital monitors can render centered text.",
+        "3": "Text alignment is CSS styling, completely independent of HTTP server status codes."
+      },
+      "marking_points": [],
+      "source": "Module 05 Slide 8-10; Module 02 Slide 31-33",
+      "verified": true,
+      "verified_output": "Centered text creates ragged left margins that disrupt eye scanning."
+    },
+    {
+      "id": "ins202-hum-014",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "type_answer",
+      "difficulty": 2,
+      "tags": [
+        "figure_ground",
+        "perception"
+      ],
+      "question": "What is the psychological term for the foundational visual perception process that divides a visual scene into a prominent focal object in the foreground and the surrounding background context?",
+      "answer": "figure and ground",
+      "accepted_answers": [
+        "figure and ground",
+        "figure-ground",
+        "figure ground"
+      ],
+      "explanation": "Figure and ground organization is a Gestalt concept where the visual system automatically identifies an object of interest (the Figure) and separates it from the rest of the visual field (the Ground).",
+      "marking_points": [
+        "Identifies 'figure and ground' (or 'figure-ground')."
+      ],
+      "source": "Module 02 Slide 17-18",
+      "verified": true,
+      "verified_output": "figure and ground"
+    },
+    {
+      "id": "ins202-hum-015",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "memory_aids",
+        "browser_features"
+      ],
+      "question": "Modern web browsers incorporate several built-in memory aids to reduce human memory load. Which of the following browser features functions specifically as an external memory aid to prevent users from needing to recall complex URL addresses?",
+      "options": [
+        "Bookmarks / Favorites and URL History lists",
+        "The motherboard cooling fan speed tachometer",
+        "The hardware MAC address lookup table",
+        "The power supply voltage regulator"
+      ],
+      "answer": 0,
+      "explanation": "As noted in Module 02 Slide 41: 'Internet browsers have a good number of memory aids built into them... Bookmarks/Favorites, History, Menus.' These allow users to recognize saved sites rather than recalling full URL strings.",
+      "why_wrong": {
+        "1": "Fan tachometers monitor hardware thermal cooling.",
+        "2": "MAC tables are internal Layer 2 switch forwarding tables.",
+        "3": "Voltage regulators manage electrical power on the PSU."
+      },
+      "marking_points": [],
+      "source": "Module 02 Slide 40-41",
+      "verified": true,
+      "verified_output": "Bookmarks / Favorites and History."
+    },
+    {
+      "id": "ins202-hum-016",
+      "course": "INS 202",
+      "topic": "human_factors_ergonomics",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "gestalt_similarity",
+        "page_design"
+      ],
+      "question": "On a checkout screen, there are three buttons: 'Cancel Order', 'Continue Shopping', and 'Place Order'. All three are rendered in different sizes, with different fonts and mismatched border radiuses. Applying the Gestalt principle of SIMILARITY, what is the correct design fix?",
+      "options": [
+        "Standardize all buttons with consistent dimensions, uniform font styles, and clear hierarchical color differentiation so users perceive them as a coherent set of navigation choices.",
+        "Randomize the button coordinates every time the user refreshes the page.",
+        "Make the Cancel button 5 times larger than the Place Order button.",
+        "Hide all three buttons and require users to type raw SQL queries."
+      ],
+      "answer": 0,
+      "explanation": "As shown in Module 02 Slide 25\u201328: applying the principle of Similarity means making buttons the same size, using the same font, and maintaining visual consistency across the control set so users perceive related choices cleanly.",
+      "why_wrong": {
+        "1": "Randomizing button positions disorients users and destroys learnability.",
+        "2": "Inflating the Cancel button emphasizes the wrong business priority.",
+        "3": "Hiding controls behind SQL queries makes consumer checkouts impossible."
+      },
+      "marking_points": [],
+      "source": "Module 02 Slide 24-28",
+      "verified": true,
+      "verified_output": "Standardize dimensions, fonts, and styling for similarity."
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "ins202-hum-cs1",
+      "scenario": "A mobile healthcare startup in Abuja designs a mobile app for community health workers tracking child immunization schedules in rural clinics. In version 1.0, when registering a newborn infant, the health worker is presented with a single unorganized screen containing 28 consecutive text entry fields. The worker must manually type the mother's 11-digit national identity number, the child's 14-digit birth certificate tracking code, clinic postal code, and immunization batch numbers without any spaces or hyphens. Furthermore, the input fields are center-aligned with tiny 18x18-pixel touch targets, and field labels are placed halfway between two fields. In field testing, health workers make typing mistakes on 62% of registrations and take over 18 minutes per child.",
+      "sub_questions": [
+        {
+          "id": "ins202-hum-cs1-q1",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "miller_and_chunking"
+          ],
+          "question": "Apply George Miller's Magic Number 7\u00b12 rule and the concept of 'Chunking' to diagnose why health workers suffered high error rates when entering the 11-digit identity number and 14-digit birth code.",
+          "options": [],
+          "answer": "Human short-term working memory is strictly limited to $7 \\pm 2$ items (Miller, 1956). When presented with unbroken 11-digit and 14-digit continuous numerical strings, the volume of data severely exceeds the biological memory capacity, forcing workers to repeatedly shift visual gaze back and forth between physical paper documents and the mobile phone screen. This continuous context switching leads to severe digit transpositions and omissions. The solution is 'Chunking': the interface must divide long numbers into structured, formatted groups separated by hyphens or visual blocks (e.g. formatting the 11-digit NIN as '1234 - 567 - 8901' and the birth code into 3-to-4-digit chunks), reducing cognitive load from 11\u201314 isolated digits down to 3\u20134 manageable chunks well within working memory capacity.",
+          "explanation": "Long numbers exceed 7\u00b12 working memory limits. Chunking into 3-4 segments eliminates cognitive overload and transcription errors.",
+          "why_wrong": {},
+          "marking_points": [
+            "Identifies George Miller's 7\u00b12 capacity limit for working memory.",
+            "Explains that unbroken 11-digit and 14-digit strings exceed cognitive capacity, causing gaze switching and transcription errors.",
+            "Proposes Chunking as the definitive cognitive solution.",
+            "Demonstrates how formatting numbers into 3-to-4-digit blocks brings mental load within biological limits."
+          ],
+          "source": "Module 02 Slide 36-38",
+          "verified": true,
+          "verified_output": "Working memory overload resolved by chunking."
+        },
+        {
+          "id": "ins202-hum-cs1-q2",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "gestalt_and_fitts_redesign"
+          ],
+          "question": "Analyze the form's layout failures using Gestalt's 'Proximity' and Fitts's Law, and specify two physical design fixes.",
+          "options": [],
+          "answer": "Layout Failures and Redesign: (1) Gestalt Law of Proximity Failure: Placing labels halfway between input fields creates visual ambiguity, as workers cannot discern whether a label belongs to the box above or below it. The fix is to position each label directly above its respective input box with tight 4px spacing, while introducing generous 24px vertical separation between distinct field groups, establishing unambiguous perceptual grouping; (2) Fitts's Law Failure: The 18x18-pixel touch targets violate mobile motor ergonomics: Fitts's Law ($T = a + b \\log_2(1 + D/W)$) dictates that tiny target widths ($W$) drastically increase movement time and finger mis-taps. The fix is to enlarge all input fields and action buttons to a minimum touch target size of $48 \\times 48$ pixels (or full-width inputs), making them fast and effortless to tap accurately even while health workers are standing or holding a clipboard.",
+          "explanation": "Applies Proximity (tight label-to-input spacing) and Fitts's Law (expanding touch targets from 18px to 48px).",
+          "why_wrong": {},
+          "marking_points": [
+            "Applies Gestalt Proximity: explains that ambiguous equidistant labels confuse input pairing.",
+            "Proposes placing labels directly above their inputs with tight spacing and larger gaps between fields.",
+            "Applies Fitts's Law: explains that tiny 18x18px targets drastically increase movement time and mis-taps.",
+            "Proposes enlarging mobile touch targets to a minimum of 48x48px."
+          ],
+          "source": "Module 02 Slides 20-23; Fitts's Law Analysis",
+          "verified": true,
+          "verified_output": "Proximity spacing and Fitts's Law touch target expansion."
+        }
+      ]
+    },
+    {
+      "id": "ins202-hum-cs2",
+      "scenario": "A fast-paced air traffic control tower workstation in Abuja assists air traffic controllers monitoring 40 commercial aircraft descending simultaneously toward Nnamdi Azikiwe International Airport. In an interface redesign, an inexperienced contractor uses 14 different bright neon colors, animated blinking warning boxes, and sets the radar scan refresh time to 12.0 seconds. During a stormy evening, two radar blips converge dangerously. The air traffic controller fails to notice the conflict for nearly 45 seconds because a non-urgent weather notification on the side panel was rapidly flashing yellow, commanding their attention.",
+      "sub_questions": [
+        {
+          "id": "ins202-hum-cs2-q1",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "response_time_limits"
+          ],
+          "question": "Under Robert Miller's system response time thresholds, why was a 12.0-second radar refresh rate unacceptable for an air traffic control safety system?",
+          "options": [
+            "10 seconds is the absolute biological limit for maintaining focused human attention; beyond 10 seconds, attention breaks and users lose situational awareness, which is catastrophic in air traffic control.",
+            "12 seconds causes the air traffic control radar antenna to reverse its physical rotation direction.",
+            "Controllers are required by Nigerian labor law to take a 5-minute break every 12 seconds.",
+            "12 seconds converts all incoming radar signals into plain ASCII text."
+          ],
+          "answer": 0,
+          "explanation": "As established by Robert Miller (1968): 10 seconds is the upper boundary for keeping a user's uninterrupted attention. A 12-second delay breaks cognitive focus, causing controllers to glance away or lose continuous tracking of high-speed converging aircraft.",
+          "why_wrong": {
+            "1": "Software refresh rates do not reverse mechanical radar antenna motors.",
+            "2": "Labor regulations do not mandate breaks every twelve seconds.",
+            "3": "Radar signal decoding is independent of display refresh rates."
+          },
+          "marking_points": [],
+          "source": "Module 02 Slide 43",
+          "verified": true,
+          "verified_output": "10-second attention boundary broken."
+        },
+        {
+          "id": "ins202-hum-cs2-q2",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "visual_attention_and_figure_ground"
+          ],
+          "question": "Explain how the contractor's use of 14 neon colors and flashing animations violated cognitive principles of visual attention, Figure-Ground organization, and the HCI goal of Safety.",
+          "options": [],
+          "answer": "The contractor committed critical cognitive errors: (1) Cognitive Overload & Sensory Salience: Flashing animations and high-saturation neon colors automatically capture human involuntary bottom-up visual attention. When non-urgent weather alerts flash persistently, they distract the controller's foveal visual focus away from genuine life-critical aircraft trajectory conflicts; (2) Destruction of Figure-Ground Organization: Using 14 competing neon colors across the entire screen obliterates visual hierarchy; everything screams for attention, leaving the controller unable to distinguish critical radar targets (Figure) from benign background terrain or routine flight paths (Ground); (3) Compromise of Safety: In life-critical safety systems, animations and high-salience alerts (such as flashing red or audible sirens) must be strictly reserved for emergency collisions (e.g. TCAS alerts), while standard interfaces must use muted, low-saturation monochromatic palettes that minimize visual fatigue.",
+          "explanation": "Involuntary visual capture by flashing non-urgent alerts blinded controllers to life-critical convergence, destroying figure-ground hierarchy.",
+          "why_wrong": {},
+          "marking_points": [
+            "Explains how flashing animations involuntary capture human visual attention (sensory salience).",
+            "Shows that excessive neon colors destroy Figure-Ground hierarchy, preventing quick identification of critical targets.",
+            "Directly links the failure to the HCI goal of Safety in aviation telemetry.",
+            "Recommends reserving high-salience alerts strictly for genuine collision emergencies while muting baseline palettes."
+          ],
+          "source": "Module 01 Slide 20; Module 02 Slide 17, 43",
+          "verified": true,
+          "verified_output": "Visual attention capture, Figure-Ground collapse, and Safety compromise."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+HTML Practical Code
+Student Registration Webpage
+This document contains the complete HTML code for the student registration webpage used in the lecture. It uses HTML only: no CSS and no JavaScript. Comments and explanations are included to help students understand each part.
+1. Complete code
+Copy all the code below into Notepad or Visual Studio Code. Do not leave out the opening or closing tags.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Character encoding helps common letters and symbols display correctly. -->
+<meta charset="UTF-8">
+<!-- Helps the webpage fit the screen width on phones and tablets. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- This text appears in the browser tab. -->
+<title>Student Registration Portal</title>
+</head>
+<body>
+<!-- The header introduces the webpage. -->
+<header>
+<h1>Student Registration Portal</h1>
+<p>Department of Information Technology</p>
+</header>
+<hr>
+<!-- Navigation links jump to sections on this same page. -->
+<nav>
+<a href="#about">About</a> |
+<a href="#courses">Courses</a> |
+<a href="#register">Register</a>
+</nav>
+<hr>
+<!-- Main contains the primary content of this webpage. -->
+<main>
+<!-- About section -->
+<section id="about">
+<h2>About This Portal</h2>
+<p>
+This webpage demonstrates the basic HTML tags
+used to create a simple student registration page.
+</p>
+<p>
+<strong>Important:</strong>
+This is a demonstration, not a live registration system.
+</p>
+</section>
+<!-- Unordered list of available courses -->
+<section id="courses">
+<h2>Available Courses</h2>
+<ul>
+<li>Introduction to HTML</li>
+<li>Computer Hardware</li>
+<li>Information Systems</li>
+<li>Computer Networking</li>
+</ul>
+</section>
+<!-- Ordered list: order of the steps matters -->
+<section>
+<h2>Registration Requirements</h2>
+<ol>
+<li>Provide your full name.</li>
+<li>Enter a valid email address.</li>
+<li>Select your student level.</li>
+<li>Submit the form.</li>
+</ol>
+</section>
+<!-- Registration form -->
+<section id="register">
+<h2>Student Registration Form</h2>
+<!--
+action="#" is a placeholder.
+This form will not save information to a database.
+A real system needs a server or suitable form service.
+-->
+<form action="#" method="get">
+<label for="fullname">Full Name:</label>
+<input
+type="text"
+id="fullname"
+name="fullname"
+placeholder="Enter your full name"
+maxlength="60"
+required
+>
+<br><br>
+<label for="email">Email Address:</label>
+<input
+type="email"
+id="email"
+name="email"
+placeholder="Enter your email"
+required
+>
+<br><br>
+<label for="level">Student Level:</label>
+<select id="level" name="level">
+<option value="100">100 Level</option>
+<option value="200">200 Level</option>
+<option value="300">300 Level</option>
+<option value="400">400 Level</option>
+</select>
+<br><br>
+<p>Preferred Study Mode:</p>
+<input
+type="radio"
+id="fulltime"
+name="mode"
+value="fulltime"
+required
+>
+<label for="fulltime">Full-time</label>
+<input
+type="radio"
+id="parttime"
+name="mode"
+value="parttime"
+>
+<label for="parttime">Part-time</label>
+<br><br>
+<p>Topics you are interested in:</p>
+<input
+type="checkbox"
+id="html"
+name="interest"
+value="html"
+>
+<label for="html">HTML</label>
+<input
+type="checkbox"
+id="networking"
+name="interest"
+value="networking"
+>
+<label for="networking">Networking</label>
+<br><br>
+<label for="message">Additional Information:</label>
+<br>
+<textarea
+id="message"
+name="message"
+rows="4"
+cols="35"
+placeholder="Write a short message (optional)"
+></textarea>
+<br><br>
+<button type="submit">Register</button>
+<button type="reset">Clear Form</button>
+</form>
+</section>
+<!-- Example table showing sample courses -->
+<section>
+<h2>Sample Course List</h2>
+<table border="1">
+<caption>Courses Offered</caption>
+<thead>
+<tr>
+<th>Course Code</th>
+<th>Course Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IFT 203</td>
+<td>Introduction to Web Technology</td>
+</tr>
+<tr>
+<td>IFT 201</td>
+<td>Introduction to Information Technology</td>
+</tr>
+<tr>
+<td>INS 201</td>
+<td>Introduction to Information Systems</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- Example image: create an images folder and put a file named computer.jpg inside it. -->
+<section>
+<h2>Learning HTML</h2>
+<p>The image below will display if the image file exists at the specified path.</p>
+<img
+src="images/computer.jpg"
+alt="A computer used for learning HTML"
+width="300"
+height="200"
+>
+</section>
+</main>
+<hr>
+<!-- Footer contains closing information. -->
+<footer>
+<p>Copyright &copy; 2026 Student Registration Portal.</p>
+<p>
+Learn more:
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+target="_blank"
+rel="noopener">
+HTML Documentation
+</a>
+</p>
+</footer>
+</body>
+</html>
+2. How to run the code
+Open Notepad or Visual Studio Code.
+Copy the complete code from Section 1.
+Save the file as student-registration.html. In Notepad, choose Save as type: All Files and use the .html extension.
+Open the saved file by double-clicking it. It should open in your default web browser.
+To make changes, edit the file in your text editor, save it, and refresh the browser.
+3. Important file and image setup
+For the example image to appear, arrange the files like this:
+MyWebsite/
+student-registration.html
+images/
+computer.jpg
+Create a folder named images in the same folder as the HTML file. Put a real image named computer.jpg inside it. If you do not have an image, either add one or remove the entire <img> element. The rest of the page will still work.
+4. What should work and what will not
+Will work locally: headings, paragraphs, navigation links to page sections, lists, table, form controls, and the external HTML documentation link (when internet is available).
+Image: will display only if images/computer.jpg exists and the file name matches.
+Form: the text fields, dropdown, radio buttons, checkboxes, submit and reset controls will work in the browser. Because this is a front-end demonstration, it does not save registration data to a database.
+No CSS: the page uses the browser's default appearance. The table border attribute is included for beginner demonstration only; modern table styling is normally done with CSS.
+5. Key terms used in this code
+6. Practice tasks for students
+Change the main heading to your own department name.
+Add two more courses to the unordered list.
+Add another student level to the dropdown.
+Add a new table row with a different course code and title.
+Change the image file name and update the src attribute to match.
+Add a third radio option, making sure the radio buttons share the same name.

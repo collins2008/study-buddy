@@ -1,0 +1,53 @@
+SEN201: Introduction to Software Engineering
+(2 units C: LH 30)
+
+Learning Outcomes
+At the end of this course, students should be able to:
+1. Describe the concept of the software life cycle;
+2. Explain the phases of requirements analysis, design,
+
+development, testing and maintenance in a typical software
+life cycle;
+
+3. Differentiate amongst the various software development
+
+models;
+
+4. Utilise UML for object oriented analysis and design;
+5. Describe different design architectures;
+6. Explain the various tasks involved in software project
+
+management; and
+
+7. Describe the basic legal issues related to Software
+
+Engineering.
+
+Course Contents
+1. Software Engineering concepts and principles.
+2. Design, development and testing of software systems.
+3. Software processes: software lifecycle and process models.
+4. Process assessment models.
+5. Software process metrics.
+6. Life cycle of software system.
+7. Software requirements and specifications.
+8. Software design.
+9. Software architecture.
+10.Software metrics.
+11.Software quality and testing.
+12.Software validation.
+13.Software evolution: Software maintenance; characteristics of
+
+maintainable software; re-engineering; legacy systems;
+software reuse.
+
+14.Software Engineering and its place as a computing discipline.
+15.Software project management: team management; project
+
+scheduling; software measurement and estimation techniques;
+
+risk analysis; software quality assurance; software
+configuration management.
+16.Software Engineering and law
+
+

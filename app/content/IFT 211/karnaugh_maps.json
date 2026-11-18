@@ -1,0 +1,667 @@
+{
+  "course": "IFT 211",
+  "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+  "summary": "This topic covers graphical Boolean minimization using Karnaugh Maps (Veitch diagrams) for 2, 3, and 4 variables. It explores the foundational geometric structure of K-maps, including Gray code coordinate labeling (00, 01, 11, 10) ensuring single-bit adjacency between adjacent cells, wrap-around toroidal continuity, and the classic four-corners grouping (m0, m2, m8, m10). Rigorous distinction is established between implicants, prime implicants, and essential prime implicants (EPIs). The topic details both Sum-of-Products (SOP) minimization through grouping 1s and Product-of-Sums (POS) minimization through grouping 0s followed by De Morgan inversion. Special focus is given to strategic exploitation of don't-care conditions (X) in bounded applications (such as BCD arithmetic) and an overview of the tabular Quine-McCluskey algorithm for higher variable counts.",
+  "key_terms": [
+    {
+      "term": "Karnaugh Map (K-Map)",
+      "definition": "A two-dimensional geometric representation of a Boolean truth table where adjacent cells represent minterms differing by exactly one literal, enabling visual algebraic minimization."
+    },
+    {
+      "term": "Gray Code Ordering",
+      "definition": "The coordinate labeling sequence (00, 01, 11, 10) used for K-map rows and columns to ensure a Hamming distance of 1 between adjacent cells."
+    },
+    {
+      "term": "Wrap-Around Adjacency",
+      "definition": "The topological property that the top edge of a K-map is adjacent to the bottom edge, and the left edge is adjacent to the right edge, forming a continuous torus."
+    },
+    {
+      "term": "Prime Implicant (PI)",
+      "definition": "A rectangular group of adjacent minterms of size 2^k that cannot be combined with any other group to form a larger group of power-of-2 size."
+    },
+    {
+      "term": "Essential Prime Implicant (EPI)",
+      "definition": "A prime implicant that covers at least one minterm (1) that is not covered by any other prime implicant, making its inclusion in the minimal expression mandatory."
+    },
+    {
+      "term": "Don't-Care Condition (X)",
+      "definition": "An input combination that cannot physically occur or whose output value is irrelevant, which may be treated as 1 or 0 to maximize group size during K-map minimization."
+    },
+    {
+      "term": "Product of Sums (POS) Minimization",
+      "definition": "The process of grouping adjacent 0s on a K-map to obtain the minimal SOP for the inverted function F', then applying De Morgan's Law to produce the minimal POS for F."
+    },
+    {
+      "term": "Quine-McCluskey Method",
+      "definition": "A systematic, tabular algorithmic method for finding all prime implicants and minimal covers of Boolean functions, particularly suited for 5 or more variables."
+    }
+  ],
+  "questions": [
+    {
+      "id": "ift211-km-001",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "gray-code",
+        "kmap-coordinates",
+        "adjacency"
+      ],
+      "question": "Why are the row and column coordinates of a Karnaugh map sequenced as 00, 01, 11, 10 rather than the standard binary counting order 00, 01, 10, 11?",
+      "options": [
+        "To ensure that adjacent cells differ by only one binary variable (Hamming distance of 1), allowing algebraic simplification via A + A' = 1.",
+        "Because standard binary numbers cannot represent three-variable logic functions.",
+        "Because digital ICs cannot decode the binary number 10 before 11.",
+        "It is purely an aesthetic convention with no mathematical significance."
+      ],
+      "answer": "To ensure that adjacent cells differ by only one binary variable (Hamming distance of 1), allowing algebraic simplification via A + A' = 1.",
+      "explanation": "Gray code ensures unit distance adjacency. If standard binary (01 to 10) were used, both bits would change simultaneously (distance 2), destroying visual adjacency and preventing the elimination of variables using x + x' = 1.",
+      "why_wrong": {
+        "Because standard binary numbers cannot represent three-variable logic functions.": "Binary easily represents any number of variables.",
+        "Because digital ICs cannot decode the binary number 10 before 11.": "ICs decode binary in any designated sequence.",
+        "It is purely an aesthetic convention with no mathematical significance.": "Single-bit adjacency is the mathematical foundation of K-map visual minimization."
+      },
+      "marking_points": [
+        "Names single-bit change / Hamming distance of 1",
+        "Explains elimination of changing variable"
+      ],
+      "source": "Digital Logic Lecture Note, Page 36-37",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-002",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "calculation",
+      "difficulty": 3,
+      "tags": [
+        "group-size",
+        "literal-reduction"
+      ],
+      "question": "In a 4-variable Karnaugh map (variables A, B, C, D), how many literals are contained in the simplified product term obtained from a valid rectangular group of 8 adjacent cells?",
+      "options": [
+        "1 literal",
+        "2 literals",
+        "3 literals",
+        "4 literals"
+      ],
+      "answer": "1 literal",
+      "explanation": "According to the K-map reduction rule (Page 37):\n- 1 cell = 4 literals (0 variables eliminated)\n- 2 cells (group of 2^1) = 3 literals (1 variable eliminated)\n- 4 cells (group of 2^2) = 2 literals (2 variables eliminated)\n- 8 cells (group of 2^3) = 1 literal (3 variables eliminated)\n- 16 cells (group of 2^4) = 0 literals (constant 1).\nTherefore, a group of 8 cells yields a single-literal term.",
+      "why_wrong": {
+        "2 literals": "A group of 4 cells yields 2 literals, not 8.",
+        "3 literals": "A group of 2 cells yields 3 literals.",
+        "4 literals": "An isolated single cell yields 4 literals."
+      },
+      "marking_points": [
+        "Eliminates 3 variables for group of 8",
+        "Leaves 4 - 3 = 1 literal"
+      ],
+      "source": "Digital Logic Lecture Note, Page 37",
+      "verified": true,
+      "verified_output": "4 - log2(8) = 4 - 3 = 1 literal"
+    },
+    {
+      "id": "ift211-km-003",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "calculation",
+      "difficulty": 3,
+      "tags": [
+        "four-corners",
+        "wrap-around",
+        "simplification"
+      ],
+      "question": "In a 4-variable Karnaugh map with inputs A, B (rows) and C, D (columns), which simplified product term is formed by grouping the four corner cells: m0 (0000), m2 (0010), m8 (1000), and m10 (1010)?",
+      "options": [
+        "B' \u00b7 D'",
+        "A' \u00b7 C'",
+        "B \u00b7 D",
+        "A' \u00b7 B' \u00b7 C' \u00b7 D'"
+      ],
+      "answer": "B' \u00b7 D'",
+      "explanation": "Evaluating the four corners:\n- Rows 00 (A'B') and 10 (AB') share variable B' (A changes from 0 to 1, so A is eliminated).\n- Columns 00 (C'D') and 10 (CD') share variable D' (C changes from 0 to 1, so C is eliminated).\nCombining the common row and column literals yields: B' \u00b7 D'.",
+      "why_wrong": {
+        "A' \u00b7 C'": "A' and C' are not common to rows 10 and columns 10.",
+        "B \u00b7 D": "The corner indices have B=0 and D=0, requiring inverted literals B' and D'.",
+        "A' \u00b7 B' \u00b7 C' \u00b7 D'": "This is only cell m0, failing to group all 4 corners."
+      },
+      "marking_points": [
+        "Identifies common row literal B'",
+        "Identifies common column literal D'",
+        "Combines to B'D'"
+      ],
+      "source": "Digital Logic Lecture Note, Page 37 & 42",
+      "verified": true,
+      "verified_output": "m0, m2, m8, m10 = B' & D'"
+    },
+    {
+      "id": "ift211-km-004",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "essential-prime-implicant",
+        "definitions",
+        "analysis"
+      ],
+      "question": "What is the defining criterion of an ESSENTIAL Prime Implicant (EPI)?",
+      "options": [
+        "It is a prime implicant that covers at least one '1' (minterm) that is not covered by any other prime implicant.",
+        "It is any group of 8 or more cells on the map.",
+        "It is a prime implicant that contains only uncomplemented variables.",
+        "It is a prime implicant that covers don't-care conditions exclusively."
+      ],
+      "answer": "It is a prime implicant that covers at least one '1' (minterm) that is not covered by any other prime implicant.",
+      "explanation": "An Essential Prime Implicant is indispensable: because it contains at least one minterm covered by no other prime implicant, omitting it would leave that minterm uncovered, resulting in an incomplete Boolean function.",
+      "why_wrong": {
+        "It is any group of 8 or more cells on the map.": "Groups of 2 or 4 cells can also be essential prime implicants.",
+        "It is a prime implicant that contains only uncomplemented variables.": "EPIs can contain complemented or uncomplemented variables.",
+        "It is a prime implicant that covers don't-care conditions exclusively.": "A group containing only don't-cares should never be selected."
+      },
+      "marking_points": [
+        "Defines EPI as covering a 1 not covered by any other PI"
+      ],
+      "source": "Digital Logic Lecture Note, Page 38",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-004b",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "sequencing",
+      "difficulty": 3,
+      "tags": [
+        "kmap-procedure",
+        "sequencing"
+      ],
+      "question": "Order the correct sequence of steps to minimize an arbitrary Boolean function using a Karnaugh map:",
+      "options": [
+        "Plot all minterm 1s and don't-cares (X) onto the map -> Identify all prime implicants by forming maximum power-of-2 groups (16, 8, 4, 2, 1) -> Identify all essential prime implicants covering unique 1s -> Add minimal non-essential prime implicants to cover any remaining 1s -> Sum all selected product terms",
+        "Group 0s first -> Convert all X to 1 -> Draw single-cell loops -> Negate variables",
+        "Write POS expression -> Plot 1s -> Multiply terms -> Invert coordinates",
+        "Add don't-cares alone -> Form diagonal groups -> Convert to binary"
+      ],
+      "answer": "Plot all minterm 1s and don't-cares (X) onto the map -> Identify all prime implicants by forming maximum power-of-2 groups (16, 8, 4, 2, 1) -> Identify all essential prime implicants covering unique 1s -> Add minimal non-essential prime implicants to cover any remaining 1s -> Sum all selected product terms",
+      "explanation": "Standard minimization procedure: 1. Plot 1s and Xs; 2. Form largest legal groups (prime implicants); 3. Select all essential prime implicants; 4. Select minimal set of remaining PIs to cover remaining 1s; 5. Form the minimal SOP.",
+      "why_wrong": {
+        "Group 0s first...": "Groups of 0s produce F', not minimal SOP for F directly.",
+        "Write POS expression...": "Incorrect procedure.",
+        "Add don't-cares alone...": "Don't-cares must never be grouped alone."
+      },
+      "marking_points": [
+        "Plots 1s and Xs",
+        "Finds PIs",
+        "Selects EPIs first",
+        "Covers remaining 1s",
+        "Sums terms"
+      ],
+      "source": "Digital Logic Lecture Note, Page 37-38",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-005",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "calculation",
+      "difficulty": 3,
+      "tags": [
+        "pos-simplification",
+        "de-morgan"
+      ],
+      "question": "To obtain the minimal Product-of-Sums (POS) expression using a K-map, one groups adjacent 0s to obtain F' = AB + CD + BD'. What is the corresponding minimal POS expression for F?",
+      "options": [
+        "F = (A' + B')(C' + D')(B' + D)",
+        "F = (A + B)(C + D)(B + D')",
+        "F = A'B' + C'D' + B'D",
+        "F = (AB)' \u00b7 (CD)' \u00b7 (BD')'"
+      ],
+      "answer": "F = (A' + B')(C' + D')(B' + D)",
+      "explanation": "To get F in POS form, apply De Morgan's Law to F':\nF = (F')' = (AB + CD + BD')'\nBy De Morgan's Law: (X + Y + Z)' = X' \u00b7 Y' \u00b7 Z'\n(AB)' = (A' + B')\n(CD)' = (C' + D')\n(BD')' = (B' + D)\nMultiplying together gives: F = (A' + B')(C' + D')(B' + D).",
+      "why_wrong": {
+        "F = (A + B)(C + D)(B + D')": "Neglected to invert the individual literals when applying De Morgan.",
+        "F = A'B' + C'D' + B'D": "This is in Sum-of-Products form, not Product-of-Sums.",
+        "F = (AB)' \u00b7 (CD)' \u00b7 (BD')'": "Unsimplified expression with NAND factors rather than maxterm sum factors."
+      },
+      "marking_points": [
+        "Applies De Morgan to F' = AB + CD + BD'",
+        "Produces (A'+B')(C'+D')(B'+D)"
+      ],
+      "source": "Digital Logic Lecture Note, Page 43",
+      "verified": true,
+      "verified_output": "~(AB + CD + BD') = (~A|~B)&(~C|~D)&(~B|D)"
+    },
+    {
+      "id": "ift211-km-006",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "dont-care",
+        "rules"
+      ],
+      "question": "What is the correct rule regarding DON'T-CARE conditions (X) when simplifying Boolean functions on a Karnaugh map?",
+      "options": [
+        "Include an X in a group only if it helps enlarge an existing group of 1s (to reduce literals); do not circle an X if it does not help cover any 1.",
+        "Every single X on the map MUST be covered by at least one group.",
+        "Never include an X in any group under any circumstance.",
+        "Convert all X's to 0 before starting the simplification."
+      ],
+      "answer": "Include an X in a group only if it helps enlarge an existing group of 1s (to reduce literals); do not circle an X if it does not help cover any 1.",
+      "explanation": "Don't-cares represent don't-care/impossible conditions. They can be treated as 1 if advantageous to expand a group (e.g. from 2 to 4 cells, reducing a literal), or treated as 0 if they do not help. A group consisting solely of don't-cares is redundant and must not be formed.",
+      "why_wrong": {
+        "Every single X on the map MUST be covered...": "Mandatory coverage of X adds unnecessary redundant gates.",
+        "Never include an X in any group...": "Ignoring X forfeits valuable gate-reduction opportunities.",
+        "Convert all X's to 0 before starting...": "Forbids exploiting don't cares to enlarge groups."
+      },
+      "marking_points": [
+        "Treats X as 1 only to enlarge groups of 1s",
+        "Discards unused X's"
+      ],
+      "source": "Digital Logic Lecture Note, Page 44",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-007",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "quine-mccluskey",
+        "tabulation"
+      ],
+      "question": "For Boolean functions with 5 or more input variables, why is the Quine-McCluskey (tabulation) method preferred over Karnaugh mapping?",
+      "options": [
+        "Because visualizing 3D and 4D spatial adjacencies on paper becomes unwieldy and error-prone, whereas Quine-McCluskey is an algorithmic tabular method suitable for computer programming.",
+        "Because Karnaugh maps can only simplify functions with NAND gates.",
+        "Because Quine-McCluskey produces analog circuits instead of digital circuits.",
+        "Because Karnaugh maps do not obey De Morgan's laws for 5 variables."
+      ],
+      "answer": "Because visualizing 3D and 4D spatial adjacencies on paper becomes unwieldy and error-prone, whereas Quine-McCluskey is an algorithmic tabular method suitable for computer programming.",
+      "explanation": "A 5-variable K-map requires two 4-variable overlay planes; 6 variables requires four planes. Visual pattern matching degrades rapidly in higher dimensions. Quine-McCluskey provides an exact, deterministic algebraic-tabular algorithm that guarantees finding all prime implicants and can be coded into software.",
+      "why_wrong": {
+        "Because Karnaugh maps can only simplify functions with NAND gates.": "K-maps simplify any Boolean sum-of-products or product-of-sums.",
+        "Because Quine-McCluskey produces analog circuits...": "Quine-McCluskey operates strictly on discrete digital binary functions.",
+        "Because Karnaugh maps do not obey De Morgan's laws...": "Boolean algebra theorems hold universally regardless of variable count."
+      },
+      "marking_points": [
+        "Explains geometric visualization limits in >=5 variables",
+        "Highlights systematic tabular/algorithmic nature"
+      ],
+      "source": "Digital Logic Lecture Note, Page 45",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-008",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "calculation",
+      "difficulty": 3,
+      "tags": [
+        "majority-function",
+        "3-variable-kmap"
+      ],
+      "question": "Simplify the 3-variable Majority Function M(a, b, c) = \u03a3m(3, 5, 6, 7) using a 3-variable Karnaugh map. What is the minimal Sum-of-Products expression?",
+      "options": [
+        "M = ab + bc + ac",
+        "M = a + b + c",
+        "M = abc + a'b'c'",
+        "M = ab' + bc' + a'c"
+      ],
+      "answer": "M = ab + bc + ac",
+      "explanation": "In a 3-variable K-map for inputs a (row) and bc (columns):\n- m3 is row 0, col 11 (a'bc)\n- m5 is row 1, col 01 (ab'c)\n- m6 is row 1, col 11 (abc') [note: row 1 col 10 is m6, col 11 is m7]\n- m7 is row 1, col 11 (abc)\nGrouping pairs of 1s:\n1. Group m3 (011) and m7 (111) -> bc\n2. Group m5 (101) and m7 (111) -> ac\n3. Group m6 (110) and m7 (111) -> ab\nAll three pairs overlap at minterm m7 (111). M = ab + bc + ac.",
+      "why_wrong": {
+        "M = a + b + c": "Represents a simple 3-input OR gate.",
+        "M = abc + a'b'c'": "Contains only the all-1s and all-0s minterms.",
+        "M = ab' + bc' + a'c": "Contains inverted minterms."
+      },
+      "marking_points": [
+        "Pairs m3 and m7 -> bc",
+        "Pairs m5 and m7 -> ac",
+        "Pairs m6 and m7 -> ab",
+        "Combines to ab + bc + ac"
+      ],
+      "source": "Digital Logic Lecture Note, Page 39-40",
+      "verified": true,
+      "verified_output": "M = ab + bc + ac"
+    },
+    {
+      "id": "ift211-km-fc01",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "gray-code"
+      ],
+      "question": "What is the Gray code sequence used for rows and columns in a Karnaugh map?",
+      "options": [],
+      "answer": "00, 01, 11, 10.",
+      "explanation": "Ensures that adjacent cells differ by only one variable.",
+      "why_wrong": {},
+      "marking_points": [
+        "00, 01, 11, 10"
+      ],
+      "source": "Digital Logic Lecture Note, Page 36",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-fc02",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "group-sizes"
+      ],
+      "question": "What are the allowed group sizes in a Karnaugh map?",
+      "options": [],
+      "answer": "Powers of 2: 1, 2, 4, 8, or 16 cells (2^n).",
+      "explanation": "Groups must be rectangular blocks with power-of-2 dimensions.",
+      "why_wrong": {},
+      "marking_points": [
+        "Powers of 2 (1, 2, 4, 8, 16)"
+      ],
+      "source": "Digital Logic Lecture Note, Page 37",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-fc03",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "prime-implicant"
+      ],
+      "question": "What is a Prime Implicant in a Karnaugh map?",
+      "options": [],
+      "answer": "A maximal group of 2^k adjacent 1s that cannot be combined with any adjacent cells to form a larger group.",
+      "explanation": "Represents an implicant with minimal literals.",
+      "why_wrong": {},
+      "marking_points": [
+        "Maximal group that cannot be further combined"
+      ],
+      "source": "Digital Logic Lecture Note, Page 38",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-fc04",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "essential-prime-implicant"
+      ],
+      "question": "What is an Essential Prime Implicant (EPI)?",
+      "options": [],
+      "answer": "A prime implicant that covers at least one '1' that is not covered by any other prime implicant.",
+      "explanation": "Must be included in every minimal sum-of-products solution.",
+      "why_wrong": {},
+      "marking_points": [
+        "Covers a 1 covered by no other prime implicant"
+      ],
+      "source": "Digital Logic Lecture Note, Page 38",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-fc05",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "four-corners"
+      ],
+      "question": "What term is formed by grouping the four corners of a 4-variable K-map (m0, m2, m8, m10)?",
+      "options": [],
+      "answer": "B' \u00b7 D'",
+      "explanation": "Rows 00 and 10 share B'; columns 00 and 10 share D'.",
+      "why_wrong": {},
+      "marking_points": [
+        "B'D'"
+      ],
+      "source": "Digital Logic Lecture Note, Page 42",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-fc06",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "pos-kmap"
+      ],
+      "question": "How do you obtain a minimal Product-of-Sums (POS) expression using a K-map?",
+      "options": [],
+      "answer": "Group the 0s to obtain the minimal expression for F', then apply De Morgan's Law to get F = (F')'.",
+      "explanation": "Inverting the minimal SOP of 0s yields the minimal POS.",
+      "why_wrong": {},
+      "marking_points": [
+        "Group 0s for F'",
+        "Apply De Morgan to get POS for F"
+      ],
+      "source": "Digital Logic Lecture Note, Page 43",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-fc07",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "dont-cares"
+      ],
+      "question": "When should a don't-care condition (X) be included in a K-map group?",
+      "options": [],
+      "answer": "Only when including the X makes an existing group of 1s larger (reducing the number of literals). Never circle X's alone.",
+      "explanation": "X acts as a wild card to optimize circuit cost.",
+      "why_wrong": {},
+      "marking_points": [
+        "Include only to enlarge group of 1s",
+        "Never circle alone"
+      ],
+      "source": "Digital Logic Lecture Note, Page 44",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-km-fc08",
+      "course": "IFT 211",
+      "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "quine-mccluskey"
+      ],
+      "question": "What is the Quine-McCluskey method?",
+      "options": [],
+      "answer": "A systematic, tabular algorithm used to find all prime implicants and select the minimal cover for Boolean functions, especially for 5 or more variables.",
+      "explanation": "Suitable for computer implementation.",
+      "why_wrong": {},
+      "marking_points": [
+        "Tabular algorithm",
+        "Used for >= 5 variables"
+      ],
+      "source": "Digital Logic Lecture Note, Page 45",
+      "verified": true,
+      "verified_output": "N/A"
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "ift211-km-cs01",
+      "scenario": "A digital design engineer at Nile University is designing a minimal hazard-free controller circuit defined by the 4-variable Boolean function: F(A, B, C, D) = \u03a3m(0, 2, 5, 7, 8, 10, 14, 15). The engineer plots all 8 minterms on a 4-variable Karnaugh map and must determine all prime implicants, identify which are essential, and select the minimal sum of products.",
+      "sub_questions": [
+        {
+          "id": "ift211-km-cs01-q1",
+          "course": "IFT 211",
+          "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "kmap-grouping",
+            "prime-implicants"
+          ],
+          "question": "Identify all Prime Implicants (PI) present on the K-map for F = \u03a3m(0, 2, 8, 10, 5, 7, 14, 15).",
+          "options": [
+            "PI 1: B'D' (corners m0, m2, m8, m10); PI 2: A'BD (m5, m7); PI 3: ABC (m14, m15)",
+            "PI 1: A'B'C'D'; PI 2: ABCD; PI 3: B'D'",
+            "PI 1: BD; PI 2: AC; PI 3: B'D'",
+            "PI 1: A'B' + CD + AB"
+          ],
+          "answer": "PI 1: B'D' (corners m0, m2, m8, m10); PI 2: A'BD (m5, m7); PI 3: ABC (m14, m15)",
+          "explanation": "Group the minterms on the 4-variable map:\n1. Four corners: m0(0000), m2(0010), m8(1000), m10(1010) form a quad -> B'D'.\n2. Adjacent pair m5(0101) and m7(0111) in row 01 (A'B) with columns 01 and 11 sharing D -> A'BD.\n3. Adjacent pair m14(1110) and m15(1111) in row 11 (AB) with columns 11 and 10 sharing C -> ABC.\nNone of these groups can be merged further. Thus, the prime implicants are B'D', A'BD, and ABC.",
+          "why_wrong": {
+            "PI 1: A'B'C'D'; PI 2: ABCD...": "Lists single uncombined minterms rather than prime implicants.",
+            "PI 1: BD; PI 2: AC...": "BD and AC would require groups of 4 that include minterms not in F.",
+            "PI 1: A'B' + CD + AB": "Incorrect groupings."
+          },
+          "marking_points": [
+            "Identifies four corners quad B'D'",
+            "Identifies pair A'BD",
+            "Identifies pair ABC"
+          ],
+          "source": "Digital Logic 4-Variable K-Map Analysis",
+          "verified": true,
+          "verified_output": "PIs = [B'D', A'BD, ABC]"
+        },
+        {
+          "id": "ift211-km-cs01-q2",
+          "course": "IFT 211",
+          "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+          "type": "mcq",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "essential-prime-implicant",
+            "minimal-sop"
+          ],
+          "question": "Which of the prime implicants are ESSENTIAL Prime Implicants (EPI), and what is the final minimal Sum-of-Products expression?",
+          "options": [
+            "All three (B'D', A'BD, ABC) are Essential Prime Implicants, and the minimal expression is F = B'D' + A'BD + ABC.",
+            "Only B'D' is essential; the others can be omitted.",
+            "None of them are essential; any combination works.",
+            "Only A'BD and ABC are essential; B'D' is redundant."
+          ],
+          "answer": "All three (B'D', A'BD, ABC) are Essential Prime Implicants, and the minimal expression is F = B'D' + A'BD + ABC.",
+          "explanation": "Check uniqueness of coverage:\n- m0, m2, m8, m10 are ONLY covered by B'D'. Thus B'D' is essential.\n- m5 and m7 are ONLY covered by A'BD. Thus A'BD is essential.\n- m14 and m15 are ONLY covered by ABC. Thus ABC is essential.\nSince all three PIs are essential, all must be retained. The minimal SOP is: F = B'D' + A'BD + ABC.",
+          "why_wrong": {
+            "Only B'D' is essential...": "Omitting A'BD and ABC leaves minterms 5, 7, 14, 15 uncovered.",
+            "None of them are essential...": "All minterms have unique coverage.",
+            "Only A'BD and ABC are essential...": "Omitting B'D' leaves the four corners uncovered."
+          },
+          "marking_points": [
+            "Shows B'D' uniquely covers corners",
+            "Shows A'BD uniquely covers 5, 7",
+            "Shows ABC uniquely covers 14, 15",
+            "Concludes all 3 are EPIs: F = B'D' + A'BD + ABC"
+          ],
+          "source": "Digital Logic Essential Prime Implicant Analysis",
+          "verified": true,
+          "verified_output": "F = B'D' + A'BD + ABC (all 3 EPIs)"
+        }
+      ]
+    },
+    {
+      "id": "ift211-km-cs02",
+      "scenario": "A hardware design team at Nile University is building a BCD Prime Number Detector circuit that outputs 1 whenever the 4-bit input (A, B, C, D) represents a prime number between 0 and 9. The prime numbers are 2, 3, 5, 7. Therefore, F(A, B, C, D) = \u03a3m(2, 3, 5, 7). Because valid BCD digits range only from 0 (0000) to 9 (1001), input codes 10 through 15 can never occur and are assigned as don't-care conditions: d = \u03a3m(10, 11, 12, 13, 14, 15).",
+      "sub_questions": [
+        {
+          "id": "ift211-km-cs02-q1",
+          "course": "IFT 211",
+          "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "dont-care",
+            "bcd-prime-detector"
+          ],
+          "question": "By strategically utilizing the don't-care cells d(10, 11, 12, 13, 14, 15) on the K-map, what is the optimal simplified Boolean expression for the BCD prime detector?",
+          "options": [
+            "F = B'C + BD",
+            "F = A'B'C + A'BD",
+            "F = A'B'CD' + A'B'CD + A'BC'D + A'BCD",
+            "F = C + D"
+          ],
+          "answer": "F = B'C + BD",
+          "explanation": "Plot minterms and don't cares:\n- 1s at: m2(0010), m3(0011), m5(0101), m7(0111).\n- X at: m10, m11, m12, m13, m14, m15.\nGroupings:\n1. Combine 1s at m2(0010), m3(0011) with X at m10(1010), m11(1011). These four cells form a 2x2 quad spanning rows 00 and 10 (sharing B') and columns 11 and 10 (sharing C). This yields B'C.\n2. Combine 1s at m5(0101), m7(0111) with X at m13(1101), m15(1111). These four cells form a 2x2 quad spanning rows 01 and 11 (sharing B) and columns 01 and 11 (sharing D). This yields BD.\nAll 1s are covered. The minimal simplified expression is: F = B'C + BD.",
+          "why_wrong": {
+            "F = A'B'C + A'BD": "Fails to utilize the don't-cares in rows 10 and 11, resulting in 3-literal terms instead of 2-literal terms.",
+            "F = A'B'CD' + A'B'CD + A'BC'D + A'BCD": "Unsimplified canonical expression without grouping.",
+            "F = C + D": "Overly broad; would also output 1 for input 1 (0001) which is not prime."
+          },
+          "marking_points": [
+            "Combines m2, m3 with d10, d11 to get B'C",
+            "Combines m5, m7 with d13, d15 to get BD",
+            "Concludes F = B'C + BD"
+          ],
+          "source": "Digital Logic Lecture Note, Page 44 (Worked Example)",
+          "verified": true,
+          "verified_output": "F = B'C + BD"
+        },
+        {
+          "id": "ift211-km-cs02-q2",
+          "course": "IFT 211",
+          "topic": "Karnaugh Maps (2, 3, 4 Variables)",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "hardware-cost",
+            "gate-savings"
+          ],
+          "question": "How many gate inputs (total literal count) are saved by utilizing the don't-care conditions compared to the minimized expression without don't-cares (F = A'B'C + A'BD)?",
+          "options": [
+            "2 literals saved (4 literals vs 6 literals)",
+            "6 literals saved",
+            "0 literals saved",
+            "10 literals saved"
+          ],
+          "answer": "2 literals saved (4 literals vs 6 literals)",
+          "explanation": "Without don't-cares: F = A'B'C + A'BD has two 3-literal terms, requiring 6 literal inputs.\nWith don't-cares: F = B'C + BD has two 2-literal terms, requiring 4 literal inputs.\nSavings = 6 - 4 = 2 literals (plus simpler 2-input AND gates instead of 3-input AND gates).",
+          "why_wrong": {
+            "6 literals saved": "Overstates the literal difference.",
+            "0 literals saved": "Don't cares significantly reduced literal count from 3 to 2 per term.",
+            "10 literals saved": "Calculated against the unsimplified 16-literal canonical form."
+          },
+          "marking_points": [
+            "Counts 6 literals without don't-cares",
+            "Counts 4 literals with don't-cares",
+            "Calculates difference = 2 literals"
+          ],
+          "source": "Digital Logic Gate Minimization Analysis",
+          "verified": true,
+          "verified_output": "6 - 4 = 2 literals saved"
+        }
+      ]
+    }
+  ]
+}

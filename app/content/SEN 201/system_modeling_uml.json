@@ -1,0 +1,618 @@
+{
+  "course": "SEN 201",
+  "topic": "System Modeling & UML Diagrams",
+  "summary": "This topic covers graphical system modeling and the Unified Modeling Language (UML 2.5), which provides visual notations for specifying, constructing, and documenting software systems. It distinguishes structural (static) perspectives from behavioral (dynamic) perspectives, beginning with Context Models that establish operational system boundaries. Structural modeling centers on Class Diagrams (classes, attributes, operations, visibility notations (+, -, #, ~), multiplicities, and relationship semantics: association, generalization/inheritance, aggregation (shared ownership) versus composition (lifecycle death-dependency)). Behavioral modeling investigates Use Case Diagrams (actors, system boundaries, and the critical distinction between <<include>> mandatory flows and <<extend>> conditional hooks), Sequence Diagrams (chronological message passing, lifelines, activation bars, synchronous versus asynchronous calls, and alt/opt fragments), State Machine Diagrams (event-driven object lifecycles, guards, and state transitions), and Activity Diagrams (procedural workflows and fork/join concurrency).",
+  "key_terms": [
+    {
+      "term": "Unified Modeling Language (UML)",
+      "definition": "A standardized visual modeling language used in software engineering to specify, visualize, construct, and document software system artifacts."
+    },
+    {
+      "term": "Class Diagram",
+      "definition": "A static structural UML diagram representing the classes, attributes, operations, and relationships (inheritance, association, composition) within an object-oriented system."
+    },
+    {
+      "term": "Context Model",
+      "definition": "A high-level architectural diagram establishing the boundary between a system and the external environment, actors, and external systems it interacts with."
+    },
+    {
+      "term": "Use Case Diagram",
+      "definition": "A behavioral UML diagram depicting actors and the functional goals (use cases) they pursue with the system within an enclosed system boundary."
+    },
+    {
+      "term": "Sequence Diagram",
+      "definition": "A dynamic interaction UML diagram displaying how objects collaborate by exchanging messages organized in a strict chronological time sequence along lifelines."
+    },
+    {
+      "term": "Aggregation",
+      "definition": "A loose 'has-a' relationship where a container object references component objects whose lifecycles remain independent (denoted by a hollow diamond)."
+    },
+    {
+      "term": "Composition",
+      "definition": "A strict 'death-dependency' whole-part relationship where child components cannot exist independently of their parent container (denoted by a filled black diamond)."
+    },
+    {
+      "term": "State Machine Diagram",
+      "definition": "A dynamic UML diagram modeling the discrete states an individual reactive object traverses during its lifetime in response to external events."
+    },
+    {
+      "term": "Include Relationship (<<include>>)",
+      "definition": "A mandatory use case relationship where the base usecase unconditionally invokes and requires the execution of another use case to complete its goal."
+    },
+    {
+      "term": "Extend Relationship (<<extend>>)",
+      "definition": "An optional or conditional use case relationship where an extending use case injects supplemental behavior into a base usecase only at specified extension points."
+    }
+  ],
+  "questions": [
+    {
+      "id": "sen201-um-001",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "nile-exam-q8",
+        "class-diagram",
+        "structure"
+      ],
+      "question": "In Nile University Final Exam Question 8: In object-oriented software design, which UML diagram represents the static structure of classes, attributes, operations, and their relationships?",
+      "options": [
+        "Class diagram",
+        "Use-case diagram",
+        "Activity diagram",
+        "State diagram"
+      ],
+      "answer": "Class diagram",
+      "explanation": "A Class diagram is the central structural diagram in object-oriented design. It depicts classes, their internal data fields (attributes), methods (operations), and relationships such as inheritance, association, aggregation, and composition.",
+      "why_wrong": {
+        "Use-case diagram": "Shows external actors and functional goals, not internal class structures.",
+        "Activity diagram": "Represents dynamic control flow and business process workflows.",
+        "State diagram": "Models the dynamic state transitions of a single reactive object."
+      },
+      "marking_points": [
+        "Identifies Class diagram as representing static structure of classes and relationships"
+      ],
+      "source": "Nile University Final Exam Paper (Type B), Question 8",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-002",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "nile-exam-q22",
+        "context-model",
+        "boundaries"
+      ],
+      "question": "In Nile University Final Exam Question 22: What does a Context Model primarily illustrate in system modeling?",
+      "options": [
+        "System boundaries and external interactions with environment and other systems",
+        "Internal data types of local variables",
+        "Microprocessor CPU register states",
+        "The graphic user interface CSS color palette"
+      ],
+      "answer": "System boundaries and external interactions with environment and other systems",
+      "explanation": "Context models establish the high-level scope of the project: what falls inside the proposed software boundary and what external entities (human actors, third-party APIs, legacy databases, hardware sensors) reside outside and communicate across that boundary.",
+      "why_wrong": {
+        "Internal data types of local variables": "Implementation-level detail.",
+        "Microprocessor CPU register states": "Low-level computer architecture detail.",
+        "The graphic user interface CSS palette": "Visual presentation design."
+      },
+      "marking_points": [
+        "System boundaries and external interactions"
+      ],
+      "source": "Nile University Final Exam Paper (Type B), Question 22",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-003",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "aggregation-vs-composition",
+        "class-diagram",
+        "analysis"
+      ],
+      "question": "In a UML Class diagram, what is the crucial architectural distinction between AGGREGATION (hollow diamond) and COMPOSITION (filled black diamond)?",
+      "options": [
+        "In Aggregation, child components can exist independently if the container is destroyed; In Composition, child parts share a lifecycle death-dependency with the container and cannot exist without it.",
+        "Aggregation represents private inheritance, while Composition represents public inheritance.",
+        "Aggregation applies only to database tables, while Composition applies to web pages.",
+        "There is no difference; they are purely interchangeable visual styles."
+      ],
+      "answer": "In Aggregation, child components can exist independently if the container is destroyed; In Composition, child parts share a lifecycle death-dependency with the container and cannot exist without it.",
+      "explanation": "Aggregation represents a weak 'has-a' relationship (e.g. A Department has Professors; if the Department closes, the Professors still exist). Composition represents a strong, exclusive whole-part ownership (e.g. An Examination has ExamQuestions; if the Examination is deleted, its constituent questions are destroyed with it).",
+      "why_wrong": {
+        "Aggregation represents private inheritance...": "Both are association types, not inheritance/generalization.",
+        "Aggregation applies only to databases...": "Both apply across all object-oriented software designs.",
+        "There is no difference...": "Denotes completely different object lifecycle ownership and memory deallocation semantics."
+      },
+      "marking_points": [
+        "Aggregation: parts survive container destruction",
+        "Composition: parts destroyed when container is destroyed"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 7.6 & UML 2.5",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-004",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "use-case",
+        "include-vs-extend",
+        "analysis"
+      ],
+      "question": "In a UML Use Case diagram, how do the <<include>> and <<extend>> relationships between use cases fundamentally differ?",
+      "options": [
+        "<<include>> indicates mandatory execution of the child usecase whenever the base usecase runs; <<extend>> indicates optional or conditional execution only at defined extension points.",
+        "<<include>> is used for external actors, while <<extend>> is used for internal databases.",
+        "<<include>> represents inheritance between classes, while <<extend>> represents method overriding.",
+        "<<include>> can only be used once per diagram, while <<extend>> is unlimited."
+      ],
+      "answer": "<<include>> indicates mandatory execution of the child usecase whenever the base usecase runs; <<extend>> indicates optional or conditional execution only at defined extension points.",
+      "explanation": "<<include>> encapsulates common, mandatory sub-behavior (e.g., 'View Exam Results' <<include>> 'Authenticate Student'). <<extend>> injects optional, conditional behavior that only executes under specific circumstances (e.g., 'Display Late Fee Warning' <<extend>> 'Pay Tuition', triggered only if payment date is past due).",
+      "why_wrong": {
+        "<<include>> is used for external actors...": "Both connect use cases to use cases, not actors.",
+        "<<include>> represents inheritance between classes...": "Use cases model functional requirements, not class OOP inheritance.",
+        "<<include>> can only be used once...": "Both stereotypes can be used wherever logically appropriate."
+      },
+      "marking_points": [
+        "<<include>> is mandatory execution",
+        "<<extend>> is conditional/optional execution at extension points"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 6.3 & 7.6",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-005",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "matching",
+      "difficulty": 2,
+      "tags": [
+        "visibility-symbols",
+        "class-diagram"
+      ],
+      "question": "Match each standard UML class visibility symbol with its corresponding access specification:",
+      "options": [
+        "+ -> Public; - -> Private; # -> Protected; ~ -> Package",
+        "+ -> Private; - -> Public; # -> Package; ~ -> Protected",
+        "+ -> Protected; - -> Private; # -> Public; ~ -> Global",
+        "+ -> Static; - -> Dynamic; # -> Final; ~ -> Abstract"
+      ],
+      "answer": "+ -> Public; - -> Private; # -> Protected; ~ -> Package",
+      "explanation": "In standard UML notation: '+' designates public access (visible to any class); '-' designates private access (visible only inside the class); '#' designates protected access (visible to class and subclasses); '~' designates package/default access.",
+      "why_wrong": {
+        "+ -> Private...": "Inverted symbols; '+' is universal for public.",
+        "+ -> Protected...": "Incorrect symbol assignment.",
+        "+ -> Static...": "Static members are denoted with underlining in UML, not '+/-'."
+      },
+      "marking_points": [
+        "+ Public",
+        "- Private",
+        "# Protected",
+        "~ Package"
+      ],
+      "source": "OMG UML Specification 2.5 & Class Diagram Notations",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-006",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "sequence-diagram",
+        "message-types",
+        "analysis"
+      ],
+      "question": "In a UML Sequence diagram, what is the visual and behavioral difference between a SYNCHRONOUS message and an ASYNCHRONOUS message?",
+      "options": [
+        "A Synchronous message is drawn with a solid line and filled triangular arrowhead (\u2014\u25ba) where the sender blocks waiting for a return; An Asynchronous message is drawn with an open arrowhead (\u2014>) where the sender continues executing immediately.",
+        "A Synchronous message is drawn with a dashed line, while Asynchronous is a double line.",
+        "Synchronous messages can only send numbers, while Asynchronous messages can only send strings.",
+        "Synchronous messages destroy the receiving object, while Asynchronous messages clone it."
+      ],
+      "answer": "A Synchronous message is drawn with a solid line and filled triangular arrowhead (\u2014\u25ba) where the sender blocks waiting for a return; An Asynchronous message is drawn with an open arrowhead (\u2014>) where the sender continues executing immediately.",
+      "explanation": "Synchronous calls model blocking function calls (e.g. waiting for a database query return before proceeding). Asynchronous calls model non-blocking message events (e.g. publishing an event to a message queue or firing an SMS dispatch), where the sender does not pause its thread of control.",
+      "why_wrong": {
+        "A Synchronous message is drawn with a dashed line...": "Dashed lines are used specifically for Return messages (<---).",
+        "Synchronous messages can only send numbers...": "UML message parameters are typed arbitrarily.",
+        "Synchronous messages destroy the receiving object...": "Object destruction is denoted by a large bold 'X' at the end of a lifeline."
+      },
+      "marking_points": [
+        "Synchronous: filled arrowhead, blocking caller",
+        "Asynchronous: open arrowhead, non-blocking caller"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 7.6 & UML 2.5",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-007",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "state-machine",
+        "transition-syntax"
+      ],
+      "question": "On a UML State Machine diagram, transition arrows between states are labeled in the format: 'Event [Guard] / Action'. What does the [Guard] condition represent?",
+      "options": [
+        "A Boolean condition that must evaluate to TRUE for the transition to trigger when the event occurs.",
+        "A password that encrypts the state machine.",
+        "A security guard who monitors the server room.",
+        "The amount of CPU memory allocated to the state."
+      ],
+      "answer": "A Boolean condition that must evaluate to TRUE for the transition to trigger when the event occurs.",
+      "explanation": "In statechart semantics, when an Event occurs, the transition will only fire if the Boolean Guard condition enclosed in square brackets evaluates to true (e.g., `cardInserted [validPIN == true] / startSession()`). If the guard evaluates to false, the transition is inhibited.",
+      "why_wrong": {
+        "A password that encrypts the state machine": "Confuses a logical conditional guard with encryption credentials.",
+        "A security guard who monitors the server room": "Humorous literal distractor.",
+        "The amount of CPU memory allocated...": "Statecharts model discrete behavioral logic, not memory allocations."
+      },
+      "marking_points": [
+        "Defines Guard as a Boolean condition in square brackets that must be true to trigger transition"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 7.6 & UML Statecharts",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-008",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "activity-diagram",
+        "concurrency",
+        "fork-join"
+      ],
+      "question": "In a UML Activity diagram, what do horizontal solid synchronization bars representing a FORK and a JOIN denote?",
+      "options": [
+        "A Fork splits a single execution path into two or more concurrent parallel activities; A Join synchronizes multiple parallel incoming paths, waiting for all to finish before proceeding.",
+        "A Fork terminates the program, while a Join reboots the server.",
+        "A Fork represents a database deadlock, while a Join represents a SQL join.",
+        "A Fork indicates an error condition, while a Join logs an exception."
+      ],
+      "answer": "A Fork splits a single execution path into two or more concurrent parallel activities; A Join synchronizes multiple parallel incoming paths, waiting for all to finish before proceeding.",
+      "explanation": "Activity diagrams model parallel execution and concurrency using synchronization bars: a Fork has 1 incoming transition and multiple outgoing concurrent branches; a Join has multiple incoming concurrent branches and 1 outgoing transition that fires only when all incoming activities have arrived.",
+      "why_wrong": {
+        "A Fork terminates the program...": "Final nodes denote termination, not forks.",
+        "A Fork represents a database deadlock...": "Fork/Join are concurrency control structures, not SQL queries.",
+        "A Fork indicates an error condition...": "Error handling is modeled via interruptible regions or exception handlers."
+      },
+      "marking_points": [
+        "Fork: splits into parallel concurrent activities",
+        "Join: synchronizes multiple parallel paths into one"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 7.6",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-fc01",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "class-diagram"
+      ],
+      "question": "What does a UML Class Diagram represent?",
+      "options": [],
+      "answer": "The static structure of an object-oriented system, showing classes, attributes, operations, and relationships.",
+      "explanation": "Tested in Nile Exam Q8.",
+      "why_wrong": {},
+      "marking_points": [
+        "Static structure, classes, attributes, operations, relationships"
+      ],
+      "source": "Nile Exam Q8 & Lecture Notes Section 7.6",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-fc02",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "context-model"
+      ],
+      "question": "What does a Context Model illustrate?",
+      "options": [],
+      "answer": "The system boundary and interactions between the system and its external environment/external systems.",
+      "explanation": "Tested in Nile Exam Q22.",
+      "why_wrong": {},
+      "marking_points": [
+        "System boundary and external interactions"
+      ],
+      "source": "Nile Exam Q22 & Lecture Notes Section 6",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-fc03",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "aggregation-vs-composition"
+      ],
+      "question": "What is the difference between Aggregation and Composition in UML?",
+      "options": [],
+      "answer": "- Aggregation (hollow diamond): Weak 'has-a' relationship; components can exist independently.\n- Composition (filled diamond): Strong whole-part relationship; components are destroyed if the container is destroyed.",
+      "explanation": "Lifecycle ownership semantics.",
+      "why_wrong": {},
+      "marking_points": [
+        "Aggregation: independent lifecycle",
+        "Composition: death-dependency lifecycle"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 7.6",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-fc04",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "include-vs-extend"
+      ],
+      "question": "What is the difference between <<include>> and <<extend>> in Use Case diagrams?",
+      "options": [],
+      "answer": "- <<include>>: Mandatory sub-flow; base use case always invokes the included use case.\n- <<extend>>: Optional or conditional sub-flow; only executes at specified extension points.",
+      "explanation": "Crucial use case relationship distinction.",
+      "why_wrong": {},
+      "marking_points": [
+        "<<include>> mandatory",
+        "<<extend>> conditional/optional"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 6.3",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-fc05",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "visibility-symbols"
+      ],
+      "question": "What do +, -, #, and ~ mean in a UML Class diagram?",
+      "options": [],
+      "answer": "+ Public\n- Private\n# Protected\n~ Package (Default)",
+      "explanation": "Standard UML attribute and method access markers.",
+      "why_wrong": {},
+      "marking_points": [
+        "+ Public, - Private, # Protected, ~ Package"
+      ],
+      "source": "OMG UML 2.5 Standards",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-fc06",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "sequence-diagram"
+      ],
+      "question": "What does a Sequence Diagram illustrate?",
+      "options": [],
+      "answer": "Object interactions and message exchanges organized in chronological time sequence along lifelines.",
+      "explanation": "Primary interaction diagram in UML.",
+      "why_wrong": {},
+      "marking_points": [
+        "Object interactions and messages over time along lifelines"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 7.6",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-fc07",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "state-machine"
+      ],
+      "question": "What are the three parts of a State Machine transition label 'Event [Guard] / Action'?",
+      "options": [],
+      "answer": "1. Event: The stimulus triggering the transition.\n2. Guard: A Boolean condition that must be true for the transition to fire.\n3. Action: An executable operation performed during the transition.",
+      "explanation": "Standard syntax for state transitions.",
+      "why_wrong": {},
+      "marking_points": [
+        "Event (trigger), Guard (condition), Action (effect)"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 7.6",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-um-fc08",
+      "course": "SEN 201",
+      "topic": "System Modeling & UML Diagrams",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "activity-diagram"
+      ],
+      "question": "What is the purpose of an Activity Diagram in UML?",
+      "options": [],
+      "answer": "To model procedural workflows, business logic processes, decision points, and parallel/concurrent activities.",
+      "explanation": "Visualizes dynamic workflow across swimlanes.",
+      "why_wrong": {},
+      "marking_points": [
+        "Models workflows, decisions, and parallel/concurrent activities"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 7.6",
+      "verified": true,
+      "verified_output": "N/A"
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "sen201-um-cs01",
+      "scenario": "A software architecture team at Nile University is designing the object model for the Department of Software Engineering. The model contains four primary entity classes: Department, Professor, Student, and StudentCourseEnrollment. The lead architect must decide whether the relationship between Department and Professor is Aggregation or Composition, and design the Class diagram relationships.",
+      "sub_questions": [
+        {
+          "id": "sen201-um-cs01-q1",
+          "course": "SEN 201",
+          "topic": "System Modeling & UML Diagrams",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "class-diagram",
+            "aggregation-decision"
+          ],
+          "question": "Why should the relationship between Department and Professor be modeled as AGGREGATION (hollow diamond) rather than COMPOSITION (filled diamond)?",
+          "options": [
+            "Because if the Department is dissolved, the Professor continues to exist as an employee of the university and can be transferred to another department.",
+            "Because Professors cannot exist outside of a single department.",
+            "Because Aggregation makes database queries run 10 times faster.",
+            "Because UML prohibits Composition between humans."
+          ],
+          "answer": "Because if the Department is dissolved, the Professor continues to exist as an employee of the university and can be transferred to another department.",
+          "explanation": "Aggregation represents shared association where the part's lifecycle is independent of the whole. If Nile University re-organizes or closes the Department of Software Engineering, the Professor object is not deleted from the payroll system; they persist independently. Modeling it as Composition would dictate that deleting the Department deletes all its Professors.",
+          "why_wrong": {
+            "Because Professors cannot exist outside...": "Professors exist independently as faculty employees.",
+            "Because Aggregation makes queries faster...": "UML relationship semantics describe domain reality, not SQL execution speed.",
+            "Because UML prohibits Composition between humans...": "UML syntax allows any class modeling, but domain semantics dictate correct lifecycle ownership."
+          },
+          "marking_points": [
+            "Explains independent lifecycle of Professor if Department is deleted",
+            "Contrasts with death-dependency in Composition"
+          ],
+          "source": "UML Domain Modeling Case Study",
+          "verified": true,
+          "verified_output": "N/A"
+        },
+        {
+          "id": "sen201-um-cs01-q2",
+          "course": "SEN 201",
+          "topic": "System Modeling & UML Diagrams",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "association-class",
+            "multiplicity"
+          ],
+          "question": "In this model, a Student can enroll in many Courses, and a Course can have many enrolled Students (a many-to-many relationship). Explain why an Association Class (StudentCourseEnrollment) is necessary to record the semester and final grade.",
+          "options": [],
+          "answer": "1. In a many-to-many relationship (Student 1..* <---> 0..* Course), attributes such as 'finalGrade', 'attendancePercentage', and 'semester' belong neither exclusively to the Student (a student has different grades for different courses) nor exclusively to the Course (a course has different grades for different students).\n2. An Association Class ('StudentCourseEnrollment') attaches directly to the association line between Student and Course, reifying the relationship into a distinct entity that captures the link-specific attributes (semester, grade, enrollmentDate). This resolves the many-to-many relationship into two clean 1-to-many associations in relational database design.",
+          "explanation": "Association classes capture attributes that exist only as a consequence of the association between two entities.",
+          "why_wrong": {},
+          "marking_points": [
+            "Identifies that grade/semester belongs to the link, not Student or Course alone",
+            "Explains Association Class attaches to the link to hold link-specific data",
+            "Resolves many-to-many association into clean relational structure"
+          ],
+          "source": "Object-Oriented Analysis & Design Standards",
+          "verified": true,
+          "verified_output": "N/A"
+        }
+      ]
+    },
+    {
+      "id": "sen201-um-cs02",
+      "scenario": "A banking engineering team in Nigeria is modeling an Automated Teller Machine (ATM) cash withdrawal workflow using both a Sequence Diagram and a State Machine Diagram for the 'AccountSession' object. The workflow involves the Customer, ATMCardReader, BankAuthorizationServer, and CashDispenser.",
+      "sub_questions": [
+        {
+          "id": "sen201-um-cs02-q1",
+          "course": "SEN 201",
+          "topic": "System Modeling & UML Diagrams",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "sequence-diagram",
+            "interaction-modeling"
+          ],
+          "question": "On the Sequence diagram, the ATM sends a synchronous request 'verifyPIN(pin)' to the BankAuthorizationServer, followed by an 'alt' combined fragment. What do the two operands of the 'alt' fragment represent?",
+          "options": [
+            "Operand 1: [pinValid == true] -> Bank returns auth token and displays account menu; Operand 2: [else] -> Bank increments failure counter, displays error message, and ejects card if attempts exceed 3.",
+            "Operand 1: Customer withdraws cash; Operand 2: Customer buys airtime.",
+            "Operand 1: Bank shuts down server; Operand 2: Card melts.",
+            "Operand 1: The ATM prints receipt; Operand 2: The ATM rings alarm."
+          ],
+          "answer": "Operand 1: [pinValid == true] -> Bank returns auth token and displays account menu; Operand 2: [else] -> Bank increments failure counter, displays error message, and ejects card if attempts exceed 3.",
+          "explanation": "In UML Sequence diagrams, an 'alt' (alternative) combined fragment models mutually exclusive conditional execution (if-else). The first operand executes if the guard [pinValid == true] holds; the second operand [else] executes if the PIN is invalid, handling error messages and security locking.",
+          "why_wrong": {
+            "Operand 1: withdraws cash; Operand 2: buys airtime...": "That is a choice of transaction, not the verification result of verifyPIN.",
+            "Operand 1: Bank shuts down...": "Nonsensical.",
+            "Operand 1: prints receipt...": "Receipt printing occurs post-withdrawal, not during PIN verification."
+          },
+          "marking_points": [
+            "Identifies 'alt' fragment as mutually exclusive if-else branches based on PIN validity guard"
+          ],
+          "source": "UML Sequence Diagram & Banking Protocol Case Study",
+          "verified": true,
+          "verified_output": "N/A"
+        },
+        {
+          "id": "sen201-um-cs02-q2",
+          "course": "SEN 201",
+          "topic": "System Modeling & UML Diagrams",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "state-machine",
+            "lifecycle"
+          ],
+          "question": "Trace the sequential lifecycle states that the ATM 'AccountSession' traverses on a State Machine diagram from card insertion to successful cash dispensing. Specify the states and transitions.",
+          "options": [],
+          "answer": "1. Initial State -> Transition via `cardInserted` event to [Idle / ReadingCard] state.\n2. [ReadingCard] -> Transition via `cardRecognized` to [AwaitingPIN] state.\n3. [AwaitingPIN] -> Transition via `pinEntered [pinValid == true]` to [Authenticated / SelectingTransaction] state.\n4. [SelectingTransaction] -> Transition via `withdrawSelected(amount) [balance >= amount]` to [DispensingCash] state.\n5. [DispensingCash] -> Transition via `cashTaken` to [PrintingReceipt / EjectingCard] state.\n6. [EjectingCard] -> Transition via `cardRemoved` to Final State (or back to Idle).",
+          "explanation": "Demonstrates formal statechart progression with clear events, guards, and discrete states.",
+          "why_wrong": {},
+          "marking_points": [
+            "Idle -> AwaitingPIN upon card inserted",
+            "AwaitingPIN -> Authenticated upon valid PIN guard",
+            "Authenticated -> DispensingCash upon sufficient balance guard",
+            "DispensingCash -> EjectingCard -> Final State"
+          ],
+          "source": "State Machine Engineering Standards & UML 2.5",
+          "verified": true,
+          "verified_output": "N/A"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+=== SLIDE 1 ===
+INTRODUCTION TO INFORMATION TECHNOLOGY
+Software and Operating Systems
+System and application software, utilities, OS functions, files and licensing.
+ZAKARIYYA ABDULLAHI ADAMU
+ASSISTANT LECTURER
+Zakariyya.adamu@nileuniversity.edu.ng
+=== SLIDE 2 ===
+What is software?
+Software is a set of programs and instructions that tell a computer what to do.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+03
+Software gives hardware useful tasks and rules to follow.
+It includes operating systems, applications, utilities, drivers and firmware.
+Software may be installed locally or delivered through a browser or cloud service.
+Software needs updates and maintenance over time.
+EXAMPLE
+A laptop has hardware components, but a word processor is software used to create a report.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 3 ===
+Main categories of software
+Software is often grouped by its primary purpose.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+04
+System software manages hardware and provides a platform for applications.
+Application software helps users perform specific tasks.
+Utility software supports maintenance, security and management.
+Programming software helps developers create and test programs.
+Some products combine functions across categories.
+CLASSIFY
+Windows is system software; a spreadsheet is application software; a backup tool is a utility.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 4 ===
+What is an operating system?
+An operating system (OS) manages computer resources and provides services to programs.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+05
+It manages CPU time, memory, storage and connected devices.
+It provides a user interface and file-management tools.
+It controls access to resources and supports security features.
+It helps applications run without each application controlling hardware directly.
+EXAMPLE
+Windows, macOS, Linux, Android and iOS are operating systems.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 5 ===
+Operating-system functions
+An OS coordinates the work of hardware and software.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+06
+Process management: starts, schedules and stops running programs.
+Memory management: allocates RAM and manages memory use.
+Device management: coordinates hardware through drivers and system services.
+File management: organises files and folders on storage.
+Security and networking: supports accounts, permissions and connectivity.
+ANALOGY
+The OS acts like a manager coordinating people, tools, workspace and records.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 6 ===
+User interfaces: GUI and CLI
+A user interface is how a person interacts with a computer.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+07
+GUI: graphical user interface using windows, icons, menus and pointers.
+CLI: command-line interface where users type commands.
+Touch and voice interfaces are common on phones and accessible systems.
+GUIs are often approachable for beginners; CLIs can be efficient for repeated tasks.
+EXAMPLE
+Clicking a folder uses a GUI; typing a command to list files uses a CLI.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 7 ===
+Processes, multitasking and users
+Modern operating systems manage many activities at once.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+08
+A process is a running instance of a program.
+Multitasking shares processor time among active processes.
+User accounts separate personal settings and access rights.
+Background services perform tasks such as updates, printing or networking.
+Too many resource-heavy processes can reduce performance.
+CHECK
+A browser, music player and document editor may run as separate processes.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 8 ===
+Files and folders
+Files store named collections of data; folders organise them.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+09
+Files may contain text, images, video, programs or structured data.
+Folders/directories group related files in a hierarchy.
+File names and extensions help identify content and intended applications.
+Extensions are clues, not proof that a file is safe or genuine.
+Use clear names and consistent folder structures.
+GOOD PRACTICE
+Use IT101_LectureNotes_Week03.docx instead of newfilefinal2.docx.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 9 ===
+File extensions and formats
+A file format describes how data is encoded and interpreted.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+10
+.docx: Word document; .pdf: portable document; .xlsx: spreadsheet.
+.jpg and .png are common image formats; .mp3 is an audio format.
+.html stores web page markup; .csv stores tabular values as text.
+Some formats are open standards; others depend on particular software.
+Choose formats based on compatibility, editing needs and intended use.
+EXAMPLE
+PDF is often convenient for sharing a final report; DOCX is useful when collaborators need to edit it.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 10 ===
+File paths and organisation
+A file path identifies where a file is located.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+11
+An absolute path starts from a system's root or drive location.
+A relative path is interpreted from a current folder or project location.
+Folder structures make files easier to find and back up.
+Avoid storing all work in one crowded folder or using unclear duplicate names.
+Be careful when moving files that linked applications depend on.
+EXAMPLE
+A project folder may contain docs, images, source-code files and test evidence.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 11 ===
+File permissions and sharing
+Permissions help control who can view or change files.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+12
+Read permission allows viewing; write permission allows modification.
+Execute permission may allow a program or script to run.
+Sharing links can grant access to specific people or anyone with the link.
+Use the least access needed and review permissions periodically.
+Avoid sharing sensitive files through public links.
+SCENARIO
+A student should share a draft with the supervisor rather than make private research data public.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 12 ===
+Application software
+Applications help users complete specific tasks.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+13
+Productivity apps create documents, spreadsheets and presentations.
+Communication apps support email, messaging and video meetings.
+Education and business apps support learning, records, accounting and workflow.
+Creative apps edit images, audio, video and designs.
+Applications may be desktop, mobile, web-based or cloud-hosted.
+EXAMPLE
+A lecturer may use a word processor for notes, spreadsheets for marks and an LMS for course materials.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 13 ===
+General-purpose and specialised applications
+Applications vary by how widely they can be used.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+14
+General-purpose software supports many tasks, such as word processing and spreadsheets.
+Specialised software supports a particular domain or workflow.
+Custom software is developed for specific organisational needs.
+Web apps can run in browsers; mobile apps are designed for mobile devices.
+Evaluate usability, compatibility, support and data handling before adoption.
+EXAMPLE
+A spreadsheet is general-purpose; a hospital patient-record system is specialised.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 14 ===
+Utilities and maintenance tools
+Utilities help maintain, protect and manage a computer.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+15
+Antivirus and endpoint protection help detect or block threats.
+Backup tools create copies of important files or system data.
+Disk-management tools help inspect storage and partitions.
+Compression tools reduce file size or bundle files for transfer.
+Update and diagnostic tools help maintain reliability.
+IMPORTANT
+Utilities are useful, but no single tool replaces careful behaviour and reliable backups.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 15 ===
+Device drivers and firmware
+Drivers and firmware help software communicate with hardware.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+16
+A device driver lets the operating system use a hardware device.
+Examples include printer, graphics, audio and network drivers.
+Firmware is low-level software stored in a device to control basic operations.
+Driver updates may improve compatibility or fix defects.
+Install drivers and firmware from trusted, appropriate sources.
+EXAMPLE
+A printer may be physically connected but need a compatible driver before all functions work.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 16 ===
+Software installation and updates
+Software must be installed and maintained safely.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+17
+Check system requirements and compatibility before installation.
+Download installers from official or trusted sources.
+Read permissions and avoid bundled software you do not need.
+Updates may fix bugs, add features and address security vulnerabilities.
+Back up important work and follow organisational change procedures for critical systems.
+SAFE HABIT
+Do not install a cracked application or an unknown attachment just because it promises free features.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 17 ===
+Licensing: proprietary, open-source and freeware
+A licence defines how software may be used, changed and shared.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+18
+Proprietary software is controlled by its owner under licence terms.
+Open-source software makes source code available under a licence with defined rights and obligations.
+Freeware is available at no monetary cost, but may still be proprietary.
+Free trial software may stop working or restrict features after a trial period.
+Always check licence conditions for copying, commercial use and redistribution.
+KEY POINT
+Free to download does not automatically mean free to modify or redistribute.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 18 ===
+Software piracy and academic integrity
+Unauthorised copying can create legal, security and ethical problems.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+19
+Using cracked software may expose devices to malware.
+Licence violations can create organisational and legal risks.
+Use institution-provided licences, legitimate free tools or approved open-source alternatives.
+Cite code libraries and acknowledge third-party components where required.
+Follow university rules on plagiarism and software use.
+EXAMPLE
+A student should acknowledge a code library used in a project and comply with its licence.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 19 ===
+Operating systems and security
+The OS provides important security controls but needs proper configuration.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+20
+User accounts and permissions limit access to resources.
+Updates patch known weaknesses in the operating system and applications.
+Screen locks and authentication reduce unauthorised access.
+Built-in firewalls and security tools help manage risks.
+Security also depends on users, applications, networks and backup practices.
+SCENARIO
+Do not use an administrator account for routine work if a standard account is sufficient.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 20 ===
+Choosing an operating system
+OS choice depends on compatibility, support and intended use.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+21
+Windows is widely used for desktop productivity and many commercial apps.
+macOS is integrated with Apple hardware and software services.
+Linux distributions are common in servers, development and technical environments.
+Android and iOS dominate many smartphone and tablet contexts.
+Consider accessibility, updates, cost, required apps and support.
+DECISION
+Choose the platform that reliably supports the user's tasks and institutional requirements.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 21 ===
+Virtualisation and emulation basics
+Software can create environments that behave like separate computers or devices.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+22
+A virtual machine runs a guest operating system on virtualised hardware.
+Virtualisation can support testing, labs and server consolidation.
+Emulators imitate aspects of another system or device environment.
+Virtual machines need sufficient CPU, RAM and storage resources.
+Use authorised images and licences for guest operating systems.
+EXAMPLE
+A student can practise Linux in a virtual machine without replacing their main operating system.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 22 ===
+Cloud software and subscriptions
+Some applications are accessed online and maintained by a provider.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+23
+Software as a Service (SaaS) is accessed through a browser or app.
+Cloud services can support collaboration and automatic synchronisation.
+Subscriptions may charge monthly or annually and include different service levels.
+Access depends on connectivity, account security and provider availability.
+Understand data location, sharing, export and cancellation options.
+EXAMPLE
+A team edits a shared document online instead of emailing multiple copies.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 23 ===
+Software troubleshooting
+A systematic process helps isolate software problems.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+24
+Record the error message and what happened before the issue.
+Check whether the problem affects one file, one application or the whole system.
+Restart the application or device when safe and appropriate.
+Check updates, permissions, storage space and compatibility.
+Back up work before major changes; seek support if the problem persists.
+EXAMPLE
+If one document will not open, test another document before reinstalling the whole office suite.
+CONCEPT
+EXAMPLE
+CHECK
+=== SLIDE 24 ===
+Revision and exit ticket
+Review the key software concepts.
+CO2 • SOFTWARE & OPERATING SYSTEMS
+25
+System software manages resources; application software supports user tasks.
+Utilities maintain, protect or manage the computer.
+The OS manages processes, memory, files, devices and security services.
+File formats, paths and permissions affect access and compatibility.
+Licensing and updates are part of responsible software use.
+EXIT TICKET
+Explain one difference between system software, application software and a utility.
+CONCEPT
+EXAMPLE
+CHECK

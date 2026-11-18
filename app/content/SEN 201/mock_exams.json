@@ -1,0 +1,2698 @@
+{
+  "course": "SEN 201",
+  "title": "Introduction to Software Engineering Mock Examinations",
+  "exams": [
+    {
+      "id": "sen201-mock-alpha",
+      "title": "Mock Exam Alpha: Nile University Final Examination Standard Simulation (Type B Blueprint)",
+      "description": "Comprehensive 50-question simulation replicating the exact style, cognitive distribution, and timing of the official Nile University First Semester Final Examination (Type B, 100 Marks, Lecturer: Yusuf Mshelia). Covers the software crisis, process models, requirements engineering, UML modeling, testing levels, and maintenance.",
+      "duration_minutes": 120,
+      "total_marks": 100,
+      "passing_score": 60,
+      "question_count": 50,
+      "questions": [
+        {
+          "id": "sen201-ag-001",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "nile-exam-q9",
+            "nile-exam-q53",
+            "agile-principles"
+          ],
+          "question": "In Nile University Final Exam Questions 9 & 53: What is a core fundamental principle of Agile software development?",
+          "options": [
+            "Delivering working software quickly and frequently",
+            "Rigid adherence to initial project plans",
+            "Prioritizing extensive documentation over human interaction",
+            "Avoiding direct customer collaboration to prevent scope changes"
+          ],
+          "answer": "Delivering working software quickly and frequently",
+          "explanation": "As tested in Nile Exam Q9 and Q53: Principle #3 of the Agile Manifesto states: 'Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.' Working software is the primary measure of project progress.",
+          "why_wrong": {
+            "Rigid adherence to initial project plans": "Agile explicitly values 'responding to change over following a plan.'",
+            "Prioritizing extensive documentation...": "Agile values 'working software over comprehensive documentation.'",
+            "Avoiding direct customer collaboration...": "Agile values 'customer collaboration over contract negotiation.'"
+          },
+          "marking_points": [
+            "Identifies rapid, frequent delivery of working software as primary measure of progress"
+          ],
+          "source": "Nile University Final Exam Paper (Type B), Questions 9 & 53",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-003",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "nile-exam-q57",
+            "open-source",
+            "characteristics"
+          ],
+          "question": "In Nile University Final Exam Question 57: What is a key defining feature of open-source software development?",
+          "options": [
+            "Collaborative development where source code is publicly available for inspection and modification",
+            "Software that is legally prohibited from being used for commercial purposes",
+            "Software that has no copyright licenses of any kind",
+            "Software written exclusively by university undergraduate students"
+          ],
+          "answer": "Collaborative development where source code is publicly available for inspection and modification",
+          "explanation": "Open-source development is centered on transparency and collective peer review: source code is released under open licenses (e.g. MIT, Apache, GPL) that grant users the legal right to inspect, modify, and redistribute the software collaboratively.",
+          "why_wrong": {
+            "Software that is legally prohibited from commercial use...": "Most open-source licenses explicitly permit commercial enterprise use.",
+            "Software that has no copyright licenses...": "Open source relies heavily on copyright law to enforce its licensing terms (copyleft or permissive).",
+            "Software written exclusively by university students...": "Global industry leaders (Linux, Python, React, PostgreSQL) are built by professional global communities."
+          },
+          "marking_points": [
+            "Public availability of source code",
+            "Collaborative development model"
+          ],
+          "source": "Nile University Final Exam Paper (Type B), Question 57",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-005",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "scrum-roles",
+            "product-owner-vs-scrum-master"
+          ],
+          "question": "In a Scrum team developing a university portal, a faculty dean demands adding an emergency grading feature halfway through an active sprint. Who has the sole authority to accept this change and reorder the backlog?",
+          "options": [
+            "The Product Owner, who owns the Product Backlog and balances business priorities with team capacity.",
+            "The Scrum Master, who dictates software features to developers.",
+            "Any individual developer working on the project.",
+            "The database administrator."
+          ],
+          "answer": "The Product Owner, who owns the Product Backlog and balances business priorities with team capacity.",
+          "explanation": "In Scrum governance, only the Product Owner has the authority to define user stories, prioritize the Product Backlog, and decide whether scope changes warrant modifying the current Sprint or queuing them for the next Sprint. The Scrum Master facilitates the process and removes blockers, but does not dictate business requirements.",
+          "why_wrong": {
+            "The Scrum Master, who dictates software features...": "Scrum Masters facilitate team health and process; they do not own business requirements.",
+            "Any individual developer...": "Developers cannot accept arbitrary scope changes mid-sprint without Product Owner approval.",
+            "The database administrator": "A technical role, not a project scope authority."
+          },
+          "marking_points": [
+            "Product Owner has sole authority over Product Backlog prioritization"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.4 & Scrum Guide",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-007",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "kanban",
+            "wip-limits"
+          ],
+          "question": "In a Kanban visual board, why are Work In Progress (WIP) limits enforced on workflow columns such as 'Code Review' or 'In Testing'?",
+          "options": [
+            "To prevent multitasking and expose process bottlenecks, ensuring work items flow smoothly to completion rather than piling up half-finished.",
+            "To punish developers who finish their work early.",
+            "To prevent developers from working more than 2 hours a day.",
+            "To limit the total number of users allowed to access the website."
+          ],
+          "answer": "To prevent multitasking and expose process bottlenecks, ensuring work items flow smoothly to completion rather than piling up half-finished.",
+          "explanation": "Little's Law and Lean principles show that excessive work-in-progress increases cycle times and context-switching overhead. By capping the number of cards in an active column, if 'Code Review' hits its WIP limit, developers must help unblock pending reviews before starting new coding tasks ('Stop starting, start finishing').",
+          "why_wrong": {
+            "To punish developers who finish work early": "Kanban fosters collaboration, not disciplinary penalties.",
+            "To limit developers to 2 hours a day": "WIP limits govern task inventory, not working hours.",
+            "To limit website users": "WIP limits apply to internal engineering tasks on the board, not web traffic."
+          },
+          "marking_points": [
+            "Prevents task hoarding/multitasking",
+            "Exposes bottlenecks and optimizes throughput"
+          ],
+          "source": "Software Engineering Process Models & Kanban Principles",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-fc01",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "agile-values"
+          ],
+          "question": "What are the four core value statements of the Agile Manifesto?",
+          "options": [],
+          "answer": "1. Individuals and interactions over processes and tools\n2. Working software over comprehensive documentation\n3. Customer collaboration over contract negotiation\n4. Responding to change over following a plan",
+          "explanation": "Foundational philosophy published in 2001.",
+          "why_wrong": {},
+          "marking_points": [
+            "Recalls all four value pairs"
+          ],
+          "source": "The Agile Manifesto & Lecture Notes Section 5.4",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-fc03",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "scrum-ceremonies"
+          ],
+          "question": "What are the four formal Scrum events/ceremonies within a Sprint?",
+          "options": [],
+          "answer": "1. Sprint Planning\n2. Daily Scrum (Standup)\n3. Sprint Review (Demo to stakeholders)\n4. Sprint Retrospective (Team process reflection)",
+          "explanation": "Core inspect-and-adapt milestones.",
+          "why_wrong": {},
+          "marking_points": [
+            "Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.4",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-fc05",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "tdd"
+          ],
+          "question": "What does the TDD 'Red-Green-Refactor' cycle mean?",
+          "options": [],
+          "answer": "- RED: Write a failing unit test first.\n- GREEN: Write the minimal production code needed to pass the test.\n- REFACTOR: Clean up and optimize the code without altering external behavior.",
+          "explanation": "Core engineering discipline of Extreme Programming.",
+          "why_wrong": {},
+          "marking_points": [
+            "Red: failing test",
+            "Green: minimal pass",
+            "Refactor: clean up"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 9.6",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-fc07",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "kanban"
+          ],
+          "question": "How does Kanban differ from Scrum?",
+          "options": [],
+          "answer": "- Scrum uses fixed-length timeboxed Sprints (1-4 weeks), prescribed roles, and sprint backlogs.\n- Kanban is a continuous-flow model with no fixed iterations, visualized on a board, with WIP limits constraining active tasks.",
+          "explanation": "Both are agile/lean, but differ in cadence and prescription.",
+          "why_wrong": {},
+          "marking_points": [
+            "Scrum: timeboxed sprints/roles",
+            "Kanban: continuous flow/WIP limits"
+          ],
+          "source": "Software Engineering Process Models Lecture Notes, Section 5",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-cs01-q1",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "scrum-rules",
+            "sprint-interruption"
+          ],
+          "question": "What Scrum rule is being violated, and how should the Scrum Master intervene to protect the team's commitment?",
+          "options": [
+            "The Product Owner is violating Sprint stability: the Scrum Master must coach the Product Owner to place new feature requests onto the Product Backlog for prioritization in the NEXT sprint planning, leaving the current Sprint Goal intact.",
+            "The Scrum Master should immediately fire the developers for not complying with the doctor's wishes.",
+            "The team should abolish 2-week sprints and switch to daily deployments with zero planning.",
+            "The developers should work 20-hour overtime shifts to satisfy both the sprint backlog and the new requests."
+          ],
+          "answer": "The Product Owner is violating Sprint stability: the Scrum Master must coach the Product Owner to place new feature requests onto the Product Backlog for prioritization in the NEXT sprint planning, leaving the current Sprint Goal intact.",
+          "explanation": "A core premise of Scrum is that once a Sprint begins, the Sprint Goal is protected against mid-sprint scope churn that endangers completion. If an idea is truly critical, the Product Owner adds it to the top of the Product Backlog for the upcoming Sprint. Only in extraordinary circumstances where the Sprint Goal becomes completely obsolete may the Product Owner formally cancel the entire Sprint.",
+          "why_wrong": {
+            "The Scrum Master should fire the developers...": "The developers are properly defending their agreed sprint commitment.",
+            "The team should abolish sprints...": "Abandoning process structure creates total chaos.",
+            "The developers should work 20-hour overtime...": "Violates the Agile principle of sustainable development pace."
+          },
+          "marking_points": [
+            "Identifies violation of Sprint commitment and scope stability",
+            "Directs new items to Product Backlog for next sprint planning"
+          ],
+          "source": "Scrum Implementation Case Study & Agile Manifesto",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp",
+          "scenario": "A healthtech startup in Abuja is transitioning from a traditional 12-month Waterfall cycle to Scrum to build an electronic telemedicine mobile application. The newly appointed Product Owner (a medical doctor) frequently visits developer desks during the middle of a 2-week Sprint, asking engineers to drop their current user stories to implement urgent new feature ideas she thought of that morning. As a result, the team has failed to deliver a working increment for three consecutive sprints."
+        },
+        {
+          "id": "sen201-ag-cs02-q1",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "pair-programming-economics",
+            "xp"
+          ],
+          "question": "How does empirical software engineering research rebut the CFO's argument regarding the economics of Pair Programming in high-stakes systems?",
+          "options": [
+            "Pair programming incurs only ~15% additional development time while reducing defect density by 15-50%, drastically reducing post-release bug fixing costs which are 10-100x more expensive in production.",
+            "Pair programming actually produces 400% more lines of code per hour.",
+            "The CFO is right; pair programming is only used when an office runs out of computers.",
+            "Pair programming eliminates the need to compile code."
+          ],
+          "answer": "Pair programming incurs only ~15% additional development time while reducing defect density by 15-50%, drastically reducing post-release bug fixing costs which are 10-100x more expensive in production.",
+          "explanation": "Empirical studies (e.g. Cockburn & Williams) demonstrate that pairing increases effort by approximately 15%, but generates significantly cleaner code with 15\u201350% fewer defects. Because fixing defects in live trading engines costs 10 to 100 times more than catching them during coding (Boehm's cost of change), pair programming yields massive net economic savings.",
+          "why_wrong": {
+            "Pair programming produces 400% more code...": "Pairing produces more concise, less bloated code, not more raw volume.",
+            "The CFO is right; only used when running out of computers...": "Pairing is an intentional quality discipline, not a hardware shortage workaround.",
+            "Pair programming eliminates the need to compile code...": "Absurd technical assertion."
+          },
+          "marking_points": [
+            "Quantifies modest ~15% time overhead",
+            "Emphasizes 15-50% defect reduction",
+            "Contrasts with 10-100x production defect remediation cost"
+          ],
+          "source": "Software Engineering Economics & Pair Programming Studies",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp",
+          "scenario": "A software agency in Lagos is building an automated algorithmic trading engine. The financial stakes are extremely high: a single decimal point calculation error could lose millions of Naira within seconds. The chief engineer mandates Pair Programming and strict Test-Driven Development (TDD). The chief financial officer objects, arguing that having two developers work on one computer cuts programming productivity in half and wastes 50% of developer salaries."
+        },
+        {
+          "id": "sen201-ap-001",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "architecture",
+            "patterns",
+            "design",
+            "nile-exam"
+          ],
+          "question": "What is an architectural pattern in software engineering?",
+          "options": [
+            "A detailed database table schema specifying primary and foreign key constraints",
+            "A reusable description of a well-tried design practice across different software systems and environments",
+            "A specific programming language compiler syntax rule",
+            "A project management Gantt chart detailing developer assignments"
+          ],
+          "answer": 1,
+          "explanation": "As defined in software engineering literature and Nile Final Exam Question 60, an architectural pattern is a reusable, stylized description of good design practice that has been tried and tested across different operational environments and system types.",
+          "why_wrong": {
+            "0": "A database schema is a low-level physical data design artifact, not an architectural pattern.",
+            "2": "A compiler syntax rule governs language parsing, which is language specification rather than system architecture.",
+            "3": "A Gantt chart is a project management scheduling artifact, not a software architectural pattern."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q60; Sommerville Ch. 6",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-003",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "pipe-and-filter",
+            "architectural-styles",
+            "nile-exam"
+          ],
+          "question": "Which of the following best describes the Pipe-and-Filter architectural style?",
+          "options": [
+            "A central database where multiple clients concurrently modify a shared blackboard",
+            "Sequential transformations of data streams where independent filters process inputs and output results to pipes without knowing upstream or downstream identities",
+            "A client requesting a transaction from a remote server through an RPC call",
+            "A hierarchical structure where user interfaces directly mutate low-level database records without intermediary layers"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 62 and standard SE texts define the Pipe-and-Filter architecture as a pipeline of independent transformation components (filters) connected by communication buffers (pipes). Each filter processes streaming data and transmits output without needing to know the identity or implementation of adjacent filters.",
+          "why_wrong": {
+            "0": "A central database modified concurrently by multiple clients describes the Repository or Blackboard architecture.",
+            "2": "Remote procedure calls between clients and servers describe the Client-Server or Distributed Object style.",
+            "3": "Direct modification of database records from UI violates layered architectural principles and describes anti-pattern spaghetti architecture."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q62; Sommerville Ch. 6",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-005",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "4+1-view",
+            "matching",
+            "architecture"
+          ],
+          "question": "Match each 4+1 Architectural View to its primary focus and representation:",
+          "options": [
+            {
+              "left": "Logical View",
+              "right": "Class diagrams, object models, and domain abstractions"
+            },
+            {
+              "left": "Process View",
+              "right": "Concurrency, threads, inter-process communication, and latency"
+            },
+            {
+              "left": "Development View",
+              "right": "Code packages, libraries, modular subsystems, and build dependencies"
+            },
+            {
+              "left": "Physical View",
+              "right": "Hardware processors, server nodes, network topologies, and deployment units"
+            }
+          ],
+          "answer": [
+            {
+              "left": "Logical View",
+              "right": "Class diagrams, object models, and domain abstractions"
+            },
+            {
+              "left": "Process View",
+              "right": "Concurrency, threads, inter-process communication, and latency"
+            },
+            {
+              "left": "Development View",
+              "right": "Code packages, libraries, modular subsystems, and build dependencies"
+            },
+            {
+              "left": "Physical View",
+              "right": "Hardware processors, server nodes, network topologies, and deployment units"
+            }
+          ],
+          "explanation": "Philippe Kruchten's 4+1 View Model structures architectural descriptions according to stakeholder viewpoints: Logical (functional domain abstractions), Process (runtime concurrency/performance), Development (source code modularity/builds), and Physical (hardware deployment topology).",
+          "why_wrong": {},
+          "source": "Kruchten 4+1 View Model; Nile Final Exam Q61",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-007",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "mvc",
+            "design-patterns",
+            "architecture"
+          ],
+          "question": "In the Model-View-Controller (MVC) architectural pattern, how is separation of concerns achieved when a user submits a form on a web page?",
+          "options": [
+            "The View updates the database directly and then refreshes the Controller",
+            "The Controller receives user input, validates or delegates it to update the Model, and instructs the View to update its presentation",
+            "The Model intercepts the HTTP request, renders HTML directly, and bypasses the Controller",
+            "The Controller stores database rows and executes SQL statements without involving the Model"
+          ],
+          "answer": 1,
+          "explanation": "In MVC, the Controller acts as the orchestrator: it listens to user actions, interprets inputs, commands the Model to update its state, and selects the appropriate View to render the updated state back to the user.",
+          "why_wrong": {
+            "0": "The View should have no direct interaction with or knowledge of the persistent database.",
+            "2": "The Model encapsulates data and business logic; it does not parse raw HTTP requests or generate UI HTML markup directly.",
+            "3": "Database persistence and business logic belong in the Model, not the Controller."
+          },
+          "source": "Sommerville Ch. 6; Software Engineering Concepts and Principles Lecture Notes",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-fc01",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "architecture"
+          ],
+          "question": "What is the primary definition and role of Software Architecture?",
+          "answer": "The high-level structure of a system, comprising software components, externally visible properties of those components, and the relationships among them. It establishes the technical foundation for non-functional properties (scalability, security, performance).",
+          "explanation": "Architecture establishes early constraints and trade-offs before detailed coding begins.",
+          "why_wrong": {},
+          "source": "Sommerville Ch. 6",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-fc03",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "cohesion"
+          ],
+          "question": "What does High Cohesion mean in software design?",
+          "answer": "It means all responsibilities, attributes, and methods within a module or class are closely related to a single well-defined purpose, making the component easier to understand, test, and maintain.",
+          "explanation": "High cohesion reduces cognitive overhead and bug propagation.",
+          "why_wrong": {},
+          "source": "Software Engineering Concepts and Principles Lecture Notes",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-fc05",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "pipe-and-filter"
+          ],
+          "question": "What are the core characteristics of a Pipe-and-Filter architecture?",
+          "answer": "Independent processing units (filters) transform sequential input streams and emit outputs into channels (pipes). Filters are stateless, decoupled, and unaware of upstream/downstream identities.",
+          "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 62.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q62",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-fc07",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "solid",
+            "dip"
+          ],
+          "question": "State the Dependency Inversion Principle (the 'D' in SOLID).",
+          "answer": "High-level policy modules should not depend on low-level implementation modules; both must depend on abstractions (interfaces). Abstractions should not depend on details; details should depend on abstractions.",
+          "explanation": "DIP enables true modular decoupling and unit test mock injection.",
+          "why_wrong": {},
+          "source": "Software Engineering Concepts and Principles Lecture Notes",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-cs01-q1",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "architectural-refactoring",
+            "layered"
+          ],
+          "question": "Which architectural refactoring strategy will best isolate external third-party payment failures and prevent them from cascading into total portal downtime?",
+          "options": [
+            "Merging all database tables into a single large flat file to reduce query hops",
+            "Decomposing the monolith into a layered architecture with an asynchronous event-driven or adapter-isolated service layer for third-party integrations",
+            "Moving all PHP code directly into MySQL stored procedures",
+            "Converting the client browser into a fat client that writes directly to the production database via TCP sockets"
+          ],
+          "answer": 1,
+          "explanation": "Adopting a layered architecture and isolating the payment gateway behind a resilient service layer (using Adapter and asynchronous messaging / circuit breaker) prevents external gateway timeouts from blocking HTTP request threads and crashing the entire registration workflow.",
+          "why_wrong": {
+            "0": "A single flat file introduces extreme data corruption risks and eliminates ACID transactional safety.",
+            "2": "Moving business logic into stored procedures tightly couples logic to a specific database vendor and does not solve third-party API timeout crashes.",
+            "3": "Permitting client browsers to execute direct TCP socket writes to a production database is an catastrophic security vulnerability."
+          },
+          "source": "Sommerville Ch. 6; Case Study Synthesis",
+          "topic_slug": "architecture_patterns",
+          "scenario": "Nile University's student registration portal was originally developed as a single PHP/MySQL script where UI HTML rendering, session authentication, grade computation, payment gateway API calls, and raw database queries were intermixed in 8,000 lines of code. During peak midterm enrollment, a crash in the payment gateway API handler caused total portal downtime, locking students out of submitting course registrations. Furthermore, calculating cumulative GPAs takes 45 seconds per query because calculations run synchronously inside the presentation loop. The university CTO has chartered an architectural overhaul."
+        },
+        {
+          "id": "sen201-ap-cs02-q1",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "pipe-and-filter",
+            "performance"
+          ],
+          "question": "Why is the Pipe-and-Filter architectural style vastly superior to a centralized Repository style for this high-throughput transaction screening pipeline?",
+          "options": [
+            "Because Pipe-and-Filter eliminates all database storage permanently",
+            "Because each screening filter operates independently as a decoupled stage in a streaming pipeline, allowing concurrent parallel execution across CPU cores without database locking bottlenecks",
+            "Because Pipe-and-Filter requires no communication channels between software components",
+            "Because Pipe-and-Filter forces all 5 steps to execute in a single blocking thread on one machine"
+          ],
+          "answer": 1,
+          "explanation": "Pipe-and-Filter allows each screening step (validation, blacklist, AI scoring, balance check, tokenization) to run as an autonomous filter. Streams of transactions pass through buffer pipes, allowing pipeline parallelism without contending for locks on a single centralized repository database.",
+          "why_wrong": {
+            "0": "Pipe-and-Filter does not eliminate databases; downstream filters still commit final ledger updates to persistent storage.",
+            "2": "Pipe-and-Filter explicitly relies on communication channels (pipes) between filters.",
+            "3": "Pipe-and-Filter enables concurrency and multi-threaded pipelining, the exact opposite of single-threaded blocking."
+          },
+          "source": "Nile Final Exam Paper Type B Q62; Sommerville Ch. 6",
+          "topic_slug": "architecture_patterns",
+          "scenario": "A Nigerian FinTech unicorn processes 4,000 card transactions per second. Each incoming transaction payload must undergo five distinct checks before authorization: (1) schema format validation, (2) blacklist fraud phone check, (3) AI behavioral anomaly scoring, (4) ledger balance check, and (5) cryptographic token generation. The transaction screening engine must achieve an end-to-end response time of under 120ms. The engineering team is debating between a centralized Repository (Blackboard) architecture and a Pipe-and-Filter streaming architecture."
+        },
+        {
+          "id": "sen201-fe-001",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "requirements",
+            "natural-language",
+            "specification",
+            "nile-exam"
+          ],
+          "question": "What is widely recognized as the most severe, recurring defect of writing software requirements purely in natural language prose?",
+          "options": [
+            "It requires excessive disk storage space on web servers",
+            "Natural language is inherently ambiguous, lacks modular structure, and easily leads to conflicting interpretations between developers and clients",
+            "Compilers cannot translate natural language text directly into executable machine code",
+            "Natural language prevents developers from using high-resolution monitors"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 29 highlights that natural language specifications suffer from ambiguity, imprecision, and confusion between functional requirements and design constraints. Words often mean different things to domain users and software engineers, leading to misalignment.",
+          "why_wrong": {
+            "0": "Text files require negligible disk space; storage size is irrelevant to requirements quality.",
+            "2": "Compilers compile source code, not requirements documents; this confuses requirements with programming languages.",
+            "3": "Monitor hardware has zero connection with requirements specification clarity."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q29; Sommerville Ch. 4",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-003",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "uml",
+            "generalization",
+            "class-diagram",
+            "nile-exam"
+          ],
+          "question": "In object-oriented modeling, what does a 'generalization hierarchy' represent in a UML class diagram?",
+          "options": [
+            "The sequential flow of control in a while loop",
+            "An inheritance relationship where specialized subclasses inherit common attributes, methods, and behaviors from a generalized superclass",
+            "The physical network cable connection between two server racks",
+            "A project scheduling Gantt chart"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 27 emphasizes that generalization in UML represents the object-oriented concept of inheritance ('is-a' relationship). Subclasses inherit attributes and operations from a higher-level general superclass, enabling polymorphism and code reuse.",
+          "why_wrong": {
+            "0": "Control flow in loops is represented using Activity Diagrams, not generalization hierarchies.",
+            "2": "Physical network cabling is shown in Deployment Diagrams.",
+            "3": "Gantt charts are project management tools, not UML generalization models."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q27; Sommerville Ch. 5",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-005",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "open-source",
+            "business-models",
+            "nile-exam"
+          ],
+          "question": "How do commercial software enterprises successfully generate substantial revenue while developing and distributing Open-Source Software (OSS) with publicly accessible codebases?",
+          "options": [
+            "By charging users for every single keyboard click inside the application",
+            "By monetizing enterprise technical support subscriptions, custom plugin development, specialized consulting, and managed cloud-hosted infrastructure (SaaS)",
+            "By suing anyone who views their public GitHub repository",
+            "By forcing all developers to work without pay forever"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Questions 57 and 58 explore the open-source business ecosystem. While the core source code is free, companies generate high-margin revenue through enterprise SLAs, consulting, custom security extensions, and managed cloud deployments (e.g., Red Hat, MongoDB, Elastic).",
+          "why_wrong": {
+            "0": "Charging per keyboard click is absurd and commercially unfeasible.",
+            "2": "Open-source licenses explicitly permit viewing, modifying, and running the code.",
+            "3": "Professional open-source engineers are paid competitive market salaries by sponsoring companies."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q57, Q58; Sommerville Ch. 7",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-007",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "sequencing",
+          "difficulty": 3,
+          "tags": [
+            "lifecycle",
+            "synthesis",
+            "sequencing"
+          ],
+          "question": "Arrange the standard phases of the comprehensive software engineering lifecycle in proper chronological order from initial inception to post-deployment maturity:",
+          "options": [
+            "Feasibility Study & Business Case Evaluation",
+            "Requirements Elicitation, Analysis & Specification (SRS)",
+            "Architectural & Detailed System Design",
+            "Implementation, Code Inspection & Unit Testing",
+            "Integration, System & Acceptance Testing",
+            "System Deployment, Operation & Evolutionary Maintenance"
+          ],
+          "answer": [
+            "Feasibility Study & Business Case Evaluation",
+            "Requirements Elicitation, Analysis & Specification (SRS)",
+            "Architectural & Detailed System Design",
+            "Implementation, Code Inspection & Unit Testing",
+            "Integration, System & Acceptance Testing",
+            "System Deployment, Operation & Evolutionary Maintenance"
+          ],
+          "explanation": "The engineering lifecycle begins with feasibility analysis, proceeds through requirements specification, architecture, construction/unit testing, full system integration, and concludes with deployment and evolutionary maintenance.",
+          "why_wrong": {},
+          "source": "Sommerville Ch. 1 & 2; Software Engineering Concepts and Principles Lecture Notes",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-fc01",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "software-engineering"
+          ],
+          "question": "What is the formal definition of Software Engineering?",
+          "answer": "The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software.",
+          "explanation": "IEEE Standard 610.12 definition, foundational to SEN 201.",
+          "why_wrong": {},
+          "source": "IEEE 610.12; Sommerville Ch. 1",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-fc03",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "prototyping"
+          ],
+          "question": "What is the primary benefit of software prototyping?",
+          "answer": "It uncovers tacit user assumptions, clarifies ambiguous requirements, and validates user interaction workflows through hands-on visual demonstration before costly implementation begins.",
+          "explanation": "Examined in Nile Final Exam Paper Type B Question 43.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q43",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-fc05",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "open-source"
+          ],
+          "question": "How do open-source companies generate commercial revenue?",
+          "answer": "By selling enterprise support subscriptions (SLAs), custom proprietary plugins/extensions, specialized architectural consulting, and managed cloud hosting (SaaS).",
+          "explanation": "Examined in Nile Final Exam Paper Type B Questions 57 & 58.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q57, Q58",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-fc07",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "testing-axiom"
+          ],
+          "question": "State Edsger Dijkstra's famous axiom regarding software testing.",
+          "answer": "'Program testing can be used to show the presence of bugs, but never to show their absence!'",
+          "explanation": "Foundational principle underpinning why exhaustive testing is impossible.",
+          "why_wrong": {},
+          "source": "Dijkstra (1970); Sommerville Ch. 8",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-cs01-q1",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "requirements-tradeoff",
+            "security-vs-usability"
+          ],
+          "question": "How should the software engineering team reconcile the conflicting non-functional requirements between the emergency room doctors (instant zero-friction access) and the regulatory privacy auditors (strict biometric access control)?",
+          "options": [
+            "Discard the privacy regulations entirely and leave all medical records unencrypted and publicly accessible on the web",
+            "Implement role-based access with an audited 'Break-Glass' emergency override protocol that grants immediate access while automatically triggering high-priority security notifications and immutable audit logs",
+            "Refuse to build the system until the government fires all privacy regulators",
+            "Force emergency doctors to solve complex CAPTCHA puzzles before viewing a dying patient's blood type"
+          ],
+          "answer": 1,
+          "explanation": "Standard safety-critical software engineering resolves this conflict through a 'Break-Glass' security mechanism: in verified life-threatening emergencies, doctors can bypass standard biometric barriers instantly, while the system records tamper-evident cryptographic audit logs and alerts security officers for post-incident review.",
+          "why_wrong": {
+            "0": "Leaving records unencrypted violates legal compliance, medical ethics, and confidentiality.",
+            "2": "Engineers cannot demand regulatory firings; engineering requires designing within legal constraints.",
+            "3": "CAPTCHAs in emergency medicine cause unacceptable life-threatening treatment delays."
+          },
+          "source": "Sommerville Ch. 4 & 10; Safety-Critical Systems Design",
+          "topic_slug": "final_exam_comprehensive",
+          "scenario": "A federal ministry commissions a National Electronic Health Records System (NEHRS) connecting 500 public hospitals. During requirements elicitation, doctors demand instant emergency access to patient files with zero login friction. Concurrently, government privacy regulators require strict biometric multi-factor authentication, end-to-end encryption, and full cryptographic audit logging for every single record view to prevent illegal data snooping. Furthermore, the system must guarantee 99.999% availability and survive regional network cutoffs during telecommunications outages."
+        },
+        {
+          "id": "sen201-fe-cs02-q1",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "hybrid-process",
+            "governance"
+          ],
+          "question": "Which software process strategy successfully reconciles the government's fixed contractual compliance requirements with the operational controllers' demand for iterative feedback?",
+          "options": [
+            "Adopting pure ad-hoc cowboy coding with zero documentation and zero customer meetings",
+            "A hybrid Plan-Driven / Agile framework (such as Rational Unified Process or Agile-Stage-Gate), where core safety architecture and contracts are stabilized in Inception/Elaboration, while features are built and validated in Agile iterative sprints during Construction",
+            "Telling the air traffic controllers that their operational feedback will be ignored until 5 years after system delivery",
+            "Cancelling the project and building paper planes"
+          ],
+          "answer": 1,
+          "explanation": "In safety-critical government environments, pure agile or pure waterfall frequently fails. The established industry solution is a hybrid model (such as RUP or Agile-Stage-Gate): upfront plan-driven rigor stabilizes safety architecture, interfaces, and compliance gates, while execution is carried out via iterative agile sprints delivering demonstrable increments to operators.",
+          "why_wrong": {
+            "0": "Unregulated cowboy coding causes fatal crashes in aviation systems.",
+            "2": "Ignoring operator feedback results in catastrophic mismatch between delivered radar displays and pilot safety needs.",
+            "3": "Paper planes cannot coordinate commercial air traffic."
+          },
+          "source": "Nile Final Exam Paper Type B Q3, Q15; Sommerville Ch. 2 & 3",
+          "topic_slug": "final_exam_comprehensive",
+          "scenario": "A federal aviation authority contracts a software engineering firm to develop an automated Next-Generation Radar Flight Control System. The agency's procurement officers demand a fixed-price, fixed-deadline contract with a comprehensive 1,500-page System Requirements Specification (SRS) signed off before any coding begins (Waterfall mindset). However, the air traffic controllers and radar operators demand rapid bi-weekly demonstrations of working software with flexible changes (Agile mindset). The chief architect must structure a hybrid process framework."
+        },
+        {
+          "id": "sen201-mr-001",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "servicing-stage",
+            "evolution",
+            "lifecycle",
+            "nile-exam"
+          ],
+          "question": "What occurs during the 'servicing stage' of the software evolution lifecycle?",
+          "options": [
+            "Software architecture is designed from scratch using UML diagrams",
+            "The software is only modified to keep it operational (bug fixes and platform patches), but no new business functionality is introduced",
+            "New functional requirements are rapidly implemented in two-week agile sprints",
+            "The software source code is permanently deleted and all users are migrated immediately"
+          ],
+          "answer": 1,
+          "explanation": "According to Nile Final Exam Question 72 and Sommerville's software evolution model, the servicing stage occurs when the software is in stable maintenance mode: engineers apply only critical bug fixes and environment adaptations to keep the system operational, while all major functional development ceases.",
+          "why_wrong": {
+            "0": "Architectural design from scratch occurs during initial greenfield development, not servicing.",
+            "2": "Implementing new business features characterizes the active evolution phase, not the servicing stage.",
+            "3": "Immediate deletion and user migration describes decommissioning and retirement."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q72; Sommerville Ch. 9",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-003",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "legacy-assessment",
+            "strategy",
+            "nile-exam"
+          ],
+          "question": "In legacy system portfolio assessment, what is the recommended management strategy for a system that exhibits LOW technical quality (fragile, hard to maintain) but HIGH business value (critical to daily revenue)?",
+          "options": [
+            "Scrap the system immediately and halt all business operations",
+            "Continue standard maintenance without any architectural modifications",
+            "Re-engineer the system to improve maintainability or incrementally replace it with modern components",
+            "Rewrite the entire application in assembly language"
+          ],
+          "answer": 2,
+          "explanation": "Nile Final Exam Question 74 highlights that systems with high business value must be safeguarded. When their technical quality is degraded, the optimal strategy is re-engineering (or incremental replacement) to restore maintainability and reduce operational risk without destroying the proven business capabilities.",
+          "why_wrong": {
+            "0": "Scrapping a high-business-value system destroys core business capability and halts revenue generation.",
+            "1": "Continuing maintenance on low-quality software invites catastrophic outages and exponentially rising maintenance costs.",
+            "3": "Rewriting in assembly language increases technical fragility and maintenance cost exponentially."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q74; Sommerville Ch. 9",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-005",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "code-smells",
+            "refactoring",
+            "nile-exam"
+          ],
+          "question": "Which of the following are recognized 'bad smells' in source code that signal architectural erosion and degradation?",
+          "options": [
+            "Using clear variable names and unit tests",
+            "Duplicate code, long methods / God classes, and speculative generality (All of the above)",
+            "Maintaining an automated continuous integration pipeline",
+            "Employing interfaces and dependency injection"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 78 and Martin Fowler's refactoring catalog identify duplicated code, overly long methods, God classes, and speculative generality (unneeded abstractions) as classic 'bad code smells' requiring refactoring.",
+          "why_wrong": {
+            "0": "Clear variable names and comprehensive unit tests are exemplary software engineering practices.",
+            "2": "CI pipelines enhance software delivery quality and catch regressions.",
+            "3": "Interfaces and dependency injection enforce loose coupling, which is a desirable design practice."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q78; Fowler (1999) Refactoring",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-007",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "reengineering",
+            "greenfield",
+            "risk",
+            "nile-exam"
+          ],
+          "question": "Why is software re-engineering generally preferred over greenfield redevelopment for core business legacy systems?",
+          "options": [
+            "Because greenfield redevelopment guarantees 100% bug-free delivery on the first release",
+            "Because re-engineering entails significantly lower business risk and lower cost by preserving proven business rules and institutional knowledge",
+            "Because re-engineering allows developers to avoid testing entirely",
+            "Because re-engineering automatically converts all code into artificial intelligence"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 80 emphasizes that re-engineering carries much lower risk and cost than greenfield redevelopment. Complete rewrites frequently fail, exceed budgets, and miss subtle, undocumented edge-case business rules that are already operational in the legacy system.",
+          "why_wrong": {
+            "0": "Greenfield redevelopment has notoriously high failure, delay, and defect rates.",
+            "2": "Re-engineered systems require rigorous regression and integration testing.",
+            "3": "Re-engineering does not convert code into AI; it restructures legacy architectures."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q80; Sommerville Ch. 9",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-fc01",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "software-evolution"
+          ],
+          "question": "What is Software Evolution?",
+          "answer": "The continuous, iterative lifecycle process of adapting and modifying software after delivery to correct faults, improve performance, and adapt to changing business environments.",
+          "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 14.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q14; Sommerville Ch. 9",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-fc03",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "legacy-systems"
+          ],
+          "question": "What are the core components of a socio-technical Legacy System?",
+          "answer": "1. System hardware, 2. Operating/support software, 3. Application software, 4. Application data, 5. Business processes, and 6. Business policies and rules.",
+          "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 73.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q73",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-fc05",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "adaptive-maintenance"
+          ],
+          "question": "What is Adaptive Maintenance?",
+          "answer": "Modifications performed on software after delivery to keep it usable in a changing environment (e.g., changes in operating system, database management system, cloud platform, or external regulations).",
+          "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 75.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q75; ISO/IEC 14764",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-fc07",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "re-engineering"
+          ],
+          "question": "What are the primary activities involved in Software Re-engineering?",
+          "answer": "1. Source code translation, 2. Reverse engineering (understanding program design), 3. Program structure improvement, 4. Data re-engineering, and 5. Refactoring.",
+          "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 77.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q77",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-cs01-q1",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "legacy-migration",
+            "risk"
+          ],
+          "question": "Why does the bank's chief architect recommend software re-engineering and incremental modernization over a high-risk 'Big Bang' greenfield rewrite?",
+          "options": [
+            "Because COBOL is an object-oriented language that natively compiles to modern iOS applications",
+            "Because the legacy system contains 40 years of hidden, undocumented business rules and edge-case exceptions that greenfield specifications almost certainly omit, leading to extreme delivery and regulatory risk",
+            "Because re-engineering guarantees that hardware never needs replacement",
+            "Because greenfield rewrites are illegal under banking compliance laws"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 80 and software engineering history show that legacy core banking systems contain decades of refined business rules embedded in source code without formal documentation. Greenfield rewrites almost always fail because they miss these tacit rules, whereas re-engineering incrementally preserves proven business logic at substantially lower risk.",
+          "why_wrong": {
+            "0": "COBOL is a procedural legacy business language, not an iOS runtime language.",
+            "2": "Re-engineering often targets hardware migration (e.g., migrating COBOL to Linux or cloud containers).",
+            "3": "Greenfield rewrites are legally permitted, but commercially and technically hazardous."
+          },
+          "source": "Nile Final Exam Paper Type B Q80; Sommerville Ch. 9",
+          "topic_slug": "maintenance_reengineering",
+          "scenario": "A 40-year-old commercial bank operates its core transaction processing ledger on a legacy mainframe system written in COBOL. The system handles 15 million daily accounts with flawless transactional accuracy, but runs on costly hardware nearing end-of-life, and the bank cannot hire qualified COBOL engineers. A consultant suggests an immediate complete greenfield rewrite in Java within 9 months. However, the bank's internal chief architect warns that previous 'Big Bang' rewrites at competing banks failed catastrophically after spending tens of millions of dollars."
+        },
+        {
+          "id": "sen201-mr-cs02-q1",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "code-smells",
+            "refactoring-techniques"
+          ],
+          "question": "The 4,200-line `OrderManager` class is a prime example of which bad code smell, and which Martin Fowler refactoring technique should be applied first?",
+          "options": [
+            "Shotgun Surgery; apply inline class refactoring",
+            "Large Class / God Class; apply 'Extract Class' and 'Extract Method' to decompose responsibilities into discrete, cohesive components",
+            "Speculative Generality; introduce 15 new abstract interfaces",
+            "Data Clumps; merge all order data into an encrypted binary blob"
+          ],
+          "answer": 1,
+          "explanation": "A monolithic class accumulating excessive unrelated responsibilities is known as a 'God Class' or 'Large Class' smell. The standard remedy is applying 'Extract Class' and 'Extract Method' to separate distinct responsibilities (pricing, driver assignment, payout) into modular, cohesive classes.",
+          "why_wrong": {
+            "0": "Shotgun surgery occurs when a single change forces tiny edits across dozens of separate classes.",
+            "2": "Speculative generality means creating unneeded abstract code for imagined future features; adding 15 more interfaces would worsen the problem.",
+            "3": "An encrypted binary blob destroys data readability and prevents modular querying."
+          },
+          "source": "Nile Final Exam Paper Type B Q78; Fowler (1999) Refactoring",
+          "topic_slug": "maintenance_reengineering",
+          "scenario": "A 5-year-old logistics startup experienced rapid growth, expanding from 10 drivers to 50,000 drivers. To meet aggressive marketing deadlines, developers took shortcuts, resulting in a single `OrderManager` class with 4,200 lines of code, 38 global fields, and methods with cyclomatic complexities exceeding 45. A single change to order calculation breaks driver payout processing, requiring emergency weekend rollbacks. The development team requests a dedicated 3-week refactoring sprint."
+        },
+        {
+          "id": "sen201-pm-001",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-q3",
+            "spiral-model",
+            "risk-assessment",
+            "analysis"
+          ],
+          "question": "In Nile University Final Exam Question 3: What is the key defining feature of the Spiral Model?",
+          "options": [
+            "Risk assessment and management at every iteration",
+            "Elimination of all documentation",
+            "Strict sequential phase completion without review",
+            "Exclusively pair programming"
+          ],
+          "answer": "Risk assessment and management at every iteration",
+          "explanation": "As tested in Nile Exam Question 3: Barry Boehm's Spiral Model is fundamentally a risk-driven process model. Unlike linear or purely agile models, every single 360-degree spiral loop explicitly begins with setting objectives and mandates an in-depth risk analysis step to identify and resolve technical, financial, or operational risks before engineering proceeds.",
+          "why_wrong": {
+            "Elimination of all documentation": "The Spiral Model produces formal documentation, milestone reviews, and management checkpoints at each loop.",
+            "Strict sequential phase completion...": "This is the Waterfall model, whereas the Spiral model is inherently iterative and cyclic.",
+            "Exclusively pair programming": "Pair programming is a practice of Extreme Programming (XP), not the Spiral Model."
+          },
+          "marking_points": [
+            "Identifies risk assessment/management as defining feature"
+          ],
+          "source": "Nile University Final Exam Paper (Type B), Question 3",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-003",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-q10",
+            "prototyping",
+            "validation",
+            "analysis"
+          ],
+          "question": "In Nile University Final Exam Question 10: What is the main goal of prototyping in software development?",
+          "options": [
+            "Validation and refinement of requirements with stakeholders",
+            "Rapid delivery of the final production system",
+            "Reducing the need for software testing",
+            "Simplifying the compiler optimization process"
+          ],
+          "answer": "Validation and refinement of requirements with stakeholders",
+          "explanation": "The primary objective of building a prototype is to clarify ambiguous user requirements, validate user interface workflows, and resolve stakeholder misunderstandings early in the development lifecycle before committing major resources to production engineering.",
+          "why_wrong": {
+            "Rapid delivery of the final production system": "Prototypes are typically throwaway or preliminary models, not hardened production-ready systems.",
+            "Reducing the need for software testing": "Testing remains mandatory; prototypes do not eliminate formal verification and validation.",
+            "Simplifying the compiler optimization process": "Compilers optimize binaries independently of development process models."
+          },
+          "marking_points": [
+            "Validation and refinement of requirements"
+          ],
+          "source": "Nile University Final Exam Paper (Type B), Question 10",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-005",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-q43",
+            "prototyping-value",
+            "assumptions"
+          ],
+          "question": "In Nile University Final Exam Question 43: Prototyping is valuable during requirements elicitation primarily because it helps:",
+          "options": [
+            "Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration",
+            "Replace the need for any formal written requirements documentation",
+            "Force developers to begin writing production database queries early",
+            "Eliminate the need to involve real end-users"
+          ],
+          "answer": "Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration",
+          "explanation": "Users frequently struggle to articulate abstract needs from text documents. An interactive prototype allows stakeholders to test workflows directly, exposing unstated assumptions, missing validation rules, and conflicting expectations while changes are cheap to make.",
+          "why_wrong": {
+            "Replace the need for any formal written requirements...": "A prototype supplements, but does not entirely replace, formal contractual specifications.",
+            "Force developers to begin writing production database queries...": "Prototypes often use mock data; forcing early production DB design defeats the exploratory purpose.",
+            "Eliminate the need to involve real end-users": "Prototypes are built specifically to engage real end-users."
+          },
+          "marking_points": [
+            "Reveals hidden assumptions through interactive visual demonstration"
+          ],
+          "source": "Nile University Final Exam Paper (Type B), Question 43",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-007",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "rup-phases",
+            "elaboration"
+          ],
+          "question": "In the Rational Unified Process (RUP), during which of the four sequential phases is the baseline executable software architecture established and major risks mitigated?",
+          "options": [
+            "Elaboration Phase",
+            "Inception Phase",
+            "Construction Phase",
+            "Transition Phase"
+          ],
+          "answer": "Elaboration Phase",
+          "explanation": "RUP defines four phases: 1. Inception (establish business case and scope); 2. Elaboration (analyze problem domain, establish architectural baseline, resolve highest risks); 3. Construction (bulk coding and component integration); 4. Transition (deploying to users).",
+          "why_wrong": {
+            "Inception Phase": "Inception defines project scope, business viability, and initial cost estimates, not the full architecture.",
+            "Construction Phase": "Construction builds the remaining functionality upon the already-established architectural baseline.",
+            "Transition Phase": "Transition handles beta testing, user training, and deployment."
+          },
+          "marking_points": [
+            "Identifies Elaboration phase as establishing architectural baseline"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5 & RUP Standards",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-fc01",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "waterfall"
+          ],
+          "question": "What is the Waterfall Model?",
+          "options": [],
+          "answer": "A linear-sequential software process model where progress flows strictly through distinct phases (Requirements, Design, Implementation, Testing, Maintenance).",
+          "explanation": "Best suited for stable, well-understood requirements.",
+          "why_wrong": {},
+          "marking_points": [
+            "Linear sequential model",
+            "Requirements -> Design -> Code -> Test -> Maintain"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.1",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-fc03",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "spiral-model"
+          ],
+          "question": "What is the key feature of the Spiral Model?",
+          "options": [],
+          "answer": "Explicit, systematic risk analysis and management at every iteration.",
+          "explanation": "Created by Barry Boehm for large, high-risk systems.",
+          "why_wrong": {},
+          "marking_points": [
+            "Risk analysis and management at every iteration"
+          ],
+          "source": "Nile Exam Q3 & Lecture Notes Section 5.5",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-fc05",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "rup-phases"
+          ],
+          "question": "What are the four sequential phases of the Rational Unified Process (RUP)?",
+          "options": [],
+          "answer": "1. Inception\n2. Elaboration\n3. Construction\n4. Transition",
+          "explanation": "Core phase structure of RUP.",
+          "why_wrong": {},
+          "marking_points": [
+            "Inception, Elaboration, Construction, Transition"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-fc07",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "incremental"
+          ],
+          "question": "What is Incremental Development?",
+          "options": [],
+          "answer": "Delivering software in staged, useful functional increments rather than all at once in a single monolithic release.",
+          "explanation": "Allows early value delivery to customers.",
+          "why_wrong": {},
+          "marking_points": [
+            "Delivers software in functional portions/increments"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.3",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-cs01-q1",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "process-selection",
+            "risk-driven"
+          ],
+          "question": "Why is the Spiral Model or a hybrid RUP approach technically superior to a pure rapid-fire Agile sprint model for this national security system?",
+          "options": [
+            "Because the project carries severe technical, legal, and national security risks that require explicit risk assessment, formal architectural baselines, and verification gates before full-scale deployment.",
+            "Because the Spiral Model guarantees that software will be built with zero lines of code.",
+            "Because Agile methodologies are illegal under Nigerian copyright law.",
+            "Because the Waterfall model cannot run on Linux servers."
+          ],
+          "answer": "Because the project carries severe technical, legal, and national security risks that require explicit risk assessment, formal architectural baselines, and verification gates before full-scale deployment.",
+          "explanation": "Large-scale safety-critical systems with strict regulatory compliance, multi-agency dependencies, and catastrophic failure penalties require formal risk mitigation, comprehensive documentation, and architectural verification (strengths of the Spiral Model and RUP Elaboration), which purely informal Agile sprints can overlook.",
+          "why_wrong": {
+            "Because the Spiral Model guarantees zero lines of code...": "Nonsensical assertion; software must be coded.",
+            "Because Agile methodologies are illegal...": "Agile is an engineering management philosophy, not a statutory offense.",
+            "Because the Waterfall model cannot run on Linux...": "Process models are management frameworks, independent of the operating system."
+          },
+          "marking_points": [
+            "Identifies high-risk, security-critical nature",
+            "Emphasizes risk assessment and architectural baseline requirements"
+          ],
+          "source": "Process Model Selection Case Study",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional",
+          "scenario": "A federal government ministry in Abuja contracts an IT consulting consortium to develop a nationwide e-Passport and border control management system. The project involves strict biometric encryption protocols, multi-agency legal clearances, integration with international police databases, and life-critical security compliance. The ministry's senior director demands using a pure 2-week Agile sprint model, while the systems architect argues for a risk-driven Spiral Model."
+        },
+        {
+          "id": "sen201-pm-cs02-q1",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "prototyping-trap",
+            "risk-analysis"
+          ],
+          "question": "What classic software engineering hazard (the 'Prototyping Trap') does this scenario illustrate?",
+          "options": [
+            "Management mistaking an unhardened, non-secure throwaway prototype with mock data for production-ready software.",
+            "The prototype running out of memory due to C language pointer errors.",
+            "The hospital violating open-source GPL licenses.",
+            "Developers spending too much time on automated unit tests."
+          ],
+          "answer": "Management mistaking an unhardened, non-secure throwaway prototype with mock data for production-ready software.",
+          "explanation": "As warned in Section 5.2 of the lecture notes: A primary risk of prototyping is that stakeholders see a functioning visual screen and assume the software is complete. In reality, the prototype lacks database ACID transactions, patient data encryption, audit logging, input sanitization, and concurrent error handling, creating grave patient safety hazards.",
+          "why_wrong": {
+            "The prototype running out of memory...": "The issue is architectural and managerial, not low-level pointer management.",
+            "The hospital violating open-source GPL licenses...": "Licensing is irrelevant to the core hazard described.",
+            "Developers spending too much time...": "The team built a quick UI mockup without backend tests."
+          },
+          "marking_points": [
+            "Identifies mistaking throwaway UI mockup for production-ready system",
+            "Highlights missing non-functional attributes (security, reliability)"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.2",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional",
+          "scenario": "A development team at Nile University Hospital builds an interactive web-based prototype in two weeks using a low-code UI builder to demonstrate how doctors will enter prescription orders. Hospital administrators are so impressed by the polished visual interface that they instruct the IT department to deploy the prototype immediately to live patient wards on Monday, canceling the planned 6-month backend engineering budget."
+        }
+      ]
+    },
+    {
+      "id": "sen201-mock-beta",
+      "title": "Mock Exam Beta: Advanced Case-Study & Architectural Design Mastery Exam",
+      "description": "Rigorous 50-question examination weighted heavily toward Level 3-4 cognitive depth: architectural patterns (Pipe-and-Filter, 4+1 views, MVC), white-box McCabe cyclomatic complexity, Lehman's laws, CMMI maturity levels, COCOMO II estimation, and legacy system re-engineering case studies.",
+      "duration_minutes": 120,
+      "total_marks": 100,
+      "passing_score": 60,
+      "question_count": 50,
+      "questions": [
+        {
+          "id": "sen201-ag-002",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-q54",
+            "xp",
+            "pair-programming",
+            "analysis"
+          ],
+          "question": "In Nile University Final Exam Question 54: What is the primary purpose and advantage of Pair Programming in Extreme Programming (XP)?",
+          "options": [
+            "Spread system knowledge and encourage collective code ownership",
+            "Halve the total salary paid to developers",
+            "Completely eliminate the need for automated unit testing",
+            "Allow one developer to sleep while the other writes code"
+          ],
+          "answer": "Spread system knowledge and encourage collective code ownership",
+          "explanation": "In Pair Programming, the Driver writes code while the Navigator continuously reviews logic, checks syntax, and considers edge cases. This continuous peer review catches bugs immediately, breaks knowledge silos across the team, and establishes collective code ownership.",
+          "why_wrong": {
+            "Halve the total salary paid to developers": "Two developers working together on one task increases short-term labor cost slightly in exchange for vastly higher code quality.",
+            "Completely eliminate the need for automated unit testing": "XP mandates Test-Driven Development (TDD) regardless of pair programming.",
+            "Allow one developer to sleep...": "Both developers are actively, intellectually engaged in continuous collaboration."
+          },
+          "marking_points": [
+            "Spreads knowledge across the team",
+            "Encourages collective code ownership and continuous real-time review"
+          ],
+          "source": "Nile University Final Exam Paper (Type B), Question 54",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-004",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-q58",
+            "open-source-business-models",
+            "analysis"
+          ],
+          "question": "In Nile University Final Exam Question 58: How do commercial open-source companies (such as Red Hat) primarily generate revenue?",
+          "options": [
+            "Selling enterprise support, consulting, maintenance, and cloud services for the software product",
+            "Suing users who download the public source code",
+            "Selling proprietary compilers to decode the open source",
+            "Selling user private browser search histories"
+          ],
+          "answer": "Selling enterprise support, consulting, maintenance, and cloud services for the software product",
+          "explanation": "Because open-source code is freely accessible, open-source business models monetize complementary services: enterprise technical support SLAs, security certification, customized integration, consulting, and managed cloud hosting.",
+          "why_wrong": {
+            "Suing users who download the public source code": "Open-source licenses explicitly grant the right to download and use the code.",
+            "Selling proprietary compilers...": "Open source is compiled using standard public tools (e.g. GCC, Clang, OpenJDK).",
+            "Selling user private browser search histories": "Unethical data-broker practice unrelated to open-source software business models."
+          },
+          "marking_points": [
+            "Monetizes support, maintenance, training, and managed services"
+          ],
+          "source": "Nile University Final Exam Paper (Type B), Question 58",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-006",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "sequencing",
+          "difficulty": 3,
+          "tags": [
+            "xp",
+            "tdd",
+            "red-green-refactor"
+          ],
+          "question": "Arrange the three phases of the Test-Driven Development (TDD) cycle in the correct operational sequence:",
+          "options": [
+            "1. RED (Write a unit test that defines a feature and watch it fail) -> 2. GREEN (Write the minimal production code necessary to pass the test) -> 3. REFACTOR (Clean up the code, eliminate duplication, and improve design while keeping tests green)",
+            "1. GREEN -> 2. RED -> 3. REFACTOR",
+            "1. REFACTOR -> 2. CODE -> 3. TEST",
+            "1. WRITE ALL CODE -> 2. MANUAL TEST -> 3. DEPLOY"
+          ],
+          "answer": "1. RED (Write a unit test that defines a feature and watch it fail) -> 2. GREEN (Write the minimal production code necessary to pass the test) -> 3. REFACTOR (Clean up the code, eliminate duplication, and improve design while keeping tests green)",
+          "explanation": "The foundational rhythm of TDD is Red-Green-Refactor: 1. Red: Confirm the test fails (validating that the test is actually checking something new); 2. Green: Write just enough code to satisfy the test; 3. Refactor: Improve internal design, remove duplication, and enhance readability while automated tests guarantee no regression.",
+          "why_wrong": {
+            "1. GREEN -> 2. RED -> 3. REFACTOR": "Writing code before tests violates the fundamental premise of TDD.",
+            "1. REFACTOR -> 2. CODE -> 3. TEST": "Cannot refactor non-existent code.",
+            "1. WRITE ALL CODE -> 2. MANUAL TEST...": "This is traditional ad-hoc development, the exact opposite of TDD."
+          },
+          "marking_points": [
+            "1. Red (failing test)",
+            "2. Green (minimal passing code)",
+            "3. Refactor (improve design with tests green)"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 9.6",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-008",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "scrum-ceremonies",
+            "daily-scrum"
+          ],
+          "question": "What are the three specific questions answered by development team members during the 15-minute Daily Scrum meeting?",
+          "options": [
+            "1. What did I accomplish yesterday? 2. What will I work on today? 3. Are there any impediments/blockers in my way?",
+            "1. How much bonus do I deserve? 2. Why is management wrong? 3. Who broke the build?",
+            "1. What language should we switch to? 2. When is lunch? 3. What bugs did QA find?",
+            "1. What is the database password? 2. Did the client pay? 3. What is my next promotion?"
+          ],
+          "answer": "1. What did I accomplish yesterday? 2. What will I work on today? 3. Are there any impediments/blockers in my way?",
+          "explanation": "The Daily Scrum is a brief, focused synchronization event where each team member answers: 1. What did I do yesterday that helped the team meet the Sprint Goal? 2. What will I do today? 3. What obstacles or blockers are impeding progress? Detailed architectural debates are deferred to separate follow-up sessions.",
+          "why_wrong": {
+            "1. How much bonus do I deserve?...": "Daily standups are synchronization check-ins, not salary reviews.",
+            "1. What language should we switch to?...": "Process distractions outside the scope of daily progress synchronization.",
+            "1. What is the database password?...": "Operational trivia."
+          },
+          "marking_points": [
+            "Yesterday's progress",
+            "Today's plan",
+            "Impediments/blockers"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.4",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-fc02",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "scrum-roles"
+          ],
+          "question": "What are the three primary roles in a Scrum team?",
+          "options": [],
+          "answer": "1. Product Owner (owns the Product Backlog, prioritizes business value)\n2. Scrum Master (coaches agile practices, removes blockers)\n3. Development Team (cross-functional engineers building the increment)",
+          "explanation": "Scrum defines precisely three roles.",
+          "why_wrong": {},
+          "marking_points": [
+            "Product Owner, Scrum Master, Development Team"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.4",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-fc04",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "pair-programming"
+          ],
+          "question": "What are the two roles in Pair Programming, and what is the primary benefit?",
+          "options": [],
+          "answer": "- Driver (writes code and types)\n- Navigator (reviews code in real-time, considers edge cases and overall strategy)\nBenefit: Spreads system knowledge, catches defects immediately, and ensures collective code ownership.",
+          "explanation": "XP practice tested in Nile Exam Q54.",
+          "why_wrong": {},
+          "marking_points": [
+            "Driver and Navigator roles",
+            "Knowledge sharing and collective ownership"
+          ],
+          "source": "Nile Exam Q54 & XP Standards",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-fc06",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "ci-cd"
+          ],
+          "question": "What is the difference between Continuous Integration (CI) and Continuous Delivery (CD)?",
+          "options": [],
+          "answer": "- CI: Automatically builds and tests code each time a developer commits to mainline.\n- CD: Automatically prepares and validates software so it can be deployed to production at any time with a single click (or continuous deployment: deployed automatically).",
+          "explanation": "Core pipelines of modern DevOps.",
+          "why_wrong": {},
+          "marking_points": [
+            "CI: automated build/test on commit",
+            "CD: automated deployment pipeline"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.6 & 9.7",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-fc08",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "open-source-monetization"
+          ],
+          "question": "How do companies make money from open-source software?",
+          "options": [],
+          "answer": "By selling commercial support SLAs, enterprise hosting, custom integration, consulting, and advanced management plugins (e.g. Red Hat, MongoDB).",
+          "explanation": "Tested directly in Nile Exam Q58.",
+          "why_wrong": {},
+          "marking_points": [
+            "Enterprise support, hosting, services, consulting"
+          ],
+          "source": "Nile Exam Q58 & Section 5.6",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp"
+        },
+        {
+          "id": "sen201-ag-cs01-q2",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "definition-of-done",
+            "increment"
+          ],
+          "question": "To prevent future sprint delivery failures, define what a formal 'Definition of Done' (DoD) should include for each user story before it can be demonstrated at the Sprint Review.",
+          "options": [],
+          "answer": "A robust Definition of Done (DoD) must require:\n1. Code Implementation & Review: All production code written, reviewed via peer pull request, and conforming to coding standards.\n2. Automated Testing: Unit tests and integration tests passing with zero failures, meeting minimum code coverage (e.g. >= 80%).\n3. Acceptance Criteria Satisfied: Feature fulfills all specific business acceptance criteria defined in the user story.\n4. Documentation & Integration: API endpoints documented, code merged to the development branch via CI pipeline, and deployed to a staging environment ready for stakeholder demonstration.",
+          "explanation": "The Definition of Done ensures high quality and prevents half-finished work from being claimed as complete.",
+          "why_wrong": {},
+          "marking_points": [
+            "Code reviewed and adhering to standards",
+            "Automated tests passing with adequate coverage",
+            "Acceptance criteria fully met",
+            "Integrated into mainline via CI and deployed to staging"
+          ],
+          "source": "Scrum Quality Standards & Definition of Done",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp",
+          "scenario": "A healthtech startup in Abuja is transitioning from a traditional 12-month Waterfall cycle to Scrum to build an electronic telemedicine mobile application. The newly appointed Product Owner (a medical doctor) frequently visits developer desks during the middle of a 2-week Sprint, asking engineers to drop their current user stories to implement urgent new feature ideas she thought of that morning. As a result, the team has failed to deliver a working increment for three consecutive sprints."
+        },
+        {
+          "id": "sen201-ag-cs02-q2",
+          "course": "SEN 201",
+          "topic": "Agile Software Development, Scrum, Kanban, XP & DevOps",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "tdd-safety",
+            "financial-software"
+          ],
+          "question": "Explain why Test-Driven Development (TDD) provides a crucial safety net for continuous refactoring in high-stakes financial trading algorithms.",
+          "options": [],
+          "answer": "1. Comprehensive Regression Safety: Because every feature starts with an automated test before code is written, a comprehensive suite of unit tests covers all business logic. When engineers refactor trading algorithms for speed or readability, running the test suite immediately confirms that no existing calculations or boundary conditions were broken.\n2. Modular, Testable Design: TDD forces developers to write small, decoupled, highly cohesive functions that can be instantiated and verified in isolation, preventing the emergence of tangled spaghetti code.\n3. Living Specification: The test suite serves as an unambiguous, executable specification documenting exact mathematical inputs and expected trade outcomes under edge conditions.",
+          "explanation": "TDD eliminates the fear of refactoring by providing instantaneous automated verification.",
+          "why_wrong": {},
+          "marking_points": [
+            "Comprehensive regression testing safety net during refactoring",
+            "Forces modular, decoupled, testable architectural design",
+            "Acts as executable living documentation of business rules"
+          ],
+          "source": "Extreme Programming & TDD Engineering Standards",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "agile_scrum_kanban_xp",
+          "scenario": "A software agency in Lagos is building an automated algorithmic trading engine. The financial stakes are extremely high: a single decimal point calculation error could lose millions of Naira within seconds. The chief engineer mandates Pair Programming and strict Test-Driven Development (TDD). The chief financial officer objects, arguing that having two developers work on one computer cuts programming productivity in half and wastes 50% of developer salaries."
+        },
+        {
+          "id": "sen201-ap-002",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "4+1-view",
+            "process-view",
+            "concurrency",
+            "nile-exam"
+          ],
+          "question": "In Kruchten's 4+1 View Model of software architecture, what is the primary focus of the 'Process View'?",
+          "options": [
+            "The decomposition of the software into packages, classes, and inheritance hierarchies",
+            "The interactions between runtime processes, concurrency, threads, and performance scalability",
+            "The physical mapping of software binaries onto server nodes and network links",
+            "The software development environment, repository branching, and build tool configuration"
+          ],
+          "answer": 1,
+          "explanation": "According to Nile Final Exam Question 61 and Kruchten's 4+1 View Model, the Process View specifically addresses the dynamic aspects of the system at runtime: communicating processes, threads, synchronization, concurrency, and performance constraints.",
+          "why_wrong": {
+            "0": "Decomposition into packages, classes, and object hierarchies is the domain of the Logical View.",
+            "2": "The physical mapping onto servers and hardware topology is the domain of the Physical/Deployment View.",
+            "3": "The developer organization, build tools, and directory structure are the domain of the Development View."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q61; Kruchten 4+1",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-004",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "cohesion",
+            "coupling",
+            "software-design"
+          ],
+          "question": "A senior software architect reviews a proposed module and notices that it handles user authentication, generates monthly PDF invoices, sends email alerts, and directly executes raw SQL queries against three different database tables. What design assessment must the architect issue?",
+          "options": [
+            "The module exhibits ideal high cohesion and tight coupling, maximizing execution speed",
+            "The module suffers from low cohesion and tight coupling, violating the Single Responsibility Principle and creating maintenance fragility",
+            "The module demonstrates loose coupling because all operations are grouped inside a single source file",
+            "The module demonstrates high cohesion because all four tasks are executed by an online web application"
+          ],
+          "answer": 1,
+          "explanation": "The module possesses low cohesion because it combines unrelated responsibilities (security, document generation, network communications, and database access). It also possesses high/tight coupling because it binds directly to multiple database tables and external communication systems. In good design, modules should strive for high cohesion (single, focused purpose) and loose coupling.",
+          "why_wrong": {
+            "0": "Tight coupling is a design defect, not an advantage, and low cohesion impairs maintainability.",
+            "2": "Grouping disparate tasks into a single source file creates a 'God class' monolith, which increases coupling rather than loosening it.",
+            "3": "Belonging to the same overall web application does not make functions cohesive; cohesion requires strong functional relatedness within the specific class or module."
+          },
+          "source": "Software Engineering Concepts and Principles Lecture Notes; Sommerville Ch. 6",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-006",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "sequencing",
+          "difficulty": 2,
+          "tags": [
+            "layered-architecture",
+            "n-tier",
+            "sequencing"
+          ],
+          "question": "Arrange the layers of a classic 4-tier enterprise software architecture in order from highest level (closest to the end-user) to lowest level (closest to persistent storage):",
+          "options": [
+            "Presentation Layer (User Interface & Controllers)",
+            "Business Logic / Domain Application Layer",
+            "Data Access / Persistence Layer (ORMs, DAOs)",
+            "Database / Storage Layer (Relational DBMS, Cloud Storage)"
+          ],
+          "answer": [
+            "Presentation Layer (User Interface & Controllers)",
+            "Business Logic / Domain Application Layer",
+            "Data Access / Persistence Layer (ORMs, DAOs)",
+            "Database / Storage Layer (Relational DBMS, Cloud Storage)"
+          ],
+          "explanation": "In standard n-tier architecture, requests flow downward: Presentation Layer captures user actions -> Business Logic executes business validation and computations -> Data Access Layer constructs queries and maps models -> Database Layer stores and manages persistent records.",
+          "why_wrong": {},
+          "source": "Sommerville Ch. 6; Software Engineering Concepts and Principles Lecture Notes",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-008",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "multi_select",
+          "difficulty": 3,
+          "tags": [
+            "solid",
+            "design-principles",
+            "object-oriented"
+          ],
+          "question": "Which of the following scenarios represent DIRECT VIOLATIONS of SOLID design principles? (Select ALL that apply)",
+          "options": [
+            "A `Square` class inherits from `Rectangle`, but overriding `setWidth()` automatically alters height, breaking client code that calculates rectangle area (Violates Liskov Substitution Principle)",
+            "A report generation class requires modification to its core source code whenever a new export format (e.g., CSV, JSON, XML) is introduced, rather than plugging in a new formatter interface (Violates Open/Closed Principle)",
+            "A high-level `OrderProcessingService` instantiates a concrete `MySqlDatabaseConnection` directly in its constructor instead of receiving a `DatabaseInterface` via dependency injection (Violates Dependency Inversion Principle)",
+            "A class defines private variables and exposes getters and setters to encapsulate its internal state"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "Options 0, 1, and 2 are classic violations of LSP (derived class breaks base contract), OCP (core class is not closed for modification), and DIP (high-level policy depends on concrete low-level implementation). Option 3 describes standard encapsulation, which is a foundational OO principle and not a violation.",
+          "why_wrong": {
+            "3": "Encapsulating internal fields via accessors is standard object-oriented information hiding, not a violation of SOLID."
+          },
+          "source": "Software Engineering Concepts and Principles Lecture Notes; Martin (2002) Agile Software Development",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-fc02",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "patterns"
+          ],
+          "question": "What is an Architectural Pattern?",
+          "answer": "A stylized, reusable solution to a commonly occurring design problem in software architecture, providing structural templates and operating rules across different applications.",
+          "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 60.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q60",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-fc04",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "coupling"
+          ],
+          "question": "What does Loose Coupling mean, and why is it desirable?",
+          "answer": "Modules have minimal, well-defined dependencies on each other's internal implementation details. It allows modifying or replacing one module with minimal risk of breaking others.",
+          "explanation": "Loose coupling enables concurrent team development and modular testing.",
+          "why_wrong": {},
+          "source": "Software Engineering Concepts and Principles Lecture Notes",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-fc06",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "repository"
+          ],
+          "question": "What is the Repository (or Blackboard) architectural style, and what is its main drawback?",
+          "answer": "A style where multiple independent subsystems share and exchange data via a central repository. Its main drawback is that the central repository is a single point of failure and bottleneck, and schema changes impact all subsystems.",
+          "explanation": "Widely used in IDEs, CAD systems, and centralized databases.",
+          "why_wrong": {},
+          "source": "Sommerville Ch. 6",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-fc08",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "design-patterns",
+            "observer"
+          ],
+          "question": "What is the Observer design pattern, and when is it applied?",
+          "answer": "A behavioral pattern defining a one-to-many relationship where a subject notifies all registered observers automatically whenever its internal state changes, without knowing their concrete classes.",
+          "explanation": "Forms the foundation of event handling, reactive streams, and UI data-binding.",
+          "why_wrong": {},
+          "source": "GoF Design Patterns; Sommerville Ch. 6",
+          "topic_slug": "architecture_patterns"
+        },
+        {
+          "id": "sen201-ap-cs01-q2",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "architectural-analysis",
+            "caching"
+          ],
+          "question": "Explain how introducing a Repository pattern combined with an in-memory caching layer (e.g., Redis) resolves the 45-second GPA computation bottleneck, and state what cache invalidation policy must be applied.",
+          "marking_points": [
+            "Identifies that the Repository pattern abstracts data access away from business logic, centralizing query optimization and caching.",
+            "Explains that pre-computing or memoizing calculated GPAs into an in-memory cache eliminates repeated sequential full-table scans during peak concurrent traffic.",
+            "Specifies an exact cache invalidation trigger (e.g., invalidate or update cache entry when a lecturer uploads or amends an approved grade).",
+            "Notes the non-functional benefit: drastic reduction in database CPU contention and sub-second response times for student queries."
+          ],
+          "answer": "1. Architectural Abstraction: The Repository pattern encapsulates data retrieval logic, cleanly isolating GPA calculation rules from persistent storage.\n2. Caching Strategy: Because grade records are read far more frequently than they are updated, GPA results can be memoized in an in-memory cache (e.g., Redis), transforming expensive 45-second multi-table aggregation queries into sub-millisecond key-value lookups.\n3. Cache Invalidation Policy: The cache must use write-through or event-driven invalidation\u2014whenever a lecturer submits or modifies a grade in the Academic Records subsystem, the cached GPA entry for affected students is invalidated and recalculated.\n4. Non-Functional Impact: Relieves database lock contention and guarantees consistent sub-second page loads during peak registration.",
+          "explanation": "Separating calculation logic from direct disk storage via repository caching ensures high availability and eliminates recalculation storms.",
+          "why_wrong": {},
+          "source": "Sommerville Ch. 6; Architecture Case Studies",
+          "topic_slug": "architecture_patterns",
+          "scenario": "Nile University's student registration portal was originally developed as a single PHP/MySQL script where UI HTML rendering, session authentication, grade computation, payment gateway API calls, and raw database queries were intermixed in 8,000 lines of code. During peak midterm enrollment, a crash in the payment gateway API handler caused total portal downtime, locking students out of submitting course registrations. Furthermore, calculating cumulative GPAs takes 45 seconds per query because calculations run synchronously inside the presentation loop. The university CTO has chartered an architectural overhaul."
+        },
+        {
+          "id": "sen201-ap-cs02-q2",
+          "course": "SEN 201",
+          "topic": "Software Architecture & Design Patterns",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "design-patterns",
+            "strategy-pattern"
+          ],
+          "question": "The fraud detection team regularly deploys new AI fraud scoring algorithms (e.g., Random Forest, Gradient Boosted Trees, Neural Net) depending on shifting fraudulent patterns. Explain how applying the Strategy Design Pattern within the AI scoring filter satisfies the Open/Closed Principle (OCP).",
+          "marking_points": [
+            "Defines the Strategy Pattern: Encapsulates a family of algorithms behind a common interface, making them interchangeable at runtime.",
+            "States the OCP requirement: Software entities should be open for extension (adding new fraud detection models) but closed for modification (not editing existing transaction pipeline code).",
+            "Explains concrete implementation: An `IFraudScorer` interface with a `score(Transaction t)` method; concrete classes (`RandomForestScorer`, `NeuralNetScorer`) implement it.",
+            "Demonstrates that new fraud models can be added dynamically without altering the transaction pipeline or restarting running services."
+          ],
+          "answer": "1. Strategy Pattern Definition: Encapsulates the algorithmic scoring logic behind an abstract interface (e.g., `IFraudScoringStrategy`), allowing concrete scoring algorithms to be swapped seamlessly without altering the client filter.\n2. Conformance to Open/Closed Principle: The transaction pipeline filter is 'closed for modification' because its orchestration code never needs to be edited or recompiled when new fraud heuristics emerge. It is 'open for extension' because data scientists can implement a new class (e.g., `DeepNeuralScorer`) implementing the interface.\n3. Runtime Dynamic Selection: The pipeline can dynamically switch or A/B test fraud scoring models based on merchant category or transaction risk profile without system downtime or code regression.",
+          "explanation": "The Strategy pattern decouples algorithmic variations from execution infrastructure, ensuring clean OCP compliance.",
+          "why_wrong": {},
+          "source": "GoF Design Patterns; Sommerville Ch. 6",
+          "topic_slug": "architecture_patterns",
+          "scenario": "A Nigerian FinTech unicorn processes 4,000 card transactions per second. Each incoming transaction payload must undergo five distinct checks before authorization: (1) schema format validation, (2) blacklist fraud phone check, (3) AI behavioral anomaly scoring, (4) ledger balance check, and (5) cryptographic token generation. The transaction screening engine must achieve an end-to-end response time of under 120ms. The engineering team is debating between a centralized Repository (Blackboard) architecture and a Pipe-and-Filter streaming architecture."
+        },
+        {
+          "id": "sen201-fe-002",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "interaction-models",
+            "uml",
+            "nile-exam"
+          ],
+          "question": "In system modeling, what is the primary objective of creating 'Interaction Models' (such as Use Case Diagrams and Sequence Diagrams)?",
+          "options": [
+            "To specify the physical clock speed of the CPU processors",
+            "To model user-to-system interactions and the dynamic communication message flows between communicating components within the system",
+            "To optimize relational database foreign key indexes",
+            "To calculate project team tax deductions"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 25 establishes that interaction models capture the dynamic interactions between actors (users/external systems) and the software, as well as the chronological message passing among internal software components.",
+          "why_wrong": {
+            "0": "Hardware clock speed belongs to hardware engineering, not software interaction modeling.",
+            "2": "Database index optimization is physical data design, not interaction modeling.",
+            "3": "Tax deductions belong to corporate payroll, not software system modeling."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q25; Sommerville Ch. 5",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-004",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "prototyping",
+            "requirements-validation",
+            "nile-exam"
+          ],
+          "question": "Why is software prototyping considered particularly valuable during the early requirements engineering phase?",
+          "options": [
+            "It serves as a permanent replacement for all testing and formal documentation",
+            "It helps reveal hidden, tacit user assumptions and validates ambiguous requirements through interactive, visual demonstration",
+            "It guarantees that developers never have to write database queries",
+            "It eliminates the need for software configuration management"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 43 emphasizes that prototyping allows stakeholders to interact with a visual, working model of the system. This hands-on interaction uncovers unstated expectations, clarifies confusing workflows, and validates requirements far more effectively than static text.",
+          "why_wrong": {
+            "0": "Throwaway prototypes are exploratory tools; they do not replace rigorous testing or architectural specifications.",
+            "2": "Prototypes do not eliminate database access in production systems.",
+            "3": "SCM remains vital across all software engineering activities."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q43; Sommerville Ch. 2",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-006",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "process-models",
+            "synthesis",
+            "matching"
+          ],
+          "question": "Match each major software engineering process model to its core defining operational philosophy:",
+          "options": [
+            {
+              "left": "Waterfall Model",
+              "right": "Strict linear phase-gate progression requiring fully signed-off requirements before design begins"
+            },
+            {
+              "left": "Spiral Model",
+              "right": "Risk-driven iterative lifecycle with formal risk assessment at every revolving loop"
+            },
+            {
+              "left": "Scrum",
+              "right": "Agile framework delivering working software in fixed-length 2-4 week sprints with daily standups"
+            },
+            {
+              "left": "Rational Unified Process (RUP)",
+              "right": "Architecture-centric, use-case driven iterative framework across 4 phases (Inception to Transition)"
+            },
+            {
+              "left": "Extreme Programming (XP)",
+              "right": "Disciplined agile practice emphasizing Test-Driven Development (TDD) and Pair Programming"
+            }
+          ],
+          "answer": [
+            {
+              "left": "Waterfall Model",
+              "right": "Strict linear phase-gate progression requiring fully signed-off requirements before design begins"
+            },
+            {
+              "left": "Spiral Model",
+              "right": "Risk-driven iterative lifecycle with formal risk assessment at every revolving loop"
+            },
+            {
+              "left": "Scrum",
+              "right": "Agile framework delivering working software in fixed-length 2-4 week sprints with daily standups"
+            },
+            {
+              "left": "Rational Unified Process (RUP)",
+              "right": "Architecture-centric, use-case driven iterative framework across 4 phases (Inception to Transition)"
+            },
+            {
+              "left": "Extreme Programming (XP)",
+              "right": "Disciplined agile practice emphasizing Test-Driven Development (TDD) and Pair Programming"
+            }
+          ],
+          "explanation": "Unites the fundamental process models tested in the Nile SEN 201 examination: Waterfall (linear), Spiral (risk-driven), Scrum (sprints), RUP (architecture-centric), and XP (code craftsmanship).",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q3, Q4, Q15, Q53, Q54; Sommerville Ch. 2 & 3",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-008",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "multi_select",
+          "difficulty": 3,
+          "tags": [
+            "software-crisis",
+            "engineering-principles",
+            "nile-exam"
+          ],
+          "question": "Which of the following represent core lessons learned from the historical 'Software Crisis' that form the bedrock of modern software engineering? (Select ALL that apply)",
+          "options": [
+            "Software development cannot rely on ad-hoc craftmanship; it requires disciplined, systematic, and measurable engineering processes",
+            "Fixing a defect during post-delivery maintenance is exponentially more expensive than catching it during early requirements analysis",
+            "Automated regression testing and continuous integration are critical to prevent code decay and system regressions",
+            "Hardware advancements automatically eliminate all software design bugs without human intervention"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "The software crisis demonstrated that complex software requires disciplined processes, that defects caught late carry an exponential cost-of-change penalty (Boehm's curve), and that automated regression testing is essential. Faster hardware does not prevent algorithmic design bugs.",
+          "why_wrong": {
+            "3": "Hardware advancements increase system scale and complexity, which exacerbates software errors if disciplined engineering is neglected."
+          },
+          "source": "Nile Final Exam Paper Type B Q1, Q2, Q66; Sommerville Ch. 1",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-fc02",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "specifications"
+          ],
+          "question": "Why is pure natural language flawed for specifying complex requirements?",
+          "answer": "It is inherently ambiguous, lacks modularity, suffers from semantic imprecision, and easily leads to contradictory assumptions between developers and stakeholders.",
+          "explanation": "Examined in Nile Final Exam Paper Type B Question 29.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q29",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-fc04",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "uml-generalization"
+          ],
+          "question": "What does a Generalization Hierarchy show in a UML class diagram?",
+          "answer": "An object-oriented inheritance ('is-a') relationship where specialized child subclasses inherit attributes, methods, and relationships from a general parent superclass.",
+          "explanation": "Examined in Nile Final Exam Paper Type B Question 27.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q27",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-fc06",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "rup"
+          ],
+          "question": "What are the four phases of the Rational Unified Process (RUP)?",
+          "answer": "1. Inception (establish business case and scope),\n2. Elaboration (manage risks and stabilize architecture),\n3. Construction (iterative development of components),\n4. Transition (deploy to user environment).",
+          "explanation": "Examined in Nile Final Exam Paper Type B Question 15.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q15; Sommerville Ch. 2",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-fc08",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "technical-debt"
+          ],
+          "question": "What is Technical Debt, and what happens if it is left unaddressed?",
+          "answer": "The implied future rework cost of taking engineering shortcuts today. If neglected, it causes code decay, soaring maintenance costs, and eventual architectural collapse.",
+          "explanation": "Introduced by Ward Cunningham in 1992.",
+          "why_wrong": {},
+          "source": "Sommerville Ch. 9; Fowler Refactoring",
+          "topic_slug": "final_exam_comprehensive"
+        },
+        {
+          "id": "sen201-fe-cs01-q2",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "offline-architecture",
+            "data-synchronization"
+          ],
+          "question": "Explain an architectural design and data synchronization strategy that allows remote rural hospital clinics to access and record patient data during total Internet telecom blackouts while preventing data loss or conflicting record overwrites.",
+          "marking_points": [
+            "Decentralized / Local-First edge database architecture: Deploying local edge nodes at each hospital running local replicas of active patient records.",
+            "Event-sourcing / Append-only ledger: Writing updates as chronological immutable events locally rather than direct destructive overwrites.",
+            "Asynchronous store-and-forward sync: Automatically queuing pending updates when offline and synchronizing with the central cloud repository via HTTPS/TLS when connectivity resumes.",
+            "Conflict resolution mechanism: Employing deterministic algorithms (e.g., Conflict-Free Replicated Data Types - CRDTs or timestamped operational transformations) to merge concurrent edits cleanly."
+          ],
+          "answer": "1. Local Edge Node Replication: Each rural hospital operates a local edge server containing a cached operational replica of the regional patient database, allowing doctors to read and write records locally with zero latency regardless of national telecom status.\n2. Append-Only Event Sourcing: Local updates (diagnoses, prescriptions) are stored as immutable, timestamped event logs rather than direct destructive record overwrites, ensuring no clinical history can be erased accidentally.\n3. Asynchronous Store-and-Forward Synchronization: An automated background sync daemon continuously monitors network interfaces. When connectivity is restored, local event logs are securely transmitted to the national cloud repository via encrypted queues.\n4. Deterministic Conflict Resolution: The system utilizes Conflict-Free Replicated Data Types (CRDTs) and medical priority rules (e.g., allergy warnings take precedence over routine notes) to merge concurrent edits across facilities without data loss.",
+          "explanation": "Edge caching combined with event-sourced store-and-forward synchronization satisfies the high-availability requirement in low-connectivity environments.",
+          "why_wrong": {},
+          "source": "Sommerville Ch. 6; Distributed Systems Architecture",
+          "topic_slug": "final_exam_comprehensive",
+          "scenario": "A federal ministry commissions a National Electronic Health Records System (NEHRS) connecting 500 public hospitals. During requirements elicitation, doctors demand instant emergency access to patient files with zero login friction. Concurrently, government privacy regulators require strict biometric multi-factor authentication, end-to-end encryption, and full cryptographic audit logging for every single record view to prevent illegal data snooping. Furthermore, the system must guarantee 99.999% availability and survive regional network cutoffs during telecommunications outages."
+        },
+        {
+          "id": "sen201-fe-cs02-q2",
+          "course": "SEN 201",
+          "topic": "Final Exam Comprehensive Synthesis",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "safety-critical",
+            "verification-validation"
+          ],
+          "question": "In safety-critical aviation software, outline a rigorous Verification and Validation (V&V) strategy spanning static analysis, formal reviews, and hardware-in-the-loop dynamic testing to ensure air traffic safety.",
+          "marking_points": [
+            "Formal static verification: Automated mathematical formal methods, abstract interpretation, and strict coding standard compliance (e.g., MISRA / DO-178C).",
+            "Fagan inspections & design walkthroughs: Rigorous peer review of requirements, radar algorithms, and fail-safe hazard analysis (HAZOP/FMEA).",
+            "100% Modified Condition/Decision Coverage (MC/DC): Rigorous white-box structural testing mandated for safety-critical aviation software.",
+            "Hardware-in-the-Loop (HIL) simulation: Dynamic testing of compiled binaries connected to physical radar antennas and avionics hardware simulators."
+          ],
+          "answer": "1. Static Formal Verification: Employ static analysis tools and formal methods to mathematically prove the absence of runtime memory corruption (e.g., buffer overflows, null pointer dereferences) and enforce strict conformance to DO-178C aviation coding standards.\n2. Multi-disciplinary Fagan Inspections: Conduct formal reviews of all radar track-correlation algorithms, architectural fault-trees, and fail-safe state machines with systems engineers and senior pilots before code freeze.\n3. Modified Condition/Decision Coverage (MC/DC): Execute structural white-box testing achieving 100% MC/DC, proving that each condition in a decision statement can independently affect the outcome of that decision.\n4. Hardware-in-the-Loop (HIL) Stress Testing: Run dynamic simulations where flight software runs on the actual target embedded processors connected to radar signal generators, validating real-time response times, antenna jitter tolerance, and graceful failover under extreme flight traffic loads.",
+          "explanation": "Safety-critical flight software demands mathematical static analysis, 100% MC/DC testing, and hardware-in-the-loop simulation.",
+          "why_wrong": {},
+          "source": "Sommerville Ch. 8; RTCA DO-178C Aviation Standards",
+          "topic_slug": "final_exam_comprehensive",
+          "scenario": "A federal aviation authority contracts a software engineering firm to develop an automated Next-Generation Radar Flight Control System. The agency's procurement officers demand a fixed-price, fixed-deadline contract with a comprehensive 1,500-page System Requirements Specification (SRS) signed off before any coding begins (Waterfall mindset). However, the air traffic controllers and radar operators demand rapid bi-weekly demonstrations of working software with flexible changes (Agile mindset). The chief architect must structure a hybrid process framework."
+        },
+        {
+          "id": "sen201-mr-002",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "legacy-systems",
+            "socio-technical",
+            "nile-exam"
+          ],
+          "question": "Which of the following constitute essential components of a socio-technical legacy system?",
+          "options": [
+            "Application source code only",
+            "Hardware, application software, application data, business processes, and organizational policies (All of the above)",
+            "The company's external marketing website only",
+            "Developer salaries and cafeteria menus"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 73 establishes that legacy systems are complex socio-technical entities comprising multiple interdependent layers: legacy hardware, system infrastructure, application programs, persistent business data, business rules, and the human business processes that rely upon them.",
+          "why_wrong": {
+            "0": "Source code is only one layer; legacy systems critically encompass persistent database records, hardware platforms, and embedded business processes.",
+            "2": "Marketing websites are peripheral web properties, not the core legacy socio-technical system.",
+            "3": "Developer salaries are operational overhead, not structural system components."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q73; Sommerville Ch. 9",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-004",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "adaptive-maintenance",
+            "environment",
+            "nile-exam"
+          ],
+          "question": "Adapting an existing software application to run smoothly following an upgrade from Windows Server 2012 to Windows Server 2022 and migrating to a new PostgreSQL database version is classified as what category of maintenance?",
+          "options": [
+            "Corrective maintenance",
+            "Environmental adaptation (Adaptive) maintenance",
+            "Cosmetic UI beautification",
+            "Deconstructive maintenance"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 75 and ISO/IEC 14764 define adaptive maintenance as software modifications necessitated by changes in the operational environment, such as operating system upgrades, database migrations, hardware replacements, or third-party API protocol changes.",
+          "why_wrong": {
+            "0": "Corrective maintenance specifically addresses fixing residual errors and runtime bugs.",
+            "2": "Cosmetic changes fall under perfective maintenance (user interface enhancements).",
+            "3": "Deconstructive maintenance is not a recognized category in software engineering standards."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q75; ISO/IEC 14764",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-006",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "maintainability-metrics",
+            "complexity",
+            "nile-exam"
+          ],
+          "question": "Which complexity metrics are actively analyzed to predict software maintainability and identify high-cost maintenance components?",
+          "options": [
+            "Font size and monitor refresh rates used by developers",
+            "Number of system interfaces, volume/complexity of data structures, and cyclomatic complexity of control logic (All of the above)",
+            "The physical weight of the server rack",
+            "The number of coffee breaks taken by the scrum master"
+          ],
+          "answer": 1,
+          "explanation": "Nile Final Exam Question 79 highlights that maintainability prediction relies on structural complexity metrics: number of component interfaces (coupling), size and complexity of shared data structures, and McCabe cyclomatic complexity of control structures.",
+          "why_wrong": {
+            "0": "Font sizes and display hardware have zero relation to software code maintainability.",
+            "2": "Server hardware weight has no correlation with software algorithmic maintainability.",
+            "3": "Developer personal habits do not represent structural software complexity metrics."
+          },
+          "source": "Nile University SEN 201 Final Exam Paper Type B Q79; Sommerville Ch. 9",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-008",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "maintenance-types",
+            "matching",
+            "iso-14764"
+          ],
+          "question": "Match each ISO/IEC 14764 maintenance category to its corresponding real-world engineering activity:",
+          "options": [
+            {
+              "left": "Corrective Maintenance",
+              "right": "Patching a memory leak and fixing a zero-division error reported by users in production"
+            },
+            {
+              "left": "Adaptive Maintenance",
+              "right": "Modifying payment drivers after migrating from an on-premise server to AWS Linux cloud"
+            },
+            {
+              "left": "Perfective Maintenance",
+              "right": "Adding multi-currency support and biometric fingerprint login to satisfy new customer requests"
+            },
+            {
+              "left": "Preventive Maintenance",
+              "right": "Refactoring a 3,000-line God class and extracting duplicate methods into shared utility modules"
+            }
+          ],
+          "answer": [
+            {
+              "left": "Corrective Maintenance",
+              "right": "Patching a memory leak and fixing a zero-division error reported by users in production"
+            },
+            {
+              "left": "Adaptive Maintenance",
+              "right": "Modifying payment drivers after migrating from an on-premise server to AWS Linux cloud"
+            },
+            {
+              "left": "Perfective Maintenance",
+              "right": "Adding multi-currency support and biometric fingerprint login to satisfy new customer requests"
+            },
+            {
+              "left": "Preventive Maintenance",
+              "right": "Refactoring a 3,000-line God class and extracting duplicate methods into shared utility modules"
+            }
+          ],
+          "explanation": "ISO/IEC 14764 standardizes software maintenance into four distinct categories based on operational intent: Corrective (fixing bugs), Adaptive (adapting to environment changes), Perfective (adding enhancements), and Preventive (proactive refactoring).",
+          "why_wrong": {},
+          "source": "ISO/IEC 14764; Nile Final Exam Q75",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-fc02",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "servicing-stage"
+          ],
+          "question": "What defines the 'Servicing Stage' in software evolution?",
+          "answer": "The phase where modifications are limited strictly to keeping the system operational (bug fixes and operational patches); no new functional features are developed.",
+          "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 72.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q72",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-fc04",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "lehmans-laws"
+          ],
+          "question": "State Lehman's Law of Increasing Complexity.",
+          "answer": "As an evolving software system changes, its structural complexity increases and its maintainability degrades unless deliberate, proactive effort (such as refactoring) is made to maintain or simplify it.",
+          "explanation": "First formulated by Manny Lehman in his seminal empirical studies.",
+          "why_wrong": {},
+          "source": "Lehman & Belady; Sommerville Ch. 9",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-fc06",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "code-smells"
+          ],
+          "question": "Name three common 'Bad Smells' in code identified in software engineering.",
+          "answer": "1. Duplicate Code (cloned logic in multiple places), 2. Long Methods / Large Classes (God objects with too many responsibilities), and 3. Speculative Generality (unused abstractions built for imagined future needs).",
+          "explanation": "Examined in Nile University SEN 201 Final Exam Paper Type B Question 78.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q78; Fowler Refactoring",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-fc08",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "refactoring"
+          ],
+          "question": "What is Refactoring, and how does it differ from Re-engineering?",
+          "answer": "Refactoring is small-scale, continuous code restructuring that improves internal design without altering external observable behavior. Re-engineering is large-scale system modernization, often restructuring architecture, migrating data, and translating languages.",
+          "explanation": "Refactoring is a routine engineering practice; re-engineering is an enterprise project.",
+          "why_wrong": {},
+          "source": "Fowler; Sommerville Ch. 9",
+          "topic_slug": "maintenance_reengineering"
+        },
+        {
+          "id": "sen201-mr-cs01-q2",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "strangler-pattern",
+            "incremental-modernization"
+          ],
+          "question": "Describe how the bank can apply the 'Strangler Fig' architectural pattern to modernize the legacy COBOL mainframe incrementally without disrupting 24/7 banking operations.",
+          "marking_points": [
+            "Defines the Strangler Fig pattern: Incrementally replacing legacy system components by creating new microservices around the edges until the old system is completely intercepted and decommissioned.",
+            "API / Facade routing: Placing an API Gateway / Integration Facade in front of the legacy mainframe to intercept incoming client banking requests.",
+            "Stepwise migration: Migrating discrete functional domains (e.g., Customer Profile first, then Transfers, then Loans) into modern services one at a time.",
+            "Validation & coexistence: Running shadow traffic / parallel runs to verify that modern services produce identical ledger outputs before retiring each legacy subsystem."
+          ],
+          "answer": "1. Strangler Fig Architecture: The bank avoids a dangerous 'Big Bang' cutover by placing an API Gateway or Facade in front of the legacy mainframe to intercept all incoming banking transactions.\n2. Incremental Service Extraction: Individual bounded domains (e.g., Account Inquiries and Customer Notifications first, followed by Bill Payments) are built as modern microservices that gradually intercept requests from the gateway.\n3. Shadow Validation (Parallel Runs): During migration, critical financial calculations are routed to both the legacy COBOL module and the new service concurrently, verifying 100% accounting equivalence before cutting over permanently.\n4. Graceful Decommissioning: Over time, the new microservices completely replace all legacy functions until the COBOL mainframe has no remaining active workflows, allowing it to be safely decommissioned with zero operational downtime.",
+          "explanation": "The Strangler Fig pattern minimizes operational risk by replacing functionality gradually behind an API facade.",
+          "why_wrong": {},
+          "source": "Martin Fowler (2004) Strangler Fig Application; Sommerville Ch. 9",
+          "topic_slug": "maintenance_reengineering",
+          "scenario": "A 40-year-old commercial bank operates its core transaction processing ledger on a legacy mainframe system written in COBOL. The system handles 15 million daily accounts with flawless transactional accuracy, but runs on costly hardware nearing end-of-life, and the bank cannot hire qualified COBOL engineers. A consultant suggests an immediate complete greenfield rewrite in Java within 9 months. However, the bank's internal chief architect warns that previous 'Big Bang' rewrites at competing banks failed catastrophically after spending tens of millions of dollars."
+        },
+        {
+          "id": "sen201-mr-cs02-q2",
+          "course": "SEN 201",
+          "topic": "Software Evolution, Maintenance & Legacy Systems",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "technical-debt",
+            "metrics"
+          ],
+          "question": "How can the engineering lead use software complexity metrics (Cyclomatic Complexity, Coupling Between Objects, Defect Rate) to justify the 3-week refactoring sprint to non-technical business executives?",
+          "marking_points": [
+            "Links high Cyclomatic Complexity (>45) directly to developer delivery velocity slowdown and exponential regression bug probability.",
+            "Explains that high Coupling Between Objects (CBO) creates severe blast radiuses where fixing one feature breaks unrelated modules (e.g., orders breaking driver payouts).",
+            "Translates technical debt into financial/business risk: downtime cost, lost merchant trust, and escalating engineer hours spent on firefighting rather than new revenue features.",
+            "Shows that refactoring lowers complexity and establishes automated regression safety, drastically cutting future maintenance costs and accelerating time-to-market."
+          ],
+          "answer": "1. Translating Cyclomatic Complexity: The lead explains that a complexity score of 45 means each order method contains 45 decision paths, making complete human understanding and manual testing impossible and causing frequent production bugs.\n2. Explaining Coupling Blast Radius: Demonstrates that excessive Coupling Between Objects causes changes in order logic to inadvertently crash driver payouts, leading to driver dissatisfaction and reputational damage.\n3. Quantifying Technical Debt Cost: Highlights that 70% of developer engineering hours are currently squandered firefighting regressions rather than delivering revenue-generating features.\n4. Business ROI: Refactoring will lower cyclomatic complexity below 10 per method, establish robust automated test suites, cut regression defect rates by over 60%, and accelerate feature release velocity for upcoming quarters.",
+          "explanation": "Effective engineering management maps software metrics directly to business costs, operational risk, and delivery velocity.",
+          "why_wrong": {},
+          "source": "Nile Final Exam Paper Type B Q76, Q79; Lehman's Laws",
+          "topic_slug": "maintenance_reengineering",
+          "scenario": "A 5-year-old logistics startup experienced rapid growth, expanding from 10 drivers to 50,000 drivers. To meet aggressive marketing deadlines, developers took shortcuts, resulting in a single `OrderManager` class with 4,200 lines of code, 38 global fields, and methods with cyclomatic complexities exceeding 45. A single change to order calculation breaks driver payout processing, requiring emergency weekend rollbacks. The development team requests a dedicated 3-week refactoring sprint."
+        },
+        {
+          "id": "sen201-pm-002",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "nile-exam-q4",
+            "waterfall-model",
+            "requirements"
+          ],
+          "question": "In Nile University Final Exam Question 4: Which phase of the Waterfall Model focuses on creating detailed requirements and system specifications?",
+          "options": [
+            "Requirements analysis and specification",
+            "System design",
+            "Implementation",
+            "Maintenance"
+          ],
+          "answer": "Requirements analysis and specification",
+          "explanation": "In the classical Waterfall Model, detailed functional and non-functional requirements are gathered, analyzed, and documented in a formal Software Requirements Specification (SRS) during the Requirements Analysis phase before any design or coding begins.",
+          "why_wrong": {
+            "System design": "Design focuses on creating the architectural blueprint, data structures, and algorithms to satisfy already-defined requirements.",
+            "Implementation": "Implementation translates detailed design into executable source code.",
+            "Maintenance": "Maintenance occurs post-deployment to patch defects and handle environmental changes."
+          },
+          "marking_points": [
+            "Identifies Requirements Analysis phase"
+          ],
+          "source": "Nile University Final Exam Paper (Type B), Question 4",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-004",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "nile-exam-q15",
+            "rup",
+            "architecture",
+            "analysis"
+          ],
+          "question": "In Nile University Final Exam Question 15: What is the main focus of the Rational Unified Process (RUP)?",
+          "options": [
+            "Iterative development and architecture-centric management of requirements",
+            "Strict adherence to a linear waterfall sequence",
+            "Writing code without any software architecture",
+            "Manual testing without automated tools"
+          ],
+          "answer": "Iterative development and architecture-centric management of requirements",
+          "explanation": "RUP is an iterative and incremental process framework characterized as being: 1. Use-case driven; 2. Architecture-centric (establishing an executable architectural baseline in the Elaboration phase); and 3. Iterative and risk-focused.",
+          "why_wrong": {
+            "Strict adherence to a linear waterfall sequence": "RUP explicitly rejects single-pass waterfall development in favor of iterative cycles.",
+            "Writing code without any software architecture": "RUP is famously architecture-centric, emphasizing early architectural stabilization.",
+            "Manual testing without automated tools": "RUP strongly emphasizes automated test suites."
+          },
+          "marking_points": [
+            "Iterative development",
+            "Architecture-centric requirements management"
+          ],
+          "source": "Nile University Final Exam Paper (Type B), Question 15",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-006",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "v-model",
+            "testing-correspondence"
+          ],
+          "question": "Match each testing level in the V-Model with the specific development phase it directly validates:",
+          "options": [
+            "Acceptance Testing -> Requirements Analysis; System Testing -> System Architecture Design; Integration Testing -> Detailed Subsystem Design; Unit Testing -> Component Implementation",
+            "Acceptance Testing -> Implementation; Unit Testing -> Requirements Analysis",
+            "System Testing -> Feasibility Study; Unit Testing -> Maintenance",
+            "Integration Testing -> Deployment; Acceptance Testing -> Database Schema"
+          ],
+          "answer": "Acceptance Testing -> Requirements Analysis; System Testing -> System Architecture Design; Integration Testing -> Detailed Subsystem Design; Unit Testing -> Component Implementation",
+          "explanation": "In the V-Model: 1. Unit Testing validates the low-level code and component logic; 2. Integration Testing validates detailed module interfaces; 3. System Testing validates high-level architectural integration; 4. Acceptance Testing validates user requirements against the original specification.",
+          "why_wrong": {
+            "Acceptance Testing -> Implementation; Unit Testing -> Requirements Analysis": "Reverses the verification levels.",
+            "System Testing -> Feasibility Study...": "Feasibility is a planning activity, not a direct software verification artifact.",
+            "Integration Testing -> Deployment...": "Integration occurs prior to system testing and deployment."
+          },
+          "marking_points": [
+            "Unit -> Implementation",
+            "Integration -> Detailed Design",
+            "System -> Architecture",
+            "Acceptance -> Requirements"
+          ],
+          "source": "Software Engineering Process Models Lecture Notes, Section 5",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-008",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "waterfall",
+            "disadvantages",
+            "analysis"
+          ],
+          "question": "What is the primary risk of using a pure Waterfall Model for a software project where customer requirements are vague or likely to change?",
+          "options": [
+            "Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.",
+            "Developers will write code too quickly without understanding requirements.",
+            "The Waterfall Model cannot be used with relational databases.",
+            "Waterfall requires zero documentation, leaving no audit trail."
+          ],
+          "answer": "Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.",
+          "explanation": "Because Waterfall requires freezing requirements before design and coding, changing requirements mid-way requires discarding completed work. Testing happens at the end ('big bang'), meaning major conceptual misunderstandings are discovered too late.",
+          "why_wrong": {
+            "Developers will write code too quickly...": "Waterfall delays coding until requirements and design are fully documented.",
+            "The Waterfall Model cannot be used with relational databases...": "Waterfall has been used with databases for decades.",
+            "Waterfall requires zero documentation...": "Waterfall is notoriously documentation-heavy."
+          },
+          "marking_points": [
+            "Cost of late change",
+            "Working software only appears at the end"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.1",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-fc02",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "v-model"
+          ],
+          "question": "What is the main innovation of the V-Model?",
+          "options": [],
+          "answer": "It maps every development phase directly to a corresponding testing phase, establishing early test planning during design.",
+          "explanation": "Illustrates verification (design) and validation (testing) symmetry.",
+          "why_wrong": {},
+          "marking_points": [
+            "Direct mapping between development and testing phases"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-fc04",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "prototyping"
+          ],
+          "question": "What is the difference between Throwaway and Evolutionary prototyping?",
+          "options": [],
+          "answer": "- Throwaway: Built quickly to clarify requirements and then discarded.\n- Evolutionary: Starts with core verified requirements and is progressively refined into the final production system.",
+          "explanation": "Distinguished by whether the prototype codebase survives into production.",
+          "why_wrong": {},
+          "marking_points": [
+            "Throwaway discarded after elicitation",
+            "Evolutionary refactored into production"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.2",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-fc06",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "feasibility-types"
+          ],
+          "question": "What are the five dimensions evaluated in a software Feasibility Study?",
+          "options": [],
+          "answer": "1. Technical\n2. Economic (cost-benefit)\n3. Operational\n4. Schedule\n5. Legal & Regulatory",
+          "explanation": "Evaluated before committing project budget.",
+          "why_wrong": {},
+          "marking_points": [
+            "Technical, Economic, Operational, Schedule, Legal"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 4.1",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-fc08",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "flashcard",
+            "spiral-quadrants"
+          ],
+          "question": "What are the four activities in each 360-degree cycle of the Spiral Model?",
+          "options": [],
+          "answer": "1. Determine objectives and constraints\n2. Evaluate alternatives and assess/resolve risks\n3. Develop and verify the product\n4. Plan the next iteration",
+          "explanation": "The four quadrants of Boehm's spiral.",
+          "why_wrong": {},
+          "marking_points": [
+            "Objectives, Risk Assessment, Development/Verification, Next Phase Planning"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.5",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional"
+        },
+        {
+          "id": "sen201-pm-cs01-q2",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "spiral-quadrant-application"
+          ],
+          "question": "Outline how the consulting team would execute one complete 360-degree spiral loop for the 'Biometric Facial Recognition Subsystem' across the four quadrants of the Spiral Model.",
+          "options": [],
+          "answer": "1. Quadrant 1 (Objectives & Constraints): Define requirements for facial recognition accuracy (e.g. false match rate < 0.001%), target processing speed (< 1.5 seconds per passenger), and international ICAO standards.\n2. Quadrant 2 (Risk Assessment & Mitigation): Identify major risks (e.g. poor airport lighting, sensor latency, demographic bias). Build an experimental prototype and run simulations with diverse image sets to assess and mitigate these risks.\n3. Quadrant 3 (Development & Verification): Design the production algorithms, integrate camera drivers, write test harnesses, and execute formal verification against benchmark passport photos.\n4. Quadrant 4 (Planning & Review): Review test outcomes with ministry security stakeholders, evaluate budget/schedule, and plan the next spiral cycle (e.g. integrating fingerprint sensors).",
+          "explanation": "Demonstrates practical operationalization of Boehm's four quadrants on an authentic high-risk subsystem.",
+          "why_wrong": {},
+          "marking_points": [
+            "Quadrant 1: Sets objectives, metrics, and constraints",
+            "Quadrant 2: Identifies risks (lighting, bias) and builds prototype to mitigate",
+            "Quadrant 3: Develops and verifies the subsystem",
+            "Quadrant 4: Reviews with stakeholders and plans next cycle"
+          ],
+          "source": "Spiral Model Engineering Application Standards",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional",
+          "scenario": "A federal government ministry in Abuja contracts an IT consulting consortium to develop a nationwide e-Passport and border control management system. The project involves strict biometric encryption protocols, multi-agency legal clearances, integration with international police databases, and life-critical security compliance. The ministry's senior director demands using a pure 2-week Agile sprint model, while the systems architect argues for a risk-driven Spiral Model."
+        },
+        {
+          "id": "sen201-pm-cs02-q2",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "non-functional-omissions",
+            "prototyping"
+          ],
+          "question": "List four vital engineering qualities that are typically absent from a rapid throwaway UI prototype that must be built before live medical deployment.",
+          "options": [],
+          "answer": "1. Data Security & Privacy: Encryption of sensitive patient health records at rest and in transit, and role-based access control.\n2. Concurrency & Transactional Integrity: ACID database transactions preventing duplicate prescriptions if two nurses click simultaneously.\n3. Fault Tolerance & Exception Handling: Resilient error logging, network timeout handling, and automatic recovery.\n4. Scalability & Performance: Ability to handle hundreds of concurrent hospital ward queries without latency degradation.",
+          "explanation": "Throwaway prototypes model only the happy path of the user interface; non-functional architectural qualities require rigorous engineering.",
+          "why_wrong": {},
+          "marking_points": [
+            "Mentions data security/encryption/privacy",
+            "Mentions database integrity/ACID transactions",
+            "Mentions error handling/fault tolerance",
+            "Mentions scalability/performance under load"
+          ],
+          "source": "Software Engineering Prototyping Guidelines",
+          "verified": true,
+          "verified_output": "N/A",
+          "topic_slug": "process_models_traditional",
+          "scenario": "A development team at Nile University Hospital builds an interactive web-based prototype in two weeks using a low-code UI builder to demonstrate how doctors will enter prescription orders. Hospital administrators are so impressed by the polished visual interface that they instruct the IT department to deploy the prototype immediately to live patient wards on Monday, canceling the planned 6-month backend engineering budget."
+        }
+      ]
+    }
+  ]
+}

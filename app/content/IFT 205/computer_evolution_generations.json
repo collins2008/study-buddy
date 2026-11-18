@@ -1,0 +1,625 @@
+{
+  "course": "IFT 205",
+  "topic": "computer_evolution_generations",
+  "title": "Evolution & Classification of Computers",
+  "summary": "Comprehensive historical and architectural survey of computing evolution and machine classification. Details seminal milestones from the ancient Abacus and mechanical calculators (Pascal, Leibniz) to Charles Babbage's Difference and Analytical Engines, Ada Lovelace's first computer algorithm, Herman Hollerith's punched-card tabulating machinery (founding IBM), Alan Turing's formalization of computation, and the landmark ENIAC. Traces the Stored-Program Concept introduced by John von Neumann. Exhaustive analysis of the Five Computer Generations categorized by dominant switching technology: 1st Gen (Vacuum Tubes), 2nd Gen (Transistors), 3rd Gen (Integrated Circuits), 4th Gen (Microprocessors/VLSI), and 5th Gen (AI, Parallel Processing, Quantum Computing). Contrasts modern classifications by scale, purpose, and workload: Microcomputers (PCs/laptops/smartphones), Workstations (CAD/graphics), Network Servers (shared services/uptime), Mainframes (high-volume concurrent transaction processing), Supercomputers/HPC (massive floating-point mathematical modeling in FLOPS), and Embedded Systems (dedicated microcontrollers inside appliances and vehicles).",
+  "key_terms": [
+    {
+      "term": "Analytical Engine",
+      "definition": "Charles Babbage's visionary mechanical design for the first general-purpose programmable computer, featuring a Store (memory) and a Mill (CPU)."
+    },
+    {
+      "term": "Stored-Program Concept",
+      "definition": "The architectural principle proposed by John von Neumann where program instructions and data are stored together in electronic memory, eliminating physical rewiring."
+    },
+    {
+      "term": "Transistor",
+      "definition": "A semiconductor switching and amplification device invented in 1947 that replaced fragile, hot vacuum tubes in Second-Generation computers."
+    },
+    {
+      "term": "Integrated Circuit (IC)",
+      "definition": "A miniature silicon semiconductor wafer containing thousands or millions of interconnected transistors, defining Third-Generation computing."
+    },
+    {
+      "term": "Microprocessor",
+      "definition": "A complete Central Processing Unit fabricated onto a single integrated circuit chip, driving Fourth-Generation personal computers."
+    },
+    {
+      "term": "Mainframe",
+      "definition": "A powerful multi-user enterprise computer optimized for extremely high-volume concurrent transaction processing, reliability, and massive I/O throughput."
+    },
+    {
+      "term": "Supercomputer",
+      "definition": "The fastest computing systems in existence, using tens of thousands of parallel processors to execute quadrillions of floating-point calculations per second (FLOPS)."
+    },
+    {
+      "term": "Embedded System",
+      "definition": "A dedicated microcontroller or microprocessor permanently integrated into a non-computing device to perform a specific dedicated control function."
+    }
+  ],
+  "questions": [
+    {
+      "id": "ift205-evo-001",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "pioneers",
+        "ada_lovelace"
+      ],
+      "question": "Who is recognized in computing history as the world's first computer programmer for writing an algorithm to calculate Bernoulli numbers intended for Charles Babbage's Analytical Engine?",
+      "options": [
+        "Ada Lovelace",
+        "Grace Hopper",
+        "Alan Turing",
+        "Herman Hollerith"
+      ],
+      "answer": 0,
+      "explanation": "Ada Lovelace worked closely with Charles Babbage and created the first published algorithm (a step-by-step sequence of instructions to compute Bernoulli numbers) designed for execution on Babbage's mechanical Analytical Engine, earning her the title of the world's first programmer.",
+      "why_wrong": {
+        "1": "Grace Hopper developed the first compiler (A-0) and popularized COBOL in the 1950s.",
+        "2": "Alan Turing formalized algorithmic computation and the Turing Machine in the 1930s.",
+        "3": "Herman Hollerith developed punched card tabulating machines for the 1890 US Census."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 10",
+      "verified": true,
+      "verified_output": "Ada Lovelace."
+    },
+    {
+      "id": "ift205-evo-002",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "matching",
+      "difficulty": 2,
+      "tags": [
+        "computer_generations",
+        "core_hardware"
+      ],
+      "question": "Match each Computer Generation to its defining dominant hardware switching technology:",
+      "options": [
+        "First Generation (1940s-1950s)",
+        "Second Generation (1950s-1960s)",
+        "Third Generation (1960s-1970s)",
+        "Fourth Generation (1970s-Present)",
+        "Fifth Generation (Present & Future)"
+      ],
+      "answer": {
+        "First Generation (1940s-1950s)": "Vacuum Tubes (thermionic electronic valves emitting high heat)",
+        "Second Generation (1950s-1960s)": "Discrete Transistors (solid-state semiconductor switches)",
+        "Third Generation (1960s-1970s)": "Integrated Circuits (ICs etched on silicon semiconductor chips)",
+        "Fourth Generation (1970s-Present)": "Microprocessors (VLSI/ULSI placing entire CPU onto a single chip)",
+        "Fifth Generation (Present & Future)": "Artificial Intelligence, Massive Parallel Processing, and Quantum Computing"
+      },
+      "explanation": "Generations are defined by their underlying physical switching mechanisms: 1st = Vacuum tubes, 2nd = Transistors, 3rd = Integrated Circuits, 4th = Microprocessors, 5th = AI & Parallelism.",
+      "why_wrong": {},
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slides 16-22",
+      "verified": true,
+      "verified_output": "Matched all 5 generations."
+    },
+    {
+      "id": "ift205-evo-003",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "true_false_why",
+      "difficulty": 2,
+      "tags": [
+        "eniac",
+        "first_generation"
+      ],
+      "question": "The ENIAC computer (completed in 1945) allowed operators to switch between different software programs instantly by loading code from a floppy disk into RAM.",
+      "options": [
+        "True \u2014 ENIAC used high-density 3.5-inch floppy disks to boot the MS-DOS operating system.",
+        "False \u2014 ENIAC was not a stored-program computer; reprogramming it required technicians to physically re-route electrical patch cords and manually flip thousands of mechanical switches over several days."
+      ],
+      "answer": 1,
+      "explanation": "ENIAC was programmed hardwired: to change its calculation routine, teams of human programmers had to manually disconnect, rewire, and re-patch dozens of external cables and configure rotary switches. The Stored-Program Concept was subsequently introduced by John von Neumann to store instructions in memory instead.",
+      "why_wrong": {
+        "0": "Floppy disks and MS-DOS were invented decades later in the late 1970s and 1980s."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 14-15",
+      "verified": true,
+      "verified_output": "False. ENIAC required physical patch cables to reprogram."
+    },
+    {
+      "id": "ift205-evo-004",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "sequencing",
+      "difficulty": 2,
+      "tags": [
+        "history_chronology",
+        "milestones"
+      ],
+      "question": "Place the following historical computing milestones in their correct chronological order from earliest to latest:",
+      "options": [
+        "The Abacus manual bead counting tool",
+        "Charles Babbage designs the mechanical Analytical Engine",
+        "Herman Hollerith develops punched-card tabulating machines for the US Census",
+        "ENIAC electronic vacuum-tube computer is completed",
+        "Intel releases the 4004, the first single-chip commercial microprocessor"
+      ],
+      "answer": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "explanation": "Historical order: 1. Abacus (ancient antiquity), 2. Babbage Analytical Engine (1830s), 3. Hollerith punched cards (1890), 4. ENIAC (1945), 5. Intel 4004 microprocessor (1971).",
+      "why_wrong": {},
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 5-20, 40",
+      "verified": true,
+      "verified_output": "Abacus -> Babbage -> Hollerith -> ENIAC -> Intel 4004"
+    },
+    {
+      "id": "ift205-evo-005",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "classification",
+        "mainframe_vs_supercomputer"
+      ],
+      "question": "What is the primary operational distinction between a Mainframe computer and a Supercomputer?",
+      "options": [
+        "A Mainframe is optimized for high-volume concurrent transaction processing and extreme I/O throughput across thousands of users (e.g. banking), whereas a Supercomputer is optimized for massive raw mathematical floating-point calculations executed in parallel (e.g. weather forecasting).",
+        "A Mainframe runs on AA batteries, whereas a Supercomputer must be connected to an automobile alternator.",
+        "A Mainframe is a personal laptop used by university students, whereas a Supercomputer is an embedded digital watch.",
+        "Mainframes use vacuum tubes, whereas Supercomputers are entirely mechanical wooden gearboxes."
+      ],
+      "answer": 0,
+      "explanation": "As contrasted in Lecture Slide 35: Mainframes focus on transaction throughput, data integrity, and high-concurrency commercial I/O (handling millions of ATM or credit card queries per second without dropping a single bit). Supercomputers focus on raw computational number crunching (FLOPS), calculating complex differential equations for scientific simulations.",
+      "why_wrong": {
+        "1": "Both are massive enterprise installations consuming megawatts of grid power.",
+        "2": "Laptops are microcomputers; digital watches are embedded systems.",
+        "3": "Both modern mainframes and supercomputers use advanced fourth/fifth generation silicon microprocessors."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 32-35",
+      "verified": true,
+      "verified_output": "Mainframe for transaction throughput; Supercomputer for mathematical simulations."
+    },
+    {
+      "id": "ift205-evo-006",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "classification",
+        "embedded_systems"
+      ],
+      "question": "An automatic washing machine uses a dedicated microcontroller to regulate water temperature, drum rotation cycles, and detergent dispensing. Into which category is this computer classified?",
+      "options": [
+        "Embedded System",
+        "High-Performance Supercomputer",
+        "Enterprise Mainframe",
+        "General-Purpose Workstation"
+      ],
+      "answer": 0,
+      "explanation": "An embedded system is a computer or microcontroller permanently integrated into a larger physical machine or appliance designed to execute a dedicated, specific control function rather than general-purpose computing tasks.",
+      "why_wrong": {
+        "1": "A supercomputer models climate and quantum mechanics, not washing machine drum cycles.",
+        "2": "A mainframe processes enterprise financial transactions for thousands of simultaneous bank clients.",
+        "3": "A workstation is a high-end desktop computer for human engineering design."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 34, 43",
+      "verified": true,
+      "verified_output": "Embedded System."
+    },
+    {
+      "id": "ift205-evo-007",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "cloze",
+      "difficulty": 2,
+      "tags": [
+        "pioneers",
+        "stored_program"
+      ],
+      "question": "The foundational computing architecture where program instructions and operational data are stored together in the same electronic memory was proposed in 1945 by mathematician {{c1::John von Neumann}}. This breakthrough is universally known as the {{c2::stored-program}} concept.",
+      "options": [
+        "John von Neumann",
+        "stored-program",
+        "Charles Babbage",
+        "Alan Turing",
+        "microprocessor",
+        "punched-card"
+      ],
+      "answer": [
+        "John von Neumann",
+        "stored-program"
+      ],
+      "explanation": "John von Neumann introduced the Stored-Program Concept in his 1945 draft on the EDVAC computer. Storing program instructions in memory alongside data transformed computing by allowing machines to switch programs electronically without physical rewiring.",
+      "why_wrong": {},
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 15",
+      "verified": true,
+      "verified_output": "John von Neumann, stored-program"
+    },
+    {
+      "id": "ift205-evo-008",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "multi_select",
+      "difficulty": 3,
+      "tags": [
+        "transistors",
+        "second_generation_advantages"
+      ],
+      "question": "Which of the following represent major operational improvements achieved when Second-Generation computers replaced First-Generation vacuum tubes with TRANSISTORS? (Select THREE)",
+      "options": [
+        "Drastic reduction in physical size and floor space requirements",
+        "Substantially lower electrical power consumption and heat generation",
+        "Significantly higher operational reliability with far fewer component hardware failures",
+        "Elimination of the need for an electrical power source",
+        "Replacement of binary arithmetic with quantum entanglement"
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Transistors are tiny solid-state semiconductor switches with no filament to burn out. They consume a fraction of the electricity of vacuum tubes, produce negligible heat, and occupy a fraction of the space, drastically improving reliability and reducing failure rates.",
+      "why_wrong": {
+        "3": "Transistors are electronic semiconductors that fundamentally require electrical current to operate.",
+        "4": "Second-generation machines used standard classical binary Boolean logic, not quantum entanglement."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 18, 22",
+      "verified": true,
+      "verified_output": "Smaller size, lower power/heat, higher reliability."
+    },
+    {
+      "id": "ift205-evo-009",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "type_answer",
+      "difficulty": 2,
+      "tags": [
+        "supercomputer",
+        "performance_metric"
+      ],
+      "question": "What is the standard acronym for the performance metric used to measure the computing speed of Supercomputers, representing 'Floating-Point Operations Per Second'?",
+      "answer": "FLOPS",
+      "accepted_answers": [
+        "FLOPS",
+        "Flops",
+        "TFLOPS",
+        "PFLOPS",
+        "EFLOPS"
+      ],
+      "explanation": "FLOPS stands for Floating-Point Operations Per Second. Modern high-performance computing clusters and supercomputers are rated in Petaflops ($10^{15}$ FLOPS) or Exaflops ($10^{18}$ FLOPS).",
+      "marking_points": [
+        "Identifies 'FLOPS' as Floating-Point Operations Per Second."
+      ],
+      "source": "Evolution_and_Classification_of_Computers Slide 33",
+      "verified": true,
+      "verified_output": "FLOPS"
+    },
+    {
+      "id": "ift205-evo-010",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "classification",
+        "workstation_features"
+      ],
+      "question": "How does an engineering Workstation computer differ from a standard consumer desktop personal computer?",
+      "options": [
+        "A workstation is configured with professional-grade hardware (high core-count CPUs, ECC memory, professional workstation GPUs) optimized for sustained computational precision and demanding CAD/scientific workloads.",
+        "A workstation does not contain a motherboard or RAM.",
+        "A workstation can only run software written in binary punched-card format.",
+        "A workstation cannot be connected to a computer network."
+      ],
+      "answer": 0,
+      "explanation": "As described in Lecture Slide 35: A workstation is a specialized single-user computer with higher performance, Error-Correcting Code (ECC) RAM to prevent memory corruption, and certified professional GPUs for engineering, 3D modeling, and scientific calculations.",
+      "why_wrong": {
+        "1": "Workstations feature advanced multi-socket motherboards and large RAM capacities.",
+        "2": "Workstations run modern operating systems like Windows 11 Pro for Workstations or Linux.",
+        "3": "Workstations regularly feature high-speed 10Gbps Ethernet interfaces."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 27, 35",
+      "verified": true,
+      "verified_output": "Workstations feature professional hardware (ECC RAM, workstation GPUs)."
+    },
+    {
+      "id": "ift205-evo-011",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "pioneers",
+        "hollerith_ibm"
+      ],
+      "question": "Which computing pioneer designed an automated tabulating machine utilizing punched cards to process the 1890 United States Census, subsequently founding the enterprise that became IBM?",
+      "options": [
+        "Herman Hollerith",
+        "Charles Babbage",
+        "Blaise Pascal",
+        "John Atanasoff"
+      ],
+      "answer": 0,
+      "explanation": "Herman Hollerith invented electromechanical punched-card tabulators for the 1890 US Census, completing the tabulation in less than one year. He founded the Tabulating Machine Company in 1896, which later merged and was renamed International Business Machines (IBM) in 1924.",
+      "why_wrong": {
+        "1": "Charles Babbage designed mechanical calculating engines in the early 19th century.",
+        "2": "Blaise Pascal invented the Pascaline adding machine in 1642.",
+        "3": "John Atanasoff built the ABC computer at Iowa State in the late 1930s."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 11",
+      "verified": true,
+      "verified_output": "Herman Hollerith."
+    },
+    {
+      "id": "ift205-evo-012",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "true_false_why",
+      "difficulty": 2,
+      "tags": [
+        "classification",
+        "server_definition"
+      ],
+      "question": "A computer is defined as a 'server' strictly and solely because it is physically housed in a tall, freestanding metal rack cabinet.",
+      "options": [
+        "True \u2014 if a computer is placed on an office desk, it automatically converts its motherboard into a client terminal.",
+        "False \u2014 a server is defined by its operational role and software services (providing data, resources, or services to network clients), not purely by its physical enclosure or chassis form factor."
+      ],
+      "answer": 1,
+      "explanation": "As explicitly highlighted in Slide 42 ('A server is defined only by being a tall cabinet. True/False'): False! A server is defined by its role: it runs software that responds to requests from other computers over a network. A server can be housed in a desktop tower, a rack blade, or a virtual machine.",
+      "why_wrong": {
+        "0": "Physical placement does not dictate the computational network architecture of a machine."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 31, 42",
+      "verified": true,
+      "verified_output": "False. Server is defined by role, not cabinet."
+    },
+    {
+      "id": "ift205-evo-013",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "fourth_generation",
+        "microprocessor"
+      ],
+      "question": "What technological innovation in the early 1970s made personal desktop computers (microcomputers) economically and physically viable for ordinary households?",
+      "options": [
+        "The Microprocessor (integrating all Central Processing Unit components onto a single silicon chip)",
+        "The invention of the mechanical Difference Engine",
+        "The adoption of liquid nitrogen immersion cooling for vacuum tubes",
+        "The invention of the abacus wire frame"
+      ],
+      "answer": 0,
+      "explanation": "Prior to 1971, CPUs occupied multiple circuit boards. The invention of the microprocessor (starting with the Intel 4004 in 1971 and subsequent Intel 8080/MOS 6502) concentrated the entire CPU onto a single silicon chip, drastically lowering manufacturing costs and shrinking size, which spawned the Personal Computer revolution.",
+      "why_wrong": {
+        "1": "The Difference Engine was a bulky mechanical 19th-century invention.",
+        "2": "Liquid nitrogen cooling of vacuum tubes was never a consumer PC development.",
+        "3": "The abacus is an ancient manual counting frame."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 20, 23",
+      "verified": true,
+      "verified_output": "The Microprocessor."
+    },
+    {
+      "id": "ift205-evo-014",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "explain",
+      "difficulty": 3,
+      "tags": [
+        "evolution_drivers",
+        "technology_trends"
+      ],
+      "question": "Summarize the primary technological trends that characterize the evolution of computers from the First Generation to the Fourth Generation in terms of physical size, processing speed, energy consumption, and cost.",
+      "options": [],
+      "answer": "Across the four generations, computing evolution was driven by semiconductor miniaturization, resulting in four definitive trends: (1) Physical Size: shrank dramatically from room-sized installations weighing tons (First Gen vacuum tubes) to handheld pocket smartphones (Fourth Gen microprocessors); (2) Processing Speed: increased exponentially from milliseconds in the First Gen to microseconds (Second Gen), nanoseconds (Third Gen), and picoseconds/gigahertz cycles (Fourth Gen); (3) Energy Consumption & Heat: plummeted from tens of kilowatts requiring specialized industrial air conditioning to milliwatts powered by tiny lithium batteries; (4) Economic Cost: decreased from millions of dollars affordable only by national governments to affordable consumer personal devices owned by billions of individuals worldwide.",
+      "explanation": "Computers became smaller, exponentially faster, drastically cooler and more energy-efficient, and universally affordable.",
+      "why_wrong": {},
+      "marking_points": [
+        "Identifies that physical size shrank from room-sized multi-ton machines to microchips and handheld devices.",
+        "Identifies that operational speed accelerated by orders of magnitude (milliseconds -> nanoseconds/gigahertz).",
+        "Explains that power consumption and thermal dissipation plummeted from kilowatts to milliwatts.",
+        "Explains that financial cost dropped from multi-million-dollar government systems to mass consumer affordability."
+      ],
+      "source": "Evolution_and_Classification_of_Computers Slide 22, 44",
+      "verified": true,
+      "verified_output": "Four computing evolution trends (size, speed, power, cost)."
+    },
+    {
+      "id": "ift205-evo-015",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "babbage_architecture",
+        "analytical_engine"
+      ],
+      "question": "Charles Babbage's 19th-century design for the Analytical Engine separated the machine into two distinct components called the 'Store' and the 'Mill'. In modern computer architecture, what do these two components correspond to?",
+      "options": [
+        "The 'Store' corresponds to Memory (RAM/Storage), and the 'Mill' corresponds to the Central Processing Unit (ALU).",
+        "The 'Store' corresponds to the computer monitor, and the 'Mill' corresponds to the mouse.",
+        "The 'Store' corresponds to the electrical power cord, and the 'Mill' corresponds to the cooling fan.",
+        "The 'Store' corresponds to the keyboard, and the 'Mill' corresponds to the sound card."
+      ],
+      "answer": 0,
+      "explanation": "Babbage's genius anticipated modern computer organization by over a century: the 'Store' held numbers (analogous to memory/storage), while the 'Mill' was the operational unit that performed arithmetic computations on those numbers (analogous to the CPU / ALU).",
+      "why_wrong": {
+        "1": "Neither the Store nor Mill represented visual displays or pointing devices.",
+        "2": "Babbage's engine was purely mechanical (powered by steam or crank), with no electrical cords or fans.",
+        "3": "Punched cards handled input/output, not sound cards or keyboards."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 9; Computer History Texts",
+      "verified": true,
+      "verified_output": "Store = Memory; Mill = CPU/ALU."
+    },
+    {
+      "id": "ift205-evo-016",
+      "course": "IFT 205",
+      "topic": "computer_evolution_generations",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "classification",
+        "real_life_matching"
+      ],
+      "question": "Match the following real-world computing requirements to the most appropriate computer classification:\n(I) Nigerian Meteorological Agency simulating national monsoon rainfall patterns over 30 days\n(II) Guaranty Trust Bank processing 15,000,000 simultaneous nationwide ATM and POS customer transactions\n(III) An automotive Anti-Lock Braking System (ABS) modulating brake pressure in 10 milliseconds",
+      "options": [
+        "(I) Supercomputer; (II) Mainframe; (III) Embedded System",
+        "(I) Embedded System; (II) Supercomputer; (III) Microcomputer",
+        "(I) Workstation; (II) Embedded System; (III) Mainframe",
+        "(I) Mainframe; (II) Personal Computer; (III) Supercomputer"
+      ],
+      "answer": 0,
+      "explanation": "Climate/weather modeling is a massive parallel floating-point mathematical calculation, requiring a Supercomputer. Bulk concurrent banking transactions demand a high-throughput, fault-tolerant Mainframe. Real-time automotive brake modulation requires an internal microcontroller Embedded System.",
+      "why_wrong": {
+        "1": "An embedded system lacks the floating-point capacity to model national monsoon climate systems.",
+        "2": "A single workstation cannot simulate national weather grids, and an embedded system cannot handle banking ledgers.",
+        "3": "A personal computer would instantly crash under millions of simultaneous banking transactions."
+      },
+      "marking_points": [],
+      "source": "Evolution_and_Classification_of_Computers Slide 32-35, 41",
+      "verified": true,
+      "verified_output": "(I) Supercomputer, (II) Mainframe, (III) Embedded System."
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "ift205-evo-cs1",
+      "scenario": "A major Nigerian commercial bank operates over 600 retail branches nationwide, supporting 18,000,000 retail banking accounts, 2,500 ATM machines, and millions of daily mobile USSD and app transactions. On peak days (such as month-end payday), the banking platform processes up to 8,000 transaction requests per second. The bank's Chief Information Officer (CIO) reviews the enterprise computing infrastructure: the core ledger is hosted on an IBM z16 enterprise system, while the risk analysis team utilizes high-end desktop workstations for algorithmic modeling, and the branch teller counters use desktop personal computers.",
+      "sub_questions": [
+        {
+          "id": "ift205-evo-cs1-q1",
+          "course": "IFT 205",
+          "topic": "computer_evolution_generations",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "mainframe_role"
+          ],
+          "question": "Into which computer classification does the IBM z16 enterprise system running the bank's core transactional ledger fall, and why is this machine specifically chosen over a cluster of desktop PCs?",
+          "options": [
+            "Mainframe Computer; chosen because it provides unmatched concurrent I/O throughput, continuous zero-downtime reliability (RAS), and specialized hardware cryptographic accelerators capable of handling thousands of simultaneous ACID transactions without data loss.",
+            "Microcomputer; chosen because it can fit inside a student's backpack and runs on AA batteries.",
+            "Embedded System; chosen because it only controls a single sensor in the bank manager's coffee machine.",
+            "Abacus Tabulator; chosen because mechanical wooden beads are immune to digital computer viruses."
+          ],
+          "answer": 0,
+          "explanation": "The IBM z-series is the definitive modern enterprise Mainframe. Mainframes are engineered specifically for high-volume concurrent transaction processing (supporting thousands of simultaneous banking updates per second with zero data corruption and 99.999% uptime).",
+          "why_wrong": {
+            "1": "An enterprise mainframe weighs several tons and occupies dedicated data center footprints.",
+            "2": "An embedded system controls dedicated devices, not nationwide multi-million-account banking databases.",
+            "3": "Mechanical abacuses cannot process electronic digital banking networks."
+          },
+          "marking_points": [],
+          "source": "Evolution_and_Classification_of_Computers Slide 32, 35",
+          "verified": true,
+          "verified_output": "Mainframe chosen for high-volume concurrent transaction throughput."
+        },
+        {
+          "id": "ift205-evo-cs1-q2",
+          "course": "IFT 205",
+          "topic": "computer_evolution_generations",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "client_server_tiering"
+          ],
+          "question": "Explain how the bank's IT architecture integrates all three tiers of computers\u2014the branch teller desktop microcomputers, the ATM embedded controllers, and the central mainframe\u2014to complete a cash withdrawal.",
+          "options": [],
+          "answer": "The bank operates a distributed multi-tier client-server architecture: (1) The ATM contains an Embedded System controller that reads the customer's debit card chip, captures the PIN via an encrypted keypad, and dispenses cash mechanically; (2) The ATM embedded controller packages the withdrawal request and transmits it over an encrypted Wide Area Network (WAN) to the bank's central data center; (3) The central Mainframe receives the request, queries the core database, verifies the account balance and cryptographic signature, deducts the withdrawal amount atomically to ensure consistency, and transmits back an authorization token; (4) The ATM embedded controller receives the approval, dispenses the currency notes, and prints a physical receipt. Similarly, branch teller desktop microcomputers act as clients submitting transactions to the same central mainframe engine.",
+          "explanation": "Client-server workflow integrating embedded ATM controllers, microcomputer workstations, and central transactional mainframe.",
+          "why_wrong": {},
+          "marking_points": [
+            "Identifies the ATM as an embedded controller handling hardware I/O (card reader, keypad, cash dispenser).",
+            "Explains communication over a secure WAN to the central data center.",
+            "Explains the mainframe's role in verifying balances, executing atomic ledger deductions, and logging transactions.",
+            "Shows how desktop microcomputers at branch teller desks act as concurrent clients accessing the same mainframe core."
+          ],
+          "source": "Evolution_and_Classification_of_Computers Slide 31-36; Week 6 Slide 4",
+          "verified": true,
+          "verified_output": "Integrated ATM embedded system, PC client, and central mainframe architecture."
+        }
+      ]
+    },
+    {
+      "id": "ift205-evo-cs2",
+      "scenario": "The Nigerian National Petroleum Corporation (NNPC) partners with Nile University researchers to conduct advanced seismic exploration. To locate offshore oil reserves deep below the Gulf of Guinea, acoustic airguns emit sound waves into the seabed, and hundreds of hydrophones record reflected acoustic wave data across a 2,000-square-kilometer ocean grid. The resulting seismic dataset contains 40 Terabytes of raw numeric readings that must be processed through complex 3D wave equation migration and finite element simulations to generate a subsurface geological map.",
+      "sub_questions": [
+        {
+          "id": "ift205-evo-cs2-q1",
+          "course": "IFT 205",
+          "topic": "computer_evolution_generations",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "supercomputer_selection"
+          ],
+          "question": "Which category of computer must the geological researchers deploy to execute these multi-terabyte 3D seismic wave equations within a viable timeframe?",
+          "options": [
+            "High-Performance Computing (HPC) Supercomputer cluster",
+            "Single-core office desktop microcomputer",
+            "Automotive embedded electronic control unit",
+            "POS thermal cash register"
+          ],
+          "answer": 0,
+          "explanation": "Seismic inversion and wave equation modeling require massive parallel floating-point mathematical computations across billions of data points. Only an HPC Supercomputer cluster (measured in Petaflops) has the processing power and memory bandwidth to complete these simulations within days rather than decades.",
+          "why_wrong": {
+            "1": "A standard desktop PC would take centuries to calculate multi-terabyte 3D wave migrations.",
+            "2": "Automotive ECUs control vehicle sensors, not geophysical matrix simulations.",
+            "3": "Thermal cash registers are output printers for retail receipts."
+          },
+          "marking_points": [],
+          "source": "Evolution_and_Classification_of_Computers Slide 33",
+          "verified": true,
+          "verified_output": "High-Performance Computing (HPC) Supercomputer."
+        },
+        {
+          "id": "ift205-evo-cs2-q2",
+          "course": "IFT 205",
+          "topic": "computer_evolution_generations",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "supercomputer_vs_workstation"
+          ],
+          "question": "Once the supercomputer cluster completes the 3D seismic simulation, describe the distinct computer types the geophysicists will use to inspect the rendered sub-surface reservoir models and present findings to corporate executives.",
+          "options": [],
+          "answer": "After the supercomputer cluster finishes the heavy parallel number crunching and produces the mathematical 3D volume, the geophysicists will transfer the resulting volumetric datasets to high-end engineering Workstations equipped with high-core CPUs, ECC memory, and powerful dedicated professional GPUs (e.g. NVIDIA RTX) to interactively render, rotate, filter, and inspect the 3D subsurface seismic cubes in CAD/geoscientific software. Finally, for executive presentations in the boardroom, the researchers will use portable Microcomputers (laptops or tablets) running presentation software (such as PowerPoint) connected to digital conference projectors to summarize recommendations for exploratory drilling.",
+          "explanation": "Supercomputer crunches raw math; Workstation renders and analyzes 3D models; Microcomputers present executive summaries.",
+          "why_wrong": {},
+          "marking_points": [
+            "Differentiates the role of the Supercomputer (raw heavy mathematical wave equation computation).",
+            "Identifies high-end Workstations for interactive 3D visual rendering and geological analysis.",
+            "Identifies Microcomputers (laptops/tablets) for executive reporting and presentation.",
+            "Illustrates how different computer classes collaborate across an enterprise workflow."
+          ],
+          "source": "Evolution_and_Classification_of_Computers Slide 28, 33, 35",
+          "verified": true,
+          "verified_output": "Workflow across Supercomputer, Workstation, and Microcomputer."
+        }
+      ]
+    }
+  ]
+}

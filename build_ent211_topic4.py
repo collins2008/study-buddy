@@ -1,0 +1,425 @@
+import json
+
+data = {
+    "course": "ENT 211",
+    "topic": "opportunity_identification_feasibility",
+    "summary": "This topic synthesizes the systematic methodologies of entrepreneurial opportunity recognition, environmental scanning, market gap analysis, resource utilization, and multi-dimensional feasibility assessment. A foundational distinction is established between an unvalidated 'Business Idea' (a conceptual thought) and a 'Business Opportunity' (an idea supported by verified customer demand, market accessibility, economic viability, and sustainable competitive advantage). The lecture curriculum delineates eight primary sources of opportunity (from customer complaints and demographic shifts to regulatory mandates and resource underutilization) and models external macro-environments through the PESTEL framework (Political, Economic, Social, Technological, Environmental, Legal). Market demand is dissected across four unmet need categories (unserved, underserved, poorly satisfied, emerging) and five market gaps (price, quality, accessibility, product/service, customer-segment). Finally, the topic formalizes preliminary feasibility screening across six interdependent pillars: Market, Technical, Financial, Operational, Legal/Regulatory, and Management feasibility, guiding disciplined go/no-go investment decisions.",
+    "key_terms": [
+        {"term": "Business Idea vs Opportunity", "definition": "An idea is an unproven concept or notion; an opportunity is an idea validated by demonstrable customer demand, commercial viability, and achievable execution."},
+        {"term": "Environmental Scanning", "definition": "The systematic monitoring and evaluation of internal capabilities and external macro-environmental forces to detect strategic opportunities and threats."},
+        {"term": "PESTEL Framework", "definition": "A macro-environmental scanning tool evaluating Political, Economic, Social, Technological, Environmental, and Legal dimensions affecting business prospects."},
+        {"term": "Market Gap", "definition": "An area of customer demand inadequately served by incumbents, categorized into price, quality, accessibility, product/service, or customer-segment gaps."},
+        {"term": "Underserved Needs", "definition": "Customer requirements where products currently exist, but their quantity, quality, affordability, or convenience is grossly inadequate."},
+        {"term": "Resource Utilisation", "definition": "The productive deployment of idle assets, waste by-products (e.g., converting agro-waste to feed), or specialized skills to create economic value efficiently."},
+        {"term": "Market Feasibility", "definition": "The preliminary investigation verifying target customer profile, market size, demand growth trends, competitive rivalry, and willingness to pay."},
+        {"term": "Technical Feasibility", "definition": "The evaluation of required machinery, physical infrastructure (power, water, internet), software tools, and technical competencies necessary for production."},
+        {"term": "Financial Feasibility", "definition": "The quantitative assessment of startup capital (CapEx), operating expenses (OpEx), gross margins, cash flow runway, and breakeven volume."},
+        {"term": "Legal & Regulatory Feasibility", "definition": "Verifying that a venture complies with statutory registration (CAC), tax obligations (FIRS), safety standards (NAFDAC/SON), and municipal operating permits."}
+    ],
+    "questions": [
+        {
+            "id": "ent211-opp-001",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["idea-vs-opportunity", "definitions"],
+            "question": "According to the ENT 211 curriculum, what is the fundamental difference between a 'Business Idea' and a 'Business Opportunity'?",
+            "options": [
+                "A business idea is an unproven thought or concept, whereas a business opportunity is an idea supported by empirical evidence of customer need, a reachable market, and commercial viability",
+                "A business idea requires registering with the Corporate Affairs Commission (CAC), whereas a business opportunity does not require any legal registration",
+                "A business idea is always profitable, whereas a business opportunity always results in financial loss",
+                "A business idea is only conceived by bank managers, whereas a business opportunity is only conceived by university students"
+            ],
+            "answer": 0,
+            "explanation": "Slide 4 explicitly defines the contrast: 'Business Idea: A thought, concept or proposed product or service (e.g., I want to start a laundry business). Business Opportunity: An idea supported by evidence of customer need, a reachable market and a realistic way to create value.' An idea suggests what *could* be done; an opportunity provides a reason to believe it *can work*.",
+            "why_wrong": {
+                "1": "Registration with CAC does not turn an unvalidated thought into an economically viable opportunity.",
+                "2": "Ideas are often unviable or money-losing; an opportunity by definition has demonstrated commercial viability.",
+                "3": "Anyone can conceive ideas and discover opportunities across all sectors."
+            },
+            "source": "Opportunity Identification & Evaluation Deck, Slide 4: Business Idea vs. Business Opportunity"
+        },
+        {
+            "id": "ent211-opp-002",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["characteristics-of-opportunity", "criteria"],
+            "question": "Which of the following is NOT one of the six characteristics of a promising business opportunity outlined in the ENT 211 lecture notes?",
+            "options": [
+                "Guaranteed immediate government subsidy and tax exemption",
+                "Genuine need that solves an actual customer problem",
+                "Commercial viability capable of generating revenue and acceptable returns",
+                "Sustainability that remains relevant beyond a short-lived fad"
+            ],
+            "answer": 0,
+            "explanation": "Slide 5 lists the six defining characteristics of a promising business opportunity: (1) Genuine need, (2) Identifiable market, (3) Commercial viability, (4) Feasibility, (5) Sustainability, and (6) Competitive advantage. Government subsidies are neither guaranteed nor a defining characteristic of market-driven entrepreneurial opportunities.",
+            "why_wrong": {
+                "1": "Genuine need is characteristic #1 of a promising opportunity.",
+                "2": "Commercial viability is characteristic #3 of a promising opportunity.",
+                "3": "Sustainability is characteristic #5 of a promising opportunity."
+            },
+            "source": "Opportunity Identification & Evaluation Deck, Slide 5: Characteristics of a Promising Business Opportunity"
+        },
+        {
+            "id": "ent211-opp-003",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["pestel", "environmental-scanning", "macro-environment"],
+            "question": "An entrepreneur planning to import and distribute solar inverters in Nigeria analyzes the volatile foreign exchange rate of the Naira, high domestic inflation reducing consumer disposable income, and commercial bank loan interest rates at 28%. Under which dimension of the PESTEL framework do these factors belong?",
+            "options": [
+                "Economic dimension",
+                "Political dimension",
+                "Technological dimension",
+                "Environmental dimension"
+            ],
+            "answer": 0,
+            "explanation": "Slide 12 defines the PESTEL dimensions: Economic factors encompass inflation rates, interest rates, disposable income, unemployment levels, and foreign exchange rates. All the listed factors (Naira FX volatility, inflation, 28% interest rates) are macroeconomic variables directly affecting purchasing power and cost of capital.",
+            "why_wrong": {
+                "1": "Political factors involve government stability, trade policy, and taxation legislation.",
+                "2": "Technological factors involve digital tools, automation, and R&D infrastructure.",
+                "3": "Environmental factors involve ecological conditions, weather, climate change, and waste management."
+            },
+            "source": "Opportunity Identification & Evaluation Deck, Slides 12-13: PESTEL Framework"
+        },
+        {
+            "id": "ent211-opp-004",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["market-gaps", "gap-analysis", "types"],
+            "question": "In a fast-growing residential estate in Lugbe, Abuja, there are five private primary schools, but all five charge tuition fees exceeding 1,200,000 Naira per session. Over 400 civil-servant families living in the estate earn modest salaries and cannot afford these fees, forcing them to transport their children 15 kilometers daily to public schools in the city. What type of market gap exists in this estate?",
+            "options": [
+                "A Price Gap, because existing options are priced too high for an identifiable, accessible customer segment",
+                "A Product Gap, because primary school education has not yet been invented in Nigeria",
+                "A Technological Gap, because Lugbe lacks 5G satellite internet access",
+                "A Legal Gap, because the Federal Ministry of Education has banned all private schools"
+            ],
+            "answer": 0,
+            "explanation": "Slide 17 defines market gaps: 'Price gap: existing options are too expensive for a particular customer group.' The educational service exists in the area, but its pricing structure excludes a large demographic of middle-to-lower income civil-servant parents, creating an attractive price-gap opportunity for an affordable, high-quality primary school.",
+            "why_wrong": {
+                "1": "Primary education is a mature, universal service; it is not a missing, uninvented product.",
+                "2": "Primary schooling does not depend on 5G satellite internet.",
+                "3": "Private schools are completely legal and regulated in Nigeria."
+            },
+            "source": "Opportunity Identification & Evaluation Deck, Slide 17: Identifying Market Gaps"
+        },
+        {
+            "id": "ent211-opp-005",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["feasibility-assessment", "six-areas", "operational-vs-technical"],
+            "question": "An aspiring restaurateur verifies that she can rent a commercial kitchen in Gwarinpa with stable electrical power and water (Technical Feasibility) and that office workers demand lunch delivery (Market Feasibility). However, she fails to establish reliable wholesale supply routes for fresh meat and vegetables and has no system to track daily dispatch rider routes. Which area of feasibility did she overlook?",
+            "options": [
+                "Operational Feasibility, which evaluates day-to-day workflow processes, supply chain reliability, inventory management, and fulfillment logistics",
+                "Legal Feasibility, which evaluates whether cooking food violates criminal law",
+                "Ethical Feasibility, which examines whether office workers deserve lunch",
+                "Macroeconomic Feasibility, which predicts the global price of crude oil in 2045"
+            ],
+            "answer": 0,
+            "explanation": "Slide 23 defines Operational Feasibility: 'Examines whether day-to-day activities can be performed effectively: employees and responsibilities, supply of materials, production and service processes, inventory and distribution, customer service and quality control.' Sourcing reliable raw food ingredients and dispatch routing are core operational workflows.",
+            "why_wrong": {
+                "1": "Operating a restaurant is legal; her failure was operational workflow planning, not legal illegality.",
+                "2": "Ethical feasibility is not one of the six formal feasibility pillars in the curriculum.",
+                "3": "Global crude oil prices in 2045 have no direct bearing on daily restaurant grocery procurement and dispatch routing."
+            },
+            "source": "Opportunity Identification & Evaluation Deck, Slide 23: Feasibility: Financial and Operational"
+        },
+        {
+            "id": "ent211-opp-006",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["resource-utilisation", "efficiency"],
+            "question": "In Ogun State, a cassava processing mill generates 5 tonnes of wet cassava peels daily, which were previously dumped in nearby rivers, causing severe water pollution. An entrepreneur buys the peels, sun-dries them, grinds them, and packages them as high-energy animal feed for local poultry farmers at 60% lower cost than maize. What concept from ENT 211 does this demonstrate?",
+            "options": [
+                "Resource Utilisation by converting an environmental waste by-product into productive, valuable commercial input",
+                "Speculative Price Arbitrage by hoarding foreign currencies",
+                "Corporate Intrapreneurship inside the Central Bank of Nigeria",
+                "Uninsurable Knightian Uncertainty that guarantees venture liquidation"
+            ],
+            "answer": 0,
+            "explanation": "Slide 19 explicitly highlights this resource principle: 'Resource utilisation means using available resources effectively... Waste can become an input: agricultural by-products may be processed into animal feed or organic fertiliser. Reusing, sharing or repurposing resources can create new products, services and revenue streams while lowering costs.'",
+            "why_wrong": {
+                "1": "The entrepreneur is manufacturing physical animal feed from waste, not hoarding foreign exchange.",
+                "2": "This is an independent private manufacturing startup, not a CBN corporate division.",
+                "3": "Resource conversion of cheap waste into high-demand animal feed is a high-margin, viable enterprise, not a guaranteed failure."
+            },
+            "source": "Opportunity Identification & Evaluation Deck, Slides 19-20: Resource Utilisation"
+        },
+        {
+            "id": "ent211-opp-007",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "true_false_why",
+            "difficulty": 2,
+            "tags": ["feasibility-assessment", "screening"],
+            "question": "A preliminary feasibility assessment is a formal 100-page document that guarantees bank financing and serves as a complete substitute for a comprehensive business plan.",
+            "options": [
+                "True",
+                "False"
+            ],
+            "answer": 1,
+            "explanation": "False. Slide 21 explicitly clarifies: 'Preliminary feasibility assessment is an initial investigation to determine whether a proposed business idea is practical and has enough potential to justify further study... It is an early screening exercise—NOT a substitute for a detailed feasibility study or business plan.' It acts as an early go/no-go screening filter before committing extensive time and capital.",
+            "why_wrong": {
+                "0": "Preliminary feasibility is an early screening filter, not a substitute for a full business plan, and never guarantees bank financing."
+            },
+            "source": "Opportunity Identification & Evaluation Deck, Slide 21: Preliminary Feasibility Assessment"
+        },
+        {
+            "id": "ent211-opp-008",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["unmet-needs", "categories"],
+            "question": "Which category of unmet customer need is defined as a situation where products or services currently exist in the market, but customers are deeply dissatisfied because the quality is poor, delivery is delayed, or providers are unreliable?",
+            "options": [
+                "Poorly satisfied needs",
+                "Unserved needs",
+                "Emerging needs",
+                "Theoretical needs"
+            ],
+            "answer": 0,
+            "explanation": "Slide 14 classifies unmet customer needs into four specific categories: (1) Unserved needs (no solution exists), (2) Underserved needs (solutions exist but quantity/affordability is inadequate), (3) Poorly satisfied needs (solutions exist, but customers are deeply dissatisfied with quality, unreliability, or poor delivery), and (4) Emerging needs (new requirements from shifts in tech or lifestyles).",
+            "why_wrong": {
+                "1": "Unserved needs describe situations where no product or service exists at all.",
+                "2": "Emerging needs describe novel requirements arising from new technological or regulatory changes.",
+                "3": "'Theoretical needs' is not a recognized category in the ENT 211 curriculum."
+            },
+            "source": "Opportunity Identification & Evaluation Deck, Slide 14: Identifying Unmet Customer Needs"
+        },
+        {
+            "id": "ent211-opp-009",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "cloze",
+            "difficulty": 2,
+            "tags": ["pestel", "cloze"],
+            "question": "Complete the acronym PESTEL, the primary macro-environmental scanning framework:\nP stands for [blank1] factors (e.g., government policies and taxation);\nE stands for [blank2] factors (e.g., inflation and currency exchange rates);\nS stands for [blank3] factors (e.g., demographics and cultural lifestyles);\nT stands for [blank4] factors (e.g., automation and digital connectivity);\nE stands for [blank5] factors (e.g., weather and ecological sustainability);\nL stands for [blank6] factors (e.g., statutory registration and labor laws).",
+            "answer": ["political", "economic", "social", "technological", "environmental", "legal"],
+            "explanation": "Slide 12 defines PESTEL as Political, Economic, Social, Technological, Environmental, and Legal.",
+            "source": "Opportunity Identification & Evaluation Deck, Slide 12: PESTEL Framework"
+        },
+        {
+            "id": "ent211-opp-010",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "matching",
+            "difficulty": 3,
+            "tags": ["feasibility-areas", "matching"],
+            "question": "Match each area of preliminary feasibility to the primary question it investigates:",
+            "options": [
+                "Market Feasibility",
+                "Technical Feasibility",
+                "Financial Feasibility",
+                "Legal Feasibility"
+            ],
+            "answer": [
+                "Do customers have a genuine problem, and are they willing and able to pay for the proposed solution?",
+                "Are the required machinery, facilities, technical expertise, and physical infrastructure available to produce the offering?",
+                "Can the proposed pricing and cost structure cover startup capital, generate positive cash flow, and yield acceptable profit margins?",
+                "Can the enterprise operate lawfully, securing necessary CAC registration, municipal permits, and regulatory compliance?"
+            ],
+            "explanation": "Slides 22-24 break down the core screening questions across Market, Technical, Financial, and Legal feasibility dimensions.",
+            "source": "Opportunity Identification & Evaluation Deck, Slides 22-24: Feasibility Pillars"
+        },
+        {
+            "id": "ent211-opp-011",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "sequencing",
+            "difficulty": 2,
+            "tags": ["process", "opportunity-to-evaluation", "sequencing"],
+            "question": "Arrange the seven stages of the opportunity-to-evaluation workflow (Slide 26) in the correct logical sequence from first to last:",
+            "options": [
+                "Identify an authentic problem or unmet customer need",
+                "Generate possible creative business ideas to solve it",
+                "Scan the external environment (PESTEL) and identify the specific market gap",
+                "Conduct preliminary feasibility assessment across market, technical, financial, and legal pillars",
+                "Make an evidence-based decision: proceed, modify/pivot, research further, or abandon"
+            ],
+            "answer": [0, 1, 2, 3, 4],
+            "explanation": "Slide 26 outlines the 7-step sequence: (1) Identify a problem or need -> (2) Generate possible business ideas -> (3) Scan environment & identify market gap -> (4) Assess resources & conduct preliminary feasibility -> (5) Decide: proceed, modify, research further, or stop.",
+            "source": "Opportunity Identification & Evaluation Deck, Slide 26: From Identification to Evaluation"
+        },
+        {
+            "id": "ent211-opp-012",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["business-opportunity", "definition"],
+            "question": "What is a Business Opportunity, as defined in ENT 211?",
+            "answer": "A business opportunity is a validated commercial proposition supported by evidence of real customer need, a reachable target market, and a realistic mechanism to create and capture sustainable value.",
+            "explanation": "It transforms a raw thought into a commercially viable prospect.",
+            "source": "Opportunity Identification & Evaluation Deck, Slide 4: Business Opportunity"
+        },
+        {
+            "id": "ent211-opp-013",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["market-gaps", "types"],
+            "question": "List the five distinct types of Market Gaps identified in the ENT 211 curriculum.",
+            "answer": "1. Price Gap (existing options too expensive)\n2. Quality Gap (existing options fail quality standards)\n3. Accessibility Gap (distance, inconvenient hours, or distribution barriers)\n4. Product/Service Gap (demanded features completely missing)\n5. Customer-Segment Gap (overlooked consumer demographic).",
+            "explanation": "Market gaps represent the specific operational deficiencies in incumbent offerings that entrepreneurs exploit.",
+            "source": "Opportunity Identification & Evaluation Deck, Slide 17: Identifying Market Gaps"
+        },
+        {
+            "id": "ent211-opp-014",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["feasibility-assessment", "six-areas"],
+            "question": "Name the six critical areas evaluated in a comprehensive Preliminary Feasibility Assessment.",
+            "answer": "1. Market Feasibility\n2. Technical Feasibility\n3. Financial Feasibility\n4. Operational Feasibility\n5. Legal/Regulatory Feasibility\n6. Management Feasibility.",
+            "explanation": "Slide 25 synthesizes the six interdependent areas of feasibility screening.",
+            "source": "Opportunity Identification & Evaluation Deck, Slide 25: Summary: Six Areas of Feasibility"
+        },
+        {
+            "id": "ent211-opp-015",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["unmet-needs", "discovery-methods"],
+            "question": "What are the three primary empirical methods for discovering unmet customer needs in a market?",
+            "answer": "1. Listen: Conduct customer interviews and ask open-ended questions about frustrations and desired improvements.\n2. Observe: Watch how people actually use existing products, noting delays, errors, and workarounds.\n3. Investigate: Analyze survey data, customer complaints, competitor reviews, and social media discussions.",
+            "explanation": "Entrepreneurs must never guess or assume; they must gather empirical evidence directly from potential customers.",
+            "source": "Opportunity Identification & Evaluation Deck, Slide 15: How to Discover Unmet Needs"
+        },
+        {
+            "id": "ent211-opp-016",
+            "course": "ENT 211",
+            "topic": "opportunity_identification_feasibility",
+            "type": "explain",
+            "difficulty": 3,
+            "tags": ["feasibility-analysis", "decision-making", "risk-mitigation"],
+            "question": "Explain why conducting a multi-dimensional Preliminary Feasibility Assessment (evaluating Market, Technical, Financial, Operational, Legal, and Management pillars) is essential before writing a detailed business plan or seeking investor capital. What are the four potential decision outcomes of this assessment?",
+            "answer": "Conducting a multi-dimensional Preliminary Feasibility Assessment is an essential early-stage screening exercise for several critical reasons:\n\n1. Preventing Costly Failures & Capital Waste: Writing a full 50-page business plan or committing millions of Naira in startup capital to an unvetted concept is dangerously premature. If an idea suffers from a fatal flaw in just one feasibility dimension (e.g., technically unfeasible due to power grid collapse, or legally prohibited by NAFDAC regulations), no amount of brilliant marketing or financial modeling can rescue the venture.\n\n2. De-risking Assumptions Across Interdependent Pillars: An idea must be viable across all six dimensions simultaneously:\n- Market: Proves customers actually want it and are willing to pay.\n- Technical: Proves the physical product or digital platform can actually be engineered reliably.\n- Financial: Proves gross margins exceed unit fulfillment costs, ensuring long-term solvency.\n- Operational: Proves daily procurement, inventory, and delivery logistics can function without breaking down.\n- Legal: Proves the business complies with CAC, statutory taxes, and licensing bodies.\n- Management: Proves the founding team possesses the domain competence and resilience to execute.\n\n3. The Four Decision Outcomes (Slide 26):\nUpon completing the preliminary screening, the entrepreneur reaches one of four evidence-based gates:\n- Proceed: Evidence is overwhelmingly positive across all pillars; advance to full business planning and capital acquisition.\n- Modify / Pivot: The core customer need is valid, but technical, pricing, or operational constraints require redesigning the business model.\n- Research Further: Significant uncertainties or information gaps remain regarding market size or unit costs; gather deeper field data.\n- Stop / Kill: The idea has fatal market, financial, or regulatory defects; terminate the project immediately to conserve scarce capital and time for viable pursuits.",
+            "explanation": "Preliminary feasibility acts as an early go/no-go filter that prevents wasting capital on fatally flawed ideas.",
+            "marking_points": [
+                "Explains why early screening prevents fatal resource waste before committing large capital",
+                "Highlights the multi-dimensional nature: a venture can fail if even a single pillar (e.g. Legal or Technical) is unviable",
+                "Identifies and briefly connects the 6 pillars (Market, Technical, Financial, Operational, Legal, Management)",
+                "Explicitly names and explains the four decision outcomes: Proceed, Modify/Pivot, Research Further, Stop/Kill",
+                "Emphasizes the iterative, evidence-based nature of the entrepreneurial screening process"
+            ],
+            "source": "Opportunity Identification & Evaluation Deck, Slides 21-26: Preliminary Feasibility & Decision Gates"
+        }
+    ],
+    "case_studies": [
+        {
+            "id": "ent211-opp-cs1",
+            "scenario": "A group of three 200-level students at Nile University of Nigeria in Abuja observed a severe daily friction: after 6:00 PM, on-campus food cafeterias close down, leaving over 2,500 residential hostel students stranded with no affordable dinner options. Fast-food restaurants in central Abuja (Wuse and Garki) charge 2,500 Naira for bike delivery, taking over 90 minutes to arrive at the campus gates. Many students resort to eating instant dry noodles or skipping dinner entirely.\n\nThe students conceived an idea: 'NileNightBites', an on-campus dinner pre-ordering and delivery service. Before investing their savings or borrowing money, the students conducted a preliminary feasibility assessment and executed a disciplined discovery process as taught in ENT 211 (Slides 27-28):\n1. Market Investigation: They conducted an online Google Forms survey completed by 240 hostel students. Results showed 88% order dinner at least 3 times a week, 72% expressed severe dissatisfaction with existing options (Poorly Satisfied Need), and 81% stated they would pay a 400-Naira delivery fee for meals delivered within 30 minutes to their hostel common rooms.\n2. Operations & Technical: Instead of renting a commercial kitchen, the students partnered with two popular off-campus food vendors in Lugbe. Students place pre-orders between 2:00 PM and 5:30 PM via a dedicated WhatsApp Business catalogue. The vendors prepare the bulk food orders in insulated thermal bags. At 6:30 PM, a hired micro-bus transports all orders in a single consolidated trip to campus, where student runners distribute meals to hostel collection desks.\n3. Economics: Average vendor meal cost: 1,800 Naira. Customer price: 2,200 Naira (gross margin 400 Naira) + 400 Naira delivery fee = 800 Naira gross profit per meal. Consolidated bus transport: 6,000 Naira/night. Student runners: 3,000 Naira each (2 runners).",
+            "sub_questions": [
+                {
+                    "id": "ent211-opp-cs1-q1",
+                    "course": "ENT 211",
+                    "topic": "opportunity_identification_feasibility",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["market-gaps", "unmet-needs", "case-study"],
+                    "question": "What specific combination of market gap and unmet need category did the NileNightBites team identify and solve?",
+                    "options": [
+                        "An Accessibility and Price Gap serving a Poorly Satisfied / Underserved Need, because existing off-campus options were excessively expensive (2,500 Naira delivery) and took 90 minutes to arrive",
+                        "A Pure Radical Invention, because cooked food was never sold in West Africa prior to this app",
+                        "A Legal Gap, because the Federal Government prohibited eating breakfast in university hostels",
+                        "An Environmental Climate Hazard, caused by toxic fumes from restaurant microwaves"
+                    ],
+                    "answer": 0,
+                    "explanation": "Existing food delivery suffered from an accessibility gap (90-minute transit delay and early cafeteria closures) and a price gap (2,500 Naira third-party delivery fee was unaffordable for students). The need was 'poorly satisfied/underserved' because students were forced into tedious workarounds or skipping meals.",
+                    "why_wrong": {
+                        "1": "Cooked food delivery is an established business model; the innovation is in campus logistics and pricing.",
+                        "2": "There is no law banning breakfast or dinner in university hostels.",
+                        "3": "Microwave fumes have nothing to do with evening campus meal delivery logistics."
+                    },
+                    "source": "Opportunity Identification & Evaluation Deck, Slides 14, 17, 27: Case Study"
+                },
+                {
+                    "id": "ent211-opp-cs1-q2",
+                    "course": "ENT 211",
+                    "topic": "opportunity_identification_feasibility",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["financial-feasibility", "breakeven-analysis", "case-study"],
+                    "question": "Conduct a preliminary Financial Feasibility and Breakeven Analysis for NileNightBites based on their nightly operating cost structure. Calculate the minimum number of meal orders the team must deliver each night to break even, and evaluate their commercial viability.",
+                    "answer": "Financial Feasibility and Breakeven Analysis:\n\n1. Unit Economics (Per Meal Order):\n- Retail Price to Student: 2,200 Naira (meal) + 400 Naira (delivery fee) = 2,600 Naira.\n- Cost of Goods Sold (Vendor Meal Cost): 1,800 Naira.\n- Contribution Margin Per Meal = 2,600 Naira - 1,800 Naira = 800 Naira.\n\n2. Fixed Nightly Operating Costs:\n- Consolidated Micro-Bus Transport: 6,000 Naira.\n- Student Runners Stipend (2 runners at 3,000 Naira each): 6,000 Naira.\n- Total Nightly Fixed Operating Overhead = 6,000 + 6,000 = 12,000 Naira.\n\n3. Nightly Breakeven Volume Calculation:\n- Breakeven Volume = Total Fixed Costs / Contribution Margin Per Unit\n- Breakeven Volume = 12,000 Naira / 800 Naira per meal = 15 meals.\n\n4. Evaluation of Commercial Viability:\nWith a residential student population of over 2,500 students and survey data indicating 240+ students ordering dinners multiple times per week, achieving the breakeven target of just 15 meals per night represents an exceptionally low market penetration rate (less than 1% of campus residents). If the team delivers a modest 60 meals per night, nightly revenue is 156,000 Naira, COGS is 108,000 Naira, fixed overhead is 12,000 Naira, leaving a healthy net profit of 36,000 Naira per night (~1,080,000 Naira monthly net profit). The financial feasibility is robust, with low capital requirements, immediate positive cash flow, and low breakeven risk.",
+                    "explanation": "Unit contribution margin of 800 Naira covers 12,000 Naira fixed nightly costs at only 15 orders, proving high commercial viability.",
+                    "marking_points": [
+                        "Calculates unit contribution margin accurately: 2,600 Naira total revenue - 1,800 Naira COGS = 800 Naira margin per order",
+                        "Calculates total nightly fixed costs accurately: 6,000 bus + 6,000 runners = 12,000 Naira",
+                        "Calculates exact breakeven volume: 12,000 / 800 = 15 meal orders per night",
+                        "Compares breakeven volume (15 orders) to target campus population (2,500+ residents)",
+                        "Concludes with clear commercial viability evaluation (high safety margin and attractive net profitability)"
+                    ],
+                    "source": "Opportunity Identification & Evaluation Deck, Slides 23, 27-28: Financial Feasibility & Campus Case Study"
+                }
+            ]
+        },
+        {
+            "id": "ent211-opp-cs2",
+            "scenario": "A renewable energy engineer plans to install a 50kW solar mini-grid in Bichi, a rural agricultural trading community in Kano State. Bichi has 300 commercial grain millers, small shops, and pharmaceutical clinics that rely on expensive petrol/diesel generators, spending an average of 45,000 Naira weekly on fuel amid frequent fuel shortages. The national grid has provided zero electricity to the community for over 18 months.\n\nThe engineer performs an environmental scan using PESTEL and prepares a preliminary feasibility study before approaching the Bank of Industry (BOI) and private angel investors for a 25-million Naira development loan.",
+            "sub_questions": [
+                {
+                    "id": "ent211-opp-cs2-q1",
+                    "course": "ENT 211",
+                    "topic": "opportunity_identification_feasibility",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["pestel", "case-study"],
+                    "question": "In the engineer's PESTEL environmental scan, which two external macro-environmental dimensions present the strongest drivers of market demand for the solar mini-grid in Bichi?",
+                    "options": [
+                        "Economic (high generator diesel costs of 45,000 Naira/week) and Technological/Environmental (chronic national grid failure and abundant Northern Nigerian solar irradiance)",
+                        "Political (change of British monarchy) and Legal (copyright law on foreign pop music)",
+                        "Social (adoption of European winter fashion) and Technological (5G gaming consoles)",
+                        "Environmental (ice blizzards and sub-zero snowstorms in Kano State)"
+                    ],
+                    "answer": 0,
+                    "explanation": "The primary drivers are Economic (exorbitant weekly diesel expenditure of 45,000 Naira straining shopkeeper margins) and Technological/Environmental (total collapse of the public electrical grid combined with intense year-round solar radiation in Kano State making solar generation technically viable).",
+                    "why_wrong": {
+                        "1": "British monarchy changes and pop music copyright have zero bearing on rural Kano rural electrification.",
+                        "2": "European winter fashion and 5G gaming are irrelevant to rural agricultural grain millers.",
+                        "3": "Kano State has a tropical semi-arid climate with abundant sun, not sub-zero snow blizzards."
+                    },
+                    "source": "Opportunity Identification & Evaluation Deck, Slides 12-13: PESTEL Application (Solar Example)"
+                },
+                {
+                    "id": "ent211-opp-cs2-q2",
+                    "course": "ENT 211",
+                    "topic": "opportunity_identification_feasibility",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["feasibility-assessment", "technical-and-legal", "case-study"],
+                    "question": "Examine the Technical and Legal/Regulatory feasibility factors that the solar mini-grid engineer must satisfy before deploying the 25-million Naira installation in Kano State.",
+                    "answer": "To ensure long-term viability, the engineer must satisfy rigorous criteria across Technical and Legal feasibility:\n\n1. Technical Feasibility Factors:\n- Solar Resource and Sizing: Conduct solar irradiance logging to verify that peak sun hours in Bichi support a 50kW continuous load, sizing lithium-ion battery storage to provide at least 14 hours of night and overcast autonomy.\n- Equipment Procurement and Durability: Ensure solar inverters, PV modules, and charge controllers are industrial-grade and dust-resistant (IP65 rated) to withstand severe harmattan dust and high ambient temperatures in Northern Nigeria.\n- Grid Distribution Infrastructure: Erect sturdy local low-voltage distribution poles, cabling, and prepaid split smart meters for each merchant to prevent power theft.\n- Local Maintenance Capacity: Train local youth technicians in Bichi to clean dust off solar panels daily and handle basic line maintenance, ensuring system uptime without waiting for engineers from Lagos or Abuja.\n\n2. Legal and Regulatory Feasibility Factors:\n- Nigerian Electricity Regulatory Commission (NERC): Comply with the NERC Mini-Grid Regulations (obtain either a permit or registration for off-grid systems under 1MW).\n- Land and Community Access Rights: Secure formal legal land lease agreements with the Bichi local government and obtain consent from the traditional community leadership (Emirate council and village head) to ensure site security.\n- Corporate Affairs Commission (CAC) & Taxation: Complete statutory incorporation with CAC and obtain a Tax Identification Number (TIN) from FIRS.\n- Standard Organization of Nigeria (SON): Ensure all imported solar panels and inverters carry SONCAP certification to prevent impoundment by Nigerian Customs.",
+                    "explanation": "Technical robustness and compliance with NERC mini-grid regulations and community land consent are mandatory for infrastructure ventures.",
+                    "marking_points": [
+                        "Identifies Technical factors: solar sizing, battery autonomy, harmattan dust resistance (IP rating), and smart meters",
+                        "Emphasizes local maintenance capacity: training local technicians to ensure continuous operational uptime",
+                        "Identifies Legal factors: compliance with NERC Mini-Grid Regulations for off-grid installations",
+                        "Mentions community land tenure and traditional leadership consent (Emirate/local government)",
+                        "Mentions statutory CAC incorporation, FIRS taxation, and SONCAP equipment certification"
+                    ],
+                    "source": "Opportunity Identification & Evaluation Deck, Slides 22, 24: Technical and Legal Feasibility"
+                }
+            ]
+        }
+    ]
+}
+
+with open("app/content/ENT 211/opportunity_identification_feasibility.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+
+print("Saved opportunity_identification_feasibility.json successfully!")

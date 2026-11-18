@@ -1,0 +1,529 @@
+{
+  "course": "ENT 211",
+  "topic": "entrepreneurship_theories",
+  "summary": "This topic presents a comprehensive synthesis of foundational entrepreneurship theories, categorized into three explanatory families: Economic, Psychological, and Sociological/Action frameworks. The Economic family investigates market mechanisms: Joseph Schumpeter's theory of innovation (the Five New Combinations) and creative destruction; Frank Knight's seminal distinction between measurable, insurable Risk versus unmeasurable, non-insurable Uncertainty (with profit representing the entrepreneurial reward for bearing uncertainty); Israel Kirzner's concept of entrepreneurial alertness and market arbitrage; Harvey Leibenstein's X-inefficiency and gap-filling; and Peter Drucker's systematic innovation. The Psychological family centers on David McClelland's Need for Achievement (n-Ach), characterized by challenging but attainable goals, personal responsibility, and immediate performance feedback. The Sociological family examines Max Weber's religious and cultural values governing capital accumulation and Everett Hagen's status withdrawal theory. Finally, the topic examines modern action frameworks: the Resource-Based View (RBV) and Saras Sarasvathy's theory of Effectuation (Bird in Hand, Affordable Loss, Crazy Quilt, Lemonade, Pilot in the Plane) contrasted against traditional Causal planning.",
+  "key_terms": [
+    {
+      "term": "Schumpeter's Five Combinations",
+      "definition": "The five avenues through which entrepreneurs innovate: new good, new production method, new market, new supply source, or new industry organization."
+    },
+    {
+      "term": "Knightian Uncertainty",
+      "definition": "True unmeasurable ambiguity where outcome probabilities cannot be mathematically calculated or insured against, distinct from insurable risk."
+    },
+    {
+      "term": "Kirznerian Alertness",
+      "definition": "The entrepreneurial capability to spontaneously recognize market price discrepancies, unmet customer needs, and profitable opportunities without formal search costs."
+    },
+    {
+      "term": "X-Inefficiency (Leibenstein)",
+      "definition": "The gap between actual and maximum potential output within a market or firm caused by organizational slack, friction, and fragmented resources."
+    },
+    {
+      "term": "Need for Achievement (n-Ach)",
+      "definition": "David McClelland's psychological construct describing an individual's intense drive to solve problems, take personal responsibility, and attain challenging goals with concrete feedback."
+    },
+    {
+      "term": "Status Withdrawal (Hagen)",
+      "definition": "The sociological theory that entrepreneurship is sparked when a social or cultural group experiences historical loss of prestige, channeling frustrated energy into enterprise."
+    },
+    {
+      "term": "Protestant Ethic (Weber)",
+      "definition": "The cultural and religious doctrine linking hard work, frugality, rational enterprise, and reinvestment of profits to modern economic development."
+    },
+    {
+      "term": "Effectuation (Sarasvathy)",
+      "definition": "A logic of entrepreneurial action where founders start with available means (Who I am, What I know, Whom I know) and non-predictive control rather than predefined goals."
+    },
+    {
+      "term": "Bird in Hand Principle",
+      "definition": "The effectuation principle dictating that entrepreneurs should initiate action using their current skills, knowledge, and social network rather than waiting for ideal resources."
+    },
+    {
+      "term": "Affordable Loss",
+      "definition": "The decision criterion in effectuation where an entrepreneur risks only what they can personally afford to lose, rather than calculating estimated returns on investment."
+    }
+  ],
+  "questions": [
+    {
+      "id": "ent211-thy-001",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "frank-knight",
+        "risk-vs-uncertainty",
+        "economic-theories"
+      ],
+      "question": "In his seminal 1921 economic treatise, Frank H. Knight established a fundamental distinction between 'Risk' and 'Uncertainty'. According to Knight, what distinguishes true Uncertainty from Risk?",
+      "options": [
+        "Risk involves situations where outcome probabilities can be mathematically calculated and insured against, whereas Uncertainty involves situations where future odds are fundamentally unmeasurable and non-insurable",
+        "Risk occurs only in government civil service, whereas Uncertainty occurs only in private agriculture",
+        "Risk guarantees 100% financial profit, whereas Uncertainty guarantees 100% bankruptcy",
+        "Risk is eliminated by registering a patent, whereas Uncertainty is eliminated by taking a bank loan"
+      ],
+      "answer": 0,
+      "explanation": "Slide 8 details Knight's theory: 'Risk: Probabilities can be estimated, insurable or plannable. Uncertainty: Outcomes and odds cannot be known, entrepreneurs bear the consequences.' Pure economic profit is the reward the entrepreneur receives for exercising judgment and bearing uninsurable, true uncertainty.",
+      "why_wrong": {
+        "1": "Knight's theory applies across all economic activities, not restricted to civil service or agriculture.",
+        "2": "Risk does not guarantee profit, and uncertainty does not guarantee bankruptcy; uncertainty represents unknown probabilities.",
+        "3": "Neither patents nor bank loans eliminate fundamental market uncertainty."
+      },
+      "source": "Entrepreneurship Theories Deck, Slide 8: Knight: Risk and Uncertainty"
+    },
+    {
+      "id": "ent211-thy-002",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "israel-kirzner",
+        "opportunity-alertness",
+        "arbitrage"
+      ],
+      "question": "How does Israel Kirzner's Austrian perspective on the entrepreneur differ fundamentally from Joseph Schumpeter's perspective?",
+      "options": [
+        "Kirzner views the entrepreneur as an alert arbitrageur who discovers existing price discrepancies and moves the market toward equilibrium, whereas Schumpeter views the entrepreneur as a disruptive innovator who destroys economic equilibrium through new combinations",
+        "Kirzner believes entrepreneurs only operate in state-run socialist economies, whereas Schumpeter believes entrepreneurs only operate in agriculture",
+        "Kirzner focuses exclusively on genetic hereditary psychology, whereas Schumpeter focuses exclusively on labor union strikes",
+        "Kirzner argues that all entrepreneurs must fail, whereas Schumpeter argues that entrepreneurs never fail"
+      ],
+      "answer": 0,
+      "explanation": "This is a classic theoretical contrast: Schumpeter's entrepreneur is a revolutionary who disrupts circular flow and destroys market equilibrium through innovative 'new combinations'. Kirzner's entrepreneur, by contrast, possesses 'entrepreneurial alertness' to existing market imperfections and unnoticed gaps, acting as an arbitrageur whose actions restore market equilibrium.",
+      "why_wrong": {
+        "1": "Both thinkers analyzed free-market capitalist dynamics, not state socialism vs agriculture.",
+        "2": "Neither thinker focused on genetics or labor strikes; both were prominent economic theorists.",
+        "3": "Neither argued that entrepreneurs are guaranteed to fail or guaranteed to succeed."
+      },
+      "source": "Entrepreneurship Theories Deck, Slides 6, 13 & Comparative Matrix"
+    },
+    {
+      "id": "ent211-thy-003",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "harvey-leibenstein",
+        "x-inefficiency",
+        "gap-filling"
+      ],
+      "question": "In Harvey Leibenstein's economic theory of entrepreneurship, what is the primary role of the entrepreneur in addressing 'X-Inefficiency'?",
+      "options": [
+        "Acting as a 'gap-filler' and 'input-completer' who mobilizes fragmented, underutilized resources and coordinates bottlenecks to eliminate organizational waste",
+        "Calculating differential calculus equations to predict government tax revenues",
+        "Issuing fiat currency to replace central bank monetary policy",
+        "Shutting down competitive markets to create permanent monopolies"
+      ],
+      "answer": 0,
+      "explanation": "Slide 12 explains Leibenstein's theory: 'Market gap or waste -> Organise fragmented resources -> Better delivery -> Higher productivity.' Leibenstein observed that real-world markets and firms suffer from 'X-inefficiency' (internal slack and friction). The entrepreneur identifies missing operational links and acts as an input-completer and gap-filler to restore productive efficiency.",
+      "why_wrong": {
+        "1": "Predicting tax revenue is the job of treasury econometricians, not entrepreneurial gap-filling.",
+        "2": "Issuing national currency is the exclusive mandate of central banks.",
+        "3": "Gap-filling resolves operational bottlenecks; it does not aim to establish anti-competitive state monopolies."
+      },
+      "source": "Entrepreneurship Theories Deck, Slide 12: Leibenstein: X-Efficiency"
+    },
+    {
+      "id": "ent211-thy-004",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "david-mcclelland",
+        "need-for-achievement",
+        "psychological-theories"
+      ],
+      "question": "According to psychologist David McClelland's Acquired Needs Theory, which specific psychological motive is most strongly correlated with successful entrepreneurial behavior?",
+      "options": [
+        "High Need for Achievement (n-Ach), characterized by setting challenging but attainable goals and demanding immediate feedback on performance",
+        "High Need for Affiliation (n-Aff), characterized by prioritizing social popularity and avoiding confrontation at all costs",
+        "High Need for Power (n-Power), characterized by seeking dictatorial political control over citizens",
+        "High Fear of Failure, characterized by refusing to make any business decisions without unanimous committee consent"
+      ],
+      "answer": 0,
+      "explanation": "Slide 9 outlines McClelland's Need for Achievement (n-Ach): 'Challenging goals: Difficult but attainable targets. Personal responsibility: Owns the results. Seeks feedback: Wants to know performance. Solves problems alone: Prefers independent effort. Keeps improving: Looks for better ways.' Entrepreneurs consistently exhibit high n-Ach.",
+      "why_wrong": {
+        "1": "High need for affiliation prioritizes pleasing others over making tough, rational business choices.",
+        "2": "High personalized power seeks domination over people rather than problem-solving and venture building.",
+        "3": "Fear of failure causes paralysis and risk aversion, the antithesis of the entrepreneurial mindset."
+      },
+      "source": "Entrepreneurship Theories Deck, Slide 9: McClelland: Need for Achievement"
+    },
+    {
+      "id": "ent211-thy-005",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "max-weber",
+        "sociological-theories",
+        "culture"
+      ],
+      "question": "In Max Weber's sociological theory of entrepreneurship, what cultural and religious factor did he identify as historically catalytic in the rise of modern industrial capitalism?",
+      "options": [
+        "The Protestant (Calvinist) Ethic, which framed disciplined hard work as a moral calling and emphasized frugality, savings, and reinvestment of capital over personal luxury",
+        "The feudal monarchical mandate requiring all citizens to pay 90% of their income to royal aristocrats",
+        "The belief that economic profit is a spiritual sin that must be punished by excommunication",
+        "The ancient Roman tradition of relying entirely on gladiator tournaments for public revenue"
+      ],
+      "answer": 0,
+      "explanation": "Slide 10 highlights Weber's thesis: 'Work and wealth: Attitudes shape effort... Saving and investment: Values of conduct. Weber linked religious and cultural orientations to attitudes towards work and saving.' Weber argued that the ascetic Calvinist work ethic treated diligent labor as a divine duty and frowned on wasteful consumer hedonism, encouraging systematic capital accumulation and reinvestment.",
+      "why_wrong": {
+        "1": "Feudal extortion enriched aristocrats who spent on wars and castles, stifling entrepreneurial capital formation.",
+        "2": "Viewing profit as a sin suppressed enterprise; Weber studied how Protestantism *legitimized* rational commercial enterprise.",
+        "3": "Roman gladiators were entertainment, completely unrelated to Weber's sociological analysis of capitalism."
+      },
+      "source": "Entrepreneurship Theories Deck, Slide 10: Weber: Culture and Values"
+    },
+    {
+      "id": "ent211-thy-006",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "everett-hagen",
+        "status-withdrawal",
+        "sociological-theories"
+      ],
+      "question": "Everett Hagen proposed the theory of 'Status Withdrawal' to explain the emergence of entrepreneurial activity among specific demographic groups. What is the central premise of Hagen's theory?",
+      "options": [
+        "When a traditional social or ethnic group experiences a historical loss of social status and prestige, its members channel their creative frustrations into commercial enterprise to regain societal recognition",
+        "Governments must officially revoke the citizenship of business owners to encourage innovation",
+        "Entrepreneurs only emerge from the highest hereditary aristocratic ruling families",
+        "Status withdrawal occurs when commercial banks withdraw credit cards from college students"
+      ],
+      "answer": 0,
+      "explanation": "Slide 11 outlines Hagen's theory: 'Loss of status -> Dissatisfaction -> New skills, independence -> New venture.' When an established group suffers displacement or loses societal prestige, normal avenues of advancement are blocked, motivating ambitious individuals to channel their drive into independent enterprise, trade, and technical innovation (e.g., historical merchant minorities).",
+      "why_wrong": {
+        "1": "Hagen did not advocate stripping citizenship; he analyzed historical sociological displacement.",
+        "2": "Hagen demonstrated that dominant ruling aristocracies rarely innovate because they are invested in preserving the status quo.",
+        "3": "Status withdrawal refers to social prestige and class displacement, not bank credit card limits."
+      },
+      "source": "Entrepreneurship Theories Deck, Slide 11: Hagen: Status Withdrawal"
+    },
+    {
+      "id": "ent211-thy-007",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "effectuation",
+        "saras-sarasvathy",
+        "bird-in-hand"
+      ],
+      "question": "A freshly graduated baker wants to start a commercial cake business in Abuja. Instead of waiting to secure a 10-million Naira commercial bank loan and renting a shop, she begins baking birthday cakes in her mother's kitchen using her existing oven, selling to classmates on WhatsApp, and reinvesting her weekly profits. In Saras Sarasvathy's theory of Effectuation, what principle is she applying?",
+      "options": [
+        "Bird in Hand, which dictates starting with available means (Who am I, What I know, Whom I know) rather than waiting for ideal external resources",
+        "Pilot in the Plane, which requires hiring commercial airline pilots to distribute pastries",
+        "Crazy Quilt, which involves sewing bedsheets to sell alongside birthday cakes",
+        "Neoclassical Causation, which requires executing a 5-year mathematical econometric forecast"
+      ],
+      "answer": 0,
+      "explanation": "Slides 16 and 17 detail Sarasvathy's Effectuation framework: 'Bird in hand: Start with available means (Who am I? What do I know? Whom do I know? What can I do now?). Example: A graduate sells cakes to friends, reinvests, then opens a bakery.' The baker acts immediately using her current means and network rather than waiting for large bank capital.",
+      "why_wrong": {
+        "1": "Pilot in the Plane is an effectuation metaphor meaning 'focus on what you can control', not hiring aviation pilots.",
+        "2": "Crazy Quilt refers to forming self-selecting stakeholder partnerships, not physical sewing of textiles.",
+        "3": "Causation is the opposite of effectuation; it fixes a goal first and demands forecasting all required capital in advance."
+      },
+      "source": "Entrepreneurship Theories Deck, Slides 16-17: Effectuation: Five Principles"
+    },
+    {
+      "id": "ent211-thy-008",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "true_false_why",
+      "difficulty": 2,
+      "tags": [
+        "effectuation-vs-causation"
+      ],
+      "question": "In entrepreneurial theory, 'Causation' and 'Effectuation' represent identical decision-making logics, both requiring detailed 5-year financial projections before any operational action can be taken.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "False. Slide 16 explicitly contrasts them: Causation begins with a predetermined effect/goal and seeks to identify and assemble the necessary means through prediction and planning. Effectuation begins with existing means (Who I am, What I know, Whom I know) and allows goals to emerge dynamically through action, partnerships, and leveraging contingencies without relying on predictive forecasts.",
+      "why_wrong": {
+        "0": "Causation is predictive and goal-driven; Effectuation is non-predictive, means-driven, and adaptive."
+      },
+      "source": "Entrepreneurship Theories Deck, Slide 16: Effectuation: Contrast with Causal Approaches"
+    },
+    {
+      "id": "ent211-thy-009",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "cloze",
+      "difficulty": 2,
+      "tags": [
+        "effectuation-principles",
+        "cloze"
+      ],
+      "question": "Complete the statements regarding Saras Sarasvathy's five principles of Effectuation:\nThe [blank1] principle instructs founders to start with existing means rather than waiting for external funding. The [blank2] principle dictates that an entrepreneur should commit only what they can personally afford to forfeit at each stage. The [blank3] principle focuses on building self-selecting cooperative partnerships, while the [blank4] principle instructs founders to turn unexpected surprises and contingencies into valuable opportunities.",
+      "answer": [
+        "bird in hand",
+        "affordable loss",
+        "crazy quilt",
+        "lemonade"
+      ],
+      "explanation": "Slide 17 outlines the five principles: Bird in hand (available means), Affordable loss (risk only what you can lose), Crazy quilt (partnerships), Lemonade (leverage surprises), and Pilot in the plane (focus on what can be influenced).",
+      "source": "Entrepreneurship Theories Deck, Slide 17: Effectuation: Five Principles"
+    },
+    {
+      "id": "ent211-thy-010",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "matching",
+      "difficulty": 3,
+      "tags": [
+        "theories-map",
+        "matching"
+      ],
+      "question": "Match each scholar to the primary theoretical family and concept they represent in the ENT 211 curriculum:",
+      "options": [
+        "Frank H. Knight",
+        "David McClelland",
+        "Max Weber",
+        "Saras Sarasvathy"
+      ],
+      "answer": [
+        "Economic Theory: Unmeasurable uncertainty as the source of entrepreneurial profit",
+        "Psychological Theory: Need for Achievement (n-Ach) and moderate risk preference",
+        "Sociological Theory: Religious work ethics, cultural values, and capital accumulation",
+        "Action Framework: Effectual logic, affordable loss, and means-driven venture creation"
+      ],
+      "explanation": "Knight represents economic uncertainty. McClelland represents psychological motivation (n-Ach). Weber represents sociological and cultural values. Sarasvathy represents effectuation action logic.",
+      "source": "Entrepreneurship Theories Deck, Slides 3 & 20: Three Families of Explanation"
+    },
+    {
+      "id": "ent211-thy-011",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "sequencing",
+      "difficulty": 3,
+      "tags": [
+        "schumpeter-combinations",
+        "creative-destruction",
+        "sequencing"
+      ],
+      "question": "Arrange the phases of Joseph Schumpeter's Creative Destruction cycle in the correct economic sequence:",
+      "options": [
+        "Entrepreneur introduces a 'new combination' (new technology, product, or business model)",
+        "The innovative solution attracts customers away from established legacy providers",
+        "Older, inefficient firms lose market share and face obsolescence or bankruptcy",
+        "Macroeconomic productivity increases and a higher-efficiency economic equilibrium is established"
+      ],
+      "answer": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "Deck 4 (Slide 7) details the sequence: New technology or model -> Older products replaced -> Weak firms lose customers -> Overall economic productivity improves.",
+      "source": "Entrepreneurship Theories Deck, Slide 7: Schumpeter: Creative Destruction"
+    },
+    {
+      "id": "ent211-thy-012",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "theories",
+        "classification"
+      ],
+      "question": "Name the three major families of entrepreneurship theories outlined in ENT 211.",
+      "answer": "1. Economic Theories (Schumpeter, Knight, Kirzner, Leibenstein, Drucker)\n2. Psychological Theories (McClelland)\n3. Sociological and Cultural Theories (Weber, Hagen).",
+      "explanation": "Slide 20 groups all theories into Economic, Psychological, and Sociological explanations.",
+      "source": "Entrepreneurship Theories Deck, Slide 20: Three Families of Explanation"
+    },
+    {
+      "id": "ent211-thy-013",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "kirzner",
+        "definition"
+      ],
+      "question": "What is 'Kirznerian Alertness', and how does the Kirznerian entrepreneur influence market equilibrium?",
+      "answer": "Kirznerian Alertness is the entrepreneurial ability to spontaneously notice existing price differences, unmet consumer needs, and market gaps without formal search costs. By buying low where resources are undervalued and selling high where demand is unmet (arbitrage), the entrepreneur moves the market closer to equilibrium.",
+      "explanation": "Kirzner emphasizes discovering existing opportunities rather than inventing new products.",
+      "source": "Entrepreneurship Theories Deck, Slide 13: Kirzner: Opportunity Alertness"
+    },
+    {
+      "id": "ent211-thy-014",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "effectuation",
+        "principles"
+      ],
+      "question": "List the five core principles of Saras Sarasvathy's Effectuation framework.",
+      "answer": "1. Bird in Hand (start with existing means)\n2. Affordable Loss (risk only what you can afford to lose)\n3. Crazy Quilt (build cooperative stakeholder partnerships)\n4. Lemonade (leverage unexpected contingencies and surprises)\n5. Pilot in the Plane (focus on controllable actions rather than predicting the future).",
+      "explanation": "These principles describe how expert entrepreneurs make decisions under deep uncertainty.",
+      "source": "Entrepreneurship Theories Deck, Slide 17: Effectuation: Five Principles"
+    },
+    {
+      "id": "ent211-thy-015",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "leibenstein",
+        "definition"
+      ],
+      "question": "What is 'X-Inefficiency' in Harvey Leibenstein's theory, and how does the entrepreneur cure it?",
+      "answer": "X-Inefficiency is the failure of firms to achieve maximum productive efficiency due to internal frictions, organizational slack, waste, and fragmented resources. The entrepreneur cures it by acting as an 'input-completer' and 'gap-filler', assembling disjointed parts to eliminate operational waste.",
+      "explanation": "Leibenstein explains why management coordination is entrepreneurial.",
+      "source": "Entrepreneurship Theories Deck, Slide 12: Leibenstein: X-Efficiency"
+    },
+    {
+      "id": "ent211-thy-016",
+      "course": "ENT 211",
+      "topic": "entrepreneurship_theories",
+      "type": "explain",
+      "difficulty": 3,
+      "tags": [
+        "theories-comparison",
+        "multi-perspective",
+        "analysis"
+      ],
+      "question": "Why is it impossible for any single academic theory to fully explain the phenomenon of entrepreneurship? Illustrate how Economic, Psychological, and Action theories must be combined to analyze a growing enterprise.",
+      "answer": "Entrepreneurship is a multifaceted, multidimensional human and socioeconomic endeavor. Relying on a single theoretical lens produces an incomplete, distorted picture:\n\n1. Limits of Individual Perspectives:\n- Economic theories (Schumpeter, Knight, Kirzner) explain *what* happens in the market (arbitrage, innovation, uncertainty bearing), but fail to explain *who* is motivated to step forward or *why* specific individuals persevere while others quit.\n- Psychological theories (McClelland's n-Ach) explain internal human drive, motivation, and goal preferences, but ignore external macroeconomic barriers, regulatory policies, capital access, and technological shifts.\n- Sociological theories (Weber, Hagen) explain macro-cultural values, family networks, and status deprivation, but cannot explain why two siblings from the same cultural background make completely different entrepreneurial choices.\n\n2. Synthesis in a Single Venture Journey (Slide 23):\nConsider a growing bakery enterprise in Nigeria:\n- Effectuation (Sarasvathy): The founder starts with the oven she already owns and bakes for friends (Bird in Hand), risking only her monthly pocket allowance (Affordable Loss).\n- Kirznerian Alertness (Kirzner): She notices that university students studying late at night have no access to fresh snacks, filling the unmet nocturnal demand.\n- Need for Achievement (McClelland): Driven by high n-Ach, she sets rigorous daily sales targets, tracks every customer review, and continuously refines her recipes.\n- Resource-Based View (RBV): As revenue grows, she builds proprietary delivery routines, brand reputation, and trusted relationships with flour suppliers, securing a sustainable competitive advantage.\n\nConclusion: A robust understanding of entrepreneurship requires integrating economic market signals, psychological motivation, social context, and effectual action logic.",
+      "explanation": "Comprehensive entrepreneurship research requires synthesizing economic, psychological, and action-based lenses.",
+      "marking_points": [
+        "Explains why economic theories alone are insufficient (explain market mechanisms but not personal motivation)",
+        "Explains why psychological theories alone are insufficient (explain personality but ignore market structures and policy)",
+        "Explains why sociological theories alone are insufficient (explain cultural context but not individual variation)",
+        "Synthesizes multiple theories across a practical venture journey (e.g., Effectuation + Kirzner + McClelland + RBV)",
+        "Concludes that entrepreneurship requires an integrated multi-disciplinary perspective"
+      ],
+      "source": "Entrepreneurship Theories Deck, Slides 20, 22-23: Combining Theories"
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "ent211-thy-cs1",
+      "scenario": "Two Nile University graduates, Chidi and Zainab, set out to launch rival pastry and catering businesses in Wuse II, Abuja. Their strategic approaches differed completely:\n\nFounder 1: Chidi (Causal Predictor)\nChidi wrote a 60-page formal business plan predicting 18% annual market growth over 5 years. He secured a 15-million Naira commercial bank loan at 28% annual interest, rented a prime retail outlet in Wuse II with a 2-year upfront lease, and imported industrial baking ovens from Italy. Two months after opening, the Federal Government imposed an unexpected import restriction on foreign wheat flour, causing domestic flour prices to surge by 150% and driving his operating costs beyond his debt-service capacity. Unable to pivot due to heavy fixed debt, Chidi faced bankruptcy within 6 months.\n\nFounder 2: Zainab (Effectual Creator)\nZainab followed Effectuation principles. She started with her existing kitchen equipment (Bird in Hand) and committed only 150,000 Naira of personal savings (Affordable Loss). She formed partnerships with five local university cafeterias to supply fresh mini-pies (Crazy Quilt). When the flour import restriction struck, Zainab did not panic; applying the Lemonade Principle, she embraced the crisis and developed a proprietary recipe blending local cassava flour and sweet potato puree. Her 'Native Sweet Pastries' became a sensation across Abuja campuses, lowering her ingredient costs by 40% and generating record profits.",
+      "sub_questions": [
+        {
+          "id": "ent211-thy-cs1-q1",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "effectuation",
+            "lemonade-principle",
+            "case-study"
+          ],
+          "question": "How did Zainab exemplify Saras Sarasvathy's 'Lemonade Principle' when the government flour restriction occurred?",
+          "options": [
+            "By embracing the unexpected crisis and formulating a novel recipe using local cassava and sweet potato flour to lower costs and create a unique product",
+            "By organizing a street riot demanding that the government subsidize imported Italian wheat",
+            "By taking an additional 50-million Naira high-interest bank loan to buy black-market flour",
+            "By closing her kitchen permanently and emigrating to Canada"
+          ],
+          "answer": 0,
+          "explanation": "The Lemonade Principle states: 'When life gives you lemons, make lemonade'—entrepreneurs treat unexpected surprises, contingencies, and market shocks not as fatal disasters, but as productive inputs and opportunities for novel innovation. Zainab leveraged the flour restriction to innovate a localized, cost-effective cassava pastry recipe.",
+          "why_wrong": {
+            "1": "Political rioting is not an entrepreneurial business model solution.",
+            "2": "Accumulating more toxic debt during an operational crisis violates the Affordable Loss principle.",
+            "3": "Shutting down and fleeing represents total capitulation, not effectual problem-solving."
+          },
+          "source": "Entrepreneurship Theories Deck, Slide 17: Effectuation: Lemonade Principle"
+        },
+        {
+          "id": "ent211-thy-cs1-q2",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "causation-vs-effectuation",
+            "affordable-loss",
+            "case-study"
+          ],
+          "question": "Contrast Chidi's Causal predictive approach with Zainab's Effectual approach in the context of Knightian Uncertainty and the Affordable Loss principle. Why did Chidi's strategy fail catastrophically in the Nigerian macroeconomic environment?",
+          "answer": "This case vividly contrasts Causal planning against Effectual execution under conditions of Knightian Uncertainty:\n\n1. Knightian Uncertainty vs Causal Planning:\nChidi committed the fatal error of applying Causal, predictive logic to an environment dominated by true Knightian Uncertainty. In developing markets like Nigeria, macroeconomic shocks (currency devaluations, import bans, fuel price spikes, power outages) are fundamentally unmeasurable and unpredictable. By borrowing 15 million Naira at 28% interest based on a rigid 5-year forecast, Chidi committed massive fixed overhead costs to an unalterable trajectory. When reality diverged from his forecast, his fixed commitments and debt obligations triggered catastrophic bankruptcy.\n\n2. Effectuation & Affordable Loss:\nIn contrast, Zainab embraced Knightian Uncertainty using Effectual logic. Guided by the Affordable Loss principle, she invested only 150,000 Naira—an amount she could completely forfeit without personal financial ruin. Because she carried zero bank debt and avoided rigid long-term leases, her venture was structurally agile and anti-fragile.\n\n3. Leverage of Contingencies:\nWhen the flour embargo hit, Chidi was paralyzed by asset-specific Italian ovens and debt covenants. Zainab, unencumbered by debt, treated the surprise as an opportunity (Lemonade Principle), partnering with local farmers (Crazy Quilt) to pioneer cassava-based baking. Her effectual stance turned external volatility into a competitive advantage.",
+          "explanation": "Predictive planning fails under severe macroeconomic uncertainty; effectual decision-making preserves agility and survival.",
+          "marking_points": [
+            "Explains how Knightian Uncertainty makes rigid 5-year forecasting dangerous in volatile macroeconomic environments",
+            "Contrasts Chidi's high-debt fixed commitment (Causation) with Zainab's lean, means-driven start (Bird in Hand)",
+            "Explains the Affordable Loss principle (Zainab risked only 150,000 Naira personal savings vs Chidi's 15m debt)",
+            "Contrasts agility under shock: Chidi's debt paralysis vs Zainab's Lemonade principle pivot to local cassava flour",
+            "Concludes why Effectuation is superior for startups operating under conditions of deep uncertainty"
+          ],
+          "source": "Entrepreneurship Theories Deck, Slides 8, 16-17: Knight & Effectuation"
+        }
+      ]
+    },
+    {
+      "id": "ent211-thy-cs2",
+      "scenario": "Alaba International Market in Lagos is West Africa's largest electronics commercial hub, housing over 10,000 independent importers, wholesalers, and retail distributors. Two distinct entrepreneurial ventures emerged in this ecosystem:\n\nVenture Alpha (Founded by Obinna): Obinna noticed that television flat-panel distributors in Section B were selling 55-inch smart TVs for 280,000 Naira, while retailers in Port Harcourt and Onitsha were struggling to find stock and paying 360,000 Naira for the identical brand. Without manufacturing any TVs, Obinna set up a phone and WhatsApp brokerage network, matching Onitsha buyers with Alaba wholesalers, earning a clean 15,000 Naira commission per unit while smoothing regional price differentials.\n\nVenture Beta (Founded by Kemi): Kemi observed severe chaos and 'X-Inefficiency' inside Alaba market: cargo containers arriving from Apapa Port were delayed for days inside congested market alleys because manual hand-cart pushers and independent truck dispatchers had zero coordination, resulting in damaged goods, extortion, and 48-hour delivery delays. Kemi created 'AlabaDispatch', organizing 120 hand-cart pushers into uniformed teams managed by a mobile scheduling platform, guaranteeing 90-minute container offloading and eliminating cargo loss.",
+      "sub_questions": [
+        {
+          "id": "ent211-thy-cs2-q1",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "kirzner-vs-leibenstein",
+            "case-study"
+          ],
+          "question": "Which entrepreneurship theories best explain the commercial models of Venture Alpha (Obinna) and Venture Beta (Kemi)?",
+          "options": [
+            "Obinna demonstrates Kirznerian Opportunity Alertness and Price Arbitrage; Kemi demonstrates Leibenstein's X-Inefficiency and Gap-Filling role",
+            "Obinna demonstrates Schumpeterian Radical Invention; Kemi demonstrates Weberian Protestant Asceticism",
+            "Obinna demonstrates Hagen's Status Withdrawal; Kemi demonstrates Knightian Insurable Risk",
+            "Both demonstrate identical corporate intrapreneurship funded by international foreign aid"
+          ],
+          "answer": 0,
+          "explanation": "Obinna operates as a classic Kirznerian entrepreneur: he exhibits entrepreneurial alertness to geographical price discrepancies (Alaba vs Onitsha) and acts as an arbitrageur moving the market toward price equilibrium without manufacturing. Kemi operates as a classic Leibensteinian entrepreneur: she identifies organizational waste, friction, and operational slack (X-inefficiency) in freight offloading and acts as an 'input-completer' and 'gap-filler' to coordinate fragmented cart pushers into an efficient logistics system.",
+          "why_wrong": {
+            "1": "Obinna did not invent flat-panel TVs, and Kemi is organizing transport, not practicing religious asceticism.",
+            "2": "Neither venture is driven by ethnic status withdrawal or insurable risk calculations.",
+            "3": "Both are private independent commercial startups, not foreign-aid funded corporate intrapreneurship."
+          },
+          "source": "Entrepreneurship Theories Deck, Slides 12-13: Leibenstein & Kirzner"
+        },
+        {
+          "id": "ent211-thy-cs2-q2",
+          "course": "ENT 211",
+          "topic": "entrepreneurship_theories",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "kirzner",
+            "leibenstein",
+            "market-coordination",
+            "case-study"
+          ],
+          "question": "Evaluate how both Kirznerian Arbitrage (Obinna) and Leibensteinian Gap-Filling (Kemi) generate substantial economic value without requiring any radical scientific invention. Why are these market-correcting functions vital for developing economies like Nigeria?",
+          "answer": "Both ventures demonstrate that entrepreneurship does not require radical laboratory inventions to generate immense economic value:\n\n1. Kirznerian Arbitrage (Obinna's Venture Alpha):\n- Economic Mechanism: Obinna exploits information asymmetry and spatial price disparities across Nigerian cities. Developing markets suffer from severe information friction; buyers in Onitsha do not know which warehouse in Alaba has surplus inventory at the best price.\n- Value Creation: By connecting buyers and sellers, Obinna facilitates liquidity, prevents inventory spoilage, allocates consumer goods to high-demand regions, and drives prices toward competitive equilibrium. His alert coordination reduces search costs for all market participants.\n\n2. Leibensteinian Gap-Filling (Kemi's Venture Beta):\n- Economic Mechanism: Kemi tackles 'X-Inefficiency'—the pervasive operational friction, disorganized labor, and logistical bottlenecks that plague Nigerian commerce. Traditional micro-transporters were fragmented, unaccountable, and uncoordinated.\n- Value Creation: By aggregating 120 hand-cart pushers under a standardized mobile scheduling system, Kemi acts as an 'input-completer'. She eliminates container offloading delays from 48 hours to 90 minutes, prevents cargo damage, secures higher, reliable earnings for the laborers, and unlocks supply chain throughput for merchant wholesalers.\n\n3. Vital Role in Developing Economies:\nIn developing economies like Nigeria, the primary bottleneck to economic growth is rarely a shortage of raw ideas or technology; rather, it is market fragmentation, institutional voids, and logistics friction. Entrepreneurs who perform Kirznerian price discovery and Leibensteinian gap-filling restore efficiency, lower transaction costs, formalize informal labor, and enable commerce to flourish across the national economy.",
+          "explanation": "Market-correcting entrepreneurship resolves friction, eliminates waste, and connects disjointed markets.",
+          "marking_points": [
+            "Analyzes Kirznerian Arbitrage: overcoming spatial price disparities and information asymmetry between Alaba and Onitsha",
+            "Explains how arbitrage drives markets toward price equilibrium and lowers buyer search costs",
+            "Analyzes Leibensteinian Gap-Filling: organizing fragmented hand-cart pushers to eliminate operational X-inefficiency",
+            "Explains how Kemi acts as an input-completer, compressing container offload time from 48 hours to 90 minutes",
+            "Synthesizes why market-correcting coordination is critical for overcoming institutional voids in developing economies"
+          ],
+          "source": "Entrepreneurship Theories Deck, Slides 12-13 & Economic Theory Literature"
+        }
+      ]
+    }
+  ]
+}

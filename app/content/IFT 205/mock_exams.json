@@ -1,0 +1,2009 @@
+{
+  "course": "IFT 205",
+  "title": "IFT 205: Introduction to Information Technology \u2014 Mock Examinations",
+  "exams": [
+    {
+      "id": "ift205-mock-alpha",
+      "title": "Mock Exam Alpha: IT Foundations, Hardware & Operating Systems",
+      "description": "Standard university midterm simulation covering IT building blocks, Von Neumann architecture, CPU machine cycle, memory hierarchy, RAM/ROM, SSD/HDD comparisons, 3-2-1 backup rule, and clean OS installation.",
+      "duration_minutes": 60,
+      "total_marks": 70,
+      "passing_score": 40,
+      "question_count": 35,
+      "questions": [
+        {
+          "id": "ift205-fnd-001",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "it_foundations",
+            "data_vs_information"
+          ],
+          "question": "Which of the following best defines the fundamental relationship between data and information?",
+          "options": [
+            "Data is raw, unorganized facts that become information once processed and structured into a meaningful context.",
+            "Information consists of raw sensor readings that become data once stored inside a hard disk drive.",
+            "Data and information are completely interchangeable technical terms referring to any digital binary stream.",
+            "Data represents human knowledge, while information refers exclusively to automated machine instructions."
+          ],
+          "answer": 0,
+          "explanation": "Data refers to raw, unformatted, and unprocessed facts, symbols, or observations (e.g. '82, 94, 76'). When these facts are processed, organized, and given context (e.g. 'Midterm test scores for COS 201 with an average of 84%'), they become meaningful information.",
+          "why_wrong": {
+            "1": "Reverses the hierarchy; sensor readings are raw data, not information.",
+            "2": "Data and information are distinct concepts in computer science; data is raw input, information is refined output.",
+            "3": "Conflates human cognitive knowledge with raw data; data is unstructured facts, not high-level human knowledge."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 3; Week 5 Slide 3",
+          "verified": true,
+          "verified_output": "Data is processed into meaningful information."
+        },
+        {
+          "id": "ift205-fnd-003",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "true_false_why",
+          "difficulty": 3,
+          "tags": [
+            "hardware",
+            "computer_nature"
+          ],
+          "question": "A digital computer can execute instructions and process data in its internal registers without any electrical energy source.",
+          "options": [
+            "True \u2014 internal mechanical components and solid-state silicon gates can process instructions purely through optical ambient light.",
+            "False \u2014 a digital computer fundamentally relies on electrical voltage levels (high and low potentials) across semiconductor transistors to represent and manipulate binary states."
+          ],
+          "answer": 1,
+          "explanation": "Digital computers are electronic devices built from semiconductor transistors that represent binary 1s and 0s via discrete electrical voltage thresholds. Without electrical power (mains or battery), the logic gates cannot operate, memory cells lose state, and no processing can occur.",
+          "why_wrong": {
+            "0": "Silicon semiconductor logic gates require an active electrical potential difference to switch states; they cannot function without electricity."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 12; Student Notebook Hint",
+          "verified": true,
+          "verified_output": "False. Computers fundamentally require electrical power."
+        },
+        {
+          "id": "ift205-fnd-005",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "processing_methods",
+            "batch_vs_realtime"
+          ],
+          "question": "A national bank runs end-of-month interest calculations for 5,000,000 savings accounts during a scheduled window at midnight on Sunday. Which processing paradigm is being utilized, and why is it preferred here?",
+          "options": [
+            "Batch processing; it consolidates large volumes of non-time-critical transactions for execution during off-peak hours without interrupting daytime services.",
+            "Real-time processing; each account must trigger instant microsecond notification alerts to cardholders at the exact second the calendar flips.",
+            "Ad-hoc manual processing; bank accountants must review and type each interest figure individually to guarantee mathematical compliance.",
+            "Multiprogramming cache-bursting; computations are offloaded to distributed mobile phones of banking customers."
+          ],
+          "answer": 0,
+          "explanation": "Batch processing collects transactions over an accumulation interval and processes them as a single consolidated batch during off-peak hours (e.g., midnight Sunday). This maximizes system throughput and CPU utilization without competing with interactive daytime customer queries.",
+          "why_wrong": {
+            "1": "Real-time processing handles single transactions instantaneously upon occurrence (e.g. ATM withdrawal), which would cause excessive load if forced on 5M bulk interest calculations concurrently.",
+            "2": "Manual calculation for millions of accounts is computationally impossible and prone to severe human error.",
+            "3": "Multiprogramming cache-bursting is a fictitious term not describing banking database architectures."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 15",
+          "verified": true,
+          "verified_output": "Batch processing for bulk scheduled operations."
+        },
+        {
+          "id": "ift205-fnd-007",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "data_quality_dimensions"
+          ],
+          "question": "Match each data quality dimension to its defining operational characteristic:",
+          "options": [
+            "Accuracy",
+            "Completeness",
+            "Consistency",
+            "Timeliness"
+          ],
+          "answer": {
+            "Accuracy": "Recorded data values correctly reflect real-world facts without factual or computational errors.",
+            "Completeness": "All required mandatory fields and records are populated with zero missing essential elements.",
+            "Consistency": "Data stored across multiple tables or distributed databases agrees without contradictory values.",
+            "Timeliness": "Data is current, up to date, and available within the operational timeframe required for decision-making."
+          },
+          "explanation": "Data quality dimensions govern whether information is fit for its intended purpose: Accuracy ensures correctness; Completeness ensures absence of blank omissions; Consistency ensures synchronization across systems; Timeliness ensures data is recent enough to act upon.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Week 5 Slides 17-19",
+          "verified": true,
+          "verified_output": "Matched data quality dimensions."
+        },
+        {
+          "id": "ift205-fnd-009",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "data_representation",
+            "bits_bytes"
+          ],
+          "question": "The smallest unit of digital data is the {{c1::bit}}, which represents a binary 0 or 1. A collection of exactly 8 bits forms a {{c2::byte}}, which can represent up to {{c3::256}} distinct bit combinations.",
+          "options": [
+            "bit",
+            "byte",
+            "256",
+            "nibble",
+            "128",
+            "word"
+          ],
+          "answer": [
+            "bit",
+            "byte",
+            "256"
+          ],
+          "explanation": "A bit (binary digit) holds two states ($0$ or $1$). Eight bits make a byte. With 8 bits, $2^8 = 256$ unique permutations ($00000000_2$ to $11111111_2$) can be represented, allowing encoding of numbers 0\u2013255 or standard ASCII characters.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Week 5 Slides 5-6",
+          "verified": true,
+          "verified_output": "bit, byte, 256"
+        },
+        {
+          "id": "ift205-fnd-011",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "type_answer",
+          "difficulty": 2,
+          "tags": [
+            "data_representation",
+            "units"
+          ],
+          "question": "A half-byte, consisting of exactly 4 bits, is known technically in computer science as a what?",
+          "answer": "nibble",
+          "accepted_answers": [
+            "nibble",
+            "nybble"
+          ],
+          "explanation": "A group of 4 bits is called a nibble (or nybble). A nibble can represent $2^4 = 16$ unique values, which corresponds exactly to a single hexadecimal digit (0 to F).",
+          "marking_points": [
+            "Identifies 'nibble' or 'nybble' as a 4-bit data unit."
+          ],
+          "source": "Week 5 Slide 6",
+          "verified": true,
+          "verified_output": "nibble"
+        },
+        {
+          "id": "ift205-fnd-013",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "hardware_categories",
+            "communication_devices"
+          ],
+          "question": "A Network Interface Card (NIC) is installed in a university desktop computer. Into which primary hardware functional category does the NIC fall?",
+          "options": [
+            "Communication / Connectivity device",
+            "Primary volatile storage device",
+            "Arithmetic Logic processing unit",
+            "Electro-mechanical hard copy output device"
+          ],
+          "answer": 0,
+          "explanation": "A Network Interface Card (NIC) handles communication between the computer and transmission media (Ethernet cable or Wi-Fi radio frequencies), classifying it as a communication/connectivity hardware device.",
+          "why_wrong": {
+            "1": "RAM is primary volatile storage, not a NIC.",
+            "2": "The ALU is an internal sub-component of the CPU, not an expansion communication card.",
+            "3": "Printers and plotters produce hard copies, not network cards."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 6, 25",
+          "verified": true,
+          "verified_output": "Communication / Connectivity device."
+        },
+        {
+          "id": "ift205-fnd-015",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "true_false_why",
+          "difficulty": 3,
+          "tags": [
+            "it_foundations",
+            "people_role"
+          ],
+          "question": "True or False: Because modern computing hardware and artificial intelligence software are highly autonomous, 'People' are no longer classified as a core component of Information Technology systems.",
+          "options": [
+            "True \u2014 modern automated servers run unattended in headless data centers without requiring any human presence.",
+            "False \u2014 people remain an indispensable pillar of IT systems as system architects, administrators, data providers, ethical decision-makers, and final consumers of processed information."
+          ],
+          "answer": 1,
+          "explanation": "Technology is created to serve human objectives. Without people to formulate requirements, input operational data, interpret analytical dashboards, maintain infrastructure, and enact business decisions, hardware and software have no economic or organisational purpose.",
+          "why_wrong": {
+            "0": "Unattended data centers still require software engineers, systems administrators, cybersecurity analysts, and end-users to justify and maintain their existence."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 4",
+          "verified": true,
+          "verified_output": "False. People are an essential building block."
+        },
+        {
+          "id": "ift205-fnd-cs1-q1",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "it_building_blocks"
+          ],
+          "question": "In this clinical scenario, which of the three fundamental IT building blocks was neglected regarding the staff's preparedness and initial workflow setup?",
+          "options": [
+            "The People / Users block; medical staff lacked adequate user training, standard operating procedures, and change management before clinical rollout.",
+            "The Hardware block; desktop computers cannot physically communicate with barcode scanners.",
+            "The Electricity block; power generation was completely absent in the hospital ward.",
+            "The Software block; commercial off-the-shelf software cannot be run on desktop PCs."
+          ],
+          "answer": 0,
+          "explanation": "The failure to train clinicians, establish input procedures, and adapt workflows reflects a failure in the People/User building block of IT. Technology fails when the human organizational component is ignored.",
+          "why_wrong": {
+            "1": "The clinic successfully purchased and installed 12 working desktop computers and scanners.",
+            "2": "Electricity was present as the machines and thermal printers were actively operating.",
+            "3": "Commercial medical software runs regularly on standard desktop operating systems."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 4",
+          "verified": true,
+          "verified_output": "People / Users block neglected."
+        },
+        {
+          "id": "ift205-fnd-cs1-q3",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "batch_vs_realtime"
+          ],
+          "question": "Analyze why the 6:00 PM end-of-day batch sync represents an unacceptable data processing model for triage blood pressure records, and specify the required architecture.",
+          "options": [],
+          "answer": "In an acute medical environment, vital signs (blood pressure, heart rate) captured at triage must be immediately available to the consulting physician while the patient is physically in the examination room. Delaying updates until a 6:00 PM batch run violates the 'Timeliness' dimension of data quality and endangers patient safety by depriving doctors of critical diagnostic information during consultation. The clinic must migrate from batch processing to Real-time Online Transaction Processing (OLTP) on a centralized, networked client-server database.",
+          "explanation": "Batch processing is designed for non-urgent bulk jobs (e.g. payroll). Healthcare consultations require real-time immediate visibility.",
+          "why_wrong": {},
+          "marking_points": [
+            "Explains that triage vitals are time-sensitive data required immediately during patient consultation.",
+            "Identifies that end-of-day batch processing severely compromises the 'Timeliness' dimension of data quality.",
+            "Highlights clinical safety risks (e.g. prescribing medication without seeing emergency hypertensive crisis vitals).",
+            "Recommends migrating to Real-time / OLTP processing across a shared local database."
+          ],
+          "source": "Week 5 Slide 15, 18",
+          "verified": true,
+          "verified_output": "Batch vs Real-time in clinic triage."
+        },
+        {
+          "id": "ift205-fnd-cs2-q2",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "data_quality"
+          ],
+          "question": "Which specific dimension of data quality failed between the branches and the central warehouse, causing the stockout, and how can an integrated IT network resolve it?",
+          "options": [],
+          "answer": "The data quality dimension that failed is 'Timeliness' (currency). Although the inventory data was accurate within each individual branch store, the central warehouse database was obsolete by several hours, preventing timely procurement. By connecting all 5 branch stores to the central warehouse via an integrated Wide Area Network (WAN) using real-time database replication or cloud-based enterprise inventory software, every sale at any POS will instantly decrement central stock levels, providing immediate visibility and triggering automated restock re-order points.",
+          "explanation": "Data was accurate locally but lacked timeliness centrally. An interconnected WAN provides real-time visibility.",
+          "why_wrong": {},
+          "marking_points": [
+            "Identifies 'Timeliness' (or currency) as the primary failing data quality dimension.",
+            "Explains how batch CSV delay created a multi-hour information blind spot at headquarters.",
+            "Proposes an interconnected WAN or cloud inventory solution.",
+            "Notes that real-time synchronization enables automated reorder triggers to prevent stockouts."
+          ],
+          "source": "Week 5 Slide 18; Week 6 Slide 5",
+          "verified": true,
+          "verified_output": "Timeliness failure resolved by WAN real-time sync."
+        },
+        {
+          "id": "ift205-hwd-002",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "memory_hierarchy",
+            "ram_volatility"
+          ],
+          "question": "When a desktop computer experiences an abrupt electrical power outage, all unsaved documents and active application data stored in RAM are permanently lost.",
+          "options": [
+            "False \u2014 RAM uses magnetic orientation across microscopic ferrite cores that permanently retain data during power loss.",
+            "True \u2014 RAM is volatile memory that requires continuous electrical refresh charges to maintain its stored capacitor states; once power ceases, the data immediately vanishes."
+          ],
+          "answer": 1,
+          "explanation": "RAM (Random Access Memory) is volatile semiconductor memory. Modern dynamic RAM (DRAM) stores bits as microscopic electrical charges across tiny capacitor-transistor pairs that must be continuously refreshed hundreds of times per second. Without electrical power, the capacitors discharge instantly, resulting in total loss of unsaved contents.",
+          "why_wrong": {
+            "0": "Magnetic ferrite core memory is an obsolete 1950s/60s technology; modern computers use volatile semiconductor dynamic RAM."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 9; Week 5 Slide 26",
+          "verified": true,
+          "verified_output": "True. RAM is volatile."
+        },
+        {
+          "id": "ift205-hwd-004",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "storage_technologies",
+            "hdd_vs_ssd"
+          ],
+          "question": "Match each storage hardware technology to its defining operational characteristic:",
+          "options": [
+            "Hard Disk Drive (HDD)",
+            "Solid-State Drive (SSD)",
+            "Read-Only Memory (ROM)",
+            "CPU Level 1 Cache"
+          ],
+          "answer": {
+            "Hard Disk Drive (HDD)": "Utilizes spinning magnetic platters and moving mechanical actuator read/write heads; lowest cost per terabyte but vulnerable to physical drop shock.",
+            "Solid-State Drive (SSD)": "Employs non-volatile NAND flash memory chips with zero moving parts, providing low access latency and high shock tolerance.",
+            "Read-Only Memory (ROM)": "Non-volatile primary firmware chip holding low-level startup bootstrap code (BIOS/UEFI) required to initialize system hardware.",
+            "CPU Level 1 Cache": "Smallest, fastest static RAM directly integrated on the processor core, operating at CPU clock frequency to minimize memory latency."
+          },
+          "explanation": "HDDs are mechanical and magnetic; SSDs are electronic and flash-based; ROM stores non-volatile startup firmware; L1 Cache provides the highest-speed memory directly on the processor die.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 9-10; Week 5 Slides 26-31",
+          "verified": true,
+          "verified_output": "Matched storage technologies."
+        },
+        {
+          "id": "ift205-hwd-006",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "backup_types",
+            "incremental_vs_differential"
+          ],
+          "question": "An IT department performs a Full backup on Sunday night, followed by daily backups Monday through Thursday. On Friday morning, the main database crashes. If the IT team used INCREMENTAL backups, what media must be restored to recover the system to Thursday night's state?",
+          "options": [
+            "Sunday's Full backup PLUS every individual daily incremental backup (Monday, Tuesday, Wednesday, and Thursday) in exact sequential order.",
+            "Only Sunday's Full backup and Thursday's backup file.",
+            "Only Thursday's backup file alone.",
+            "Every backup taken over the preceding 365 calendar days."
+          ],
+          "answer": 0,
+          "explanation": "An Incremental backup captures only files changed since the *most recent backup of any kind*. Therefore, restoration requires Sunday's Full backup PLUS each successive incremental slice in sequence (Monday, Tuesday, Wednesday, Thursday). In contrast, a Differential backup would only require Sunday's Full plus Thursday's Differential.",
+          "why_wrong": {
+            "1": "Sunday plus Thursday only works if DIFFERENTIAL backups were used, not incremental.",
+            "2": "Thursday's incremental file contains only changes made on Thursday, lacking the core baseline and earlier days.",
+            "3": "Backups beyond the Sunday baseline are irrelevant to this recovery point."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 35",
+          "verified": true,
+          "verified_output": "Sunday Full + Monday + Tuesday + Wednesday + Thursday incrementals."
+        },
+        {
+          "id": "ift205-hwd-008",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "system_buses",
+            "motherboard"
+          ],
+          "question": "A computer system motherboard contains three primary system buses: the {{c1::data}} bus transmits actual content between components; the {{c2::address}} bus carries memory location addresses from the CPU to RAM; and the {{c3::control}} bus carries operational timing, read, and write command signals.",
+          "options": [
+            "data",
+            "address",
+            "control",
+            "expansion",
+            "peripheral",
+            "power"
+          ],
+          "answer": [
+            "data",
+            "address",
+            "control"
+          ],
+          "explanation": "The three system buses are: Data Bus (bidirectional content path), Address Bus (unidirectional memory address path from CPU), and Control Bus (timing and read/write coordination signals).",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 12",
+          "verified": true,
+          "verified_output": "data, address, control"
+        },
+        {
+          "id": "ift205-hwd-010",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "cloud_models",
+            "iaas_paas_saas"
+          ],
+          "question": "A university department subscribes to Microsoft 365, allowing students and lecturers to create documents, spreadsheets, and presentations directly inside a web browser without managing servers or installing operating system patches. Which cloud computing service model does this represent?",
+          "options": [
+            "Software as a Service (SaaS)",
+            "Platform as a Service (PaaS)",
+            "Infrastructure as a Service (IaaS)",
+            "Hardware as a Service (HaaS)"
+          ],
+          "answer": 0,
+          "explanation": "Software as a Service (SaaS) delivers complete end-user applications hosted and managed entirely by the cloud provider. Users access the applications via a web browser (e.g. Microsoft 365, Google Workspace) without needing to configure operating systems, middleware, or hardware.",
+          "why_wrong": {
+            "1": "PaaS provides development platforms and runtime environments (e.g. databases, Python runtimes) for software programmers to deploy custom code.",
+            "2": "IaaS provides raw infrastructure (virtual servers, storage, networking) where the customer must install and configure their own OS and software.",
+            "3": "HaaS is not a standard NIST cloud computing service model."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 41",
+          "verified": true,
+          "verified_output": "Software as a Service (SaaS)."
+        },
+        {
+          "id": "ift205-hwd-012",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "type_answer",
+          "difficulty": 2,
+          "tags": [
+            "cpu_architecture",
+            "registers"
+          ],
+          "question": "What is the name of the special CPU register that holds the memory address of the next program instruction waiting to be fetched and executed?",
+          "answer": "Program Counter",
+          "accepted_answers": [
+            "Program Counter",
+            "PC",
+            "instruction pointer",
+            "IP"
+          ],
+          "explanation": "The Program Counter (PC), also called the Instruction Pointer (IP), holds the memory address of the next sequential instruction to be fetched from memory. After fetching, it is automatically incremented.",
+          "marking_points": [
+            "Identifies 'Program Counter' or 'PC' (or 'Instruction Pointer')."
+          ],
+          "source": "Week 5 Slide 25; Architecture Notes",
+          "verified": true,
+          "verified_output": "Program Counter"
+        },
+        {
+          "id": "ift205-hwd-014",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "ram_upgrade",
+            "performance_misconception"
+          ],
+          "question": "A student claims: 'Upgrading my laptop's RAM from 8 GB to 32 GB will instantly double the clock speed of my CPU and make my single-threaded arithmetic calculations run twice as fast.' Is this assertion accurate?",
+          "options": [
+            "No \u2014 RAM capacity allows more programs and large data sets to remain concurrently active in memory without disk swapping/paging, but does not alter the CPU's internal clock frequency or single-threaded execution speed.",
+            "Yes \u2014 CPU clock frequency is mathematically equal to total installed gigabytes of RAM multiplied by bus width.",
+            "Yes \u2014 increasing RAM automatically overclocks the ALU by an identical percentage ratio.",
+            "No \u2014 upgrading RAM actually slows down the computer because the CPU takes four times longer to search through larger memory spaces."
+          ],
+          "answer": 0,
+          "explanation": "As emphasized in Lecture 1: 'More RAM can help with multitasking and running memory-heavy applications without disk paging, but does not automatically make every individual task faster.' CPU clock speed (in GHz) and IPC (instructions per cycle) are fixed architectural properties independent of RAM capacity.",
+          "why_wrong": {
+            "1": "Clock frequency is determined by the CPU oscillator and multiplier, completely independent of memory capacity.",
+            "2": "The ALU does not overclock based on memory size.",
+            "3": "Memory address indexing is direct and near-constant time; it does not degrade performance proportionally to capacity."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 9",
+          "verified": true,
+          "verified_output": "RAM capacity aids multitasking, not CPU clock speed."
+        },
+        {
+          "id": "ift205-hwd-016",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "true_false_why",
+          "difficulty": 3,
+          "tags": [
+            "storage_longevity",
+            "optical_vs_flash"
+          ],
+          "question": "Solid-state drives (SSDs) are vulnerable to mechanical head crashes when dropped onto concrete, in the exact same manner as traditional hard disk drives (HDDs).",
+          "options": [
+            "True \u2014 SSD flash micro-needles will bend and scratch the silicon wafers during a drop.",
+            "False \u2014 SSDs contain zero mechanical actuator arms or rotating platters, making them physically immune to head crashes, whereas HDDs risk head collisions with platters under shock."
+          ],
+          "answer": 1,
+          "explanation": "In an HDD, the read/write heads fly fractions of a millimeter above spinning platters; a drop can cause the heads to collide with the surface (a 'head crash'), destroying data. SSDs use stationary solid-state NAND flash chips soldered to a circuit board with no moving parts, making mechanical head crashes physically impossible.",
+          "why_wrong": {
+            "0": "SSDs do not have 'micro-needles' or mechanical parts; data is stored as electronic charge traps."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 30-31",
+          "verified": true,
+          "verified_output": "False. SSDs have no moving parts and cannot suffer head crashes."
+        },
+        {
+          "id": "ift205-hwd-cs1-q2",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "cpu_thermal_throttling"
+          ],
+          "question": "Explain the technical phenomenon of 'thermal throttling' occurring during the 3D CAD rendering, and identify the hardware components responsible for mitigating it.",
+          "options": [],
+          "answer": "Thermal throttling is an automated hardware protection mechanism where the CPU deliberately reduces its operational clock frequency (GHz) and core voltage when internal temperature sensors detect levels approaching thermal limits (e.g. 95\u00b0C\u2013100\u00b0C) during sustained heavy multi-core CAD rendering. This prevents permanent physical damage from overheating, but severely degrades rendering speed. Mitigating this requires proper thermal interface material (thermal paste), high-performance CPU heatsinks with high-airflow cooling fans or liquid cooling radiators, and a well-ventilated chassis ensuring adequate airflow.",
+          "explanation": "Thermal throttling reduces clock speed to prevent thermal destruction. Mitigated by heatsinks, thermal paste, and airflow cooling.",
+          "why_wrong": {},
+          "marking_points": [
+            "Defines thermal throttling as the CPU lowering clock frequency/voltage to protect against overheating.",
+            "Explains that heavy continuous multi-core processing generates significant electrical thermal dissipation.",
+            "Identifies that throttling causes noticeable performance drops.",
+            "Names critical mitigation hardware: CPU heatsink, thermal paste, cooling fans, or liquid cooling loops."
+          ],
+          "source": "IFT205_Week2 Slide 8, 12",
+          "verified": true,
+          "verified_output": "Thermal throttling explanation and mitigation."
+        },
+        {
+          "id": "ift205-hwd-cs2-q2",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "3_2_1_compliance"
+          ],
+          "question": "Evaluate how the firm's backup policy satisfies the 3-2-1 backup rule, and discuss how the offsite AWS S3 copy protects against catastrophic local loss.",
+          "options": [],
+          "answer": "The firm satisfies the 3-2-1 rule as follows: (1) 3 copies of data exist (the original working files on the server, the local NAS copy, and the cloud copy); (2) 2 different media/storage technologies are used (the server's internal drive array and the network-attached storage/cloud object storage); (3) 1 copy is preserved offsite (the encrypted AWS S3 bucket). The offsite cloud copy guarantees business continuity against disasters that destroy the entire physical office\u2014such as fire, building collapse, localized flood, physical theft of equipment, or power grid sabotage that simultaneously destroys both the server and the adjacent local NAS.",
+          "explanation": "Satisfies 3 copies, 2 media, 1 offsite. Protects against local office destruction.",
+          "why_wrong": {},
+          "marking_points": [
+            "Maps the policy to '3 copies' (production, local NAS, cloud).",
+            "Maps to '2 different media types' (internal server storage, external NAS/cloud).",
+            "Maps to '1 offsite location' (AWS S3 cloud in different geographic region).",
+            "Explains how offsite replication prevents total data loss from physical office catastrophes (fire, theft, power surges)."
+          ],
+          "source": "Week 5 Slide 36, 42",
+          "verified": true,
+          "verified_output": "3-2-1 compliance evaluation."
+        },
+        {
+          "id": "ift205-ops-002",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "multi_select",
+          "difficulty": 2,
+          "tags": [
+            "os_functions",
+            "architecture"
+          ],
+          "question": "Which of the following constitute the FIVE fundamental core functions performed by a modern computer Operating System? (Select FIVE)",
+          "options": [
+            "Process Management (starting, scheduling, and halting programs)",
+            "Memory Management (allocating and tracking RAM usage)",
+            "Device Management (communicating with peripherals via drivers)",
+            "File System Management (organizing files, directories, and permissions)",
+            "Security and Access Control (authenticating users and enforcing privileges)",
+            "Graphic Design and Vector Illustration Rendering",
+            "Automated Soldering of Microchip Capacitors"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "The five universally recognized pillars of operating system functionality are: Process Management, Memory Management, Device/IO Management, File System Management, and Security/Access Control. Graphic design is an application domain, and chip soldering is a hardware manufacturing process.",
+          "why_wrong": {
+            "5": "Vector illustration is performed by application programs like Adobe Illustrator or Inkscape, not the core OS.",
+            "6": "Soldering is physical hardware fabrication, not an operating system software service."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 5; Student Notebook",
+          "verified": true,
+          "verified_output": "Five core OS functions."
+        },
+        {
+          "id": "ift205-ops-004",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "sequencing",
+          "difficulty": 3,
+          "tags": [
+            "os_installation",
+            "lecturer_note"
+          ],
+          "question": "Arrange the chronological steps required to perform a clean installation of an Operating System onto a newly assembled desktop computer:",
+          "options": [
+            "Create a bootable installation USB flash drive using an official OS ISO image",
+            "Insert USB drive, power on PC, and access BIOS/UEFI firmware to configure the boot order priority",
+            "Boot into OS setup wizard, agree to license terms, and select Custom (Clean) installation",
+            "Partition the target storage drive and format the partition with the appropriate file system (e.g. NTFS)",
+            "Complete the file installation process and configure Out-of-Box Experience (OOBE) user accounts and drivers"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "A clean OS installation follows this strict progression: 1. Create bootable USB media, 2. Set BIOS/UEFI boot order, 3. Launch OS installer wizard, 4. Partition and format storage media, 5. Complete file installation and OOBE configuration.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Student Notebook Image 21.47.02 ('How to install a new window OS')",
+          "verified": true,
+          "verified_output": "Installation sequence: USB media -> BIOS boot order -> Installer -> Partition/Format -> OOBE"
+        },
+        {
+          "id": "ift205-ops-006",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "file_paths",
+            "absolute_vs_relative"
+          ],
+          "question": "Which of the following represents an ABSOLUTE file path on a Windows computer operating system?",
+          "options": [
+            "C:\\Users\\Student\\Documents\\COS201\\assignment1.c",
+            "..\\images\\banner.png",
+            "subfolder\\notes.txt",
+            ".\\data.csv"
+          ],
+          "answer": 0,
+          "explanation": "An absolute file path specifies the complete location from the system root directory or root drive letter (e.g. `C:\\Users\\Student\\...`). Relative paths (such as `..\\images\\banner.png` or `.\\data.csv`) depend entirely upon the application's current working directory.",
+          "why_wrong": {
+            "1": "'..\\' indicates moving up one level from the current directory, making it a relative path.",
+            "2": "'subfolder\\' assumes a directory under the current working folder, making it relative.",
+            "3": "'.\\' denotes the current directory, making it relative."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 11",
+          "verified": true,
+          "verified_output": "C:\\Users\\Student\\... is an absolute path."
+        },
+        {
+          "id": "ift205-ops-008",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "device_drivers",
+            "hardware_abstraction"
+          ],
+          "question": "A newly purchased USB laser printer can function perfectly and print formatted documents on any computer without requiring an operating system device driver.",
+          "options": [
+            "True \u2014 modern USB printers communicate via universal electrical telemetry that automatically bypasses operating system software layers.",
+            "False \u2014 an operating system requires a specific device driver program that translates standard high-level print commands into the exact low-level control codes and raster data recognized by that printer's hardware controller."
+          ],
+          "answer": 1,
+          "explanation": "A device driver is specialized system software acting as a bridge between the operating system and a specific hardware device. Without a driver (whether pre-installed, class-compliant, or downloaded), the OS cannot communicate the printer's specific resolution, page geometry, or printing protocol.",
+          "why_wrong": {
+            "0": "Hardware cannot interpret operating system commands without a software translation driver."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 16",
+          "verified": true,
+          "verified_output": "False. Device drivers are required."
+        },
+        {
+          "id": "ift205-ops-010",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "type_answer",
+          "difficulty": 2,
+          "tags": [
+            "file_systems",
+            "windows_standard"
+          ],
+          "question": "What is the standard, primary default file system used by modern Microsoft Windows operating systems on internal hard drives and SSDs?",
+          "answer": "NTFS",
+          "accepted_answers": [
+            "NTFS",
+            "New Technology File System"
+          ],
+          "explanation": "NTFS (New Technology File System) is the proprietary default file system for modern Windows versions (Windows 10, 11, Server), providing security permissions (ACLs), file encryption (EFS), journaling, and large volume support.",
+          "marking_points": [
+            "Identifies 'NTFS' or 'New Technology File System'."
+          ],
+          "source": "Software and Operating Systems Slide 9; Textbook",
+          "verified": true,
+          "verified_output": "NTFS"
+        },
+        {
+          "id": "ift205-ops-012",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "os_memory_management",
+            "virtual_memory"
+          ],
+          "question": "Explain the concept of 'Virtual Memory' in an operating system, detailing what happens when physical RAM is fully exhausted by active applications.",
+          "options": [],
+          "answer": "Virtual Memory is a memory management technique employed by the operating system that extends physical RAM using a designated portion of secondary storage (e.g., the Windows paging file `pagefile.sys` or Linux swap space). When physical RAM becomes exhausted by multiple active programs, the OS memory manager identifies inactive memory blocks (pages) and writes ('pages out') them to secondary storage to free up physical RAM for high-priority active processes. When an inactive application is foregrounded, its pages are swapped back into RAM. While virtual memory prevents programs from crashing due to memory exhaustion, excessive swapping leads to 'thrashing', severely slowing down system responsiveness because secondary storage is orders of magnitude slower than physical RAM.",
+          "explanation": "Virtual memory uses secondary storage as an overflow area for RAM. Prevents crashes but causes disk thrashing if overused.",
+          "why_wrong": {},
+          "marking_points": [
+            "Defines virtual memory as using secondary storage to simulate additional RAM.",
+            "Explains the paging mechanism (swapping inactive memory pages to disk).",
+            "Highlights that it prevents 'out of memory' crashes when opening many programs.",
+            "Explains that secondary storage is much slower than RAM, causing system lag/thrashing during heavy paging."
+          ],
+          "source": "Software and Operating Systems Slide 5; Systems Theory",
+          "verified": true,
+          "verified_output": "Virtual memory and paging mechanics."
+        },
+        {
+          "id": "ift205-ops-014",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "file_permissions",
+            "security"
+          ],
+          "question": "In a multi-user operating system (like Linux or Windows Server), what specific permission is required for a user to execute a compiled shell script or executable binary file?",
+          "options": [
+            "Execute permission (x)",
+            "Read-only archive permission (a)",
+            "Write-only append permission (w)",
+            "System hidden file permission (h)"
+          ],
+          "answer": 0,
+          "explanation": "The Execute permission (x in Linux/UNIX permissions `rwx`) grants the system permission to load the file into memory as an executable process. Read (r) allows viewing contents, and Write (w) allows modifying contents.",
+          "why_wrong": {
+            "1": "Archive permission is a backup attribute flag, not an execution grant.",
+            "2": "Write-only allows altering data but forbids process execution.",
+            "3": "Hidden permission simply conceals the file icon in file explorers."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 12",
+          "verified": true,
+          "verified_output": "Execute permission (x)."
+        },
+        {
+          "id": "ift205-ops-016",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "firmware",
+            "bios_uefi"
+          ],
+          "question": "Which low-level software program is permanently stored on a non-volatile ROM/flash memory chip on the motherboard, executing the Power-On Self-Test (POST) and initializing essential hardware before the operating system kernel is loaded?",
+          "options": [
+            "BIOS / UEFI firmware",
+            "Windows Device Manager utility",
+            "NTFS Master File Table (MFT)",
+            "Dynamic Host Configuration Protocol (DHCP)"
+          ],
+          "answer": 0,
+          "explanation": "The BIOS (Basic Input/Output System) or modern UEFI (Unified Extensible Firmware Interface) is firmware stored in a non-volatile motherboard chip. When power is turned on, it runs POST to test RAM, CPU, and devices, and then locates the bootable drive to load the OS kernel into memory.",
+          "why_wrong": {
+            "1": "Device Manager is a high-level Windows administrative utility, not firmware.",
+            "2": "The MFT is a file system structure on a formatted NTFS storage drive, not motherboard firmware.",
+            "3": "DHCP is a network protocol for assigning IP addresses."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 16; Student Notebook Hint",
+          "verified": true,
+          "verified_output": "BIOS / UEFI firmware."
+        },
+        {
+          "id": "ift205-ops-cs1-q2",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "clean_install_disk_steps"
+          ],
+          "question": "Once the student boots into the Windows 11 installer, describe the exact partition management and disk formatting steps they must perform on the setup screen to ensure all traces of the previous user's infected files are eradicated.",
+          "options": [],
+          "answer": "To guarantee complete eradication of the previous infected installation, the student must select the 'Custom: Install Windows only (advanced)' installation option rather than 'Upgrade'. On the disk partition management screen, they must select every existing partition on the primary drive (System, Recovery, MSR, and Primary data partitions) and click 'Delete' until only unallocated space remains (e.g. 'Drive 0 Unallocated Space'). They then select this unallocated space and click 'New' to create a clean partition table (GPT for UEFI), which automatically partitions and formats the new primary partition with a fresh NTFS file system, ensuring zero legacy malware files or infected bootloader sectors persist.",
+          "explanation": "Select Custom install, delete all partitions to Unallocated Space, create new partitions with fresh NTFS formatting.",
+          "why_wrong": {},
+          "marking_points": [
+            "Selects 'Custom: Install Windows only (advanced)' instead of 'Upgrade'.",
+            "Deletes all existing partitions on the drive down to 'Unallocated Space'.",
+            "Creates new partition(s) with modern GPT partition table.",
+            "Formats the new partition with a fresh NTFS file system, eradicating old infected structures."
+          ],
+          "source": "Student Notebook Image 21.47.02; Software and Operating Systems Slide 17",
+          "verified": true,
+          "verified_output": "Clean install partition deletion and NTFS formatting steps."
+        },
+        {
+          "id": "ift205-ops-cs2-q2",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "gui_vs_cli_pedagogy"
+          ],
+          "question": "Compare the pedagogical advantages of training undergraduate computer science students in a Command Line Interface (CLI) environment versus relying exclusively on a Graphical User Interface (GUI).",
+          "options": [],
+          "answer": "While a GUI provides intuitive visual navigation suitable for general desktop productivity, exclusive reliance on GUIs hides underlying system mechanisms from computing students. In contrast, training in a CLI environment (like the Linux Bash shell) provides distinct pedagogical advantages: (1) Students interact directly with the operating system kernel, file system hierarchy, process management, and network utilities; (2) Students master shell scripting and automation, allowing them to chain commands, redirect standard I/O streams, and automate complex build and administrative workflows; (3) Most enterprise production servers, cloud instances (AWS, Azure), and high-performance computing clusters operate headless (without a GUI) and are managed entirely via remote CLI (SSH); thus, CLI proficiency is a prerequisite for professional systems administration, DevOps, and backend software engineering.",
+          "explanation": "GUI is accessible; CLI teaches deep system mechanics, automation/scripting, and prepares students for headless server/cloud administration.",
+          "why_wrong": {},
+          "marking_points": [
+            "Identifies GUI advantages (intuitive, visual WIMP) and limitations (abstracts underlying mechanics).",
+            "Explains that CLI teaches deep operating system mechanics (file hierarchy, process control, piping).",
+            "Highlights command automation, shell scripting, and batch execution capabilities in CLI.",
+            "Emphasizes that enterprise cloud servers and HPC systems are headless and managed via CLI (SSH)."
+          ],
+          "source": "Software and Operating Systems Slide 6; Student Notebook Hint",
+          "verified": true,
+          "verified_output": "Pedagogical comparison of GUI vs CLI."
+        },
+        {
+          "id": "ift205-net-002",
+          "course": "IFT 205",
+          "topic": "networking_ip_addressing",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "ip_classes",
+            "class_c"
+          ],
+          "question": "An IP address begins with the decimal value 197 in its first octet (e.g. 197.210.45.12). To which standard IPv4 address class does this address belong, and what is its default subnet mask?",
+          "options": [
+            "Class C with default subnet mask 255.255.255.0",
+            "Class A with default subnet mask 255.0.0.0",
+            "Class B with default subnet mask 255.255.0.0",
+            "Class D with default subnet mask 255.255.255.255"
+          ],
+          "answer": 0,
+          "explanation": "IPv4 Class C spans first octet values from 192 to 223. Because 197 falls within 192\u2013223, it is a Class C address. Class C addresses allocate 24 bits to the network ID and 8 bits to the host ID, giving a default subnet mask of 255.255.255.0 (/24).",
+          "why_wrong": {
+            "1": "Class A covers first octets 1\u2013126 with default mask 255.0.0.0.",
+            "2": "Class B covers first octets 128\u2013191 with default mask 255.255.0.0.",
+            "3": "Class D covers 224\u2013239 for multicasting and does not have a default host subnet mask."
+          },
+          "marking_points": [],
+          "source": "Student Notebook Image 21.47.02 ('Learn abt IPV4 classes'); Week 6 Slide 12",
+          "verified": true,
+          "verified_output": "Class C, 255.255.255.0."
+        },
+        {
+          "id": "ift205-net-004",
+          "course": "IFT 205",
+          "topic": "networking_ip_addressing",
+          "type": "type_answer",
+          "difficulty": 2,
+          "tags": [
+            "ip_addressing",
+            "loopback"
+          ],
+          "question": "Which specific first-octet number in the IPv4 space (from 1 to 255) is omitted from Class A and reserved globally for internal diagnostic loopback testing (such as 127.0.0.1)?",
+          "answer": "127",
+          "accepted_answers": [
+            "127",
+            "127.0.0.0",
+            "127.0.0.1"
+          ],
+          "explanation": "The entire 127.0.0.0/8 address block (first octet 127) is reserved by the Internet Engineering Task Force (IETF) for internal host loopback functions. Packets sent to 127.0.0.1 (localhost) never leave the local machine's TCP/IP stack.",
+          "marking_points": [
+            "Identifies '127' as the loopback reserved octet."
+          ],
+          "source": "Week 6 Slide 12; Networking RFC 791",
+          "verified": true,
+          "verified_output": "127"
+        },
+        {
+          "id": "ift205-net-006",
+          "course": "IFT 205",
+          "topic": "networking_ip_addressing",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "network_devices",
+            "switch_vs_router"
+          ],
+          "question": "What is the primary architectural difference between a Network Switch and a Network Router?",
+          "options": [
+            "A switch operates at Layer 2 forwarding frames within the same local network using MAC addresses, whereas a router operates at Layer 3 forwarding packets between different networks using IP addresses.",
+            "A switch connects computers to the electrical power grid, whereas a router is an analog speaker that generates sound waves.",
+            "A switch is strictly used for wireless Wi-Fi signals, whereas a router can only be connected to satellite dishes.",
+            "A switch modifies the text of web pages, whereas a router formats the computer's hard disk."
+          ],
+          "answer": 0,
+          "explanation": "A switch connects devices within the same Local Area Network (LAN) and uses Layer 2 Data Link hardware MAC addresses to forward traffic. A router connects two or more different networks together (e.g. connecting a university LAN to an ISP) and uses Layer 3 Network IP addresses to route packets.",
+          "why_wrong": {
+            "1": "Switches and routers are data communications equipment, not electrical mains or audio speakers.",
+            "2": "Switches are predominantly wired Ethernet devices, and routers handle both wired and wireless internetworking.",
+            "3": "Network infrastructure devices do not rewrite web page HTML text or format disk partitions."
+          },
+          "marking_points": [],
+          "source": "Week 6 Slide 4, 8; IFT205_Week2 Slide 26",
+          "verified": true,
+          "verified_output": "Switch operates at L2 (MAC); Router operates at L3 (IP)."
+        },
+        {
+          "id": "ift205-net-008",
+          "course": "IFT 205",
+          "topic": "networking_ip_addressing",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "ip_classes",
+            "host_capacity"
+          ],
+          "question": "A standard unsubnetted Class C network uses a default subnet mask of 255.255.255.0. How many valid, usable host IP addresses can be assigned to computers in this network?",
+          "options": [
+            "254 hosts (because 2^8 = 256 minus network address and broadcast address)",
+            "256 hosts (all combinations from 0 to 255)",
+            "65,534 hosts (because 2^16 = 65,536 minus 2)",
+            "16,777,214 hosts"
+          ],
+          "answer": 0,
+          "explanation": "In Class C, 8 bits are reserved for host IDs ($2^8 = 256$ total bit patterns). However, the formula for usable hosts is always $2^h - 2$, because the first address (all host bits 0, e.g. .0) represents the Network ID, and the last address (all host bits 1, e.g. .255) represents the Directed Broadcast Address. Thus, $256 - 2 = 254$ usable hosts.",
+          "why_wrong": {
+            "1": "Fails to subtract the two reserved addresses (network ID and broadcast address).",
+            "2": "65,534 is the host capacity of a Class B network ($2^{16} - 2$).",
+            "3": "16,777,214 is the host capacity of a Class A network ($2^{24} - 2$)."
+          },
+          "marking_points": [],
+          "source": "Student Notebook Image 21.47.02; Networking Standards",
+          "verified": true,
+          "verified_output": "254 hosts (2^8 - 2)."
+        }
+      ]
+    },
+    {
+      "id": "ift205-mock-beta",
+      "title": "Mock Exam Beta: Networking, IPv4 Addressing & Computer Evolution",
+      "description": "Comprehensive semester examination testing Local Area Networks ('LAN does not require internet'), topologies, switches vs routers, bandwidth vs latency, full IPv4 Classes (A to E) with subnet masks, computer generations, and enterprise classification.",
+      "duration_minutes": 60,
+      "total_marks": 70,
+      "passing_score": 40,
+      "question_count": 35,
+      "questions": [
+        {
+          "id": "ift205-fnd-002",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "multi_select",
+          "difficulty": 2,
+          "tags": [
+            "it_building_blocks",
+            "foundations"
+          ],
+          "question": "According to foundational IT theory, which of the following represent the THREE essential building blocks of any complete Information Technology system? (Select THREE)",
+          "options": [
+            "Hardware (physical devices and electronic circuitry)",
+            "Software (operating systems, programs, and instructions)",
+            "People / Users (human operators, administrators, and decision-makers)",
+            "Cryptocurrency (digital monetary exchange layers)",
+            "Analog Paper Filing Cabinets (traditional physical storage)"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "An IT system requires three interconnected building blocks: Hardware (the physical machinery), Software (the logical instructions executed by hardware), and People (the users, administrators, and stakeholders who operate systems and utilize information).",
+          "why_wrong": {
+            "3": "Cryptocurrency is an application of distributed ledger technology, not a foundational IT building block.",
+            "4": "Physical paper cabinets are manual legacy storage methods, not a core digital IT building block."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 4; Student Notebook",
+          "verified": true,
+          "verified_output": "Hardware, Software, and People."
+        },
+        {
+          "id": "ift205-fnd-004",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "sequencing",
+          "difficulty": 2,
+          "tags": [
+            "information_processing_cycle"
+          ],
+          "question": "Arrange the four fundamental stages of the Information Processing Cycle in their correct chronological operational sequence:",
+          "options": [
+            "Input (capturing raw data from peripheral devices or sensors)",
+            "Processing (manipulating, calculating, and evaluating data via the CPU)",
+            "Output (generating human-readable or machine-usable results)",
+            "Storage (persisting data and results to secondary non-volatile media for future access)"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "The standard Information Processing Cycle begins with Input (capturing raw data), continues to Processing (the CPU transforming data into information), produces Output (presenting results), and commits to Storage (retaining files for future retrieval).",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Week 5 Slide 13",
+          "verified": true,
+          "verified_output": "Input -> Processing -> Output -> Storage"
+        },
+        {
+          "id": "ift205-fnd-006",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "processing_methods",
+            "real_time"
+          ],
+          "question": "When a passenger books the final remaining seat on an international flight via an airline mobile app, which processing mode must the reservation system strictly employ to prevent another user from booking the identical seat simultaneously?",
+          "options": [
+            "Real-time / Online Transaction Processing (OLTP)",
+            "Batch processing executed once every 24 hours at midnight",
+            "Deferred spooling queue processing",
+            "Offline asynchronous file backup"
+          ],
+          "answer": 0,
+          "explanation": "Seat reservations require immediate Real-time / Online Transaction Processing (OLTP). As soon as the transaction initiates, database records are locked and updated instantly across all distributed channels to prevent overbooking / race conditions.",
+          "why_wrong": {
+            "1": "Batch processing would allow hundreds of users to book the same single seat throughout the day before midnight reconciliation.",
+            "2": "Spooling is a temporary queueing mechanism (such as for printers), not a concurrency-safe reservation paradigm.",
+            "3": "Offline asynchronous processing fails to synchronize immediate inventory state."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 15",
+          "verified": true,
+          "verified_output": "Real-time / OLTP processing."
+        },
+        {
+          "id": "ift205-fnd-008",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "data_validation",
+            "data_verification"
+          ],
+          "question": "What is the critical distinction between Data Validation and Data Verification during input operations?",
+          "options": [
+            "Validation is an automated programmatic check ensuring data conforms to rules (e.g., format or range), whereas verification checks whether entered data matches the authentic original source document.",
+            "Validation is performed manually by data entry clerks, whereas verification is an automatic electrical check performed by the CPU's ALU.",
+            "Validation ensures data is encrypted before transmission, whereas verification checks whether the hard disk drive has sufficient sector capacity.",
+            "Validation and verification are identical concepts with no operational difference."
+          ],
+          "answer": 0,
+          "explanation": "Data Validation consists of software rules (e.g., checking if age is between 0 and 120, or if an email contains '@'). However, invalid data can pass validation if it is well-formed but factually wrong (typing age 25 instead of true age 52). Data Verification confirms that the entered data actually matches the source document (via double entry or visual proofreading).",
+          "why_wrong": {
+            "1": "Inverts the mechanisms; validation is software-automated, verification often requires human proofreading or dual-entry reconciliation.",
+            "2": "Encryption and disk capacity are security and hardware concerns, not the definitions of input validation and verification.",
+            "3": "They are fundamentally distinct quality assurance stages."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 16",
+          "verified": true,
+          "verified_output": "Validation checks rules; verification checks authentic source match."
+        },
+        {
+          "id": "ift205-fnd-010",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "terminology",
+            "lecturer_notes"
+          ],
+          "question": "In the student lecture notes, the lecturer explicitly highlighted the conceptual differences among 'Networks', 'Networking', and 'Networkers'. Which statement accurately reflects these distinctions?",
+          "options": [
+            "A network is the interconnected infrastructure of devices; networking is the active process/practice of connecting and managing them; networkers are the human engineers who design and maintain them.",
+            "A network is a single software application; networking refers only to social gatherings; networkers are automated hardware switches.",
+            "Networks and networking are identical physical cables, while networkers refers to Wi-Fi radio antenna towers.",
+            "A network refers to computer processors; networking refers to RAM bus channels; networkers refers to compiler software."
+          ],
+          "answer": 0,
+          "explanation": "As noted directly in the lecture sessions: 'Network' is the interconnected structure of hardware/software devices; 'Networking' is the activity, communication discipline, and protocol implementation; and 'Networkers' are the technical personnel who configure and sustain the network.",
+          "why_wrong": {
+            "1": "Trivially confuses computing infrastructure with social networking events and misidentifies hardware switches as human networkers.",
+            "2": "A network is not merely physical cables, and networkers are human beings, not antennas.",
+            "3": "Incorrectly maps networking concepts to CPU/RAM internal bus architecture."
+          },
+          "marking_points": [],
+          "source": "Student Notebook Image 21.46.54; IFT205_Week2 Slide 25",
+          "verified": true,
+          "verified_output": "Network (infrastructure), Networking (process), Networkers (people)."
+        },
+        {
+          "id": "ift205-fnd-012",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "hardware_categories"
+          ],
+          "question": "Which of the following hardware devices is classified strictly as an INPUT device?",
+          "options": [
+            "Flatbed optical document scanner",
+            "Laser printer",
+            "Liquid Crystal Display (LCD) monitor",
+            "Active audio speaker"
+          ],
+          "answer": 0,
+          "explanation": "An optical scanner captures physical images/documents and converts them into digital electrical signals sent INTO the computer, making it strictly an input device. Printers, monitors, and speakers are output devices.",
+          "why_wrong": {
+            "1": "A laser printer receives data from the computer and produces a physical hard copy, making it an output device.",
+            "2": "An LCD monitor displays visual information generated by the GPU, making it an output device.",
+            "3": "An audio speaker converts electronic signals into acoustic sound waves, making it an output device."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 6; Week 5 Slide 13",
+          "verified": true,
+          "verified_output": "Flatbed optical document scanner is an input device."
+        },
+        {
+          "id": "ift205-fnd-014",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "computer_vs_network_vs_internet"
+          ],
+          "question": "In university examinations, students often confuse 'Computer', 'Computer Network', and 'The Internet'. Explain the precise architectural relationship and distinction among these three concepts.",
+          "options": [],
+          "answer": "A Computer is an autonomous electronic device that accepts input, processes data via instructions, and produces output/storage. A Computer Network is formed when two or more distinct computers are interconnected via communication media (wired or wireless) and protocols to exchange data and share resources (e.g. printers, files). The Internet is the global, publicly accessible 'network of networks' interconnecting millions of heterogeneous local, enterprise, and governmental networks worldwide via the TCP/IP protocol suite.",
+          "explanation": "A standalone computer operates in isolation. Interconnecting two or more computers creates a Local or Wide Area Network. The Internet is the worldwide federation of interconnected networks communicating through standard protocols.",
+          "why_wrong": {},
+          "marking_points": [
+            "Defines Computer as an individual autonomous electronic data-processing machine.",
+            "Defines Computer Network as two or more interconnected computers sharing resources and communicating via protocols.",
+            "Defines The Internet as the global worldwide interconnection of multiple disparate networks running TCP/IP.",
+            "Explicitly articulates the hierarchical scaling: individual computer -> local interconnected network -> global Internet."
+          ],
+          "source": "IFT205_Week2 Slide 3, 25; Week 6 Slide 4, 13; Student Notebook",
+          "verified": true,
+          "verified_output": "Computer vs Network vs Internet."
+        },
+        {
+          "id": "ift205-fnd-016",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "data_representation",
+            "units"
+          ],
+          "question": "If a student types a plain text sentence containing exactly 40 standard ASCII characters (including spaces and punctuation), approximately how much memory storage is occupied by the text string?",
+          "options": [
+            "40 bytes (320 bits)",
+            "5 bytes (40 bits)",
+            "320 bytes (2,560 bits)",
+            "4 kilobytes (4,096 bytes)"
+          ],
+          "answer": 0,
+          "explanation": "In standard ASCII encoding, each single alphanumeric character, space, or punctuation symbol occupies exactly 1 byte (8 bits). Therefore, 40 characters require $40 \\times 1 = 40$ bytes, which equals $40 \\times 8 = 320$ bits.",
+          "why_wrong": {
+            "1": "Divides 40 by 8, mistakenly treating characters as single bits instead of bytes.",
+            "2": "Multiplies 40 characters by 8 bytes each, confusing bits with bytes.",
+            "3": "Dramatically overestimates file overhead by treating bytes as kilobytes."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 6, 21",
+          "verified": true,
+          "verified_output": "40 bytes (320 bits)."
+        },
+        {
+          "id": "ift205-fnd-cs1-q2",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "data_validation"
+          ],
+          "question": "To prevent dangerous dosage errors such as typing '500g' instead of '500mg', what specific IT input control must the software developers configure in the prescription form?",
+          "options": [
+            "Data Validation rules (specifically range checking and numeric unit drop-down constraints)",
+            "High-speed batch spooling across secondary tape drives",
+            "Upgrading the triage workstations from 8 GB RAM to 64 GB RAM",
+            "Replacing all wired Ethernet cables with satellite Wi-Fi routers"
+          ],
+          "answer": 0,
+          "explanation": "Data validation enforces constraints at data entry (e.g. allowable numerical ranges such as 5\u20131000 and fixed units mg/ml via drop-down menus), rejecting out-of-bounds input before committing it to the database.",
+          "why_wrong": {
+            "1": "Batch spooling queues data; it does nothing to prevent incorrect medical dosage typing.",
+            "2": "RAM size affects multitasking capacity, not logical field verification.",
+            "3": "Cable replacement has zero impact on application form validation logic."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 16",
+          "verified": true,
+          "verified_output": "Data validation rules."
+        },
+        {
+          "id": "ift205-fnd-cs2-q1",
+          "course": "IFT 205",
+          "topic": "it_foundations_building_blocks",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "processing_architecture"
+          ],
+          "question": "Which processing model operates at the checkout cash register, and which operates between the stores and the central warehouse?",
+          "options": [
+            "Real-time processing at the POS cash registers; Batch processing between the retail stores and the central warehouse.",
+            "Batch processing at the POS cash registers; Real-time processing between the retail stores and the central warehouse.",
+            "Both the POS registers and the central warehouse operate in real-time processing.",
+            "Both the POS registers and the central warehouse operate in manual analog batch filing."
+          ],
+          "answer": 0,
+          "explanation": "The cash register acts in real-time (immediately deducting local inventory and printing receipts per customer). Meanwhile, emailing a consolidated CSV once a day is classic batch processing, creating an information lag at headquarters.",
+          "why_wrong": {
+            "1": "Reverses the modes; registers cannot be batch because customers cannot wait until midnight for checkout receipts.",
+            "2": "If the warehouse operated in real-time, the procurement officers would have observed the morning surge immediately.",
+            "3": "Digital POS registers and CSV files are electronic computing systems, not manual analog paper."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 15",
+          "verified": true,
+          "verified_output": "Real-time at POS; Batch to warehouse."
+        },
+        {
+          "id": "ift205-hwd-001",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "cpu_architecture",
+            "alu_cu"
+          ],
+          "question": "Which internal component of the Central Processing Unit (CPU) is specifically responsible for coordinating system operations, fetching instructions from memory, and managing signal routing?",
+          "options": [
+            "Control Unit (CU)",
+            "Arithmetic Logic Unit (ALU)",
+            "Floating Point Accelerometer",
+            "Secondary Solid-State Controller"
+          ],
+          "answer": 0,
+          "explanation": "The Control Unit (CU) directs and coordinates all operations across the computer. It fetches instructions from main memory or cache, decodes them, and generates timing and control signals to instruct the ALU, registers, and buses on what operations to perform.",
+          "why_wrong": {
+            "1": "The ALU performs arithmetic calculations (addition, subtraction) and logical comparisons (AND, OR, NOT), but does not direct general system orchestration.",
+            "2": "An accelerometer is a motion sensor found in mobile phones, not a core CPU orchestrator.",
+            "3": "The SSD controller manages flash drive NAND cells, not internal CPU instruction execution."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 8; Week 5 Slide 25",
+          "verified": true,
+          "verified_output": "Control Unit (CU) coordinates CPU operations."
+        },
+        {
+          "id": "ift205-hwd-003",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "sequencing",
+          "difficulty": 2,
+          "tags": [
+            "machine_cycle",
+            "cpu_execution"
+          ],
+          "question": "Place the four sequential stages of the CPU Machine (Instruction) Cycle in their exact operational order:",
+          "options": [
+            "Fetch (retrieve the next instruction from RAM or cache into the Instruction Register)",
+            "Decode (translate the fetched instruction opcode into operational control signals)",
+            "Execute (perform the instruction's operation via the ALU or dedicated hardware)",
+            "Store / Writeback (write the execution results back to a register or main memory)"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "Every program instruction executed by a CPU undergoes the standard 4-stage Machine Cycle: 1. Fetch, 2. Decode, 3. Execute, and 4. Store (Writeback).",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Week 5 Slide 25; Textbook Architecture",
+          "verified": true,
+          "verified_output": "Fetch -> Decode -> Execute -> Store"
+        },
+        {
+          "id": "ift205-hwd-005",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "storage_strategy",
+            "3_2_1_backup"
+          ],
+          "question": "An enterprise IT administrator implements the standard '3-2-1 Backup Rule'. Which of the following setups perfectly complies with this disaster-recovery standard?",
+          "options": [
+            "3 copies of data (1 production copy + 2 backups), stored on 2 different media types (e.g. local SSD and external magnetic tape/HDD), with 1 copy located offsite in a remote cloud facility.",
+            "3 copies of data, all stored in 3 separate folders on the identical internal desktop NVMe SSD, backed up 1 time per week.",
+            "2 copies of data, stored on 3 USB flash thumb drives plugged into the identical classroom computer tower.",
+            "1 copy of data uploaded to a single cloud drive that automatically syncs file deletions from a laptop."
+          ],
+          "answer": 0,
+          "explanation": "The 3-2-1 backup rule states: Keep 3 copies of critical data, across 2 different media types (protecting against medium-specific failure), with at least 1 copy preserved in a geographically separate offsite location (protecting against fire, theft, or flood).",
+          "why_wrong": {
+            "1": "Storing multiple copies on the same physical SSD offers zero protection if that single drive fails or the machine is stolen.",
+            "2": "Violates the 3-copy rule and leaves all drives connected to the same vulnerable host machine.",
+            "3": "A single synced cloud file is not a backup; sync mirrors deletions and ransomware encryption immediately."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 36",
+          "verified": true,
+          "verified_output": "3 copies, 2 media types, 1 offsite."
+        },
+        {
+          "id": "ift205-hwd-007",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "backup_vs_sync"
+          ],
+          "question": "Explain why real-time cloud synchronization (such as Google Drive or OneDrive sync client) cannot replace a formal data backup strategy, especially in the context of ransomware or accidental file deletion.",
+          "options": [],
+          "answer": "Real-time synchronization is designed for availability and convenience by automatically mirroring file states between local storage and the cloud. If a user accidentally deletes an essential folder, or if ransomware encrypts local files, the sync software interprets this as an intentional change and immediately propagates the deletion or encrypted corruption to the cloud copy. In contrast, a true Backup creates independent, immutable, point-in-time recovery archives that preserve historical versions unaffected by local source corruptions.",
+          "explanation": "Sync propagates deletions and ransomware instantly. Backups isolate point-in-time versions for disaster recovery.",
+          "why_wrong": {},
+          "marking_points": [
+            "Defines synchronization as automated real-time state mirroring between devices/locations.",
+            "Explains that sync propagates file deletions, corruptions, and ransomware encryption instantly to the cloud.",
+            "Defines backup as point-in-time independent archiving.",
+            "Highlights that backups provide historical versioning allowing restoration prior to the incident."
+          ],
+          "source": "Week 5 Slide 37-38",
+          "verified": true,
+          "verified_output": "Backup vs Sync explanation."
+        },
+        {
+          "id": "ift205-hwd-009",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "printers",
+            "output_devices"
+          ],
+          "question": "A supermarket Point-of-Sale (POS) cash register prints customer receipts rapidly and silently without using liquid ink cartridges or toner powder. What printing technology does it employ?",
+          "options": [
+            "Direct Thermal printing (using heat-sensitive chemically treated paper)",
+            "Electrophotographic Laser printing (using fused polymer toner)",
+            "Piezoelectric Inkjet printing (using liquid micro-nozzles)",
+            "Impact Dot-matrix printing (using inked ribbon pins)"
+          ],
+          "answer": 0,
+          "explanation": "Thermal receipt printers use a heated print head that selectively activates heat-sensitive thermochromic paper to form black characters. They require no ink cartridges or toner ribbons, making them fast, silent, and highly reliable for POS receipts and ATM slips.",
+          "why_wrong": {
+            "1": "Laser printing requires toner cartridges and heated fusers, which are too bulky and expensive for small receipt registers.",
+            "2": "Inkjet printers require liquid ink cartridges which dry out and smudge easily when wet.",
+            "3": "Dot-matrix printers use physical pins hitting inked ribbons, which are loud and mechanical."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 11",
+          "verified": true,
+          "verified_output": "Direct Thermal printing."
+        },
+        {
+          "id": "ift205-hwd-011",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "multi_select",
+          "difficulty": 3,
+          "tags": [
+            "ssd_advantages",
+            "hardware_comparison"
+          ],
+          "question": "Which of the following represent established advantages of Solid-State Drives (SSDs) compared to traditional mechanical Hard Disk Drives (HDDs)? (Select THREE)",
+          "options": [
+            "Significantly faster data read/write access times and lower file seek latency",
+            "Higher physical resilience to drops, vibrations, and mechanical shock due to having zero moving parts",
+            "Completely silent operation during intensive file transfers",
+            "Lower monetary cost per terabyte of storage capacity at 10 TB+ enterprise scales",
+            "Ability to retain magnetic data indefinitely when exposed to powerful external neodymium magnets"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "SSDs use flash memory chips, providing near-instantaneous seek times, physical shock resistance (no moving heads/platters), and completely silent operation. However, HDDs remain cheaper per terabyte for multi-terabyte bulk storage, and SSDs store electrical charge (not magnetic fields).",
+          "why_wrong": {
+            "3": "Mechanical HDDs still maintain a lower cost per terabyte for massive storage capacities.",
+            "4": "SSDs store data using electrical charge in floating-gate or charge-trap transistors, not magnetic domains."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 10; Week 5 Slide 30-31",
+          "verified": true,
+          "verified_output": "Faster access, shock resilience, silent operation."
+        },
+        {
+          "id": "ift205-hwd-013",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "memory_hierarchy",
+            "cache"
+          ],
+          "question": "Why is multi-level CPU Cache (L1, L2, L3) built directly into modern microprocessor dies instead of simply relying on high-capacity system RAM?",
+          "options": [
+            "Cache is ultra-fast Static RAM (SRAM) that operates at or near CPU clock speed, bridging the massive speed disparity between the fast processor and slower main DRAM.",
+            "Cache memory permanently stores the operating system so the computer never requires a secondary storage drive.",
+            "Cache is magnetic core memory that resists power surges caused by lightning.",
+            "Cache eliminates the need for the Arithmetic Logic Unit."
+          ],
+          "answer": 0,
+          "explanation": "CPUs operate at billions of cycles per second (GHz), while accessing system RAM takes many clock cycles (latency). Cache uses fast static RAM (SRAM) placed directly on the CPU die to store frequently accessed data and instructions, preventing the CPU from idling while waiting for main memory.",
+          "why_wrong": {
+            "1": "Cache is volatile and holds only tiny amounts of temporary working instructions, not the full OS.",
+            "2": "Cache is semiconductor silicon SRAM, not magnetic core.",
+            "3": "Cache is memory, not a processing execution unit; the ALU remains essential."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 8; Week 5 Slide 27",
+          "verified": true,
+          "verified_output": "Cache bridges processor and RAM speed disparity."
+        },
+        {
+          "id": "ift205-hwd-015",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "motherboard_ports"
+          ],
+          "question": "Which modern physical computer peripheral interface supports simultaneous transmission of high-definition digital video, multi-channel audio, and bidirectional data over a single reversible oval connector?",
+          "options": [
+            "USB Type-C (with DisplayPort Alternate Mode / Thunderbolt)",
+            "Legacy VGA (Video Graphics Array) 15-pin connector",
+            "PS/2 purple keyboard connector",
+            "Parallel DB-25 printer port"
+          ],
+          "answer": 0,
+          "explanation": "USB Type-C is a compact, reversible, 24-pin connector capable of carrying high-speed data, digital audio, high-definition video (via DisplayPort Alternate Mode), and high-wattage power delivery.",
+          "why_wrong": {
+            "1": "VGA is an obsolete analog video-only connector that carries zero audio and zero data.",
+            "2": "PS/2 carries only low-speed serial keyboard/mouse signals.",
+            "3": "The DB-25 parallel port was used for legacy printers and cannot transmit video or modern audio."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 12",
+          "verified": true,
+          "verified_output": "USB Type-C."
+        },
+        {
+          "id": "ift205-hwd-cs1-q1",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "hardware_roles"
+          ],
+          "question": "Why did the engineering firm specify BOTH a 1 TB NVMe SSD and a 16 TB mechanical HDD in each workstation instead of using HDDs alone or SSDs alone?",
+          "options": [
+            "To balance performance and budget: the high-speed NVMe SSD eliminates bottlenecks for OS and active CAD rendering, while the mechanical HDD provides cost-effective mass storage for multi-terabyte completed archives.",
+            "Because CAD software refuses to launch unless both magnetic platters and flash memory chips are detected simultaneously by the motherboard.",
+            "Because SSDs cannot physically store files larger than 500 megabytes.",
+            "To allow the CPU's Control Unit to execute instructions directly from the HDD platters while the ALU reads the SSD."
+          ],
+          "answer": 0,
+          "explanation": "Hybrid storage tiering is industry best practice: high-speed NVMe SSDs provide extreme read/write IOPS for the OS and active CAD working files, while mechanical HDDs offer much lower cost per terabyte for long-term archiving where speed is secondary.",
+          "why_wrong": {
+            "1": "CAD software has no architectural requirement for dual-drive detection.",
+            "2": "SSDs can store multi-terabyte files without limitation.",
+            "3": "The CPU never executes instructions directly from HDD platters; all code must first be loaded into system RAM."
+          },
+          "marking_points": [],
+          "source": "IFT205_Week2 Slide 10; Week 5 Slide 31",
+          "verified": true,
+          "verified_output": "Hybrid storage: SSD for active CAD performance, HDD for cost-effective archives."
+        },
+        {
+          "id": "ift205-hwd-cs2-q1",
+          "course": "IFT 205",
+          "topic": "computer_hardware_architecture",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "differential_restoration"
+          ],
+          "question": "To completely restore the auditing server to its state as of Wednesday night (1:00 AM Thursday), which exact backup files must the IT administrator restore?",
+          "options": [
+            "Sunday's Full backup PLUS Wednesday's Differential backup only.",
+            "Sunday's Full backup PLUS Monday, Tuesday, AND Wednesday backups in sequential order.",
+            "Wednesday's Differential backup alone without the Sunday baseline.",
+            "All backups from Sunday through Saturday."
+          ],
+          "answer": 0,
+          "explanation": "In a Differential backup scheme, each daily backup captures all changes made since the *last Full backup*. Therefore, Wednesday's differential backup already contains all cumulative modifications from Monday, Tuesday, and Wednesday. Recovery requires only two sets: Sunday's Full backup PLUS Wednesday's Differential backup.",
+          "why_wrong": {
+            "1": "Restoring Monday, Tuesday, and Wednesday sequentially is only required for INCREMENTAL backups, not Differential.",
+            "2": "A differential backup contains only modified delta blocks; without the base full backup, the file system is incomplete.",
+            "3": "Thursday, Friday, and Saturday files do not exist yet on Thursday afternoon."
+          },
+          "marking_points": [],
+          "source": "Week 5 Slide 35",
+          "verified": true,
+          "verified_output": "Sunday Full + Wednesday Differential."
+        },
+        {
+          "id": "ift205-ops-001",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "software_categories",
+            "system_software"
+          ],
+          "question": "Which of the following programs is classified strictly as SYSTEM software rather than application software?",
+          "options": [
+            "Microsoft Windows Operating System",
+            "Microsoft Excel Spreadsheet",
+            "Adobe Premiere Pro Video Editor",
+            "Mozilla Firefox Web Browser"
+          ],
+          "answer": 0,
+          "explanation": "An operating system (such as Microsoft Windows, Linux, or macOS) is system software because it directly manages computer hardware resources (CPU, RAM, storage, peripherals) and provides the underlying platform required for applications to run. Spreadsheets, video editors, and web browsers are application software designed for specific user tasks.",
+          "why_wrong": {
+            "1": "Spreadsheets are general-purpose application software used for calculation and data presentation.",
+            "2": "A video editor is specialized application software for digital media production.",
+            "3": "A web browser is application software used for retrieving and viewing web documents."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 3-4",
+          "verified": true,
+          "verified_output": "Microsoft Windows is system software."
+        },
+        {
+          "id": "ift205-ops-003",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "ui_comparison",
+            "gui_vs_cli"
+          ],
+          "question": "Match each User Interface (UI) paradigm to its primary operational characteristic:",
+          "options": [
+            "Graphical User Interface (GUI)",
+            "Command Line Interface (CLI)",
+            "Touchscreen Interface",
+            "Voice User Interface (VUI)"
+          ],
+          "answer": {
+            "Graphical User Interface (GUI)": "Employs Windows, Icons, Menus, and Pointers (WIMP); highly intuitive for novices but consumes substantial RAM and GPU processing overhead.",
+            "Command Line Interface (CLI)": "Executes typed text commands with strict syntax; consumes minimal system resources and enables powerful automated batch scripting.",
+            "Touchscreen Interface": "Uses direct finger gestures (tap, pinch, swipe) directly on display glass; primary interface on modern mobile phones and tablets.",
+            "Voice User Interface (VUI)": "Interprets spoken natural language audio through acoustic models and natural language processing."
+          },
+          "explanation": "GUIs offer visual accessibility via WIMP; CLIs provide rapid, lightweight, scriptable control for technical administrators; Touchscreens support direct tactile mobile interaction; VUIs use speech recognition.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 6; Student Notebook Hint",
+          "verified": true,
+          "verified_output": "Matched UI paradigms."
+        },
+        {
+          "id": "ift205-ops-005",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "disk_formatting",
+            "quick_vs_full_format"
+          ],
+          "question": "What is the critical technical distinction between executing a 'Quick Format' versus a 'Full Format' on a secondary hard drive in Windows?",
+          "options": [
+            "A Quick Format merely rewrites the file system table (MFT) making the drive appear empty without checking for disk errors, whereas a Full Format rewrites the file table AND scans every sector for bad blocks while zeroing data.",
+            "A Quick Format permanently destroys data using electromagnetic pulses, whereas a Full Format merely changes the desktop wallpaper.",
+            "A Quick Format is designed for solid-state drives, whereas a Full Format can only be executed on mechanical magnetic tape drives.",
+            "There is zero difference; Quick Format is simply Microsoft marketing terminology for Full Format."
+          ],
+          "answer": 0,
+          "explanation": "As emphasized in the lecturer notes on disk formatting: A Quick Format reconstructs the Master File Table (MFT) or File Allocation Table (FAT) and root directory, marking all sectors as free for overwriting, but leaves underlying data intact until overwritten and does NOT check for bad sectors. A Full Format scans each individual physical sector for bad blocks (reallocating damaged sectors) and writes zeros across the partition, making it much more thorough and slower.",
+          "why_wrong": {
+            "1": "Quick format uses standard software file system allocation; it does not generate electromagnetic pulses.",
+            "2": "Both Quick and Full format are standard disk partitioning utilities applicable to HDDs and SSDs.",
+            "3": "The two formatting modes have completely different operational depths and sector checking behaviors."
+          },
+          "marking_points": [],
+          "source": "Student Notebook Image 21.47.02 ('How to format windows'); Systems Text",
+          "verified": true,
+          "verified_output": "Quick Format rebuilds file tables; Full Format also scans sectors."
+        },
+        {
+          "id": "ift205-ops-007",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "software_licensing",
+            "open_source"
+          ],
+          "question": "Software whose copyright holder provides the human-readable source code to everyone under a license that grants rights to study, change, and distribute is called {{c1::open-source}} software. In contrast, software that is distributed at zero financial cost while retaining closed source code is termed {{c2::freeware}}, whereas commercially restricted closed software is termed {{c3::proprietary}}.",
+          "options": [
+            "open-source",
+            "freeware",
+            "proprietary",
+            "shareware",
+            "firmware",
+            "malware"
+          ],
+          "answer": [
+            "open-source",
+            "freeware",
+            "proprietary"
+          ],
+          "explanation": "Open-source software (e.g. Linux, VLC) provides public source code with modification rights. Freeware (e.g. Adobe Acrobat Reader) costs nothing to download but keeps its source code closed. Proprietary software (e.g. Microsoft Office, Windows) restricts code access, modification, and redistribution.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 18",
+          "verified": true,
+          "verified_output": "open-source, freeware, proprietary"
+        },
+        {
+          "id": "ift205-ops-009",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "utilities",
+            "disk_management"
+          ],
+          "question": "Which system utility program is designed to consolidate fragmented file blocks scattered across non-contiguous sectors of a mechanical hard drive to improve file access speed?",
+          "options": [
+            "Disk Defragmenter / Drive Optimizer",
+            "Antivirus Signature Scanner",
+            "System Dynamic Link Library Loader",
+            "Memory Cache Pager"
+          ],
+          "answer": 0,
+          "explanation": "Disk Defragmenter rearranges fragmented files on a mechanical hard drive so that file clusters occupy contiguous physical sectors, minimizing mechanical drive head movement and boosting read speeds. (Note: defragmentation is unnecessary and counterproductive on SSDs).",
+          "why_wrong": {
+            "1": "Antivirus scanners identify malicious code signatures, not file sector fragmentation.",
+            "2": "A DLL loader links shared library code in memory at program startup.",
+            "3": "The memory pager swaps pages between RAM and swap storage, not reorganizing HDD sectors."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 15",
+          "verified": true,
+          "verified_output": "Disk Defragmenter."
+        },
+        {
+          "id": "ift205-ops-011",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "software_piracy",
+            "security_risks"
+          ],
+          "question": "From a cybersecurity and IT systems perspective, why does university policy strictly prohibit students and staff from installing 'cracked' proprietary software from unauthorized download sites?",
+          "options": [
+            "Cracking tools and patchers frequently bundle stealth malware (such as keystroke loggers, trojans, and botnet clients), and cracked software cannot receive official vendor security updates.",
+            "Cracked software generates radioactive electromagnetic interference that damages the laptop's Wi-Fi antenna.",
+            "Cracked software causes the CPU fan to reverse direction and blow hot air into the motherboard.",
+            "Cracked software automatically converts the computer's hard drive from NTFS to FAT12."
+          ],
+          "answer": 0,
+          "explanation": "As noted in Lecture Slide 19: 'Using cracked software exposes devices to malware, security vulnerabilities from missing patches, and legal/ethical liabilities.' Hackers frequently embed trojans and credential stealers inside software crack tools.",
+          "why_wrong": {
+            "1": "Software execution cannot create radioactive emissions or physically damage antennas.",
+            "2": "Software does not reverse motor wiring in cooling fans.",
+            "3": "File system structures are not arbitrarily degraded to FAT12 by cracked applications."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 19",
+          "verified": true,
+          "verified_output": "Malware bundles and lack of security patches."
+        },
+        {
+          "id": "ift205-ops-013",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "virtualization",
+            "vm_concept"
+          ],
+          "question": "A software engineer runs a guest Linux Ubuntu environment inside a software window on their physical Apple macOS laptop. What technology makes this possible?",
+          "options": [
+            "Virtualization (using a Virtual Machine / Hypervisor)",
+            "Physical Dual-Core Magnetic Inversion",
+            "Analog BIOS Overclocking",
+            "Direct Memory Paging via USB"
+          ],
+          "answer": 0,
+          "explanation": "Virtualization uses a software layer called a hypervisor (such as VirtualBox, VMware, or UTM) to simulate virtual hardware (virtual CPU, RAM, disk, NIC), allowing a guest operating system (Ubuntu) to run in isolation on top of the host operating system (macOS).",
+          "why_wrong": {
+            "1": "Magnetic inversion is a fictitious hardware concept.",
+            "2": "BIOS overclocking increases clock frequencies, not hosting guest OS instances.",
+            "3": "USB paging does not create virtual operating system isolation."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 22",
+          "verified": true,
+          "verified_output": "Virtualization via Hypervisor / VM."
+        },
+        {
+          "id": "ift205-ops-015",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "os_troubleshooting",
+            "system_restart"
+          ],
+          "question": "Restarting a frozen operating system or crashed computer device is a valid, recommended first troubleshooting step rather than an amateur superstition.",
+          "options": [
+            "False \u2014 restarting physically degrades the motherboard capacitors and causes permanent file corruption in the BIOS chip.",
+            "True \u2014 restarting flushes volatile RAM, terminates runaway or deadlocked processes, clears leaked memory allocations, and reloads core system drivers into a clean initial state."
+          ],
+          "answer": 1,
+          "explanation": "As noted in Lecture Slide 24: 'Restart the application or device when safe and appropriate.' Restarting is a foundational diagnostic step because it purges erratic volatile memory state, eliminates deadlocked threads, resets hardware peripheral registers, and starts system services afresh.",
+          "why_wrong": {
+            "0": "Standard software restarts are safe and do not degrade motherboard capacitors or BIOS chips."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 24",
+          "verified": true,
+          "verified_output": "True. Restarting clears volatile memory and deadlocks."
+        },
+        {
+          "id": "ift205-ops-cs1-q1",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "bios_boot_order"
+          ],
+          "question": "Why did the laptop fail to boot into the Windows 11 installation wizard from the USB drive?",
+          "options": [
+            "The laptop's BIOS/UEFI firmware boot order was configured to prioritize the internal hard drive ahead of external USB devices.",
+            "Windows 11 cannot physically boot from a USB flash drive under any circumstances.",
+            "The laptop's CPU lacks an Arithmetic Logic Unit.",
+            "The laptop screen resolution was too low to display the USB drive."
+          ],
+          "answer": 0,
+          "explanation": "By default, motherboard BIOS/UEFI firmware checks the internal hard drive first. To boot from installation media, the user must enter BIOS/UEFI settings (pressing F2, F12, or Del during boot) and adjust the boot sequence to place the USB drive as the first priority device.",
+          "why_wrong": {
+            "1": "Windows installers are routinely booted from USB flash drives.",
+            "2": "All CPUs contain an ALU.",
+            "3": "Screen resolution does not prevent firmware boot device detection."
+          },
+          "marking_points": [],
+          "source": "Student Notebook Image 21.47.02 ('How to install a new window OS')",
+          "verified": true,
+          "verified_output": "BIOS/UEFI boot order prioritized internal drive."
+        },
+        {
+          "id": "ift205-ops-cs2-q1",
+          "course": "IFT 205",
+          "topic": "operating_systems_software",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "os_selection"
+          ],
+          "question": "What is the primary financial and licensing advantage of deploying Ubuntu Linux across the 40 lab workstations compared to Windows 11?",
+          "options": [
+            "Ubuntu Linux is open-source software distributed freely under open licenses (GPL), eliminating per-workstation operating system licensing fees and allowing unrestricted installation.",
+            "Ubuntu Linux pays a monthly royalty rebate to universities that install it on more than 20 computers.",
+            "Windows 11 requires a hardware license dongle plugged into the USB port every 15 minutes.",
+            "Linux computers do not consume electricity when executing C programs."
+          ],
+          "answer": 0,
+          "explanation": "Linux is open-source software distributed under open licenses like the GNU GPL. It can be installed on an unlimited number of machines with zero operating system licensing fees, saving the university significant software licensing costs.",
+          "why_wrong": {
+            "1": "Open-source distributions do not pay monetary rebates to institutions.",
+            "2": "Windows uses digital product keys, not 15-minute physical USB dongles.",
+            "3": "All computing hardware requires electricity to run programs."
+          },
+          "marking_points": [],
+          "source": "Software and Operating Systems Slide 18, 21",
+          "verified": true,
+          "verified_output": "Ubuntu is open-source and eliminates OS licensing fees."
+        },
+        {
+          "id": "ift205-net-001",
+          "course": "IFT 205",
+          "topic": "networking_ip_addressing",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "lan_concepts",
+            "lecturer_hint"
+          ],
+          "question": "A Local Area Network (LAN) deployed in a university computer laboratory cannot function or allow students to share files and print documents unless there is an active, paid connection to the Internet.",
+          "options": [
+            "True \u2014 modern network interface cards (NICs) automatically disable their physical Ethernet ports if they cannot ping a public Google DNS server.",
+            "False \u2014 a LAN operates independently at the local link and network layers; devices connected via a switch can communicate, share files, and print locally even when completely isolated from the Internet."
+          ],
+          "answer": 1,
+          "explanation": "As explicitly highlighted by the lecturer in student lecture notes: 'A LAN does not need an active internet connection.' A LAN exists whenever two or more devices are interconnected locally through a switch or access point. Local file sharing, intranet services, database access, and network printing operate completely within the local IP subnet without requiring any WAN/ISP internet connectivity.",
+          "why_wrong": {
+            "0": "NICs operate based on local electrical carrier detection and Ethernet standards; they do not require public internet connectivity or pinging external DNS to function."
+          },
+          "marking_points": [],
+          "source": "Student Notebook Image 21.47.02 ('LAN Doesn\\'t need internet'); Week 6 Slide 4",
+          "verified": true,
+          "verified_output": "False. LAN operates without internet."
+        },
+        {
+          "id": "ift205-net-003",
+          "course": "IFT 205",
+          "topic": "networking_ip_addressing",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "ip_classes",
+            "octet_ranges"
+          ],
+          "question": "Match each IPv4 Address Class to its defining first-octet decimal range and primary purpose:",
+          "options": [
+            "Class A",
+            "Class B",
+            "Class C",
+            "Class D",
+            "Class E"
+          ],
+          "answer": {
+            "Class A": "First octet: 1 to 126; Default mask 255.0.0.0; Designed for massive networks with millions of hosts.",
+            "Class B": "First octet: 128 to 191; Default mask 255.255.0.0; Designed for medium-to-large organizations and universities.",
+            "Class C": "First octet: 192 to 223; Default mask 255.255.255.0; Designed for small departmental LANs (up to 254 hosts).",
+            "Class D": "First octet: 224 to 239; No subnet mask; Strictly reserved for network Multicasting transmissions.",
+            "Class E": "First octet: 240 to 255; No subnet mask; Strictly reserved for experimental and research purposes."
+          },
+          "explanation": "The standard classful IPv4 allocation defines: Class A (1-126), Class B (128-191), Class C (192-223), Class D (224-239 for multicast), and Class E (240-255 for research). Octet 127 is reserved for loopback testing.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Student Notebook Image 21.47.02; Week 6 Slide 12",
+          "verified": true,
+          "verified_output": "Matched all 5 IPv4 classes."
+        },
+        {
+          "id": "ift205-net-005",
+          "course": "IFT 205",
+          "topic": "networking_ip_addressing",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "network_topologies",
+            "star_topology"
+          ],
+          "question": "In a university computer laboratory, 30 desktop PCs are connected to a central 48-port Ethernet switch. If the network cable connecting PC #12 is accidentally severed by a student's chair, what is the impact on the rest of the laboratory network?",
+          "options": [
+            "Only PC #12 loses network connectivity; the remaining 29 computers continue communicating normally through the central switch.",
+            "The entire network immediately collapses because the electrical ring loop has been broken.",
+            "All 30 computers immediately lose connectivity due to impedance reflection on the backbone cable.",
+            "The central switch shuts down permanently and must be factory reformatted."
+          ],
+          "answer": 0,
+          "explanation": "This setup is a Star Topology. In a star network, each host connects via a dedicated point-to-point cable to a central switch. A cable cut affects strictly that individual host. In contrast, in a Bus topology, a severed cable brings down the entire network.",
+          "why_wrong": {
+            "1": "A ring network collapses on a cable cut, but this laboratory uses a central star switch.",
+            "2": "Backbone impedance reflection occurs in Bus networks, not switched star networks.",
+            "3": "Switches are designed to isolate link drop events without hardware failure."
+          },
+          "marking_points": [],
+          "source": "Week 6 Slide 4; Networking Theory",
+          "verified": true,
+          "verified_output": "Only PC #12 loses connection in a Star topology."
+        },
+        {
+          "id": "ift205-net-007",
+          "course": "IFT 205",
+          "topic": "networking_ip_addressing",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "performance_metrics"
+          ],
+          "question": "In computer networking, {{c1::bandwidth}} refers to the maximum theoretical data transmission capacity of a link, whereas {{c2::throughput}} is the actual rate of data successfully transferred under real-world conditions, and {{c3::latency}} measures the time delay required for a packet to travel from sender to destination.",
+          "options": [
+            "bandwidth",
+            "throughput",
+            "latency",
+            "frequency",
+            "attenuation",
+            "jitter"
+          ],
+          "answer": [
+            "bandwidth",
+            "throughput",
+            "latency"
+          ],
+          "explanation": "Bandwidth is the channel width (e.g. a 1 Gbps fiber link). Throughput is the actual achieved transfer rate (e.g. 650 Mbps after protocol overhead and congestion). Latency is the round-trip propagation delay measured in milliseconds.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Week 6 Slide 10; IFT205_Week2 Slide 30",
+          "verified": true,
+          "verified_output": "bandwidth, throughput, latency"
+        },
+        {
+          "id": "ift205-net-009",
+          "course": "IFT 205",
+          "topic": "networking_ip_addressing",
+          "type": "multi_select",
+          "difficulty": 3,
+          "tags": [
+            "private_ip_addresses",
+            "rfc1918"
+          ],
+          "question": "According to RFC 1918 private networking standards, which of the following IP address blocks are reserved strictly for PRIVATE internal local networks and cannot be routed across the public Internet? (Select THREE)",
+          "options": [
+            "10.0.0.0 to 10.255.255.255 (Class A Private)",
+            "172.16.0.0 to 172.31.255.255 (Class B Private)",
+            "192.168.0.0 to 192.168.255.255 (Class C Private)",
+            "8.8.8.8 to 8.8.4.4 (Google Public DNS)",
+            "197.210.0.0 to 197.210.255.255 (Public Telecom IP Block)"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ],
+          "explanation": "RFC 1918 reserves three private address ranges: 10.0.0.0/8 (Class A), 172.16.0.0/12 (Class B), and 192.168.0.0/16 (Class C). These addresses are non-routable over the public Internet and are used inside homes, enterprises, and university campuses behind NAT routers.",
+          "why_wrong": {
+            "3": "8.8.8.8 is a globally routable public Anycast IP address owned by Google.",
+            "4": "197.210.x.x is a public routable IP block allocated to Nigerian telecommunication providers."
+          },
+          "marking_points": [],
+          "source": "Student Notebook Image 21.47.02; RFC 1918",
+          "verified": true,
+          "verified_output": "10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16."
+        }
+      ]
+    }
+  ]
+}

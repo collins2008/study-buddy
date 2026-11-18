@@ -1,0 +1,687 @@
+{
+  "course": "IFT 211",
+  "topic": "BCD, Gray Code & ASCII Encoding",
+  "summary": "This topic covers foundational discrete digital codes including Binary Coded Decimal (8421 BCD, 2421, Excess-3), the unit-distance Gray code (binary-to-Gray and Gray-to-binary algorithms), the 8-bit ASCII character encoding standard, and parity bit error detection. Emphasis is placed on exam calculation techniques: converting multi-digit BCD to binary, XOR-based Gray conversions, and byte-by-byte ASCII stream decoding as featured in the Nile University Final Examination.",
+  "key_terms": [
+    {
+      "term": "Binary Coded Decimal (BCD)",
+      "definition": "A 4-bit encoding system where each decimal digit (0 to 9) is represented independently by its 4-bit binary equivalent (0000 to 1001), with bit combinations 1010 to 1111 being invalid."
+    },
+    {
+      "term": "Gray Code (Reflected Binary)",
+      "definition": "An unweighted, non-arithmetic cyclic code in which consecutive numerical values differ by exactly one binary bit, preventing transition glitches in hardware."
+    },
+    {
+      "term": "Unit Distance Code",
+      "definition": "Any binary coding system where the Hamming distance between any two successive code words is strictly equal to one bit."
+    },
+    {
+      "term": "Excess-3 Code",
+      "definition": "An unweighted, self-complementing decimal code obtained by adding 3 (0011_2) to each decimal digit's 8421 BCD equivalent."
+    },
+    {
+      "term": "Self-Complementing Code",
+      "definition": "A code where the 9's complement of any decimal digit is obtained directly by inverting all bits (0 to 1 and 1 to 0) of its code word."
+    },
+    {
+      "term": "ASCII (American Standard Code)",
+      "definition": "A 7-bit (or byte-padded 8-bit) alphanumeric standard encoding alphanumeric characters, punctuation, control codes, and decimal digits 0-9 (ASCII 48 to 57)."
+    },
+    {
+      "term": "Parity Bit",
+      "definition": "An auxiliary bit appended to a binary message to make the total number of 1s either even (even parity) or odd (odd parity) for single-bit error detection."
+    },
+    {
+      "term": "Invalid BCD States",
+      "definition": "The six 4-bit nibbles (1010, 1011, 1100, 1101, 1110, 1111) corresponding to values 10 through 15 that cannot legally occur in standard decimal BCD."
+    },
+    {
+      "term": "Shaft Position Encoder",
+      "definition": "An electromechanical sensor that converts rotational angle into digital words, where Gray code is required to eliminate spurious intermediate reading states."
+    }
+  ],
+  "questions": [
+    {
+      "id": "ift211-cd-001",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "calculation",
+      "difficulty": 3,
+      "tags": [
+        "gray-code",
+        "binary-to-gray",
+        "exam-past-question"
+      ],
+      "question": "Find the Gray code equivalent of the decimal number 21. (As given in Nile University Final Examination, Exercise IV, Question 1a)",
+      "options": [
+        "11111",
+        "10101",
+        "11011",
+        "11110"
+      ],
+      "answer": "11111",
+      "explanation": "1. Convert decimal 21 to binary: 21 = 16 + 4 + 1 = 10101_2.\n2. Convert binary (B4 B3 B2 B1 B0 = 1 0 1 0 1) to Gray code (G4 G3 G2 G1 G0):\n   G4 = B4 = 1\n   G3 = B4 XOR B3 = 1 XOR 0 = 1\n   G2 = B3 XOR B2 = 0 XOR 1 = 1\n   G1 = B2 XOR B1 = 1 XOR 0 = 1\n   G0 = B1 XOR B0 = 0 XOR 1 = 1\nCombining yields 11111_Gray.",
+      "why_wrong": {
+        "10101": "This is the original pure binary representation, not the Gray code.",
+        "11011": "Arithmetic XOR error between B3 and B2.",
+        "11110": "Off-by-one in the LSB G0."
+      },
+      "marking_points": [
+        "Converts decimal 21 to binary 10101_2",
+        "Applies Gi = B(i+1) XOR B(i)",
+        "Derives 11111_Gray"
+      ],
+      "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise IV, Q1a",
+      "verified": true,
+      "verified_output": "bin(21) = 10101 -> gray = 11111"
+    },
+    {
+      "id": "ift211-cd-002",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "calculation",
+      "difficulty": 3,
+      "tags": [
+        "gray-code",
+        "gray-to-binary",
+        "exam-past-question"
+      ],
+      "question": "What is the binary equivalent of the Gray code number 11101? (As given in Nile University Final Examination, Exercise IV, Question 1b)",
+      "options": [
+        "10110",
+        "10111",
+        "11010",
+        "10011"
+      ],
+      "answer": "10110",
+      "explanation": "Convert Gray (G4 G3 G2 G1 G0 = 1 1 1 0 1) to binary (B4 B3 B2 B1 B0):\nB4 = G4 = 1\nB3 = B4 XOR G3 = 1 XOR 1 = 0\nB2 = B3 XOR G2 = 0 XOR 1 = 1\nB1 = B2 XOR G1 = 1 XOR 0 = 1\nB0 = B1 XOR G0 = 1 XOR 1 = 0\nResult = 10110_2 (which equals decimal 22).",
+      "why_wrong": {
+        "10111": "Error in the LSB calculation (1 XOR 1 = 0, not 1).",
+        "11010": "XORed adjacent Gray bits instead of using previously generated binary bit.",
+        "10011": "Bit 2 calculation error."
+      },
+      "marking_points": [
+        "Sets B4 = G4 = 1",
+        "Sequentially computes B3=0, B2=1, B1=1, B0=0 using B(i+1) XOR G(i)",
+        "Yields 10110_2"
+      ],
+      "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise IV, Q1b",
+      "verified": true,
+      "verified_output": "gray(11101) -> bin(10110) = 22"
+    },
+    {
+      "id": "ift211-cd-003",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "calculation",
+      "difficulty": 3,
+      "tags": [
+        "bcd-conversion",
+        "exam-past-question"
+      ],
+      "question": "Convert the BCD number 1001 0001 0100 into its equivalent pure binary representation. (As given in Nile University Final Examination, Exercise IV, Question 2)",
+      "options": [
+        "1110010010",
+        "100100010100",
+        "1110010100",
+        "1101010010"
+      ],
+      "answer": "1110010010",
+      "explanation": "1. Decode each 4-bit BCD nibble to its decimal digit:\n   1001_2 = 9\n   0001_2 = 1\n   0100_2 = 4\n   The decimal number is 914_10.\n2. Convert 914 to pure binary by successive division by 2:\n   914 = 512 + 256 + 128 + 16 + 2\n   = 2^9 + 2^8 + 2^7 + 2^4 + 2^1\n   = 1110010010_2.",
+      "why_wrong": {
+        "100100010100": "Treats BCD as if it were already a pure binary number without conversion.",
+        "1110010100": "Evaluates to 916 decimal; addition error.",
+        "1101010010": "Evaluates to 850 decimal."
+      },
+      "marking_points": [
+        "Decodes BCD nibbles to decimal 914",
+        "Divides 914 by 2 to yield binary 1110010010_2"
+      ],
+      "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise IV, Q2",
+      "verified": true,
+      "verified_output": "bin(914) = 0b1110010010"
+    },
+    {
+      "id": "ift211-cd-004",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "type_answer",
+      "difficulty": 3,
+      "tags": [
+        "ascii-decoding",
+        "exam-past-question"
+      ],
+      "question": "Convert the following 8-bit binary stream into text using ASCII codes (Space = 032_10 = 00100000_2; Hyphen = 045_10 = 00101101_2; Digits '0'-'9' = 48-57):\n\n`01000011 01101111 01100100 01100101 01100100 00100000 00101101 00100000 00110000 00110010 00110001 00110001`\n\n(As given in Nile University Final Examination, Exercise III)",
+      "options": [],
+      "answer": "Coded - 0211",
+      "explanation": "Decoding each 8-bit byte:\n- 01000011 = 67 -> 'C'\n- 01101111 = 111 -> 'o'\n- 01100100 = 100 -> 'd'\n- 01100101 = 101 -> 'e'\n- 01100100 = 100 -> 'd'\n- 00100000 = 32 -> ' '\n- 00101101 = 45 -> '-'\n- 00100000 = 32 -> ' '\n- 00110000 = 48 -> '0'\n- 00110010 = 50 -> '2'\n- 00110001 = 49 -> '1'\n- 00110001 = 49 -> '1'\nConcatenating the characters yields: 'Coded - 0211'.",
+      "why_wrong": {},
+      "marking_points": [
+        "Translates first 5 bytes to 'Coded'",
+        "Translates next 3 bytes to ' - '",
+        "Translates final 4 bytes to '0211'",
+        "Combines to exact string 'Coded - 0211'"
+      ],
+      "source": "Nile University IFT 211 Final Exam 2024/2025, Exercise III",
+      "verified": true,
+      "verified_output": "ASCII stream translates to 'Coded - 0211'"
+    },
+    {
+      "id": "ift211-cd-005",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "bcd-invalid",
+        "concepts"
+      ],
+      "question": "Which of the following 4-bit patterns is an INVALID code word in standard 8421 Binary Coded Decimal (BCD)?",
+      "options": [
+        "1011",
+        "1001",
+        "0111",
+        "0000"
+      ],
+      "answer": "1011",
+      "explanation": "Standard BCD only encodes single decimal digits 0 through 9 (0000_2 through 1001_2). The 4-bit combinations from 1010_2 (10) to 1111_2 (15) \u2014 including 1011_2 (11) \u2014 are illegal/invalid in BCD.",
+      "why_wrong": {
+        "1001": "Valid BCD representing decimal digit 9.",
+        "0111": "Valid BCD representing decimal digit 7.",
+        "0000": "Valid BCD representing decimal digit 0."
+      },
+      "marking_points": [
+        "Identifies 1011 as > 9, hence invalid in 8421 BCD"
+      ],
+      "source": "Digital Logic Lecture Note, Page 11",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-006",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "coding-vs-conversion",
+        "distinction"
+      ],
+      "question": "What is the key distinction between binary conversion and binary coding for the decimal number 13?",
+      "options": [
+        "Binary conversion yields 1101_2 (4 bits), whereas BCD coding yields 0001 0011_BCD (8 bits).",
+        "Binary conversion yields 00010011_2, whereas BCD coding yields 1101.",
+        "Both methods produce the identical 4-bit pattern 1101.",
+        "Binary conversion requires 8 bits while BCD coding requires 4 bits."
+      ],
+      "answer": "Binary conversion yields 1101_2 (4 bits), whereas BCD coding yields 0001 0011_BCD (8 bits).",
+      "explanation": "Conversion expresses the true mathematical magnitude in base 2 (13_10 = 1101_2). Coding replaces each individual decimal symbol with a code word: '1' -> 0001, '3' -> 0011, producing 0001 0011.",
+      "why_wrong": {
+        "Binary conversion yields 00010011_2, whereas BCD coding yields 1101.": "Reverses the definitions.",
+        "Both methods produce the identical 4-bit pattern 1101.": "Conflates pure radix conversion with symbol coding.",
+        "Binary conversion requires 8 bits while BCD coding requires 4 bits.": "BCD requires more bits (8 bits) than pure binary (4 bits)."
+      },
+      "marking_points": [
+        "Differentiates numeric base conversion (1101) from BCD symbol coding (0001 0011)"
+      ],
+      "source": "Digital Logic Lecture Note, Page 12",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-007",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "calculation",
+      "difficulty": 3,
+      "tags": [
+        "excess-3",
+        "self-complementing"
+      ],
+      "question": "What is the Excess-3 code representation for the decimal digit 6?",
+      "options": [
+        "1001",
+        "0110",
+        "1010",
+        "0011"
+      ],
+      "answer": "1001",
+      "explanation": "To obtain the Excess-3 code of a decimal digit, add 3 (0011_2) to its 8421 binary value:\n6 + 3 = 9_10 = 1001_2.\nNotice that Excess-3 is self-complementing: 9's complement of 6 is 3 (3+3 = 6 = 0110_2), which is the bitwise inversion of 1001_2.",
+      "why_wrong": {
+        "0110": "This is standard 8421 BCD for 6, without adding 3.",
+        "1010": "Equals 10 decimal; added 4 instead of 3.",
+        "0011": "This is Excess-3 for 0 (0 + 3 = 3)."
+      },
+      "marking_points": [
+        "Adds 3 to decimal 6 to get 9",
+        "Converts 9 to binary 1001_2"
+      ],
+      "source": "Digital Logic Lecture Note, Page 11-12",
+      "verified": true,
+      "verified_output": "bin(6 + 3) = 1001"
+    },
+    {
+      "id": "ift211-cd-008",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "gray-code",
+        "unit-distance",
+        "applications"
+      ],
+      "question": "Why is Gray code predominantly used instead of standard binary in mechanical optical shaft encoders?",
+      "options": [
+        "Because adjacent positions differ by only one bit, preventing spurious transitional errors caused by mechanical sensor misalignment.",
+        "Because Gray code circuits do not require logic gates.",
+        "Because Gray code allows faster arithmetic multiplication.",
+        "Because Gray code uses fewer tracks on the optical disc."
+      ],
+      "answer": "Because adjacent positions differ by only one bit, preventing spurious transitional errors caused by mechanical sensor misalignment.",
+      "explanation": "In standard binary, transitioning from 3 (011) to 4 (100) changes all three bits simultaneously. Because mechanical sensors switch at slightly different microsecond thresholds, intermediate false states like 111 (7) or 000 (0) can be read erroneously. In Gray code, only a single bit changes per transition (010 to 110), completely eliminating transitional glitches.",
+      "why_wrong": {
+        "Because Gray code circuits do not require logic gates.": "Logic gates are still required to process Gray code.",
+        "Because Gray code allows faster arithmetic multiplication.": "Gray code is non-weighted and non-arithmetic; arithmetic is harder in Gray code.",
+        "Because Gray code uses fewer tracks on the optical disc.": "Both require exactly n tracks for 2^n positions."
+      },
+      "marking_points": [
+        "Explains unit distance property prevents transitional read glitches in sensors"
+      ],
+      "source": "Digital Logic Lecture Note, Page 12-13",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-009",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "calculation",
+      "difficulty": 3,
+      "tags": [
+        "parity",
+        "even-parity",
+        "error-detection"
+      ],
+      "question": "Given the 3-bit message X Y Z = 1 0 1, what must the Even Parity bit (P) be so that the transmitted 4-bit message has an even number of 1s?",
+      "options": [
+        "0",
+        "1",
+        "Undefined",
+        "Both 0 and 1"
+      ],
+      "answer": "0",
+      "explanation": "The message bits '1 0 1' contain two 1s (an even count). To maintain an even number of 1s in the overall 4-bit word (P X Y Z), the even parity bit P must be 0 (giving 0 1 0 1, which has two 1s).",
+      "why_wrong": {
+        "1": "Setting P=1 would make the total count of 1s equal to 3 (which is odd).",
+        "Undefined": "Parity bit is uniquely determined.",
+        "Both 0 and 1": "Only 0 produces an even count."
+      },
+      "marking_points": [
+        "Counts two 1s in message",
+        "Concludes P = 0 for even parity"
+      ],
+      "source": "Digital Logic Lecture Note, Page 12",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-010",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "true_false_why",
+      "difficulty": 3,
+      "tags": [
+        "parity",
+        "limitations"
+      ],
+      "question": "Statement: A single parity bit appended to a binary message can detect any communication error where 2 bits are simultaneously corrupted.",
+      "options": [
+        "False: If an even number of bits (such as 2 bits) are corrupted, the total count of 1s changes by an even amount (+2, 0, or -2), leaving the parity unchanged and the error completely undetectable.",
+        "True: Parity checking detects all bit errors regardless of how many bits flip.",
+        "True: The receiver compares the parity against a checksum polynomial that corrects dual-bit errors.",
+        "False: Parity bits can only detect errors in decimal digits, not binary messages."
+      ],
+      "answer": "False: If an even number of bits (such as 2 bits) are corrupted, the total count of 1s changes by an even amount (+2, 0, or -2), leaving the parity unchanged and the error completely undetectable.",
+      "explanation": "Single-bit parity only detects an odd number of flipped bits. Two simultaneous bit errors cancel out each other's effect on total parity, meaning the error slips through unnoticed.",
+      "why_wrong": {
+        "True: Parity checking detects all bit errors regardless of how many bits flip.": "Parity fundamentally fails on even numbers of bit flips.",
+        "True: The receiver compares the parity against a checksum polynomial that corrects dual-bit errors.": "Single parity bits carry no polynomial or error-correcting capability (Hamming codes are required for that).",
+        "False: Parity bits can only detect errors in decimal digits, not binary messages.": "Parity operates directly on binary bit streams."
+      },
+      "marking_points": [
+        "Explains that 2 flipped bits preserve even/odd parity count, rendering error undetectable"
+      ],
+      "source": "Digital Logic Lecture Note, Page 12",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-fc01",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "gray-code",
+        "definition"
+      ],
+      "question": "What is the defining mathematical property of Gray code?",
+      "options": [],
+      "answer": "Successive code words differ by only ONE bit from one to the next (unit Hamming distance).",
+      "explanation": "This property prevents race conditions and intermediate reading glitches.",
+      "why_wrong": {},
+      "marking_points": [
+        "Successive words differ by exactly one bit"
+      ],
+      "source": "Digital Logic Lecture Note, Page 12",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-fc02",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "gray-code",
+        "formula"
+      ],
+      "question": "What are the formulas to convert an n-bit binary number B to Gray code G?",
+      "options": [],
+      "answer": "G_(n-1) = B_(n-1) (MSB is unchanged)\nG_i = B_(i+1) XOR B_i (for all other bits)",
+      "explanation": "Each Gray bit is the XOR of the current binary bit and the bit immediately to its left.",
+      "why_wrong": {},
+      "marking_points": [
+        "MSB identical",
+        "Gi = B(i+1) XOR Bi"
+      ],
+      "source": "Digital Logic Lecture Note, Page 12-13",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-fc03",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "gray-code",
+        "formula"
+      ],
+      "question": "What are the formulas to convert an n-bit Gray code G to binary B?",
+      "options": [],
+      "answer": "B_(n-1) = G_(n-1) (MSB is unchanged)\nB_i = B_(i+1) XOR G_i (for all other bits)",
+      "explanation": "Each binary bit is the XOR of the preceding computed binary bit and the current Gray bit.",
+      "why_wrong": {},
+      "marking_points": [
+        "MSB identical",
+        "Bi = B(i+1) XOR Gi"
+      ],
+      "source": "Digital Logic Lecture Note, Page 12-13",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-fc04",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "bcd",
+        "invalid"
+      ],
+      "question": "How many invalid states exist in a 4-bit 8421 BCD nibble, and what are their values?",
+      "options": [],
+      "answer": "6 invalid states: 1010 (10), 1011 (11), 1100 (12), 1101 (13), 1110 (14), and 1111 (15).",
+      "explanation": "A 4-bit nibble has 16 states, but decimal digits only require 10 states (0-9).",
+      "why_wrong": {},
+      "marking_points": [
+        "States 6 invalid states from 10 to 15"
+      ],
+      "source": "Digital Logic Lecture Note, Page 11",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-fc05",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "excess-3",
+        "definition"
+      ],
+      "question": "What is the Excess-3 code, and why is it termed 'self-complementing'?",
+      "options": [],
+      "answer": "Excess-3 is formed by adding 3 (0011_2) to each decimal digit's binary value. It is self-complementing because inverting all bits of a code word directly yields the 9's complement of that decimal digit.",
+      "explanation": "Example: 2 is 0101; inverting gives 1010 (7 in Excess-3, where 7 = 9 - 2).",
+      "why_wrong": {},
+      "marking_points": [
+        "Add 3 to binary",
+        "Inverting bits yields 9's complement"
+      ],
+      "source": "Digital Logic Lecture Note, Page 11-12",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-fc06",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "ascii",
+        "decimal-digits"
+      ],
+      "question": "What is the decimal ASCII range for the numerical digits '0' through '9'?",
+      "options": [],
+      "answer": "ASCII 48 ('0') through ASCII 57 ('9'). (In binary: 00110000 to 00111001).",
+      "explanation": "Notice the lower 4 bits of the ASCII code correspond exactly to the digit's 8421 BCD code.",
+      "why_wrong": {},
+      "marking_points": [
+        "Recalls ASCII 48 to 57"
+      ],
+      "source": "Nile University Exam Exercise III Reference Table",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-fc07",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "parity",
+        "limitation"
+      ],
+      "question": "What type of transmission errors CANNOT be detected by a single parity bit?",
+      "options": [],
+      "answer": "Any EVEN number of bit errors (e.g. 2, 4, 6 flipped bits).",
+      "explanation": "Because each pair of flipped bits leaves the total parity unchanged.",
+      "why_wrong": {},
+      "marking_points": [
+        "States even number of bit errors"
+      ],
+      "source": "Digital Logic Lecture Note, Page 12",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "ift211-cd-fc08",
+      "course": "IFT 211",
+      "topic": "BCD, Gray Code & ASCII Encoding",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "ascii",
+        "delimiters"
+      ],
+      "question": "What are the decimal ASCII codes for a Space character and a Hyphen/Minus sign?",
+      "options": [],
+      "answer": "Space: 32 (00100000_2)\nHyphen / Minus: 45 (00101101_2)",
+      "explanation": "These standard punctuation codes were highlighted on the Nile University Final Examination.",
+      "why_wrong": {},
+      "marking_points": [
+        "Space = 32",
+        "Hyphen = 45"
+      ],
+      "source": "Nile University Exam Exercise III Reference",
+      "verified": true,
+      "verified_output": "N/A"
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "ift211-cd-cs01",
+      "scenario": "A robotics laboratory at Nile University is developing an industrial robotic arm equipped with an absolute optical shaft encoder measuring joint angle. The disc has 16 sectors (angles 0 to 15). The engineer is comparing the behavior of a Standard Binary track against a Gray Code track during rotation.",
+      "sub_questions": [
+        {
+          "id": "ift211-cd-cs01-q1",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "shaft-encoder",
+            "race-conditions"
+          ],
+          "question": "When the joint rotates from position 7 (0111) to position 8 (1000) on a standard binary disc, what hazard can occur?",
+          "options": [
+            "All 4 bits change simultaneously; slight optical sensor misalignment can cause brief readout of any intermediate number (such as 1111 = 15), causing dangerous motor jerking.",
+            "The disc physically overheats due to high bit density.",
+            "The encoder outputs a parity check exception and halts.",
+            "The number 8 cannot be represented in a 4-bit binary code."
+          ],
+          "answer": "All 4 bits change simultaneously; slight optical sensor misalignment can cause brief readout of any intermediate number (such as 1111 = 15), causing dangerous motor jerking.",
+          "explanation": "In 0111 -> 1000, bit 3 turns on while bits 2, 1, and 0 turn off. Mechanical sensors cannot switch at the exact same picosecond. If bit 3 switches on before bits 2, 1, 0 switch off, the reader registers 1111 (15) instantaneously.",
+          "why_wrong": {
+            "The disc physically overheats due to high bit density.": "Passive optical sensors do not overheat from bit transitions.",
+            "The encoder outputs a parity check exception and halts.": "Standard position tracks have no automatic hardware parity unless added.",
+            "The number 8 cannot be represented in a 4-bit binary code.": "4 bits represent 0 through 15 easily."
+          },
+          "marking_points": [
+            "Identifies simultaneous 4-bit transition causes false intermediate readouts"
+          ],
+          "source": "Digital Logic Lecture Note, Page 12-13 Scenario",
+          "verified": true,
+          "verified_output": "N/A"
+        },
+        {
+          "id": "ift211-cd-cs01-q2",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "gray-code",
+            "transition"
+          ],
+          "question": "What are the 4-bit Gray code patterns for position 7 (binary 0111) and position 8 (binary 1000)? Confirm that only one bit changes.",
+          "options": [
+            "Position 7 = 0100_Gray, Position 8 = 1100_Gray (only the MSB changes).",
+            "Position 7 = 0111_Gray, Position 8 = 1000_Gray (all 4 bits change).",
+            "Position 7 = 0101_Gray, Position 8 = 1101_Gray (two bits change).",
+            "Position 7 = 1100_Gray, Position 8 = 0100_Gray (no bits change)."
+          ],
+          "answer": "Position 7 = 0100_Gray, Position 8 = 1100_Gray (only the MSB changes).",
+          "explanation": "Convert 7 (0111_2) to Gray:\nG3 = 0, G2 = 0^1 = 1, G1 = 1^1 = 0, G0 = 1^1 = 0 -> 0100_Gray.\nConvert 8 (1000_2) to Gray:\nG3 = 1, G2 = 1^0 = 1, G1 = 0^0 = 0, G0 = 0^0 = 0 -> 1100_Gray.\nComparing 0100 and 1100: ONLY bit 3 flips (from 0 to 1). Bits 2, 1, 0 remain strictly 1, 0, 0.",
+          "why_wrong": {
+            "Position 7 = 0111_Gray, Position 8 = 1000_Gray...": "These are binary values, not Gray code.",
+            "Position 7 = 0101_Gray, Position 8 = 1101_Gray...": "0101 is Gray code for 6, not 7.",
+            "Position 7 = 1100_Gray, Position 8 = 0100_Gray...": "Reverses positions 7 and 8."
+          },
+          "marking_points": [
+            "Computes Gray 7 = 0100",
+            "Computes Gray 8 = 1100",
+            "Verifies single bit difference (MSB only)"
+          ],
+          "source": "Digital Logic Lecture Note, Page 13",
+          "verified": true,
+          "verified_output": "gray(7) = 0100, gray(8) = 1100"
+        }
+      ]
+    },
+    {
+      "id": "ift211-cd-cs02",
+      "scenario": "A Nile University IoT weather station sends temperature sensor packets over a serial link. A packet payload contains 4 bytes followed by an even parity check byte. The raw incoming binary byte stream is:\nByte 1: `01010100` ('T')\nByte 2: `00110010` ('2')\nByte 3: `00110101` ('5')\nByte 4: `01000011` ('C')",
+      "sub_questions": [
+        {
+          "id": "ift211-cd-cs02-q1",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "type_answer",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "ascii",
+            "telemetry"
+          ],
+          "question": "What text message is represented by the 4 payload bytes in ASCII?",
+          "options": [],
+          "answer": "T25C",
+          "explanation": "Byte 1: 01010100_2 = 64 + 16 + 4 = 84 -> 'T'\nByte 2: 00110010_2 = 32 + 16 + 2 = 50 -> '2'\nByte 3: 00110101_2 = 32 + 16 + 4 + 1 = 53 -> '5'\nByte 4: 01000011_2 = 64 + 2 + 1 = 67 -> 'C'\nResult: 'T25C' (indicating Temperature 25 degrees Celsius).",
+          "why_wrong": {},
+          "marking_points": [
+            "Translates Byte 1 to T",
+            "Translates Byte 2 to 2",
+            "Translates Byte 3 to 5",
+            "Translates Byte 4 to C"
+          ],
+          "source": "Digital Logic ASCII Telemetry Scenario",
+          "verified": true,
+          "verified_output": "84='T', 50='2', 53='5', 67='C' -> 'T25C'"
+        },
+        {
+          "id": "ift211-cd-cs02-q2",
+          "course": "IFT 211",
+          "topic": "BCD, Gray Code & ASCII Encoding",
+          "type": "calculation",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "parity",
+            "uart"
+          ],
+          "question": "If each byte is transmitted over UART with 1 Even Parity bit appended at the MSB (making a 9-bit frame: [P, b7..b0]), what should the parity bit P be for Byte 2 (`00110010`)?",
+          "options": [
+            "1",
+            "0",
+            "Undefined",
+            "Both 1 and 0"
+          ],
+          "answer": "1",
+          "explanation": "Byte 2 is `00110010`. Count the number of 1s in this byte: bit 5 is 1, bit 4 is 1, and bit 1 is 1. Total count of 1s = 3 (an odd number). For Even Parity, the total number of 1s in the 9-bit frame must be even. Therefore, the parity bit P must be 1 (so total 1s = 3 + 1 = 4).",
+          "why_wrong": {
+            "0": "If P=0, the total number of 1s remains 3 (odd), violating Even Parity.",
+            "Undefined": "Parity bit is uniquely determined.",
+            "Both 1 and 0": "Only P=1 establishes even parity."
+          },
+          "marking_points": [
+            "Counts three 1s in 00110010",
+            "Determines P = 1 to make total 1s even (4)"
+          ],
+          "source": "Digital Logic Lecture Note, Page 12",
+          "verified": true,
+          "verified_output": "00110010 has three 1s -> even parity bit is 1"
+        }
+      ]
+    }
+  ]
+}

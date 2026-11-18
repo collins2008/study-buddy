@@ -1,0 +1,483 @@
+=== SLIDE 1 ===
+INTRODUCTION TOINFORMATION TECHNOLOGY
+Lecture 1 • Computer Software, Hardware & Networking Technologies
+IFT 205  |Introduction to Information Technology
+ZAKARIYYA ABDULLAHI ADAMU
+ASSISTANT LECTURER
+Zakariyya.adamu@nileuniversity.edu.ng
+LECTURE 1
+=== SLIDE 2 ===
+Lecture roadmap
+02
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Part A — Understanding IT and its building blocks
+Part B — Computer hardware: input, processing, memory, storage and output
+Part C — Software: system software, applications and operating systems
+Part D — Networking: components, types, internet and data transmission
+Part E — Security, university examples, troubleshooting and assessment
+KEY IDEA
+From the physical device to the connected service.
+=== SLIDE 3 ===
+A simple definition of IT
+03
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Information Technology (IT) uses computers, software, networks and related systems to create, process, store, secure and exchange information.
+Data are raw facts; information is data organised to be meaningful.
+IT supports communication, record keeping, analysis, service delivery and decision-making.
+IT includes people and procedures as well as technical equipment.
+KEY IDEA
+IT turns data into useful information and makes it available to the right people.
+=== SLIDE 4 ===
+The three building blocks
+04
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+HARDWARE
+Physical devices
+SOFTWARE
+Programs & instructions
+NETWORKING
+Connections & protocols
+A complete IT service usually needs all three building blocks.
+=== SLIDE 5 ===
+Hardware: what it is
+05
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Hardware is the physical equipment in a computing system.
+Examples: processor, memory, storage drive, keyboard, screen, printer, router and cables.
+Internal hardware sits inside a device; peripheral hardware connects externally or wirelessly.
+Hardware needs power and software instructions to perform useful tasks.
+KEY IDEA
+If it can be physically handled, it is likely hardware.
+=== SLIDE 6 ===
+Hardware categories at a glance
+06
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+INPUT
+Capture data
+PROCESS
+Transform data
+OUTPUT
+Present results
+STORAGE
+Retain data
+COMMUNICATION
+Exchange data
+One device can perform more than one role.
+=== SLIDE 7 ===
+Processing: CPU
+08
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+The Central Processing Unit (CPU) executes program instructions.
+The control unit coordinates operations; the arithmetic-logic unit performs arithmetic and logical comparisons.
+Registers hold tiny amounts of data for immediate CPU use.
+CPU performance also depends on architecture, core count, clock behaviour, cooling and workload.
+KEY IDEA
+The CPU is a key processing component, but it is not the whole computer.
+=== SLIDE 8 ===
+Memory: RAM and ROM
+09
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+RAM is working memory for active programs and data; it is typically volatile.
+ROM or firmware storage retains essential instructions without normal power; modern devices use several kinds of non-volatile memory.
+More RAM can help with multitasking, but does not automatically make every task faster.
+Memory is different from long-term storage such as an SSD.
+KEY IDEA
+RAM is a workbench; storage is the filing cabinet.
+=== SLIDE 9 ===
+Storage devices
+10
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Hard disk drives (HDDs) store data magnetically and often offer high capacity at lower cost.
+Solid-state drives (SSDs) use flash memory and usually provide faster access.
+USB flash drives and memory cards are portable storage.
+Cloud storage keeps data on remote infrastructure accessed over a network.
+Backups are separate copies used to recover from loss or damage.
+KEY IDEA
+Storage retains files when the device is switched off.
+=== SLIDE 10 ===
+Output devices
+11
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Monitor: displays text, images and video.
+Printer: produces a physical copy.
+Speakers and headphones: output sound.
+Projector: displays content for a larger audience.
+Output may be visual, printed, audio, tactile or machine-readable.
+KEY IDEA
+Output communicates processed results.
+=== SLIDE 11 ===
+Motherboard and power
+12
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+The motherboard connects the CPU, memory, storage interfaces and expansion components.
+Ports and buses allow components to communicate.
+The power supply or battery provides electrical energy.
+Cooling systems remove heat and help components operate reliably.
+A compatible component must match the device’s physical and electrical requirements.
+KEY IDEA
+Internal parts depend on a shared platform and stable power.
+=== SLIDE 12 ===
+Hardware in a familiar laptop
+13
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Screen and keyboard support interaction.
+CPU processes instructions; RAM supports active work.
+SSD stores the operating system, applications and files.
+Wi-Fi adapter connects to wireless networks.
+Battery, charger, motherboard and cooling system support operation.
+KEY IDEA
+A laptop is a coordinated set of components, not a single component.
+=== SLIDE 13 ===
+Software: what it is
+14
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Software is the set of programs, instructions and related data used to operate a computer.
+Software is not physically touched, although it is stored on physical media.
+Programs use hardware resources to perform tasks.
+Software can be updated, configured, licensed and sometimes removed.
+KEY IDEA
+Hardware provides capability; software directs how that capability is used.
+=== SLIDE 14 ===
+System software
+15
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Operating systems manage hardware resources and provide services to applications.
+Examples include Microsoft Windows, macOS, Linux, Android and iOS.
+Device drivers help the operating system communicate with specific hardware.
+Utilities support tasks such as backup, compression, security scanning and disk management.
+Firmware provides low-level instructions for device operation.
+KEY IDEA
+System software helps the device run and manages its resources.
+=== SLIDE 15 ===
+Application software
+16
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Word processors create and format documents.
+Spreadsheets organise data, calculate and chart results.
+Presentation tools support classroom and business presentations.
+Browsers access websites and web applications.
+Specialist applications support accounting, design, learning, health care and research.
+KEY IDEA
+Application software helps users complete specific tasks.
+=== SLIDE 16 ===
+Programming software and tools
+17
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Editors and integrated development environments (IDEs) help create code.
+Compilers or interpreters translate or execute program instructions.
+Debuggers help locate and diagnose errors.
+Version-control tools track changes to code and collaborative work.
+Users do not need to write code to benefit from many IT systems.
+KEY IDEA
+Development tools are used to build and maintain software.
+=== SLIDE 17 ===
+Operating system: what it manages
+18
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Processes: running programs and their use of CPU time.
+Memory: allocation and protection of working memory.
+Files: naming, storing and retrieving data.
+Devices: input/output and peripheral access.
+Users and security: accounts, permissions and system controls.
+KEY IDEA
+The operating system coordinates many competing demands.
+=== SLIDE 18 ===
+How software and hardware work together
+19
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+A user gives input through a device or application.
+The application requests services from the operating system.
+The CPU executes instructions using memory and data from storage.
+Output devices present the result; network software may send or receive data.
+Errors can arise from hardware failure, software faults, configuration or insufficient resources.
+KEY IDEA
+A useful diagnosis asks which layer may be responsible.
+=== SLIDE 19 ===
+How software and hardware work together
+20
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+INPUT
+User enters data
+APPLICATION
+Task instructions
+OS + CPU
+Coordinate & execute
+OUTPUT
+Show result
+Data flows through components; the network may be another input/output path.
+=== SLIDE 20 ===
+COMPARE: HARDWARE vs SOFTWARE
+21
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+HARDWARE
+Physical equipment
+Can wear out or be damaged
+Examples: CPU, keyboard, SSD, router
+Needs power and instructions
+SOFTWARE
+Programs and instructions
+Can contain bugs or become corrupted
+Examples: OS, browser, spreadsheet
+Needs hardware to execute
+=== SLIDE 21 ===
+What is a computer network?
+22
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+A network is a group of connected devices that can exchange data and share resources.
+Devices may connect by cable, Wi-Fi, fibre or other communication technologies.
+Networks can support file sharing, printers, communication, cloud services and centralised systems.
+A network may be small, such as a home network, or span countries.
+KEY IDEA
+Networking allows separate devices to work together.
+=== SLIDE 22 ===
+Network components
+23
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+End devices: computers, phones, printers, servers and smart devices.
+Network interface: wired Ethernet or wireless adapter.
+Switch: connects devices within a local network.
+Router: forwards traffic between networks, often connecting a local network to the internet.
+Access point: provides Wi-Fi connectivity; modem or ONT may connect to an internet service.
+KEY IDEA
+Each network component has a different job.
+=== SLIDE 23 ===
+A basic network diagram
+24
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Laptop and phone connect to a Wi-Fi access point or router.
+The router connects the local network to the internet service.
+A switch can add wired connections for desktop computers and printers.
+A server or network storage can provide shared files and services.
+The internet is a network of interconnected networks, not a single computer.
+KEY IDEA
+Follow the path from device to local network to internet.
+=== SLIDE 24 ===
+A basic network diagram
+25
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+LAPTOP / PHONE
+End devices
+WI-FI ROUTER
+Local network
+ISP NETWORK
+Internet access
+WEB SERVER
+Remote service
+A request travels outward and a response returns to the user.
+=== SLIDE 25 ===
+Common network types
+26
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+PAN: Personal Area Network, such as a phone connected to earbuds.
+LAN: Local Area Network within a room, home, office or building.
+WLAN: a LAN using wireless technologies such as Wi-Fi.
+MAN: Metropolitan Area Network across a city or large campus region.
+WAN: Wide Area Network spanning large geographic areas; the internet is the best-known example.
+KEY IDEA
+Network labels mainly describe scale and coverage.
+=== SLIDE 26 ===
+Client and server
+27
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+A client requests a service or resource.
+A server provides a service, such as web pages, files, email or authentication.
+A browser is a client when it requests a page from a web server.
+One device can act as a client in one situation and a server in another.
+Cloud services rely on servers in data centres and networks connecting them to users.
+KEY IDEA
+Client requests; server responds.
+=== SLIDE 27 ===
+How data travels across a network
+28
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+SENDER
+Creates data
+PROTOCOLS
+Format & address
+NETWORK
+Forwards packets
+RECEIVER
+Reassembles data
+Protocols allow different devices and networks to communicate.
+=== SLIDE 28 ===
+IP address, domain name and DNS
+29
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+An IP address identifies a network interface for communication at the IP layer.
+A domain name, such as example.com, is easier for people to remember.
+The Domain Name System (DNS) helps translate domain names into records including IP addresses.
+DHCP commonly helps devices obtain network settings automatically.
+These concepts work together but are not interchangeable.
+KEY IDEA
+Names are convenient for people; addresses help route network traffic.
+=== SLIDE 29 ===
+Network performance terms
+30
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Bandwidth: the capacity of a connection, often measured in bits per second.
+Throughput: the actual rate achieved under real conditions.
+Latency: the delay for data to travel between points.
+Jitter: variation in packet delay, important for real-time audio and video.
+Packet loss: data packets that fail to reach their destination.
+KEY IDEA
+Video calls need not only bandwidth but also low delay and low packet loss.
+=== SLIDE 30 ===
+Network security basics
+31
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Use strong, unique passwords and multifactor authentication where available.
+Keep operating systems, applications and router firmware updated.
+Use WPA2-AES or WPA3 for Wi-Fi security where supported.
+Avoid entering sensitive information on untrusted networks; use approved secure connections.
+Back up important files and report suspicious messages or unusual device behaviour.
+KEY IDEA
+Security combines technology, safe behaviour and regular maintenance.
+=== SLIDE 31 ===
+Data privacy and responsible use
+32
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Collect only data needed for a legitimate purpose.
+Limit access according to role and need.
+Explain how personal data will be used and protect it against unauthorised access.
+Follow organisational policy and applicable laws.
+Do not share passwords, confidential student records or sensitive files casually.
+KEY IDEA
+Technical access does not automatically mean permission to use data.
+=== SLIDE 32 ===
+How a university uses IT
+33
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Student registration system stores course and student records.
+Learning management system delivers resources and collects assignments.
+Campus network connects offices, classrooms, labs and Wi-Fi users.
+Servers or cloud services support email, storage and applications.
+Access controls, backups and support procedures help maintain availability and trust.
+KEY IDEA
+A university relies on all three: hardware, software and networking.
+=== SLIDE 33 ===
+Troubleshooting: start with symptoms
+34
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Identify the symptom and ask what changed recently.
+Check power, cables, Wi-Fi status and visible error messages.
+Determine whether the issue affects one device, one application or many users.
+Restart only when appropriate and save work first.
+Record the steps taken and escalate persistent or security-related issues.
+KEY IDEA
+Troubleshoot methodically rather than guessing.
+=== SLIDE 34 ===
+Example: no internet on a laptop
+35
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Check whether Wi-Fi is enabled and airplane mode is off.
+See whether other devices can connect to the same network.
+If only one laptop is affected, inspect its adapter, settings and saved network.
+If all devices are affected, check the router and service-provider status.
+Avoid resetting equipment or changing advanced settings without permission.
+KEY IDEA
+Isolate the problem: device, local network or internet service.
+=== SLIDE 35 ===
+Emerging trends in IT
+36
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Cloud computing delivers computing resources and services over networks.
+Artificial intelligence supports tasks such as prediction, language processing and assistance.
+Internet of Things connects physical devices with sensors and communication.
+Blockchain is a distributed ledger approach used in some specialised applications.
+Data mining and visualisation help discover patterns and communicate findings.
+KEY IDEA
+Emerging technologies build on hardware, software, data and networks.
+=== SLIDE 36 ===
+Review: connect the concepts
+37
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Hardware captures, processes, stores, communicates or presents data.
+Software gives instructions and manages resources.
+Networking enables devices and services to exchange data.
+Security and privacy considerations apply across all layers.
+Real IT solutions combine technical components with people, policies and procedures.
+KEY IDEA
+Use the three building blocks to explain any digital service.
+=== SLIDE 37 ===
+Class activity: map a service
+38
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+In groups, choose online registration, mobile banking, e-learning or a hospital appointment system.
+List at least four hardware components and four software components.
+Draw a network path showing how the user reaches the service.
+Identify two security or privacy risks and one control for each.
+Prepare a two-minute explanation using the terms hardware, software and network.
+KEY IDEA
+Assess the explanation, diagram, accuracy and teamwork.
+=== SLIDE 38 ===
+Quick assessment and take-home task
+39
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+1. Explain one difference between RAM and an SSD.
+2. Distinguish system software from application software with examples.
+3. Compare a switch, router and wireless access point.
+4. Explain the difference between the internet and the World Wide Web.
+Take-home: draw and label the IT components used when a student submits an assignment online.
+KEY IDEA
+Exit ticket: one concept learned, one question remaining.
+=== SLIDE 39 ===
+Discussion: IT in everyday life
+39
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Choose one service students use every week: a learning portal, online shopping, mobile banking or video calling.
+Identify the hardware used by the customer and by the service provider.
+Name the system software and application software involved.
+Describe how the device connects to the service and how data moves between them.
+Discuss one security risk and one practical way to reduce it.
+KEY IDEA
+Ask students to explain the service using hardware, software and networking vocabulary.
+=== SLIDE 40 ===
+Lecturer wrap-up: five points to remember
+40
+IFT 205 • INTRODUCTION TO INFORMATION TECHNOLOGY
+LECTURE SLIDES
+Hardware is the physical equipment used to capture, process, store, communicate and present data.
+Software provides instructions and manages the resources that hardware uses.
+Networking connects devices and enables data exchange through agreed protocols.
+The internet is a global network of networks; the Web is one service that operates over it.
+Security, privacy, maintenance and responsible use are essential across the whole IT system.
+KEY IDEA
+Preview next lecture: information technology systems and how components fit into a wider system.

@@ -1,0 +1,804 @@
+{
+  "course": "COS 201",
+  "topic": "Loops: While, Do-While & For",
+  "summary": "Covers iteration and repetition structures in C: counter-controlled and sentinel-controlled loops, while loops, for loops with multi-expression headers, do-while loops with guaranteed first execution, loop control with break and continue statements, nested iteration, boundary conditions, and infinite loop traps.",
+  "key_terms": [
+    {
+      "term": "While Loop",
+      "definition": "A pre-test repetition statement that evaluates its condition before executing the loop body."
+    },
+    {
+      "term": "Do-While Loop",
+      "definition": "A post-test repetition statement that executes its body first before testing the condition, guaranteeing at least one execution."
+    },
+    {
+      "term": "For Loop",
+      "definition": "A compact iteration statement combining initialization, loop-continuation condition, and increment in a single header."
+    },
+    {
+      "term": "Break Statement",
+      "definition": "A control statement that immediately terminates the execution of the innermost enclosing loop."
+    },
+    {
+      "term": "Continue Statement",
+      "definition": "A control statement that skips the remainder of the current loop iteration and advances to the next cycle."
+    },
+    {
+      "term": "Sentinel Value",
+      "definition": "A special dummy input value used to signal the end of data input in indefinite repetition."
+    },
+    {
+      "term": "Off-by-One Error",
+      "definition": "A common programming mistake where a loop executes one time too many or one time too few due to incorrect relational operators (< vs <=)."
+    },
+    {
+      "term": "Infinite Loop",
+      "definition": "A loop whose continuation condition never becomes false, causing execution to continue indefinitely."
+    }
+  ],
+  "questions": [
+    {
+      "id": "cos201-lp-001",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_output",
+      "difficulty": 2,
+      "tags": [
+        "while",
+        "iteration",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a = 1;\n    while (a < 4) {\n        printf(\"%d \", a);\n        a++;\n    }\n    return 0;\n}",
+      "options": [
+        "1 2 3 ",
+        "1 2 3 4 ",
+        "0 1 2 ",
+        "2 3 4 "
+      ],
+      "answer": 0,
+      "explanation": "The loop initializes 'a' to 1. Iteration 1 prints '1 ' (a becomes 2). Iteration 2 prints '2 ' (a becomes 3). Iteration 3 prints '3 ' (a becomes 4). When a=4, '4 < 4' is false, terminating the loop. Total output is '1 2 3 '.",
+      "why_wrong": {
+        "1": "4 is not printed because the condition is strictly 'a < 4', not 'a <= 4'.",
+        "2": "a starts at 1, not 0.",
+        "3": "1 is printed before 'a' is incremented to 2."
+      },
+      "source": "COS 201 Midterm Type B, Q5; Deitel Ch 3.7",
+      "verified": true,
+      "verified_output": "1 2 3 "
+    },
+    {
+      "id": "cos201-lp-002",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_output",
+      "difficulty": 2,
+      "tags": [
+        "do-while",
+        "post-test",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 0;\n    do {\n        printf(\"%d \", x);\n        x++;\n    }\n    while (x < 2);\n    return 0;\n}",
+      "options": [
+        "0 1 ",
+        "0 ",
+        "1 2 ",
+        "0 1 2 "
+      ],
+      "answer": 0,
+      "explanation": "1. Iteration 1: prints '0 ', x increments to 1. Condition '1 < 2' is true.\n2. Iteration 2: prints '1 ', x increments to 2. Condition '2 < 2' is false, terminating the loop.\nOutput is '0 1 '.",
+      "why_wrong": {
+        "1": "x=1 satisfies '1 < 2', so a second iteration executes.",
+        "2": "x starts at 0, not 1.",
+        "3": "When x becomes 2, the condition fails before 2 can be printed."
+      },
+      "source": "COS 201 Midterm Type B, Q9; Deitel Ch 4.8",
+      "verified": true,
+      "verified_output": "0 1 "
+    },
+    {
+      "id": "cos201-lp-003",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "while",
+        "pre-test",
+        "midterm-past-q"
+      ],
+      "question": "Which loop is best suited when the condition must be checked before executing the loop body even once?",
+      "options": [
+        "while",
+        "do-while",
+        "switch",
+        "goto"
+      ],
+      "answer": 0,
+      "explanation": "'while' (and 'for') is a pre-test loop that evaluates the condition before executing any statements in the body. If the condition is initially false, the body never runs. In contrast, 'do-while' always executes at least once before testing.",
+      "why_wrong": {
+        "1": "'do-while' is a post-test loop that executes the body first before checking the condition.",
+        "2": "'switch' is a selection statement, not a loop structure.",
+        "3": "'goto' is an unconditional jump statement, not a structured loop."
+      },
+      "source": "COS 201 Midterm Type B, Q10; Deitel Ch 3.7",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-lp-004",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "for",
+        "accumulator",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int x = 0;\n    for (int i = 0; i < 3; i++) {\n        x += i;\n    }\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+      "options": [
+        "3",
+        "2",
+        "6",
+        "0"
+      ],
+      "answer": 0,
+      "explanation": "The loop runs for i = 0, 1, 2:\n- i = 0: x = 0 + 0 = 0\n- i = 1: x = 0 + 1 = 1\n- i = 2: x = 1 + 2 = 3\nWhen i becomes 3, '3 < 3' is false. printf outputs 3.",
+      "why_wrong": {
+        "1": "2 is the final value of i, not the accumulated sum x.",
+        "2": "6 would be the result if i <= 3 was used (0 + 1 + 2 + 3 = 6).",
+        "3": "x is updated in iterations 1 and 2, so it does not remain 0."
+      },
+      "source": "COS 201 Midterm Type B, Q17; Deitel Ch 4.3",
+      "verified": true,
+      "verified_output": "3\n"
+    },
+    {
+      "id": "cos201-lp-005",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "while",
+        "post-increment",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int i = 1;\n    while (i <= 3) {\n        printf(\"%d \", i++);\n    }\n    return 0;\n}",
+      "options": [
+        "1 2 3 ",
+        "2 3 4 ",
+        "1 2 ",
+        "1 2 3 4 "
+      ],
+      "answer": 0,
+      "explanation": "- i=1: condition (1 <= 3) is true. printf prints 1, then i becomes 2.\n- i=2: condition (2 <= 3) is true. printf prints 2, then i becomes 3.\n- i=3: condition (3 <= 3) is true. printf prints 3, then i becomes 4.\n- i=4: condition (4 <= 3) is false. Loop terminates. Output is '1 2 3 '.",
+      "why_wrong": {
+        "1": "printf uses post-increment 'i++', so it prints i before incrementing, not after.",
+        "2": "i=3 satisfies <= 3, so 3 is printed.",
+        "3": "When i is 4, condition fails before printing."
+      },
+      "source": "COS 201 Midterm Type B, Q27; Deitel Ch 3.7",
+      "verified": true,
+      "verified_output": "1 2 3 "
+    },
+    {
+      "id": "cos201-lp-006",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "for",
+        "expressions",
+        "midterm-past-q"
+      ],
+      "question": "What will be the output of the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int i = 0;\n    for (i = 0; i < 3; i++) {\n        printf(\"%d \", i * 2);\n    }\n    return 0;\n}",
+      "options": [
+        "0 2 4 ",
+        "0 1 2 ",
+        "2 4 6 ",
+        "1 3 5 "
+      ],
+      "answer": 0,
+      "explanation": "Loop iterations run for i = 0, 1, 2:\n- i = 0: prints 0 * 2 = 0\n- i = 1: prints 1 * 2 = 2\n- i = 2: prints 2 * 2 = 4\nWhen i becomes 3, the loop stops. Output is '0 2 4 '.",
+      "why_wrong": {
+        "1": "0 1 2 is the value of i, but the code prints i * 2.",
+        "2": "2 4 6 would print if i ran from 1 to 3.",
+        "3": "1 3 5 are odd numbers."
+      },
+      "source": "COS 201 Midterm Type B, Q35; Deitel Ch 4.3",
+      "verified": true,
+      "verified_output": "0 2 4 "
+    },
+    {
+      "id": "cos201-lp-007",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "break",
+        "keywords",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following is used to terminate a loop immediately in C?",
+      "options": [
+        "break",
+        "continue",
+        "exit",
+        "return"
+      ],
+      "answer": 0,
+      "explanation": "The 'break' statement terminates the innermost enclosing loop (or switch) immediately, transferring control to the statement directly following the loop.",
+      "why_wrong": {
+        "1": "'continue' skips the rest of the current iteration, but does NOT terminate the loop.",
+        "2": "'exit' terminates the entire program process, not just the loop.",
+        "3": "'return' terminates the entire function execution and returns to the caller."
+      },
+      "source": "COS 201 Midterm Type B, Q40; Deitel Ch 4.9",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-lp-008",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "continue",
+        "loops",
+        "flow"
+      ],
+      "question": "What will be the output of the following C program containing a continue statement?",
+      "code": "#include <stdio.h>\nint main(void) {\n    for (int i = 1; i <= 5; i++) {\n        if (i == 3)\n            continue;\n        printf(\"%d \", i);\n    }\n    return 0;\n}",
+      "options": [
+        "1 2 4 5 ",
+        "1 2 ",
+        "1 2 3 4 5 ",
+        "4 5 "
+      ],
+      "answer": 0,
+      "explanation": "When i == 3, 'continue;' executes, which immediately skips the printf statement for that iteration and jumps to the increment step 'i++'. Thus, 3 is skipped while 1, 2, 4, 5 are printed: '1 2 4 5 '.",
+      "why_wrong": {
+        "1": "'1 2 ' would be printed if 'break;' was used instead of 'continue;'.",
+        "2": "3 cannot be printed because the continue statement skips it.",
+        "3": "Iterations for i = 1 and 2 execute normally before i reaches 3."
+      },
+      "source": "Deitel Ch 4.9",
+      "verified": true,
+      "verified_output": "1 2 4 5 "
+    },
+    {
+      "id": "cos201-lp-009",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "do-while",
+        "post-test",
+        "boundary"
+      ],
+      "question": "What will be the output of the following code where the loop condition is initially false?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int count = 10;\n    do {\n        printf(\"Run%d\\n\", count);\n        count++;\n    }\n    while (count < 5);\n    return 0;\n}",
+      "options": [
+        "Run10",
+        "No output",
+        "Run10\\nRun11",
+        "Compilation Error"
+      ],
+      "answer": 0,
+      "explanation": "Because do-while is a post-test loop, the loop body executes unconditionally once before the condition is evaluated. 'Run10' is printed and count becomes 11. Then '11 < 5' evaluates to false, terminating the loop.",
+      "why_wrong": {
+        "1": "A regular while loop would produce no output, but do-while always runs at least once.",
+        "2": "The condition fails on the very first check, so a second iteration never occurs.",
+        "3": "The syntax with terminating semicolon after while(cond); is valid standard C."
+      },
+      "source": "Deitel Ch 4.8",
+      "verified": true,
+      "verified_output": "Run10\n"
+    },
+    {
+      "id": "cos201-lp-010",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_bug",
+      "difficulty": 4,
+      "tags": [
+        "bugs",
+        "infinite-loop",
+        "semicolon"
+      ],
+      "question": "What severe bug is present in the following C code?",
+      "code": "#include <stdio.h>\nint main(void) {\n    int i = 0;\n    while (i < 5);\n    {\n        printf(\"%d \", i);\n        i++;\n    }\n    return 0;\n}",
+      "options": [
+        "Infinite loop: the stray semicolon after 'while (i < 5);' forms an empty loop body where 'i' is never incremented.",
+        "Syntax error: semicolons are forbidden after while headers.",
+        "The code compiles and correctly prints '0 1 2 3 4 '.",
+        "The code outputs '5' and exits."
+      ],
+      "answer": 0,
+      "explanation": "Placing a semicolon directly after 'while (i < 5);' creates a null statement as the loop body. The program repeatedly tests '0 < 5', which is always true, and never reaches the block containing 'i++'. This results in an infinite busy loop.",
+      "why_wrong": {
+        "1": "It is syntactically legal C, but logically disastrous.",
+        "2": "The block is never entered because the program hangs in the infinite null loop.",
+        "3": "The loop condition never becomes false."
+      },
+      "source": "Deitel Common Programming Error 3.10",
+      "verified": true,
+      "verified_output": "Infinite loop bug confirmed"
+    },
+    {
+      "id": "cos201-lp-011",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "nested-loops",
+        "grid",
+        "tracing"
+      ],
+      "question": "What will be printed by the following nested for loop?",
+      "code": "#include <stdio.h>\nint main(void) {\n    for (int i = 1; i <= 2; i++) {\n        for (int j = 1; j <= 2; j++) {\n            printf(\"%d\", i * j);\n        }\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+      "options": [
+        "1224",
+        "1234",
+        "1122",
+        "24"
+      ],
+      "answer": 0,
+      "explanation": "Trace:\n- i=1, j=1 -> 1*1 = 1\n- i=1, j=2 -> 1*2 = 2\n- i=2, j=1 -> 2*1 = 2\n- i=2, j=2 -> 2*2 = 4\nConcatenated output: '1224'.",
+      "why_wrong": {
+        "1": "At i=2, j=1, 2*1 = 2, not 3.",
+        "2": "The inner loop multiplies i by j, not just printing i.",
+        "3": "Both outer iterations execute, producing 4 digits."
+      },
+      "source": "Deitel Ch 4.11",
+      "verified": true,
+      "verified_output": "1224\n"
+    },
+    {
+      "id": "cos201-lp-012",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_output",
+      "difficulty": 4,
+      "tags": [
+        "nested-loops",
+        "break",
+        "tracing"
+      ],
+      "question": "What is the output of the following nested loop demonstrating break scoping?",
+      "code": "#include <stdio.h>\nint main(void) {\n    for (int i = 1; i <= 3; i++) {\n        for (int j = 1; j <= 3; j++) {\n            if (j == 2) break;\n            printf(\"%d%d \", i, j);\n        }\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+      "options": [
+        "11 21 31 ",
+        "11 ",
+        "11 12 13 ",
+        "11 21 "
+      ],
+      "answer": 0,
+      "explanation": "In nested loops, 'break;' terminates ONLY the innermost enclosing loop (the 'j' loop). For each outer iteration of i (1, 2, 3), j=1 prints 'i1 ', and at j=2 the inner loop breaks. The outer loop continues! Output is '11 21 31 '.",
+      "why_wrong": {
+        "1": "The break does not terminate the outer loop; only the inner j loop.",
+        "2": "j=2 triggers break before printing, so 12 and 13 are not printed.",
+        "3": "All 3 iterations of i execute (i = 1, 2, 3)."
+      },
+      "source": "Deitel Ch 4.9",
+      "verified": true,
+      "verified_output": "11 21 31 \n"
+    },
+    {
+      "id": "cos201-lp-013",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "for",
+        "countdown",
+        "step"
+      ],
+      "question": "What will be printed by the following countdown loop?",
+      "code": "#include <stdio.h>\nint main(void) {\n    for (int k = 7; k > 0; k -= 2) {\n        printf(\"%d \", k);\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+      "options": [
+        "7 5 3 1 ",
+        "7 5 3 ",
+        "7 6 5 4 3 2 1 ",
+        "5 3 1 "
+      ],
+      "answer": 0,
+      "explanation": "Initial k = 7. Iterations:\n- k = 7: prints '7 ', k becomes 5\n- k = 5: prints '5 ', k becomes 3\n- k = 3: prints '3 ', k becomes 1\n- k = 1: 1 > 0 is true, prints '1 ', k becomes -1\n- k = -1: -1 > 0 is false. Stops.\nOutput is '7 5 3 1 '.",
+      "why_wrong": {
+        "1": "k=1 satisfies 1 > 0, so 1 is printed.",
+        "2": "The decrement step is k -= 2, not k--.",
+        "3": "k starts at 7, so 7 is printed."
+      },
+      "source": "Deitel Ch 4.3",
+      "verified": true,
+      "verified_output": "7 5 3 1 \n"
+    },
+    {
+      "id": "cos201-lp-014",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "type_answer",
+      "difficulty": 1,
+      "tags": [
+        "keywords",
+        "loops"
+      ],
+      "question": "Which C keyword is used inside a loop body to skip the remaining statements of the current iteration and immediately begin the next cycle?",
+      "answer": "continue",
+      "accepted_answers": [
+        "continue",
+        "continue;"
+      ],
+      "explanation": "'continue' skips to the next iteration of the enclosing loop.",
+      "why_wrong": {},
+      "source": "Deitel Ch 4.9",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-lp-015",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "cloze",
+      "difficulty": 2,
+      "tags": [
+        "cloze",
+        "loops"
+      ],
+      "question": "Fill in the correct C keywords for repetition control:",
+      "template": "A loop that tests its condition after execution is the [[blank]] loop. To abort a loop completely, use [[blank]], whereas to skip only the current iteration, use [[blank]].",
+      "blanks": [
+        "do-while",
+        "break",
+        "continue"
+      ],
+      "explanation": "do-while is post-test, break terminates the loop, continue skips the current iteration.",
+      "why_wrong": {},
+      "source": "Deitel Ch 4",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-lp-016",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "matching",
+      "difficulty": 2,
+      "tags": [
+        "matching",
+        "loops"
+      ],
+      "question": "Match each loop construct with its definitive execution behavior:",
+      "pairs": [
+        {
+          "left": "while loop",
+          "right": "Pre-test; executes 0 or more times"
+        },
+        {
+          "left": "do-while loop",
+          "right": "Post-test; guaranteed to execute at least 1 time"
+        },
+        {
+          "left": "for loop",
+          "right": "Best for counter-controlled definite iteration"
+        },
+        {
+          "left": "break keyword",
+          "right": "Transfers control to the statement past the loop"
+        }
+      ],
+      "explanation": "Summarizes standard C loop execution characteristics.",
+      "why_wrong": {},
+      "source": "Deitel Ch 3, Ch 4",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-lp-017",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "sequencing",
+      "difficulty": 2,
+      "tags": [
+        "sequencing",
+        "for-loop"
+      ],
+      "question": "Order the steps taken by C when executing a standard for loop: for (init; cond; inc) { body }",
+      "steps": [
+        "Execute initialization expression once",
+        "Evaluate loop continuation condition",
+        "If true, execute loop body statements",
+        "Execute increment expression",
+        "Re-evaluate condition for next iteration"
+      ],
+      "explanation": "The initialization occurs strictly once at the start. Condition is checked before each iteration body. Increment occurs after the body, followed by condition re-testing.",
+      "why_wrong": {},
+      "source": "Deitel Ch 4.3",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-lp-018",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "code_write",
+      "difficulty": 3,
+      "tags": [
+        "code_write",
+        "loops",
+        "factorial"
+      ],
+      "question": "Write a complete C main function that calculates the factorial of 5 using a for loop and prints 'Factorial: 120\\n'.",
+      "code_lang": "c",
+      "reference_solution": "#include <stdio.h>\nint main(void) {\n    int n = 5;\n    int fact = 1;\n    for (int i = 1; i <= n; i++) {\n        fact *= i;\n    }\n    printf(\"Factorial: %d\\n\", fact);\n    return 0;\n}",
+      "marking_points": [
+        "Initializes fact = 1",
+        "Uses loop running from 1 up to n (5)",
+        "Accumulates product using fact *= i",
+        "Prints result formatted as 'Factorial: %d\\n'",
+        "Returns 0 from main"
+      ],
+      "explanation": "Standard accumulator multiplication loop.",
+      "why_wrong": {},
+      "source": "Deitel Ch 4.4",
+      "verified": true,
+      "verified_output": "Factorial: 120\n"
+    },
+    {
+      "id": "cos201-lp-019",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "explain",
+      "difficulty": 3,
+      "tags": [
+        "theory",
+        "while",
+        "do-while"
+      ],
+      "question": "Explain when a programmer should choose a 'do-while' loop over a standard 'while' loop. Provide a practical real-world scenario.",
+      "answer": "1. Core Difference: A 'while' loop evaluates its condition before entering the body (pre-test), whereas a 'do-while' loop executes the body first before checking the condition (post-test), guaranteeing at least one execution.\n2. When to choose do-while: Whenever the loop body must execute at least once regardless of initial state, particularly in interactive input validation.\n3. Example: Displaying a menu and prompting the user for input. The prompt and input reading must occur at least once before testing whether the user entered a valid menu choice.",
+      "marking_points": [
+        "Explains pre-test vs post-test condition evaluation timing",
+        "Highlights that do-while guarantees at least one execution",
+        "Gives a concrete example such as menu prompting or user input validation"
+      ],
+      "explanation": "A standard university examination question on control structures.",
+      "why_wrong": {},
+      "source": "Deitel Ch 4.8",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-lp-fc01",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "while"
+      ],
+      "question": "What is the minimum number of times a while loop can execute?",
+      "answer": "Zero (0) times, if the condition is initially false.",
+      "explanation": "Because it is a pre-test loop."
+    },
+    {
+      "id": "cos201-lp-fc02",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "do-while"
+      ],
+      "question": "What is the minimum number of times a do-while loop can execute?",
+      "answer": "One (1) time, because the condition is checked after the body runs.",
+      "explanation": "Post-test loop guarantee."
+    },
+    {
+      "id": "cos201-lp-fc03",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "break"
+      ],
+      "question": "What does the 'break' statement do inside a loop?",
+      "answer": "Immediately terminates the loop and jumps to the first statement following the loop.",
+      "explanation": "Exits the loop structure."
+    },
+    {
+      "id": "cos201-lp-fc04",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "continue"
+      ],
+      "question": "What does the 'continue' statement do inside a loop?",
+      "answer": "Skips the remaining statements in the current iteration and advances to the next loop cycle.",
+      "explanation": "In a for loop, it jumps to the increment expression."
+    },
+    {
+      "id": "cos201-lp-fc05",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "sentinel"
+      ],
+      "question": "What is a sentinel value in C programming?",
+      "answer": "A special dummy value used to indicate the end of data entry in indefinite repetition (e.g. -1 to stop input).",
+      "explanation": "Also known as a signal value or flag."
+    },
+    {
+      "id": "cos201-lp-fc06",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "for-header"
+      ],
+      "question": "Can parts of a for loop header be omitted? (e.g. for (;;))",
+      "answer": "Yes. An empty condition in 'for (;;)' is treated by C as permanently true, creating an infinite loop.",
+      "explanation": "Requires an internal break or return to exit."
+    },
+    {
+      "id": "cos201-lp-fc07",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "off-by-one"
+      ],
+      "question": "What is an off-by-one error in a counter-controlled loop?",
+      "answer": "A bug where the loop executes one iteration too many or too few (e.g. using '<=' instead of '<').",
+      "explanation": "A common boundary logic mistake."
+    },
+    {
+      "id": "cos201-lp-fc08",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "syntax"
+      ],
+      "question": "What punctuation mark MUST terminate a do-while loop header?",
+      "answer": "A semicolon (;) right after the closing parenthesis: while (condition);",
+      "explanation": "Omitting the semicolon causes a compilation error."
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "cos201-lp-cs01",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "title": "Nile Bank ATM PIN Verification Lockout System",
+      "scenario": "A security module for an ATM at Nile University prompts the user for a 4-digit PIN using a do-while loop. The user is allowed at most 3 attempts. If the correct PIN (1234) is entered, the loop terminates immediately with 'Access Granted'. If all 3 attempts fail, 'Card Blocked' is printed.",
+      "sub_questions": [
+        {
+          "id": "cos201-lp-cs01-q1",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "do-while",
+            "break"
+          ],
+          "question": "What will be printed when simulated with attempts array {1111, 1234}?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int attempts[3] = {1111, 1234, 0};\n    int count = 0, success = 0;\n    do {\n        if (attempts[count] == 1234) {\n            success = 1;\n            break;\n        }\n        count++;\n    } while (count < 3);\n    printf(\"Success: %d, Count: %d\\n\", success, count);\n    return 0;\n}",
+          "options": [
+            "Success: 1, Count: 1",
+            "Success: 1, Count: 2",
+            "Success: 0, Count: 3",
+            "Success: 1, Count: 0"
+          ],
+          "answer": 0,
+          "explanation": "- Iteration 1 (count=0): attempts[0] is 1111 != 1234. count increments to 1. Condition '1 < 3' is true.\n- Iteration 2 (count=1): attempts[1] is 1234 == 1234. success set to 1, break statement exits loop immediately.\nAt exit, success=1 and count=1. Output: 'Success: 1, Count: 1'.",
+          "why_wrong": {
+            "1": "count was 1 when the match occurred; it did not increment further.",
+            "2": "The match was found on the second attempt.",
+            "3": "count was incremented after attempt 0, so it is 1, not 0."
+          },
+          "source": "Deitel Ch 4.8, 4.9",
+          "verified": true,
+          "verified_output": "Success: 1, Count: 1\n"
+        },
+        {
+          "id": "cos201-lp-cs01-q2",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "loop-choice"
+          ],
+          "question": "Why is 'do-while' structurally superior to a standard 'while' loop for ATM PIN verification?",
+          "options": [
+            "Because user input must be requested and read at least once before validating whether it is correct.",
+            "Because do-while loops run faster than while loops in machine code.",
+            "Because while loops cannot use the 'break' statement.",
+            "Because do-while loops automatically encrypt PIN memory."
+          ],
+          "answer": 0,
+          "explanation": "A PIN cannot be evaluated until the user has supplied it. The prompt-and-read operation is inherently a post-test workflow that must execute at least once.",
+          "why_wrong": {
+            "1": "Compilers generate equivalent machine code for equivalent logic; do-while is not faster.",
+            "2": "'break' works identically in all C loop constructs.",
+            "3": "Loop syntax has no automatic cryptographic capabilities."
+          },
+          "source": "Deitel Ch 4.8",
+          "verified": true,
+          "verified_output": ""
+        }
+      ]
+    },
+    {
+      "id": "cos201-lp-cs02",
+      "course": "COS 201",
+      "topic": "loops_iteration",
+      "title": "Telecom Signal Packet Checksum Accumulator",
+      "scenario": "A network transceiver processes incoming byte packets terminating with a sentinel value 0xFF (255). A loop accumulates payload bytes until the sentinel arrives.",
+      "sub_questions": [
+        {
+          "id": "cos201-lp-cs02-q1",
+          "course": "COS 201",
+          "topic": "loops_iteration",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "sentinel",
+            "while"
+          ],
+          "question": "What is printed by the packet reader snippet?",
+          "code": "#include <stdio.h>\nint main(void) {\n    int packets[] = {10, 20, 30, 255, 40};\n    int i = 0, sum = 0;\n    while (packets[i] != 255) {\n        sum += packets[i];\n        i++;\n    }\n    printf(\"Sum=%d Packets=%d\\n\", sum, i);\n    return 0;\n}",
+          "options": [
+            "Sum=60 Packets=3",
+            "Sum=315 Packets=4",
+            "Sum=355 Packets=5",
+            "Sum=60 Packets=4"
+          ],
+          "answer": 0,
+          "explanation": "The loop reads 10, 20, 30 (sum = 60). At index 3, packets[3] is 255, which matches the sentinel and terminates the loop without adding 255 or 40. 'i' is 3. Output is 'Sum=60 Packets=3'.",
+          "why_wrong": {
+            "1": "The sentinel 255 terminates the loop; it is not added to the sum.",
+            "2": "40 comes after the sentinel and is never processed.",
+            "3": "Packets processed before stopping is 3."
+          },
+          "source": "Deitel Ch 3.8",
+          "verified": true,
+          "verified_output": "Sum=60 Packets=3\n"
+        }
+      ]
+    }
+  ]
+}

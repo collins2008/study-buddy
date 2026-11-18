@@ -1,0 +1,704 @@
+=== SLIDE 1 ===
+INTRODUCTION TO WEB TECHNOLOGY
+CSS FROM THE BEGINNING
+Creating, Connecting and Styling Webpages
+A step-by-step lecture: project folders, HTML connection, CSS properties, code examples and expected outputs.
+ZAKARIYYA ABDULLAHI ADAMU
+ASSISTANT LECTURER
+Zakariyya.adamu@nileuniversity.edu.ng
+=== SLIDE 2 ===
+Learning Outcomes
+INTRODUCTION
+Explain what CSS is and why webpages use it.
+Create a project folder and organise HTML and CSS files.
+Write an HTML page and connect an external stylesheet.
+Test the connection in a browser and troubleshoot errors.
+Apply common CSS properties and explain their output.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+2
+=== SLIDE 3 ===
+What is CSS?
+INTRODUCTION
+CSS means Cascading Style Sheets.
+CSS controls the appearance and layout of HTML webpages.
+HTML provides structure and content; CSS controls presentation.
+CSS changes text, backgrounds, spacing, borders and layout.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+3
+=== SLIDE 4 ===
+HTML and CSS Work Together
+INTRODUCTION
+HTML creates headings, paragraphs, images, links and buttons.
+CSS gives those elements their visual appearance.
+HTML without CSS can still work, but it usually looks plain.
+CSS does not replace HTML; both technologies work together.
+HTML: <h1>My Website</h1>
+CSS:  h1 { color: blue; }
+EXPECTED RESULT
+HTML displays a heading;
+CSS makes it blue.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+4
+=== SLIDE 5 ===
+Tools We Need
+BEFORE YOU START
+Visual Studio Code (VS Code): write HTML and CSS.
+A browser such as Chrome, Edge or Firefox: view the webpage.
+Save your project in Desktop or Documents.
+Create and save files before testing them.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+5
+=== SLIDE 6 ===
+Step 1: Create a Project Folder
+PROJECT SETUP
+Go to Desktop or Documents.
+Right-click an empty area and choose New → Folder.
+Name it My-CSS-Project.
+Open VS Code and choose File → Open Folder.
+Select My-CSS-Project. Keep all project files inside it.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+6
+=== SLIDE 7 ===
+Step 2: Create index.html
+PROJECT SETUP
+In VS Code, find the Explorer panel on the left.
+Click the New File icon.
+Name the file index.html and press Enter.
+This file contains the webpage structure and content.
+Check that the extension is .html, not .txt.
+index.html
+EXPECTED RESULT
+The HTML file appears
+inside My-CSS-Project.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+7
+=== SLIDE 8 ===
+Step 3: Create style.css
+PROJECT SETUP
+Click New File again inside the same project folder.
+Name the file style.css.
+This file contains the design rules for the webpage.
+Check that the extension is .css.
+For this first exercise, keep both files in the same folder.
+style.css
+EXPECTED RESULT
+The CSS file is ready
+to hold the webpage styles.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+8
+=== SLIDE 9 ===
+Step 4: Check the Folder Structure
+PROJECT SETUP
+Both files should be inside the same folder.
+index.html contains the webpage structure.
+style.css contains the webpage styling.
+File names must match exactly when connecting them.
+Later, projects may include images, scripts and other folders.
+My-CSS-Project/
+    index.html
+    style.css
+EXPECTED RESULT
+One project folder
+with two files.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+9
+=== SLIDE 10 ===
+Step 5: Write the First HTML Page
+HTML FIRST
+Open index.html.
+Type the basic HTML document shown.
+The head contains page information and stylesheet links.
+The body contains the visible webpage content.
+Save with Ctrl + S.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First CSS Page</title>
+</head>
+<body>
+  <h1>Welcome to My Website</h1>
+  <p>I am learning CSS.</p>
+</body>
+</html>
+EXPECTED RESULT
+A heading and paragraph
+appear on the webpage.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+10
+=== SLIDE 11 ===
+Understand the HTML Structure
+HTML FIRST
+<!DOCTYPE html> tells the browser to use modern HTML.
+<html> contains the whole document.
+<head> contains page information and links to resources.
+<title> sets the browser-tab title.
+<body> contains visible content; <h1> is a main heading and <p> is a paragraph.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+11
+=== SLIDE 12 ===
+Step 6: Connect CSS to HTML
+CONNECTING FILES
+Open index.html.
+Inside the head section, add a link element.
+rel="stylesheet" identifies the linked file as a stylesheet.
+href="style.css" gives the name and location of the CSS file.
+Save index.html.
+<head>
+  <title>My First CSS Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+EXPECTED RESULT
+The HTML page is linked
+to style.css.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+12
+=== SLIDE 13 ===
+Understand the link Element
+CONNECTING FILES
+link connects an external resource to an HTML page.
+rel="stylesheet" tells the browser the resource is CSS.
+href is the file path or web address of the stylesheet.
+Place the link element inside the head section.
+The filename and path must be correct.
+<link rel="stylesheet" href="style.css">
+EXPECTED RESULT
+The browser knows which
+CSS file to load.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+13
+=== SLIDE 14 ===
+Step 7: Write Your First CSS Rule
+FIRST CSS RULE
+Open style.css.
+Type the CSS rule shown.
+body is the selector: it targets the page body.
+background-color is the property.
+lightblue is the value. Save using Ctrl + S.
+body {
+    background-color: lightblue;
+}
+EXPECTED RESULT
+The webpage background
+becomes light blue.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+14
+=== SLIDE 15 ===
+Step 8: View the Page in a Browser
+TESTING
+Save both index.html and style.css.
+Open the project folder in File Explorer.
+Double-click index.html to open it in a browser.
+You should see the heading and paragraph on a light-blue background.
+After making changes, save and refresh the browser.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+15
+=== SLIDE 16 ===
+How the Connection Works
+CONNECTING FILES
+The browser opens index.html first.
+It reads the link element in the head section.
+It looks for style.css at the path given in href.
+It reads CSS rules and applies matching styles to HTML elements.
+If the filename or path is wrong, the stylesheet may not load.
+index.html  -- link href="style.css" -->  style.css
+       Browser reads HTML              Browser loads styles
+EXPECTED RESULT
+HTML structure + CSS rules
+produce the styled webpage.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+16
+=== SLIDE 17 ===
+If CSS Is Inside a Folder
+FILE PATHS
+Create a folder named css inside My-CSS-Project.
+Move style.css into the css folder.
+Update the href path in index.html.
+The path is relative to the location of index.html.
+<link rel="stylesheet" href="css/style.css">
+EXPECTED RESULT
+My-CSS-Project/css/style.css
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+17
+=== SLIDE 18 ===
+If Images Are Inside a Folder
+FILE PATHS
+Create a folder named images inside the project folder.
+Place a picture inside it, for example school.jpg.
+Use images/school.jpg as the path from index.html.
+Folder and filename spelling must match.
+<img src="images/school.jpg" alt="School building">
+EXPECTED RESULT
+Browser displays the image
+from the images folder.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+18
+=== SLIDE 19 ===
+Common File-Connection Mistakes
+TROUBLESHOOTING
+Wrong filename: style.css is not styles.css.
+Wrong extension: check that it is .css, not .css.txt.
+Wrong path: css/style.css is different from style.css.
+Place the link element inside the head section.
+Save changes and refresh the browser; check spelling and folder names.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+19
+=== SLIDE 20 ===
+Quick Test: Is CSS Connected?
+TROUBLESHOOTING
+Temporarily add the code shown to style.css.
+Save the CSS file.
+Refresh index.html in the browser.
+If the background turns yellow, CSS is connected.
+If nothing changes, check filename, path, link element and save status.
+body {
+    background-color: yellow;
+}
+EXPECTED RESULT
+A yellow page confirms
+that CSS is being applied.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+20
+=== SLIDE 21 ===
+Now We Can Apply CSS
+CSS PROPERTIES
+We have created a project folder.
+We have created index.html and style.css.
+We have connected the CSS file using the link element.
+We have opened the webpage in a browser.
+Next: CSS syntax, properties, values and visual effects.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+21
+=== SLIDE 22 ===
+CSS Syntax: Selector, Property and Value
+CSS FUNDAMENTALS
+Selector identifies the HTML element to style.
+Property identifies what aspect should change.
+Value specifies the chosen appearance or setting.
+A declaration is a property and value written together.
+Curly braces hold the declarations.
+h1 {
+    color: blue;
+    font-size: 32px;
+}
+EXPECTED RESULT
+A blue heading
+with a size of 32 pixels.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+22
+=== SLIDE 23 ===
+Three Common CSS Selectors
+CSS FUNDAMENTALS
+Element selector: p targets all paragraph elements.
+Class selector: .card targets elements with class="card".
+ID selector: #header targets the element with id="header".
+Class and ID names in HTML must match the CSS selector.
+p { color: green; }
+.card { padding: 16px; }
+#header { background: navy; }
+EXPECTED RESULT
+Green paragraph;
+padded card;
+navy header.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+23
+=== SLIDE 24 ===
+Text: color and font-size
+TEXT AND FONTS
+color changes the colour of text.
+font-size controls how large or small text appears.
+Colours can be names, hexadecimal values or RGB values.
+Common size units include px, em and rem.
+h1 {
+    color: navy;
+    font-size: 32px;
+}
+EXPECTED RESULT
+Large navy heading.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+24
+=== SLIDE 25 ===
+Text: font-family and font-weight
+TEXT AND FONTS
+font-family selects the typeface, such as Arial or Georgia.
+font-weight controls thickness; common values include normal and bold.
+Fallback fonts can be supplied if the first font is unavailable.
+Use readable and consistent fonts.
+p {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+EXPECTED RESULT
+Bold paragraph
+in an Arial-style font.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+25
+=== SLIDE 26 ===
+Text: font-style and text-align
+TEXT AND FONTS
+font-style is commonly normal or italic.
+text-align controls horizontal alignment.
+Common values are left, right, center and justify.
+Alignment should make content easy to read.
+p {
+    font-style: italic;
+    text-align: center;
+}
+EXPECTED RESULT
+Italic paragraph
+centred on the page.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+26
+=== SLIDE 27 ===
+Text Decoration and Transformation
+TEXT AND FONTS
+text-decoration adds or removes lines such as underline or line-through.
+text-transform changes letter case.
+Common values: uppercase, lowercase and capitalize.
+Useful for headings, labels and navigation links.
+h2 {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+EXPECTED RESULT
+UNDERLINED UPPERCASE
+HEADING
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+27
+=== SLIDE 28 ===
+Letter Spacing and Line Height
+TEXT AND FONTS
+letter-spacing controls the space between characters.
+line-height controls the vertical distance between lines.
+A suitable line-height makes paragraphs easier to read.
+Avoid excessive spacing.
+p {
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+EXPECTED RESULT
+Paragraph has more
+comfortable line spacing.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+28
+=== SLIDE 29 ===
+Background Properties
+BACKGROUNDS
+background-color sets an element's background colour.
+background-image places an image behind content.
+background-repeat controls whether an image repeats.
+background-position sets image position.
+background-size controls sizing; cover fills the area and may crop.
+body { background-color: lightblue; }
+.hero {
+  background-image: url("school.jpg");
+  background-size: cover;
+  background-position: center;
+}
+EXPECTED RESULT
+Light-blue page or a hero
+area with a background image.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+29
+=== SLIDE 30 ===
+The CSS Box Model
+BOX MODEL
+Every HTML element can be understood as a rectangular box.
+Content is the text, image or material inside.
+Padding is space between content and border.
+Border is the line around padding and content.
+Margin is space outside the border, separating elements.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+30
+=== SLIDE 31 ===
+Width, Height, Margin and Padding
+BOX MODEL
+width sets an element's width; height sets its height.
+margin creates space outside an element's border.
+padding creates space inside the border, around content.
+max-width limits how wide an element can grow.
+min-height sets the minimum height.
+.card {
+  width: 300px;
+  min-height: 120px;
+  margin: 20px;
+  padding: 16px;
+}
+EXPECTED RESULT
+A 300px-wide card
+with inside and outside spacing.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+31
+=== SLIDE 32 ===
+Borders, Rounded Corners and Shadows
+BOX MODEL
+border adds a line around an element.
+A border can specify thickness, style and colour.
+border-radius rounds the corners of a box.
+box-shadow adds a shadow to create visual depth.
+.card {
+  border: 2px solid navy;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px gray;
+}
+EXPECTED RESULT
+A card with a navy border,
+rounded corners and shadow.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+32
+=== SLIDE 33 ===
+The display Property
+LAYOUT
+display controls how an element participates in layout.
+block starts on a new line and normally takes available width.
+inline flows within a line.
+inline-block flows inline but can have width and height.
+none hides the element; flex and grid activate layout systems.
+.notice { display: block; }
+.hidden { display: none; }
+EXPECTED RESULT
+Block elements begin
+on a new line.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+33
+=== SLIDE 34 ===
+The position Property
+LAYOUT
+static is normal document flow and the default for most elements.
+relative stays in normal flow but can be offset.
+absolute is positioned relative to its nearest positioned ancestor.
+fixed stays at a fixed viewport position when scrolling.
+sticky behaves normally until a scroll threshold is reached.
+.label {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+EXPECTED RESULT
+Label moves down 10px
+and right 20px.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+34
+=== SLIDE 35 ===
+Position, z-index and Overflow
+LAYOUT
+top, right, bottom and left set offsets for positioned elements.
+z-index controls stacking order when elements overlap.
+overflow controls content that does not fit inside an element.
+Common overflow values: visible, hidden, scroll and auto.
+.popup { position: absolute; z-index: 5; }
+.panel { height: 100px; overflow: auto; }
+EXPECTED RESULT
+Popup can layer above;
+panel can scroll.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+35
+=== SLIDE 36 ===
+Flexbox: One-Dimensional Layout
+FLEXBOX
+Flexbox arranges items along one main axis: row or column.
+Start with display: flex on the parent container.
+flex-direction chooses row, column, row-reverse or column-reverse.
+Useful for navigation bars, toolbars and aligned cards.
+.container {
+  display: flex;
+  flex-direction: row;
+}
+EXPECTED RESULT
+[ Item 1 ]  [ Item 2 ]  [ Item 3 ]
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+36
+=== SLIDE 37 ===
+CSS Grid: Rows and Columns
+CSS GRID
+CSS Grid is a two-dimensional layout system.
+It organises content in rows and columns.
+display: grid activates Grid on a container.
+grid-template-columns defines column sizes.
+grid-template-rows defines row sizes.
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+EXPECTED RESULT
+[ 1 ]  [ 2 ]  [ 3 ]
+Three equal-width columns.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+38
+=== SLIDE 38 ===
+Lists, Tables, Links and Buttons
+COMMON ELEMENTS
+list-style-type changes list markers: disc, circle, square or decimal.
+border-collapse: collapse joins adjacent table borders.
+text-decoration: none can remove underlines from links.
+cursor: pointer shows a hand pointer over clickable controls.
+:hover styles an element while the pointer is over it.
+ul { list-style-type: square; }
+table { border-collapse: collapse; }
+a { text-decoration: none; }
+button:hover { background: green; }
+EXPECTED RESULT
+Square list markers;
+joined table borders;
+button changes on hover.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+39
+=== SLIDE 39 ===
+Images: object-fit and object-position
+IMAGES
+width and height set image dimensions.
+object-fit controls how the image fills its box.
+cover fills the box and may crop part of the image.
+contain shows the full image and may leave empty space.
+object-position chooses which part remains visible.
+img {
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+}
+EXPECTED RESULT
+Image fills a 300 × 180px box;
+outer edges may be cropped.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+40
+=== SLIDE 40 ===
+Opacity, Transitions and Transforms
+EFFECTS
+opacity controls transparency: 1 is fully visible, 0 is invisible.
+transition makes property changes happen smoothly over time.
+transform can rotate, scale, translate or skew an element.
+These effects are often combined with :hover.
+button { background: navy; transition: background .4s; }
+button:hover { background: green; }
+.box { transform: rotate(10deg); }
+EXPECTED RESULT
+Button changes colour smoothly;
+box is rotated.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+41
+=== SLIDE 41 ===
+CSS Animation
+EFFECTS
+Animation changes an element's style over time.
+@keyframes defines the stages of an animation.
+animation-duration sets the time for one cycle.
+animation-iteration-count sets how many times it runs; infinite repeats.
+@keyframes move {
+  from { transform: translateX(0); }
+  to { transform: translateX(80px); }
+}
+.box { animation: move 2s infinite; }
+EXPECTED RESULT
+Box repeatedly moves
+horizontally.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+42
+=== SLIDE 42 ===
+CSS Units of Measurement
+CSS UNITS
+px means pixels, a fixed CSS length unit.
+% is relative to a reference dimension, depending on the property.
+em is relative to the element's computed font size.
+rem is relative to the root element's font size.
+vw and vh are percentages of viewport width and height.
+.example {
+  width: 50%;
+  padding: 1rem;
+  font-size: 2vw;
+}
+EXPECTED RESULT
+Element takes half its containing width;
+spacing uses rem.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+43
+=== SLIDE 43 ===
+Responsive Design and Media Queries
+RESPONSIVE DESIGN
+Responsive design helps a website adapt to different screen sizes.
+A media query applies CSS only when a condition is met.
+max-width often applies mobile styles below a chosen width.
+Test layouts on desktop, tablet and mobile.
+body { background: lightblue; }
+@media (max-width: 600px) {
+  body { background: lightgreen; }
+}
+EXPECTED RESULT
+Wide screen: light blue;
+600px or below: light green.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+44
+=== SLIDE 44 ===
+Complete Practice: HTML Structure
+WORKED EXAMPLE
+Create the HTML structure in index.html.
+Connect the external stylesheet in the head section.
+Add a header, content area, heading, paragraph and button.
+Save the HTML file before styling.
+<link rel="stylesheet" href="style.css">
+<header>
+  <h1>Welcome to My Website</h1>
+  <p>Learning HTML and CSS</p>
+</header>
+<div class="container">
+  <h2>About Us</h2>
+  <p>We are learning web design.</p>
+  <button>Learn More</button>
+</div>
+EXPECTED RESULT
+Header, content card
+and button on the page.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+45
+=== SLIDE 45 ===
+Complete Practice: CSS Styling
+WORKED EXAMPLE
+body sets the page background and default font.
+header creates a dark banner with centred white text.
+container creates a white card with spacing and rounded corners.
+button styles the call-to-action; :hover changes its colour.
+body { background: #f0f4f8; font-family: Arial; }
+header { background: navy; color: white; text-align: center; padding: 30px; }
+.container { background: white; width: 70%; margin: 30px auto; padding: 25px; border-radius: 10px; }
+button { background: navy; color: white; padding: 12px 20px; }
+button:hover { background: green; }
+EXPECTED RESULT
+Navy header, white content
+card and navy button.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+46
+=== SLIDE 46 ===
+Class Activity: Build Your First Styled Page
+STUDENT PRACTICE
+Create My-CSS-Project.
+Create index.html and style.css inside it.
+Connect style.css using the link element.
+Add a heading, paragraph, image and button.
+Style the background, text, font size and spacing.
+Add a border, rounded corners and a button hover effect.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+47
+=== SLIDE 47 ===
+Review Questions
+ASSESSMENT
+What is the difference between HTML and CSS?
+Why do we create a project folder?
+What is the purpose of the link element?
+What does href="style.css" tell the browser?
+What is the difference between margin and padding?
+What is the difference between Flexbox and Grid?
+What should you check if CSS styles do not appear?
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+48
+=== SLIDE 48 ===
+Summary: Correct Learning Sequence
+CONCLUSION
+1. Create a project folder.
+2. Create index.html and style.css.
+3. Write the HTML structure.
+4. Connect the CSS file using link inside head.
+5. Write CSS rules and save both files.
+6. Open or refresh the HTML page in a browser.
+7. Change CSS values and observe the output.
+INTRODUCTION TO WEB TECHNOLOGY  |  CSS PRACTICAL LECTURE
+49

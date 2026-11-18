@@ -1,0 +1,519 @@
+import json
+import os
+
+topic_data = {
+    "course": "INS 202",
+    "topic": "principles_interaction_interface",
+    "title": "Interaction vs Interface & Design Principles",
+    "summary": "Deep architectural and cognitive examination of interaction paradigms and interface design principles. Explores the foundational distinction highlighted in student notes: 'Interaction' as the abstract cognitive dialogue and behavioral model between human and machine, versus 'Interface' as the physical and software technological realization of that interaction model. Rigorous analysis of Don Norman's foundational design principles: Visibility, Feedback, Constraints (Physical, Logical, Semantic, Cultural), Natural Mapping, Consistency (Internal vs External), and Affordances versus Signifiers. Detailed review of Ben Shneiderman's Direct Manipulation interaction style (continuous object representation, physical actions, rapid reversible operations, immediate visual feedback) contrasted with Command Language, Menu Selection, and Form Fill-in. Examines the Gulf of Execution and Gulf of Evaluation, and contrasts user mental models with engineering conceptual models.",
+    "key_terms": [
+        {"term": "Interaction", "definition": "The abstract, conceptual behavioral model by which a human user interacts with a computing device to accomplish a task."},
+        {"term": "Interface", "definition": "The concrete technological realization (hardware controls or software visual presentation) of a given interaction model."},
+        {"term": "Natural Mapping", "definition": "The spatial and conceptual alignment between physical control layouts and the corresponding real-world devices or actions they manipulate."},
+        {"term": "Affordance", "definition": "The fundamental physical and perceived properties of an object that communicate how it can possibly be used (e.g. a flat plate affords pushing)."},
+        {"term": "Signifier", "definition": "Any perceivable visual, tactile, or auditory cue that explicitly signals where and how an action should be performed."},
+        {"term": "Direct Manipulation", "definition": "An interaction style characterized by continuous visual representation of objects, physical actions instead of syntax, and rapid reversible feedback."},
+        {"term": "Gulf of Execution", "definition": "The psychological gap between a user's formulated intention and the physical actions required by the interface to execute that intention."},
+        {"term": "Gulf of Evaluation", "definition": "The psychological gap between the physical state displayed by an interface and the user's ability to interpret and assess the outcome."}
+    ],
+    "questions": [
+        {
+            "id": "ins202-pri-001",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "explain",
+            "difficulty": 3,
+            "tags": ["interaction_vs_interface", "lecturer_note", "exam_critical"],
+            "question": "In the student lecture notes, the lecturer explicitly required students to: 'Differentiate between interaction and interface'. Provide the formal theoretical definition of both terms, and explain how the identical abstract interaction can be realized through two completely different technical interfaces.",
+            "options": [],
+            "answer": "An Interaction is an abstract, conceptual behavioral model by which a human interacts with a computing device to perform a given task; it defines the mental exchanges, dialogue, and cognitive workflow of the task. An Interface is the concrete technological realization (hardware controls or software presentation) of that interaction model. For example, consider the abstract interaction of 'Deleting an unwanted file': In a Command Line Interface (CLI), this interaction is technically realized by typing the alphanumeric syntax command 'rm assignment.c' into a text terminal. In a Graphical Direct Manipulation Interface (GUI), the exact same abstract interaction is realized by physically clicking, dragging, and dropping a graphical document icon into a desktop Recycle Bin. Thus, while the underlying interaction goal is identical, the technical interface realizations are completely different.",
+            "explanation": "Interaction is the abstract conceptual dialogue/model; Interface is the technical physical/software implementation. The same interaction can be embodied in CLI, GUI, touch, or voice.",
+            "why_wrong": {},
+            "marking_points": [
+                "Defines Interaction as the abstract conceptual model/dialogue by which a human interacts with a computing device for a given task.",
+                "Defines Interface as the choice of technical realization (hardware or software) of such an interaction model.",
+                "Explains that the 'I' in HCI encompasses both the abstract model and the technological methodology.",
+                "Provides a valid concrete example showing one abstract interaction (e.g. deleting a file) realized through two distinct interfaces (e.g. typing a CLI command vs dragging an icon to the trash)."
+            ],
+            "source": "Student Notebook Image 21.47.02 (1); Module 01 Slide 13",
+            "verified": True,
+            "verified_output": "Interaction is the abstract model; Interface is the technical realization."
+        },
+        {
+            "id": "ins202-pri-002",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["norman_principles", "mapping"],
+            "question": "A domestic kitchen stove features four heating burners arranged in a rectangular grid of two in front and two in back. The manufacturer places the four control knobs in a straight horizontal line across the front panel, requiring users to read confusing printed labels to identify which knob activates which burner. According to Don Norman's design principles, which principle was violated?",
+            "options": [
+                "Natural Mapping (failure of spatial correspondence between physical controls and their real-world burners)",
+                "Cryptographic Bitwise Symmetry",
+                "Dynamic Host Configuration",
+                "Heuristic Color Temperature Gamut"
+            ],
+            "answer": 0,
+            "explanation": "Natural Mapping requires that the physical arrangement of controls corresponds directly to the spatial layout of the items being controlled. Arranging four stove controls in a straight horizontal line to control a 2x2 rectangular grid of burners violates natural mapping, causing users to accidentally turn on the wrong burner.",
+            "why_wrong": {
+                "1": "Bitwise symmetry is a mathematical cryptographic concept.",
+                "2": "DHCP is a network protocol for assigning IP addresses.",
+                "3": "Color temperature gamut is a monitor display calibration standard."
+            },
+            "marking_points": [],
+            "source": "Module 02 Slide 48; Norman Design of Everyday Things",
+            "verified": True,
+            "verified_output": "Natural Mapping."
+        },
+        {
+            "id": "ins202-pri-003",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "matching",
+            "difficulty": 3,
+            "tags": ["constraints_types", "error_prevention"],
+            "question": "Match each type of interaction design constraint to its real-world implementation:",
+            "options": [
+                "Physical Constraint",
+                "Logical Constraint",
+                "Cultural Constraint",
+                "Semantic Constraint"
+            ],
+            "answer": {
+                "Physical Constraint": "A USB-A plug or smartphone SIM card with an asymmetrical beveled corner that physically prevents incorrect insertion.",
+                "Logical Constraint": "A flight booking website graying out and disabling return calendar dates that occur prior to the selected departure date.",
+                "Cultural Constraint": "Using red for emergency stop buttons and green for operational confirmation, relying on shared societal conventions.",
+                "Semantic Constraint": "An automobile GPS navigation system preventing an operator from entering an address in the middle of the Atlantic Ocean based on geographical meaning."
+            },
+            "explanation": "Physical constraints use physical geometry to restrict motion; Logical constraints use deduction and grayed-out UI states; Cultural constraints leverage social conventions (colors/symbols); Semantic constraints rely on domain knowledge of the real world.",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "Module 02 Slide 54; Norman Interaction Principles",
+            "verified": True,
+            "verified_output": "Matched physical, logical, cultural, semantic constraints."
+        },
+        {
+            "id": "ins202-pri-004",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "true_false_why",
+            "difficulty": 2,
+            "tags": ["affordances", "norman_door"],
+            "question": "A commercial glass office door has an identical vertical cylindrical pull-handle mounted on both sides. A visitor pushes the handle firmly, but the door refuses to open until they realize it must be pulled. This interface failure is known in HCI as a 'Norman Door' caused by misleading perceived affordance.",
+            "options": [
+                "False — vertical cylindrical handles inherently communicate pushing to all human cultures, so the visitor made an irrational mental calculation.",
+                "True — a vertical handle physically affords and visually signifies pulling; if a door must be pushed, installing a flat push-plate provides the correct perceived affordance."
+            ],
+            "answer": 1,
+            "explanation": "A 'Norman Door' (named after Don Norman) is a door whose design gives false visual affordance cues. A vertical bar affords pulling (giving hands a surface to grasp). If the door opens by pushing, installing a pull handle causes natural user error; a flat metal push plate physically affords pushing and prevents mistakes.",
+            "why_wrong": {
+                "0": "A cylindrical handle invites grasping and pulling, not pushing; the fault lies entirely with poor interface affordance design."
+            },
+            "marking_points": [],
+            "source": "Module 02 Slide 47-49; Norman Design Principles",
+            "verified": True,
+            "verified_output": "True. Misleading affordance creates a Norman Door."
+        },
+        {
+            "id": "ins202-pri-005",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "multi_select",
+            "difficulty": 3,
+            "tags": ["direct_manipulation", "shneiderman"],
+            "question": "Which of the following represent the foundational principles of Direct Manipulation interfaces as formulated by computer scientist Ben Shneiderman? (Select THREE)",
+            "options": [
+                "Continuous visual representation of the objects and actions of interest",
+                "Physical actions (like clicking, dragging, and dropping) instead of complex textual command syntax",
+                "Rapid, incremental, and reversible operations whose impact on the object is immediately visible",
+                "Requiring users to type binary machine code directly into the CPU register bank",
+                "Hiding the mouse cursor and forcing users to interact exclusively via command line prompt"
+            ],
+            "answer": [0, 1, 2],
+            "explanation": "Direct Manipulation interfaces (such as file drag-and-drop or drawing programs) rely on: (1) continuous visual representation of objects, (2) physical pointing/dragging actions, and (3) rapid, reversible operations with immediate visual feedback.",
+            "why_wrong": {
+                "3": "Direct manipulation replaces low-level machine code with visual metaphors.",
+                "4": "Direct manipulation relies heavily on pointing devices (mouse, touch), not pure text terminals."
+            },
+            "marking_points": [],
+            "source": "Module 01 Slide 13; Shneiderman Direct Manipulation",
+            "verified": True,
+            "verified_output": "Continuous visual representation, physical actions, rapid reversible feedback."
+        },
+        {
+            "id": "ins202-pri-006",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["gulfs", "gulf_of_execution"],
+            "question": "A user wishes to print a document in an unfamiliar accounting software application. The user searches through all 8 top menus, but cannot find a 'Print' button because the developer labeled the print function as 'Spool Output Stream' buried under a 'Database Utilities' submenu. In Don Norman's Seven Stages of Action, which gulf is wide and obstructing the user?",
+            "options": [
+                "The Gulf of Execution (the user cannot translate their psychological intention into the physical actions provided by the interface)",
+                "The Gulf of Evaluation",
+                "The Gulf of Quantum Semiconductor Physics",
+                "The Gulf of Bandwidth Latency"
+            ],
+            "answer": 0,
+            "explanation": "The Gulf of Execution measures the difficulty an actor experiences in translating their goal/intention into the actual input actions required by the interface. When functions are hidden or obscured by non-standard technical jargon, the Gulf of Execution is enormous.",
+            "why_wrong": {
+                "1": "The Gulf of Evaluation occurs after action execution, assessing what the system did; here, the user cannot even execute the action.",
+                "2": "Semiconductor physics is unrelated to cognitive usability gulfs.",
+                "3": "Bandwidth latency is a network transmission delay, not an interface intention gulf."
+            },
+            "marking_points": [],
+            "source": "Module 01 Slide 13; Norman Interaction Model",
+            "verified": True,
+            "verified_output": "Gulf of Execution."
+        },
+        {
+            "id": "ins202-pri-007",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "cloze",
+            "difficulty": 2,
+            "tags": ["feedback_modalities"],
+            "question": "In interaction design, {{c1::feedback}} refers to sending back information to the user confirming that an action has been received and executed. For example, when an elevator button illuminates with a bright LED upon pressing, it provides {{c2::visual}} feedback; when it emits a chime tone upon arrival, it provides {{c3::auditory}} feedback.",
+            "options": ["feedback", "visual", "auditory", "mapping", "consistency", "haptic"],
+            "answer": ["feedback", "visual", "auditory"],
+            "explanation": "Feedback communicates the consequences of an action. Illuminating a button is visual feedback; sounding a chime is auditory feedback; vibrating a smartphone is haptic feedback.",
+            "why_wrong": {},
+            "marking_points": [],
+            "source": "Module 02 Slide 48; Norman Design Principles",
+            "verified": True,
+            "verified_output": "feedback, visual, auditory"
+        },
+        {
+            "id": "ins202-pri-008",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["affordances_vs_signifiers"],
+            "question": "What is the key theoretical distinction between an 'Affordance' and a 'Signifier' according to Don Norman's revised design taxonomy?",
+            "options": [
+                "An Affordance is the actual relationship between physical properties of an object and the agent's capabilities (what can be done), whereas a Signifier is any perceivable indicator that communicates WHERE and HOW an action should take place.",
+                "Affordances only exist inside web browsers, whereas Signifiers only exist on laser printers.",
+                "An Affordance is a paid software license, whereas a Signifier is a free open-source font.",
+                "There is zero distinction; Norman abandoned the term Affordance in 1988."
+            ],
+            "answer": 0,
+            "explanation": "An affordance defines what interactions are physically possible between an actor and an object. A signifier is an explicit perceptual signal (like a label 'PUSH', an icon, or a highlighted outline) that directs attention and signals where the action must be performed.",
+            "why_wrong": {
+                "1": "Both affordances and signifiers exist across physical objects and digital software interfaces.",
+                "2": "Licenses and fonts are legal and graphic terms, not cognitive design principles.",
+                "3": "Norman clarified the distinction in *The Design of Everyday Things (Revised Edition)* rather than abandoning affordances."
+            },
+            "marking_points": [],
+            "source": "Module 02 Slide 47-49",
+            "verified": True,
+            "verified_output": "Affordance = what can be done; Signifier = where and how action occurs."
+        },
+        {
+            "id": "ins202-pri-009",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "type_answer",
+            "difficulty": 2,
+            "tags": ["consistency_types"],
+            "question": "What type of consistency is maintained when an application conforms to platform-wide standards and universal web conventions (such as using Ctrl+Z for undo or blue underlined text for hyperlinks)?",
+            "answer": "external consistency",
+            "accepted_answers": ["external consistency", "external", "platform consistency"],
+            "explanation": "External consistency means designing an application to match established external conventions across other applications and operating systems. Internal consistency refers to maintaining uniformity within the same application.",
+            "marking_points": [
+                "Identifies 'external consistency' (or 'external')."
+            ],
+            "source": "Module 02 Slide 52; Design Principles",
+            "verified": True,
+            "verified_output": "external consistency"
+        },
+        {
+            "id": "ins202-pri-010",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["interface_metaphors", "limitations"],
+            "question": "Early email systems used the visual icon of a classic American rural mailbox with a raised red flag to indicate incoming messages. Why was this interface metaphor problematic when deployed internationally?",
+            "options": [
+                "Because rural roadside mailboxes with mechanical red flags are virtually unknown outside North America, depriving international users of familiar context.",
+                "Because the red flag icon converted all emails into high-speed microwave radiation.",
+                "Because computer screens in Europe could not physically render the color red.",
+                "Because rural mailboxes violate the TCP/IP protocol suite."
+            ],
+            "answer": 0,
+            "explanation": "As noted in Module 02 Slide 46: 'Disadvantage: metaphor may not be widely known or correctly understood. The mailbox icon meant nothing outside rural United States until explained.' Interface metaphors that rely on localized cultural artifacts fail globally.",
+            "why_wrong": {
+                "1": "Icons cannot generate physical microwave radiation.",
+                "2": "European visual monitors display full RGB color spaces identically.",
+                "3": "Visual icons on an application UI have no effect on lower-level TCP/IP networking."
+            },
+            "marking_points": [],
+            "source": "Module 02 Slide 46",
+            "verified": True,
+            "verified_output": "Metaphor lacked international familiarity."
+        },
+        {
+            "id": "ins202-pri-011",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["interaction_styles", "cli_vs_menu"],
+            "question": "Which interaction style is best suited for an untrained novice booking a flight on a public airport touchscreen terminal?",
+            "options": [
+                "Menu selection and structured form fill-in with large touch targets and constrained choices",
+                "Command Language interface requiring users to type raw UNIX shell pipelines",
+                "Binary assembly hexadecimal toggle switches",
+                "Machine-readable punched cards"
+            ],
+            "answer": 0,
+            "explanation": "Untrained public users require menu selection and form fill-in with clear constraints (e.g. airport kiosks). Menus rely on recognition, limit choices to valid selections, and eliminate the need to memorize syntax.",
+            "why_wrong": {
+                "1": "Command line interfaces require extensive training and high recall memory.",
+                "2": "Hexadecimal toggle switches were 1970s hardware debugging tools.",
+                "3": "Punched cards are obsolete 1950s batch media."
+            },
+            "marking_points": [],
+            "source": "Module 01 Slide 13; Interaction Styles",
+            "verified": True,
+            "verified_output": "Menu selection and structured form fill-in."
+        },
+        {
+            "id": "ins202-pri-012",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "true_false_why",
+            "difficulty": 2,
+            "tags": ["mental_models", "user_vs_system"],
+            "question": "A user's Mental Model of how an operating system stores files is guaranteed to be technically identical to the computer engineer's Conceptual Model of disk block allocation tables and inode pointers.",
+            "options": [
+                "True — every person who clicks a folder icon mentally simulates the underlying magnetic cluster addresses on the drive surface.",
+                "False — users form simplified mental models based on visible metaphors (e.g. documents sitting inside folders in a filing cabinet), whereas the engineer's conceptual model consists of data structures, master file tables, and physical storage blocks."
+            ],
+            "answer": 1,
+            "explanation": "As taught in Module 02 Slide 44: Users build mental models to predict and understand how a system works. These models are based on visible metaphors (files and folders) and past experience, not the actual low-level data structures (inodes, sectors, file tables) known to computer engineers.",
+            "why_wrong": {
+                "0": "Everyday users have no knowledge of magnetic sector allocation or inode data tables."
+            },
+            "marking_points": [],
+            "source": "Module 02 Slide 44; Norman Mental Models",
+            "verified": True,
+            "verified_output": "False. User mental models differ from engineering conceptual models."
+        },
+        {
+            "id": "ins202-pri-013",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["feedback_absence", "double_click_error"],
+            "question": "A user clicks an online 'Submit Order' button on an e-commerce website. Because the developer provided zero visual feedback (no loading spinner, no disabled button state, and no progress indicator), the user assumes the click failed and clicks the button four more times, resulting in their credit card being charged five times. Which design principle failure caused this?",
+            "options": [
+                "Failure to provide immediate Feedback and state Visibility",
+                "Failure of the CPU's Arithmetic Logic Unit",
+                "Violation of the 3-2-1 backup rule",
+                "Failure to assign a Class C private IP address to the web server"
+            ],
+            "answer": 0,
+            "explanation": "Immediate feedback is essential in interaction design. When a user initiates a transaction, the interface must immediately provide visual feedback (e.g. displaying a loading spinner and disabling the button to prevent duplicate clicks). Lack of feedback leads users to re-submit actions.",
+            "why_wrong": {
+                "1": "The CPU's ALU executed transactions correctly five times.",
+                "2": "The 3-2-1 backup rule governs data storage disaster recovery, not web button feedback.",
+                "3": "Class C addressing is networking, unrelated to UI click feedback."
+            },
+            "marking_points": [],
+            "source": "Module 02 Slide 48; Feedback Principles",
+            "verified": True,
+            "verified_output": "Failure of Feedback and state Visibility."
+        },
+        {
+            "id": "ins202-pri-014",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "type_answer",
+            "difficulty": 2,
+            "tags": ["gulfs", "gulf_of_evaluation"],
+            "question": "What is the technical term in Don Norman's action cycle for the psychological gap between the system's displayed output state and the user's ability to perceive, interpret, and determine whether their goal was accomplished?",
+            "answer": "Gulf of Evaluation",
+            "accepted_answers": ["Gulf of Evaluation", "evaluation gulf"],
+            "explanation": "The Gulf of Evaluation represents the effort required by a user to assess the state of the system and determine if their previous action succeeded.",
+            "marking_points": [
+                "Identifies 'Gulf of Evaluation'."
+            ],
+            "source": "Norman Action Cycle; Module 01 Slide 13",
+            "verified": True,
+            "verified_output": "Gulf of Evaluation"
+        },
+        {
+            "id": "ins202-pri-015",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["consistency_internal"],
+            "question": "On the homepage of a university website, the primary action button is bright green with bold sans-serif text. On the faculty page, the identical action button is light gray with serif italics and no hover state. Which design principle has been broken?",
+            "options": [
+                "Internal Consistency",
+                "Magnetic Memory Latency",
+                "Class A Subnet Allocation",
+                "Paging File Fragmentation"
+            ],
+            "answer": 0,
+            "explanation": "Internal consistency requires that visual styling, button behaviors, and terminology remain uniform across all pages and modules within the same application. Inconsistent button styling confuses users and impairs learnability.",
+            "why_wrong": {
+                "1": "Magnetic memory latency is a hard drive performance property.",
+                "2": "Subnet allocation is a networking protocol setting.",
+                "3": "File fragmentation is an OS storage concern."
+            },
+            "marking_points": [],
+            "source": "Module 02 Slide 52; Principles of HCI",
+            "verified": True,
+            "verified_output": "Internal Consistency."
+        },
+        {
+            "id": "ins202-pri-016",
+            "course": "INS 202",
+            "topic": "principles_interaction_interface",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["error_prevention", "reversibility"],
+            "question": "Which of the following is a classic interaction design technique that helps prevent irreversible human errors before they occur?",
+            "options": [
+                "Disabling destructive menu options unless specifically unlocked, and providing a two-step confirmation or universal 'Undo' (reversal of action)",
+                "Automatically deleting files without notifying the user",
+                "Displaying error messages entirely in hexadecimal machine code",
+                "Removing all cancel buttons from web dialogs"
+            ],
+            "answer": 0,
+            "explanation": "As stated in Slide 30 & 54: 'Prevent Errors / Reversal of Action.' Interfaces prevent errors by disabling dangerous options, offering explicit confirmations, and supporting effortless reversal (Undo) of actions.",
+            "why_wrong": {
+                "1": "Silently deleting files causes catastrophic data loss.",
+                "2": "Hexadecimal codes obscure errors from users.",
+                "3": "Removing cancel buttons traps users in unintended workflows."
+            },
+            "marking_points": [],
+            "source": "Module 01 Slide 30; Module 02 Slide 54",
+            "verified": True,
+            "verified_output": "Confirmation, disabling destructive options, and universal Undo."
+        }
+    ],
+    "case_studies": [
+        {
+            "id": "ins202-pri-cs1",
+            "scenario": "A hospital in Abuja installs computerized touchscreen infusion pumps in its neonatal intensive care unit (NICU). Nurses use the touch pump to administer intravenous medication to premature infants. The original interface has two adjacent buttons at the bottom of the screen: a small green 'Infuse 1.0 ml/hr' button and an identically shaped, adjacent red 'Bolus Flush 100.0 ml/hr' button. On a night shift, a fatigued nurse intending to tap 'Infuse' accidentally touches the edge of the adjacent 'Bolus Flush' button; the pump immediately begins dispensing a massive, potentially lethal overdose without any confirmation dialog or auditory warning chime.",
+            "sub_questions": [
+                {
+                    "id": "ins202-pri-cs1-q1",
+                    "course": "INS 202",
+                    "topic": "principles_interaction_interface",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case_study", "safety_and_constraints"],
+                    "question": "Analyze the critical interaction design failures in this medical pump interface using Don Norman's principles of 'Constraints', 'Feedback', and the HCI goal of 'Safety'.",
+                    "options": [],
+                    "answer": "This medical interface represents a catastrophic failure of HCI design: (1) Total absence of Logical/Physical Constraints: High-risk, irreversible operations (like a 100 ml/hr bolus in a neonatal ward) must never be accessible via a single accidental tap immediately adjacent to routine low-dose buttons; the interface failed to enforce a physical barrier, guard, or two-step authorization constraint; (2) Total absence of Feedback and Confirmation: The system executed a dangerous dosage jump without displaying an unmistakable warning dialog requiring explicit confirmation, and failed to provide an immediate auditory warning chime alerting the clinician to an anomalous dose rate; (3) Complete failure of the HCI goal of Safety: In life-critical medical devices, safety requires designing out human error, protecting vulnerable patients from inadvertent slips caused by fatigue, low lighting, or emergency stress.",
+                    "explanation": "Critical failure of constraints (adjacent buttons), lack of confirmation/feedback, and violation of Safety.",
+                    "why_wrong": {},
+                    "marking_points": [
+                        "Identifies failure of Constraints: placing a dangerous high-dose button directly adjacent to routine low-dose buttons.",
+                        "Identifies failure of Feedback/Confirmation: executing a drastic dosage increase without a warning dialog or audio alarm.",
+                        "Directly links to the HCI goal of Safety in life-critical medical systems.",
+                        "Emphasizes that fatigue and stress make error-tolerant design mandatory."
+                    ],
+                    "source": "Module 01 Slide 20; Module 02 Slide 48, 54",
+                    "verified": True,
+                    "verified_output": "Safety, Constraints, and Feedback failures in infusion pump."
+                },
+                {
+                    "id": "ins202-pri-cs1-q2",
+                    "course": "INS 202",
+                    "topic": "principles_interaction_interface",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case_study", "redesign_constraints"],
+                    "question": "Which of the following redesign proposals would most effectively eliminate the risk of accidental bolus overdose using the principle of physical/logical constraints?",
+                    "options": [
+                        "Separate the Bolus function onto a completely distinct screen requiring a physical flip-cover guard and an explicit numeric dosage confirmation prompt before activation.",
+                        "Make both buttons 50% smaller so that they occupy less screen space.",
+                        "Change the font of the bolus button from Arial to Comic Sans.",
+                        "Require the nurse to memorize a 64-character encrypted SHA-256 hash before using the pump."
+                    ],
+                    "answer": 0,
+                    "explanation": "Isolating high-risk actions to separate screens, adding physical flip-covers or slider gestures, and requiring two-step confirmation enforces safety constraints, preventing inadvertent touches from causing patient harm.",
+                    "why_wrong": {
+                        "1": "Smaller buttons increase mis-taps according to Fitts's Law.",
+                        "2": "Changing font styles does not prevent accidental spatial touches.",
+                        "3": "Complex 64-character hashes create massive operational delays during critical medical emergencies."
+                    },
+                    "marking_points": [],
+                    "source": "Module 02 Slide 54; Medical Device Usability",
+                    "verified": True,
+                    "verified_output": "Separate screen with physical guard and two-step confirmation."
+                }
+            ]
+        },
+        {
+            "id": "ins202-pri-cs2",
+            "scenario": "A banking mobile app in Abuja releases an update with a redesigned dashboard. In the previous version, sending money required tapping a prominent blue button labeled 'Transfer Money'. In the new version, the design team replaced all text labels with abstract geometric icons: transferring money is now represented by an icon of two intersecting equilateral triangles with a dotted circle. Over 40% of users fail to locate the transfer option, flooding social media with complaints that the bank removed transfer functionality entirely.",
+            "sub_questions": [
+                {
+                    "id": "ins202-pri-cs2-q1",
+                    "course": "INS 202",
+                    "topic": "principles_interaction_interface",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["case_study", "signifiers_and_visibility"],
+                    "question": "Which interaction design principle failed when the designers replaced clear textual labels with abstract geometric triangles?",
+                    "options": [
+                        "Signifiers and Visibility (abstract shapes lack cultural meaning and fail to signify the financial transfer action to users)",
+                        "Dynamic Random Access Memory Refresh",
+                        "Hypertext Transfer Protocol Compression",
+                        "Parity Bit Generation"
+                    ],
+                    "answer": 0,
+                    "explanation": "Signifiers must clearly communicate what action is available and how to invoke it. Replacing familiar, self-explanatory text ('Transfer Money') with obscure abstract shapes destroys visibility and signifier clarity, leaving users unable to discern the function.",
+                    "why_wrong": {
+                        "1": "DRAM refresh is a hardware memory controller task.",
+                        "2": "HTTP compression is a web transport optimization.",
+                        "3": "Parity bits are error detection codes in telecommunications."
+                    },
+                    "marking_points": [],
+                    "source": "Module 02 Slide 47-49",
+                    "verified": True,
+                    "verified_output": "Signifiers and Visibility failure."
+                },
+                {
+                    "id": "ins202-pri-cs2-q2",
+                    "course": "INS 202",
+                    "topic": "principles_interaction_interface",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["case_study", "mental_model_mismatch"],
+                    "question": "Using the concepts of 'Mental Models' and 'Gulf of Execution', explain why users concluded that the bank had 'removed the transfer feature entirely' rather than simply searching harder.",
+                    "options": [],
+                    "answer": "A user's Mental Model of a mobile banking app is built upon established conceptual metaphors (e.g. sending money, accounts, payments). When opening the app to send money, the user searches for visual signifiers that align with their mental model (such as the word 'Transfer', a monetary icon, or an arrow indicating funds outflow). Because the two intersecting triangles had zero semantic or cultural connection to financial transfers, the user's mind completely failed to map the icon to their intention, creating a massive, insurmountable Gulf of Execution. In usability psychology, if a user cannot find a core function within their mental model's expected visual landscape after reasonable scanning, they intuitively deduce that the feature no longer exists in the system rather than suspecting that an abstract shape is a disguised payment button.",
+                    "explanation": "Mental model expects monetary signifiers; abstract shape creates insurmountable Gulf of Execution, leading users to conclude the feature was deleted.",
+                    "why_wrong": {},
+                    "marking_points": [
+                        "Explains that users' mental models anticipate recognizable financial signifiers (words, currency icons).",
+                        "Explains how abstract geometric shapes lack semantic mapping to money transfers.",
+                        "Identifies that this creates an insurmountable Gulf of Execution.",
+                        "Articulates why users conclude the feature was eliminated rather than suspecting obscure icons."
+                    ],
+                    "source": "Module 01 Slide 13; Module 02 Slide 44, 46",
+                    "verified": True,
+                    "verified_output": "Mental model breakdown and Gulf of Execution analysis."
+                }
+            ]
+        }
+    ]
+}
+
+out_dir = os.path.join("app", "content", "INS 202")
+os.makedirs(out_dir, exist_ok=True)
+out_path = os.path.join(out_dir, "principles_interaction_interface.json")
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(topic_data, f, indent=2)
+
+print(f"Generated {out_path} with {len(topic_data['questions'])} questions and {len(topic_data['case_studies'])} case studies.")

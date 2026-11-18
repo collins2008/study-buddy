@@ -1,0 +1,625 @@
+{
+  "course": "COS 201",
+  "topic": "Functions, Parameters & Modular Design",
+  "summary": "Covers modular software design in C: function definitions, return types and void functions, function prototypes and signature validation, call-by-value argument passing mechanics, local block scope vs global file scope, static local variable persistence across invocations, recursion base cases and stack mechanics.",
+  "key_terms": [
+    {
+      "term": "Function Prototype",
+      "definition": "A function declaration specifying the function name, return type, and parameter types without providing the body, enabling compiler type-checking."
+    },
+    {
+      "term": "Pass-by-Value",
+      "definition": "The standard C parameter passing mechanism where a copy of the argument value is passed to the function, isolating caller variables from side-effects."
+    },
+    {
+      "term": "Void Function",
+      "definition": "A function whose return type is declared as void, indicating that it does not return any value to the calling expression."
+    },
+    {
+      "term": "Static Local Variable",
+      "definition": "A local variable defined with the static keyword that retains its value in memory between successive function calls."
+    },
+    {
+      "term": "Scope",
+      "definition": "The portion of a program where an identifier can be referenced (e.g. block scope, function scope, file scope)."
+    },
+    {
+      "term": "Recursion",
+      "definition": "A technique where a function solves a problem by calling a smaller instance of itself until reaching a base termination case."
+    },
+    {
+      "term": "Activation Record (Stack Frame)",
+      "definition": "A memory structure pushed onto the call stack containing a function's parameters, return address, and local variables."
+    },
+    {
+      "term": "Modular Programming",
+      "definition": "A software design paradigm decomposing complex programs into distinct, independent, and reusable sub-programs."
+    }
+  ],
+  "questions": [
+    {
+      "id": "cos201-fn-001",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "functions",
+        "void",
+        "syntax",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following is a valid way to define a function returning void in C?",
+      "options": [
+        "void func() {}",
+        "func void() {}",
+        "void func;",
+        "return void func() {}"
+      ],
+      "answer": 0,
+      "explanation": "In C, a function definition begins with the return type ('void'), followed by the function identifier ('func'), parameter list in parentheses '()', and the code body in braces '{}'.",
+      "why_wrong": {
+        "1": "The return type must precede the function name, not appear inside or after.",
+        "2": "'void func;' is a variable declaration or incomplete statement without parentheses and body.",
+        "3": "'return' is a jump statement inside a function, not part of a function definition header."
+      },
+      "source": "COS 201 Midterm Type B, Q6; Deitel Ch 5.3",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-fn-002",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "mcq",
+      "difficulty": 1,
+      "tags": [
+        "functions",
+        "modular",
+        "theory",
+        "midterm-past-q"
+      ],
+      "question": "Which of the following is TRUE about functions in C?",
+      "options": [
+        "Functions help in modular programming.",
+        "A function must return a value.",
+        "Functions can be called before declaration without a prototype in modern C.",
+        "Only main() can call other functions."
+      ],
+      "answer": 0,
+      "explanation": "Functions facilitate modular programming by breaking large problems into smaller, reusable, testable sub-units. Functions can have 'void' return type (returning nothing), any function can call any other function, and modern C requires prototypes before calls.",
+      "why_wrong": {
+        "1": "Functions can return 'void', meaning they return no value.",
+        "2": "Standard modern C (C99/C11) mandates function prototypes before use to prevent signature mismatches.",
+        "3": "Any function can call any other function; calls are not restricted to main()."
+      },
+      "source": "COS 201 Midterm Type B, Q28; Deitel Ch 5.2",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-fn-003",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "pass-by-value",
+        "scope",
+        "parameters"
+      ],
+      "question": "What will be printed by the following C program demonstrating pass-by-value parameter semantics?",
+      "code": "#include <stdio.h>\nvoid modify(int x) {\n    x = x + 10;\n}\nint main(void) {\n    int a = 5;\n    modify(a);\n    printf(\"%d\\n\", a);\n    return 0;\n}",
+      "options": [
+        "5",
+        "15",
+        "10",
+        "Compilation Error"
+      ],
+      "answer": 0,
+      "explanation": "In C, scalar variables are passed strictly by value. Function 'modify' receives a private copy of 'a' in its parameter 'x'. Changing 'x = x + 10' alters only the local stack copy inside 'modify'. The original variable 'a' in main remains 5.",
+      "why_wrong": {
+        "1": "15 would occur if C used pass-by-reference. C strictly uses pass-by-value for scalars unless pointers are explicitly passed.",
+        "2": "a is initialized to 5, not 10.",
+        "3": "The code is completely valid C."
+      },
+      "source": "Deitel Ch 5.5",
+      "verified": true,
+      "verified_output": "5\n"
+    },
+    {
+      "id": "cos201-fn-004",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "static",
+        "storage-duration",
+        "lifetime"
+      ],
+      "question": "What will be the output of the following C code containing a static local variable?",
+      "code": "#include <stdio.h>\nvoid counter(void) {\n    static int count = 1;\n    printf(\"%d \", count);\n    count++;\n}\nint main(void) {\n    counter();\n    counter();\n    counter();\n    printf(\"\\n\");\n    return 0;\n}",
+      "options": [
+        "1 2 3 ",
+        "1 1 1 ",
+        "2 3 4 ",
+        "0 1 2 "
+      ],
+      "answer": 0,
+      "explanation": "A local variable declared as 'static' is initialized only ONCE at program startup and retains its value between function calls in static memory. Call 1 prints 1 (count becomes 2); Call 2 prints 2 (count becomes 3); Call 3 prints 3 (count becomes 4). Output is '1 2 3 '.",
+      "why_wrong": {
+        "1": "'1 1 1 ' would be printed if 'count' were a regular automatic variable without the 'static' qualifier.",
+        "2": "Initialization to 1 prints 1 on the first call, not 2.",
+        "3": "count is initialized to 1, not 0."
+      },
+      "source": "Deitel Ch 5.12",
+      "verified": true,
+      "verified_output": "1 2 3 \n"
+    },
+    {
+      "id": "cos201-fn-005",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "recursion",
+        "call-stack",
+        "tracing"
+      ],
+      "question": "What is the output of the following recursive countdown function?",
+      "code": "#include <stdio.h>\nvoid countdown(int n) {\n    if (n <= 0) return;\n    printf(\"%d \", n);\n    countdown(n - 1);\n}\nint main(void) {\n    countdown(3);\n    printf(\"\\n\");\n    return 0;\n}",
+      "options": [
+        "3 2 1 ",
+        "1 2 3 ",
+        "3 2 1 0 ",
+        "0 1 2 3 "
+      ],
+      "answer": 0,
+      "explanation": "- countdown(3): prints '3 ', calls countdown(2)\n- countdown(2): prints '2 ', calls countdown(1)\n- countdown(1): prints '1 ', calls countdown(0)\n- countdown(0): hits base case 'n <= 0' and returns.\nOutput is '3 2 1 '.",
+      "why_wrong": {
+        "1": "'1 2 3 ' would occur if printf were placed after the recursive call.",
+        "2": "'n <= 0' returns before printing 0.",
+        "3": "The recursion unwinds after reaching 0."
+      },
+      "source": "Deitel Ch 5.14",
+      "verified": true,
+      "verified_output": "3 2 1 \n"
+    },
+    {
+      "id": "cos201-fn-006",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "code_output",
+      "difficulty": 3,
+      "tags": [
+        "prototypes",
+        "type-coercion"
+      ],
+      "question": "What will be printed by the following C program?",
+      "code": "#include <stdio.h>\nint square(int x) {\n    return x * x;\n}\nint main(void) {\n    double val = 4.8;\n    printf(\"%d\\n\", square(val));\n    return 0;\n}",
+      "options": [
+        "16",
+        "23",
+        "23.04",
+        "Compilation Error"
+      ],
+      "answer": 0,
+      "explanation": "Because 'square' is defined to take an 'int' parameter, passing the double 'val = 4.8' triggers implicit type coercion (argument promotion/conversion). The float 4.8 is truncated to int 4 before being passed to 'square'. square(4) returns 4 * 4 = 16.",
+      "why_wrong": {
+        "1": "No rounding occurs; 4.8 truncates to 4, not 5 (5*5=25).",
+        "2": "The return type is int (%d), so no decimals are returned or printed.",
+        "3": "Implicit narrowing of double to int argument generates at most a compiler warning, not an error."
+      },
+      "source": "Deitel Ch 5.6",
+      "verified": true,
+      "verified_output": "16\n"
+    },
+    {
+      "id": "cos201-fn-007",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "code_output",
+      "difficulty": 4,
+      "tags": [
+        "recursion",
+        "call-stack",
+        "unwinding"
+      ],
+      "question": "What is the output of the following recursive function where the printf statement follows the recursive call?",
+      "code": "#include <stdio.h>\nvoid print_back(int n) {\n    if (n == 0) return;\n    print_back(n - 1);\n    printf(\"%d \", n);\n}\nint main(void) {\n    print_back(3);\n    printf(\"\\n\");\n    return 0;\n}",
+      "options": [
+        "1 2 3 ",
+        "3 2 1 ",
+        "0 1 2 3 ",
+        "3 2 1 0 "
+      ],
+      "answer": 0,
+      "explanation": "Because printf is after 'print_back(n - 1)', calls are pushed onto the call stack: print_back(3) -> print_back(2) -> print_back(1) -> print_back(0). When print_back(0) returns, the stack unwinds in reverse order (LIFO): n=1 prints, then n=2 prints, then n=3 prints: '1 2 3 '.",
+      "why_wrong": {
+        "1": "'3 2 1 ' would occur if printf were called before the recursive step.",
+        "2": "print_back(0) returns without printing 0.",
+        "3": "Stack unwinding executes the printf in ascending order."
+      },
+      "source": "Deitel Ch 5.14",
+      "verified": true,
+      "verified_output": "1 2 3 \n"
+    },
+    {
+      "id": "cos201-fn-008",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "type_answer",
+      "difficulty": 1,
+      "tags": [
+        "void",
+        "keywords"
+      ],
+      "question": "Which C keyword is specified as the return type of a function that does not return a value to its caller?",
+      "answer": "void",
+      "accepted_answers": [
+        "void"
+      ],
+      "explanation": "'void' indicates the absence of a return value.",
+      "why_wrong": {},
+      "source": "Deitel Ch 5.3",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-fn-009",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "cloze",
+      "difficulty": 2,
+      "tags": [
+        "cloze",
+        "functions"
+      ],
+      "question": "Fill in the correct terms for C function concepts:",
+      "template": "A function declaration that informs the compiler of a function's signature before its use is called a function [[blank]]. In C, function arguments are passed by [[blank]]. A local variable that preserves its value across calls is declared using the keyword [[blank]].",
+      "blanks": [
+        "prototype",
+        "value",
+        "static"
+      ],
+      "explanation": "Prototype declares the signature, C passes arguments by value, and static retains local state across calls.",
+      "why_wrong": {},
+      "source": "Deitel Ch 5",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-fn-010",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "matching",
+      "difficulty": 2,
+      "tags": [
+        "matching",
+        "scope",
+        "storage"
+      ],
+      "question": "Match each variable classification with its lifetime and visibility:",
+      "pairs": [
+        {
+          "left": "Automatic local variable",
+          "right": "Created on block entry, destroyed on block exit"
+        },
+        {
+          "left": "Static local variable",
+          "right": "Retains value across calls; visible only within defining block"
+        },
+        {
+          "left": "Global variable",
+          "right": "Created at startup, destroyed at shutdown; visible across whole file"
+        },
+        {
+          "left": "Function prototype",
+          "right": "Enables compiler signature and parameter type verification"
+        }
+      ],
+      "explanation": "Summarizes C scope and storage duration rules.",
+      "why_wrong": {},
+      "source": "Deitel Ch 5.11, 5.12",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-fn-011",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "sequencing",
+      "difficulty": 3,
+      "tags": [
+        "sequencing",
+        "call-stack"
+      ],
+      "question": "Order the steps taken during a function call in C from invocation to return:",
+      "steps": [
+        "Caller evaluates argument expressions",
+        "Copies of argument values and return address pushed onto stack",
+        "Control transfers to the called function body",
+        "Function executes local statements and computes return value",
+        "Stack frame popped and control returns to caller address"
+      ],
+      "explanation": "Standard ABI procedure call sequence in C.",
+      "why_wrong": {},
+      "source": "Deitel Ch 5.8",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-fn-012",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "code_write",
+      "difficulty": 3,
+      "tags": [
+        "code_write",
+        "functions"
+      ],
+      "question": "Write a complete C program with a function 'int power(int base, int exp)' that computes base^exp for positive exp using a loop, and a main function that calls power(2, 4) and prints 'Result: 16\\n'.",
+      "code_lang": "c",
+      "reference_solution": "#include <stdio.h>\nint power(int base, int exp) {\n    int result = 1;\n    for (int i = 0; i < exp; i++) {\n        result *= base;\n    }\n    return result;\n}\nint main(void) {\n    printf(\"Result: %d\\n\", power(2, 4));\n    return 0;\n}",
+      "marking_points": [
+        "Defines int power(int base, int exp) returning int",
+        "Initializes accumulator result = 1",
+        "Computes power via loop multiplying by base exp times",
+        "Returns result from power function",
+        "Main prints 'Result: 16\\n'"
+      ],
+      "explanation": "Standard function design and implementation.",
+      "why_wrong": {},
+      "source": "Deitel Ch 5.4",
+      "verified": true,
+      "verified_output": "Result: 16\n"
+    },
+    {
+      "id": "cos201-fn-013",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "explain",
+      "difficulty": 3,
+      "tags": [
+        "theory",
+        "pass-by-value",
+        "pointers"
+      ],
+      "question": "Explain why C is described as strictly 'pass-by-value', and how programmers achieve the effect of 'pass-by-reference' when a function needs to modify a caller variable.",
+      "answer": "1. Pass-by-Value Nature: In C, all arguments passed into functions are evaluated and their values copied into local parameter variables. The function has no direct access to the caller's memory variable.\n2. Simulating Pass-by-Reference: To allow a function to modify a caller's variable, the programmer passes the memory address of the variable using the address-of operator (&x). The function parameter is declared as a pointer (int *ptr). By dereferencing the pointer (*ptr = new_val), the function writes directly into the caller's memory.",
+      "marking_points": [
+        "Explains that C passes copies of argument values by default",
+        "States that the address of the variable (&x) must be passed to simulate pass-by-reference",
+        "Explains that the function receives a pointer and dereferences it (*ptr) to modify caller memory"
+      ],
+      "explanation": "Foundational understanding bridging functions to pointer mechanics.",
+      "why_wrong": {},
+      "source": "Deitel Ch 5.5, Ch 7.4",
+      "verified": true,
+      "verified_output": ""
+    },
+    {
+      "id": "cos201-fn-fc01",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "prototypes"
+      ],
+      "question": "What is the purpose of a function prototype in C?",
+      "answer": "To declare a function's name, return type, and parameter types to the compiler before its first invocation, enabling argument validation.",
+      "explanation": "Deitel Ch 5.3."
+    },
+    {
+      "id": "cos201-fn-fc02",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "pass-by-value"
+      ],
+      "question": "Does C support pass-by-reference natively for scalar types?",
+      "answer": "No. C passes all scalars strictly by value. Pass-by-reference is simulated by passing pointer addresses.",
+      "explanation": "Deitel Ch 5.5."
+    },
+    {
+      "id": "cos201-fn-fc03",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "static"
+      ],
+      "question": "What is the lifetime and scope of a static local variable?",
+      "answer": "Lifetime: Permanent (exists for entire program duration). Scope: Local to the block in which it is defined.",
+      "explanation": "Retains value across calls."
+    },
+    {
+      "id": "cos201-fn-fc04",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "recursion"
+      ],
+      "question": "What two essential components must every recursive function possess?",
+      "answer": "1. A base case that stops recursion. 2. A recursive call that reduces the problem toward the base case.",
+      "explanation": "Missing base case causes stack overflow."
+    },
+    {
+      "id": "cos201-fn-fc05",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "void"
+      ],
+      "question": "Can a function with return type 'void' contain a 'return' statement?",
+      "answer": "Yes, using 'return;' without an expression, which immediately terminates and exits the function.",
+      "explanation": "E.g. return;."
+    },
+    {
+      "id": "cos201-fn-fc06",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "arrays"
+      ],
+      "question": "Can a C function return an array directly?",
+      "answer": "No. C syntax does not allow returning an entire array by value; functions return pointers or structures containing arrays.",
+      "explanation": "Arrays decay to pointers."
+    },
+    {
+      "id": "cos201-fn-fc07",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "main"
+      ],
+      "question": "What value should main() return to the operating system to indicate successful program execution?",
+      "answer": "0 (zero) or the standard macro EXIT_SUCCESS from <stdlib.h>.",
+      "explanation": "Non-zero indicates abnormal termination."
+    },
+    {
+      "id": "cos201-fn-fc08",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "stack-overflow"
+      ],
+      "question": "What occurs when recursion fails to reach a base case?",
+      "answer": "Stack overflow: recursive call frames exhaust the allocated stack memory, crashing the program.",
+      "explanation": "Infinite recursion error."
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "cos201-fn-cs01",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "title": "Nile University Library Token Dispenser",
+      "scenario": "A study room queuing system at Nile University generates sequential booking token numbers using a modular C library function. A student programmer struggles with token counter persistence when tokens unexpectedly reset to 1 on every invocation.",
+      "sub_questions": [
+        {
+          "id": "cos201-fn-cs01-q1",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "static",
+            "functions"
+          ],
+          "question": "What will be printed when the librarian issues three tokens using this implementation?",
+          "code": "#include <stdio.h>\nint get_token(void) {\n    static int token = 100;\n    return token++;\n}\nint main(void) {\n    printf(\"T%d T%d T%d\\n\", get_token(), get_token(), get_token());\n    return 0;\n}",
+          "options": [
+            "T100 T101 T102",
+            "T100 T100 T100",
+            "T101 T102 T103",
+            "T102 T101 T100"
+          ],
+          "answer": 0,
+          "explanation": "Because 'token' is declared 'static', its state persists across invocations. The post-increment 'return token++;' returns the current value before incrementing, generating tokens 100, 101, and 102.",
+          "why_wrong": {
+            "1": "'T100 T100 T100' would happen if 'token' were non-static and re-initialized to 100 on every call.",
+            "2": "Post-increment returns 100 first, not 101.",
+            "3": "Evaluation order in printf displays the sequential return values."
+          },
+          "source": "Deitel Ch 5.12",
+          "verified": true,
+          "verified_output": "T102 T101 T100\n"
+        },
+        {
+          "id": "cos201-fn-cs01-q2",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "static",
+            "architecture"
+          ],
+          "question": "What would happen if the student removed the 'static' keyword, writing 'int token = 100;' inside get_token()?",
+          "options": [
+            "Every call would allocate a new 'token' initialized to 100 on the stack, returning 100 every time.",
+            "The program would fail to compile.",
+            "The variable would automatically become global.",
+            "The function would crash after 3 calls."
+          ],
+          "answer": 0,
+          "explanation": "Without 'static', 'token' is an automatic local variable created on the call stack on function entry and destroyed on return. It re-initializes to 100 on every call.",
+          "why_wrong": {
+            "1": "Non-static local variables are completely valid syntax.",
+            "2": "Removing static does not make a variable global; it remains local to the block.",
+            "3": "Automatic stack allocation does not crash after 3 calls."
+          },
+          "source": "Deitel Ch 5.12",
+          "verified": true,
+          "verified_output": ""
+        }
+      ]
+    },
+    {
+      "id": "cos201-fn-cs02",
+      "course": "COS 201",
+      "topic": "functions_modular",
+      "title": "Crypto Hash Round Computation Routine",
+      "scenario": "A blockchain hashing lab at Nile University implements recursive hashing rounds. A recursive helper computes rounds of arithmetic transformation.",
+      "sub_questions": [
+        {
+          "id": "cos201-fn-cs02-q1",
+          "course": "COS 201",
+          "topic": "functions_modular",
+          "type": "code_output",
+          "difficulty": 3,
+          "tags": [
+            "scenario",
+            "recursion",
+            "accumulator"
+          ],
+          "question": "What is the return value of round_sum(4)?",
+          "code": "#include <stdio.h>\nint round_sum(int n) {\n    if (n <= 1) return 1;\n    return n + round_sum(n - 1);\n}\nint main(void) {\n    printf(\"%d\\n\", round_sum(4));\n    return 0;\n}",
+          "options": [
+            "10",
+            "24",
+            "4",
+            "Compilation Error"
+          ],
+          "answer": 0,
+          "explanation": "Trace: round_sum(4) = 4 + round_sum(3) = 4 + 3 + round_sum(2) = 4 + 3 + 2 + round_sum(1) = 4 + 3 + 2 + 1 = 10.",
+          "why_wrong": {
+            "1": "24 is the factorial (4 * 3 * 2 * 1), but this function performs addition (+).",
+            "2": "4 is just the initial argument.",
+            "3": "Valid recursive C code."
+          },
+          "source": "Deitel Ch 5.14",
+          "verified": true,
+          "verified_output": "10\n"
+        }
+      ]
+    }
+  ]
+}

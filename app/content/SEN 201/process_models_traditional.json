@@ -1,0 +1,612 @@
+{
+  "course": "SEN 201",
+  "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+  "summary": "This topic examines foundational Software Development Life Cycle (SDLC) models that govern software engineering from initial feasibility to final decommissioning. It details the classical linear Waterfall model and its rigid phase-gate milestones, the V-Model with its early verification/validation mapping between development and testing tiers, the Prototyping model (throwaway vs evolutionary) and its critical role in resolving requirements ambiguity, Iterative and Incremental delivery, Barry Boehm's risk-driven Spiral Model with its four cyclic quadrants, and the Rational Unified Process (RUP) with its four distinct phases (Inception, Elaboration, Construction, Transition). Formal criteria for selecting optimal process models based on requirements stability, project risk, and organizational constraints are emphasized.",
+  "key_terms": [
+    {
+      "term": "Software Development Life Cycle (SDLC)",
+      "definition": "A structured framework defining the distinct phases involved in planning, creating, testing, deploying, and maintaining a software system."
+    },
+    {
+      "term": "Waterfall Model",
+      "definition": "A linear-sequential process model where development proceeds sequentially through defined phases (requirements, design, implementation, testing, maintenance) with sign-off gates."
+    },
+    {
+      "term": "V-Model",
+      "definition": "A development lifecycle model establishing direct 1-to-1 correspondence between each development phase on the downward arm and its corresponding testing phase on the upward arm."
+    },
+    {
+      "term": "Prototyping Model",
+      "definition": "A process model focused on building early mock-ups or working representations of a system to elicit, clarify, and validate user requirements."
+    },
+    {
+      "term": "Spiral Model",
+      "definition": "A risk-driven iterative lifecycle model developed by Barry Boehm that couples iterative development with systematic risk analysis across four radial quadrants."
+    },
+    {
+      "term": "Rational Unified Process (RUP)",
+      "definition": "An architecture-centric, use-case driven iterative process framework structured into four sequential phases: Inception, Elaboration, Construction, and Transition."
+    },
+    {
+      "term": "Throwaway Prototyping",
+      "definition": "A prototype developed rapidly to clarify requirements or explore design alternatives and then discarded rather than becoming the basis for production software."
+    },
+    {
+      "term": "Feasibility Study",
+      "definition": "An initial investigation assessing the technical, economic, operational, schedule, and legal viability of a proposed software project."
+    }
+  ],
+  "questions": [
+    {
+      "id": "sen201-pm-001",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "nile-exam-q3",
+        "spiral-model",
+        "risk-assessment",
+        "analysis"
+      ],
+      "question": "In Nile University Final Exam Question 3: What is the key defining feature of the Spiral Model?",
+      "options": [
+        "Risk assessment and management at every iteration",
+        "Elimination of all documentation",
+        "Strict sequential phase completion without review",
+        "Exclusively pair programming"
+      ],
+      "answer": "Risk assessment and management at every iteration",
+      "explanation": "As tested in Nile Exam Question 3: Barry Boehm's Spiral Model is fundamentally a risk-driven process model. Unlike linear or purely agile models, every single 360-degree spiral loop explicitly begins with setting objectives and mandates an in-depth risk analysis step to identify and resolve technical, financial, or operational risks before engineering proceeds.",
+      "why_wrong": {
+        "Elimination of all documentation": "The Spiral Model produces formal documentation, milestone reviews, and management checkpoints at each loop.",
+        "Strict sequential phase completion...": "This is the Waterfall model, whereas the Spiral model is inherently iterative and cyclic.",
+        "Exclusively pair programming": "Pair programming is a practice of Extreme Programming (XP), not the Spiral Model."
+      },
+      "marking_points": [
+        "Identifies risk assessment/management as defining feature"
+      ],
+      "source": "Nile University Final Exam Paper (Type B), Question 3",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-002",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "mcq",
+      "difficulty": 2,
+      "tags": [
+        "nile-exam-q4",
+        "waterfall-model",
+        "requirements"
+      ],
+      "question": "In Nile University Final Exam Question 4: Which phase of the Waterfall Model focuses on creating detailed requirements and system specifications?",
+      "options": [
+        "Requirements analysis and specification",
+        "System design",
+        "Implementation",
+        "Maintenance"
+      ],
+      "answer": "Requirements analysis and specification",
+      "explanation": "In the classical Waterfall Model, detailed functional and non-functional requirements are gathered, analyzed, and documented in a formal Software Requirements Specification (SRS) during the Requirements Analysis phase before any design or coding begins.",
+      "why_wrong": {
+        "System design": "Design focuses on creating the architectural blueprint, data structures, and algorithms to satisfy already-defined requirements.",
+        "Implementation": "Implementation translates detailed design into executable source code.",
+        "Maintenance": "Maintenance occurs post-deployment to patch defects and handle environmental changes."
+      },
+      "marking_points": [
+        "Identifies Requirements Analysis phase"
+      ],
+      "source": "Nile University Final Exam Paper (Type B), Question 4",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-003",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "nile-exam-q10",
+        "prototyping",
+        "validation",
+        "analysis"
+      ],
+      "question": "In Nile University Final Exam Question 10: What is the main goal of prototyping in software development?",
+      "options": [
+        "Validation and refinement of requirements with stakeholders",
+        "Rapid delivery of the final production system",
+        "Reducing the need for software testing",
+        "Simplifying the compiler optimization process"
+      ],
+      "answer": "Validation and refinement of requirements with stakeholders",
+      "explanation": "The primary objective of building a prototype is to clarify ambiguous user requirements, validate user interface workflows, and resolve stakeholder misunderstandings early in the development lifecycle before committing major resources to production engineering.",
+      "why_wrong": {
+        "Rapid delivery of the final production system": "Prototypes are typically throwaway or preliminary models, not hardened production-ready systems.",
+        "Reducing the need for software testing": "Testing remains mandatory; prototypes do not eliminate formal verification and validation.",
+        "Simplifying the compiler optimization process": "Compilers optimize binaries independently of development process models."
+      },
+      "marking_points": [
+        "Validation and refinement of requirements"
+      ],
+      "source": "Nile University Final Exam Paper (Type B), Question 10",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-004",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "nile-exam-q15",
+        "rup",
+        "architecture",
+        "analysis"
+      ],
+      "question": "In Nile University Final Exam Question 15: What is the main focus of the Rational Unified Process (RUP)?",
+      "options": [
+        "Iterative development and architecture-centric management of requirements",
+        "Strict adherence to a linear waterfall sequence",
+        "Writing code without any software architecture",
+        "Manual testing without automated tools"
+      ],
+      "answer": "Iterative development and architecture-centric management of requirements",
+      "explanation": "RUP is an iterative and incremental process framework characterized as being: 1. Use-case driven; 2. Architecture-centric (establishing an executable architectural baseline in the Elaboration phase); and 3. Iterative and risk-focused.",
+      "why_wrong": {
+        "Strict adherence to a linear waterfall sequence": "RUP explicitly rejects single-pass waterfall development in favor of iterative cycles.",
+        "Writing code without any software architecture": "RUP is famously architecture-centric, emphasizing early architectural stabilization.",
+        "Manual testing without automated tools": "RUP strongly emphasizes automated test suites."
+      },
+      "marking_points": [
+        "Iterative development",
+        "Architecture-centric requirements management"
+      ],
+      "source": "Nile University Final Exam Paper (Type B), Question 15",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-005",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "nile-exam-q43",
+        "prototyping-value",
+        "assumptions"
+      ],
+      "question": "In Nile University Final Exam Question 43: Prototyping is valuable during requirements elicitation primarily because it helps:",
+      "options": [
+        "Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration",
+        "Replace the need for any formal written requirements documentation",
+        "Force developers to begin writing production database queries early",
+        "Eliminate the need to involve real end-users"
+      ],
+      "answer": "Reveal hidden assumptions and misunderstandings through tangible visual and interactive demonstration",
+      "explanation": "Users frequently struggle to articulate abstract needs from text documents. An interactive prototype allows stakeholders to test workflows directly, exposing unstated assumptions, missing validation rules, and conflicting expectations while changes are cheap to make.",
+      "why_wrong": {
+        "Replace the need for any formal written requirements...": "A prototype supplements, but does not entirely replace, formal contractual specifications.",
+        "Force developers to begin writing production database queries...": "Prototypes often use mock data; forcing early production DB design defeats the exploratory purpose.",
+        "Eliminate the need to involve real end-users": "Prototypes are built specifically to engage real end-users."
+      },
+      "marking_points": [
+        "Reveals hidden assumptions through interactive visual demonstration"
+      ],
+      "source": "Nile University Final Exam Paper (Type B), Question 43",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-006",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "matching",
+      "difficulty": 3,
+      "tags": [
+        "v-model",
+        "testing-correspondence"
+      ],
+      "question": "Match each testing level in the V-Model with the specific development phase it directly validates:",
+      "options": [
+        "Acceptance Testing -> Requirements Analysis; System Testing -> System Architecture Design; Integration Testing -> Detailed Subsystem Design; Unit Testing -> Component Implementation",
+        "Acceptance Testing -> Implementation; Unit Testing -> Requirements Analysis",
+        "System Testing -> Feasibility Study; Unit Testing -> Maintenance",
+        "Integration Testing -> Deployment; Acceptance Testing -> Database Schema"
+      ],
+      "answer": "Acceptance Testing -> Requirements Analysis; System Testing -> System Architecture Design; Integration Testing -> Detailed Subsystem Design; Unit Testing -> Component Implementation",
+      "explanation": "In the V-Model: 1. Unit Testing validates the low-level code and component logic; 2. Integration Testing validates detailed module interfaces; 3. System Testing validates high-level architectural integration; 4. Acceptance Testing validates user requirements against the original specification.",
+      "why_wrong": {
+        "Acceptance Testing -> Implementation; Unit Testing -> Requirements Analysis": "Reverses the verification levels.",
+        "System Testing -> Feasibility Study...": "Feasibility is a planning activity, not a direct software verification artifact.",
+        "Integration Testing -> Deployment...": "Integration occurs prior to system testing and deployment."
+      },
+      "marking_points": [
+        "Unit -> Implementation",
+        "Integration -> Detailed Design",
+        "System -> Architecture",
+        "Acceptance -> Requirements"
+      ],
+      "source": "Software Engineering Process Models Lecture Notes, Section 5",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-007",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "rup-phases",
+        "elaboration"
+      ],
+      "question": "In the Rational Unified Process (RUP), during which of the four sequential phases is the baseline executable software architecture established and major risks mitigated?",
+      "options": [
+        "Elaboration Phase",
+        "Inception Phase",
+        "Construction Phase",
+        "Transition Phase"
+      ],
+      "answer": "Elaboration Phase",
+      "explanation": "RUP defines four phases: 1. Inception (establish business case and scope); 2. Elaboration (analyze problem domain, establish architectural baseline, resolve highest risks); 3. Construction (bulk coding and component integration); 4. Transition (deploying to users).",
+      "why_wrong": {
+        "Inception Phase": "Inception defines project scope, business viability, and initial cost estimates, not the full architecture.",
+        "Construction Phase": "Construction builds the remaining functionality upon the already-established architectural baseline.",
+        "Transition Phase": "Transition handles beta testing, user training, and deployment."
+      },
+      "marking_points": [
+        "Identifies Elaboration phase as establishing architectural baseline"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 5 & RUP Standards",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-008",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "mcq",
+      "difficulty": 3,
+      "tags": [
+        "waterfall",
+        "disadvantages",
+        "analysis"
+      ],
+      "question": "What is the primary risk of using a pure Waterfall Model for a software project where customer requirements are vague or likely to change?",
+      "options": [
+        "Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.",
+        "Developers will write code too quickly without understanding requirements.",
+        "The Waterfall Model cannot be used with relational databases.",
+        "Waterfall requires zero documentation, leaving no audit trail."
+      ],
+      "answer": "Late changes are extremely costly and working software is not available until near the end of the project lifecycle, leading to catastrophic late-stage project failure.",
+      "explanation": "Because Waterfall requires freezing requirements before design and coding, changing requirements mid-way requires discarding completed work. Testing happens at the end ('big bang'), meaning major conceptual misunderstandings are discovered too late.",
+      "why_wrong": {
+        "Developers will write code too quickly...": "Waterfall delays coding until requirements and design are fully documented.",
+        "The Waterfall Model cannot be used with relational databases...": "Waterfall has been used with databases for decades.",
+        "Waterfall requires zero documentation...": "Waterfall is notoriously documentation-heavy."
+      },
+      "marking_points": [
+        "Cost of late change",
+        "Working software only appears at the end"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 5.1",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-fc01",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "waterfall"
+      ],
+      "question": "What is the Waterfall Model?",
+      "options": [],
+      "answer": "A linear-sequential software process model where progress flows strictly through distinct phases (Requirements, Design, Implementation, Testing, Maintenance).",
+      "explanation": "Best suited for stable, well-understood requirements.",
+      "why_wrong": {},
+      "marking_points": [
+        "Linear sequential model",
+        "Requirements -> Design -> Code -> Test -> Maintain"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 5.1",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-fc02",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "v-model"
+      ],
+      "question": "What is the main innovation of the V-Model?",
+      "options": [],
+      "answer": "It maps every development phase directly to a corresponding testing phase, establishing early test planning during design.",
+      "explanation": "Illustrates verification (design) and validation (testing) symmetry.",
+      "why_wrong": {},
+      "marking_points": [
+        "Direct mapping between development and testing phases"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 5",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-fc03",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "spiral-model"
+      ],
+      "question": "What is the key feature of the Spiral Model?",
+      "options": [],
+      "answer": "Explicit, systematic risk analysis and management at every iteration.",
+      "explanation": "Created by Barry Boehm for large, high-risk systems.",
+      "why_wrong": {},
+      "marking_points": [
+        "Risk analysis and management at every iteration"
+      ],
+      "source": "Nile Exam Q3 & Lecture Notes Section 5.5",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-fc04",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "prototyping"
+      ],
+      "question": "What is the difference between Throwaway and Evolutionary prototyping?",
+      "options": [],
+      "answer": "- Throwaway: Built quickly to clarify requirements and then discarded.\n- Evolutionary: Starts with core verified requirements and is progressively refined into the final production system.",
+      "explanation": "Distinguished by whether the prototype codebase survives into production.",
+      "why_wrong": {},
+      "marking_points": [
+        "Throwaway discarded after elicitation",
+        "Evolutionary refactored into production"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 5.2",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-fc05",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "rup-phases"
+      ],
+      "question": "What are the four sequential phases of the Rational Unified Process (RUP)?",
+      "options": [],
+      "answer": "1. Inception\n2. Elaboration\n3. Construction\n4. Transition",
+      "explanation": "Core phase structure of RUP.",
+      "why_wrong": {},
+      "marking_points": [
+        "Inception, Elaboration, Construction, Transition"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 5",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-fc06",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "feasibility-types"
+      ],
+      "question": "What are the five dimensions evaluated in a software Feasibility Study?",
+      "options": [],
+      "answer": "1. Technical\n2. Economic (cost-benefit)\n3. Operational\n4. Schedule\n5. Legal & Regulatory",
+      "explanation": "Evaluated before committing project budget.",
+      "why_wrong": {},
+      "marking_points": [
+        "Technical, Economic, Operational, Schedule, Legal"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 4.1",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-fc07",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "incremental"
+      ],
+      "question": "What is Incremental Development?",
+      "options": [],
+      "answer": "Delivering software in staged, useful functional increments rather than all at once in a single monolithic release.",
+      "explanation": "Allows early value delivery to customers.",
+      "why_wrong": {},
+      "marking_points": [
+        "Delivers software in functional portions/increments"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 5.3",
+      "verified": true,
+      "verified_output": "N/A"
+    },
+    {
+      "id": "sen201-pm-fc08",
+      "course": "SEN 201",
+      "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "spiral-quadrants"
+      ],
+      "question": "What are the four activities in each 360-degree cycle of the Spiral Model?",
+      "options": [],
+      "answer": "1. Determine objectives and constraints\n2. Evaluate alternatives and assess/resolve risks\n3. Develop and verify the product\n4. Plan the next iteration",
+      "explanation": "The four quadrants of Boehm's spiral.",
+      "why_wrong": {},
+      "marking_points": [
+        "Objectives, Risk Assessment, Development/Verification, Next Phase Planning"
+      ],
+      "source": "Software Engineering Concepts Lecture Notes, Section 5.5",
+      "verified": true,
+      "verified_output": "N/A"
+    }
+  ],
+  "case_studies": [
+    {
+      "id": "sen201-pm-cs01",
+      "scenario": "A federal government ministry in Abuja contracts an IT consulting consortium to develop a nationwide e-Passport and border control management system. The project involves strict biometric encryption protocols, multi-agency legal clearances, integration with international police databases, and life-critical security compliance. The ministry's senior director demands using a pure 2-week Agile sprint model, while the systems architect argues for a risk-driven Spiral Model.",
+      "sub_questions": [
+        {
+          "id": "sen201-pm-cs01-q1",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "process-selection",
+            "risk-driven"
+          ],
+          "question": "Why is the Spiral Model or a hybrid RUP approach technically superior to a pure rapid-fire Agile sprint model for this national security system?",
+          "options": [
+            "Because the project carries severe technical, legal, and national security risks that require explicit risk assessment, formal architectural baselines, and verification gates before full-scale deployment.",
+            "Because the Spiral Model guarantees that software will be built with zero lines of code.",
+            "Because Agile methodologies are illegal under Nigerian copyright law.",
+            "Because the Waterfall model cannot run on Linux servers."
+          ],
+          "answer": "Because the project carries severe technical, legal, and national security risks that require explicit risk assessment, formal architectural baselines, and verification gates before full-scale deployment.",
+          "explanation": "Large-scale safety-critical systems with strict regulatory compliance, multi-agency dependencies, and catastrophic failure penalties require formal risk mitigation, comprehensive documentation, and architectural verification (strengths of the Spiral Model and RUP Elaboration), which purely informal Agile sprints can overlook.",
+          "why_wrong": {
+            "Because the Spiral Model guarantees zero lines of code...": "Nonsensical assertion; software must be coded.",
+            "Because Agile methodologies are illegal...": "Agile is an engineering management philosophy, not a statutory offense.",
+            "Because the Waterfall model cannot run on Linux...": "Process models are management frameworks, independent of the operating system."
+          },
+          "marking_points": [
+            "Identifies high-risk, security-critical nature",
+            "Emphasizes risk assessment and architectural baseline requirements"
+          ],
+          "source": "Process Model Selection Case Study",
+          "verified": true,
+          "verified_output": "N/A"
+        },
+        {
+          "id": "sen201-pm-cs01-q2",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case-study",
+            "spiral-quadrant-application"
+          ],
+          "question": "Outline how the consulting team would execute one complete 360-degree spiral loop for the 'Biometric Facial Recognition Subsystem' across the four quadrants of the Spiral Model.",
+          "options": [],
+          "answer": "1. Quadrant 1 (Objectives & Constraints): Define requirements for facial recognition accuracy (e.g. false match rate < 0.001%), target processing speed (< 1.5 seconds per passenger), and international ICAO standards.\n2. Quadrant 2 (Risk Assessment & Mitigation): Identify major risks (e.g. poor airport lighting, sensor latency, demographic bias). Build an experimental prototype and run simulations with diverse image sets to assess and mitigate these risks.\n3. Quadrant 3 (Development & Verification): Design the production algorithms, integrate camera drivers, write test harnesses, and execute formal verification against benchmark passport photos.\n4. Quadrant 4 (Planning & Review): Review test outcomes with ministry security stakeholders, evaluate budget/schedule, and plan the next spiral cycle (e.g. integrating fingerprint sensors).",
+          "explanation": "Demonstrates practical operationalization of Boehm's four quadrants on an authentic high-risk subsystem.",
+          "why_wrong": {},
+          "marking_points": [
+            "Quadrant 1: Sets objectives, metrics, and constraints",
+            "Quadrant 2: Identifies risks (lighting, bias) and builds prototype to mitigate",
+            "Quadrant 3: Develops and verifies the subsystem",
+            "Quadrant 4: Reviews with stakeholders and plans next cycle"
+          ],
+          "source": "Spiral Model Engineering Application Standards",
+          "verified": true,
+          "verified_output": "N/A"
+        }
+      ]
+    },
+    {
+      "id": "sen201-pm-cs02",
+      "scenario": "A development team at Nile University Hospital builds an interactive web-based prototype in two weeks using a low-code UI builder to demonstrate how doctors will enter prescription orders. Hospital administrators are so impressed by the polished visual interface that they instruct the IT department to deploy the prototype immediately to live patient wards on Monday, canceling the planned 6-month backend engineering budget.",
+      "sub_questions": [
+        {
+          "id": "sen201-pm-cs02-q1",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "prototyping-trap",
+            "risk-analysis"
+          ],
+          "question": "What classic software engineering hazard (the 'Prototyping Trap') does this scenario illustrate?",
+          "options": [
+            "Management mistaking an unhardened, non-secure throwaway prototype with mock data for production-ready software.",
+            "The prototype running out of memory due to C language pointer errors.",
+            "The hospital violating open-source GPL licenses.",
+            "Developers spending too much time on automated unit tests."
+          ],
+          "answer": "Management mistaking an unhardened, non-secure throwaway prototype with mock data for production-ready software.",
+          "explanation": "As warned in Section 5.2 of the lecture notes: A primary risk of prototyping is that stakeholders see a functioning visual screen and assume the software is complete. In reality, the prototype lacks database ACID transactions, patient data encryption, audit logging, input sanitization, and concurrent error handling, creating grave patient safety hazards.",
+          "why_wrong": {
+            "The prototype running out of memory...": "The issue is architectural and managerial, not low-level pointer management.",
+            "The hospital violating open-source GPL licenses...": "Licensing is irrelevant to the core hazard described.",
+            "Developers spending too much time...": "The team built a quick UI mockup without backend tests."
+          },
+          "marking_points": [
+            "Identifies mistaking throwaway UI mockup for production-ready system",
+            "Highlights missing non-functional attributes (security, reliability)"
+          ],
+          "source": "Software Engineering Concepts Lecture Notes, Section 5.2",
+          "verified": true,
+          "verified_output": "N/A"
+        },
+        {
+          "id": "sen201-pm-cs02-q2",
+          "course": "SEN 201",
+          "topic": "Software Process Models: Prescriptive, Iterative & Risk-Driven",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "case-study",
+            "non-functional-omissions",
+            "prototyping"
+          ],
+          "question": "List four vital engineering qualities that are typically absent from a rapid throwaway UI prototype that must be built before live medical deployment.",
+          "options": [],
+          "answer": "1. Data Security & Privacy: Encryption of sensitive patient health records at rest and in transit, and role-based access control.\n2. Concurrency & Transactional Integrity: ACID database transactions preventing duplicate prescriptions if two nurses click simultaneously.\n3. Fault Tolerance & Exception Handling: Resilient error logging, network timeout handling, and automatic recovery.\n4. Scalability & Performance: Ability to handle hundreds of concurrent hospital ward queries without latency degradation.",
+          "explanation": "Throwaway prototypes model only the happy path of the user interface; non-functional architectural qualities require rigorous engineering.",
+          "why_wrong": {},
+          "marking_points": [
+            "Mentions data security/encryption/privacy",
+            "Mentions database integrity/ACID transactions",
+            "Mentions error handling/fault tolerance",
+            "Mentions scalability/performance under load"
+          ],
+          "source": "Software Engineering Prototyping Guidelines",
+          "verified": true,
+          "verified_output": "N/A"
+        }
+      ]
+    }
+  ]
+}

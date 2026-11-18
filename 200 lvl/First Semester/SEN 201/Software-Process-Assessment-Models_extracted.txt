@@ -1,0 +1,988 @@
+Software Process Assessment Models
+
+A Software Process Assessment is a structured evaluation of how an organization
+develops software, not just what it builds, but how it builds it.
+
+The goal is to answer three questions:
+
+i. Where are we now? — What is our current process capability / maturity?
+ii. Where do we want to be? — What level does our business need?
+iii. How do we get there? — What improvements will close the gap?
+
+Assessment models provide the framework, questionnaire,
+improvement road map to do this systematically, instead of relying on opinion.
+
+rating scale, and
+
+1. Why Assess the Process?
+i. Predictability: Mature processes produce predictable cost, schedule, and quality.
+ii. Visibility: Management can see risks early, not at delivery time.
+iii. Improvement: You cannot improve what you have not measured.
+iv. Benchmarking: Compare against industry best practice and competitors.
+v. Contractual confidence: Clients, especially in government, defence, banking, and
+
+telecoms, often require a certified maturity level before awarding work.
+
+Assessment is diagnostic, not punitive. The output is strengths, weaknesses, and an
+improvement plan.
+
+2. Core Concepts
+
+Process Capability vs. Process Maturity
+i. Capability: How well a single process area (e.g., Requirements Management,
+
+Testing) is performed. Measured on a 0–5 scale.
+
+ii. Maturity: How well the whole organization performs across all process areas.
+
+Measured as a Maturity Level 1–5.
+
+Staged vs. Continuous Representation
+i. Staged: Organization gets ONE overall maturity level. You must satisfy all
+practices at that level to move up. Simpler to communicate: “We are Level 3.”
+ii. Continuous: Each process area gets its OWN capability level. More flexible:
+
+You can be Level 4 in Testing but Level 2 in Configuration Management.
+
+Appraisal Methods
+i. Self-assessment: Internal team uses questionnaires. Fast, cheap, less objective.
+ii. Formal appraisal: Trained, certified assessors interview staff, review documents,
+
+and rate evidence. Expensive, but credible and auditable.
+
+3. Major Assessment Models
+
+3.1 CMMI: Capability Maturity Model Integration
+The most widely used model globally. Developed by SEI / Carnegie Mellon, now
+maintained by ISACA(Information System Audit and Control Association).
+
+CMMI for Development (CMMI-DEV) covers product and service development.
+
+Maturity Levels (Staged):
+
+Level
+
+1
+
+2
+
+3
+
+4
+
+5
+
+Name
+
+Initial
+
+Managed
+
+Defined
+
+Quantitatively Managed
+
+Optimizing
+
+What It Means
+
+ad-hoc,
+
+hero-
+Chaotic,
+dependent.
+Success
+depends on individuals.
+No stable process.
+
+Basic project management
+in place. Requirements,
+planning,
+monitoring,
+configuration
+management, and QA are
+managed per project, but
+differ
+may
+practices
+between projects.
+
+Organization-wide
+standard process defined,
+documented, and tailored
+per project. Training, peer
+reviews,
+and integrated
+project management.
+
+Process is measured with
+statistical
+control.
+Quantitative objectives for
+quality and performance.
+Variation is understood
+and controlled.
+
+Continuous improvement
+based on quantitative data.
+Root-cause
+analysis,
+innovation, and piloting of
+new technologies.
+
+Key Process Areas at Level 2 and 3 include: Requirements Management, Project
+Planning, Project Monitoring & Control, Supplier Agreement Management,
+Measurement & Analysis, Process & Product Quality Assurance, Configuration
+
+Management, Requirements Development, Technical Solution, Product Integration,
+Verification, Validation, Organizational Process Focus, Organizational Training.
+
+i. Capability Levels (Continuous): 0 Incomplete, 1 Performed, 2 Managed, 3
+
+Defined.
+
+ii. Strengths: Very comprehensive,
+
+internationally recognized, strong for large
+
+organizations.
+
+iii. Limitations: Heavy, documentation-intensive, expensive to implement and
+
+appraise.
+
+3.2 ISO/IEC 15504: SPICE (Software Process Improvement and Capability
+dEtermination)
+Now superseded by ISO/IEC 330xx family.
+
+SPICE is an international standard for process assessment, not a proprietary model
+like CMMI.
+
+Key Features
+i. Defines a Process Reference Model (what processes exist) and a Process
+
+Assessment Model (how to rate them).
+
+ii. Uses 6 Capability Levels: 0 Incomplete, 1 Performed, 2 Managed, 3 Established,
+
+4 Predictable, 5 Optimizing.
+
+iii. Each process is rated on Process Attributes (e.g., Process Performance, Work
+
+Product Management, Process Definition).
+
+iv. Rating scale: N (Not achieved 0–15%), P (Partially 16–50%), L (Largely 51–
+
+85%), F (Fully 86–100%).
+
+v. Strengths: International standard, flexible, can assess any process, good for
+
+automotive (Automotive SPICE / A-SPICE is a major variant).
+
+vi. Limitations: Less prescriptive than CMMI — tells you what to assess, not
+
+exactly how to improve.
+
+3.3 ISO/IEC 330xx Series
+The modern replacement for 15504. It separates:
+
+i. ISO/IEC 33001: Concepts and terminology
+ii. ISO/IEC 33002: Requirements for performing process assessment
+iii. ISO/IEC 33003: Requirements for process measurement frameworks
+iv. ISO/IEC 33004: Requirements for process reference, assessment, and maturity
+
+models
+
+v. ISO/IEC 33020: Process measurement framework
+
+Used heavily in automotive, medical devices, and safety-critical systems.
+
+3.4 Agile Maturity Models
+Traditional models assume plan-driven development. Agile models assess agility.
+
+Examples: Agile Maturity Model (AMM), Scaled Agile Framework (SAFe) Maturity,
+Agile Capability Assessment
+
+Typical dimensions: Team practices (stand-ups, retrospectives), Technical practices
+(TDD, CI/CD,
+stories),
+Organizational culture (empowerment, trust, learning).
+
+refactoring), Product management
+
+(backlog,
+
+user
+
+i. Levels often: Ad-hoc Agile → Doing Agile → Being Agile → Scaling Agile →
+
+Continuously Improving.
+
+ii. Strengths: Fits iterative, fast-delivery environments.
+iii. Limitations: Harder to quantify, less recognized for contracts than CMMI / ISO.
+
+3.5 Other Notable Models
+i. BOOTSTRAP: Early European model, precursor to SPICE. Focused on small-
+
+to-medium enterprises.
+
+ii. Trillium: Developed by Bell Canada for telecom software. Emphasizes product
+
+quality and customer focus.
+
+iii. ISO 9001: Not software-specific, but a Quality Management System standard.
+Assesses whether you follow your documented process, not whether the process
+itself is good for software.
+
+iv. People Capability Maturity Model (P-CMM): Assesses workforce practices:
+
+staffing, training, compensation, team building. Complements CMMI.
+
+4. The Assessment Process: How It Works
+A formal assessment typically follows 5 phases:
+
+i. Planning: Define scope, goals, processes to assess,
+
+team, schedule, and
+
+confidentiality. Get management sponsorship.
+
+ii. Data Collection: Questionnaires sent
+
+Interviews with managers,
+developers, testers, QA; Document Review: Project plans, requirements specs,
+test reports, review records, defect logs.
+
+to staff;
+
+iii. Validation: Cross-check evidence. An assessor will not accept “we do peer
+
+reviews” without minutes, checklists, or defect data to prove it.
+
+iv. Rating: Assign capability / maturity ratings based on evidence against the model.
+
+Consensus is reached by the appraisal team.
+
+v. Reporting & Improvement Planning: Present strengths, weaknesses, and
+findings. Create a prioritized action plan with owners and timelines. Re-assess
+after 12–18 months.
+
+5. Comparison Table
+Model
+
+Origin
+
+CMMI
+
+US / SEI
+
+Representatio
+n
+
+Staged
+Continuous
+
++
+
+ISO / IEC
+
+Continuous
+
+ISO/IEC
+15504
+330xx
+
+/
+
+Agile
+Maturity
+
+Industry
+Agile
+community
+
+/
+
+Staged
+Custom
+
+BOOTSTR
+AP
+
+EU
+
+ISO 9001
+
+ISO
+
+Staged
+
+Pass/Fail
+Certification
+
+Best For
+
+Appraisal
+
+Standard
+CMMI
+Appraisal Model for
+Process Improvement
+(SCAMPI A/B/C)
+
+Class
+assessment
+
+1/2/3
+
+orgs,
+
+Large
+defence,
+outsourcing
+
+International,
+automotive,
+safety-
+critical
+
+/
+
+Agile
+product
+teams
+
+SMEs
+
+/
+
+Self-assessment,
+coaching
+
+Questionnaire-based
+
+External audit
+
+General
+quality
+management
+
+6. Benefits vs. Challenges
+
+Benefits
+i. Reduces defects, rework, and project overruns.
+ii. Improves estimation accuracy and delivery predictability.
+iii. Creates a common language for process across teams.
+iv. Supports continuous improvement culture.
+
+Challenges
+i. Can become bureaucratic if implemented for certification only.
+ii. High cost in time, training, and appraisal.
+iii. Resistance from teams who see it as paperwork.
+iv. A high maturity level does NOT guarantee a good product — it guarantees a
+
+repeatable process.
+
+7. Choosing a Model
+Ask:
+
+i. Who is asking? Client contract → CMMI or A-SPICE. Internal improvement →
+
+Agile model or ISO 330xx.
+
+ii. Organization size? Small team → Lightweight self-assessment. Large enterprise
+
+→ CMMI.
+
+iii. Development method? Waterfall / V-model → CMMI / SPICE. Agile / DevOps
+
+→ Agile maturity model.
+
+iv. Goal? Certification vs. genuine improvement - choose accordingly.
+
+Software Process Metrics
+Software Process Metrics are quantitative measures used to assess, monitor, control,
+and improve the software development process itself - not just the final product.
+
+If a product metric asks “Is this software good?”, a process metric asks “Is the way
+we build software good and getting better?”
+
+Without process metrics, improvement is based on opinion, memory, and anecdote
+(short account). With them, it is based on evidence.
+
+1. What Are Software Process Metrics?
+A software process metric is a measurable attribute of the activities, resources,
+methods, and tools used to develop software.
+
+i. Process metrics measure the process (e.g., review effectiveness, defect removal
+
+efficiency, cycle time).
+
+ii. Product metrics measure the product (e.g., size, complexity, reliability, defect
+
+density in released code).
+
+iii. Project metrics measure the project
+
+(e.g., cost, schedule, effort,
+
+resource
+
+utilisation).
+
+In practice the three are linked: a weak process produces a weak product, which
+causes project overruns.
+
+Example: If peer reviews catch only 30% of defects, the process is weak. The product
+will ship with more defects, and the project will spend more time on rework.
+
+2. Why Do We Need Process Metrics?
+i. Visibility: Make the process visible - expose bottlenecks, rework, waiting time,
+
+and waste that are otherwise invisible.
+
+ii. Objective Decisions: Provide an objective basis for decisions instead of gut
+
+feeling.
+
+iii. Prediction: Enable prediction - estimate future cost, schedule, and quality from
+
+past performance.
+
+iv. Improvement: Support continuous improvement - establish a baseline, try a
+
+change, and measure whether it helped.
+
+v. Maturity & Compliance: Support quality assurance and process maturity -
+required for CMMI Level 4 (Quantitatively Managed) and ISO/IEC 330xx
+assessments.
+
+vi. Early Warning: Enable early warning — detect slipping quality or productivity
+
+before delivery fails.
+
+3. Characteristics of a Good Metric
+A useful process metric must be:
+
+i. Simple: Simple and easy to collect - if it takes too long to measure, people will
+
+fake it or stop.
+
+ii. Well-defined: Clearly defined - everyone must calculate it the same way.
+iii. Objective: Objective - not dependent on who is measuring.
+iv. Timely: Timely - available when the decision must be made, not months later.
+v. Actionable: Actionable - it should suggest what to do next.
+vi. Resistant to gaming: Not easy to game - if developers are rewarded only for
+
+“lines of code”, they will write bloated code.
+
+Golden rule: Measure to improve, not to blame. If metrics are used to punish teams,
+data quality collapses.
+
+4. Types / Classification of Process Metrics
+
+4.1 By Purpose
+Category
+
+Process Performance
+
+Process Quality
+
+Process Conformance
+
+Process Predictability
+
+Purpose
+
+Examples
+
+efficient
+
+How
+effective is the process?
+
+and
+
+Productivity, cycle time,
+throughput
+
+How good is the work
+produced by the process?
+
+Defect removal efficiency,
+escaped defects, rework %
+
+Are we
+defined process?
+
+following the
+
+findings, process
+
+Audit
+compliance rate
+
+How
+and
+stable
+predictable is the process?
+
+Schedule variance, effort
+variance, defect
+arrival
+rate
+
+4.2 By Phase - Metrics Across the Life Cycle
+Phase
+
+Typical Process Metrics
+
+Requirements
+
+Design
+
+Coding
+
+Testing
+
+Release & Maintenance
+
+Requirements volatility,
+review defects,
+index
+
+requirements
+requirements stability
+
+Design review defects, design rework,
+design stability
+
+Code review coverage, code churn, build
+success rate
+
+Test coverage, test execution rate, defect
+detection rate, test pass rate
+
+Escaped defects, mean time to repair
+(MTTR), customer-reported defects
+
+5. Key Software Process Metrics Explained in Detail
+
+5.1 Productivity Metrics
+Measure how much useful output is produced per unit of effort.
+
+i. Formulas / Examples: Function Points per person-month; Story Points per sprint;
+
+Features delivered per month.
+
+ii. LOC: Lines of Code (LOC) per person-month — simple but misleading, because
+
+shorter, better code looks less productive.
+
+Use with care: Productivity rises when rework falls, automation improves, and
+requirements are stable — not when people simply work longer hours.
+
+5.2 Defect-Related Metrics (Most Important)
+i. Defect Removal Efficiency (DRE): Total defects found in a phase ÷ Total
+defects found in that phase + defects that escaped to later phases × 100. A DRE of
+85%+ for reviews is considered good.
+
+ii. Defect Density: Defects ÷ Size (KLOC (Thousands of Lines of Code) or
+Function Points). Defects found in testing + defects found after release. Higher
+means poor early detection.
+
+iii. Escaped Defects / Defect Leakage: Defects found by customers after release ÷
+
+Total defects. Low is good. High means testing and reviews are weak.
+
+iv. Phase Containment: Percentage of defects found in reviews vs. testing vs. field.
+
+Ideally, most defects are found early and cheaply.
+
+v. Phase Containment (duplicate for emphasis in teaching): Percentage of
+defects found in reviews vs. testing vs. field. Ideally, most defects are found early
+and cheaply.
+
+The cost of fixing a defect grows 10x–100x from requirements to field. Process
+metrics prove why early detection matters.
+
+5.3 Time / Cycle Metrics
+i. Cycle Time / Lead Time: Time from start of work on a feature / requirement to
+
+its delivery. Shorter, stable cycle time = healthier flow.
+
+ii. Mean Time to Repair (MTTR): Time taken to fix a defect from report to
+
+verified fix.
+
+iii. Schedule Adherence: Percentage of milestones / sprints delivered on time.
+iv. Wait Time / Queue Time: Time spent waiting for approvals, reviews, builds, or
+
+other teams. Often the largest hidden waste.
+
+5.4 Effort & Cost Metrics
+i. Effort Variance: (Actual Effort − Planned Effort) ÷ Planned Effort × 100.
+ii. Cost Variance: (Actual Cost − Planned Cost) ÷ Planned Cost × 100.
+iii. Rework Ratio: Effort spent fixing defects, redoing work, or clarifying unclear
+requirements ÷ Total effort. Rework above 30–40% signals a broken upstream
+process.
+
+5.5 Review & Inspection Metrics
+i. Review Coverage: Number of work products reviewed ÷ Total work products ×
+
+100.
+
+ii. Review Effectiveness: Defects found per review hour.
+
+iii. Inspection Rate / Defect Density in Reviews: Defects found per 1,000 LOC or
+
+per page inspected.
+
+iv. Review Effort Ratio: Review effort ÷ Total development effort. Typically 10–
+
+15% is healthy; too low means reviews are skipped.
+
+5.6 Testing Process Metrics
+i. Test Coverage: (Test cases executed ÷ Total test cases) × 100, and code / branch
+
+coverage.
+
+ii. Defect Detection Rate: Defects found in testing ÷ Testing effort.
+iii. Test Pass Rate: Test cases passed ÷ Test cases executed × 100.
+iv. Test Automation Coverage: Percentage of tests automated. Higher automation
+
+usually means faster feedback and lower regression cost.
+
+5.7 Change & Stability Metrics
+i. Requirements Volatility: Number of requirement changes after baseline ÷ Total
+
+requirements × 100. High volatility predicts schedule slippage.
+
+ii. Code Churn: Lines / files changed after first release of a component. High churn
+
+signals unstable design or unclear requirements.
+
+iii. Build Failure Rate: Number of builds that fail ÷ Total builds. Frequent failures
+
+signal integration or quality problems.
+
+5.8 Agile / DevOps Process Metrics
+Metric
+
+What It Shows
+
+Healthy Target
+
+Velocity
+
+Story points
+per sprint
+
+completed
+
+Stable,
+rising
+
+not
+
+necessarily
+
+Sprint
+Adherence
+
+Burndown
+
+Work
+planned
+
+completed
+
+vs.
+
+Close to plan, no end-of-
+sprint rush
+
+Deployment Frequency
+
+How often
+deployed to production
+
+code
+
+is
+
+Higher is better (DevOps)
+
+Lead Time for Changes
+
+Commit
+time
+
+to
+
+production
+
+Hours / days, not weeks
+
+Change Failure Rate
+
+% of deployments causing
+failure
+
+Low (<15%)
+
+Mean Time to Restore
+(MTTR)
+
+Time
+failure
+
+to recover
+
+from
+
+Minutes / hours
+
+6. The GQM Approach - Goal-Question-Metric
+The most widely used method for choosing the right metrics, developed by Victor
+Basili.
+
+Instead of collecting every metric, start from goals:
+
+Step
+
+1. Goal
+
+2. Question
+
+3. Metric
+
+Question to Ask
+
+Example
+
+What do we want
+achieve?
+
+to
+
+Reduce escaped defects
+by 30%
+
+What questions must we
+answer
+to know if we
+achieved it?
+
+How many defects escape
+to customers? Where are
+they introduced?
+
+What data answers
+question?
+
+the
+
+defects
+
+per
+Escaped
+release, DRE per phase,
+defect leakage by phase
+
+GQM prevents “metric for metric’s sake” - every metric traces back to a business
+goal.
+
+7. How to Implement Process Metrics - Step by Step
+i. 1. Define Goals: Pick 2–3 business goals (e.g., faster delivery, fewer escaped
+
+defects).
+
+ii. 2. Select Metrics: Use GQM to derive 5–10 metrics, not 50.
+iii. 3. Define & Standardise: Define exactly how each metric is calculated, who
+
+collects it, and how often.
+
+iv. 4. Collect Baseline Data: Collect for 2–3 months to establish a baseline before
+
+judging performance.
+
+v. 5. Analyse & Visualise: Plot trends on control charts / dashboards. Look for
+
+trends, not single points.
+
+vi. 6. Act & Improve: Hold retrospectives. Ask “What is the process telling us?”
+vii. 7. Review & Refine: Review metrics quarterly. Drop useless metrics, add new
+
+ones as goals change.
+
+8. Common Pitfalls
+i. Metric Overload: Collecting too many metrics - teams drown in data and act on
+
+none of it.
+
+ii. Blame Culture: Using metrics to punish - leads to gaming, hiding defects, and
+
+inflated estimates.
+
+iii. Comparing Unlike Teams: Comparing teams unfairly - different domains, sizes,
+
+and complexities cannot be compared directly.
+
+iv. Vanity Metrics: Focusing on vanity metrics - e.g., number of tests, without
+
+checking if they catch defects.
+
+v. Ignoring Context: Ignoring context - a rise in defects may mean better testing,
+
+not worse code.
+
+vi. One-off Measurement: Measuring once and forgetting - metrics only help if
+
+reviewed regularly.
+
+9. Example: Process Metrics Dashboard
+Metric
+
+Baseline
+
+Current
+
+62%
+
+81%
+
+Defect
+Removal
+Efficiency
+
+Target
+
+85%
+
+Escaped
+Defects
+Release
+
+Cycle
+(Feature)
+
+18
+
+/
+
+7
+
+<5
+
+Time
+
+28 days
+
+19 days
+
+15 days
+
+24%
+
+58%
+
+<20%
+
+70%
+
+Rework Ratio
+
+38%
+
+35%
+
+Test
+Automation
+Coverage
+
+Deployment
+Frequency
+
+Interpretation
+
+Reviews
+improving,
+approaching
+target
+
+Fewer
+customer
+issues
+
+Flow
+improving
+
+Less
+work
+
+redo
+
+Faster
+regression
+feedback
+
+Monthly
+
+Weekly
+
+Weekly
+
+Good progress
+
+A dashboard like this tells a story in one page: the process is improving, but review
+effectiveness and automation still need work.
+
+10. Process Metrics vs. Product Metrics — Summary
+Aspect
+
+Process Metrics
+
+Product Metrics
+
+Focus
+
+Examples
+
+Used By
+
+How we build
+
+What we build
+
+DRE, cycle time, review
+coverage
+
+Defect density, reliability,
+maintainability, usability
+
+Process
+managers
+
+engineers, QA,
+
+Developers,
+customers
+
+testers,
+
+Goal
+
+Improve the process
+
+Improve the product
+
+Time Horizon
+
+Long-term, trend-based
+
+Release-based
+
+Both are needed. Product metrics show symptoms; process metrics reveal causes.
+
+

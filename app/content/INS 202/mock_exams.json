@@ -1,0 +1,1818 @@
+{
+  "course": "INS 202",
+  "title": "INS 202: Human-Computer Interaction Mock Examinations",
+  "exams": [
+    {
+      "id": "ins202-mock-1",
+      "title": "INS 202 Human-Computer Interaction — Comprehensive Midterm Mock 1",
+      "description": "Standard university midterm simulation covering HCI goals (Safety, Utility, Efficiency, Effectiveness, Usability), Interaction vs Interface, Cognitive Psychology (Miller 7+/-2, Gestalt, Fitts's Law), UCD & Prototyping (Low vs High fidelity, Think Aloud), Evaluation (Nielsen heuristics, Likert scales), Information Architecture, and Universal Design / Accessibility (WCAG 2.1 POUR).",
+      "duration_minutes": 60,
+      "total_marks": 70,
+      "questions": [
+        {
+          "id": "ins202-acc-001",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "wcag",
+            "principles",
+            "pour"
+          ],
+          "question": "The Web Content Accessibility Guidelines (WCAG 2.1) are organized around four foundational principles known by the acronym 'POUR'. What do these four letters represent?",
+          "options": [
+            "Perceivable, Operable, Understandable, Robust",
+            "Predictable, Organized, Universal, Responsive",
+            "Proximity, Orientation, Usability, Reliability",
+            "Performance, Optimization, Utility, Redundancy"
+          ],
+          "answer": 0,
+          "explanation": "WCAG 2.1 is structured around four foundational principles: Perceivable (information must be presentable in ways users can perceive), Operable (interface components and navigation must be operable via diverse inputs), Understandable (information and UI operations must be comprehensible), and Robust (content must be reliably interpreted by various user agents including assistive technologies).",
+          "why_wrong": {
+            "1": "While predictability and responsiveness are good UX attributes, they are not the formal WCAG 2.1 POUR principles.",
+            "2": "Proximity and usability are general design terms, not the WCAG acronym.",
+            "3": "Performance and utility are general software engineering concepts."
+          },
+          "source": "W3C Web Content Accessibility Guidelines (WCAG 2.1) & Module 06 Notes"
+        },
+        {
+          "id": "ins202-acc-003",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "wcag",
+            "keyboard-accessibility",
+            "operable"
+          ],
+          "question": "A blind user navigates an e-commerce checkout page using a screen reader and the keyboard Tab key. When an address-confirmation popup modal opens, the user presses Tab repeatedly, but the focus cycles through invisible background links behind the modal, and pressing Escape does not dismiss the modal. What severe accessibility defect has occurred?",
+          "options": [
+            "A Keyboard Trap and failure of modal focus management, violating WCAG Operable principle",
+            "A DOM parsing timeout error caused by the web browser's JavaScript V8 engine",
+            "A violation of Fitts's Law due to excessive screen distance between modal buttons",
+            "A Gestalt proximity grouping error in the CSS Flexbox layout"
+          ],
+          "answer": 0,
+          "explanation": "This is a classic 'keyboard trap' and focus management failure (WCAG Criterion 2.1.2 No Keyboard Trap). When a modal dialog opens, focus must immediately shift inside the modal, focus must be trapped (contained) within the modal while open, and pressing Escape or completing the task must close the modal and restore focus to the triggering element.",
+          "why_wrong": {
+            "1": "This is an interaction design and DOM focus bug, not a browser JavaScript engine crash.",
+            "2": "Fitts's Law models pointing device motion times, not keyboard Tab navigation indexing.",
+            "3": "Gestalt proximity governs visual spacing, not keyboard focus traversal order."
+          },
+          "source": "WCAG 2.1 Guideline 2.1: Keyboard Accessible"
+        },
+        {
+          "id": "ins202-acc-005",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "voice-user-interfaces",
+            "cognitive-load",
+            "emerging-interfaces"
+          ],
+          "question": "Why do Voice User Interfaces (VUIs, such as Amazon Alexa or Apple Siri) impose a significantly higher cognitive load on user short-term memory than visual graphical user interfaces (GUIs) when presenting lists of options?",
+          "options": [
+            "Auditory output is transient and serial (linear in time), preventing users from scanning ahead or revisiting items without listening to the entire prompt again",
+            "Audio sound waves consume more electrical power from smartphone batteries than LCD screens",
+            "Voice synthesis hardware introduces a 5-second acoustic latency for every spoken syllable",
+            "Human ears cannot process more than three distinct phonemes in a single day"
+          ],
+          "answer": 0,
+          "explanation": "Visual GUIs present multiple items simultaneously in two-dimensional space, allowing users to scan, compare, and re-read at their own pace (exploiting high visual bandwidth and recognition memory). In contrast, audio speech is transient (it vanishes the instant it is spoken) and serial (one word after another). Users must actively maintain previous options in their limited short-term memory (Miller's 7 +/- 2 chunks), creating severe cognitive strain if lists exceed 3 or 4 items.",
+          "why_wrong": {
+            "1": "Power consumption has no impact on human cognitive memory capacity.",
+            "2": "Modern speech synthesis has negligible latency (milliseconds), not 5-second delays per syllable.",
+            "3": "Humans process thousands of phonemes every minute during normal speech."
+          },
+          "source": "Voice User Interface (VUI) Design Principles & Cognitive Psychology"
+        },
+        {
+          "id": "ins202-acc-007",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "virtual-reality",
+            "simulator-sickness",
+            "sensory-conflict"
+          ],
+          "question": "During a Virtual Reality (VR) training simulation for surgery, several medical students experience dizziness, nausea, and disorientation within 10 minutes of wearing the head-mounted display. According to HCI and sensory physiology, what is the primary cause of this 'simulator sickness'?",
+          "options": [
+            "Sensory conflict between visual motion signals perceived by the eyes and the stationary balance signals detected by the vestibular system in the inner ear",
+            "Excessive electrical magnetic interference from the VR headset's Bluetooth transceiver",
+            "A chemical allergic reaction to the foam padding on the perimeter of the headset",
+            "The refresh rate of the VR screen exceeding 1,000 frames per second"
+          ],
+          "answer": 0,
+          "explanation": "Simulator sickness (or VR motion sickness) is caused by 'sensory conflict theory': the visual system detects virtual acceleration and movement through space, while the vestibular system (the semicircular canals in the inner ear) detects that the physical body is stationary. This neurological mismatch triggers visceral nausea and dizziness as the brain interprets the sensory discordance as neurotoxic poisoning.",
+          "why_wrong": {
+            "1": "Bluetooth RF signals do not cause acute motion sickness or nausea.",
+            "2": "Allergic reactions cause contact dermatitis or skin hives, not vestibular dizziness and nausea.",
+            "3": "High refresh rates (90Hz to 120Hz+) actually *reduce* simulator sickness by eliminating display lag; low refresh rates worsen it."
+          },
+          "source": "Virtual Reality & Emerging Interaction Paradigms"
+        },
+        {
+          "id": "ins202-acc-009",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "wcag",
+            "accessibility",
+            "cloze"
+          ],
+          "question": "Complete the statements regarding web accessibility:\nIn WCAG 2.1, the acronym POUR stands for [blank1], Operable, Understandable, and [blank2]. To enable blind users using screen readers to skip past long lists of repetitive top-level navigation links directly to the primary page article, developers provide a [blank3] link at the very top of the DOM.",
+          "answer": [
+            "perceivable",
+            "robust",
+            "skip to main content"
+          ],
+          "explanation": "The POUR principles are Perceivable, Operable, Understandable, and Robust. A 'Skip to main content' (or 'Skip navigation') link allows keyboard and screen reader users to bypass repetitive header navigation on every page load.",
+          "source": "WCAG 2.1 Guidelines & Module 06 Navigation"
+        },
+        {
+          "id": "ins202-acc-011",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "sequencing",
+          "difficulty": 3,
+          "tags": [
+            "navigation",
+            "dom-order",
+            "sequencing"
+          ],
+          "question": "Arrange the standard DOM tab order for an accessible, universal-design web page header from first encountered to last encountered:",
+          "options": [
+            "Skip to Main Content link (hidden visually until focused via keyboard Tab)",
+            "Primary Brand Logo linking to homepage with descriptive alt text",
+            "Global Navigation Bar links (<nav> unordered list items)",
+            "Main Content Area heading (<h1>) and primary workflow interactive elements"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "Logical keyboard navigation order begins with the 'Skip to Main Content' link (allowing keyboard users to bypass header clutter), followed by the brand logo, then the global navigation items, and finally landing on the main content area where the primary task begins.",
+          "source": "Module 06 (Navigation) & WCAG 2.1 Navigation Order"
+        },
+        {
+          "id": "ins202-acc-013",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "navigation",
+            "breadcrumbs"
+          ],
+          "question": "What are Breadcrumbs in website navigation, and what two distinct functions do they serve?",
+          "answer": "Breadcrumbs are a horizontal trail of text links displaying the user's location within the site hierarchy (e.g., Home > Electronics > Audio > Headphones).\nFunctions:\n1. Context/Orientation: Informs users exactly where they are within the site's information architecture.\n2. Shortcut Navigation: Provides instant single-click access to any higher-level ancestor category without clicking the browser Back button repeatedly.",
+          "explanation": "Breadcrumbs complement global navigation and prevent navigational disorientation.",
+          "source": "Module 06 (Navigation), Slide 3: Page-Level Navigation"
+        },
+        {
+          "id": "ins202-acc-015",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "bci",
+            "definition"
+          ],
+          "question": "What is a Brain-Computer Interface (BCI), and how is it used in assistive HCI?",
+          "answer": "A Brain-Computer Interface (BCI) is a direct hardware and software communication system between neural activity in the brain and an external computer. By recording neural electrical signals (via non-invasive EEG electrodes or invasive neural implants) and decoding motor intentions, BCI enables paralyzed or 'locked-in' patients to control computer cursors, virtual keyboards, or robotic limbs purely through thought.",
+          "explanation": "BCI represents the ultimate frontier of assistive technology for individuals with complete loss of motor pathways.",
+          "source": "Emerging HCI Paradigms"
+        },
+        {
+          "id": "ins202-acc-cs1-q1",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "wcag",
+            "audit",
+            "perceivable",
+            "case-study"
+          ],
+          "question": "[Case Scenario: An independent accessibility auditor evaluates the online registration portal of Apex State University against the WCAG 2.1 Level AA standard. The auditor docum...]\n\nRegarding Finding #1 (pale red text with 3.1:1 contrast ratio as the sole indicator of required fields), what TWO specific WCAG 2.1 Level AA guidelines are violated?",
+          "options": [
+            "Guideline 1.4.1 (Use of Color - color must not be the sole indicator) and Guideline 1.4.3 (Contrast Minimum - normal text must achieve at least 4.5:1)",
+            "Guideline 2.1.1 (Keyboard Accessible) and Guideline 2.4.2 (Page Titled)",
+            "Guideline 3.1.1 (Language of Page) and Guideline 3.2.2 (On Input)",
+            "Guideline 4.1.1 (Parsing) and Guideline 2.3.1 (Three Flashes or Below Threshold)"
+          ],
+          "answer": 0,
+          "explanation": "Finding #1 violates Guideline 1.4.1 because color alone is used to denote required fields (excluding color-blind users). It also violates Guideline 1.4.3 because pale red (#E57373) against white has a contrast ratio of 3.1:1, failing the mandatory 4.5:1 threshold for normal body text.",
+          "why_wrong": {
+            "1": "Keyboard access and page title are Operable guidelines, not color/contrast guidelines.",
+            "2": "Language of page and input timing are Understandable guidelines, not visual sensory guidelines.",
+            "3": "Parsing and seizure thresholds are completely unrelated to text contrast and color encoding."
+          },
+          "source": "WCAG 2.1 Guidelines 1.4.1 & 1.4.3"
+        },
+        {
+          "id": "ins202-acc-cs2-q1",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "emerging-interfaces",
+            "vui-vs-ar",
+            "ergonomics",
+            "case-study"
+          ],
+          "question": "[Case Scenario: A major logistics distribution center in Lagos processes 50,000 parcels per day. The warehouse director is deciding between three user interface technologies fo...]\n\nCompare Option B (Voice-Directed Picking) and Option C (AR Smart Glasses with Mid-Air Gestures) in terms of human ergonomics, physical fatigue, and operational efficiency in a bustling warehouse environment. Which option is superior for high-volume parcel picking, and why?",
+          "answer": "Option B (Voice-Directed Picking) is significantly superior for high-volume warehouse picking. The ergonomic and operational analysis reveals:\n\n1. Hands-Free and Eyes-Free Operation: Warehouse pickers must lift heavy, bulky boxes with both hands. Option B frees both hands and allows the worker's eyes to stay focused on physical navigation, avoiding trip hazards and heavy machinery. Option C requires optical attention to virtual overlays, which can occlude real-world hazards (like forklifts).\n\n2. Prevention of 'Gorilla Arm' Ergonomic Fatigue: Option C requires pickers to raise their hands and perform mid-air 3D pinch gestures repeatedly across an 8-hour shift. This triggers severe shoulder muscle strain and fatigue (Gorilla Arm syndrome), drastically reducing picking speed and increasing worker injury claims. In contrast, speaking check-digits into a lightweight headset introduces zero limb fatigue.\n\n3. Environmental Robustness: AR glasses suffer in warehouses due to variable lighting conditions (glare from skylights, dark corners between tall racks) and dust accumulation on optical prisms. Voice picking, paired with modern noise-cancelling directional microphones, isolates speech accurately even in noisy distribution centers.\n\n4. Cognitive Load: In voice picking, commands are brief and atomic ('Aisle 4, Bin 12, Pick 2'). Workers confirm with two check digits, keeping short-term memory load well within Miller's 7 +/- 2 chunks without visual distraction.",
+          "explanation": "Voice-directed picking leaves hands and eyes free and eliminates gesture-induced physical strain.",
+          "marking_points": [
+            "Identifies that Option B leaves both hands and eyes completely free for physical lifting and safety",
+            "Explains how Option C's mid-air gestures induce 'Gorilla Arm' fatigue across an 8-hour shift",
+            "Discusses environmental hazards of AR in warehouses (visual occlusion of forklifts, lighting glare, dust)",
+            "Analyzes cognitive and acoustic factors (noise-cancelling microphones vs visual distraction)",
+            "Concludes that Voice-Directed Picking is superior for heavy logistics picking operations"
+          ],
+          "source": "Emerging HCI Paradigms, VUI vs AR & Physical Ergonomics"
+        },
+        {
+          "id": "ins202-eval-001",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "usability-specifications",
+            "performance-measures",
+            "lostness"
+          ],
+          "question": "In a web usability testing session, an observer notes that participants repeatedly click the browser's 'Back' button while searching for a specific product. In HCI usability specifications, what does a high frequency of Back button usage primarily indicate?",
+          "options": [
+            "The user is disoriented and the website's information architecture lacks clear navigation scent",
+            "The user prefers using browser navigation over website menus because of mouse ergonomics",
+            "The website's web server is responding too slowly, causing timeout errors",
+            "The participant is conducting an exploratory heuristic evaluation rather than a goal-directed task"
+          ],
+          "answer": 0,
+          "explanation": "In usability testing, frequent use of the browser's Back button is a classic behavioral proxy for navigation failure and disorientation ('lostness'). It indicates that the user followed a link expecting to find the target information, discovered they were on the wrong path, and had to backtrack because the information architecture or navigational scent failed them.",
+          "why_wrong": {
+            "1": "Users resort to browser back buttons not out of ergonomic preference, but because the on-page navigation failed to support their task trajectory.",
+            "2": "Server latency causes wait states or abort actions, not systematic navigation backtracking through content pages.",
+            "3": "Heuristic evaluation is performed by trained expert inspectors without users; users performing tasks do not conduct heuristic evaluations."
+          },
+          "source": "Module 03 (Know Thy User), Slide 39: Performance measures: a sampling"
+        },
+        {
+          "id": "ins202-eval-003",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "heuristic-evaluation",
+            "nielsen",
+            "evaluator-curve"
+          ],
+          "question": "A startup company with a limited budget wants to conduct a Heuristic Evaluation of their new e-commerce web application. According to Jakob Nielsen's empirical research on usability inspection, what is the optimal number of evaluators to employ, and why?",
+          "options": [
+            "3 to 5 evaluators, because they identify roughly 75% to 85% of usability problems while maintaining cost-effectiveness",
+            "Exactly 1 evaluator, because adding additional evaluators generates redundant noise without finding new flaws",
+            "15 to 20 evaluators, because anything fewer than 15 fails to reach statistical significance in qualitative inspection",
+            "At least 10 evaluators, because each evaluator catches only 10% of usability problems on average"
+          ],
+          "answer": 0,
+          "explanation": "Nielsen's mathematical model of heuristic evaluation demonstrates that a single evaluator catches only about 35% of usability issues. However, pooling 3 to 5 independent evaluators catches between 75% and 85% of all usability problems. Beyond 5 evaluators, the curve flattens significantly, resulting in diminishing returns where each additional evaluator costs more money but uncovers very few new problems.",
+          "why_wrong": {
+            "1": "A single evaluator misses ~65% of usability defects, making a 1-evaluator audit dangerously incomplete.",
+            "2": "Heuristic evaluation is an expert inspection technique, not an inferential hypothesis test requiring large sample sizes; 15-20 evaluators represents massive unnecessary expense.",
+            "3": "Evaluators catch ~35% on average, not 10%; 3 to 5 evaluators are well established as the optimal balance of cost and coverage."
+          },
+          "source": "Gerard Kim / Nielsen Norman Group Usability Inspection & Module 03/07 Evaluation Notes"
+        },
+        {
+          "id": "ins202-eval-005",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "likert-scale",
+            "methodology",
+            "survey-design"
+          ],
+          "question": "When designing a post-test questionnaire to measure user satisfaction, why do HCI researchers frequently include both positively and negatively worded Likert items (e.g., 'The system was easy to use' alongside 'I found the system unnecessarily complex')?",
+          "options": [
+            "To detect and mitigate acquiescence bias, where respondents tend to agree with statements uncritically",
+            "To convert ordinal Likert response categories into continuous ratio data",
+            "To confuse automated web bots that attempt to complete usability surveys",
+            "To double the number of statistical degrees of freedom in non-parametric tests"
+          ],
+          "answer": 0,
+          "explanation": "Acquiescence bias (or 'yea-saying') is the psychological tendency for survey respondents to agree with assertions presented to them. Alternating positively and negatively phrased items (as deliberately done in the standard System Usability Scale - SUS) forces participants to read questions carefully and prevents biased, all-agree response sets.",
+          "why_wrong": {
+            "1": "Alternating question phrasing cannot transform ordinal psychometric responses into ratio data (which requires an absolute true zero).",
+            "2": "In-lab usability surveys are administered to verified human participants, not public web scrapers.",
+            "3": "Reversing item polarities does not artificially double degrees of freedom; items are reversed and summed into a composite scale."
+          },
+          "source": "Student Notebook ('Likert Scale') & Standard Usability Psychometrics (Brooke 1996, SUS)"
+        },
+        {
+          "id": "ins202-eval-007",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "cognitive-walkthrough",
+            "learnability",
+            "inspection"
+          ],
+          "question": "During a Cognitive Walkthrough of an automated airport self-service baggage kiosk, an evaluator analyzes whether a novice passenger will be able to check their bags. Which of the following is ONE of the four foundational questions defined in the Cognitive Walkthrough methodology?",
+          "options": [
+            "Will the user associate the correct action with the effect they are trying to achieve?",
+            "Does the interface comply with the ISO 9241-11 ergonomic standard for touch displays?",
+            "Has the developer implemented the Model-View-Controller architecture correctly?",
+            "What is the mean time between failures (MTBF) of the kiosk barcode scanner hardware?"
+          ],
+          "answer": 0,
+          "explanation": "The Cognitive Walkthrough (Wharton et al.) evaluates learnability by answering four specific psychological questions at each step: (1) Will the user try to achieve the right effect? (2) Will the user notice that the correct action is available? (3) Will the user associate the correct action with the desired effect? (4) If the correct action is performed, will the user see that progress is being made?",
+          "why_wrong": {
+            "1": "ISO 9241-11 compliance is an international standard audit, not one of the four action-level Cognitive Walkthrough questions.",
+            "2": "MVC architecture is an internal software engineering implementation detail invisible to HCI walk-up learnability evaluations.",
+            "3": "Hardware MTBF is a mechanical/electronic reliability metric, completely outside the scope of cognitive usability inspection."
+          },
+          "source": "Wharton et al. (1994) Cognitive Walkthrough & HCI Evaluation Literature"
+        },
+        {
+          "id": "ins202-eval-009",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "evaluation-types",
+            "formative-vs-summative"
+          ],
+          "question": "An HCI team tests a paper prototype of a healthcare scheduling app with four nurses during Week 3 of an eight-month development project, specifically to discover why users struggle to find open appointment slots. What type of evaluation is this?",
+          "options": [
+            "Formative evaluation",
+            "Summative evaluation",
+            "Regression evaluation",
+            "Benchmarking evaluation"
+          ],
+          "answer": 0,
+          "explanation": "Formative evaluation is conducted iteratively during the design and development cycle (frequently with low-fidelity prototypes) to diagnose interface defects, understand user cognitive models, and formatively shape subsequent redesigns. Summative evaluation occurs at the end of a project to measure final performance against specifications.",
+          "why_wrong": {
+            "1": "Summative evaluation is conducted at project completion to assess overall outcomes against strict quantitative benchmarks.",
+            "2": "Regression testing is a software engineering concept testing whether recent code commits broke existing features.",
+            "3": "Benchmarking compares a completed, live system against competing commercial products or past baselines."
+          },
+          "source": "HCI Evaluation Methodologies & Module 03/07 Notes"
+        },
+        {
+          "id": "ins202-eval-011",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "nielsen-heuristics",
+            "matching"
+          ],
+          "question": "Match each interface flaw to the specific Jakob Nielsen Usability Heuristic it violates:",
+          "options": [
+            "A file-saving operation shows a blank screen for 30 seconds with no progress bar or spinner",
+            "A system error pop-up displays 'Fatal Exception 0x0000005F at memory address 0x8849'",
+            "A user accidentally hits 'Empty Trash' but there is no 'Undo' button or recovery option",
+            "A date-picker field allows users to select February 31st and only crashes after submitting the form"
+          ],
+          "answer": [
+            "Visibility of System Status",
+            "Help Users Recognize, Diagnose, and Recover from Errors",
+            "User Control and Freedom",
+            "Error Prevention"
+          ],
+          "explanation": "Lack of feedback violates 'Visibility of System Status'. Cryptic hexadecimal error codes violate 'Help Users Recognize, Diagnose, and Recover from Errors' (which demands plain language). Lack of an emergency exit or Undo violates 'User Control and Freedom'. Allowing invalid inputs instead of constraining choices violates 'Error Prevention'.",
+          "source": "Jakob Nielsen's 10 Usability Heuristics"
+        },
+        {
+          "id": "ins202-eval-013",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "likert-scale",
+            "definition"
+          ],
+          "question": "What is a Likert Scale, and what are its typical anchor endpoints in usability evaluations?",
+          "answer": "A Likert Scale is a psychometric rating scale used to measure user attitudes, preferences, and levels of agreement with declarative statements. It typically consists of 5 or 7 symmetrical response levels anchored by 'Strongly Disagree' at one extreme, a neutral midpoint ('Neither Agree nor Disagree'), and 'Strongly Agree' at the opposite extreme.",
+          "explanation": "Invented by Rensis Likert, it is the primary instrument in HCI for converting subjective user satisfaction and perceived ease-of-use into quantifiable preference data.",
+          "source": "Module 03, Slide 40: Preference measures & Student Notebook ('Likert Scale')"
+        },
+        {
+          "id": "ins202-eval-015",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "performance-measures",
+            "metrics"
+          ],
+          "question": "List four distinct performance measures commonly recorded during website usability testing.",
+          "answer": "1. Task completion time (time to find an item or place an order)\n2. Task completion rate (percentage of tasks completed correctly)\n3. Back button usage frequency (indicating navigational disorientation)\n4. Number of clicks / navigation path depth to locate information\n(Also: error count, support call frequency, and regressive behaviors).",
+          "explanation": "Performance measures capture what users actually do (objective behavioral data) rather than what they say they do.",
+          "source": "Module 03 (Know Thy User), Slide 39: Performance measures: a sampling"
+        },
+        {
+          "id": "ins202-eval-cs1-q1",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "heuristic-evaluation",
+            "nielsen-heuristics",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Apex Health Systems has developed an intensive care unit (ICU) nurse telemetry dashboard. The development team performed a Heuristic Evaluation using four indep...]\n\nRegarding Finding #1 (stale telemetry data displayed during network stalls without indication), which of Jakob Nielsen's 10 Usability Heuristics is most critically violated?",
+          "options": [
+            "Visibility of System Status, because the system fails to keep the nurse informed about its operational state within a reasonable time",
+            "Flexibility and Efficiency of Use, because keyboard shortcuts are not provided for network reconnection",
+            "Aesthetic and Minimalist Design, because vital numbers clutter the display",
+            "Match Between System and the Real World, because patient physiology does not follow network packet structures"
+          ],
+          "answer": 0,
+          "explanation": "Heuristic #1 (Visibility of System Status) states that systems must always keep users informed about what is going on through appropriate, timely feedback. In an ICU environment, continuing to display stale vitals without indicating a frozen or disconnected network connection is a life-threatening violation of status visibility.",
+          "why_wrong": {
+            "1": "Keyboard shortcuts do not solve the fundamental safety failure of concealing system disconnections.",
+            "2": "Displaying vital signs is the core medical utility of the screen, not aesthetic clutter.",
+            "3": "The failure is not metaphorical terminology; it is the total concealment of system connection state."
+          },
+          "source": "Jakob Nielsen's 10 Usability Heuristics (Heuristic #1)"
+        },
+        {
+          "id": "ins202-eval-cs2-q1",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "performance-vs-preference",
+            "likert-scale",
+            "case-study"
+          ],
+          "question": "[Case Scenario: TransCity Metro installed 200 touchscreen smart ticketing kiosks across subway stations in Abuja. To evaluate the interface, the transit authority conducted an ...]\n\nAnalyze the contradiction between the high Likert satisfaction scores (85% Strongly Agree) and the poor objective performance metrics (45% failure to meet time specifications, 3.8 errors, frequent Back button usage). What psychometric and human-factors phenomena explain this divergence?",
+          "answer": "This contradiction illustrates the classic 'performance versus preference divergence' in HCI evaluation. Several key factors explain this phenomenon:\n1. Social Desirability and Acquiescence Bias: In a lab setting, test participants frequently exhibit 'pleasing the researcher' bias, rating the machine favorably out of politeness or reluctance to criticize a high-tech novelty, regardless of their actual struggle.\n2. Low Expectations and Novelty Effect: Commuters comparing the digital kiosk to standing in long manual ticket queues may feel satisfied simply that the machine worked and dispensed a ticket, overlooking their own inefficiencies and confusion.\n3. Lack of Error Awareness: Users may not perceive their multiple Back-button taps or exploratory missteps as 'system errors', assuming that trial-and-error exploration is normal.\n4. Cognitive Dissonance: Having successfully obtained a ticket after substantial effort, users rationalize their experience positively ('I did it, so it was good').\n\nThis discrepancy demonstrates why usability specifications must never rely solely on post-test Likert preference scales; objective behavioral performance data (completion times, error logs, lostness metrics) is critical to uncover actual workflow bottlenecks.",
+          "explanation": "High subjective ratings can mask severe operational bottlenecks; both dimensions are mandatory in usability specifications.",
+          "marking_points": [
+            "Identifies the performance-preference divergence phenomenon",
+            "Explains survey biases such as acquiescence bias or social desirability (politeness to evaluators)",
+            "Discusses user expectations (satisfaction with successful outcome despite high task time)",
+            "Mentions that users may not recognize their own trial-and-error or backtracking as measurable errors",
+            "Concludes that relying solely on preference measures creates a false impression of usability success"
+          ],
+          "source": "Module 03 (Know Thy User), Slides 38-41: Usability Specifications & Performance vs Preference"
+        },
+        {
+          "id": "ins202-fnd-001",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "multi_select",
+          "difficulty": 2,
+          "tags": [
+            "hci_goals",
+            "lecturer_flagged",
+            "exam_critical"
+          ],
+          "question": "In the student lecture notes, the lecturer explicitly highlighted: 'list the goals of HCI => IMPORTANT FOR EXAM!!!'. Which of the following constitute the FIVE foundational goals of Human-Computer Interaction? (Select FIVE)",
+          "options": [
+            "Safety (protecting users and data from harm or catastrophe)",
+            "Utility (the services and functional capabilities provided)",
+            "Effectiveness (users successfully achieving their intended tasks)",
+            "Efficiency (completing tasks quickly with minimal effort/time)",
+            "Usability (ease of learning, ease of use, and satisfaction)",
+            "Cryptographic Bitwise Shuffling",
+            "Monetary Stock Inflation"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "As prominently flagged in the course materials and lecturer notes, the five core goals of HCI are: 1. Safety, 2. Utility, 3. Effectiveness, 4. Efficiency, and 5. Usability. Cryptographic shuffling and financial inflation are unrelated domains.",
+          "why_wrong": {
+            "5": "Bitwise shuffling is a cryptographic security function, not an HCI usability goal.",
+            "6": "Stock inflation is macroeconomic financial theory, not an HCI system goal."
+          },
+          "marking_points": [],
+          "source": "Student Notebook Image 21.47.02 (1); Module 01 Slides 19-24",
+          "verified": true,
+          "verified_output": "Safety, Utility, Effectiveness, Efficiency, Usability."
+        },
+        {
+          "id": "ins202-fnd-003",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "history",
+            "cost_shift",
+            "ibm_1953"
+          ],
+          "question": "According to the course history of computing (highlighted in the student notebook as '1st computer from IBM 1953, 33kb'), how did the economic relationship between computer hardware and human programmer time fundamental shift between 1953 and today?",
+          "options": [
+            "In 1953, computer hardware was so expensive that one machine equaled the annual salaries of 200 programmers, forcing humans to adapt to the machine; today, hardware is cheap and human cognitive time is the expensive, scarce resource.",
+            "In 1953, human programmers were paid in physical gold bars while computers were distributed for free to elementary schools.",
+            "In 1953, computers ran with zero latency, but modern microprocessors take several hours to process a single punched card.",
+            "There has been zero economic or technological shift in computer costs since 1953."
+          ],
+          "answer": 0,
+          "explanation": "In 1953 (the era of the IBM 701 with ~33 kb memory), computer hardware was astronomically expensive; a machine cost equaled 200 programmer salaries, so humans spent days preparing batch punch cards to save seconds of CPU time. Today, hardware is ubiquitous and inexpensive, so system design is inverted: computing systems must be designed around human cognitive convenience.",
+          "why_wrong": {
+            "1": "Computers were multi-million dollar investments in 1953, not free school toys.",
+            "2": "Early machines took hours for simple batch jobs, whereas modern CPUs execute billions of operations per second.",
+            "3": "The cost of computing has plummeted by many orders of magnitude."
+          },
+          "marking_points": [],
+          "source": "Student Notebook Image 21.47.02 (1); Module 01 Slides 15, 18",
+          "verified": true,
+          "verified_output": "Hardware was scarce in 1953; today human time and cognitive bandwidth are scarce."
+        },
+        {
+          "id": "ins202-fnd-005",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "business_benefits",
+            "conversion_rate"
+          ],
+          "question": "In web-based commercial applications, what technical term defines the percentage of site visitors who successfully perform a targeted, desired business action (such as completing an e-commerce purchase or signing up for a course)?",
+          "options": [
+            "Conversion Rate",
+            "Bounce Attenuation",
+            "Packet Throughput",
+            "Clock Cycle Yield"
+          ],
+          "answer": 0,
+          "explanation": "Conversion Rate is the standard commercial metric defining the percentage of visitors who complete a desired goal (e.g., buying a product). Improving website usability directly increases the conversion rate, lowering customer acquisition costs.",
+          "why_wrong": {
+            "1": "Bounce rate measures visitors leaving immediately, not successful conversions.",
+            "2": "Packet throughput is a networking metric measuring data delivery rates.",
+            "3": "Clock cycle yield is a semiconductor silicon manufacturing metric."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 7",
+          "verified": true,
+          "verified_output": "Conversion Rate."
+        },
+        {
+          "id": "ins202-fnd-007",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "hci_goals",
+            "safety"
+          ],
+          "question": "The HCI goal of 'Safety' applies exclusively to industrial and military systems such as air traffic control towers and nuclear power plants, with zero relevance to ordinary consumer websites.",
+          "options": [
+            "True — consumer websites only deal with amusement and fashion, so human errors never have serious consequences.",
+            "False — safety in general computing encompasses both physical safety and the safety of data (e.g. preventing accidental permanent deletion of tax records, bank fund transfers, or unrecoverable medical files)."
+          ],
+          "answer": 1,
+          "explanation": "As taught in Module 01 Slide 20: Safety covers both Safety of Users (preventing physical catastrophe in aviation, automotive, and hospital care) AND Safety of Data (preventing accidental deletion of critical customer records, financial accounts, or thesis dissertations through destructive, non-reversible actions).",
+          "why_wrong": {
+            "0": "Accidental deletion of bank databases or patient medical charts can result in devastating financial ruin and loss of life."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 20",
+          "verified": true,
+          "verified_output": "False. Safety includes data safety and preventing catastrophic loss."
+        },
+        {
+          "id": "ins202-fnd-009",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "hci_goals",
+            "efficiency_metric"
+          ],
+          "question": "Which of the following measurements is the most valid objective metric for evaluating the 'Efficiency' goal of an airline ticketing check-in kiosk?",
+          "options": [
+            "The average time in seconds and number of screen taps required for a frequent traveler to print their boarding pass.",
+            "The total weight of the aluminum kiosk stand in kilograms.",
+            "The artistic popularity of the airline's corporate logo among social media influencers.",
+            "The number of lines of C++ code compiled into the backend check-in daemon."
+          ],
+          "answer": 0,
+          "explanation": "Efficiency measures how quickly and with what effort users can achieve their goals once proficient. Measuring task completion time (seconds) and keystroke/tap counts directly reflects operational efficiency.",
+          "why_wrong": {
+            "1": "Physical weight is a mechanical hardware property, not a software interaction efficiency metric.",
+            "2": "Logo popularity measures aesthetic brand marketing, not user task efficiency.",
+            "3": "Source code lines measure code volume, not human interaction speed."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 23",
+          "verified": true,
+          "verified_output": "Average time and screen taps required."
+        },
+        {
+          "id": "ins202-fnd-011",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "practitioner_role"
+          ],
+          "question": "In the software development lifecycle, what is the primary professional role of an HCI practitioner according to the course overview?",
+          "options": [
+            "To act as the dedicated advocate for the human user throughout system design and development.",
+            "To optimize SQL database queries to reduce hard disk seek times.",
+            "To negotiate vendor discount pricing for bulk fiber-optic cable procurement.",
+            "To enforce strict binary assembly language coding standards among junior developers."
+          ],
+          "answer": 0,
+          "explanation": "As stated in Module 01 Slide 16: 'How do we make computers easy to use? By applying the principles of Human-Computer Interaction; By being, as an HCI practitioner, the advocate for the user.'",
+          "why_wrong": {
+            "1": "Database query optimization is performed by database administrators (DBAs).",
+            "2": "Procurement officers negotiate cable purchase contracts.",
+            "3": "Assembly coding standards are managed by software systems architects."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 16",
+          "verified": true,
+          "verified_output": "Advocate for the user."
+        },
+        {
+          "id": "ins202-fnd-013",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "hci_goals",
+            "usability_memorability"
+          ],
+          "question": "A tax filing portal is used by self-employed accountants only once every twelve months. Which specific usability attribute is most critical for this portal to ensure returning accountants do not have to completely re-learn the system every year?",
+          "options": [
+            "Memorability (retention of operational proficiency over time)",
+            "Paging File Allocation Velocity",
+            "RGB Color Gamut Calibration",
+            "Server Cache Overclocking"
+          ],
+          "answer": 0,
+          "explanation": "Memorability measures how easily returning users can re-establish proficiency after an extended period of non-use. For intermittent systems (like annual tax software), high memorability ensures users can complete tasks without re-reading user guides.",
+          "why_wrong": {
+            "1": "Paging file allocation is an OS memory management concern.",
+            "2": "RGB gamut is a graphic display calibration standard.",
+            "3": "Cache overclocking is hardware tuning, not human memorability."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 24",
+          "verified": true,
+          "verified_output": "Memorability."
+        },
+        {
+          "id": "ins202-fnd-015",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "hci_goals",
+            "error_prevention"
+          ],
+          "question": "When designing an intensive-care patient monitor in a hospital, a medical software team uses distinct auditory alert tones, unmistakable color coding, and requires a two-step confirmation before stopping intravenous drug delivery. Which HCI goal is being prioritized?",
+          "options": [
+            "Safety",
+            "Entertainment appeal",
+            "Monetary conversion rate",
+            "Search engine optimization (SEO)"
+          ],
+          "answer": 0,
+          "explanation": "Preventing accidental or mistaken shutdown of life-support systems directly addresses the HCI goal of Safety (protecting human users from physical harm, medical errors, or fatality).",
+          "why_wrong": {
+            "1": "Hospital medical systems prioritize patient survival over entertainment.",
+            "2": "Conversion rates apply to commercial shopping carts, not clinical infusion pumps.",
+            "3": "SEO optimizes search engine rankings for public web pages."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 20",
+          "verified": true,
+          "verified_output": "Safety."
+        },
+        {
+          "id": "ins202-fnd-cs1-q1",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "utility_vs_effectiveness"
+          ],
+          "question": "[Case Scenario: Nile University deploys a new online Course Registration Portal for 8,000 undergraduate students. The portal database has full functional capability (Utility): ...]\n\nAnalyzing the portal under the 5 Goals of HCI, how would an expert HCI evaluator classify the portal's state regarding Utility and Effectiveness?",
+          "options": [
+            "High Utility (the required database features and services exist), but severely deficient Effectiveness (students fail to complete registration due to unnavigable submission links and indecipherable errors).",
+            "Zero Utility because the portal does not support cryptocurrency transactions.",
+            "High Effectiveness because students were forced to visit the IT support desk in person.",
+            "High Usability because the cryptic hex codes teach students low-level machine architecture."
+          ],
+          "answer": 0,
+          "explanation": "The portal has high utility because all required registration functions, fee calculations, and database procedures exist. However, it lacks effectiveness because students cannot successfully achieve their goal of registering due to invisible controls, destructive data loss, and unhelpful error messages.",
+          "why_wrong": {
+            "1": "Cryptocurrency is irrelevant to academic course registration utility.",
+            "2": "Forcing thousands of students to crowd the help desk in panic indicates catastrophic failure of effectiveness.",
+            "3": "Displaying hex crash codes to students violates basic error handling usability."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 21-22",
+          "verified": true,
+          "verified_output": "High Utility, Deficient Effectiveness."
+        },
+        {
+          "id": "ins202-fnd-cs2-q1",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "case_study",
+            "business_roi"
+          ],
+          "question": "[Case Scenario: A fast-growing fintech startup in Lagos launches a peer-to-peer mobile payments app. In version 1.0, to send money to a friend, the user must navigate through 6...]\n\nIf each customer support phone call costs the fintech company an estimated $15 in personnel and telecom expenses, approximately how much money does the 78% reduction on 4,000 daily calls save the company over a 30-day month?",
+          "options": [
+            "$1,404,000 saved per month (3,120 fewer calls/day * $15 * 30 days)",
+            "$500 saved per month",
+            "$15 saved per month",
+            "Zero dollars because mobile apps eliminate telecom costs entirely"
+          ],
+          "answer": 0,
+          "explanation": "A 78% reduction of 4,000 calls = $4,000 \\times 0.78 = 3,120$ fewer calls per day. At $15 per call, the daily savings is $3,120 \\times 15 = \\$46,800$. Over a 30-day month, total savings equals $46,800 \\times 30 = \\$1,404,000$. This directly illustrates the massive business ROI of good HCI design.",
+          "why_wrong": {
+            "1": "Grossly underestimates call reduction volume and staff overhead.",
+            "2": "Represents the cost of a single phone call, not monthly aggregate savings.",
+            "3": "Customer support agents earn salaries and infrastructure costs remain real."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 10",
+          "verified": true,
+          "verified_output": "$1,404,000 monthly savings."
+        },
+        {
+          "id": "ins202-hum-001",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "mcq",
+          "difficulty": 1,
+          "tags": [
+            "cognitive_psychology",
+            "miller_rule"
+          ],
+          "question": "What is the famous cognitive capacity limit of human short-term (working) memory formulated by psychologist George Miller in 1956?",
+          "options": [
+            "The Magic Number 7, Plus or Minus 2 (5 to 9 chunks of information)",
+            "Exactly 64 megabytes of volatile random access memory",
+            "Infinite simultaneous storage capacity with zero cognitive decay",
+            "Exactly 1 bit of binary sensory data"
+          ],
+          "answer": 0,
+          "explanation": "In his landmark 1956 paper, George Miller demonstrated that human short-term working memory is strictly bottlenecked, capable of holding only $7 \\pm 2$ chunks of information at a single time before older items are overwritten or forgotten.",
+          "why_wrong": {
+            "1": "64 MB is a digital computer storage metric, not biological human short-term memory.",
+            "2": "Human short-term memory is severely constrained and decays in 15–30 seconds without rehearsal.",
+            "3": "Humans can hold several multi-symbol concepts, far exceeding a single binary bit."
+          },
+          "marking_points": [],
+          "source": "Module 02 Slide 37",
+          "verified": true,
+          "verified_output": "7 ± 2 chunks (Miller 1956)."
+        },
+        {
+          "id": "ins202-hum-003",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "recognition_vs_recall",
+            "golden_rule"
+          ],
+          "question": "In usability engineering, why is 'Recognition' fundamentally superior to 'Recall' for human users? Contrast how an e-commerce website applies this principle compared to a command line interface.",
+          "options": [],
+          "answer": "Recognition is cognitively superior to Recall because the human brain requires far less mental effort and neural retrieval processing to identify a target item when presented visually among options (Recognition) than to retrieve an item or exact command syntax from scratch without prompts (Recall). An e-commerce website leverages recognition by providing visual product catalogs, drop-down category menus, search auto-complete, and a persistent shopping cart icon showing recent items; users simply recognize what they want. In contrast, a Command Line Interface (CLI) forces the user to rely entirely on recall: the operator must mentally remember the exact command name (e.g. 'tar -xzvf archive.tar.gz'), its mandatory parameter flags, and directory paths without any visible clues, creating high cognitive load and frequent syntax errors.",
+          "explanation": "Recognition provides visual cues reducing cognitive retrieval; Recall requires unprompted memory extraction.",
+          "why_wrong": {},
+          "marking_points": [
+            "Explains that Recognition involves identifying information from visual prompts, which requires low cognitive effort.",
+            "Explains that Recall requires unprompted memory extraction from scratch, imposing heavy cognitive load.",
+            "Shows how e-commerce websites use recognition (menus, visual thumbnails, auto-complete).",
+            "Contrasts with CLI where users must recall exact syntax and parameters from unassisted memory."
+          ],
+          "source": "Module 02 Slide 39, 50",
+          "verified": true,
+          "verified_output": "Recognition vs Recall explanation."
+        },
+        {
+          "id": "ins202-hum-005",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "true_false_why",
+          "difficulty": 3,
+          "tags": [
+            "fitts_law",
+            "screen_corners"
+          ],
+          "question": "In a desktop computer graphical interface, the four physical corners and edges of the display monitor represent the easiest, fastest targets to click according to Fitts's Law.",
+          "options": [
+            "False — corners are the hardest targets because mouse balls get physically stuck in monitor bezels.",
+            "True — because the mouse cursor physically stops at the boundaries of the display screen and cannot overshoot, the screen edges and corners possess effectively 'infinite width' (W = ∞), making acquisition extremely fast."
+          ],
+          "answer": 1,
+          "explanation": "In desktop GUIs, the edge of the monitor acts as a physical barrier: a user can throw the mouse cursor forcefully toward a corner without fear of overshooting. Mathematically, the target width is effectively infinite ($W = \\infty$), reducing the Index of Difficulty to near zero. This is why the Windows Start menu is pinned in the bottom-left corner and the macOS menu bar sits on the top edge.",
+          "why_wrong": {
+            "0": "Modern optical mice do not use physical balls, and cursor pinning makes edges effortless to acquire."
+          },
+          "marking_points": [],
+          "source": "Fitts's Law Analysis; Gerard Kim Text",
+          "verified": true,
+          "verified_output": "True. Screen corners have infinite target width."
+        },
+        {
+          "id": "ins202-hum-007",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "constructivism",
+            "perception_model"
+          ],
+          "question": "Which psychological theory discussed in the lecture asserts that human minds do not store exact, pixel-by-pixel photographic representations of sensory reality, but instead actively construct an intervening abstract model that summarizes what our senses receive?",
+          "options": [
+            "Constructivism",
+            "Behaviorism",
+            "Direct Pixel Rendering",
+            "Electromagnetic Induction"
+          ],
+          "answer": 0,
+          "explanation": "As defined in Module 02 Slide 6: 'Constructivism contends that our minds create or construct an intervening model that abstracts or summarizes the data we receive from our senses. Our brains do not create pixel-by-pixel images.'",
+          "why_wrong": {
+            "1": "Behaviorism focuses purely on observable stimulus-response conditioning without modeling internal mental representations.",
+            "2": "Direct pixel rendering is computer graphics hardware, not human cognitive theory.",
+            "3": "Electromagnetic induction is Michael Faraday's law of physics."
+          },
+          "marking_points": [],
+          "source": "Module 02 Slide 6",
+          "verified": true,
+          "verified_output": "Constructivism."
+        },
+        {
+          "id": "ins202-hum-009",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "response_time_thresholds",
+            "robert_miller"
+          ],
+          "question": "Match Robert Miller's (1968) classic system response time thresholds to their corresponding effect on human user psychology:",
+          "options": [
+            "0.1 second (100 milliseconds)",
+            "1.0 second (1,000 milliseconds)",
+            "10 seconds"
+          ],
+          "answer": {
+            "0.1 second (100 milliseconds)": "Perceived as instantaneous; the user feels that the software is reacting directly to their physical manipulation (essential for direct manipulation and keypress states).",
+            "1.0 second (1,000 milliseconds)": "User notices a brief delay, but their natural mental stream of thought remains uninterrupted; no special loading indicators required.",
+            "10 seconds": "The absolute limit for keeping a user's focused attention on the task; beyond this, the user's attention is diverted and a progress bar is mandatory."
+          },
+          "explanation": "Robert Miller's 1968 benchmarks are foundational in HCI: <0.1s is direct manipulation; 1.0s preserves mental flow; 10s is the breaking point where users abandon focus and switch tabs.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Module 02 Slide 43",
+          "verified": true,
+          "verified_output": "Matched response time thresholds (0.1s, 1s, 10s)."
+        }
+      ]
+    },
+    {
+      "id": "ins202-mock-2",
+      "title": "INS 202 Human-Computer Interaction — Comprehensive Midterm Mock 2",
+      "description": "Advanced exam simulation focusing on deep application and analytical case studies: Usability specifications (Performance vs Preference divergence), Expert inspection curves (Nielsen 3-5 evaluators), Cognitive Walkthrough, Card Sorting (Open vs Closed), Visual Organization (Proximity, Alignment, Contrast), and Emerging Interfaces (VUI cognitive load, VR simulator sickness, 6 DoF, Gorilla arm).",
+      "duration_minutes": 60,
+      "total_marks": 70,
+      "questions": [
+        {
+          "id": "ins202-acc-002",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "wcag",
+            "color-contrast",
+            "perceivable"
+          ],
+          "question": "A web designer uses light gray text (#999999) on a white background (#FFFFFF) for body text (14px regular font), resulting in a contrast ratio of 2.8:1. According to WCAG 2.1 Level AA standards, does this comply with accessibility requirements, and what is the minimum required ratio for normal body text?",
+          "options": [
+            "It fails; WCAG 2.1 Level AA mandates a minimum contrast ratio of 4.5:1 for normal body text",
+            "It passes; WCAG 2.1 Level AA requires a minimum contrast ratio of 2.5:1 for modern LED displays",
+            "It fails; WCAG 2.1 Level AA requires an absolute contrast ratio of 21:1 (pure black on pure white only)",
+            "It passes; color contrast ratios apply only to photographic images and video, not typography"
+          ],
+          "answer": 0,
+          "explanation": "WCAG 2.1 Level AA Success Criterion 1.4.3 (Contrast Minimum) requires a contrast ratio of at least 4.5:1 for normal text (under 18pt or under 14pt bold). A ratio of 2.8:1 fails the requirement, creating significant reading difficulty for individuals with low vision, aging eyes, or users in bright ambient sunlight.",
+          "why_wrong": {
+            "1": "2.5:1 is far too low and violates WCAG AA standards.",
+            "2": "21:1 is the maximum possible contrast ratio (pure black on pure white); WCAG does not require 21:1 everywhere, but requires at least 4.5:1.",
+            "3": "Contrast ratios apply strictly to typography and text against its background."
+          },
+          "source": "WCAG 2.1 Guideline 1.4: Distinguishable & Module 05 Visual Organization"
+        },
+        {
+          "id": "ins202-acc-004",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "assistive-technology",
+            "screen-readers",
+            "alt-text"
+          ],
+          "question": "When developing an accessible website, what is the correct HTML markup rule for a purely decorative background pattern image that conveys no informative content to users?",
+          "options": [
+            "Provide an empty alt attribute: <img src='pattern.png' alt=''> so screen readers skip it cleanly",
+            "Omit the alt attribute entirely: <img src='pattern.png'> so the screen reader guesses its purpose",
+            "Set alt='Decorative background image that has no meaning' so the screen reader reads the explanation aloud",
+            "Replace the img tag with an unclosed audio tag"
+          ],
+          "answer": 0,
+          "explanation": "Under accessibility standards (W3C HTML5 and WCAG), purely decorative images must have an empty `alt` attribute (`alt=\"\"`) or ARIA role `role=\"presentation\"`. This explicitly signals to screen readers that the graphic is decorative and should be skipped silently. Omitting the `alt` attribute causes screen readers to read the raw filename (e.g., 'pattern dot png'), cluttering the user's audio experience.",
+          "why_wrong": {
+            "1": "Omitting the alt attribute causes screen readers to read the full file path/URL aloud, causing extreme auditory noise.",
+            "2": "Writing 'decorative background image' forces blind users to listen to meaningless text, wasting their time.",
+            "3": "Audio tags are for audio playback, completely irrelevant to decorative images."
+          },
+          "source": "W3C Web Accessibility Guidelines & Module 06 Notes"
+        },
+        {
+          "id": "ins202-acc-006",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "gesture-interfaces",
+            "ergonomics",
+            "gorilla-arm"
+          ],
+          "question": "A bank installs large vertical touchscreen monitors on a wall for branch tellers, requiring them to interact by tapping and dragging virtual files with outstretched arms for 7 hours a day. Within two days, the tellers report severe aching and muscle fatigue in their shoulders and upper arms. What well-known ergonomic HCI phenomenon does this represent?",
+          "options": [
+            "Gorilla Arm Syndrome",
+            "Carpal Tunnel Syndrome",
+            "Vestibular Ocular Reflex",
+            "Fitts's Index of Difficulty Failure"
+          ],
+          "answer": 0,
+          "explanation": "'Gorilla Arm' is a classic ergonomics/HCI term describing the physical fatigue and muscle ache caused by holding one's arm outstretched horizontally or vertically to interact with a vertical touchscreen or mid-air gesture interface. The human muscular system is not built to support unsupported outstretched arms for prolonged periods.",
+          "why_wrong": {
+            "1": "Carpal tunnel syndrome affects the median nerve in the wrist from repetitive micro-movements, not shoulder ache from outstretched arms.",
+            "2": "Vestibular ocular reflex coordinates eye movement with head movement to stabilize retinal images.",
+            "3": "Index of difficulty is a mathematical Fitts's Law metric, not an ergonomic physical fatigue syndrome."
+          },
+          "source": "HCI Physical Ergonomics & Module 02/03 Human Factors"
+        },
+        {
+          "id": "ins202-acc-008",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "wcag",
+            "color-blindness",
+            "perceivable"
+          ],
+          "question": "According to WCAG 2.1 accessibility standards, it is acceptable to use color alone (such as turning a text field's border red) to indicate that an input error has occurred, as long as the red color is sufficiently saturated.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "explanation": "False. WCAG Success Criterion 1.4.1 explicitly states: 'Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.' Users with color-vision deficiencies (such as protanopia or deuteranopia) cannot distinguish red borders from green or gray. Error states must be dual-encoded with icons (e.g., an exclamation mark) and explicit text messages.",
+          "why_wrong": {
+            "0": "Color must never be the sole indicator of state; color-blind users will miss it entirely."
+          },
+          "source": "WCAG 2.1 Success Criterion 1.4.1 (Use of Color)"
+        },
+        {
+          "id": "ins202-acc-010",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "impairments",
+            "assistive-tech",
+            "matching"
+          ],
+          "question": "Match each category of user disability to the corresponding assistive technology or UI design remedy:",
+          "options": [
+            "Total blindness",
+            "Deuteranopia (red-green color blindness)",
+            "Severe motor tremors / quadriplegia",
+            "Profound hearing loss (deafness)"
+          ],
+          "answer": [
+            "Screen reader (e.g., NVDA, VoiceOver) utilizing semantic HTML and ARIA labels",
+            "Dual encoding of information using distinct geometric icons and high-luminance contrast",
+            "Sip-and-puff switch devices or eye-gaze tracking cameras with enlarged touch targets",
+            "Synchronized closed captions and visual alerts in place of acoustic alarms"
+          ],
+          "explanation": "Blindness relies on screen readers. Color blindness requires dual encoding (not relying on color alone). Severe motor impairments utilize sip-and-puff or eye trackers. Deafness requires closed captions and visual notifications.",
+          "source": "Universal Design Principles & Assistive Technology Standards"
+        },
+        {
+          "id": "ins202-acc-012",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "flashcard",
+          "difficulty": 1,
+          "tags": [
+            "universal-design",
+            "definition"
+          ],
+          "question": "What is the 'Curb-Cut Effect' in Universal Design?",
+          "answer": "The Curb-Cut Effect describes how accessibility accommodations created originally to support individuals with disabilities (such as sidewalk sidewalk ramps/curb-cuts for wheelchairs) ultimately end up providing substantial benefits to the general population (such as parents pushing strollers, travelers rolling suitcases, and delivery workers with handcarts).",
+          "explanation": "In computing, examples include closed captions (used in noisy gyms or quiet offices) and high-contrast modes (used in bright outdoor sunlight).",
+          "source": "Universal Design Literature & Module 03/06 Notes"
+        },
+        {
+          "id": "ins202-acc-014",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "spatial-computing",
+            "6dof",
+            "definition"
+          ],
+          "question": "What does '6 Degrees of Freedom' (6 DoF) mean in Virtual Reality and spatial computing?",
+          "answer": "6 DoF describes the ability to track a user's head or controller across all six physical spatial dimensions: three translational movements along the X, Y, and Z axes (Surge: forward/backward, Heave: up/down, Sway: left/right) and three rotational movements around those axes (Pitch: tilting up/down, Yaw: turning left/right, Roll: tilting ear-to-shoulder).",
+          "explanation": "3 DoF only tracks rotation (orientation), while 6 DoF tracks both position and orientation, allowing users to physically walk around in virtual space.",
+          "source": "Virtual Reality Interaction Paradigms"
+        },
+        {
+          "id": "ins202-acc-016",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "accessibility",
+            "screen-readers",
+            "aria",
+            "semantic-html"
+          ],
+          "question": "In web accessibility, explain the principle 'No ARIA is better than bad ARIA'. Why should developers prefer native HTML5 semantic elements over custom generic elements decorated with WAI-ARIA roles?",
+          "answer": "The rule 'No ARIA is better than bad ARIA' (codified in the W3C WAI-ARIA authoring practices) emphasizes that native HTML5 elements inherently provide built-in accessibility behaviors, keyboard event handling, focus management, and accessibility tree roles that browser engines support natively. For instance, using `<button>Submit</button>` automatically provides keyboard focusability (`tabindex=\"0\"`), native `Enter` and `Space` key activation, and exposes the 'button' role and accessible name to screen readers without writing a single line of JavaScript.\n\nIn contrast, when developers build custom controls using generic tags decorated with ARIA (e.g., `<div role=\"button\" onclick=\"doSubmit()\">Submit</div>`), they frequently omit necessary underlying keyboard event listeners (`keydown`), fail to manage `tabindex`, omit focus outlines, and introduce conflicting ARIA attributes that confuse screen readers. Bad ARIA creates misleading accessibility signals that active screen readers rely on, resulting in an interface that is actively broken for blind users. Therefore, developers should always use native semantic HTML5 tags whenever available and reserve ARIA only for complex custom widgets where native HTML lacks equivalents.",
+          "explanation": "Native semantic elements guarantee robust cross-platform accessibility; custom ARIA implementations frequently introduce severe usability bugs.",
+          "marking_points": [
+            "States the core rule: native HTML5 semantic elements should always be preferred over generic elements with ARIA",
+            "Explains that native HTML elements (e.g., <button>, <nav>, <input>) provide built-in keyboard navigation and focus management",
+            "Explains the failure mode of using generic <div> or <span> with ARIA roles (missing key listeners, missing tabindex, missing focus rings)",
+            "Explains that 'bad ARIA' creates misleading signals in the accessibility tree that actively disorient screen reader users",
+            "Concludes that ARIA should be reserved for complex custom widgets where no native HTML5 element exists"
+          ],
+          "source": "W3C WAI-ARIA Authoring Guidelines & WCAG 2.1 Robust Principle"
+        },
+        {
+          "id": "ins202-acc-cs1-q2",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "wcag",
+            "remediation",
+            "operable",
+            "case-study"
+          ],
+          "question": "[Case Scenario: An independent accessibility auditor evaluates the online registration portal of Apex State University against the WCAG 2.1 Level AA standard. The auditor docum...]\n\nPropose concrete technical remediation steps for Finding #2 (modal dialogue focus trap failure) and Finding #3 (missing skip link forcing 28 tabs per page load) to achieve full WCAG 2.1 AA compliance.",
+          "answer": "Remediation for Finding #2 (Modal Dialogue Focus Management):\n1. Use the native HTML5 `<dialog>` element or implement proper ARIA modal attributes (`role=\"dialog\"`, `aria-modal=\"true\"`, `aria-labelledby=\"error-title\"`).\n2. When the error modal appears, JavaScript must immediately trap focus and move programmatic focus to the modal's primary heading or first interactive element.\n3. Implement keyboard containment: when the user presses `Tab` on the modal's last element ('Close'), focus must loop back to the first element; pressing `Shift+Tab` on the first element must loop to the last element.\n4. Bind the `Escape` key to close the modal.\n5. Upon modal closure, restore keyboard focus back to the submit button that originally triggered the action.\n\nRemediation for Finding #3 (Skip to Main Content Link):\n1. Place an HTML anchor tag as the very first element inside the `<body>`: `<a href=\"#main-content\" class=\"skip-link\">Skip to main content</a>`.\n2. Ensure the main content container has the matching target ID: `<main id=\"main-content\" tabindex=\"-1\">`.\n3. In CSS, visually hide the skip link off-screen by default (`top: -999px; left: -999px; position: absolute;`), but make it prominently visible when focused (`.skip-link:focus { top: 10px; left: 10px; z-index: 1000; background: #000; color: #fff; padding: 12px; }`). This allows keyboard and screen reader users to press Tab once upon page load, hit Enter, and bypass all 25 header links directly to the course registration table.",
+          "explanation": "Proper modal focus trapping and skip navigation links eliminate severe keyboard friction and enable screen reader operability.",
+          "marking_points": [
+            "Specifies moving focus programmatically into the modal upon opening (via <dialog> or aria-modal)",
+            "Specifies trapping keyboard Tab navigation within the modal while open",
+            "Specifies Esc key dismissal and restoring focus to the triggering element upon exit",
+            "Specifies adding a 'Skip to main content' anchor link as the first child of the body element",
+            "Explains how the skip link is hidden visually until keyboard focus occurs, jumping directly to <main id=\"main-content\">"
+          ],
+          "source": "WCAG 2.1 Guidelines 2.1 (Keyboard) and 2.4 (Navigable)"
+        },
+        {
+          "id": "ins202-acc-cs2-q2",
+          "course": "INS 202",
+          "topic": "emerging_interfaces_accessibility",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "vui",
+            "acoustic-constraints",
+            "case-study"
+          ],
+          "question": "[Case Scenario: A major logistics distribution center in Lagos processes 50,000 parcels per day. The warehouse director is deciding between three user interface technologies fo...]\n\nIn Option B (Voice-Directed Picking), what critical HCI limitation must the voice dialogue designers mitigate to avoid frustrating workers during long shifts?",
+          "options": [
+            "Keep audio prompts short and atomic, provide immediate acoustic confirmation beeps, and allow speech 'barge-in' so experienced workers do not have to wait for the voice prompt to finish speaking",
+            "Force workers to listen to full 4-sentence introductory paragraphs before every single item pick",
+            "Disable microphone noise filtering so the system records all background warehouse conveyor belts",
+            "Require workers to speak solely in Latin botanical taxonomy when confirming parcels"
+          ],
+          "answer": 0,
+          "explanation": "Experienced voice users operate at high speed; forcing them to listen to entire lengthy synthesized prompts slows them down and creates extreme annoyance. Supporting 'barge-in' (allowing the worker to speak the confirmation digits while the prompt is still playing) and using concise prompts with instant auditory earcons (beeps) maximizes throughput and minimizes cognitive friction.",
+          "why_wrong": {
+            "1": "Lengthy sentences create intolerable delays and cognitive fatigue.",
+            "2": "Recording background noise destroys speech recognition accuracy.",
+            "3": "Demanding Latin taxonomy is absurd and would halt operations immediately."
+          },
+          "source": "Voice User Interface Design Guidelines & Module 03 Usability Specifications"
+        },
+        {
+          "id": "ins202-eval-002",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "usability-specifications",
+            "performance-vs-preference"
+          ],
+          "question": "Which of the following correctly pairs a performance measure with a preference measure in a usability specification plan?",
+          "options": [
+            "Performance: Time to fill in customer shipping details; Preference: A 5-point Likert rating of checkout ease",
+            "Performance: Likert scale score on visual aesthetics; Preference: Number of errors committed during checkout",
+            "Performance: User satisfaction rating on a 7-point scale; Preference: Number of calls to the telephone support desk",
+            "Performance: User's emotional sentiment during exit interview; Preference: Percentage of tasks completed without assistance"
+          ],
+          "answer": 0,
+          "explanation": "Performance measures are objective, directly observable behavioral data (such as time taken to fill in shipping details, error counts, task success rates). Preference measures are subjective attitudinal assessments of user satisfaction, feelings, and perceptions, typically captured using Likert scales.",
+          "why_wrong": {
+            "1": "This reverses the definitions: Likert aesthetic scores are preference measures, while checkout errors are performance measures.",
+            "2": "Satisfaction ratings are preference measures, and support desk call frequencies are performance measures.",
+            "3": "Emotional sentiment is a preference/attitudinal measure, while task completion rate is a core performance metric."
+          },
+          "source": "Module 03 (Know Thy User), Slides 38-40: Usability Specifications, Performance & Preference Measures"
+        },
+        {
+          "id": "ins202-eval-004",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "nielsen-heuristics",
+            "error-prevention",
+            "user-control"
+          ],
+          "question": "A banking app allows users to permanently delete their account with a single click on a red button, immediately wiping all transaction history without asking for confirmation or providing an undo mechanism. Which TWO of Jakob Nielsen's usability heuristics are most severely violated?",
+          "options": [
+            "Error Prevention and User Control and Freedom",
+            "Aesthetic and Minimalist Design and Help and Documentation",
+            "Match Between System and the Real World and Flexibility of Use",
+            "Visibility of System Status and Consistency and Standards"
+          ],
+          "answer": 0,
+          "explanation": "The design violates 'Error Prevention' because it lacks safeguards (such as confirmation dialogs, typing 'DELETE', or double-checks) to prevent catastrophic accidental actions. It also violates 'User Control and Freedom' because it fails to provide an emergency exit or 'undo' capability when an unwanted action is triggered.",
+          "why_wrong": {
+            "1": "Aesthetic minimalism and documentation are secondary concerns; the immediate catastrophe is lack of safety guards and undo options.",
+            "2": "Real-world metaphor match and flexibility (shortcuts) do not address the catastrophic irreversibility of accidental account deletion.",
+            "3": "While system status feedback is important, the core failure modes here are absence of preventive friction and absence of user control/undo."
+          },
+          "source": "Jakob Nielsen's 10 Usability Heuristics (Heuristics #3 and #5)"
+        },
+        {
+          "id": "ins202-eval-006",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "true_false_why",
+          "difficulty": 2,
+          "tags": [
+            "recruiting",
+            "testing-validity"
+          ],
+          "question": "In formal usability testing of a commercial software product, recruiting family members and personal friends of the design team as test participants is considered good practice because they are comfortable giving honest, critical feedback.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "explanation": "Course materials explicitly state: 'Not family or friends: they won't be critical enough.' Personal acquaintances are psychologically predisposed to please the researcher, withhold harsh criticisms of flaws, and exhibit strong social desirability bias, completely invalidating objective usability findings.",
+          "why_wrong": {
+            "0": "Recruiting friends and family is a major methodological error in HCI; they are never critical enough and bias results toward polite approval."
+          },
+          "source": "Module 03 (Know Thy User), Slide 37: Recruiting Users"
+        },
+        {
+          "id": "ins202-eval-008",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "environmental-analysis",
+            "context-of-use",
+            "hardware-constraints"
+          ],
+          "question": "A team is designing an outdoor automated teller machine (ATM) to be installed in Minnesota, USA, where winter temperatures frequently fall below -20 degrees Celsius. According to environmental analysis principles in HCI, what physical design requirement must be prioritized?",
+          "options": [
+            "Significantly enlarged physical buttons and generous on-screen touch targets to accommodate users wearing thick winter gloves",
+            "High-speed cursive handwriting recognition so users do not have to press keys",
+            "A whisper-quiet acoustic speaker system to avoid disturbing passersby in outdoor snowstorms",
+            "A 12-point multi-touch gesture system requiring precise three-finger pinch-to-zoom"
+          ],
+          "answer": 0,
+          "explanation": "Module 03 explicitly cites this environmental scenario: 'An outdoor ATM in a cold location where people wear gloves while using it (need huge buttons).' Environmental analysis mandates designing for real-world physical contexts: users in sub-zero weather wear thick mittens or gloves, which drastically reduces fine motor dexterity and renders small touch targets or capacitive styluses unusable.",
+          "why_wrong": {
+            "1": "Handwriting recognition requires removing gloves to hold a stylus, causing severe thermal discomfort, and is prone to recognition errors outdoors.",
+            "2": "Outdoor environments have wind, traffic, and snow noise; a whisper-quiet speaker would be completely inaudible.",
+            "3": "Complex multi-touch pinch gestures require bare fingers and fine motor coordination, impossible while wearing heavy winter gloves."
+          },
+          "source": "Module 03 (Know Thy User), Slide 36: Environment Analysis"
+        },
+        {
+          "id": "ins202-eval-010",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "usability-specifications",
+            "performance-measures",
+            "cloze"
+          ],
+          "question": "Complete the statements regarding usability specifications:\nObjective behavioral measures such as task completion time and error rates are classified as [blank1] measures, whereas subjective satisfaction ratings gathered via questionnaires are classified as [blank2] measures. When a user experiences severe frustration and shouts or slams their desk during a test, HCI observers record this as a [blank3] behavior.",
+          "answer": [
+            "performance",
+            "preference",
+            "regressive"
+          ],
+          "explanation": "Usability specifications divide metrics into objective performance measures (quantifying user speed, errors, completion) and subjective preference measures (quantifying attitudes and ratings). Extreme emotional breakdowns during testing (such as shouting at the monitor or striking hardware) are documented as 'regressive behaviors'.",
+          "source": "Module 03 (Know Thy User), Slides 38-39: Usability Specifications"
+        },
+        {
+          "id": "ins202-eval-012",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "sequencing",
+          "difficulty": 2,
+          "tags": [
+            "usability-testing",
+            "procedure",
+            "sequencing"
+          ],
+          "question": "Arrange the standard procedural phases of a formal empirical usability testing session in chronological order from first to last:",
+          "options": [
+            "Administer pre-test briefing and emphasize that the system, not the participant, is being evaluated",
+            "Present realistic task scenarios one by one while observing actions and noting performance metrics",
+            "Administer post-task single-item ease questionnaires (SEQ) immediately following each task",
+            "Administer comprehensive post-test preference questionnaires (e.g., Likert-based SUS) and conduct debriefing"
+          ],
+          "answer": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "Standard usability protocol begins with a pre-test briefing explaining consent and framing the test around the interface (not user competence). Realistic tasks are executed sequentially while logging metrics. After each individual task, brief post-task questions (like SEQ) capture immediate difficulty. Finally, at the session end, a global post-test instrument (like SUS) and debriefing interview take place.",
+          "source": "Module 03 / Module 07 Evaluation Procedures"
+        },
+        {
+          "id": "ins202-eval-014",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "flashcard",
+          "difficulty": 2,
+          "tags": [
+            "heuristic-evaluation",
+            "definition"
+          ],
+          "question": "What is Heuristic Evaluation, and who pioneered the methodology?",
+          "answer": "Heuristic Evaluation is a 'discount' usability inspection method developed by Jakob Nielsen and Rolf Molich. In this method, 3 to 5 usability specialists independently evaluate an interface against a set of recognized usability design principles (the 10 heuristics) to identify design defects without involving end users.",
+          "explanation": "It is widely favored because it is faster, cheaper, and less resource-intensive than recruiting end users, identifying 75% to 85% of usability issues when conducted by 3-5 evaluators.",
+          "source": "Jakob Nielsen Usability Engineering & INS 202 Evaluation Literature"
+        },
+        {
+          "id": "ins202-eval-016",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "usability-specifications",
+            "likert-scale",
+            "analysis"
+          ],
+          "question": "Explain the fundamental difference between Performance Measures and Preference Measures in HCI usability specifications. Why is it dangerous for a development team to rely exclusively on user preference ratings when evaluating a new interface?",
+          "answer": "Performance measures capture objective behavioral data regarding what users actually do during task execution (e.g., completion time, error counts, task success rate, back-button frequency). In contrast, preference measures capture subjective attitudinal data regarding what users think, feel, or report (typically quantified via Likert scales assessing satisfaction and perceived ease).\n\nRelying exclusively on preference ratings is dangerous because of the well-documented divergence between user performance and user preference. Users frequently exhibit polite bias, familiarity bias, or acquiescence bias, rating an interface highly on a Likert scale ('I liked this system') even while taking three times longer than necessary to complete tasks or committing numerous undetected errors. Conversely, an interface that dramatically improves objective productivity may initially receive mediocre preference scores simply because it departs from legacy habits. Comprehensive usability specifications mandate measuring both objective performance and subjective preference.",
+          "explanation": "Evaluating both dimensions prevents deploying software that users 'like' but cannot operate efficiently, or software that is technically fast but hated by users.",
+          "marking_points": [
+            "Clearly defines performance measures as objective, observable behavioral metrics (e.g., task time, success rate, error counts, back button clicks)",
+            "Clearly defines preference measures as subjective, self-reported attitudinal metrics (e.g., Likert satisfaction scales)",
+            "Identifies the performance-preference divergence (users can rate a system favorably despite poor performance, or vice-versa)",
+            "Explains the risks of bias in self-reported ratings (acquiescence bias, polite/social desirability bias, unperceived errors)",
+            "Concludes that both performance and preference measures must be established early and evaluated concurrently"
+          ],
+          "source": "Module 03 (Know Thy User), Slides 38-41: Usability Specifications Summary"
+        },
+        {
+          "id": "ins202-eval-cs1-q2",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 4,
+          "tags": [
+            "heuristic-evaluation",
+            "evaluator-curve",
+            "case-study"
+          ],
+          "question": "[Case Scenario: Apex Health Systems has developed an intensive care unit (ICU) nurse telemetry dashboard. The development team performed a Heuristic Evaluation using four indep...]\n\nBased on Nielsen's mathematical model of Heuristic Evaluation, what conclusion should Apex Health's project manager draw regarding the four evaluators finding 34 issues?",
+          "options": [
+            "Four evaluators have uncovered approximately 75% to 85% of total usability defects, representing an optimal balance between cost and defect detection",
+            "Four evaluators are inadequate for safety-critical medical systems; at least 50 evaluators must be hired to find all flaws",
+            "Having overlap between the evaluators indicates wasted resources; only Evaluator 3 should have been paid",
+            "Because no real ICU nurses were included in the heuristic evaluation, the entire set of 34 findings is invalid and must be discarded"
+          ],
+          "answer": 0,
+          "explanation": "Nielsen's model demonstrates that 4 evaluators typically discover between 75% and 85% of all usability problems in an interface. Employing 3 to 5 evaluators is the industry gold standard for cost-effective inspection. Overlap among evaluators confirms the reliability of the findings without requiring wasteful hiring of dozens of inspectors.",
+          "why_wrong": {
+            "1": "Hiring 50 evaluators causes massive diminishing returns; the curve flattens drastically after 5 evaluators.",
+            "2": "Overlap is expected and mathematically necessary in heuristic evaluation to achieve high confidence across independent inspectors.",
+            "3": "Heuristic evaluation is an expert inspection method intentionally conducted without end users to catch baseline design defects before expensive clinical testing."
+          },
+          "source": "Nielsen Usability Inspection Curve & Module 07 Evaluation Notes"
+        },
+        {
+          "id": "ins202-eval-cs2-q2",
+          "course": "INS 202",
+          "topic": "evaluation_techniques_likert",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "environmental-analysis",
+            "outdoor-kiosk",
+            "case-study"
+          ],
+          "question": "[Case Scenario: TransCity Metro installed 200 touchscreen smart ticketing kiosks across subway stations in Abuja. To evaluate the interface, the transit authority conducted an ...]\n\nWhen the kiosk was deployed outdoors in Abuja during sunny harmattan mornings with gloved commuters, error rates surged to 78%. According to HCI Environmental Analysis, what two design modifications should be implemented immediately to fix these environmental failures?",
+          "options": [
+            "Install high-contrast anti-glare display coatings (or overhead shading) and enlarge touchscreen touch target button dimensions with capacitive glove sensitivity",
+            "Replace touchscreens with voice-activated microphones and reduce on-screen font sizes to fit more text",
+            "Provide a printed 40-page user manual attached by a metal chain to the side of each kiosk",
+            "Increase the screen resolution from 1080p to 4K UHD and switch from debit card payments to cryptocurrency"
+          ],
+          "answer": 0,
+          "explanation": "Environmental analysis evaluates the physical context of use. Sunlight glare washes out low-contrast screens, requiring anti-glare shielding or high-contrast transflective displays. Gloved hands have much wider contact surface areas and lack fine capacitive conductivity, requiring significantly enlarged physical/touch targets and high-sensitivity capacitive or resistive touch sensors.",
+          "why_wrong": {
+            "1": "Voice recognition fails in noisy transit subway stations, and reducing font sizes exacerbates outdoor sunlight legibility issues.",
+            "2": "Commuters at a transit station will never read a 40-page printed manual; walk-up interfaces must be self-explanatory.",
+            "3": "4K resolution does not solve outdoor sunlight wash-out or gloved touch target inaccuracies."
+          },
+          "source": "Module 03 (Know Thy User), Slide 36: Environment Analysis"
+        },
+        {
+          "id": "ins202-fnd-002",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "explain",
+          "difficulty": 3,
+          "tags": [
+            "utility_vs_effectiveness",
+            "hci_goals"
+          ],
+          "question": "In HCI theory, 'Utility' and 'Effectiveness' are distinct concepts. Explain the precise difference between them, and provide a concrete e-commerce website example where high utility coexists with low effectiveness.",
+          "options": [],
+          "answer": "Utility refers to whether an interactive system possesses the functional capabilities and services required to perform a task (i.e. *what* the system can do). Effectiveness refers to whether human users can successfully and accurately accomplish their intended goals using those services (i.e. *how well* users succeed). A concrete example: An online university bookstore provides a fully functional payment gateway, search engine, and inventory catalog containing all required textbooks (high utility). However, the search bar requires obscure 13-digit ISBN codes without keyword search, category links are hidden behind ambiguous icons, and the checkout button is placed in an unnoticeable footer; consequently, 85% of students abandon their carts without purchasing books. Because users cannot accomplish their goal despite the services existing, the website possesses high utility but suffers from severe lack of effectiveness.",
+          "explanation": "Utility is feature availability; Effectiveness is user task success. Features that cannot be found or completed lack effectiveness.",
+          "why_wrong": {},
+          "marking_points": [
+            "Defines Utility as the availability of features, functions, and services provided by the system.",
+            "Defines Effectiveness as whether users can successfully and accurately achieve their intended goals.",
+            "Explicitly articulates that a feature may exist (utility) but remain unused or failed by users (lack of effectiveness).",
+            "Provides a valid concrete example (e.g. e-commerce bookstore with inventory and checkout where users fail to complete purchases due to bad navigation)."
+          ],
+          "source": "Module 01 Slides 21-22",
+          "verified": true,
+          "verified_output": "Utility vs Effectiveness."
+        },
+        {
+          "id": "ins202-fnd-004",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "interdisciplinary_fields",
+            "hci_roots"
+          ],
+          "question": "Match each foundational academic discipline contributing to HCI to its primary contribution to interactive system design:",
+          "options": [
+            "Computer Science",
+            "Cognitive Psychology",
+            "Ergonomics / Human Factors",
+            "Graphic & Visual Design"
+          ],
+          "answer": {
+            "Computer Science": "Provides software architecture, programming languages, algorithms, and technical implementation of interactive systems.",
+            "Cognitive Psychology": "Provides models of human perception, memory limitations (7±2 chunks), mental models, and decision-making processes.",
+            "Ergonomics / Human Factors": "Evaluates physical human biomechanics, workstation posture, visual fatigue, and physical button/hardware dimensions.",
+            "Graphic & Visual Design": "Establishes visual hierarchy, typography, aesthetic appeal, alignment, and color contrast principles."
+          },
+          "explanation": "HCI is inherently cross-disciplinary: Computer Science builds the technical engine, Cognitive Psychology models the user's mind, Ergonomics accounts for the physical human body, and Visual Design shapes aesthetics and layout.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Module 01 Slides 12, 28-29",
+          "verified": true,
+          "verified_output": "Matched interdisciplinary fields."
+        },
+        {
+          "id": "ins202-fnd-006",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "business_benefits",
+            "support_costs"
+          ],
+          "question": "According to industry research cited in the course lectures, approximately how much does an individual technical customer support telephone call cost a software vendor when users encounter confusing interfaces?",
+          "options": [
+            "Estimates range from $12 to $250 per call",
+            "Exactly $0.05 per call",
+            "More than $50,000 per call",
+            "Customer support calls have zero financial cost to the vendor"
+          ],
+          "answer": 0,
+          "explanation": "As cited in Module 01 Slide 10: 'Calls to customer support are very expensive for the vendor: estimates range from $12 to $250 per call.' A well-designed, usable interface drastically reduces call center volumes, saving enterprises millions of dollars annually.",
+          "why_wrong": {
+            "1": "Staffed telephone support requires trained human technicians and telecom infrastructure, costing far more than five cents.",
+            "2": "$50,000 is an absurd overestimation for a routine phone call.",
+            "3": "Salaries, facilities, and phone lines represent major vendor overhead costs."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 10",
+          "verified": true,
+          "verified_output": "$12 to $250 per call."
+        },
+        {
+          "id": "ins202-fnd-008",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "acm_sigchi",
+            "definition"
+          ],
+          "question": "The Association for Computing Machinery's Special Interest Group on Computer-Human Interaction (ACM SIGCHI) defines HCI as a discipline concerned with the {{c1::design}}, {{c2::evaluation}}, and {{c3::implementation}} of interactive computing systems for human use.",
+          "options": [
+            "design",
+            "evaluation",
+            "implementation",
+            "fabrication",
+            "marketing",
+            "monetization"
+          ],
+          "answer": [
+            "design",
+            "evaluation",
+            "implementation"
+          ],
+          "explanation": "The official ACM SIGCHI definition states: 'Human-Computer Interaction is a discipline concerned with the design, evaluation, and implementation of interactive computing systems for human use and with the study of the major phenomena surrounding them.'",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Module 01 Slide 11",
+          "verified": true,
+          "verified_output": "design, evaluation, implementation"
+        },
+        {
+          "id": "ins202-fnd-010",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "type_answer",
+          "difficulty": 2,
+          "tags": [
+            "usability_dimensions"
+          ],
+          "question": "What is the technical term in usability engineering that describes how easily a first-time user can accomplish basic tasks the very first time they encounter an interactive interface?",
+          "answer": "learnability",
+          "accepted_answers": [
+            "learnability",
+            "ease of learning"
+          ],
+          "explanation": "Learnability is the ease with which novices can understand and navigate an interface upon their initial exposure, without requiring formal training or extensive manuals.",
+          "marking_points": [
+            "Identifies 'learnability' or 'ease of learning'."
+          ],
+          "source": "Module 01 Slide 24; Usability Standards",
+          "verified": true,
+          "verified_output": "learnability"
+        },
+        {
+          "id": "ins202-fnd-012",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "true_false_why",
+          "difficulty": 3,
+          "tags": [
+            "development_costs",
+            "user_research"
+          ],
+          "question": "Conducting user research and usability testing before writing code actually reduces total software development and maintenance costs over the system lifecycle.",
+          "options": [
+            "False — user research is a pure financial waste that always adds 50% overhead to project costs without benefit.",
+            "True — learning about users first prevents teams from building complex features users never use, and finding interface design defects during early requirements is up to 100 times cheaper than fixing them after software deployment."
+          ],
+          "answer": 1,
+          "explanation": "As taught in Module 01 Slide 8: 'Learn about users first, and you will avoid implementing features users don't want.' Software engineering economics (e.g. Boehm's cost-of-change curve) confirms that fixing usability mistakes after product rollout is vastly more expensive than discovering them during early user analysis.",
+          "why_wrong": {
+            "0": "User research saves substantial money by preventing re-coding of unwanted or flawed features."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 8",
+          "verified": true,
+          "verified_output": "True. Early user research reduces development and rework costs."
+        },
+        {
+          "id": "ins202-fnd-014",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "type_answer",
+          "difficulty": 2,
+          "tags": [
+            "textbook_author",
+            "lecturer_note"
+          ],
+          "question": "In the student's handwritten lecture notes, the author of the primary recommended course textbook for INS 202 was noted as 'Gerard Kym'. What is the full, formal academic name of this textbook author?",
+          "answer": "Gerard Jounghyun Kim",
+          "accepted_answers": [
+            "Gerard Jounghyun Kim",
+            "Gerard Kim",
+            "Gerard J. Kim"
+          ],
+          "explanation": "The textbook author is Dr. Gerard Jounghyun Kim, author of *Human-Computer Interaction: Fundamentals and Practice* (CRC Press), cited throughout the lecture slides and referenced in the student notebook.",
+          "marking_points": [
+            "Identifies 'Gerard Jounghyun Kim' (or 'Gerard Kim')."
+          ],
+          "source": "Student Notebook Image 21.46.55; Module 01 Slide 2",
+          "verified": true,
+          "verified_output": "Gerard Jounghyun Kim"
+        },
+        {
+          "id": "ins202-fnd-016",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "mcq",
+          "difficulty": 2,
+          "tags": [
+            "ucd_characteristics"
+          ],
+          "question": "Which of the following describes a foundational characteristic of the User-Centered Development (UCD) methodology?",
+          "options": [
+            "It is user-centric rather than data-centric, actively involves users throughout the design lifecycle, measures usability quantitatively, and is highly iterative.",
+            "It designs the complete software architecture in secret without ever showing drafts or prototypes to human users until product release.",
+            "It treats managers as the only users whose opinions matter, ignoring workers in the field.",
+            "It mandates that all applications must run exclusively on mechanical punched cards."
+          ],
+          "answer": 0,
+          "explanation": "As defined in Module 01 Slide 27: User-Centered Development is user-centric (not data-centric), involves real users in early stages, quantifies usability metrics, and operates iteratively through continuous prototype testing and refinement.",
+          "why_wrong": {
+            "1": "Designing in secret without user contact violates user-centered development.",
+            "2": "Managers are not users; their assumptions often contradict actual user workflows.",
+            "3": "UCD applies across modern graphical, touch, mobile, and web interfaces."
+          },
+          "marking_points": [],
+          "source": "Module 01 Slide 27",
+          "verified": true,
+          "verified_output": "User-centric, iterative, measures usability with users."
+        },
+        {
+          "id": "ins202-fnd-cs1-q2",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "hci_goals_redesign"
+          ],
+          "question": "[Case Scenario: Nile University deploys a new online Course Registration Portal for 8,000 undergraduate students. The portal database has full functional capability (Utility): ...]\n\nApply the HCI goals of 'Safety', 'Usability', and 'Efficiency' to propose three concrete interface improvements to resolve the registration portal's crises.",
+          "options": [],
+          "answer": "The university should implement: (1) Safety (Data Safety & Error Prevention): Introduce state persistence and auto-save so that hitting the browser Back button or experiencing an interrupted network session does not erase selected courses, and add a warning dialog before any destructive cancellation; (2) Usability (Error Recovery & Learnability): Replace the cryptic hex code 'FATAL EXCEPTION 0x80041002' with a clear, actionable human-language error message indicating the exact conflict (e.g., 'Timetable Clash: COS 201 at 10:00 AM overlaps with IFT 211. Please choose an alternative section'); (3) Efficiency & Visual Affordance: Redesign the 'Confirm & Submit' link as a prominent, high-contrast, primary action button placed directly below the course selection summary with a visible progress indicator.",
+          "explanation": "Applies Safety (state persistence), Usability (clear error messaging), and Efficiency (prominent submit button).",
+          "why_wrong": {},
+          "marking_points": [
+            "Applies Safety: auto-saving course selections and preventing accidental data wiping on Back button.",
+            "Applies Usability: translating cryptic hex codes into clear, actionable human language identifying the conflicting courses.",
+            "Applies Efficiency: converting tiny hidden text links into a prominent, high-contrast submit button with progress indicators.",
+            "Shows how these improvements restore student registration completion rates."
+          ],
+          "source": "Module 01 Slides 20, 23, 24",
+          "verified": true,
+          "verified_output": "Safety, Usability, and Efficiency redesign proposals."
+        },
+        {
+          "id": "ins202-fnd-cs2-q2",
+          "course": "INS 202",
+          "topic": "hci_introduction_goals",
+          "type": "explain",
+          "difficulty": 4,
+          "tags": [
+            "case_study",
+            "efficiency_and_usability"
+          ],
+          "question": "[Case Scenario: A fast-growing fintech startup in Lagos launches a peer-to-peer mobile payments app. In version 1.0, to send money to a friend, the user must navigate through 6...]\n\nAnalyze how the introduction of contact book syncing and the 'Favorites' carousel improved both 'Efficiency' and 'Usability' (specifically memory load) in version 2.0.",
+          "options": [],
+          "answer": "In version 1.0, requiring users to recall and manually type 10-digit account numbers and bank codes placed heavy cognitive strain on human short-term memory (violating George Miller's $7 \\pm 2$ limit) and created extreme friction. Version 2.0 improved Usability by replacing 'recall' with 'recognition': users simply recognize a friend's familiar name or profile picture in their synced contact list. Version 2.0 dramatically improved Efficiency by reducing the multi-step navigation from 6 cumbersome screens down to a 2-tap workflow (tapping the Favorite avatar and confirming via biometrics), reducing task completion time from 90 seconds to under 4 seconds while virtually eliminating costly typographical transfer errors.",
+          "explanation": "Replaces recall with recognition, cuts task time from 90s to 4s, and eliminates memory overload.",
+          "why_wrong": {},
+          "marking_points": [
+            "Identifies that manual typing placed heavy load on limited short-term memory.",
+            "Explains how contact syncing replaces difficult 'recall' with effortless 'recognition'.",
+            "Shows that the 'Favorites' carousel elevates Efficiency by slashing screens, clicks, and transaction time.",
+            "Notes the sharp reduction in user transfer errors and call center volume."
+          ],
+          "source": "Module 01 Slide 23; Module 02 Slide 39, 50",
+          "verified": true,
+          "verified_output": "Efficiency and Usability analysis (recognition vs recall)."
+        },
+        {
+          "id": "ins202-hum-002",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "matching",
+          "difficulty": 3,
+          "tags": [
+            "gestalt_principles",
+            "visual_layout"
+          ],
+          "question": "Match each Gestalt visual perception principle to its defining user interface application:",
+          "options": [
+            "Proximity",
+            "Similarity",
+            "Continuity / Alignment",
+            "Closure"
+          ],
+          "answer": {
+            "Proximity": "Placing input field text labels significantly closer to their corresponding form boxes than to preceding fields so users perceive them as a pair.",
+            "Similarity": "Rendering all clickable primary action buttons in the identical blue pill shape and font across every screen to indicate common functionality.",
+            "Continuity / Alignment": "Left-aligning all headings, paragraph text, and input boxes along a single vertical axis to facilitate smooth, rapid top-to-bottom visual scanning.",
+            "Closure": "Designing an icon or logo using broken or striped lines (like the IBM logo) where the mind automatically fills in the blanks to see complete letters."
+          },
+          "explanation": "Proximity groups by physical distance; Similarity groups by shared visual attributes (color, shape); Continuity aligns along virtual visual axes; Closure mentally connects incomplete outlines.",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Module 02 Slides 20-34",
+          "verified": true,
+          "verified_output": "Matched Gestalt principles."
+        },
+        {
+          "id": "ins202-hum-004",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "fitts_law",
+            "motor_ergonomics"
+          ],
+          "question": "According to Fitts's Law, the time required to move a cursor or finger to an interactive target is governed by which mathematical relationship?",
+          "options": [
+            "Target movement time increases with greater Distance (D) to the target and decreases with greater Target Width (W): T = a + b * log2(1 + D/W)",
+            "Target movement time is equal to the CPU clock frequency multiplied by the RAM bus width",
+            "Target movement time is completely independent of button size or distance",
+            "Target movement time decreases when the button is made infinitely tiny"
+          ],
+          "answer": 0,
+          "explanation": "Fitts's Law states: $T = a + b \\log_2(1 + D/W)$. Movement time increases as the target distance ($D$) increases, and decreases as the target size/width ($W$) increases. Making buttons larger and closer reduces acquisition time and user errors.",
+          "why_wrong": {
+            "1": "Fitts's Law is a human biomechanical model of hand/eye movement, not a CPU hardware metric.",
+            "2": "Decades of empirical psychology prove that target distance and width directly dictate movement speed.",
+            "3": "Tiny buttons are difficult to click, causing massive acquisition delays and mis-clicks."
+          },
+          "marking_points": [],
+          "source": "Fitts's Law; Ergonomics Literature; Gerard Kim Text",
+          "verified": true,
+          "verified_output": "T = a + b * log2(1 + D/W)."
+        },
+        {
+          "id": "ins202-hum-006",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "cloze",
+          "difficulty": 2,
+          "tags": [
+            "chunking_examples"
+          ],
+          "question": "The cognitive practice of organizing long strings of data into smaller, meaningful groups to ease short-term memory burden is called {{c1::chunking}}. For instance, the 10-digit sequence 0803314492 is easier to remember when formatted as {{c2::080-331-4492}}.",
+          "options": [
+            "chunking",
+            "080-331-4492",
+            "formatting",
+            "paging",
+            "defragmenting",
+            "hashing"
+          ],
+          "answer": [
+            "chunking",
+            "080-331-4492"
+          ],
+          "explanation": "Chunking transforms unmanageable raw sequences into familiar units within George Miller's $7 \\pm 2$ capacity limit (e.g. breaking a 10-digit phone number into three distinct 3-to-4-digit chunks).",
+          "why_wrong": {},
+          "marking_points": [],
+          "source": "Module 02 Slide 37-38",
+          "verified": true,
+          "verified_output": "chunking, 080-331-4492"
+        },
+        {
+          "id": "ins202-hum-008",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "mcq",
+          "difficulty": 3,
+          "tags": [
+            "context_in_perception",
+            "mindset"
+          ],
+          "question": "A user looking at an ambiguous black-and-white visual figure sees either the letter 'B' or the number '13'. If the symbol is placed between '12' and '14', the user instantly reads '13'. What cognitive phenomenon does this demonstrate?",
+          "options": [
+            "The dominant role of Context and Mindset in human visual perception",
+            "A catastrophic bit-flip in the user's sensory registers",
+            "Failure of the monitor's refresh rate to sync with room lighting",
+            "The mathematical Consensus theorem of Boolean algebra"
+          ],
+          "answer": 0,
+          "explanation": "As highlighted in Module 02 Slides 8–15: Context and mindset play a major role in what people perceive. The exact same visual stimuli are interpreted completely differently depending on the surrounding environmental context.",
+          "why_wrong": {
+            "1": "Humans do not experience electronic hardware register bit-flips.",
+            "2": "Perceptual ambiguity is cognitive, not monitor refresh flicker.",
+            "3": "Consensus theorem simplifies Boolean logic gates, not psychological reading context."
+          },
+          "marking_points": [],
+          "source": "Module 02 Slides 8-15",
+          "verified": true,
+          "verified_output": "Context and Mindset in perception."
+        },
+        {
+          "id": "ins202-hum-010",
+          "course": "INS 202",
+          "topic": "human_factors_ergonomics",
+          "type": "type_answer",
+          "difficulty": 2,
+          "tags": [
+            "gestalt_laws",
+            "proximity"
+          ],
+          "question": "Which Gestalt psychology law states that elements that are placed physically close together in visual space are perceived by the human visual system as belonging to a unified, coherent group?",
+          "answer": "Proximity",
+          "accepted_answers": [
+            "Proximity",
+            "Law of Proximity",
+            "principle of proximity"
+          ],
+          "explanation": "The Law of Proximity states that objects placed in close spatial proximity are perceived as a collective group, dominating other visual attributes like color or shape.",
+          "marking_points": [
+            "Identifies 'Proximity' (or 'Law of Proximity')."
+          ],
+          "source": "Module 02 Slide 20-23",
+          "verified": true,
+          "verified_output": "Proximity"
+        }
+      ]
+    }
+  ]
+}

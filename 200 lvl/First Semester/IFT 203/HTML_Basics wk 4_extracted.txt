@@ -1,0 +1,678 @@
+=== SLIDE 1 ===
+INTRODUCTION TO WEB TECHNOLOGY
+INTRODUCTION TO HTML
+ZAKARIYYA ABDULLAHI ADAMU
+ASSISTANT LECTURE
+Zakariyya.adamu@nileuniversity.edu.ng
+=== SLIDE 2 ===
+Learning outcomes
+START
+INTRODUCTION TO HTML • NO CSS
+2
+Explain HTML, tag, element, attribute and content.
+Write the basic structure of an HTML document.
+Create text, links, images, lists, tables and forms.
+Use semantic elements and media tags appropriately.
+Save an .html file and test it in a web browser.
+=== SLIDE 3 ===
+Lesson roadmap
+START
+INTRODUCTION TO HTML • NO CSS
+3
+1. Understand what HTML is.
+2. Learn tags, elements and attributes.
+3. Build the first HTML document.
+4. Add text, links, images and lists.
+5. Create tables and forms.
+6. Add media and semantic structure.
+7. Build and test a complete page.
+=== SLIDE 4 ===
+What is HTML?
+BASICS
+INTRODUCTION TO HTML • NO CSS
+4
+HTML means HyperText Markup Language.
+It is the standard markup language for structuring web pages.
+HTML tells the browser what content exists: headings, paragraphs, links, images and forms.
+HTML is not a programming language in the usual sense; it marks up content.
+Today we use HTML only. No CSS or JavaScript.
+=== SLIDE 5 ===
+HTML, CSS and JavaScript
+BASICS
+INTRODUCTION TO HTML • NO CSS
+5
+HTML = structure and content.
+CSS = presentation, such as colours, fonts and spacing.
+JavaScript = behaviour and interaction.
+Think of a webpage as a house: HTML is the structure, CSS is decoration, and JavaScript is interactive equipment.
+We will learn HTML first.
+EXAMPLE CODE
+HTML:  <h1>Welcome</h1>
+CSS:   changes how it looks
+JS:    adds interactive behaviour
+=== SLIDE 6 ===
+Important vocabulary
+BASICS
+INTRODUCTION TO HTML • NO CSS
+6
+Tag: a markup keyword written inside angle brackets, such as <p>.
+Opening tag: starts an element, such as <p>.
+Closing tag: ends an element, usually with a slash, such as </p>.
+Content: text or other content between tags.
+Element: the complete unit, often opening tag + content + closing tag.
+EXAMPLE CODE
+<p>HTML is easy to learn.</p>
+ 
+Opening tag: <p>
+Content: HTML is easy to learn.
+Closing tag: </p>
+Complete element: the whole line
+=== SLIDE 7 ===
+How to read a tag
+BASICS
+INTRODUCTION TO HTML • NO CSS
+7
+The less-than sign < begins a tag.
+The greater-than sign > ends a tag.
+The slash / appears in a closing tag.
+Tag names are written inside the brackets.
+Most tags have opening and closing tags; some elements, such as <img> and <br>, are void elements and do not need closing tags.
+EXAMPLE CODE
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+<br>
+<img src="photo.jpg" alt="A photo">
+=== SLIDE 8 ===
+What is an attribute?
+BASICS
+INTRODUCTION TO HTML • NO CSS
+8
+An attribute gives extra information about an element.
+Attributes are usually written inside the opening tag.
+An attribute commonly has a name and a value.
+Example: href is the attribute name; "about.html" is its value.
+Quote attribute values to keep the code clear and reliable.
+EXAMPLE CODE
+<a href="about.html">About Us</a>
+ 
+Tag: a
+Attribute: href
+Value: about.html
+Content: About Us
+=== SLIDE 9 ===
+Your first HTML document
+FIRST PAGE
+INTRODUCTION TO HTML • NO CSS
+9
+Use a plain-text editor such as Notepad or VS Code.
+Type the document structure shown on the right.
+Save the file as index.html.
+Open the file in Chrome, Edge or Firefox.
+Change the heading, save again, then refresh the browser.
+EXAMPLE CODE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My First Page</title>
+</head>
+<body>
+  <h1>Hello, class!</h1>
+  <p>I am learning HTML.</p>
+</body>
+</html>
+=== SLIDE 10 ===
+The document structure explained
+FIRST PAGE
+INTRODUCTION TO HTML • NO CSS
+10
+<!DOCTYPE html> tells the browser to use modern HTML rules.
+<html> is the root element containing the whole document.
+<head> holds page information, not the main visible content.
+<title> sets the text shown in the browser tab.
+<body> holds the page content shown in the browser.
+EXAMPLE CODE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Department</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+</body>
+</html>
+=== SLIDE 11 ===
+Metadata: charset and viewport
+FIRST PAGE
+INTRODUCTION TO HTML • NO CSS
+11
+<meta charset="UTF-8"> sets character encoding so common letters and symbols display correctly.
+The viewport meta tag helps the page use the device's screen width on mobile devices.
+<meta> is a void element; it does not need a closing tag.
+These tags belong inside <head>.
+EXAMPLE CODE
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>My Page</title>
+</head>
+=== SLIDE 12 ===
+Headings: h1 to h6
+TEXT
+INTRODUCTION TO HTML • NO CSS
+12
+Headings organise content into topics and subtopics.
+<h1> is the highest-level heading; <h6> is the lowest-level heading.
+Use heading levels in a meaningful order.
+Do not choose a heading only because it looks large.
+A page's <title> and its <h1> are different things.
+EXAMPLE CODE
+<h1>Information Technology</h1>
+<h2>Computer Hardware</h2>
+<h3>Input Devices</h3>
+<h2>Computer Software</h2>
+<h3>Operating Systems</h3>
+=== SLIDE 13 ===
+Paragraphs and line breaks
+TEXT
+INTRODUCTION TO HTML • NO CSS
+13
+<p> creates a paragraph.
+<br> moves text to a new line without starting a new paragraph.
+<hr> marks a thematic break, often displayed as a horizontal line.
+Browsers usually collapse repeated spaces in normal HTML text.
+Use paragraphs for ideas; do not use many <br> tags just to create spacing.
+EXAMPLE CODE
+<p>My name is Amina.</p>
+<p>I study Information Technology.</p>
+ 
+<p>Address:<br>
+Nile University<br>
+Abuja, Nigeria</p>
+ 
+<hr>
+=== SLIDE 14 ===
+Text emphasis and formatting
+TEXT
+INTRODUCTION TO HTML • NO CSS
+14
+<strong> marks important text; browsers usually show it bold.
+<em> marks emphasis; browsers usually show it italic.
+<b> and <i> are presentational/alternative-voice elements and are not identical in meaning to strong and em.
+<mark> highlights text; <small> marks side comments or fine print and is not too important. 
+Use tags according to meaning, not just appearance.
+EXAMPLE CODE
+<p><strong>Important:</strong> Submit work.</p>
+<p>Please read <em>carefully</em>.</p>
+<p>HTML is a <mark>markup language</mark>.</p>
+<p><small>Terms may apply.</small></p>
+=== SLIDE 15 ===
+More useful text tags
+TEXT
+INTRODUCTION TO HTML • NO CSS
+15
+<del> represents removed text; <ins> represents inserted text.
+<sub> displays subscript, useful in formulas such as H₂O.
+<sup> displays superscript, useful in powers such as 2³.
+<pre> preserves spaces and line breaks.
+<code> identifies a piece of computer code.
+EXAMPLE CODE
+<p>Old price: <del>₦5,000</del></p>
+<p>New price: <ins>₦4,000</ins></p>
+<p>Water: H<sub>2</sub>O</p>
+<p>Power: 2<sup>3</sup> = 8</p>
+<pre>Name: Amina
+Level: 200</pre>
+=== SLIDE 16 ===
+HTML comments
+TEXT
+INTRODUCTION TO HTML • NO CSS
+16
+A comment is a note for people reading the source code.
+The browser does not show comments as normal page content.
+Comments can explain a section or mark a task.
+Do not place passwords or private information in comments; source code can be viewed.
+EXAMPLE CODE
+<!-- Main page heading -->
+<h1>Student Portal</h1>
+ 
+<!-- Course introduction -->
+<p>Welcome to our course.</p>
+=== SLIDE 17 ===
+Links: the anchor element
+LINKS
+INTRODUCTION TO HTML • NO CSS
+17
+<a> creates a hyperlink.
+href gives the destination of the link.
+The words between the tags become clickable.
+Links can point to websites, other files, email addresses or sections of the same page.
+Check that the destination really exists.
+EXAMPLE CODE
+<a href="https://www.google.com">Visit Google</a>
+ 
+<a href="about.html">About Us</a>
+ 
+<a href="mailto:student@example.com">Email us</a>
+=== SLIDE 18 ===
+Links to a new tab or page section
+LINKS
+INTRODUCTION TO HTML • NO CSS
+18
+target="_blank" requests opening a link in a new tab or window.
+rel="noopener" is a good security practice with target="_blank".
+An id identifies a particular element in the page.
+Use href="#contact" to jump to an element with id="contact".
+EXAMPLE CODE
+<a href="https://example.com"
+   target="_blank" rel="noopener">
+  Open Example
+</a>
+ 
+<a href="#contact">Go to Contact</a>
+ 
+<h2 id="contact">Contact Us</h2>
+=== SLIDE 19 ===
+Images: the img element
+IMAGES
+INTRODUCTION TO HTML • NO CSS
+19
+<img> places an image in the page.
+src tells the browser where the image file is.
+alt provides alternative text for accessibility and when the image cannot load.
+An image is a void element; it does not need </img>.
+Use a correct file path and meaningful alt text.
+EXAMPLE CODE
+<img src="computer.jpg"
+     alt="A desktop computer">
+ 
+<img src="images/logo.png"
+     alt="Department logo"
+     width="250" height="120">
+=== SLIDE 20 ===
+Understanding file paths
+FILES
+INTRODUCTION TO HTML • NO CSS
+20
+A file path tells the browser where a file is stored.
+A relative path is written in relation to the current HTML file.
+If index.html and about.html are in the same folder, use href="about.html".
+If a picture is inside an images folder, use src="images/photo.jpg".
+File names and folder names must match the real files.
+EXAMPLE CODE
+MyWebsite/
+  index.html
+  about.html
+  images/
+    logo.png
+ 
+<a href="about.html">About</a>
+<img src="images/logo.png" alt="Logo">
+=== SLIDE 21 ===
+Lists: unordered and ordered
+LISTS
+INTRODUCTION TO HTML • NO CSS
+21
+<ul> creates an unordered list, usually shown with bullets.
+<ol> creates an ordered list, usually numbered.
+<li> defines each list item.
+Choose an ordered list when sequence matters.
+Lists can contain nested lists for sub-items.
+EXAMPLE CODE
+<h2>Input Devices</h2>
+<ul>
+  <li>Keyboard</li>
+  <li>Mouse</li>
+  <li>Scanner</li>
+</ul>
+ 
+<ol>
+  <li>Write code</li>
+  <li>Save file</li>
+  <li>Open browser</li>
+</ol>
+=== SLIDE 22 ===
+Description lists and nested lists
+LISTS
+INTRODUCTION TO HTML • NO CSS
+22
+<dl> creates a description list.
+<dt> identifies a term; <dd> gives its description.
+A nested list is a list inside another list item.
+Use description lists for glossaries and term definitions.
+EXAMPLE CODE
+<dl>
+  <dt>HTML</dt>
+  <dd>Structures web content.</dd>
+  <dt>Browser</dt>
+  <dd>Displays web pages.</dd>
+</dl>
+ 
+<ul>
+  <li>Hardware
+    <ul><li>Keyboard</li></ul>
+  </li>
+</ul>
+=== SLIDE 23 ===
+Tables: rows, headings and cells
+TABLES
+INTRODUCTION TO HTML • NO CSS
+23
+<table> contains the table.
+<tr> creates a row.
+<th> creates a header cell; <td> creates a data cell.
+Each row should contain the right number of cells for the table structure.
+Tables are for tabular data, not for laying out an entire webpage.
+EXAMPLE CODE
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Level</th>
+  </tr>
+  <tr>
+    <td>Amina</td>
+    <td>200</td>
+  </tr>
+</table>
+=== SLIDE 24 ===
+Organising and merging table cells
+TABLES
+INTRODUCTION TO HTML • NO CSS
+24
+<caption> gives the table a title.
+<thead>, <tbody> and <tfoot> group the header, main rows and footer rows.
+colspan makes a cell span more than one column.
+rowspan makes a cell span more than one row.
+The border attribute is shown here only for a simple beginner demonstration; modern styling is normally done with CSS.
+EXAMPLE CODE
+<table border="1">
+  <caption>Student Results</caption>
+  <thead>
+    <tr><th colspan="2">Results</th></tr>
+    <tr><th>Name</th><th>Score</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Amina</td><td>85</td></tr>
+  </tbody>
+</table>
+=== SLIDE 25 ===
+Forms: collecting information
+FORMS
+INTRODUCTION TO HTML • NO CSS
+25
+<form> groups controls used to collect and submit information.
+<label> describes an input control.
+<input> creates a control; its type determines what it accepts.
+name identifies the field when form data is submitted.
+action specifies where data is sent; method specifies how it is sent.
+A form needs a backend or service to store information.
+EXAMPLE CODE
+<form action="/register" method="post">
+  <label for="fullname">Full name:</label>
+  <input type="text" id="fullname"
+         name="fullname" required>
+  <button type="submit">Register</button>
+</form>
+=== SLIDE 26 ===
+Common input types
+FORMS
+INTRODUCTION TO HTML • NO CSS
+26
+text: ordinary text, such as a name.
+email: an email-style input with basic browser validation.
+password: visually masks characters; it does not encrypt them by itself.
+number: numeric input; date: date picker.
+radio: choose one option from a group; checkbox: choose any number of options.
+EXAMPLE CODE
+<input type="text" name="fullname">
+<input type="email" name="email">
+<input type="password" name="password">
+<input type="number" name="age" min="1">
+<input type="date" name="birthdate">
+=== SLIDE 27 ===
+Labels, radio buttons and checkboxes
+FORMS
+INTRODUCTION TO HTML • NO CSS
+27
+Connect a label to a control using matching for and id values.
+Radio buttons with the same name form a group where one choice is selected.
+Checkboxes are suitable when users may select several options.
+Use clear labels so users know what each control means.
+EXAMPLE CODE
+<input type="radio" id="full" name="mode" value="full">
+<label for="full">Full-time</label>
+ 
+<input type="radio" id="part" name="mode" value="part">
+<label for="part">Part-time</label>
+ 
+<input type="checkbox" id="html" name="skills" value="html">
+<label for="html">HTML</label>
+=== SLIDE 28 ===
+Dropdowns, text areas and buttons
+FORMS
+INTRODUCTION TO HTML • NO CSS
+28
+<select> creates a dropdown; <option> creates each choice.
+<textarea> accepts longer, multi-line text.
+<button type="submit"> submits a form.
+<button type="reset"> resets controls to their initial values.
+<button type="button"> does not submit the form by default.
+EXAMPLE CODE
+<label for="level">Level:</label>
+<select id="level" name="level">
+  <option value="100">100 Level</option>
+  <option value="200">200 Level</option>
+</select>
+ 
+<label for="message">Message:</label>
+<textarea id="message" name="message"
+          rows="4" cols="30"></textarea>
+=== SLIDE 29 ===
+Useful form attributes
+FORMS
+INTRODUCTION TO HTML • NO CSS
+29
+required: a value is needed for normal form submission.
+placeholder: a hint shown inside an empty control.
+min and max: limits for supported numeric/date controls.
+maxlength: limits the number of characters in supported text inputs.
+disabled: makes a control unavailable; readonly: prevents editing where supported.
+EXAMPLE CODE
+<input type="text" name="name"
+       placeholder="Enter your name"
+       maxlength="50" required>
+ 
+<input type="number" name="age"
+       min="1" max="100">
+ 
+<input type="text" value="Student ID"
+       readonly>
+=== SLIDE 30 ===
+Audio and video
+MEDIA
+INTRODUCTION TO HTML • NO CSS
+30
+<audio> embeds audio; <video> embeds video.
+<source> identifies the media file and its format.
+controls displays built-in playback controls.
+loop repeats media; muted starts it muted; autoplay may be blocked by browser policy.
+The media file must exist at the specified path.
+EXAMPLE CODE
+<audio controls>
+  <source src="lecture.mp3" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
+ 
+<video width="400" controls>
+  <source src="lesson.mp4" type="video/mp4">
+  Your browser does not support video.
+</video>
+=== SLIDE 31 ===
+Semantic HTML: meaning matters
+STRUCTURE
+INTRODUCTION TO HTML • NO CSS
+31
+Semantic elements describe the role of content.
+<header>: introductory or header content.
+<nav>: important navigation links.
+<main>: the page's main content, normally one per page.
+<section>: a thematic group; <article>: self-contained content.
+<aside>: related extra content; <footer>: closing information.
+EXAMPLE CODE
+<header><h1>IT Department</h1></header>
+<nav><a href="index.html">Home</a></nav>
+<main>
+  <section>
+    <h2>About</h2>
+    <p>We teach IT.</p>
+  </section>
+  <article><h2>News</h2></article>
+  <aside>Related links</aside>
+</main>
+<footer>Copyright 2026</footer>
+=== SLIDE 32 ===
+div and span
+STRUCTURE
+INTRODUCTION TO HTML • NO CSS
+32
+<div> is a general-purpose block-level container.
+<span> is a general-purpose inline container.
+They group content but do not describe its meaning like semantic elements do.
+They do not add styling or behaviour by themselves.
+CSS often uses div, span, id and class to style content later.
+EXAMPLE CODE
+<div>
+  <h2>Student Information</h2>
+  <p>Name: Amina</p>
+</div>
+ 
+<p>HTML is <span>easy to learn</span>.</p>
+=== SLIDE 33 ===
+Special characters: entities
+DETAILS
+INTRODUCTION TO HTML • NO CSS
+33
+Some characters have special meaning in HTML markup.
+&lt; displays <; &gt; displays >; &amp; displays &.
+&quot; displays a double quotation mark.
+&copy; displays ©.
+Use entities when you need to show markup characters as text.
+EXAMPLE CODE
+<p>Write &lt;p&gt;Hello&lt;/p&gt; to show a paragraph example.</p>
+<p>Tom &amp; Jerry</p>
+<p>Copyright &copy; 2026.</p>
+=== SLIDE 34 ===
+Global attributes: id, class, title, lang
+DETAILS
+INTRODUCTION TO HTML • NO CSS
+34
+id gives an element a unique identifier within the page.
+class groups elements under a shared class name.
+title gives advisory information, often displayed as a tooltip.
+lang identifies the language of the page or content.
+These attributes can be used without CSS.
+EXAMPLE CODE
+<html lang="en">
+  <p id="notice" class="important"
+     title="Please read this notice">
+    Registration closes Friday.
+  </p>
+</html>
+=== SLIDE 35 ===
+Common beginner mistakes
+CHECK
+INTRODUCTION TO HTML • NO CSS
+35
+Missing a closing tag or nesting elements incorrectly.
+Saving the file as .html.txt instead of .html.
+Using the wrong image or media path.
+Forgetting alt text for meaningful images.
+Expecting HTML alone to save submitted form data.
+Thinking HTML alone controls colours, fonts and spacing.
+EXAMPLE CODE
+<!-- Incorrect nesting -->
+<p><strong>Hello</p></strong>
+ 
+<!-- Correct nesting -->
+<p><strong>Hello</strong></p>
+ 
+<!-- Meaningful alternative text -->
+<img src="student.jpg" alt="Student at a computer">
+=== SLIDE 36 ===
+Practical: build a small webpage
+PRACTICAL
+INTRODUCTION TO HTML • NO CSS
+36
+Create a folder called MyWebsite.
+Create index.html inside the folder.
+Add a title, one h1, two paragraphs and a list.
+Add one link and one image with alt text.
+Save, open in a browser, edit the text and refresh.
+Check each tag and attribute with a partner.
+EXAMPLE CODE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My IT Page</title>
+</head>
+<body>
+  <h1>My IT Page</h1>
+  <p>My name is Amina.</p>
+  <p>I am learning HTML.</p>
+  <ul><li>Hardware</li><li>Software</li></ul>
+  <a href="https://example.com">Example</a>
+</body>
+</html>
+=== SLIDE 37 ===
+Project: student registration page
+PRACTICAL
+INTRODUCTION TO HTML • NO CSS
+37
+Combine the topics into one simple page.
+Include header, navigation, main content and footer.
+Add a course list and a registration form.
+Use labels, appropriate input types and required fields.
+Remember: this demonstration form does not save registrations without a backend.
+Extension: add a table showing three sample courses.
+EXAMPLE CODE
+<form action="#" method="get">
+  <label for="name">Full name:</label>
+  <input type="text" id="name" name="name" required>
+  <br><br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <br><br>
+  <button type="submit">Register</button>
+</form>
+=== SLIDE 38 ===
+Revision: check your understanding
+REVIEW
+INTRODUCTION TO HTML • NO CSS
+38
+What is the difference between a tag and an element?
+What is an attribute? Name two examples.
+Which tag creates a hyperlink? Which attribute gives its destination?
+Why should an image have alt text?
+What is the difference between ul and ol?
+What is the purpose of label, name and required in a form?
+Why does a form not automatically save data?
+=== SLIDE 39 ===
+Key takeaways
+FINISH
+INTRODUCTION TO HTML • NO CSS
+39
+HTML structures content using elements and attributes.
+Start with a correct document structure.
+Use the right tag for the meaning of the content.
+Check file paths, nesting and closing tags.
+Practise by typing, saving, opening and editing HTML files.
+Next topic: CSS — styling the structure you have built.
+=== SLIDE 40 ===
+Quick glossary: terms to remember
+REFERENCE
+INTRODUCTION TO HTML • NO CSS
+40

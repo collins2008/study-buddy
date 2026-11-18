@@ -1,0 +1,482 @@
+import json
+import os
+
+def build_topic4():
+    topic_data = {
+        "course": "SEN 201",
+        "topic": "Requirements Engineering & Specification",
+        "summary": "This topic explores the disciplined methods used to discover, analyze, specify, validate, and manage software requirements. It details the essential taxonomy of requirements: Business Requirements (high-level organizational goals), User Requirements (operational user tasks), Functional Requirements (system behaviors, services, and transformations), and Non-Functional Requirements (quality attributes and operational constraints such as response time, availability, security, and reliability). The five core requirements engineering activities — Inception/Feasibility, Elicitation (interviews, surveys, workshops), Analysis and Negotiation (MoSCoW prioritization), formal Specification (IEEE 830 SRS, User Stories with INVEST criteria), and Validation (verifiability, consistency, completeness) — are examined. Uncontrolled Scope Creep and Requirements Traceability Matrices (RTM) connecting requirements to downstream design, code, and test artifacts are thoroughly analyzed.",
+        "key_terms": [
+            {"term": "Functional Requirement", "definition": "A statement specifying a function, behavior, or service that the software system must actively provide or execute."},
+            {"term": "Non-Functional Requirement", "definition": "A statement specifying constraints, operational qualities, or performance benchmarks (e.g., security, reliability, latency) that the system must satisfy."},
+            {"term": "Software Requirements Specification (SRS)", "definition": "The formal document that completely describes the intended behavior, interfaces, and constraints of a software system."},
+            {"term": "Scope Creep", "definition": "The gradual, uncontrolled expansion of a project's scope beyond its original baseline without corresponding adjustments to budget, time, or resources."},
+            {"term": "Requirements Traceability Matrix (RTM)", "definition": "A grid mapping each functional and non-functional requirement to its originating stakeholder need, architectural component, and verifying test cases."},
+            {"term": "User Story", "definition": "A concise requirement description written from an end-user perspective: 'As a [role], I want [feature], so that [benefit]', supported by acceptance criteria."},
+            {"term": "Feasibility Study", "definition": "An initial investigation determining whether a proposed system is cost-effective, practically achievable, and legally compliant before project funding."},
+            {"term": "Verifiability", "definition": "The characteristic of a requirement stating that it can be conclusively proved or measured by a finite, cost-effective testing procedure."}
+        ],
+        "questions": [
+            {
+                "id": "sen201-re-001",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "mcq",
+                "difficulty": 3,
+                "tags": ["nile-exam-q5", "nile-exam-q18", "non-functional-requirements", "analysis"],
+                "question": "In Nile University Final Exam Questions 5 & 18: What type of software requirement specifies system constraints such as reliability, response time, and availability?",
+                "options": [
+                    "Non-functional requirement",
+                    "Functional requirement",
+                    "User requirement",
+                    "Domain requirement"
+                ],
+                "answer": "Non-functional requirement",
+                "explanation": "Non-functional requirements specify quality attributes, behavioral constraints, and operational standards (e.g., response time under load, 99.9% uptime reliability, data encryption security). Functional requirements, by contrast, specify the specific services and calculations the system must perform.",
+                "why_wrong": {
+                    "Functional requirement": "Functional requirements describe what the system does (features, calculations), not how well or under what constraints it does it.",
+                    "User requirement": "User requirements can be either functional or non-functional, written in non-technical language.",
+                    "Domain requirement": "Domain requirements reflect fundamental operational laws of the application domain (e.g., banking regulations)."
+                },
+                "marking_points": ["Identifies Non-functional requirement as specifying constraints like reliability and response time"],
+                "source": "Nile University Final Exam Paper (Type B), Questions 5 & 18",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-002",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "mcq",
+                "difficulty": 2,
+                "tags": ["nile-exam-q6", "feasibility-study"],
+                "question": "In Nile University Final Exam Question 6: What does a feasibility study in requirements engineering primarily determine?",
+                "options": [
+                    "The cost-effectiveness, technical practicality, and viability of the proposed system",
+                    "The exact variable names to be used in source code",
+                    "The test case assertions for unit testing",
+                    "The physical color scheme of the user interface"
+                ],
+                "answer": "The cost-effectiveness, technical practicality, and viability of the proposed system",
+                "explanation": "A feasibility study is a short, focused investigation conducted before allocating full project budget to decide whether the proposed software is worth building. It assesses economic feasibility (cost vs benefit), technical feasibility (skills and tools), and operational practicality.",
+                "why_wrong": {
+                    "The exact variable names...": "Variable naming is a detailed coding activity.",
+                    "The test case assertions...": "Test assertions are written during detailed design and implementation.",
+                    "The physical color scheme...": "UI styling is decided during user-interface design."
+                },
+                "marking_points": ["Cost-effectiveness and technical practicality"],
+                "source": "Nile University Final Exam Paper (Type B), Question 6",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-003",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "mcq",
+                "difficulty": 3,
+                "tags": ["nile-exam-q16", "functional-requirements", "analysis"],
+                "question": "In Nile University Final Exam Question 16: Which type of requirement specifies how the system should react to particular inputs and what services it must provide?",
+                "options": [
+                    "Functional requirement",
+                    "Non-functional requirement",
+                    "System constraint",
+                    "Legal compliance requirement"
+                ],
+                "answer": "Functional requirement",
+                "explanation": "Functional requirements define the core functions of the software: input-to-output transformations, business rules, data processing, calculations, and specific feature capabilities (e.g. 'The system shall calculate late fee penalties at 5% per month').",
+                "why_wrong": {
+                    "Non-functional requirement": "Non-functional requirements describe operational constraints and quality attributes, not functional behaviors.",
+                    "System constraint": "A constraint restricts design freedom (e.g. must run on Android 12).",
+                    "Legal compliance requirement": "Legal compliance is a category of non-functional constraint."
+                },
+                "marking_points": ["Identifies Functional requirement as describing services and behavior"],
+                "source": "Nile University Final Exam Paper (Type B), Question 16",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-004",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "mcq",
+                "difficulty": 3,
+                "tags": ["nile-exam-q17", "good-requirements", "analysis"],
+                "question": "In Nile University Final Exam Question 17: Which of the following is NOT a characteristic of a good software requirement?",
+                "options": [
+                    "Ambiguous",
+                    "Verifiable",
+                    "Traceable",
+                    "Consistent"
+                ],
+                "answer": "Ambiguous",
+                "explanation": "Ambiguity is the single most dangerous defect in requirements engineering! A good requirement must be clear, unambiguous (having exactly one possible interpretation), verifiable, complete, consistent, and traceable. An ambiguous requirement inevitably leads to developer misinterpretation.",
+                "why_wrong": {
+                    "Verifiable": "Verifiability is an essential quality of good requirements.",
+                    "Traceable": "Traceability is an essential quality of good requirements.",
+                    "Consistent": "Consistency (no mutual contradictions) is an essential quality of good requirements."
+                },
+                "marking_points": ["Selects Ambiguous as an undesirable defect, not a good characteristic"],
+                "source": "Nile University Final Exam Paper (Type B), Question 17",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-005",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "mcq",
+                "difficulty": 2,
+                "tags": ["nile-exam-q19", "business-requirements"],
+                "question": "In Nile University Final Exam Question 19: What are Business Requirements primarily concerned with?",
+                "options": [
+                    "The high-level purpose, strategic goals, and business justification of the project",
+                    "The exact SQL syntax for database tables",
+                    "The hardware clock speed of developer laptops",
+                    "The memory layout of C language structs"
+                ],
+                "answer": "The high-level purpose, strategic goals, and business justification of the project",
+                "explanation": "Business requirements define the organization's overarching vision and commercial/institutional rationale: why the system is being funded, what problem it solves, and how return on investment or organizational efficiency will be measured.",
+                "why_wrong": {
+                    "The exact SQL syntax...": "Technical database implementation detail.",
+                    "The hardware clock speed...": "Developer tooling detail.",
+                    "The memory layout of C structs...": "Low-level programming detail."
+                },
+                "marking_points": ["Strategic purpose, goals, and business justification"],
+                "source": "Nile University Final Exam Paper (Type B), Question 19",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-006",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "mcq",
+                "difficulty": 2,
+                "tags": ["nile-exam-q20", "user-requirements"],
+                "question": "In Nile University Final Exam Question 20: Which category of requirements describes the operational tasks and high-level workflows that end-users can perform with the software?",
+                "options": [
+                    "User requirements",
+                    "Compiler directives",
+                    "Assembly instructions",
+                    "Hardware constraints"
+                ],
+                "answer": "User requirements",
+                "explanation": "User requirements are written from the perspective of external actors, describing everyday tasks, operational workflows, and services provided to users without mandating low-level technical implementation details.",
+                "why_wrong": {
+                    "Compiler directives": "Low-level compiler flags (#define, etc.).",
+                    "Assembly instructions": "Machine-level operations.",
+                    "Hardware constraints": "Physical server boundaries."
+                },
+                "marking_points": ["Identifies User requirements"],
+                "source": "Nile University Final Exam Paper (Type B), Question 20",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-007",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "mcq",
+                "difficulty": 3,
+                "tags": ["nile-exam-q49", "scope-creep", "management"],
+                "question": "In Nile University Final Exam Question 49: What is 'Scope Creep' and why is it dangerous to software projects?",
+                "options": [
+                    "The unplanned, continuous expansion of project boundaries and requirements without proportional adjustments to time, budget, and resources.",
+                    "A virus that slowly infects developer computers.",
+                    "A decrease in the number of lines of code written per day.",
+                    "The process of shrinking project features to finish ahead of schedule."
+                ],
+                "answer": "The unplanned, continuous expansion of project boundaries and requirements without proportional adjustments to time, budget, and resources.",
+                "explanation": "Scope creep occurs when stakeholders continuously add features, tweaks, and new requests throughout development without formally increasing the budget or deadline. This leads directly to project delays, cost overruns, developer burnout, and architectural degradation.",
+                "why_wrong": {
+                    "A virus that slowly infects developer computers": "Confuses a managerial phenomenon with malware.",
+                    "A decrease in code written per day": "Metric of developer velocity, not scope creep.",
+                    "The process of shrinking project features...": "This is scope reduction or descoping, the opposite of scope creep."
+                },
+                "marking_points": ["Unplanned expansion of project boundaries", "Lack of proportional time/budget adjustment"],
+                "source": "Nile University Final Exam Paper (Type B), Question 49",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-008",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "mcq",
+                "difficulty": 3,
+                "tags": ["verifiability", "nfr-quantification"],
+                "question": "A client states in a requirements meeting: 'The university portal must be fast and user-friendly.' Why is this considered an unacceptable requirement in a formal SRS, and how should it be rewritten?",
+                "options": [
+                    "It is completely unverifiable and subjective; it must be quantified with measurable operational metrics (e.g. 'Under a load of 500 concurrent users, 95% of course registration requests shall complete within 2.0 seconds').",
+                    "It is fine as written because developers know what 'fast' means.",
+                    "It should be deleted because software performance does not matter.",
+                    "It should be rewritten using binary assembly code."
+                ],
+                "answer": "It is completely unverifiable and subjective; it must be quantified with measurable operational metrics (e.g. 'Under a load of 500 concurrent users, 95% of course registration requests shall complete within 2.0 seconds').",
+                "explanation": "Vague adjectives like 'fast', 'robust', or 'intuitive' cannot be validated by a test suite because there is no pass/fail criterion. Requirements engineers must quantify non-functional requirements by specifying exact workloads, percentile response times, error rates, and testing environments.",
+                "why_wrong": {
+                    "It is fine as written...": "Different developers will interpret 'fast' as 50ms, 2 seconds, or 10 seconds.",
+                    "It should be deleted because performance does not matter...": "Performance is a critical non-functional requirement.",
+                    "It should be rewritten using assembly...": "Requirements are written in natural language specifications, not machine code."
+                },
+                "marking_points": ["Identifies subjective unverifiability", "Quantifies workload and measurable response time"],
+                "source": "Software Engineering Concepts Lecture Notes, Section 6.6",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            # Flashcards
+            {
+                "id": "sen201-re-fc01",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "functional-req"],
+                "question": "What is a Functional Requirement?",
+                "options": [],
+                "answer": "A statement specifying what services, functions, and behaviors the system must actively provide.",
+                "explanation": "Describes system behavior and data transformations.",
+                "why_wrong": {},
+                "marking_points": ["Specifies services and behaviors system must provide"],
+                "source": "Software Engineering Concepts Lecture Notes, Section 6",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-fc02",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "non-functional-req"],
+                "question": "What is a Non-Functional Requirement?",
+                "options": [],
+                "answer": "A constraint on the services or functions offered by the system, covering quality attributes such as performance, reliability, security, and usability.",
+                "explanation": "Tested in Nile Exam Q5 & Q18.",
+                "why_wrong": {},
+                "marking_points": ["Constraints on services/functions; quality attributes"],
+                "source": "Nile Exam Q5 & Lecture Notes Section 6",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-fc03",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "re-activities"],
+                "question": "What are the five core activities of Requirements Engineering?",
+                "options": [],
+                "answer": "1. Inception & Feasibility Study\n2. Elicitation\n3. Analysis & Negotiation\n4. Specification (SRS)\n5. Validation",
+                "explanation": "The standard engineering sequence.",
+                "why_wrong": {},
+                "marking_points": ["Feasibility, Elicitation, Analysis, Specification, Validation"],
+                "source": "Software Engineering Concepts Lecture Notes, Section 6.1",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-fc04",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "good-req-traits"],
+                "question": "What are five essential characteristics of a good software requirement?",
+                "options": [],
+                "answer": "1. Unambiguous\n2. Verifiable (testable)\n3. Complete\n4. Consistent\n5. Traceable",
+                "explanation": "Tested in Nile Exam Q17.",
+                "why_wrong": {},
+                "marking_points": ["Unambiguous, Verifiable, Complete, Consistent, Traceable"],
+                "source": "Nile Exam Q17 & Section 6.6",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-fc05",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "scope-creep"],
+                "question": "What is Scope Creep?",
+                "options": [],
+                "answer": "The uncontrolled expansion of product requirements and project scope during development without adjustments to schedule, budget, or resources.",
+                "explanation": "Tested in Nile Exam Q49.",
+                "why_wrong": {},
+                "marking_points": ["Uncontrolled scope expansion without time/budget adjustment"],
+                "source": "Nile Exam Q49 & Section 6",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-fc06",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "rtm"],
+                "question": "What is a Requirements Traceability Matrix (RTM)?",
+                "options": [],
+                "answer": "A table mapping each requirement ID to its source business need, architectural component, implementation code, and validating test cases.",
+                "explanation": "Ensures full lifecycle coverage and impacts analysis.",
+                "why_wrong": {},
+                "marking_points": ["Maps requirements to design, code, and test cases"],
+                "source": "Software Engineering Concepts Lecture Notes, Section 6.5",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-fc07",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "user-story-format"],
+                "question": "What is the standard template for writing an Agile User Story?",
+                "options": [],
+                "answer": "'As a [type of user], I want [a capability/feature], so that [a specific business benefit].'",
+                "explanation": "Standard format emphasizing user value.",
+                "why_wrong": {},
+                "marking_points": ["As a... I want... so that..."],
+                "source": "Software Engineering Concepts Lecture Notes, Section 6.4",
+                "verified": True,
+                "verified_output": "N/A"
+            },
+            {
+                "id": "sen201-re-fc08",
+                "course": "SEN 201",
+                "topic": "Requirements Engineering & Specification",
+                "type": "flashcard",
+                "difficulty": 1,
+                "tags": ["flashcard", "moscow"],
+                "question": "What does the MoSCoW prioritization acronym stand for?",
+                "options": [],
+                "answer": "- Must have (mandatory)\n- Should have (high priority, non-critical)\n- Could have (desirable if time permits)\n- Won't have (deferred to future releases)",
+                "explanation": "Commonly used in agile requirements negotiation.",
+                "why_wrong": {},
+                "marking_points": ["Must have, Should have, Could have, Won't have"],
+                "source": "Software Engineering Requirements Standards",
+                "verified": True,
+                "verified_output": "N/A"
+            }
+        ],
+        "case_studies": [
+            {
+                "id": "sen201-re-cs01",
+                "scenario": "Nile University commissions a new online continuous assessment and examination portal. During initial discovery, the university registrar provides only a two-page bulleted list containing statements like: 'The portal must be user-friendly', 'The system should be extremely fast during peak exam weeks', and 'All student data must be secure'. Three months into development, faculty deans begin requesting automated timetable scheduling, SMS parents alerts, and biometric face verification, claiming these were 'obviously implied' in the original scope.",
+                "sub_questions": [
+                    {
+                        "id": "sen201-re-cs01-q1",
+                        "course": "SEN 201",
+                        "topic": "Requirements Engineering & Specification",
+                        "type": "mcq",
+                        "difficulty": 3,
+                        "tags": ["case-study", "requirements-flaws", "scope-creep"],
+                        "question": "What two critical requirements engineering deficiencies caused this project crisis?",
+                        "options": [
+                            "Vague, unverifiable requirements in the original document, coupled with a lack of formal change control leading to severe scope creep.",
+                            "Developers using Python instead of HTML.",
+                            "The server running on 64-bit architecture instead of 32-bit.",
+                            "Failure to install antivirus software on the campus routers."
+                        ],
+                        "answer": "Vague, unverifiable requirements in the original document, coupled with a lack of formal change control leading to severe scope creep.",
+                        "explanation": "The initial requirements suffered from ambiguity and lack of verifiability ('fast', 'secure', 'user-friendly'). Without a formal Software Requirements Specification (SRS), baseline sign-off, and a change control board, stakeholders added new features indiscriminately, resulting in classic scope creep.",
+                        "why_wrong": {
+                            "Developers using Python instead of HTML...": "Technology choices are irrelevant to the requirements governance breakdown.",
+                            "The server running on 64-bit...": "Hardware architecture is completely unrelated.",
+                            "Failure to install antivirus...": "Conflates network security with requirements management."
+                        },
+                        "marking_points": ["Identifies unverifiable/ambiguous initial requirements", "Identifies lack of change control and resulting scope creep"],
+                        "source": "Requirements Engineering Governance Case Study",
+                        "verified": True,
+                        "verified_output": "N/A"
+                    },
+                    {
+                        "id": "sen201-re-cs01-q2",
+                        "course": "SEN 201",
+                        "topic": "Requirements Engineering & Specification",
+                        "type": "explain",
+                        "difficulty": 4,
+                        "tags": ["case-study", "moscow-remediation", "prioritization"],
+                        "question": "Apply the MoSCoW prioritization technique to negotiate and stabilize the scope of this university examination portal. Categorize the conflicting requirements.",
+                        "options": [],
+                        "answer": "1. MUST HAVE (Core Critical Path): Secure student login, online exam taking, automated score recording, and grade calculation.\n2. SHOULD HAVE (Important but Workaround Possible): Automated PDF results generation and lecturer grade submission dashboards.\n3. COULD HAVE (Desirable if Time Permits): SMS alerts to students/parents for exam schedule reminders.\n4. WON'T HAVE (Deferred to Phase 2): Automated AI biometric face verification and complex multi-faculty automated timetable optimization algorithms.",
+                        "explanation": "MoSCoW allows stakeholders to agree on a viable baseline, preventing project collapse while acknowledging future desires.",
+                        "why_wrong": {},
+                        "marking_points": [
+                            "Must Have: Exam taking, secure login, score recording",
+                            "Should Have: PDF results, lecturer dashboards",
+                            "Could Have: SMS alerts",
+                            "Won't Have: Biometric face verification and automated timetable scheduling"
+                        ],
+                        "source": "Requirements Negotiation & MoSCoW Prioritization",
+                        "verified": True,
+                        "verified_output": "N/A"
+                    }
+                ]
+            },
+            {
+                "id": "sen201-re-cs02",
+                "scenario": "A financial payment infrastructure provider in Nigeria is specifying the non-functional requirements (NFRs) for a real-time instant payment switch handling interbank settlements. System downtime during banking hours could destabilize commercial liquidity. The lead engineer must translate vague stakeholder desires into rigorous, measurable non-functional requirements for the SRS.",
+                "sub_questions": [
+                    {
+                        "id": "sen201-re-cs02-q1",
+                        "course": "SEN 201",
+                        "topic": "Requirements Engineering & Specification",
+                        "type": "type_answer",
+                        "difficulty": 3,
+                        "tags": ["case-study", "nfr-specification", "availability"],
+                        "question": "The banking client demands 'high availability'. What exact mathematical metric and industry standard benchmark should be written into the SRS for an enterprise payment switch?",
+                        "options": [],
+                        "answer": "99.99% availability (less than 52.6 minutes of downtime per year)",
+                        "accepted_answers": [
+                            "99.99%",
+                            "99.99% availability",
+                            "99.999%",
+                            "Four nines",
+                            "99.99% uptime"
+                        ],
+                        "explanation": "In financial infrastructure, 'high availability' is quantified using 'nines'. An availability SLA of 99.99% ('four nines') permits at most 52.6 minutes of unplanned downtime across an entire year, providing a clear mathematical pass/fail test for site reliability engineers.",
+                        "why_wrong": {},
+                        "marking_points": ["Quantifies availability as 99.99% (or 99.999%)", "Specifies downtime threshold"],
+                        "source": "Software Engineering Quality Metrics & Non-Functional Requirements",
+                        "verified": True,
+                        "verified_output": "Availability = 99.99%"
+                    },
+                    {
+                        "id": "sen201-re-cs02-q2",
+                        "course": "SEN 201",
+                        "topic": "Requirements Engineering & Specification",
+                        "type": "explain",
+                        "difficulty": 4,
+                        "tags": ["case-study", "verifiable-nfrs", "srs-drafting"],
+                        "question": "Write two fully verifiable, unambiguous non-functional requirements for this payment gateway: one for Performance Latency and one for Security Compliance.",
+                        "options": [],
+                        "answer": "1. Performance / Latency NFR: 'Under a continuous load of 2,000 transactions per second (TPS), 99% of payment settlement API responses shall complete with a round-trip latency of less than 500 milliseconds.'\n2. Security / Confidentiality NFR: 'All sensitive cardholder payment data shall be encrypted in transit using TLS 1.3 with forward secrecy and at rest using AES-256 encryption, in strict compliance with PCI-DSS Level 1 standards.'",
+                        "explanation": "Both statements specify exact workloads, measurable metrics (TPS, ms, encryption standards), and clear testing criteria.",
+                        "why_wrong": {},
+                        "marking_points": [
+                            "Performance specifies workload (TPS), response time (<500ms), and percentile (99%)",
+                            "Security specifies encryption standard (TLS 1.3 / AES-256) and compliance benchmark (PCI-DSS)"
+                        ],
+                        "source": "Software Engineering SRS Non-Functional Specification Standards",
+                        "verified": True,
+                        "verified_output": "N/A"
+                    }
+                ]
+            }
+        ]
+    }
+
+    out_file = r'c:\Users\Collins Ibilibor\Downloads\Study Buddy\app\content\SEN 201\requirements_engineering.json'
+    with open(out_file, 'w', encoding='utf-8') as f:
+        json.dump(topic_data, f, indent=2)
+
+    total_qs = len(topic_data['questions']) + sum(len(cs.get('sub_questions', [])) for cs in topic_data.get('case_studies', []))
+    print(f"Successfully generated {out_file} with {total_qs} total questions ({len(topic_data['questions'])} main, {len(topic_data['case_studies'])} case studies).")
+
+if __name__ == '__main__':
+    build_topic4()

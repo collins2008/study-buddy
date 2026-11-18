@@ -1,0 +1,439 @@
+import json
+
+data = {
+    "course": "INS 202",
+    "topic": "evaluation_techniques_likert",
+    "summary": "This topic covers usability specifications, empirical testing methodologies, and expert inspection techniques. Usability specifications establish quantifiable targets early in development, divided into objective performance measures (task completion time, completion rate, back button clicks indicating lostness, error frequencies, and regressive behaviors) and subjective preference measures (captured via Likert scales). Psychometric design of Likert scales requires balancing neutral midpoints, mitigating acquiescence bias through reverse-phrasing, and understanding ordinal versus composite interval data. Expert inspection methods examine systems without end users: Jakob Nielsen's Heuristic Evaluation leverages 3 to 5 evaluators to catch 75% to 85% of usability flaws using 10 foundational heuristics, while Cognitive Walkthroughs evaluate walk-up-and-use learnability across four discrete steps. Finally, empirical testing requires recruiting authentic representative users (strictly excluding family, friends, and developers) and conducting environmental analysis to account for physical constraints like cold weather, sunlight, and acoustic noise.",
+    "key_terms": [
+        {"term": "Performance Measures", "definition": "Directly observable, quantifiable behavioral metrics such as task completion time, success rates, error counts, and browser back-button clicks."},
+        {"term": "Preference Measures", "definition": "Subjective attitudinal data measuring user satisfaction, perceived ease of use, and emotional reaction, typically captured via Likert scales."},
+        {"term": "Likert Scale", "definition": "A psychometric response scale with balanced bipolar anchors (e.g., Strongly Disagree to Strongly Agree) measuring the intensity of user agreement with declarative statements."},
+        {"term": "Formative Evaluation", "definition": "Iterative, predominantly qualitative usability testing conducted during development to diagnose design flaws and guide redesign."},
+        {"term": "Summative Evaluation", "definition": "Predominantly quantitative usability testing conducted at the conclusion of development to measure performance against predefined specifications or benchmarks."},
+        {"term": "Heuristic Evaluation", "definition": "A discount usability inspection method where 3 to 5 usability specialists independently evaluate an interface against established design principles (heuristics)."},
+        {"term": "Nielsen's Evaluator Curve", "definition": "The empirical finding that 1 evaluator catches only ~35% of usability problems, whereas 3 to 5 evaluators identify 75% to 85%, beyond which returns diminish rapidly."},
+        {"term": "Cognitive Walkthrough", "definition": "A task-centric inspection technique that evaluates system learnability for novice users by answering four psychological questions at each required action step."},
+        {"term": "Acquiescence Bias", "definition": "The systematic cognitive tendency of survey respondents to agree with statements; countered in UX surveys by including reverse-phrased items."},
+        {"term": "Environmental Analysis", "definition": "Evaluating the physical, acoustic, and lighting conditions of the deployment environment (e.g., gloved users at an outdoor ATM or bright sun on mobile screens) that impact interface usability."}
+    ],
+    "questions": [
+        {
+            "id": "ins202-eval-001",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["usability-specifications", "performance-measures", "lostness"],
+            "question": "In a web usability testing session, an observer notes that participants repeatedly click the browser's 'Back' button while searching for a specific product. In HCI usability specifications, what does a high frequency of Back button usage primarily indicate?",
+            "options": [
+                "The user is disoriented and the website's information architecture lacks clear navigation scent",
+                "The user prefers using browser navigation over website menus because of mouse ergonomics",
+                "The website's web server is responding too slowly, causing timeout errors",
+                "The participant is conducting an exploratory heuristic evaluation rather than a goal-directed task"
+            ],
+            "answer": 0,
+            "explanation": "In usability testing, frequent use of the browser's Back button is a classic behavioral proxy for navigation failure and disorientation ('lostness'). It indicates that the user followed a link expecting to find the target information, discovered they were on the wrong path, and had to backtrack because the information architecture or navigational scent failed them.",
+            "why_wrong": {
+                "1": "Users resort to browser back buttons not out of ergonomic preference, but because the on-page navigation failed to support their task trajectory.",
+                "2": "Server latency causes wait states or abort actions, not systematic navigation backtracking through content pages.",
+                "3": "Heuristic evaluation is performed by trained expert inspectors without users; users performing tasks do not conduct heuristic evaluations."
+            },
+            "source": "Module 03 (Know Thy User), Slide 39: Performance measures: a sampling"
+        },
+        {
+            "id": "ins202-eval-002",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["usability-specifications", "performance-vs-preference"],
+            "question": "Which of the following correctly pairs a performance measure with a preference measure in a usability specification plan?",
+            "options": [
+                "Performance: Time to fill in customer shipping details; Preference: A 5-point Likert rating of checkout ease",
+                "Performance: Likert scale score on visual aesthetics; Preference: Number of errors committed during checkout",
+                "Performance: User satisfaction rating on a 7-point scale; Preference: Number of calls to the telephone support desk",
+                "Performance: User's emotional sentiment during exit interview; Preference: Percentage of tasks completed without assistance"
+            ],
+            "answer": 0,
+            "explanation": "Performance measures are objective, directly observable behavioral data (such as time taken to fill in shipping details, error counts, task success rates). Preference measures are subjective attitudinal assessments of user satisfaction, feelings, and perceptions, typically captured using Likert scales.",
+            "why_wrong": {
+                "1": "This reverses the definitions: Likert aesthetic scores are preference measures, while checkout errors are performance measures.",
+                "2": "Satisfaction ratings are preference measures, and support desk call frequencies are performance measures.",
+                "3": "Emotional sentiment is a preference/attitudinal measure, while task completion rate is a core performance metric."
+            },
+            "source": "Module 03 (Know Thy User), Slides 38-40: Usability Specifications, Performance & Preference Measures"
+        },
+        {
+            "id": "ins202-eval-003",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["heuristic-evaluation", "nielsen", "evaluator-curve"],
+            "question": "A startup company with a limited budget wants to conduct a Heuristic Evaluation of their new e-commerce web application. According to Jakob Nielsen's empirical research on usability inspection, what is the optimal number of evaluators to employ, and why?",
+            "options": [
+                "3 to 5 evaluators, because they identify roughly 75% to 85% of usability problems while maintaining cost-effectiveness",
+                "Exactly 1 evaluator, because adding additional evaluators generates redundant noise without finding new flaws",
+                "15 to 20 evaluators, because anything fewer than 15 fails to reach statistical significance in qualitative inspection",
+                "At least 10 evaluators, because each evaluator catches only 10% of usability problems on average"
+            ],
+            "answer": 0,
+            "explanation": "Nielsen's mathematical model of heuristic evaluation demonstrates that a single evaluator catches only about 35% of usability issues. However, pooling 3 to 5 independent evaluators catches between 75% and 85% of all usability problems. Beyond 5 evaluators, the curve flattens significantly, resulting in diminishing returns where each additional evaluator costs more money but uncovers very few new problems.",
+            "why_wrong": {
+                "1": "A single evaluator misses ~65% of usability defects, making a 1-evaluator audit dangerously incomplete.",
+                "2": "Heuristic evaluation is an expert inspection technique, not an inferential hypothesis test requiring large sample sizes; 15-20 evaluators represents massive unnecessary expense.",
+                "3": "Evaluators catch ~35% on average, not 10%; 3 to 5 evaluators are well established as the optimal balance of cost and coverage."
+            },
+            "source": "Gerard Kim / Nielsen Norman Group Usability Inspection & Module 03/07 Evaluation Notes"
+        },
+        {
+            "id": "ins202-eval-004",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["nielsen-heuristics", "error-prevention", "user-control"],
+            "question": "A banking app allows users to permanently delete their account with a single click on a red button, immediately wiping all transaction history without asking for confirmation or providing an undo mechanism. Which TWO of Jakob Nielsen's usability heuristics are most severely violated?",
+            "options": [
+                "Error Prevention and User Control and Freedom",
+                "Aesthetic and Minimalist Design and Help and Documentation",
+                "Match Between System and the Real World and Flexibility of Use",
+                "Visibility of System Status and Consistency and Standards"
+            ],
+            "answer": 0,
+            "explanation": "The design violates 'Error Prevention' because it lacks safeguards (such as confirmation dialogs, typing 'DELETE', or double-checks) to prevent catastrophic accidental actions. It also violates 'User Control and Freedom' because it fails to provide an emergency exit or 'undo' capability when an unwanted action is triggered.",
+            "why_wrong": {
+                "1": "Aesthetic minimalism and documentation are secondary concerns; the immediate catastrophe is lack of safety guards and undo options.",
+                "2": "Real-world metaphor match and flexibility (shortcuts) do not address the catastrophic irreversibility of accidental account deletion.",
+                "3": "While system status feedback is important, the core failure modes here are absence of preventive friction and absence of user control/undo."
+            },
+            "source": "Jakob Nielsen's 10 Usability Heuristics (Heuristics #3 and #5)"
+        },
+        {
+            "id": "ins202-eval-005",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["likert-scale", "methodology", "survey-design"],
+            "question": "When designing a post-test questionnaire to measure user satisfaction, why do HCI researchers frequently include both positively and negatively worded Likert items (e.g., 'The system was easy to use' alongside 'I found the system unnecessarily complex')?",
+            "options": [
+                "To detect and mitigate acquiescence bias, where respondents tend to agree with statements uncritically",
+                "To convert ordinal Likert response categories into continuous ratio data",
+                "To confuse automated web bots that attempt to complete usability surveys",
+                "To double the number of statistical degrees of freedom in non-parametric tests"
+            ],
+            "answer": 0,
+            "explanation": "Acquiescence bias (or 'yea-saying') is the psychological tendency for survey respondents to agree with assertions presented to them. Alternating positively and negatively phrased items (as deliberately done in the standard System Usability Scale - SUS) forces participants to read questions carefully and prevents biased, all-agree response sets.",
+            "why_wrong": {
+                "1": "Alternating question phrasing cannot transform ordinal psychometric responses into ratio data (which requires an absolute true zero).",
+                "2": "In-lab usability surveys are administered to verified human participants, not public web scrapers.",
+                "3": "Reversing item polarities does not artificially double degrees of freedom; items are reversed and summed into a composite scale."
+            },
+            "source": "Student Notebook ('Likert Scale') & Standard Usability Psychometrics (Brooke 1996, SUS)"
+        },
+        {
+            "id": "ins202-eval-006",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "true_false_why",
+            "difficulty": 2,
+            "tags": ["recruiting", "testing-validity"],
+            "question": "In formal usability testing of a commercial software product, recruiting family members and personal friends of the design team as test participants is considered good practice because they are comfortable giving honest, critical feedback.",
+            "options": [
+                "True",
+                "False"
+            ],
+            "answer": 1,
+            "explanation": "Course materials explicitly state: 'Not family or friends: they won't be critical enough.' Personal acquaintances are psychologically predisposed to please the researcher, withhold harsh criticisms of flaws, and exhibit strong social desirability bias, completely invalidating objective usability findings.",
+            "why_wrong": {
+                "0": "Recruiting friends and family is a major methodological error in HCI; they are never critical enough and bias results toward polite approval."
+            },
+            "source": "Module 03 (Know Thy User), Slide 37: Recruiting Users"
+        },
+        {
+            "id": "ins202-eval-007",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["cognitive-walkthrough", "learnability", "inspection"],
+            "question": "During a Cognitive Walkthrough of an automated airport self-service baggage kiosk, an evaluator analyzes whether a novice passenger will be able to check their bags. Which of the following is ONE of the four foundational questions defined in the Cognitive Walkthrough methodology?",
+            "options": [
+                "Will the user associate the correct action with the effect they are trying to achieve?",
+                "Does the interface comply with the ISO 9241-11 ergonomic standard for touch displays?",
+                "Has the developer implemented the Model-View-Controller architecture correctly?",
+                "What is the mean time between failures (MTBF) of the kiosk barcode scanner hardware?"
+            ],
+            "answer": 0,
+            "explanation": "The Cognitive Walkthrough (Wharton et al.) evaluates learnability by answering four specific psychological questions at each step: (1) Will the user try to achieve the right effect? (2) Will the user notice that the correct action is available? (3) Will the user associate the correct action with the desired effect? (4) If the correct action is performed, will the user see that progress is being made?",
+            "why_wrong": {
+                "1": "ISO 9241-11 compliance is an international standard audit, not one of the four action-level Cognitive Walkthrough questions.",
+                "2": "MVC architecture is an internal software engineering implementation detail invisible to HCI walk-up learnability evaluations.",
+                "3": "Hardware MTBF is a mechanical/electronic reliability metric, completely outside the scope of cognitive usability inspection."
+            },
+            "source": "Wharton et al. (1994) Cognitive Walkthrough & HCI Evaluation Literature"
+        },
+        {
+            "id": "ins202-eval-008",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["environmental-analysis", "context-of-use", "hardware-constraints"],
+            "question": "A team is designing an outdoor automated teller machine (ATM) to be installed in Minnesota, USA, where winter temperatures frequently fall below -20 degrees Celsius. According to environmental analysis principles in HCI, what physical design requirement must be prioritized?",
+            "options": [
+                "Significantly enlarged physical buttons and generous on-screen touch targets to accommodate users wearing thick winter gloves",
+                "High-speed cursive handwriting recognition so users do not have to press keys",
+                "A whisper-quiet acoustic speaker system to avoid disturbing passersby in outdoor snowstorms",
+                "A 12-point multi-touch gesture system requiring precise three-finger pinch-to-zoom"
+            ],
+            "answer": 0,
+            "explanation": "Module 03 explicitly cites this environmental scenario: 'An outdoor ATM in a cold location where people wear gloves while using it (need huge buttons).' Environmental analysis mandates designing for real-world physical contexts: users in sub-zero weather wear thick mittens or gloves, which drastically reduces fine motor dexterity and renders small touch targets or capacitive styluses unusable.",
+            "why_wrong": {
+                "1": "Handwriting recognition requires removing gloves to hold a stylus, causing severe thermal discomfort, and is prone to recognition errors outdoors.",
+                "2": "Outdoor environments have wind, traffic, and snow noise; a whisper-quiet speaker would be completely inaudible.",
+                "3": "Complex multi-touch pinch gestures require bare fingers and fine motor coordination, impossible while wearing heavy winter gloves."
+            },
+            "source": "Module 03 (Know Thy User), Slide 36: Environment Analysis"
+        },
+        {
+            "id": "ins202-eval-009",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["evaluation-types", "formative-vs-summative"],
+            "question": "An HCI team tests a paper prototype of a healthcare scheduling app with four nurses during Week 3 of an eight-month development project, specifically to discover why users struggle to find open appointment slots. What type of evaluation is this?",
+            "options": [
+                "Formative evaluation",
+                "Summative evaluation",
+                "Regression evaluation",
+                "Benchmarking evaluation"
+            ],
+            "answer": 0,
+            "explanation": "Formative evaluation is conducted iteratively during the design and development cycle (frequently with low-fidelity prototypes) to diagnose interface defects, understand user cognitive models, and formatively shape subsequent redesigns. Summative evaluation occurs at the end of a project to measure final performance against specifications.",
+            "why_wrong": {
+                "1": "Summative evaluation is conducted at project completion to assess overall outcomes against strict quantitative benchmarks.",
+                "2": "Regression testing is a software engineering concept testing whether recent code commits broke existing features.",
+                "3": "Benchmarking compares a completed, live system against competing commercial products or past baselines."
+            },
+            "source": "HCI Evaluation Methodologies & Module 03/07 Notes"
+        },
+        {
+            "id": "ins202-eval-010",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "cloze",
+            "difficulty": 2,
+            "tags": ["usability-specifications", "performance-measures", "cloze"],
+            "question": "Complete the statements regarding usability specifications:\nObjective behavioral measures such as task completion time and error rates are classified as [blank1] measures, whereas subjective satisfaction ratings gathered via questionnaires are classified as [blank2] measures. When a user experiences severe frustration and shouts or slams their desk during a test, HCI observers record this as a [blank3] behavior.",
+            "answer": ["performance", "preference", "regressive"],
+            "explanation": "Usability specifications divide metrics into objective performance measures (quantifying user speed, errors, completion) and subjective preference measures (quantifying attitudes and ratings). Extreme emotional breakdowns during testing (such as shouting at the monitor or striking hardware) are documented as 'regressive behaviors'.",
+            "source": "Module 03 (Know Thy User), Slides 38-39: Usability Specifications"
+        },
+        {
+            "id": "ins202-eval-011",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "matching",
+            "difficulty": 3,
+            "tags": ["nielsen-heuristics", "matching"],
+            "question": "Match each interface flaw to the specific Jakob Nielsen Usability Heuristic it violates:",
+            "options": [
+                "A file-saving operation shows a blank screen for 30 seconds with no progress bar or spinner",
+                "A system error pop-up displays 'Fatal Exception 0x0000005F at memory address 0x8849'",
+                "A user accidentally hits 'Empty Trash' but there is no 'Undo' button or recovery option",
+                "A date-picker field allows users to select February 31st and only crashes after submitting the form"
+            ],
+            "answer": [
+                "Visibility of System Status",
+                "Help Users Recognize, Diagnose, and Recover from Errors",
+                "User Control and Freedom",
+                "Error Prevention"
+            ],
+            "explanation": "Lack of feedback violates 'Visibility of System Status'. Cryptic hexadecimal error codes violate 'Help Users Recognize, Diagnose, and Recover from Errors' (which demands plain language). Lack of an emergency exit or Undo violates 'User Control and Freedom'. Allowing invalid inputs instead of constraining choices violates 'Error Prevention'.",
+            "source": "Jakob Nielsen's 10 Usability Heuristics"
+        },
+        {
+            "id": "ins202-eval-012",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "sequencing",
+            "difficulty": 2,
+            "tags": ["usability-testing", "procedure", "sequencing"],
+            "question": "Arrange the standard procedural phases of a formal empirical usability testing session in chronological order from first to last:",
+            "options": [
+                "Administer pre-test briefing and emphasize that the system, not the participant, is being evaluated",
+                "Present realistic task scenarios one by one while observing actions and noting performance metrics",
+                "Administer post-task single-item ease questionnaires (SEQ) immediately following each task",
+                "Administer comprehensive post-test preference questionnaires (e.g., Likert-based SUS) and conduct debriefing"
+            ],
+            "answer": [0, 1, 2, 3],
+            "explanation": "Standard usability protocol begins with a pre-test briefing explaining consent and framing the test around the interface (not user competence). Realistic tasks are executed sequentially while logging metrics. After each individual task, brief post-task questions (like SEQ) capture immediate difficulty. Finally, at the session end, a global post-test instrument (like SUS) and debriefing interview take place.",
+            "source": "Module 03 / Module 07 Evaluation Procedures"
+        },
+        {
+            "id": "ins202-eval-013",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["likert-scale", "definition"],
+            "question": "What is a Likert Scale, and what are its typical anchor endpoints in usability evaluations?",
+            "answer": "A Likert Scale is a psychometric rating scale used to measure user attitudes, preferences, and levels of agreement with declarative statements. It typically consists of 5 or 7 symmetrical response levels anchored by 'Strongly Disagree' at one extreme, a neutral midpoint ('Neither Agree nor Disagree'), and 'Strongly Agree' at the opposite extreme.",
+            "explanation": "Invented by Rensis Likert, it is the primary instrument in HCI for converting subjective user satisfaction and perceived ease-of-use into quantifiable preference data.",
+            "source": "Module 03, Slide 40: Preference measures & Student Notebook ('Likert Scale')"
+        },
+        {
+            "id": "ins202-eval-014",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["heuristic-evaluation", "definition"],
+            "question": "What is Heuristic Evaluation, and who pioneered the methodology?",
+            "answer": "Heuristic Evaluation is a 'discount' usability inspection method developed by Jakob Nielsen and Rolf Molich. In this method, 3 to 5 usability specialists independently evaluate an interface against a set of recognized usability design principles (the 10 heuristics) to identify design defects without involving end users.",
+            "explanation": "It is widely favored because it is faster, cheaper, and less resource-intensive than recruiting end users, identifying 75% to 85% of usability issues when conducted by 3-5 evaluators.",
+            "source": "Jakob Nielsen Usability Engineering & INS 202 Evaluation Literature"
+        },
+        {
+            "id": "ins202-eval-015",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["performance-measures", "metrics"],
+            "question": "List four distinct performance measures commonly recorded during website usability testing.",
+            "answer": "1. Task completion time (time to find an item or place an order)\n2. Task completion rate (percentage of tasks completed correctly)\n3. Back button usage frequency (indicating navigational disorientation)\n4. Number of clicks / navigation path depth to locate information\n(Also: error count, support call frequency, and regressive behaviors).",
+            "explanation": "Performance measures capture what users actually do (objective behavioral data) rather than what they say they do.",
+            "source": "Module 03 (Know Thy User), Slide 39: Performance measures: a sampling"
+        },
+        {
+            "id": "ins202-eval-016",
+            "course": "INS 202",
+            "topic": "evaluation_techniques_likert",
+            "type": "explain",
+            "difficulty": 3,
+            "tags": ["usability-specifications", "likert-scale", "analysis"],
+            "question": "Explain the fundamental difference between Performance Measures and Preference Measures in HCI usability specifications. Why is it dangerous for a development team to rely exclusively on user preference ratings when evaluating a new interface?",
+            "answer": "Performance measures capture objective behavioral data regarding what users actually do during task execution (e.g., completion time, error counts, task success rate, back-button frequency). In contrast, preference measures capture subjective attitudinal data regarding what users think, feel, or report (typically quantified via Likert scales assessing satisfaction and perceived ease).\n\nRelying exclusively on preference ratings is dangerous because of the well-documented divergence between user performance and user preference. Users frequently exhibit polite bias, familiarity bias, or acquiescence bias, rating an interface highly on a Likert scale ('I liked this system') even while taking three times longer than necessary to complete tasks or committing numerous undetected errors. Conversely, an interface that dramatically improves objective productivity may initially receive mediocre preference scores simply because it departs from legacy habits. Comprehensive usability specifications mandate measuring both objective performance and subjective preference.",
+            "explanation": "Evaluating both dimensions prevents deploying software that users 'like' but cannot operate efficiently, or software that is technically fast but hated by users.",
+            "marking_points": [
+                "Clearly defines performance measures as objective, observable behavioral metrics (e.g., task time, success rate, error counts, back button clicks)",
+                "Clearly defines preference measures as subjective, self-reported attitudinal metrics (e.g., Likert satisfaction scales)",
+                "Identifies the performance-preference divergence (users can rate a system favorably despite poor performance, or vice-versa)",
+                "Explains the risks of bias in self-reported ratings (acquiescence bias, polite/social desirability bias, unperceived errors)",
+                "Concludes that both performance and preference measures must be established early and evaluated concurrently"
+            ],
+            "source": "Module 03 (Know Thy User), Slides 38-41: Usability Specifications Summary"
+        }
+    ],
+    "case_studies": [
+        {
+            "id": "ins202-eval-cs1",
+            "scenario": "Apex Health Systems has developed an intensive care unit (ICU) nurse telemetry dashboard. The development team performed a Heuristic Evaluation using four independent usability specialists before deploying the system. During the audit, the evaluators noted the following findings:\n1. Vital signs (heart rate, SpO2) update in real-time, but when network latency causes data packets to stall, the screen continues displaying stale numerical values for up to 90 seconds without any visual warning or disconnected status indicator.\n2. The button to 'Acknowledge Alarm' and the button to 'Permanently Silence All Cardiac Alarms' are adjacent, identical in size and shape, and both colored red.\n3. When an alarm is silenced by mistake, the interface provides no confirmation dialogue and no 'Undo Silence' action; re-enabling alarms requires navigating through three layers of configuration sub-menus.\n4. Across the four evaluators, 34 distinct usability issues were identified: Evaluator 1 found 18, Evaluator 2 found 15, Evaluator 3 found 19, and Evaluator 4 found 14, with substantial overlap across their findings.",
+            "sub_questions": [
+                {
+                    "id": "ins202-eval-cs1-q1",
+                    "course": "INS 202",
+                    "topic": "evaluation_techniques_likert",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["heuristic-evaluation", "nielsen-heuristics", "case-study"],
+                    "question": "Regarding Finding #1 (stale telemetry data displayed during network stalls without indication), which of Jakob Nielsen's 10 Usability Heuristics is most critically violated?",
+                    "options": [
+                        "Visibility of System Status, because the system fails to keep the nurse informed about its operational state within a reasonable time",
+                        "Flexibility and Efficiency of Use, because keyboard shortcuts are not provided for network reconnection",
+                        "Aesthetic and Minimalist Design, because vital numbers clutter the display",
+                        "Match Between System and the Real World, because patient physiology does not follow network packet structures"
+                    ],
+                    "answer": 0,
+                    "explanation": "Heuristic #1 (Visibility of System Status) states that systems must always keep users informed about what is going on through appropriate, timely feedback. In an ICU environment, continuing to display stale vitals without indicating a frozen or disconnected network connection is a life-threatening violation of status visibility.",
+                    "why_wrong": {
+                        "1": "Keyboard shortcuts do not solve the fundamental safety failure of concealing system disconnections.",
+                        "2": "Displaying vital signs is the core medical utility of the screen, not aesthetic clutter.",
+                        "3": "The failure is not metaphorical terminology; it is the total concealment of system connection state."
+                    },
+                    "source": "Jakob Nielsen's 10 Usability Heuristics (Heuristic #1)"
+                },
+                {
+                    "id": "ins202-eval-cs1-q2",
+                    "course": "INS 202",
+                    "topic": "evaluation_techniques_likert",
+                    "type": "mcq",
+                    "difficulty": 4,
+                    "tags": ["heuristic-evaluation", "evaluator-curve", "case-study"],
+                    "question": "Based on Nielsen's mathematical model of Heuristic Evaluation, what conclusion should Apex Health's project manager draw regarding the four evaluators finding 34 issues?",
+                    "options": [
+                        "Four evaluators have uncovered approximately 75% to 85% of total usability defects, representing an optimal balance between cost and defect detection",
+                        "Four evaluators are inadequate for safety-critical medical systems; at least 50 evaluators must be hired to find all flaws",
+                        "Having overlap between the evaluators indicates wasted resources; only Evaluator 3 should have been paid",
+                        "Because no real ICU nurses were included in the heuristic evaluation, the entire set of 34 findings is invalid and must be discarded"
+                    ],
+                    "answer": 0,
+                    "explanation": "Nielsen's model demonstrates that 4 evaluators typically discover between 75% and 85% of all usability problems in an interface. Employing 3 to 5 evaluators is the industry gold standard for cost-effective inspection. Overlap among evaluators confirms the reliability of the findings without requiring wasteful hiring of dozens of inspectors.",
+                    "why_wrong": {
+                        "1": "Hiring 50 evaluators causes massive diminishing returns; the curve flattens drastically after 5 evaluators.",
+                        "2": "Overlap is expected and mathematically necessary in heuristic evaluation to achieve high confidence across independent inspectors.",
+                        "3": "Heuristic evaluation is an expert inspection method intentionally conducted without end users to catch baseline design defects before expensive clinical testing."
+                    },
+                    "source": "Nielsen Usability Inspection Curve & Module 07 Evaluation Notes"
+                }
+            ]
+        },
+        {
+            "id": "ins202-eval-cs2",
+            "scenario": "TransCity Metro installed 200 touchscreen smart ticketing kiosks across subway stations in Abuja. To evaluate the interface, the transit authority conducted an empirical usability test in a usability laboratory with 20 recruited commuters, followed by an in-situ field evaluation in an outdoor station. In the lab, commuters were given task scenarios (e.g., 'Purchase a round-trip ticket to the Central Station using a debit card'). Observers recorded task completion times, error counts, and post-test 5-point Likert questionnaire responses ('The kiosk was simple to navigate', 'I felt confident using this machine').\n\nResults revealed a major divergence: 85% of users rated their satisfaction as 'Strongly Agree' (5/5) on the Likert questionnaire, yet performance metrics showed that 45% of users took over 4 minutes to complete the purchase (target specification was < 90 seconds) and made an average of 3.8 wrong taps, frequently pressing the 'Back' button. Furthermore, when deployed outdoors during harmattan glare and in cold early mornings where commuters wore gloves, error rates surged to 78%.",
+            "sub_questions": [
+                {
+                    "id": "ins202-eval-cs2-q1",
+                    "course": "INS 202",
+                    "topic": "evaluation_techniques_likert",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["performance-vs-preference", "likert-scale", "case-study"],
+                    "question": "Analyze the contradiction between the high Likert satisfaction scores (85% Strongly Agree) and the poor objective performance metrics (45% failure to meet time specifications, 3.8 errors, frequent Back button usage). What psychometric and human-factors phenomena explain this divergence?",
+                    "answer": "This contradiction illustrates the classic 'performance versus preference divergence' in HCI evaluation. Several key factors explain this phenomenon:\n1. Social Desirability and Acquiescence Bias: In a lab setting, test participants frequently exhibit 'pleasing the researcher' bias, rating the machine favorably out of politeness or reluctance to criticize a high-tech novelty, regardless of their actual struggle.\n2. Low Expectations and Novelty Effect: Commuters comparing the digital kiosk to standing in long manual ticket queues may feel satisfied simply that the machine worked and dispensed a ticket, overlooking their own inefficiencies and confusion.\n3. Lack of Error Awareness: Users may not perceive their multiple Back-button taps or exploratory missteps as 'system errors', assuming that trial-and-error exploration is normal.\n4. Cognitive Dissonance: Having successfully obtained a ticket after substantial effort, users rationalize their experience positively ('I did it, so it was good').\n\nThis discrepancy demonstrates why usability specifications must never rely solely on post-test Likert preference scales; objective behavioral performance data (completion times, error logs, lostness metrics) is critical to uncover actual workflow bottlenecks.",
+                    "explanation": "High subjective ratings can mask severe operational bottlenecks; both dimensions are mandatory in usability specifications.",
+                    "marking_points": [
+                        "Identifies the performance-preference divergence phenomenon",
+                        "Explains survey biases such as acquiescence bias or social desirability (politeness to evaluators)",
+                        "Discusses user expectations (satisfaction with successful outcome despite high task time)",
+                        "Mentions that users may not recognize their own trial-and-error or backtracking as measurable errors",
+                        "Concludes that relying solely on preference measures creates a false impression of usability success"
+                    ],
+                    "source": "Module 03 (Know Thy User), Slides 38-41: Usability Specifications & Performance vs Preference"
+                },
+                {
+                    "id": "ins202-eval-cs2-q2",
+                    "course": "INS 202",
+                    "topic": "evaluation_techniques_likert",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["environmental-analysis", "outdoor-kiosk", "case-study"],
+                    "question": "When the kiosk was deployed outdoors in Abuja during sunny harmattan mornings with gloved commuters, error rates surged to 78%. According to HCI Environmental Analysis, what two design modifications should be implemented immediately to fix these environmental failures?",
+                    "options": [
+                        "Install high-contrast anti-glare display coatings (or overhead shading) and enlarge touchscreen touch target button dimensions with capacitive glove sensitivity",
+                        "Replace touchscreens with voice-activated microphones and reduce on-screen font sizes to fit more text",
+                        "Provide a printed 40-page user manual attached by a metal chain to the side of each kiosk",
+                        "Increase the screen resolution from 1080p to 4K UHD and switch from debit card payments to cryptocurrency"
+                    ],
+                    "answer": 0,
+                    "explanation": "Environmental analysis evaluates the physical context of use. Sunlight glare washes out low-contrast screens, requiring anti-glare shielding or high-contrast transflective displays. Gloved hands have much wider contact surface areas and lack fine capacitive conductivity, requiring significantly enlarged physical/touch targets and high-sensitivity capacitive or resistive touch sensors.",
+                    "why_wrong": {
+                        "1": "Voice recognition fails in noisy transit subway stations, and reducing font sizes exacerbates outdoor sunlight legibility issues.",
+                        "2": "Commuters at a transit station will never read a 40-page printed manual; walk-up interfaces must be self-explanatory.",
+                        "3": "4K resolution does not solve outdoor sunlight wash-out or gloved touch target inaccuracies."
+                    },
+                    "source": "Module 03 (Know Thy User), Slide 36: Environment Analysis"
+                }
+            ]
+        }
+    ]
+}
+
+with open("app/content/INS 202/evaluation_techniques_likert.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+
+print("Saved evaluation_techniques_likert.json successfully!")

@@ -1,0 +1,389 @@
+=== SLIDE 1 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Human-Computer Interaction (HCI)
+=== SLIDE 2 ===
+Recommended Text
+User-Centered Website Development: A Human-Computer Interaction Approach
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+=== SLIDE 3 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+1. Human-Computer Interaction: An Overview
+In this module you will learn about:
+The benefits of making a website more usable
+The history and goals of Human-Computer Interaction
+The methodology of User-Centered Development
+=== SLIDE 4 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+1.1 Introduction
+Have you ever been unable to find something in a website that you know is there?
+Have you ever been enraged by a useless or misleading error message?
+Have you ever wondered why a website needs to know your e-mail address, and left the site for fear it might be misused?
+=== SLIDE 5 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+It doesn’t have to be that way
+You can design websites and mobile apps that
+Are pleasant and convenient for your users
+Let them accomplish their goals
+The key: think about your users
+Learn about them
+Watch them work, in their workplace
+Interview them, also in their workplace
+=== SLIDE 6 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+1.2 Benefits of Usable Web sites
+Gaining a competitive edge
+Reducing development and maintenance costs
+Improving productivity
+Lowering support costs
+=== SLIDE 7 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Gaining a Competitive Edge, continued
+Conversion rate is the percentage of visitors who take an action you want them to take, such as making a purchase
+Increasing the conversion rate lowers the cost of individual sales
+Ease of use is the most important driver of high conversion rates
+And there is gold in improving the conversion rate. A good conversion rate is between 2 percent and 5 percent.
+=== SLIDE 8 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Reducing Development and Maintenance Costs
+Learn about users first, and you will avoid
+Implementing features users don’t want
+Creating features that are annoying or inefficient
+High cost of making changes late in the development cycle
+=== SLIDE 9 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Improving productivity
+For e-commerce, productivity means that users find what they want—and succeed in buying it
+For a company intranet, productivity means employees become more efficient
+=== SLIDE 10 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Lower support costs
+Calls to customer support are very expensive for the vendor: estimates range from $12 to $250 per call
+A website that reduces support calls can save major dollars
+=== SLIDE 11 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+1.3  What is HCI?
+“Human Computer Interaction is a discipline concerned with the design, evaluation and implementation of interactive computing systems for human use and with the study of the major phenomena surrounding them.”
+As defined by the Special Interest Group on Human-Computer Interaction (SIGCHI) of the Association for Computing Machinery (ACM)
+=== SLIDE 12 ===
+Human–computer interaction (HCI) is a cross-disciplinary area (e.g.,engineering, psychology, ergonomics, design) that deals with the theory, design, implementation, and evaluation of the ways that humans use and interact with computing devices
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+What is HCI? (cont.)
+=== SLIDE 13 ===
+Interaction Vs Interface
+Interaction is a concept to be distinguished from another similar term, interface. 
+Roughly speaking, interaction refers to an abstract model by which humans interact with the computing device for a given task, and 
+an interface is a choice of technical realization (hardware or software) of such a given interaction model. 
+Thus, the letter I in HCI refers to both interaction and interface, encompassing the abstract model and the technological methodology
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 14 ===
+Interaction Vs Interface
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 15 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+A major cost shift
+50 years ago the cost of a computer would pay the salaries of 200 programmers for a year 
+People were expected to work hard to save computer time
+Today the salary of one programmer for a year will buy 200 computers—each vastly more powerful than the early machines
+Now the goal is to make computers easy to use, to save people time
+=== SLIDE 16 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+How do we make computers easy to use?
+By applying the principles of Human-Computer Interaction
+By being, as an HCI practitioner, the advocate for the user
+=== SLIDE 17 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Examples of interactive computing systems
+Single PC - capable of displaying web pages
+Embedded devices, for example in cars and in cell phones
+Handheld Global Positioning Systems for outdoor activities
+Software that allows collaboration
+=== SLIDE 18 ===
+Evolution of Interfaces in the Course History of Computing)
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 19 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+1.4 Goals of HCI
+To develop or improve the
+Safety
+Utility
+Effectiveness
+Efficiency
+Usability
+Appeal
+	 .  .  .  of systems that include computers
+=== SLIDE 20 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Safety
+Safety of Users—think of
+Air traffic control
+Hospital intensive care
+Safety of Data—think of
+Protection of files from tampering
+Privacy and security
+=== SLIDE 21 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Utility and effectiveness
+Utility: what services a system provides; examples:
+Information
+Instruction
+Purchases
+Effectiveness: user’s ability to achieve goals; examples:
+Find desired information 
+Enter credit card data
+=== SLIDE 22 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Utility and effectiveness are distinct
+A web site might provide all necessary services, but if users can’t find the items they want to buy, the site lacks effectiveness
+=== SLIDE 23 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Efficiency
+A measure of how quickly users can accomplish their goals or finish their work using the system
+=== SLIDE 24 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Usability
+Ease of learning
+Ease of use
+Can be an entire graduate course!
+=== SLIDE 25 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Appeal
+How well users like the system
+First impressions 
+Long-term satisfaction
+=== SLIDE 26 ===
+Example: Goals of HCI
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+=== SLIDE 27 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+1.5 User-Centered Development Methodology
+User-centric, not data-centric
+Involves users in the design process
+Usability can be quantified and measured
+Highly Iterative
+Involves testing and revision
+Interdisciplinary and eclectic, building on a dozen different disciplines
+=== SLIDE 28 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Fields that HCI builds on
+Computer Science
+Implementation of website or other interface
+Engineering
+Faster, cheaper equipment
+Ergonomics
+Design for human factors
+Graphic design
+Visual communication
+Technical writing
+Textual communication
+=== SLIDE 29 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Fields that HCI builds on, continued
+Linguistics, artificial intelligence
+Speech recognition, natural language processing
+Cognitive psychology
+Perception, memory, mental models
+Sociology
+How people interact in groups
+Anthropology
+Study of people in their work settings
+A highly eclectic field, obviously, which offers both challenges and satisfactions
+=== SLIDE 30 ===
+Principles of HCI
+“Know Thy User”
+Understand the Task
+Reduce Memory Load
+Strive for Consistency
+Remind Users and Refresh Their Memory
+Prevent Errors / Reversal of Action
+Naturalness
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 31 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+The stages of  user-centered development
+Needs analysis
+User and task analysis
+Functional analysis
+Requirements analysis
+Setting usability specifications
+Design
+Prototyping
+Evaluation
+=== SLIDE 32 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Needs analysis
+Summarizes the nature and purpose of the system
+Type of system (website, video game, spreadsheet)
+People it will serve
+Benefits it will provide
+=== SLIDE 33 ===
+Example 1
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 34 ===
+Example 2
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 35 ===
+Example 3
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 36 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+User and task analysis
+User analysis - characterizes the people who will use the site:
+General considerations (age, education, experience with computers)
+Task analysis - what users will do
+User’s goals - what they want to accomplish
+Tasks  or activities  carried out to achieve the goals
+More on this in Week 3
+=== SLIDE 37 ===
+01:Introduction to HCI
+User and Task Analysis (Example)
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 38 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Functional Analysis
+Functionality  or computer services that users will need and what will be automated	
+Close correspondence between functions and tasks
+Examples: travel site task: “find all flights to xyz, ordered by price”
+Needs search function and sorting capability
+Music streaming site:  task “buy a music file” or “pay for subscription”
+Needs secure on-line transaction functionality
+=== SLIDE 39 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Requirements Analysis
+Describes the formal specifications required to implement the system:
+Data dictionaries
+Entity-relationship diagrams
+Object oriented modeling
+Similar to software engineering
+=== SLIDE 40 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Setting Usability Specifications
+Answers question “How good is your site?”
+Performance measures (such as number of tasks completed, number of errors, etc.)
+Preference measures (such as first impression, overall satisfaction)
+=== SLIDE 41 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Design
+Organization
+Visual organization to create clarity and consistency 
+Layout
+Appearance
+“Look and feel”
+Now you can begin to sketch layout of pages—because you know your users and what they want to do
+More on this in Weeks 4, and 5.
+=== SLIDE 42 ===
+Design Example - Reduce Memory Load
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 43 ===
+Design Example - Strive for Consistency
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+=== SLIDE 44 ===
+Design Example – Remind Users and Refresh Their Memory
+01:Introduction to HCI
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 45 ===
+Design – Prevent Errors / Reversal of Action
+01:Introduction to HCI
+Preventing errors by presenting only the relevant information at a given time (inactive menu items) and making selections rather than enforcing recall or full manual input specification.
+Human–Computer Interaction Fundamentals and Practice by Gerard Jounghyun Kim
+=== SLIDE 46 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Prototyping
+Greek “proto” = first
+Prototype is an original model or pattern
+Global: entire site
+Local: selected parts of the site
+Prototypes
+Evolutionary: becomes the final project 
+Throw-away: serves as a pattern
+High fidelity: resembles final product
+Low fidelity: just rough sketch - not close to final
+=== SLIDE 47 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+A low-fidelity prototype
+=== SLIDE 48 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+A High-Fidelity Prototype
+=== SLIDE 49 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Note: Implementation
+This is where the website or other interface is implemented, in HTML or a programming language
+=== SLIDE 50 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Evaluation
+Expert-based evaluation
+Bring in a usability expert
+User-based evaluation 
+Test the website or other interface with users
+In this course we emphasize user-based evaluation
+=== SLIDE 51 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+1.6 Characteristics of User-Centered Development
+Highly iterative
+DESIGN
+PROTOTYPE
+EVALUATE
+READY TO 
+IMPLEMENT
+MEET USER 
+SPECIFICATIONS?
+NO
+YES
+=== SLIDE 52 ===
+01:Introduction to HCI
+Copyright © 2004 by Prentice Hall
+Summary
+In this module you have learned that a user-centered design methodology:
+Is industry-proven
+Lets you build websites or other interfaces that meet user expectations
+Leads to cost-effective and timely implementation 
+Is highly interactive 
+You have also learned that HCI is a highly eclectic field, building on a dozen other disciplines

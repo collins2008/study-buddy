@@ -1,0 +1,426 @@
+import json
+
+data = {
+    "course": "ENT 211",
+    "topic": "entrepreneurship_core_concepts",
+    "summary": "This topic establishes the foundational concepts, theoretical perspectives, and behavioral mindsets of entrepreneurship within the framework of national economic development and the Nigerian business environment. Entrepreneurship is analyzed as a dynamic value-creation process: identifying market opportunities, assembling scarce resources, taking calculated risks, testing operational assumptions, and delivering sustainable customer value. Foundational scholarly perspectives are examined: Joseph Schumpeter's emphasis on innovative 'new combinations', Peter Drucker's view that entrepreneurs systematically 'search for change and exploit it as an opportunity', and Robert Hisrich's integration of financial, psychic, and social risk-bearing. The topic rigorously contrasts entrepreneurs against traditional operational managers (opportunity-driven vs. resource-driven; risk-embracing vs. risk-minimizing) and independent entrepreneurs against corporate intrapreneurs. Finally, the role of entrepreneurship in macroeconomic transformation (job creation, import substitution, supply chain linkages) is grounded in Nigerian industrial and technological exemplars, including Aliko Dangote, Tony Elumelu, Ibukun Awosika, and fintech pioneers.",
+    "key_terms": [
+        {"term": "Entrepreneurship", "definition": "The process of identifying opportunities, assembling and coordinating scarce resources, taking calculated risks, and creating value through business activities."},
+        {"term": "Intrapreneurship", "definition": "Entrepreneurial activity and venture creation conducted by an employee within an established corporate organization using company resources."},
+        {"term": "Calculated Risk", "definition": "A deliberate business decision where potential risks and failure costs are weighed, mitigated, and evaluated against expected financial and strategic rewards."},
+        {"term": "Schumpeterian Entrepreneur", "definition": "An economic agent of change who introduces 'new combinations' (new products, production methods, markets, supply sources, or organizational forms) to disrupt economic equilibrium."},
+        {"term": "Drucker's Opportunity Principle", "definition": "The tenet that entrepreneurs systematically search for change, respond to it, and exploit it as an opportunity to create value."},
+        {"term": "Africapitalism", "definition": "An economic philosophy pioneered by Tony Elumelu asserting that the African private sector must drive social and economic development through long-term investments in key sectors."},
+        {"term": "Backward Integration", "definition": "An industrial strategy (exemplified by Dangote Group) of establishing in-house production of raw materials and inputs previously imported or purchased from external suppliers."},
+        {"term": "Entrepreneurial Mindset", "definition": "A set of cognitive and behavioral capabilities—including opportunity recognition, vision, persistence, adaptability, and self-efficacy—that enable action under uncertainty."},
+        {"term": "Opportunity vs Resource Orientation", "definition": "The core distinction between entrepreneurs (who pursue opportunities regardless of currently controlled resources) and traditional managers (who optimize existing resources)."},
+        {"term": "Import Substitution", "definition": "An economic development strategy where domestic entrepreneurs manufacture local goods to replace foreign imports, conserving foreign currency reserves."}
+    ],
+    "questions": [
+        {
+            "id": "ent211-fnd-001",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["entrepreneurship-definition", "process", "value-creation"],
+            "question": "According to the ENT 211 lecture curriculum, what is the core definition of entrepreneurship?",
+            "options": [
+                "The process of identifying opportunities, assembling resources, taking calculated risks, and creating value through business activities",
+                "The legal act of incorporating a limited liability company with the Corporate Affairs Commission (CAC)",
+                "Investing surplus inherited capital into government treasury bills to guarantee risk-free returns",
+                "Managing day-to-day administrative paperwork in a large multinational corporation"
+            ],
+            "answer": 0,
+            "explanation": "Slide 4 of the lecture notes explicitly defines entrepreneurship: 'Entrepreneurship is the process of identifying opportunities, assembling resources, taking calculated risks and creating value through business activities.' It involves a continuous cycle of spotting gaps, mobilising resources, testing assumptions, taking calculated risks, and delivering tangible value.",
+            "why_wrong": {
+                "1": "Legal registration is merely a regulatory step; without opportunity identification, resource mobilization, and value creation, company registration is not entrepreneurship.",
+                "2": "Investing in treasury bills is passive financial investment with zero entrepreneurial risk, venture creation, or innovation.",
+                "3": "Administrative routine maintenance describes traditional corporate management, not entrepreneurship."
+            },
+            "source": "ENT 211 Lecture Notes, Slide 4: Core Concept"
+        },
+        {
+            "id": "ent211-fnd-002",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["key-thinkers", "peter-drucker", "opportunity"],
+            "question": "Which prominent management thinker defined the entrepreneur as an individual who 'always searches for change, responds to it, and exploits it as an opportunity'?",
+            "options": [
+                "Peter F. Drucker",
+                "Joseph A. Schumpeter",
+                "Frank H. Knight",
+                "Robert D. Hisrich"
+            ],
+            "answer": 0,
+            "explanation": "Peter Drucker famously defined the entrepreneur in terms of systematic change: entrepreneurs do not cause change by themselves, but they constantly search for change, respond to it, and treat it as a potential opportunity to create new value.",
+            "why_wrong": {
+                "1": "Joseph Schumpeter emphasized 'new combinations' and creative destruction.",
+                "2": "Frank Knight emphasized the distinction between risk and uninsurable uncertainty.",
+                "3": "Robert Hisrich highlighted creating something new while assuming financial, psychic, and social risks."
+            },
+            "source": "ENT 211 Lecture Notes, Slide 5: Key Thinkers"
+        },
+        {
+            "id": "ent211-fnd-003",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["entrepreneur-vs-manager", "roles", "comparison"],
+            "question": "In comparing the roles of an Entrepreneur and a Traditional Manager, which statement accurately reflects their fundamental differences according to the course matrix?",
+            "options": [
+                "Entrepreneurs create or pursue new opportunities and embrace calculated risk, whereas managers run operations, enforce standards, and control operational risk",
+                "Entrepreneurs only work alone without employees, whereas managers always work in large teams",
+                "Managers take massive personal financial risks, whereas entrepreneurs are legally protected from all financial losses",
+                "Entrepreneurs focus entirely on short-term weekly efficiency, whereas managers focus exclusively on long-term visionary disruption"
+            ],
+            "answer": 0,
+            "explanation": "Slide 8 explicitly contrasts the two roles: The Entrepreneur creates/pursues opportunities, takes calculated entrepreneurial risks, prioritizes innovation and growth, and challenges existing ways of working. The Manager runs and improves ongoing operations, controls operational risk, prioritizes efficiency and consistency, and maintains reliable systems and standards.",
+            "why_wrong": {
+                "1": "Entrepreneurs frequently lead large organizations (e.g., Aliko Dangote manages tens of thousands of employees).",
+                "2": "Entrepreneurs bear direct personal financial and career risk, while salaried corporate managers are insulated from personal venture loss.",
+                "3": "This inverts the roles: entrepreneurs are visionary and growth-oriented; managers focus on operational efficiency and stability."
+            },
+            "source": "ENT 211 Lecture Notes, Slide 8: Entrepreneur vs. Manager"
+        },
+        {
+            "id": "ent211-fnd-004",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["intrapreneurship", "corporate-venturing"],
+            "question": "A senior software engineer at Access Bank notices that small retail merchants struggle with POS terminal network downtime. She uses the bank's internal R&D budget, compliance team, and banking license to develop an offline USSD-based payment product for the bank. What is this engineer's role, and what is her primary risk profile?",
+            "options": [
+                "An Intrapreneur; she leverages corporate resources and brand equity, while her personal financial capital is shielded from venture failure",
+                "An Independent Entrepreneur; she bears full personal bankruptcy risk and owns 100% of the resulting patent rights",
+                "A Venture Capitalist; she provides equity financing to external startups in exchange for board seats",
+                "A Speculator; she is gambling on currency exchange fluctuations without creating economic value"
+            ],
+            "answer": 0,
+            "explanation": "An intrapreneur (corporate entrepreneur) innovates and creates new commercial solutions *within* an established organization. The intrapreneur benefits from corporate capital, infrastructure, and salary stability (shielded personal financial risk), though the resulting intellectual property and equity belong to the corporation.",
+            "why_wrong": {
+                "1": "An independent entrepreneur operates outside a corporation and bears direct personal financial liability.",
+                "2": "A venture capitalist is an institutional investor, not an employee creating internal products.",
+                "3": "Speculation involves betting on price swings, not engineering payment systems."
+            },
+            "source": "ENT 211 Infographic Lecture, Slide 2: Entrepreneurship vs. Intrapreneurship"
+        },
+        {
+            "id": "ent211-fnd-005",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["nigerian-exemplars", "aliko-dangote", "backward-integration"],
+            "question": "Aliko Dangote's industrial journey in Nigeria transitioned the Dangote Group from trading and importing bulk commodities (cement, sugar, flour) into establishing massive local manufacturing factories and quarries. In business strategy and economic development, what is this process called?",
+            "options": [
+                "Backward Integration, which reduces national import dependence and captures value along the supply chain",
+                "Conglomerate Liquidation, which sells off manufacturing assets to invest in foreign real estate",
+                "Kirznerian Speculative Arbitrage, which exploits daily currency black-market rates",
+                "Horizontal Disinvestment, which shuts down local factories to import finished goods from Asia"
+            ],
+            "answer": 0,
+            "explanation": "Dangote's core strategy is 'backward integration': rather than continuing to import finished cement and sugar from abroad, the group invested in domestic manufacturing, building quarries, cement plants, and refineries in Nigeria. This created massive domestic employment, saved billions of dollars in foreign exchange, and stimulated deep backward and forward industrial linkages.",
+            "why_wrong": {
+                "1": "Liquidation means closing businesses down, whereas Dangote expanded massively into heavy manufacturing.",
+                "2": "Arbitrage is trading on price discrepancies without establishing industrial plants.",
+                "3": "Horizontal disinvestment would mean exiting domestic production, the exact opposite of Dangote's factory construction."
+            },
+            "source": "ENT 211 Lecture Notes, Slide 6: The Role & Nigerian Industrial Exemplars"
+        },
+        {
+            "id": "ent211-fnd-006",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "mcq",
+            "difficulty": 2,
+            "tags": ["africapitalism", "tony-elumelu"],
+            "question": "What is 'Africapitalism', as pioneered by Nigerian entrepreneur and philanthropist Tony Elumelu?",
+            "options": [
+                "The economic philosophy that Africa's private sector must lead the continent's socioeconomic transformation through long-term strategic investments that create both economic prosperity and social wealth",
+                "A policy advocating that all African businesses should be nationalized and owned exclusively by the federal government",
+                "A financial trading model advocating that African startups should only accept foreign aid grants and avoid generating commercial profits",
+                "A doctrine stating that entrepreneurship is biologically inherited and cannot be taught or cultivated"
+            ],
+            "answer": 0,
+            "explanation": "Africapitalism, championed by Tony Elumelu, is the economic philosophy that the private sector—specifically African entrepreneurs making long-term investments in key sectors—is the primary engine that will create sustainable economic growth, generate jobs, and drive societal development across Africa.",
+            "why_wrong": {
+                "1": "Africapitalism champions the *private sector* and free enterprise, not state nationalization.",
+                "2": "Africapitalism emphasizes commercial viability, self-reliance, and sustainable private investment over foreign aid dependency.",
+                "3": "Course notes explicitly emphasize that entrepreneurial behaviors are developable skills, not genetic traits."
+            },
+            "source": "ENT 211 Lecture Notes, Slide 6 & Nigerian Case Exemplars"
+        },
+        {
+            "id": "ent211-fnd-007",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "true_false_why",
+            "difficulty": 2,
+            "tags": ["entrepreneurial-mindset", "risk-taking"],
+            "question": "Successful entrepreneurs are reckless gamblers who thrive on taking the highest possible financial risks regardless of the odds.",
+            "options": [
+                "True",
+                "False"
+            ],
+            "answer": 1,
+            "explanation": "False. Slide 7 explicitly highlights that successful entrepreneurs practice 'Calculated risk-taking: weighs possible rewards against risks.' Entrepreneurs systematically avoid pure gambles; they gather information, test assumptions on a small scale, hedge downside exposures, and take measured, calculated risks where the potential returns justify the managed risk.",
+            "why_wrong": {
+                "0": "Entrepreneurs are not gamblers; they take calculated, mitigated risks and actively work to reduce uncertainty."
+            },
+            "source": "ENT 211 Lecture Notes, Slide 7: Entrepreneurial Mindset"
+        },
+        {
+            "id": "ent211-fnd-008",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "mcq",
+            "difficulty": 3,
+            "tags": ["economic-development", "smes", "linkages"],
+            "question": "How does entrepreneurship contribute to the macroeconomic development of Nigeria through 'forward and backward linkages'?",
+            "options": [
+                "By purchasing local raw materials from agricultural farmers (backward linkage) and supplying processed inputs to retail distributors and bakeries (forward linkage)",
+                "By borrowing US Dollars from international hedge funds and depositing them in offshore tax havens",
+                "By replacing all human factory employees with imported robots to eliminate the domestic labor force",
+                "By strictly trading in imported finished luxury items without creating any local processing facilities"
+            ],
+            "answer": 0,
+            "explanation": "Economic linkages describe the ripple effects of enterprise: a backward linkage occurs when an enterprise creates demand for local suppliers of raw materials (e.g., a cassava flour mill buying from local farmers). A forward linkage occurs when the enterprise produces intermediate goods used by other downstream businesses (e.g., supplying flour to local bakeries).",
+            "why_wrong": {
+                "1": "Capital flight to offshore havens depletes domestic liquidity, the opposite of economic development.",
+                "2": "Eliminating jobs without redeployment harms consumer purchasing power and domestic demand.",
+                "3": "Pure importation of finished goods creates outward foreign currency drain without generating domestic backward linkages."
+            },
+            "source": "ENT 211 Lecture Notes, Slide 3: Learning Objectives & Economic Impact"
+        },
+        {
+            "id": "ent211-fnd-009",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "cloze",
+            "difficulty": 2,
+            "tags": ["entrepreneurial-process", "value-creation", "cloze"],
+            "question": "Complete the five stages of the entrepreneurial value-creation process outlined in ENT 211:\nThe process begins when an entrepreneur [blank1] an unmet opportunity or need in the market. Next, they [blank2] scarce human, financial, and physical resources. They then [blank3] their underlying assumptions through small-scale experiments, act by taking [blank4] risks, and ultimately create tangible [blank5] for customers and society.",
+            "answer": ["spots", "mobilises", "tests", "calculated", "value"],
+            "explanation": "Slide 4 of the lecture notes defines the 5-step entrepreneurial sequence: SPOT Opportunity -> MOBILISE Resources -> TEST Assumptions -> ACT on Calculated Risk -> CREATE Value.",
+            "source": "ENT 211 Lecture Notes, Slide 4: Core Concept Process"
+        },
+        {
+            "id": "ent211-fnd-010",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "matching",
+            "difficulty": 3,
+            "tags": ["key-thinkers", "matching"],
+            "question": "Match each scholar of entrepreneurship to their core theoretical contribution:",
+            "options": [
+                "Joseph A. Schumpeter",
+                "Peter F. Drucker",
+                "Robert D. Hisrich",
+                "Howard Stevenson"
+            ],
+            "answer": [
+                "Emphasized 'new combinations' of resources and creative destruction as the engine of economic progress",
+                "Stated that entrepreneurs systematically search for change, respond to it, and exploit it as an opportunity",
+                "Highlighted creating something new with value while assuming financial, psychic, and social risks",
+                "Defined entrepreneurship as the pursuit of opportunity beyond resources currently controlled"
+            ],
+            "explanation": "Schumpeter introduced new combinations and creative destruction. Drucker emphasized searching for change as opportunity. Hisrich defined value creation under financial, psychic, and social risks. Stevenson formulated the Harvard definition of pursuing opportunity beyond controlled resources.",
+            "source": "ENT 211 Lecture Notes, Slide 5: Key Thinkers & Academic Literature"
+        },
+        {
+            "id": "ent211-fnd-011",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "sequencing",
+            "difficulty": 2,
+            "tags": ["entrepreneurial-thinking", "problem-solving", "sequencing"],
+            "question": "Arrange the six stages of 'Thinking Like an Entrepreneur' (Module: Entrepreneurial Thinking) in the correct logical sequence from first to last:",
+            "options": [
+                "Spot the unmet need: What problem exists in everyday life?",
+                "Know the people involved: Who is affected by this problem?",
+                "Find the gap: Why has this problem remained unaddressed?",
+                "Compare options: What existing alternatives do customers currently use?",
+                "Make it useful: How can the proposed solution work effectively?",
+                "Plan for delivery: What resources, capital, and tools are needed?"
+            ],
+            "answer": [0, 1, 2, 3, 4, 5],
+            "explanation": "Deck 2 (Entrepreneurial Thinking, Slide 2) details the 6-stage cognitive inquiry: (1) What problem exists? (2) Who is affected? (3) Why unaddressed? (4) What alternatives exist? (5) How can the idea work? (6) What resources are needed?",
+            "source": "Entrepreneurial Thinking Deck, Slide 2: Thinking Like an Entrepreneur"
+        },
+        {
+            "id": "ent211-fnd-012",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "flashcard",
+            "difficulty": 1,
+            "tags": ["entrepreneurship", "definition"],
+            "question": "What are the four essential elements that define entrepreneurship in the ENT 211 curriculum?",
+            "answer": "1. Opportunity (identifying unmet needs or gaps)\n2. Resources (assembling and mobilizing capital, talent, and tools)\n3. Calculated Risk / Uncertainty (acting under incomplete information)\n4. Value Creation (producing economic and societal benefits).",
+            "explanation": "Entrepreneurship is fundamentally the synthesis of opportunity, resources, risk, and value creation.",
+            "source": "ENT 211 Lecture Notes, Slides 4-5"
+        },
+        {
+            "id": "ent211-fnd-013",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["intrapreneurship", "definition"],
+            "question": "Define 'Intrapreneurship' and state two key differences between an intrapreneur and an independent entrepreneur.",
+            "answer": "Intrapreneurship is the practice of developing new commercial ventures, products, or innovations within an existing corporate organization.\nDifferences:\n1. Risk Profile: The intrapreneur's personal capital is protected by a corporate salary, whereas the entrepreneur bears direct personal financial liability.\n2. Resources & Bureaucracy: The intrapreneur has access to corporate funding, brand trust, and distribution channels, but is constrained by corporate hierarchy and lacks full venture equity ownership.",
+            "explanation": "Intrapreneurs bring entrepreneurial energy into established enterprises.",
+            "source": "ENT 211 Infographic Lecture, Slide 2: Intrapreneurship"
+        },
+        {
+            "id": "ent211-fnd-014",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["calculated-risk", "definition"],
+            "question": "What is meant by 'Calculated Risk' in the entrepreneurial mindset?",
+            "answer": "Calculated risk is the deliberate process of identifying, analyzing, and mitigating potential business downsides before committing resources, ensuring that the estimated probability and magnitude of the reward significantly outweigh the controllable loss.",
+            "explanation": "It separates disciplined entrepreneurs from reckless gamblers.",
+            "source": "ENT 211 Lecture Notes, Slide 7: Characteristics of Successful Entrepreneurs"
+        },
+        {
+            "id": "ent211-fnd-015",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "flashcard",
+            "difficulty": 2,
+            "tags": ["economic-development", "smes"],
+            "question": "List four distinct macroeconomic contributions of entrepreneurship in a developing economy like Nigeria.",
+            "answer": "1. Employment generation (SMEs provide the majority of private-sector jobs)\n2. Mobilization of idle domestic capital and local raw materials\n3. Import substitution (reducing foreign currency drain by producing goods locally)\n4. Wealth creation, poverty alleviation, and regional economic decentralization.",
+            "explanation": "Entrepreneurship serves as the primary engine of structural economic growth.",
+            "source": "ENT 211 Lecture Notes, Slide 3 & Infographic Lecture, Slide 2"
+        },
+        {
+            "id": "ent211-fnd-016",
+            "course": "ENT 211",
+            "topic": "entrepreneurship_core_concepts",
+            "type": "explain",
+            "difficulty": 3,
+            "tags": ["entrepreneur-vs-manager", "strategic-orientation", "analysis"],
+            "question": "Critically analyze the strategic differences between an Entrepreneur and a Traditional Corporate Manager across four dimensions: Strategic Focus, Risk Orientation, Attitude Toward Change, and Resource Allocation.",
+            "answer": "1. Strategic Focus: The Entrepreneur is opportunity-driven, constantly searching the external environment for market gaps, customer pain points, and unmet needs regardless of resources currently owned. In contrast, the Traditional Manager is resource-driven, focusing internally on optimizing, safeguarding, and allocating the resources already controlled by the firm.\n\n2. Risk Orientation: The Entrepreneur actively embraces calculated risk and operates under fundamental uncertainty, accepting the possibility of business failure in pursuit of exponential growth. The Manager is risk-averse, focusing on controlling, mitigating, and eliminating operational variance to guarantee steady, predictable performance.\n\n3. Attitude Toward Change: The Entrepreneur acts as a disruptive agent of change, challenging existing industry paradigms, legacy business models, and conventional practices. The Manager seeks stability, continuity, and predictability, enforcing standardized operating procedures (SOPs) and hierarchical rules.\n\n4. Resource Allocation: The Entrepreneur operates with lean, flexible commitments, staging resources in milestones and leveraging external partnerships to keep overhead low. The Manager allocates capital in formal, rigid annual budgetary cycles designed to protect administrative departmental boundaries.",
+            "explanation": "Understanding this distinction is vital: ventures need entrepreneurial vision to be born, but managerial discipline to scale sustainably.",
+            "marking_points": [
+                "Contrasts strategic focus: opportunity-driven (entrepreneur) vs resource-driven/preservation (manager)",
+                "Contrasts risk posture: calculated risk-taker under uncertainty vs risk-minimizer seeking predictability",
+                "Contrasts attitude toward change: disruptive change agent vs guardian of stability and standardized procedures",
+                "Contrasts resource allocation: lean, milestone-based staging vs formal, rigid annual budgeting cycles",
+                "Synthesizes that successful growing enterprises require both mindsets to survive and scale"
+            ],
+            "source": "ENT 211 Lecture Notes, Slide 8: Entrepreneur vs. Manager Matrix"
+        }
+    ],
+    "case_studies": [
+        {
+            "id": "ent211-fnd-cs1",
+            "scenario": "Amina is a 200-level Computer Science student at Nile University of Nigeria in Abuja. She observed that students living in on-campus hostels waste an average of 4 hours every Saturday queuing at crowded local laundromats or washing clothes manually in bathroom sinks, leading to frequent complaints and missed study time.\n\nAmina formulated an idea: 'CampusWash'. Instead of purchasing expensive commercial washing machines immediately, she conducted a 2-week pilot. She printed flyers offering door-to-door hostel pickup on Thursday evenings with guaranteed return by Saturday noon at a rate of 2,500 Naira per laundry bag. She negotiated a bulk 40% commercial discount with an underutilized commercial laundry facility 2 kilometers from campus. In her first week, 35 students signed up. Amina hired two fellow students on hourly stipends to handle collection and sorting, clearing a net profit of 38,000 Naira in her first weekend while validating student demand.",
+            "sub_questions": [
+                {
+                    "id": "ent211-fnd-cs1-q1",
+                    "course": "ENT 211",
+                    "topic": "entrepreneurship_core_concepts",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["entrepreneurial-process", "testing-assumptions", "case-study"],
+                    "question": "How did Amina demonstrate the ENT 211 concept of 'Testing Assumptions' and 'Taking Calculated Risk' rather than reckless speculation?",
+                    "options": [
+                        "By running a 2-week pilot using an existing partner facility's spare capacity rather than taking a bank loan to buy expensive machines upfront",
+                        "By dropping out of university immediately to open a factory before speaking to any students",
+                        "By offering free laundry indefinitely and hoping a venture capital fund would bail her out",
+                        "By asking the university administration to ban students from washing their own clothes"
+                    ],
+                    "answer": 0,
+                    "explanation": "Amina took a calculated, mitigated risk: she did not borrow millions of Naira to buy physical washing machines before validating demand. Instead, she tested core assumptions (willingness to pay, operational pickup times, customer satisfaction) using partner capacity and minimal capital outlay. This is textbook entrepreneurial assumption testing.",
+                    "why_wrong": {
+                        "1": "Dropping out without validating demand is reckless speculation, not calculated risk-taking.",
+                        "2": "Providing services below cost without a sustainable business model leads to immediate bankruptcy.",
+                        "3": "Lobbying for coercive bans is regulatory rent-seeking, not entrepreneurial value creation."
+                    },
+                    "source": "ENT 211 Lecture Notes, Slide 4: Entrepreneurial Process (Spot, Mobilise, Test, Act, Create Value)"
+                },
+                {
+                    "id": "ent211-fnd-cs1-q2",
+                    "course": "ENT 211",
+                    "topic": "entrepreneurship_core_concepts",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["value-creation", "entrepreneurship-definition", "case-study"],
+                    "question": "Using the 5-stage entrepreneurial framework from ENT 211 (Spot, Mobilise, Test, Act, Create Value), evaluate how Amina transformed everyday student friction into sustainable economic and societal value.",
+                    "answer": "Amina executed the complete 5-stage entrepreneurial value-creation process:\n\n1. SPOT Opportunity: She identified everyday customer friction—hostel students wasting 4 hours every Saturday queuing or hand-washing clothes, generating stress and missed study hours.\n\n2. MOBILISE Resources: Instead of letting lack of personal capital stop her, she assembled resources creatively: negotiated off-peak bulk commercial discounts with an existing off-campus laundromat, hired two students for pickup logistics, and mobilized WhatsApp/flyers for marketing.\n\n3. TEST Assumptions: She executed a low-cost, 2-week pilot with 35 students to validate the critical assumption: will students pay 2,500 Naira for door-to-door convenience and reliability?\n\n4. ACT on Calculated Risk: She committed personal time and operational effort, accepting the risk of non-delivery or laundry damage while hedging capital risk through partnering.\n\n5. CREATE Value: She delivered tangible customer value (saving students 4 hours of tedious labor and providing clean clothes reliably), generated employment and stipends for two student assistants, generated incremental revenue for the local commercial laundry, and captured a net profit of 38,000 Naira.",
+                    "explanation": "Amina's venture represents true entrepreneurship: turning an observed problem into coordinated resources, tested assumptions, and mutual value.",
+                    "marking_points": [
+                        "Identifies Stage 1 (Spot): Unmet student need and Saturday laundry time friction",
+                        "Identifies Stage 2 (Mobilise): Assembling partner facility, student workers, and marketing without owning machines",
+                        "Identifies Stage 3 (Test): 2-week pilot validating student willingness to pay 2,500 Naira",
+                        "Identifies Stage 4 (Act): Taking measured risk and managing service execution",
+                        "Identifies Stage 5 (Create Value): Time savings for students, income for student workers, revenue for partner, and venture profit"
+                    ],
+                    "source": "ENT 211 Lecture Notes, Slide 4 & Entrepreneurial Thinking Deck"
+                }
+            ]
+        },
+        {
+            "id": "ent211-fnd-cs2",
+            "scenario": "Emeka is a Senior Product Manager at a leading commercial bank in Lagos. He identifies a major untapped market: smallholder farmers in Kaduna and Benue states cannot access credit because they lack collateral and formal credit scores. Emeka designs 'AgroTrust', an algorithm using mobile airtime recharge history and cooperative grain harvest records to provide instant micro-loans via USSD.\n\nEmeka faces a career dilemma:\nPath A: Pitch AgroTrust as an internal corporate venture to the bank's executive committee (Intrapreneurship).\nPath B: Resign from the bank, incorporate an independent startup, seek angel investment, and apply for a microfinance or fintech operating license from the Central Bank of Nigeria (Entrepreneurship).",
+            "sub_questions": [
+                {
+                    "id": "ent211-fnd-cs2-q1",
+                    "course": "ENT 211",
+                    "topic": "entrepreneurship_core_concepts",
+                    "type": "mcq",
+                    "difficulty": 3,
+                    "tags": ["intrapreneurship-vs-entrepreneurship", "tradeoffs", "case-study"],
+                    "question": "If Emeka chooses Path A (Intrapreneurship inside the commercial bank), what is the greatest structural advantage and greatest structural drawback he will experience?",
+                    "options": [
+                        "Advantage: Immediate access to the bank's massive capital, existing regulatory licenses, and customer base; Drawback: He will not own the equity/IP, and decisions may be stalled by corporate bureaucracy",
+                        "Advantage: He keeps 100% of all future company profits; Drawback: He will be personally liable for all farmer loan defaults",
+                        "Advantage: Zero accountability to any managers; Drawback: He is legally prohibited from using any bank computers",
+                        "Advantage: The Central Bank of Nigeria will grant him diplomatic immunity; Drawback: Farmers cannot use mobile phones"
+                    ],
+                    "answer": 0,
+                    "explanation": "Intrapreneurs benefit from enormous institutional advantages: existing corporate balance sheets, established compliance/banking licenses, brand reputation, and established distribution. However, the drawbacks are substantial: the bank retains all equity and intellectual property, while risk-averse internal committees and corporate bureaucracy can delay innovation.",
+                    "why_wrong": {
+                        "1": "Intrapreneurs do not own corporate equity and do not keep all venture profits, nor do they bear personal bankruptcy liability for bank loans.",
+                        "2": "Intrapreneurs report directly to corporate executives and are subject to strict corporate oversight.",
+                        "3": "CBN does not grant diplomatic immunity, and Nigerian smallholders widely utilize GSM feature phones."
+                    },
+                    "source": "ENT 211 Infographic Lecture, Slide 2: Entrepreneurship vs. Intrapreneurship"
+                },
+                {
+                    "id": "ent211-fnd-cs2-q2",
+                    "course": "ENT 211",
+                    "topic": "entrepreneurship_core_concepts",
+                    "type": "explain",
+                    "difficulty": 4,
+                    "tags": ["entrepreneurship-vs-intrapreneurship", "risk-return", "case-study"],
+                    "question": "Compare Path A (Intrapreneurship) and Path B (Independent Entrepreneurship) for Emeka in terms of personal financial risk, speed of decision-making, and long-term reward potential. Recommend which path he should take if his primary personal goal is building generational wealth and corporate autonomy.",
+                    "answer": "Comparative Analysis for Emeka:\n\n1. Personal Financial Risk:\n- Path A (Intrapreneurship): Minimal personal risk. Emeka draws a steady corporate executive salary, benefits, and pension. If AgroTrust fails or suffers high farmer loan defaults, the bank absorbs the balance-sheet loss.\n- Path B (Entrepreneurship): High personal risk. Emeka forfeits his salary, invests personal savings, faces potential bankruptcy, and must secure dilutive venture funding.\n\n2. Speed of Decision-Making & Agility:\n- Path A: Slow and bureaucratic. Every algorithm modification, lending criteria shift, or marketing campaign requires approval through credit committees, compliance, legal, and risk management divisions.\n- Path B: Highly agile and rapid. As founder, Emeka can pivot within hours based on real-time farmer feedback and field data.\n\n3. Long-Term Reward Potential & Wealth Creation:\n- Path A: Capped upside. Emeka may receive a promotion, bonus, or modest corporate incentive, but the bank owns the multi-billion Naira valuation and IP.\n- Path B: Unlimited equity upside. Emeka retains significant founder equity; if AgroTrust scales across West Africa or is acquired, he achieves substantial wealth.\n\nRecommendation: If Emeka's primary objective is building generational wealth and achieving complete corporate autonomy, he must choose Path B (Independent Entrepreneurship). The equity ownership, strategic freedom, and unlimited upside of an independent venture are prerequisites for building generational wealth, whereas intrapreneurship primarily enriches corporate shareholders.",
+                    "explanation": "Autonomous entrepreneurship offers limitless equity returns and rapid decision agility at the cost of personal financial risk.",
+                    "marking_points": [
+                        "Compares personal risk: shielded corporate salary/benefits in Path A vs personal savings/bankruptcy exposure in Path B",
+                        "Compares decision-making agility: bureaucratic committee gridlock in Path A vs rapid founder pivoting in Path B",
+                        "Compares wealth upside: capped bonus/promotion in Path A vs exponential equity ownership in Path B",
+                        "Provides clear recommendation for Path B based on the criteria of generational wealth and autonomy",
+                        "Justifies why corporate intrapreneurship cannot provide true equity independence"
+                    ],
+                    "source": "ENT 211 Lecture Notes, Slide 8 & Infographic Lecture, Slide 2"
+                }
+            ]
+        }
+    ]
+}
+
+with open("app/content/ENT 211/entrepreneurship_core_concepts.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+
+print("Saved entrepreneurship_core_concepts.json successfully!")
