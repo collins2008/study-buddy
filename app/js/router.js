@@ -26,6 +26,7 @@ const Router = {
   },
 
   navigate: function(viewInput, params = {}, push = true) {
+    document.querySelectorAll('.confidence-modal').forEach(m => m.remove());
     let view = viewInput;
     if (typeof viewInput === 'string' && viewInput.includes('?')) {
       const parts = viewInput.split('?');
@@ -264,6 +265,7 @@ const Router = {
     const courses = index.courses || [];
     const selectedCourseCode = params.course || (courses[0] ? courses[0].code : '');
     const course = courses.find(c => c.code === selectedCourseCode);
+    const confSetting = localStorage.getItem('study_buddy_confidence_prompt') || 'on';
 
     document.getElementById('app-title').textContent = 'Practice Mode';
 
@@ -287,6 +289,17 @@ const Router = {
           </div>
 
           <div>
+            <label>Question Format / Type:</label>
+            <div class="filter-row" id="type-chips">
+              <button class="chip active" data-type="all">All Formats</button>
+              <button class="chip" data-type="written">✍️ Written / Type-In Only</button>
+              <button class="chip" data-type="mcq">🔘 Multiple Choice</button>
+              <button class="chip" data-type="flashcard">🃏 Flashcards</button>
+              <button class="chip" data-type="code">💻 Code Practice</button>
+            </div>
+          </div>
+
+          <div>
             <label>Difficulty Filter:</label>
             <div class="filter-row" id="diff-chips">
               <button class="chip active" data-diff="all">All Levels</button>
@@ -294,6 +307,14 @@ const Router = {
               <button class="chip" data-diff="2">Level 2 (Understand)</button>
               <button class="chip" data-diff="3">Level 3 (Apply)</button>
               <button class="chip" data-diff="4">Level 4 (Analyze)</button>
+            </div>
+          </div>
+
+          <div>
+            <label>Confidence Rating Prompt:</label>
+            <div class="filter-row" id="conf-chips">
+              <button class="chip ${confSetting !== 'off' ? 'active' : ''}" data-conf="on">🎯 Enabled (Catch Blind Spots)</button>
+              <button class="chip ${confSetting === 'off' ? 'active' : ''}" data-conf="off">⚡ Instant Reveal</button>
             </div>
           </div>
 
@@ -327,12 +348,30 @@ const Router = {
       };
     });
 
+    let selectedType = 'all';
+    container.querySelectorAll('#type-chips .chip').forEach(chip => {
+      chip.onclick = () => {
+        container.querySelectorAll('#type-chips .chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        selectedType = chip.getAttribute('data-type');
+      };
+    });
+
+    container.querySelectorAll('#conf-chips .chip').forEach(chip => {
+      chip.onclick = () => {
+        container.querySelectorAll('#conf-chips .chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const mode = chip.getAttribute('data-conf');
+        localStorage.setItem('study_buddy_confidence_prompt', mode);
+      };
+    });
+
     container.querySelector('#btn-start-practice').onclick = async () => {
       const topic = selTopic.value;
       const countVal = container.querySelector('#sel-count').value;
       const count = countVal === 'all' ? 999 : parseInt(countVal);
 
-      const questions = await App.loadQuestionsForPractice(selCourse.value, topic, selectedDiff, count);
+      const questions = await App.loadQuestionsForPractice(selCourse.value, topic, selectedDiff, count, selectedType);
       if (!questions.length) {
         App.showToast('No questions matched the selected filters.');
         return;
@@ -364,6 +403,7 @@ const Router = {
   },
 
   renderSession: function(container) {
+    document.querySelectorAll('.confidence-modal').forEach(m => m.remove());
     const s = this.activeSession;
     if (!s || !s.questions || s.currentIndex >= s.questions.length) {
       this.renderSessionSummary(container);

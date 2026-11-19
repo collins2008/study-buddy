@@ -54,6 +54,8 @@ const Renderers = {
 
   // Main question dispatcher
   renderQuestion: async function(q, container, onSubmit, options = {}) {
+    // Ensure any open confidence modals are dismissed when switching/loading questions
+    document.querySelectorAll('.confidence-modal').forEach(m => m.remove());
     container.innerHTML = '';
     const qWrapper = document.createElement('div');
     qWrapper.className = 'q-card fade-in';
@@ -148,9 +150,23 @@ const Renderers = {
       btn.className = 'option-btn';
       btn.innerHTML = `<span class="option-label">${alphabet[idx]}.</span> <span>${opt}</span>`;
       btn.onclick = () => {
-        if (btn.disabled) return;
+        if (btn.disabled || list.getAttribute('data-evaluated') === 'true') return;
+
+        // In exam mode, immediately select option without popup interruption
+        if (options && options.examMode) {
+          this.evaluateMCQ(q, idx, list, feedback, onSubmit, 'sure', options);
+          return;
+        }
+
+        // Highlight chosen option visually with pending state
+        Array.from(list.children).forEach(b => b.classList.remove('selected-pending'));
+        btn.classList.add('selected-pending');
+
         this.askConfidence((confidence) => {
           this.evaluateMCQ(q, idx, list, feedback, onSubmit, confidence, options);
+        }, () => {
+          // If user cancels or changes option, remove the pending highlight
+          btn.classList.remove('selected-pending');
         });
       };
       list.appendChild(btn);
@@ -159,6 +175,12 @@ const Renderers = {
   },
 
   evaluateMCQ: function(q, selectedIdx, list, feedback, onSubmit, confidence, options = {}) {
+    list.setAttribute('data-evaluated', 'true');
+    Array.from(list.children).forEach(btn => {
+      btn.disabled = true;
+      btn.classList.remove('selected-pending');
+    });
+
     let targetIdx = q.answer;
     if (typeof targetIdx === 'string') {
       const trimmed = targetIdx.trim();
@@ -223,6 +245,10 @@ const Renderers = {
     submitBtn.className = 'btn btn-primary btn-full mt-md';
     submitBtn.textContent = 'Submit Selection';
     submitBtn.onclick = () => {
+      if (selected.size === 0) {
+        App.showToast('Please select at least one option.');
+        return;
+      }
       submitBtn.disabled = true;
       this.askConfidence((confidence) => {
         const correctSet = new Set(Array.isArray(q.answer) ? q.answer.map(Number) : [Number(q.answer)]);
@@ -236,6 +262,8 @@ const Renderers = {
 
         this.showExplanation(q, isCorrect, feedback, null, confidence);
         if (onSubmit) onSubmit({ isCorrect, confidence, selected: [...selected] });
+      }, () => {
+        submitBtn.disabled = false;
       });
     };
     area.appendChild(submitBtn);
@@ -276,9 +304,18 @@ const Renderers = {
           wBtn.className = 'option-btn';
           wBtn.textContent = wOpt;
           wBtn.onclick = () => {
+            if (wBtn.disabled || whyList.getAttribute('data-evaluated') === 'true') return;
+
+            Array.from(whyList.children).forEach(b => b.classList.remove('selected-pending'));
+            wBtn.classList.add('selected-pending');
+
             this.askConfidence((confidence) => {
+              whyList.setAttribute('data-evaluated', 'true');
               tfBtns.forEach(b => b.disabled = true);
-              Array.from(whyList.children).forEach(b => b.disabled = true);
+              Array.from(whyList.children).forEach(b => {
+                b.disabled = true;
+                b.classList.remove('selected-pending');
+              });
 
               const correctTF = (q.answer === true || q.answer === 'true' || q.tf_answer === true);
               const correctWhyIdx = q.why_answer !== undefined ? q.why_answer : q.answer_why;
@@ -289,6 +326,8 @@ const Renderers = {
 
               this.showExplanation(q, isCorrect, feedback, null, confidence);
               if (onSubmit) onSubmit({ isCorrect, confidence });
+            }, () => {
+              wBtn.classList.remove('selected-pending');
             });
           };
           whyList.appendChild(wBtn);
@@ -310,7 +349,10 @@ const Renderers = {
 
     const evaluate = () => {
       const val = input.value.trim();
-      if (!val) return;
+      if (!val) {
+        App.showToast('Please type an answer first.');
+        return;
+      }
       input.disabled = true;
       submitBtn.disabled = true;
 
@@ -324,6 +366,10 @@ const Renderers = {
         let modelAnswerHtml = `<div class="mb-sm"><strong>Accepted Answer:</strong> <code>${accepted[0]}</code></div>`;
         this.showExplanation(q, isCorrect, feedback, null, confidence, modelAnswerHtml);
         if (onSubmit) onSubmit({ isCorrect, confidence, answer: val });
+      }, () => {
+        input.disabled = false;
+        submitBtn.disabled = false;
+        input.focus();
       });
     };
 
@@ -376,6 +422,8 @@ const Renderers = {
         const answersHtml = `<div><strong>Answers:</strong> ${blanks.map((b, i) => `(${i+1}) <code>${b}</code>`).join(', ')}</div>`;
         this.showExplanation(q, allCorrect, feedback, null, confidence, answersHtml);
         if (onSubmit) onSubmit({ isCorrect: allCorrect, confidence });
+      }, () => {
+        submitBtn.disabled = false;
       });
     };
 
@@ -470,6 +518,8 @@ const Renderers = {
 
         this.showExplanation(q, allCorrect, feedback, null, confidence);
         if (onSubmit) onSubmit({ isCorrect: allCorrect, confidence });
+      }, () => {
+        submitBtn.disabled = false;
       });
     };
     area.appendChild(submitBtn);
@@ -538,6 +588,8 @@ const Renderers = {
         const correctOrderHtml = `<div class="mb-sm"><strong>Correct Sequence:</strong><ol style="padding-left:20px; margin-top:8px;">${original.map(s => `<li>${s}</li>`).join('')}</ol></div>`;
         this.showExplanation(q, allCorrect, feedback, null, confidence, correctOrderHtml);
         if (onSubmit) onSubmit({ isCorrect: allCorrect, confidence });
+      }, () => {
+        submitBtn.disabled = false;
       });
     };
     area.appendChild(submitBtn);
@@ -836,6 +888,10 @@ const Renderers = {
         const calcHtml = `<div><strong>Exact Value:</strong> <code>${target}</code> (allowed margin ±${tol})</div>`;
         this.showExplanation(q, isCorrect, feedback, null, confidence, calcHtml);
         if (onSubmit) onSubmit({ isCorrect, confidence, value: val });
+      }, () => {
+        input.disabled = false;
+        submitBtn.disabled = false;
+        input.focus();
       });
     };
 
@@ -859,23 +915,51 @@ const Renderers = {
   },
 
   // Confidence Rating Dialog
-  askConfidence: function(callback) {
-    // If setting disabled or auto, invoke directly
+  askConfidence: function(callback, onCancel = null) {
+    // 1. Immediately eliminate any existing confidence modals to guarantee no duplicates
+    document.querySelectorAll('.confidence-modal').forEach(m => m.remove());
+
+    // Check if user disabled confidence ratings in settings
+    const setting = localStorage.getItem('study_buddy_confidence_prompt');
+    if (setting === 'off') {
+      callback('sure');
+      return;
+    }
+
     const modal = document.createElement('div');
     modal.className = 'confidence-modal';
     modal.innerHTML = `
-      <div class="confidence-overlay card">
-        <h4>Before Revealing: How confident are you?</h4>
+      <div class="confidence-sheet card">
+        <div class="confidence-header">
+          <h4>Before Revealing: How confident are you?</h4>
+          <button class="icon-btn close-btn" title="Cancel & change selection" style="font-size:1.2rem; line-height:1;">✕</button>
+        </div>
+        <p class="confidence-sub">Rate your confidence before seeing the explanation to track blind spots:</p>
         <div class="confidence-row">
           <button class="btn btn-success" data-conf="sure">🎯 Sure</button>
           <button class="btn btn-warn" data-conf="unsure">🤔 Unsure</button>
           <button class="btn btn-secondary" data-conf="guess">🎲 Guess</button>
         </div>
+        <button class="confidence-cancel-btn">Change Selection</button>
       </div>
     `;
 
     document.body.appendChild(modal);
-    modal.querySelectorAll('button').forEach(btn => {
+
+    const closeModal = () => {
+      modal.remove();
+      if (onCancel) onCancel();
+    };
+
+    // Backdrop click dismisses
+    modal.onclick = (e) => {
+      if (e.target === modal) closeModal();
+    };
+
+    modal.querySelector('.close-btn').onclick = closeModal;
+    modal.querySelector('.confidence-cancel-btn').onclick = closeModal;
+
+    modal.querySelectorAll('.confidence-row button').forEach(btn => {
       btn.onclick = () => {
         const conf = btn.getAttribute('data-conf');
         modal.remove();

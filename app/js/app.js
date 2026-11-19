@@ -80,7 +80,7 @@ const App = {
     return allQuestions;
   },
 
-  loadQuestionsForPractice: async function(courseCode, topicSlug, diffFilter, limit = 20) {
+  loadQuestionsForPractice: async function(courseCode, topicSlug, diffFilter, limit = 20, typeFilter = 'all') {
     let pool = [];
     if (topicSlug && topicSlug !== 'all') {
       const topicData = await this.loadTopicContent(courseCode, topicSlug);
@@ -96,6 +96,26 @@ const App = {
     if (diffFilter && diffFilter !== 'all') {
       const targetDiff = parseInt(diffFilter);
       pool = pool.filter(q => q.difficulty === targetDiff);
+    }
+
+    // Filter by question format / type
+    if (typeFilter && typeFilter !== 'all') {
+      if (typeFilter === 'written') {
+        const writtenTypes = new Set(['type_answer', 'explain', 'code_write', 'calculation', 'cloze', 'code_fill']);
+        pool = pool.filter(q => writtenTypes.has(q.type));
+      } else if (typeFilter === 'mcq') {
+        const mcqTypes = new Set(['mcq', 'multi_select', 'true_false_why']);
+        pool = pool.filter(q => mcqTypes.has(q.type));
+      } else if (typeFilter === 'flashcard') {
+        pool = pool.filter(q => q.type === 'flashcard');
+      } else if (typeFilter === 'code') {
+        const codeTypes = new Set(['code_output', 'code_bug', 'code_fill', 'code_write', 'code_trace']);
+        pool = pool.filter(q => codeTypes.has(q.type));
+      } else if (typeFilter === 'case_study') {
+        pool = pool.filter(q => q.type === 'case_study');
+      } else {
+        pool = pool.filter(q => q.type === typeFilter);
+      }
     }
 
     // Deduplicate pool by question ID
