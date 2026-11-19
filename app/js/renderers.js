@@ -38,6 +38,67 @@ const Renderers = {
     return false;
   },
 
+  // Utility: HTML Escaping
+  escapeHtml: function(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  },
+
+  // Comprehensive Markdown & Text Formatter:
+  // Handles triple backtick code blocks, single backtick inline code, bold, italics,
+  // newlines, and safely escapes raw HTML tags and mathematical operators.
+  formatText: function(text) {
+    if (text === null || text === undefined) return '';
+    let str = String(text);
+
+    // 1. Extract triple backtick code blocks
+    const codeBlocks = [];
+    str = str.replace(/```([a-zA-Z0-9_-]*)\n?([\s\S]*?)```/g, (match, lang, code) => {
+      const placeholder = `___CODE_BLOCK_${codeBlocks.length}___`;
+      codeBlocks.push({ lang: lang || 'c', code: code.trim() });
+      return placeholder;
+    });
+
+    // 2. Extract single backtick inline code
+    const inlineCodes = [];
+    str = str.replace(/`([^`]+)`/g, (match, code) => {
+      const placeholder = `___INLINE_CODE_${inlineCodes.length}___`;
+      inlineCodes.push(code);
+      return placeholder;
+    });
+
+    // 3. Escape HTML on prose text
+    str = this.escapeHtml(str);
+
+    // 4. Bold: **text**
+    str = str.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+    // 5. Italics: *text* (when not part of a larger asterisk construct)
+    str = str.replace(/(^|[\s\(\[\{\.,;:\-_])\*([^*]+)\*([\s\)\]\}\.,;:\-_]|$)/g, '$1<em>$2</em>$3');
+
+    // 6. Convert newlines to <br>
+    str = str.replace(/\r?\n/g, '<br>');
+
+    // 7. Restore inline code (safely escaped inside <code>)
+    str = str.replace(/___INLINE_CODE_(\d+)___/g, (match, idx) => {
+      const code = inlineCodes[parseInt(idx, 10)];
+      return `<code>${this.escapeHtml(code)}</code>`;
+    });
+
+    // 8. Restore code blocks
+    str = str.replace(/___CODE_BLOCK_(\d+)___/g, (match, idx) => {
+      const block = codeBlocks[parseInt(idx, 10)];
+      return this.renderCodeBlock(block.code, block.lang);
+    });
+
+    return str;
+  },
+
   // Highlight helper
   renderCodeBlock: function(codeStr, lang = 'c') {
     const pre = document.createElement('pre');
@@ -86,12 +147,13 @@ const Renderers = {
 
     qWrapper.appendChild(meta);
 
-    // Question statement
-    const promptDiv = document.createElement('div');
-    promptDiv.className = 'q-question';
-    let formattedText = (q.question || '').replace(/`([^`]+)`/g, '<code>$1</code>');
-    promptDiv.innerHTML = formattedText;
-    qWrapper.appendChild(promptDiv);
+    // Question statement (omit for flashcards where the card itself is the prompt)
+    if (q.type !== 'flashcard') {
+      const promptDiv = document.createElement('div');
+      promptDiv.className = 'q-question';
+      promptDiv.innerHTML = this.formatText(q.question);
+      qWrapper.appendChild(promptDiv);
+    }
 
     // If there is code snippet attached
     if (q.code) {
@@ -148,7 +210,7 @@ const Renderers = {
     q.options.forEach((opt, idx) => {
       const btn = document.createElement('button');
       btn.className = 'option-btn';
-      btn.innerHTML = `<span class="option-label">${alphabet[idx]}.</span> <span>${opt}</span>`;
+      btn.innerHTML = `<span class="option-label">${alphabet[idx]}.</span> <span>${this.formatText(opt)}</span>`;
       btn.onclick = () => {
         if (btn.disabled || list.getAttribute('data-evaluated') === 'true') return;
 
@@ -227,7 +289,7 @@ const Renderers = {
     q.options.forEach((opt, idx) => {
       const btn = document.createElement('button');
       btn.className = 'option-btn';
-      btn.innerHTML = `<span class="option-label">${alphabet[idx]}.</span> <span>${opt}</span>`;
+      btn.innerHTML = `<span class="option-label">${alphabet[idx]}.</span> <span>${this.formatText(opt)}</span>`;
       btn.onclick = () => {
         if (selected.has(idx)) {
           selected.delete(idx);
@@ -302,7 +364,7 @@ const Renderers = {
         (q.why_options || q.options || []).forEach((wOpt, idx) => {
           const wBtn = document.createElement('button');
           wBtn.className = 'option-btn';
-          wBtn.textContent = wOpt;
+          wBtn.innerHTML = this.formatText(wOpt);
           wBtn.onclick = () => {
             if (wBtn.disabled || whyList.getAttribute('data-evaluated') === 'true') return;
 
@@ -363,7 +425,7 @@ const Renderers = {
         if (isCorrect) input.classList.add('correct');
         else input.classList.add('wrong');
 
-        let modelAnswerHtml = `<div class="mb-sm"><strong>Accepted Answer:</strong> <code>${accepted[0]}</code></div>`;
+        let modelAnswerHtml = `<div class="mb-sm"><strong>Accepted Answer:</strong> <code>${this.escapeHtml(accepted[0])}</code></div>`;
         this.showExplanation(q, isCorrect, feedback, null, confidence, modelAnswerHtml);
         if (onSubmit) onSubmit({ isCorrect, confidence, answer: val });
       }, () => {
@@ -389,7 +451,8 @@ const Renderers = {
     // Replace [[blank]] or ___ with input fields
     const blanks = q.blanks || [q.answer];
     let counter = 0;
-    const textWithInputs = (q.template || q.question).replace(/\[\[(.*?)\]\]|___+/g, (match, p1) => {
+    const escapedTemplate = this.escapeHtml(q.template || q.question);
+    const textWithInputs = escapedTemplate.replace(/\[\[(.*?)\]\]|___+/g, (match, p1) => {
       const idx = counter++;
       return `<input type="text" class="cloze-blank" data-idx="${idx}" placeholder="blank ${idx + 1}" autocomplete="off">`;
     });
@@ -419,7 +482,7 @@ const Renderers = {
         });
 
         submitBtn.disabled = true;
-        const answersHtml = `<div><strong>Answers:</strong> ${blanks.map((b, i) => `(${i+1}) <code>${b}</code>`).join(', ')}</div>`;
+        const answersHtml = `<div><strong>Answers:</strong> ${blanks.map((b, i) => `(${i+1}) <code>${this.escapeHtml(b)}</code>`).join(', ')}</div>`;
         this.showExplanation(q, allCorrect, feedback, null, confidence, answersHtml);
         if (onSubmit) onSubmit({ isCorrect: allCorrect, confidence });
       }, () => {
@@ -446,9 +509,9 @@ const Renderers = {
       const row = document.createElement('div');
       row.className = 'matching-row';
       row.innerHTML = `
-        <div class="match-term">${left}</div>
+        <div class="match-term">${this.formatText(left)}</div>
         <div class="match-arrow">➔</div>
-        <div class="match-def" data-left="${left}">Select matching definition...</div>
+        <div class="match-def" data-left="${this.escapeHtml(left)}">Select matching definition...</div>
       `;
       container.appendChild(row);
     });
@@ -462,16 +525,16 @@ const Renderers = {
     rightItems.forEach(right => {
       const chip = document.createElement('button');
       chip.className = 'chip';
-      chip.textContent = right;
+      chip.innerHTML = this.formatText(right);
       chip.onclick = () => {
         if (!selectedLeft) {
           App.showToast('First tap a term row above to link!');
           return;
         }
         userMatches[selectedLeft] = right;
-        const targetEl = container.querySelector(`.match-def[data-left="${selectedLeft}"]`);
+        const targetEl = container.querySelector(`.match-def[data-left="${CSS.escape(selectedLeft)}"]`);
         if (targetEl) {
-          targetEl.textContent = right;
+          targetEl.innerHTML = this.formatText(right);
           targetEl.classList.add('selected');
         }
       };
@@ -504,14 +567,15 @@ const Renderers = {
         let allCorrect = true;
         pairs.forEach(p => {
           const matched = userMatches[p.left];
-          const defEl = container.querySelector(`.match-def[data-left="${p.left}"]`);
+          const defEl = container.querySelector(`.match-def[data-left="${CSS.escape(p.left)}"]`);
           if (matched === p.right) {
             defEl.classList.remove('selected');
             defEl.classList.add('matched');
+            defEl.innerHTML = this.formatText(matched);
           } else {
             defEl.classList.remove('selected');
             defEl.classList.add('wrong-match');
-            defEl.innerHTML = `<s>${matched}</s> ➔ <strong>${p.right}</strong>`;
+            defEl.innerHTML = `<s>${this.formatText(matched)}</s> ➔ <strong>${this.formatText(p.right)}</strong>`;
             allCorrect = false;
           }
         });
@@ -538,7 +602,7 @@ const Renderers = {
       itemEl.className = 'seq-item';
       itemEl.innerHTML = `
         <span class="seq-num">${i + 1}</span>
-        <span class="flex-1">${itemText}</span>
+        <span class="flex-1">${this.formatText(itemText)}</span>
         <button class="icon-btn up-btn" title="Move Up">▲</button>
         <button class="icon-btn dn-btn" title="Move Down">▼</button>
       `;
@@ -585,7 +649,7 @@ const Renderers = {
           }
         });
 
-        const correctOrderHtml = `<div class="mb-sm"><strong>Correct Sequence:</strong><ol style="padding-left:20px; margin-top:8px;">${original.map(s => `<li>${s}</li>`).join('')}</ol></div>`;
+        const correctOrderHtml = `<div class="mb-sm"><strong>Correct Sequence:</strong><ol style="padding-left:20px; margin-top:8px;">${original.map(s => `<li>${this.formatText(s)}</li>`).join('')}</ol></div>`;
         this.showExplanation(q, allCorrect, feedback, null, confidence, correctOrderHtml);
         if (onSubmit) onSubmit({ isCorrect: allCorrect, confidence });
       }, () => {
@@ -603,13 +667,13 @@ const Renderers = {
       <div class="flashcard-inner">
         <div class="flashcard-front">
           <span class="tag mb-md">Front</span>
-          <h3>${q.question || q.front}</h3>
+          <div class="flashcard-text">${this.formatText(q.question || q.front)}</div>
           <div class="flashcard-hint">Tap card to flip ↻</div>
         </div>
         <div class="flashcard-back">
           <span class="tag mb-md" style="background:var(--primary); color:white;">Back / Definition</span>
-          <h3>${q.answer || q.back}</h3>
-          ${q.explanation ? `<p class="text-sm text-muted mt-md">${q.explanation}</p>` : ''}
+          <div class="flashcard-text">${this.formatText(q.answer || q.back)}</div>
+          ${q.explanation ? `<div class="text-sm text-muted mt-md">${this.formatText(q.explanation)}</div>` : ''}
         </div>
       </div>
     `;
@@ -672,14 +736,14 @@ const Renderers = {
       markingBox.innerHTML = `
         <div class="explanation-box mb-md">
           <h4>Reference Model Answer</h4>
-          <p>${q.answer || q.explanation}</p>
+          <div class="model-answer-text">${this.formatText(q.answer || q.explanation)}</div>
         </div>
         <h4>Self-Marking Checklist (tick points you covered):</h4>
         <div class="marking-points mb-md">
           ${points.map((pt, i) => `
             <div class="mark-point">
               <div class="mark-check" data-idx="${i}">✓</div>
-              <div class="flex-1">${pt}</div>
+              <div class="flex-1">${this.formatText(pt)}</div>
             </div>
           `).join('')}
         </div>
@@ -706,8 +770,8 @@ const Renderers = {
   renderCaseStudy: function(cs, area, feedback, onSubmit) {
     area.innerHTML = `
       <div class="case-scenario">
-        <h4>Scenario: ${cs.title || 'Case Analysis'}</h4>
-        <p>${cs.scenario}</p>
+        <h4>Scenario: ${this.escapeHtml(cs.title || 'Case Analysis')}</h4>
+        <div class="scenario-text">${this.formatText(cs.scenario)}</div>
       </div>
       <div class="case-sub-container"></div>
     `;
@@ -803,7 +867,7 @@ const Renderers = {
           ${points.map((pt, i) => `
             <div class="mark-point">
               <div class="mark-check" data-idx="${i}">✓</div>
-              <div class="flex-1">${pt}</div>
+              <div class="flex-1">${this.formatText(pt)}</div>
             </div>
           `).join('')}
         </div>
@@ -990,7 +1054,7 @@ const Renderers = {
       whyWrongHtml = `
         <div class="why-wrong-item">
           <strong>Why option (${'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[selectedIdx]}) was incorrect:</strong><br>
-          ${wwText}
+          ${this.formatText(wwText)}
         </div>
       `;
     }
@@ -1000,7 +1064,7 @@ const Renderers = {
     if (q.verified && q.verified_output) {
       verifiedHtml = `
         <div class="mt-sm" style="font-size:0.85rem; color:var(--secondary);">
-          ✓ <em>Verified Compiler Output:</em> <code>${q.verified_output.replace(/\n/g, ' ')}</code>
+          ✓ <em>Verified Compiler Output:</em> <code>${this.escapeHtml(q.verified_output.replace(/\n/g, ' '))}</code>
         </div>
       `;
     }
@@ -1011,11 +1075,11 @@ const Renderers = {
         <h4 style="color:${isCorrect ? 'var(--success)' : 'var(--danger)'}">
           ${isCorrect ? '✓ Correct!' : '✗ Needs Revision'}
         </h4>
-        <p>${q.explanation || 'No detailed explanation provided.'}</p>
+        <div class="explanation-text">${this.formatText(q.explanation || 'No detailed explanation provided.')}</div>
         ${whyWrongHtml}
         ${extraHtml}
         ${verifiedHtml}
-        ${q.source ? `<div class="text-sm text-muted mt-md">📖 <em>Source: ${q.source}</em></div>` : ''}
+        ${q.source ? `<div class="text-sm text-muted mt-md">📖 <em>Source: ${this.escapeHtml(q.source)}</em></div>` : ''}
       </div>
     `;
   }
