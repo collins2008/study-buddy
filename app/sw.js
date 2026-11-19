@@ -1,6 +1,6 @@
-// Study Buddy Service Worker v1.0
-const CACHE_NAME = 'studybuddy-v1';
-const CONTENT_CACHE = 'studybuddy-content-v1';
+// Study Buddy Service Worker v2.2
+const CACHE_NAME = 'studybuddy-v2.2';
+const CONTENT_CACHE = 'studybuddy-content-v2.2';
 
 // App shell assets — relative paths for arbitrary base paths (e.g. GitHub Pages or subfolders)
 const SHELL_ASSETS = [
@@ -63,18 +63,17 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Shell: cache-first
+  // Shell assets: network-first with cache fallback (ensures online users always get fresh code)
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      if (cached) return cached;
-      return fetch(event.request).then(response => {
+    fetch(event.request)
+      .then(response => {
         if (response && response.status === 200) {
           const clone = response.clone();
           caches.open(CACHE_NAME).then(c => c.put(event.request, clone));
         }
         return response;
-      });
-    })
+      })
+      .catch(() => caches.match(event.request))
   );
 });
 

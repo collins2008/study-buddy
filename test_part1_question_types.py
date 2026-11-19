@@ -336,10 +336,11 @@ def run_question_types_audit():
                 };
                 
                 await Renderers.renderQuestion(q, target, () => {});
-                const card = target.querySelector('.flashcard-wrapper');
+                const card = target.querySelector('.flashcard-box');
                 card.click(); // Flip
+                await new Promise(r => setTimeout(r, 220));
                 
-                const isFlipped = target.querySelector('.flashcard-inner').classList.contains('flipped');
+                const isFlipped = card.classList.contains('is-flipped');
                 const ratingBtns = target.querySelectorAll('.rating-row button');
                 
                 target.remove();

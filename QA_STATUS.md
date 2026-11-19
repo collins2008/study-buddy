@@ -1,8 +1,8 @@
 # QA Status Tracking
 
-**Current Phase**: PRODUCTION HOTFIX & VERIFICATION COMPLETE (FIX-14: HTML Entity & Markdown Rendering)
+**Current Phase**: PRODUCTION HOTFIX & VERIFICATION COMPLETE (FIX-15: Responsive Flashcard Box & Network-First Cache)
 **Role**: Hostile Examiner & QA Engineer
-**Last Updated**: 2026-11-19 16:38
+**Last Updated**: 2026-11-19 17:05
 
 ---
 

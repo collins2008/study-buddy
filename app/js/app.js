@@ -11,7 +11,8 @@ const App = {
 
     // 2. Register Service Worker for offline PWA
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js').then(() => {
+      navigator.serviceWorker.register('./sw.js').then((reg) => {
+        reg.update();
         setTimeout(() => this.cacheAllContent(), 1200);
       }).catch(err => {
         console.warn('SW registration failed:', err);

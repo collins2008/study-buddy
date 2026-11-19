@@ -661,31 +661,53 @@ const Renderers = {
 
   // 8. Flashcard (Flip, rate Again/Hard/Good/Easy)
   renderFlashcard: function(q, area, feedback, onSubmit) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'flashcard-wrapper';
-    wrapper.innerHTML = `
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <span class="tag mb-md">Front</span>
+    const card = document.createElement('div');
+    card.className = 'flashcard-box';
+
+    const renderSide = (isFlipped) => {
+      if (!isFlipped) {
+        card.classList.remove('is-flipped');
+        card.innerHTML = `
+          <div class="flashcard-badge-row">
+            <span class="tag">Front</span>
+          </div>
           <div class="flashcard-text">${this.formatText(q.question || q.front)}</div>
           <div class="flashcard-hint">Tap card to flip ↻</div>
-        </div>
-        <div class="flashcard-back">
-          <span class="tag mb-md" style="background:var(--primary); color:white;">Back / Definition</span>
+        `;
+      } else {
+        card.classList.add('is-flipped');
+        card.innerHTML = `
+          <div class="flashcard-badge-row">
+            <span class="tag" style="background:var(--primary); color:white;">Back / Definition</span>
+          </div>
           <div class="flashcard-text">${this.formatText(q.answer || q.back)}</div>
           ${q.explanation ? `<div class="text-sm text-muted mt-md">${this.formatText(q.explanation)}</div>` : ''}
-        </div>
-      </div>
-    `;
-
-    const inner = wrapper.querySelector('.flashcard-inner');
-    let isFlipped = false;
-    wrapper.onclick = () => {
-      isFlipped = !isFlipped;
-      inner.classList.toggle('flipped', isFlipped);
-      if (isFlipped) ratingRow.classList.remove('hidden');
+          <div class="flashcard-hint">Tap card to flip back ↻</div>
+        `;
+      }
     };
-    area.appendChild(wrapper);
+
+    let isFlipped = false;
+    let isAnimating = false;
+
+    renderSide(false);
+
+    card.onclick = () => {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      // Smooth 3D perspective flip transition
+      card.style.transform = 'scale(0.97) rotateY(90deg)';
+      setTimeout(() => {
+        isFlipped = !isFlipped;
+        renderSide(isFlipped);
+        card.style.transform = 'scale(1) rotateY(0deg)';
+        if (isFlipped) ratingRow.classList.remove('hidden');
+        setTimeout(() => { isAnimating = false; }, 200);
+      }, 150);
+    };
+
+    area.appendChild(card);
 
     const ratingRow = document.createElement('div');
     ratingRow.className = 'rating-row hidden';

@@ -34,8 +34,9 @@ def test_rendering():
 
                 await Renderers.renderQuestion(q, target, () => {});
 
-                const frontText = target.querySelector('.flashcard-front').innerText;
-                const frontHtml = target.querySelector('.flashcard-front').innerHTML;
+                const card = target.querySelector('.flashcard-box');
+                const frontText = card.innerText;
+                const frontHtml = card.innerHTML;
                 const promptDiv = target.querySelector('.q-question');
 
                 return {
@@ -61,16 +62,17 @@ def test_rendering():
 
         print("3. Testing card flip and back content...")
         flip_res = page.evaluate("""
-            () => {
+            async () => {
                 const target = document.getElementById('test-fc-container');
-                const wrapper = target.querySelector('.flashcard-wrapper');
-                wrapper.click(); // flip card
+                const card = target.querySelector('.flashcard-box');
+                card.click(); // flip card
+                await new Promise(r => setTimeout(r, 220));
 
-                const backText = target.querySelector('.flashcard-back').innerText;
-                const backHtml = target.querySelector('.flashcard-back').innerHTML;
+                const backText = card.innerText;
+                const backHtml = card.innerHTML;
 
                 return {
-                    isFlipped: target.querySelector('.flashcard-inner').classList.contains('flipped'),
+                    isFlipped: card.classList.contains('is-flipped'),
                     backText,
                     containsHeadInBack: backText.includes('<head>'),
                     containsBodyInBack: backText.includes('<body>')
