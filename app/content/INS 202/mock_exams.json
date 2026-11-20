@@ -157,8 +157,8 @@
           "options": [
             "Skip to Main Content link (hidden visually until focused via keyboard Tab)",
             "Primary Brand Logo linking to homepage with descriptive alt text",
-            "Global Navigation Bar links (<nav> unordered list items)",
-            "Main Content Area heading (<h1>) and primary workflow interactive elements"
+            "Global Navigation Bar links (`<nav>` unordered list items)",
+            "Main Content Area heading (`<h1>`) and primary workflow interactive elements"
           ],
           "answer": [
             0,
@@ -171,8 +171,8 @@
           "steps": [
             "Skip to Main Content link (hidden visually until focused via keyboard Tab)",
             "Primary Brand Logo linking to homepage with descriptive alt text",
-            "Global Navigation Bar links (<nav> unordered list items)",
-            "Main Content Area heading (<h1>) and primary workflow interactive elements"
+            "Global Navigation Bar links (`<nav>` unordered list items)",
+            "Main Content Area heading (`<h1>`) and primary workflow interactive elements"
           ]
         },
         {
@@ -1016,8 +1016,8 @@
           ],
           "question": "When developing an accessible website, what is the correct HTML markup rule for a purely decorative background pattern image that conveys no informative content to users?",
           "options": [
-            "Provide an empty alt attribute: <img src='pattern.png' alt=''> so screen readers skip it cleanly",
-            "Omit the alt attribute entirely: <img src='pattern.png'> so the screen reader guesses its purpose",
+            "Provide an empty alt attribute: `<img src='pattern.png' alt=''>` so screen readers skip it cleanly",
+            "Omit the alt attribute entirely: `<img src='pattern.png'>` so the screen reader guesses its purpose",
             "Set alt='Decorative background image that has no meaning' so the screen reader reads the explanation aloud",
             "Replace the img tag with an unclosed audio tag"
           ],

@@ -215,27 +215,27 @@
       "source": "IFT 203 Slide 3 & Week 5 Slides; W3C Semantic Structure",
       "pairs": [
         {
-          "left": "<header>",
+          "left": "`<header>`",
           "right": "Contains introductory content, site logo, or navigational aids for a page or section"
         },
         {
-          "left": "<nav>",
+          "left": "`<nav>`",
           "right": "Designates a major block of navigational links"
         },
         {
-          "left": "<main>",
+          "left": "`<main>`",
           "right": "Encapsulates the dominant, central content unique to this individual document (only one per page)"
         },
         {
-          "left": "<article>",
+          "left": "`<article>`",
           "right": "Represents a complete, self-contained composition that is independently syndicatable (e.g., a blog post)"
         },
         {
-          "left": "<aside>",
+          "left": "`<aside>`",
           "right": "Represents content tangentially related to the main content (e.g., sidebars or related links)"
         },
         {
-          "left": "<footer>",
+          "left": "`<footer>`",
           "right": "Contains closing information such as author copyright, terms of service, and contact details"
         }
       ]
@@ -253,28 +253,28 @@
       ],
       "question": "Arrange the elements in the proper order to form a valid, standard HTML5 document skeleton from the very top of the file to the very bottom:",
       "options": [
-        "<!DOCTYPE html>",
-        "<html lang=\"en\">",
-        "<head><meta charset=\"UTF-8\"><title>Page Title</title></head>",
-        "<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>",
-        "</html>"
+        "`<!DOCTYPE html>`",
+        "`<html lang=\"en\">`",
+        "`<head><meta charset=\"UTF-8\"><title>Page Title</title></head>`",
+        "`<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>`",
+        "`</html>`"
       ],
       "answer": [
-        "<!DOCTYPE html>",
-        "<html lang=\"en\">",
-        "<head><meta charset=\"UTF-8\"><title>Page Title</title></head>",
-        "<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>",
-        "</html>"
+        "`<!DOCTYPE html>`",
+        "`<html lang=\"en\">`",
+        "`<head><meta charset=\"UTF-8\"><title>Page Title</title></head>`",
+        "`<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>`",
+        "`</html>`"
       ],
       "explanation": "Every valid HTML5 file begins with `<!DOCTYPE html>`, followed by the root `<html>` tag, the `<head>` metadata container, the visible `<body>` content, and ends with the closing `</html>` tag.",
       "why_wrong": {},
       "source": "IFT 203 Slide 3; HTML Basics Week 4",
       "steps": [
-        "<!DOCTYPE html>",
-        "<html lang=\"en\">",
-        "<head><meta charset=\"UTF-8\"><title>Page Title</title></head>",
-        "<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>",
-        "</html>"
+        "`<!DOCTYPE html>`",
+        "`<html lang=\"en\">`",
+        "`<head><meta charset=\"UTF-8\"><title>Page Title</title></head>`",
+        "`<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>`",
+        "`</html>`"
       ]
     },
     {
@@ -413,7 +413,7 @@
         "sub-sup"
       ],
       "question": "What is the difference between `<sub>` and `<sup>`? Give practical examples.",
-      "answer": "`<sub>` creates subscript text below the baseline (e.g., Chemical formulas: `H<sub>2</sub>O`).\n`<sup>` creates superscript text above the baseline (e.g., Mathematical powers: `x<sup>2</sup>`).",
+      "answer": "`<sub>` creates subscript text below the baseline (e.g., Chemical formulas: `H`<sub>`2`</sub>`O`).\n`<sup>` creates superscript text above the baseline (e.g., Mathematical powers: `x`<sup>`2</sup>`).",
       "explanation": "Text formatting tags covered in IFT 203 Slide 3.",
       "why_wrong": {},
       "source": "IFT 203 Slide 3"

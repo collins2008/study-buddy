@@ -592,17 +592,18 @@ const Renderers = {
   // 7. Sequencing
   renderSequencing: function(q, area, feedback, onSubmit) {
     const original = [...(q.steps || q.options || [])];
-    const items = [...original].sort(() => Math.random() - 0.5);
+    const items = original.map((text, idx) => ({ text, originalIdx: idx })).sort(() => Math.random() - 0.5);
 
     const list = document.createElement('div');
     list.className = 'sequence-list';
 
-    items.forEach((itemText, i) => {
+    items.forEach((itemObj, i) => {
       const itemEl = document.createElement('div');
       itemEl.className = 'seq-item';
+      itemEl.setAttribute('data-orig-idx', itemObj.originalIdx);
       itemEl.innerHTML = `
         <span class="seq-num">${i + 1}</span>
-        <span class="flex-1">${this.formatText(itemText)}</span>
+        <span class="flex-1">${this.formatText(itemObj.text)}</span>
         <button class="icon-btn up-btn" title="Move Up">▲</button>
         <button class="icon-btn dn-btn" title="Move Down">▼</button>
       `;
@@ -636,12 +637,12 @@ const Renderers = {
     submitBtn.onclick = () => {
       submitBtn.disabled = true;
       this.askConfidence((confidence) => {
-        const currentOrder = Array.from(list.querySelectorAll('.seq-item')).map(el => el.querySelector('.flex-1').textContent.trim());
         let allCorrect = true;
 
         list.querySelectorAll('.seq-item').forEach((el, idx) => {
           el.querySelectorAll('button').forEach(b => b.disabled = true);
-          if (currentOrder[idx] === original[idx]) {
+          const origIdx = parseInt(el.getAttribute('data-orig-idx'), 10);
+          if (origIdx === idx) {
             el.classList.add('correct-pos');
           } else {
             el.classList.add('wrong-pos');

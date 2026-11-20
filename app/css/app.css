@@ -490,6 +490,21 @@ textarea.answer-input {
   user-select: none;
   transition: all var(--transition);
 }
+.seq-item .flex-1 {
+  word-break: break-word;
+  line-height: 1.5;
+}
+.seq-item code {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--accent);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.95em;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
 .seq-item.dragging { opacity: 0.5; cursor: grabbing; }
 .seq-item.correct-pos { border-color: var(--success); }
 .seq-item.wrong-pos   { border-color: var(--danger); }

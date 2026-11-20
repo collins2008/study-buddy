@@ -208,15 +208,15 @@
       "source": "IFT 203 Week 5 Slides; Practice Codes Docx",
       "pairs": [
         {
-          "left": "<textarea>",
+          "left": "`<textarea>`",
           "right": "Provides a multi-line text input field, requiring an explicit closing tag"
         },
         {
-          "left": "<select> & <option>",
+          "left": "`<select>` & `<option>`",
           "right": "Creates a drop-down selection menu for choosing one or more items"
         },
         {
-          "left": "<fieldset> & <legend>",
+          "left": "`<fieldset>` & `<legend>`",
           "right": "Groups logically related form controls inside a visual border with a caption title"
         },
         {
@@ -242,25 +242,25 @@
       ],
       "question": "Order the structural child elements of a fully compliant semantic HTML5 table from top to bottom as they should be nested inside `<table>`:",
       "options": [
-        "<caption> (accessible title of the table, placed first)</caption>",
-        "<thead> containing <tr> and <th> header cells</thead>",
-        "<tbody> containing <tr> and <td> data rows</tbody>",
-        "<tfoot> containing <tr> and <td> summary or total calculations</tfoot>"
+        "<caption> (accessible title of the table, placed first)",
+        "<thead> containing <tr> and <th> header cells",
+        "<tbody> containing <tr> and <td> data rows",
+        "<tfoot> containing <tr> and <td> summary or total calculations"
       ],
       "answer": [
-        "<caption> (accessible title of the table, placed first)</caption>",
-        "<thead> containing <tr> and <th> header cells</thead>",
-        "<tbody> containing <tr> and <td> data rows</tbody>",
-        "<tfoot> containing <tr> and <td> summary or total calculations</tfoot>"
+        "<caption> (accessible title of the table, placed first)",
+        "<thead> containing <tr> and <th> header cells",
+        "<tbody> containing <tr> and <td> data rows",
+        "<tfoot> containing <tr> and <td> summary or total calculations"
       ],
       "explanation": "In semantic HTML tables: `<caption>` must appear immediately after `<table>`, followed by `<thead>` (headers), `<tbody>` (data rows), and `<tfoot>` (footer totals/summaries).",
       "why_wrong": {},
       "source": "IFT 203 Week 5 Slides; W3C HTML5 Table Model",
       "steps": [
-        "<caption> (accessible title of the table, placed first)</caption>",
-        "<thead> containing <tr> and <th> header cells</thead>",
-        "<tbody> containing <tr> and <td> data rows</tbody>",
-        "<tfoot> containing <tr> and <td> summary or total calculations</tfoot>"
+        "<caption> (accessible title of the table, placed first)",
+        "<thead> containing <tr> and <th> header cells",
+        "<tbody> containing <tr> and <td> data rows",
+        "<tfoot> containing <tr> and <td> summary or total calculations"
       ]
     },
     {

@@ -158,10 +158,10 @@
       ],
       "question": "In a UML Use Case diagram, how do the <<include>> and <<extend>> relationships between use cases fundamentally differ?",
       "options": [
-        "<<include>> indicates mandatory execution of the child usecase whenever the base usecase runs; <<extend>> indicates optional or conditional execution only at defined extension points.",
-        "<<include>> is used for external actors, while <<extend>> is used for internal databases.",
-        "<<include>> represents inheritance between classes, while <<extend>> represents method overriding.",
-        "<<include>> can only be used once per diagram, while <<extend>> is unlimited."
+        "`<<include>>` indicates mandatory execution of the child usecase whenever the base usecase runs; `<<extend>>` indicates optional or conditional execution only at defined extension points.",
+        "`<<include>>` is used for external actors, while `<<extend>>` is used for internal databases.",
+        "`<<include>>` represents inheritance between classes, while `<<extend>>` represents method overriding.",
+        "`<<include>>` can only be used once per diagram, while `<<extend>>` is unlimited."
       ],
       "answer": 0,
       "explanation": "<<include>> encapsulates common, mandatory sub-behavior (e.g., 'View Exam Results' <<include>> 'Authenticate Student'). <<extend>> injects optional, conditional behavior that only executes under specific circumstances (e.g., 'Display Late Fee Warning' <<extend>> 'Pay Tuition', triggered only if payment date is past due).",
@@ -418,7 +418,7 @@
       ],
       "question": "What is the difference between <<include>> and <<extend>> in Use Case diagrams?",
       "options": [],
-      "answer": "- <<include>>: Mandatory sub-flow; base use case always invokes the included use case.\n- <<extend>>: Optional or conditional sub-flow; only executes at specified extension points.",
+      "answer": "- `<<include>>`: Mandatory sub-flow; base use case always invokes the included use case.\n- `<<extend>>`: Optional or conditional sub-flow; only executes at specified extension points.",
       "explanation": "In UML use case diagrams, '<<include>>' denotes mandatory execution of a reusable sub-case whenever the base usecase runs. '<<extend>>' denotes optional or conditional execution that occurs only when specific extension points are satisfied. (Sommerville, Ch 5.2).",
       "why_wrong": {},
       "marking_points": [

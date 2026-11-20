@@ -17,6 +17,15 @@ const App = {
       }).catch(err => {
         console.warn('SW registration failed:', err);
       });
+
+      // Auto-reload when new service worker takes control
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) {
+          refreshing = true;
+          window.location.reload();
+        }
+      });
     }
 
     // 3. Setup UI bindings
@@ -265,6 +274,31 @@ const App = {
     menuBtn.onclick = openMenu;
     menuCloseBtn.onclick = closeMenu;
     overlay.onclick = closeMenu;
+
+    const forceUpdateBtn = document.getElementById('btn-force-update');
+    if (forceUpdateBtn) {
+      forceUpdateBtn.onclick = () => {
+        this.closeMenu();
+        this.forceUpdateApp();
+      };
+    }
+  },
+
+  forceUpdateApp: async function() {
+    this.showToast('Clearing cache and updating to latest version...');
+    if ('serviceWorker' in navigator) {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      for (let r of registrations) {
+        await r.unregister();
+      }
+    }
+    if ('caches' in window) {
+      const keys = await caches.keys();
+      for (let k of keys) {
+        await caches.delete(k);
+      }
+    }
+    window.location.href = window.location.pathname + '?nocache=' + Date.now() + window.location.hash;
   },
 
   setupImport: function() {

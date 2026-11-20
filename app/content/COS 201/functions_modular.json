@@ -495,7 +495,7 @@
         "main"
       ],
       "question": "What value should main() return to the operating system to indicate successful program execution?",
-      "answer": "0 (zero) or the standard macro EXIT_SUCCESS from <stdlib.h>.",
+      "answer": "0 (zero) or the standard macro EXIT_SUCCESS from `<stdlib.h>`.",
       "explanation": "Returning 0 from 'main()' signals successful program completion to the host operating system. Returning a non-zero integer (such as EXIT_FAILURE or 1) indicates an error or abnormal termination condition. (Deitel, Ch 2.3)."
     },
     {

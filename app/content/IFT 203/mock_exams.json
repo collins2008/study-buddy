@@ -716,15 +716,15 @@
           "topic_slug": "html_forms_tables_media",
           "pairs": [
             {
-              "left": "<textarea>",
+              "left": "`<textarea>`",
               "right": "Provides a multi-line text input field, requiring an explicit closing tag"
             },
             {
-              "left": "<select> & <option>",
+              "left": "`<select>` & `<option>`",
               "right": "Creates a drop-down selection menu for choosing one or more items"
             },
             {
-              "left": "<fieldset> & <legend>",
+              "left": "`<fieldset>` & `<legend>`",
               "right": "Groups logically related form controls inside a visual border with a caption title"
             },
             {
@@ -1018,27 +1018,27 @@
           "topic_slug": "html_structure_semantics",
           "pairs": [
             {
-              "left": "<header>",
+              "left": "`<header>`",
               "right": "Contains introductory content, site logo, or navigational aids for a page or section"
             },
             {
-              "left": "<nav>",
+              "left": "`<nav>`",
               "right": "Designates a major block of navigational links"
             },
             {
-              "left": "<main>",
+              "left": "`<main>`",
               "right": "Encapsulates the dominant, central content unique to this individual document (only one per page)"
             },
             {
-              "left": "<article>",
+              "left": "`<article>`",
               "right": "Represents a complete, self-contained composition that is independently syndicatable (e.g., a blog post)"
             },
             {
-              "left": "<aside>",
+              "left": "`<aside>`",
               "right": "Represents content tangentially related to the main content (e.g., sidebars or related links)"
             },
             {
-              "left": "<footer>",
+              "left": "`<footer>`",
               "right": "Contains closing information such as author copyright, terms of service, and contact details"
             }
           ]
@@ -1116,7 +1116,7 @@
             "sub-sup"
           ],
           "question": "What is the difference between `<sub>` and `<sup>`? Give practical examples.",
-          "answer": "`<sub>` creates subscript text below the baseline (e.g., Chemical formulas: `H<sub>2</sub>O`).\n`<sup>` creates superscript text above the baseline (e.g., Mathematical powers: `x<sup>2</sup>`).",
+          "answer": "`<sub>` creates subscript text below the baseline (e.g., Chemical formulas: `H`<sub>`2`</sub>`O`).\n`<sup>` creates superscript text above the baseline (e.g., Mathematical powers: `x`<sup>`2</sup>`).",
           "explanation": "Text formatting tags covered in IFT 203 Slide 3.",
           "why_wrong": {},
           "source": "IFT 203 Slide 3",
@@ -1767,26 +1767,26 @@
           ],
           "question": "Order the structural child elements of a fully compliant semantic HTML5 table from top to bottom as they should be nested inside `<table>`:",
           "options": [
-            "<caption> (accessible title of the table, placed first)</caption>",
-            "<thead> containing <tr> and <th> header cells</thead>",
-            "<tbody> containing <tr> and <td> data rows</tbody>",
-            "<tfoot> containing <tr> and <td> summary or total calculations</tfoot>"
+            "<caption> (accessible title of the table, placed first)",
+            "<thead> containing <tr> and <th> header cells",
+            "<tbody> containing <tr> and <td> data rows",
+            "<tfoot> containing <tr> and <td> summary or total calculations"
           ],
           "answer": [
-            "<caption> (accessible title of the table, placed first)</caption>",
-            "<thead> containing <tr> and <th> header cells</thead>",
-            "<tbody> containing <tr> and <td> data rows</tbody>",
-            "<tfoot> containing <tr> and <td> summary or total calculations</tfoot>"
+            "<caption> (accessible title of the table, placed first)",
+            "<thead> containing <tr> and <th> header cells",
+            "<tbody> containing <tr> and <td> data rows",
+            "<tfoot> containing <tr> and <td> summary or total calculations"
           ],
           "explanation": "In semantic HTML tables: `<caption>` must appear immediately after `<table>`, followed by `<thead>` (headers), `<tbody>` (data rows), and `<tfoot>` (footer totals/summaries).",
           "why_wrong": {},
           "source": "IFT 203 Week 5 Slides; W3C HTML5 Table Model",
           "topic_slug": "html_forms_tables_media",
           "steps": [
-            "<caption> (accessible title of the table, placed first)</caption>",
-            "<thead> containing <tr> and <th> header cells</thead>",
-            "<tbody> containing <tr> and <td> data rows</tbody>",
-            "<tfoot> containing <tr> and <td> summary or total calculations</tfoot>"
+            "<caption> (accessible title of the table, placed first)",
+            "<thead> containing <tr> and <th> header cells",
+            "<tbody> containing <tr> and <td> data rows",
+            "<tfoot> containing <tr> and <td> summary or total calculations"
           ]
         },
         {
@@ -1913,7 +1913,7 @@
             "File input with accept restriction: `<input id=\"photo\" type=\"file\" name=\"passport\" accept=\"image/*\" required>`.",
             "Submit button included."
           ],
-          "answer": "```html\n<form action=\"register.php\" method=\"POST\" enctype=\"multipart/form-data\">\n  <fieldset>\n    <legend>Student Registration Details</legend>\n    \n    <p>\n      <label for=\"fullname\">Full Name:</label>\n      <input type=\"text\" id=\"fullname\" name=\"fullname\" placeholder=\"e.g. Aliyu Bello\" required>\n    </p>\n    \n    <p>\n      <label for=\"password\">Create Password:</label>\n      <input type=\"password\" id=\"password\" name=\"password\" minlength=\"8\" placeholder=\"Min 8 characters\" required>\n    </p>\n    \n    <p>\n      <span>Academic Level:</span>\n      <input type=\"radio\" id=\"lvl100\" name=\"level\" value=\"100\" required>\n      <label for=\"lvl100\">100 Level</label>\n      <input type=\"radio\" id=\"lvl200\" name=\"level\" value=\"200\">\n      <label for=\"lvl200\">200 Level</label>\n    </p>\n    \n    <p>\n      <label for=\"passport\">Passport Photograph:</label>\n      <input type=\"file\" id=\"passport\" name=\"passport\" accept=\"image/png, image/jpeg\" required>\n    </p>\n    \n    <p>\n      <input type=\"submit\" value=\"Submit Registration\">\n      <input type=\"reset\" value=\"Clear Form\">\n    </p>\n  </fieldset>\n</form>\n```\n\nExplanation of Improvements:\n1. Security: `method=\"POST\"` prevents URL exposure, and `type=\"password\"` masks characters.\n2. Binary Uploads: `enctype=\"multipart/form-data\"` enables real image byte transmission.\n3. Accessibility: Every input has an `id` matching its `<label for=\"...\">`, enabling screen readers and click-to-focus.\n4. Built-in Validation: `required`, `minlength=\"8\"`, and `accept=\"image/*\"` prevent invalid submissions before hitting the server.",
+          "answer": "```html\n`<form action=\"register.php\" method=\"POST\" enctype=\"multipart/form-data\">`\n  `<fieldset>`\n    `<legend>`Student Registration Details`</legend>`\n    \n    `<p>`\n      `<label for=\"fullname\">`Full Name:`</label>`\n      `<input type=\"text\" id=\"fullname\" name=\"fullname\" placeholder=\"e.g. Aliyu Bello\" required>`\n    `</p>`\n    \n    `<p>`\n      `<label for=\"password\">`Create Password:`</label>`\n      `<input type=\"password\" id=\"password\" name=\"password\" minlength=\"8\" placeholder=\"Min 8 characters\" required>`\n    `</p>`\n    \n    `<p>`\n      `<span>`Academic Level:`</span>`\n      `<input type=\"radio\" id=\"lvl100\" name=\"level\" value=\"100\" required>`\n      `<label for=\"lvl100\">`100 Level`</label>`\n      `<input type=\"radio\" id=\"lvl200\" name=\"level\" value=\"200\">`\n      `<label for=\"lvl200\">`200 Level`</label>`\n    `</p>`\n    \n    `<p>`\n      `<label for=\"passport\">`Passport Photograph:`</label>`\n      `<input type=\"file\" id=\"passport\" name=\"passport\" accept=\"image/png, image/jpeg\" required>`\n    `</p>`\n    \n    `<p>`\n      `<input type=\"submit\" value=\"Submit Registration\">`\n      `<input type=\"reset\" value=\"Clear Form\">`\n    `</p>`\n  `</fieldset>`\n`</form>`\n```\n\nExplanation of Improvements:\n1. Security: `method=\"POST\"` prevents URL exposure, and `type=\"password\"` masks characters.\n2. Binary Uploads: `enctype=\"multipart/form-data\"` enables real image byte transmission.\n3. Accessibility: Every input has an `id` matching its `<label for=\"...\">`, enabling screen readers and click-to-focus.\n4. Built-in Validation: `required`, `minlength=\"8\"`, and `accept=\"image/*\"` prevent invalid submissions before hitting the server.",
           "explanation": "Combines security, binary upload encoding, accessible labels, and client-side validation into an exam-grade form implementation.",
           "why_wrong": {},
           "source": "IFT 203 Practice Codes Docx; Week 5 Slides",
@@ -1940,7 +1940,7 @@
             "Row 3 (11-12 PM): Uses `<td colspan=\"3\">University Assembly & Break</td>`.",
             "Row 4 (12-1 PM): Normal data cells for Monday, Tuesday, Wednesday."
           ],
-          "answer": "```html\n<table border=\"1\">\n  <caption>Department of Information Technology - 200L First Semester Timetable</caption>\n  <thead>\n    <tr>\n      <th scope=\"col\">Time Period</th>\n      <th scope=\"col\">Monday</th>\n      <th scope=\"col\">Tuesday</th>\n      <th scope=\"col\">Wednesday</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">9:00 - 10:00 AM</th>\n      <td rowspan=\"2\">COS 201 Practical Lab</td>\n      <td>IFT 203</td>\n      <td>IFT 211</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">10:00 - 11:00 AM</th>\n      <!-- Monday cell omitted because rowspan=2 from above occupies this slot -->\n      <td>SEN 201</td>\n      <td>IFT 205</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">11:00 - 12:00 PM</th>\n      <td colspan=\"3\" align=\"center\"><strong>University Assembly & Break</strong></td>\n    </tr>\n    <tr>\n      <th scope=\"row\">12:00 - 1:00 PM</th>\n      <td>INS 202</td>\n      <td>ENT 211</td>\n      <td>Study Hall</td>\n    </tr>\n  </tbody>\n</table>\n```\n\nExplanation of Table Cell Geometry:\n1. In the 9:00 AM row, `rowspan=\"2\"` on COS 201 Practical Lab extends the cell downward through 11:00 AM.\n2. In the 10:00 AM row, the Monday `<td>` is intentionally omitted because the cell above already spans into this row. Retaining a cell here would cause table row overflow.\n3. In the 11:00 AM row, `colspan=\"3\"` spans horizontally across Monday, Tuesday, and Wednesday, creating a unified full-width break row.\n4. Semantic `<caption>`, `<thead>`, `<tbody>`, and `<th scope=\"col|row\">` ensure full accessibility for screen readers.",
+          "answer": "```html\n`<table border=\"1\">`\n  `<caption>`Department of Information Technology - 200L First Semester Timetable`</caption>`\n  `<thead>`\n    `<tr>`\n      `<th scope=\"col\">`Time Period`</th>`\n      `<th scope=\"col\">`Monday`</th>`\n      `<th scope=\"col\">`Tuesday`</th>`\n      `<th scope=\"col\">`Wednesday`</th>`\n    `</tr>`\n  `</thead>`\n  `<tbody>`\n    `<tr>`\n      `<th scope=\"row\">`9:00 - 10:00 AM`</th>`\n      `<td rowspan=\"2\">`COS 201 Practical Lab`</td>`\n      `<td>`IFT 203`</td>`\n      `<td>`IFT 211`</td>`\n    `</tr>`\n    `<tr>`\n      `<th scope=\"row\">`10:00 - 11:00 AM`</th>`\n      <!-- Monday cell omitted because rowspan=2 from above occupies this slot -->\n      `<td>`SEN 201`</td>`\n      `<td>`IFT 205`</td>`\n    `</tr>`\n    `<tr>`\n      `<th scope=\"row\">`11:00 - 12:00 PM`</th>`\n      `<td colspan=\"3\" align=\"center\">``<strong>`University Assembly & Break`</strong>``</td>`\n    `</tr>`\n    `<tr>`\n      `<th scope=\"row\">`12:00 - 1:00 PM`</th>`\n      `<td>`INS 202`</td>`\n      `<td>`ENT 211`</td>`\n      `<td>`Study Hall`</td>`\n    `</tr>`\n  `</tbody>`\n`</table>`\n```\n\nExplanation of Table Cell Geometry:\n1. In the 9:00 AM row, `rowspan=\"2\"` on COS 201 Practical Lab extends the cell downward through 11:00 AM.\n2. In the 10:00 AM row, the Monday `<td>` is intentionally omitted because the cell above already spans into this row. Retaining a cell here would cause table row overflow.\n3. In the 11:00 AM row, `colspan=\"3\"` spans horizontally across Monday, Tuesday, and Wednesday, creating a unified full-width break row.\n4. Semantic `<caption>`, `<thead>`, `<tbody>`, and `<th scope=\"col|row\">` ensure full accessibility for screen readers.",
           "explanation": "Demonstrates cell geometry and semantic table structure.",
           "why_wrong": {},
           "source": "IFT 203 Week 5 Slides; Take-Home Practical 1",
@@ -2016,29 +2016,29 @@
           ],
           "question": "Arrange the elements in the proper order to form a valid, standard HTML5 document skeleton from the very top of the file to the very bottom:",
           "options": [
-            "<!DOCTYPE html>",
-            "<html lang=\"en\">",
-            "<head><meta charset=\"UTF-8\"><title>Page Title</title></head>",
-            "<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>",
-            "</html>"
+            "`<!DOCTYPE html>`",
+            "`<html lang=\"en\">`",
+            "`<head><meta charset=\"UTF-8\"><title>Page Title</title></head>`",
+            "`<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>`",
+            "`</html>`"
           ],
           "answer": [
-            "<!DOCTYPE html>",
-            "<html lang=\"en\">",
-            "<head><meta charset=\"UTF-8\"><title>Page Title</title></head>",
-            "<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>",
-            "</html>"
+            "`<!DOCTYPE html>`",
+            "`<html lang=\"en\">`",
+            "`<head><meta charset=\"UTF-8\"><title>Page Title</title></head>`",
+            "`<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>`",
+            "`</html>`"
           ],
           "explanation": "Every valid HTML5 file begins with `<!DOCTYPE html>`, followed by the root `<html>` tag, the `<head>` metadata container, the visible `<body>` content, and ends with the closing `</html>` tag.",
           "why_wrong": {},
           "source": "IFT 203 Slide 3; HTML Basics Week 4",
           "topic_slug": "html_structure_semantics",
           "steps": [
-            "<!DOCTYPE html>",
-            "<html lang=\"en\">",
-            "<head><meta charset=\"UTF-8\"><title>Page Title</title></head>",
-            "<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>",
-            "</html>"
+            "`<!DOCTYPE html>`",
+            "`<html lang=\"en\">`",
+            "`<head><meta charset=\"UTF-8\"><title>Page Title</title></head>`",
+            "`<body><h1>Welcome to Nile</h1><p>Content goes here.</p></body>`",
+            "`</html>`"
           ]
         },
         {
@@ -2163,7 +2163,7 @@
             "Replaces `<div class=\"bottom\">` with `<footer>`.",
             "Explains how screen readers utilize landmark regions and how search engines index the primary `<h1>` inside `<article>`."
           ],
-          "answer": "```html\n<header>\n  <nav aria-label=\"Main Navigation\">\n    <a href=\"#\">Home</a>\n    <a href=\"#\">Apply</a>\n  </nav>\n</header>\n<main>\n  <article>\n    <h1>2026 Nile University Scholarship</h1>\n    <p>Applications open Monday...</p>\n  </article>\n</main>\n<footer>\n  <p>&copy; 2026 Ministry</p>\n</footer>\n```\n\nExplanation of Technical Impact:\n1. Accessibility: Screen readers (e.g., NVDA, JAWS, VoiceOver) recognize `<header>`, `<nav>`, `<main>`, and `<footer>` as primary landmark roles. Users can jump directly to the `<main>` landmark, bypassing repetitive navigation links.\n2. Heading Hierarchy: Replacing `<div class=\"headline\">` with `<h1>` provides a navigable heading anchor for users jumping by heading levels.\n3. Search Engine Optimization (SEO): Search crawlers (e.g., Googlebot) treat content inside `<article>` and `<h1>` as the primary topic of the document, elevating search ranking and generating accurate rich snippet previews in search results.",
+          "answer": "```html<header>` `<nav aria-label=\"Main Navigation\">`\n    `<a href=\"#\">`Home`</a>`\n    `<a href=\"#\">`Apply`</a>`\n  `</nav>`\n`</header>`\n`<main>`\n  `<article>`\n    `<h1>`2026 Nile University Scholarship`</h1>`\n    `<p>`Applications open Monday...`</p>`\n  `</article>`\n`</main>`\n`<footer>`\n  `<p>`&copy; 2026 Ministry`</p>`\n`</footer>`\n```\n\nExplanation of Technical Impact:\n1. Accessibility: Screen readers (e.g., NVDA, JAWS, VoiceOver) recognize `<header>`, `<nav>`, `<main>`, and `<footer>` as primary landmark roles. Users can jump directly to the `<main>` landmark, bypassing repetitive navigation links.\n2. Heading Hierarchy: Replacing `<div class=\"headline\">` with `<h1>` provides a navigable heading anchor for users jumping by heading levels.\n3. Search Engine Optimization (SEO): Search crawlers (e.g., Googlebot) treat content inside `<article>` and `<h1>` as the primary topic of the document, elevating search ranking and generating accurate rich snippet previews in search results.",
           "explanation": "Semantic landmarks provide immediate accessibility wins and superior search engine discoverability.",
           "why_wrong": {},
           "source": "IFT 203 Slide 3; MDN Semantic HTML Refactoring",
@@ -2188,7 +2188,7 @@
             "Solution 2 (CSS Margins): Using CSS `margin-bottom` on paragraph elements rather than spamming multiple `<br>` tags, separating presentation from markup structure.",
             "Notes non-breaking spaces `&nbsp;` as an inline character entity alternative."
           ],
-          "answer": "1. Whitespace Collapsing Rule:\nUnder standard W3C HTML parsing rules, any sequence of consecutive whitespace characters (including spaces, tabs, and newline line breaks) within text content is collapsed into a single space. Therefore, typing ten spaces or five blank lines in raw HTML code produces only a single space on screen.\n\n2. Two Correct Solutions:\n- Solution 1: Use the `<pre>` (Preformatted Text) Element: The `<pre>` element instructs the browser engine to preserve every space, tab, and newline exactly as authored in the source file, rendered in a fixed-width monospace font. Ideal for poetry, ASCII art, or code snippets.\n- Solution 2: Use CSS Margins for Vertical Spacing: Best practice dictates separating presentation from structure. Instead of hacking spacing with consecutive `<br><br><br>` tags, the developer should assign CSS margins (e.g., `margin-bottom: 2rem;`) to headings or paragraphs.",
+          "answer": "1. Whitespace Collapsing Rule:\nUnder standard W3C HTML parsing rules, any sequence of consecutive whitespace characters (including spaces, tabs, and newline line breaks) within text content is collapsed into a single space. Therefore, typing ten spaces or five blank lines in raw HTML code produces only a single space on screen.\n\n2. Two Correct Solutions:\n- Solution 1: Use the `<pre>` (Preformatted Text) Element: The `<pre>` element instructs the browser engine to preserve every space, tab, and newline exactly as authored in the source file, rendered in a fixed-width monospace font. Ideal for poetry, ASCII art, or code snippets.\n- Solution 2: Use CSS Margins for Vertical Spacing: Best practice dictates separating presentation from structure. Instead of hacking spacing with consecutive `<br>`<br>`<br>` tags, the developer should assign CSS margins (e.g., `margin-bottom: 2rem;`) to headings or paragraphs.",
           "explanation": "HTML collapses whitespace by design; preformatted text and CSS margins provide disciplined layout control.",
           "why_wrong": {},
           "source": "IFT 203 Slide 3; HTML Basics Week 4",
