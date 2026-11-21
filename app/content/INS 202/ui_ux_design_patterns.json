@@ -443,6 +443,74 @@
         "Describes how placement agreement rates in Closed Sorting validate or expose weaknesses in the architecture"
       ],
       "source": "Module 04 (Content Organization), Card Sorting Methodology"
+    },
+    {
+      "id": "ins202-udp-fc05",
+      "course": "INS 202",
+      "topic": "UI/UX Design Patterns & Templates (Figma, Webflow)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "gestalt",
+        "proximity-similarity"
+      ],
+      "question": "Explain the Gestalt Principles of Proximity and Similarity in UI design.",
+      "answer": "- Principle of Proximity: Objects placed close together are perceived as a related group, whereas distant objects are perceived as separate (e.g., placing form field labels directly above their inputs rather than closer to the previous input).\n- Principle of Similarity: Visual elements that share visual attributes (color, shape, size, typography) are perceived to belong together or share the same function (e.g., all primary action buttons having the same blue fill).",
+      "explanation": "Gestalt perceptual laws in visual UI design (INS 202 Module 6, Slide 6).",
+      "why_wrong": {},
+      "source": "INS 202 Module 06 Slide 6"
+    },
+    {
+      "id": "ins202-udp-fc06",
+      "course": "INS 202",
+      "topic": "UI/UX Design Patterns & Templates (Figma, Webflow)",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "gestalt",
+        "closure-figure-ground"
+      ],
+      "question": "Explain the Gestalt Principles of Closure and Figure-Ground.",
+      "answer": "- Principle of Closure: Human perception visually completes incomplete or broken shapes, perceiving a recognizable whole rather than fragmented lines (e.g., modern minimalist company logos or icons).\n- Principle of Figure-Ground: The human eye instinctively separates visual scenes into a focal object (the figure) and a background (the ground). In UI, modals dim or blur the background ground to isolate the active dialogue figure.",
+      "explanation": "Gestalt grouping principles from INS 202 Module 6, Slide 8.",
+      "why_wrong": {},
+      "source": "INS 202 Module 06 Slide 8"
+    },
+    {
+      "id": "ins202-udp-fc07",
+      "course": "INS 202",
+      "topic": "UI/UX Design Patterns & Templates (Figma, Webflow)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "design-patterns",
+        "accordions-tabs"
+      ],
+      "question": "When should a UI designer select an Accordion pattern versus a Tabbed Navigation pattern?",
+      "answer": "- Tabbed Navigation: Best when content sections are mutually exclusive, interrelated, and users need to rapidly switch between 2 to 5 distinct categories without losing vertical scroll position.\n- Accordion: Best when organizing long, content-heavy vertical lists (such as FAQs) where users only need to read 1 or 2 specific sections, keeping the page compact on mobile viewports.",
+      "explanation": "Interactive UI layout patterns (INS 202 Module 6, Slide 12).",
+      "why_wrong": {},
+      "source": "INS 202 Module 06 Slide 12"
+    },
+    {
+      "id": "ins202-udp-fc08",
+      "course": "INS 202",
+      "topic": "UI/UX Design Patterns & Templates (Figma, Webflow)",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "visual-hierarchy",
+        "scale-whitespace"
+      ],
+      "question": "What is Visual Hierarchy, and how do Scale, Contrast, and Whitespace guide the user's eye?",
+      "answer": "Visual Hierarchy is the deliberate arrangement and presentation of visual elements in order of cognitive importance.\n- Scale: Larger headings instantly signal importance, establishing reading order.\n- Contrast: High color contrast draws immediate focal attention to call-to-action buttons.\n- Whitespace (Negative Space): Generous breathing room around elements isolates important content, prevents visual clutter, and reduces cognitive load.",
+      "explanation": "Visual organization in web and app design (INS 202 Module 6, Slide 14).",
+      "why_wrong": {},
+      "source": "INS 202 Module 06 Slide 14"
     }
   ],
   "case_studies": [

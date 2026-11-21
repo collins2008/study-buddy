@@ -512,6 +512,140 @@
       "source": "Module 01 Slide 30; Module 02 Slide 54",
       "verified": true,
       "verified_output": "Confirmation, disabling destructive options, and universal Undo."
+    },
+    {
+      "id": "ins202-pii-fc01",
+      "course": "INS 202",
+      "topic": "Interaction vs Interface & Design Principles",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "interaction-vs-interface"
+      ],
+      "question": "What is the fundamental difference between an Interface and an Interaction in HCI?",
+      "answer": "- Interface: The physical and graphical surface mediating the human and machine (the tangible hardware, pixels, buttons, sliders, icons, menus, and typography).\n- Interaction: The ongoing behavioral dialogue, action exchange, and cognitive communication loop occurring between the human user and the system over time as the user executes tasks.",
+      "explanation": "Core conceptual distinction from INS 202 Module 2, Slide 3.",
+      "why_wrong": {},
+      "source": "INS 202 Module 02 Slide 3"
+    },
+    {
+      "id": "ins202-pii-fc02",
+      "course": "INS 202",
+      "topic": "Interaction vs Interface & Design Principles",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "norman-principles",
+        "visibility"
+      ],
+      "question": "Explain Don Norman's design principle of 'Visibility'.",
+      "answer": "Visibility dictates that available controls, functions, and options should be clearly noticeable and visually prominent to the user, rather than concealed behind convoluted menus.\nWhen system functions are visible, users can immediately deduce what actions are possible without memorizing complex hidden keyboard shortcuts.",
+      "explanation": "Norman's 6 design principles (INS 202 Module 2, Slide 6).",
+      "why_wrong": {},
+      "source": "INS 202 Module 02 Slide 6"
+    },
+    {
+      "id": "ins202-pii-fc03",
+      "course": "INS 202",
+      "topic": "Interaction vs Interface & Design Principles",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "norman-principles",
+        "feedback"
+      ],
+      "question": "Explain Don Norman's design principle of 'Feedback' and give three modalities of feedback.",
+      "answer": "Feedback ensures that every user action produces an immediate, clear, and unambiguous response indicating what action was performed and what result was achieved.\nModalities of feedback:\n1. Visual: Loading spinners, button depression animations, color state changes.\n2. Auditory: Success chimes, shutter clicks on phone cameras, error beeps.\n3. Haptic: Subtle vibration pulses on mobile touchscreens confirming a virtual keypress.",
+      "explanation": "Feedback principles in interactive systems (INS 202 Module 2, Slide 8).",
+      "why_wrong": {},
+      "source": "INS 202 Module 02 Slide 8"
+    },
+    {
+      "id": "ins202-pii-fc04",
+      "course": "INS 202",
+      "topic": "Interaction vs Interface & Design Principles",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "norman-principles",
+        "affordance"
+      ],
+      "question": "What is an 'Affordance', and how did Don Norman distinguish Perceived Affordance from Real Affordance?",
+      "answer": "- Real Affordance: The actual physical properties of an object that determine how it can be manipulated (e.g., a physical door handle affords pulling; a flat plate affords pushing).\n- Perceived Affordance: The visual clues and signifiers that communicate to the user how an interface element can be interacted with (e.g., a 3D beveled button looks 'clickable' on a 2D glass screen, inviting finger taps).",
+      "explanation": "Affordance theory in HCI (INS 202 Module 2, Slide 10).",
+      "why_wrong": {},
+      "source": "INS 202 Module 02 Slide 10"
+    },
+    {
+      "id": "ins202-pii-fc05",
+      "course": "INS 202",
+      "topic": "Interaction vs Interface & Design Principles",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "norman-principles",
+        "mapping"
+      ],
+      "question": "What is 'Mapping' in user interface design, and what constitutes 'Natural Mapping'?",
+      "answer": "Mapping refers to the relationship between controls and their resulting effects in the physical or digital environment.\nNatural Mapping exploits physical analogies or spatial layout correspondence:\n- E.g., arranging a stove's four burner knobs in the identical rectangular pattern as the burners themselves.\n- E.g., turning an audio knob clockwise to increase volume, or pushing a steering wheel right to turn right.",
+      "explanation": "Spatial correspondence and mapping from INS 202 Module 2, Slide 12.",
+      "why_wrong": {},
+      "source": "INS 202 Module 02 Slide 12"
+    },
+    {
+      "id": "ins202-pii-fc06",
+      "course": "INS 202",
+      "topic": "Interaction vs Interface & Design Principles",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "norman-principles",
+        "consistency"
+      ],
+      "question": "Contrast Internal Consistency with External Consistency in user interface design.",
+      "answer": "- Internal Consistency: Applying identical design rules, color palettes, button styles, terminology, and layout patterns across all screens within the SAME application.\n- External Consistency: Conforming to established cross-application standards, conventions, and platform guidelines (e.g., standardizing `Ctrl+C` for copy, putting a shopping cart icon in the top-right header, or using a blue magnifying glass for search).",
+      "explanation": "Consistency dimensions from INS 202 Module 2, Slide 14.",
+      "why_wrong": {},
+      "source": "INS 202 Module 02 Slide 14"
+    },
+    {
+      "id": "ins202-pii-fc07",
+      "course": "INS 202",
+      "topic": "Interaction vs Interface & Design Principles",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "norman-principles",
+        "constraints"
+      ],
+      "question": "List and explain the four types of Constraints described by Don Norman.",
+      "answer": "1. Physical Constraints: Physical boundaries restricting movement (e.g., a USB-A plug physically cannot enter a socket upside down).\n2. Logical Constraints: Exploiting human reasoning and deduction (e.g., if a wizard has 3 steps and steps 1 and 2 are finished, step 3 is the only remaining action).\n3. Semantic Constraints: Relying on the real-world meaning and common sense of situations to limit possible actions.\n4. Cultural Constraints: Learned social conventions and standardized symbols (e.g., red meaning stop/danger and green meaning go/success).",
+      "explanation": "Norman's constraint taxonomy (INS 202 Module 2, Slide 16).",
+      "why_wrong": {},
+      "source": "INS 202 Module 02 Slide 16"
+    },
+    {
+      "id": "ins202-pii-fc08",
+      "course": "INS 202",
+      "topic": "Interaction vs Interface & Design Principles",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "signifiers-vs-affordances"
+      ],
+      "question": "What is the difference between an Affordance and a Signifier according to Don Norman's revised design model?",
+      "answer": "- Affordance: Determines what actions are physically possible between an actor and an object (e.g., a touch screen affordance allows touching anywhere on the surface).\n- Signifier: Any perceivable indicator (text, mark, icon, border, arrow, sound) that communicates WHERE the action should take place and WHAT action is expected (e.g., a painted word 'PUSH' on a door or a blue button with 'Submit Order' on a glass touchscreen).",
+      "explanation": "Norman's revised Design of Everyday Things framework (INS 202 Module 2).",
+      "why_wrong": {},
+      "source": "INS 202 Module 02 Slide 18"
     }
   ],
   "case_studies": [

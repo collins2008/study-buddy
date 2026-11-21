@@ -520,6 +520,141 @@
       "source": "Module 01 Slide 27",
       "verified": true,
       "verified_output": "User-centric, iterative, measures usability with users."
+    },
+    {
+      "id": "ins202-hig-fc01",
+      "course": "INS 202",
+      "topic": "HCI Fundamentals & Core Goals (Safety, Utility, etc.)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "hci-definition",
+        "multidisciplinary"
+      ],
+      "question": "What is Human-Computer Interaction (HCI), and why is it inherently a multidisciplinary field?",
+      "answer": "Human-Computer Interaction (HCI) is a discipline concerned with the design, evaluation, and implementation of interactive computing systems for human use, and with the study of major phenomena surrounding them.\nIt is multidisciplinary because it synthesizes:\n- Computer Science (software engineering, UI architectures)\n- Cognitive Psychology (human perception, memory, mental models)\n- Ergonomics / Human Factors (physical workspace, fatigue, anatomy)\n- Graphic & Industrial Design (visual hierarchy, aesthetics, typography).",
+      "explanation": "Foundational definition of HCI from Gerard Kim and INS 202 Module 1, Slide 3.",
+      "why_wrong": {},
+      "source": "INS 202 Module 01 Slide 3"
+    },
+    {
+      "id": "ins202-hig-fc02",
+      "course": "INS 202",
+      "topic": "HCI Fundamentals & Core Goals (Safety, Utility, etc.)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "usability-goals",
+        "metrics"
+      ],
+      "question": "List and define the six primary Usability Goals in HCI.",
+      "answer": "1. Effectiveness: How well a system executes the tasks it was designed to accomplish.\n2. Efficiency: The level of resources (time, clicks, mental effort) expended to achieve goals.\n3. Safety: Protecting users from hazardous situations and unintended errors, and offering easy recovery (Undo).\n4. Utility: Providing the appropriate set of functions that users actually need to perform their work.\n5. Learnability: How easy it is for first-time or novice users to master basic functionality.\n6. Memorability: How easily users re-establish proficiency after a period of non-use.",
+      "explanation": "The 6 core usability dimensions (Preece, Rogers, Sharp / INS 202 Module 1).",
+      "why_wrong": {},
+      "source": "INS 202 Module 01 Slides 10-15"
+    },
+    {
+      "id": "ins202-hig-fc03",
+      "course": "INS 202",
+      "topic": "HCI Fundamentals & Core Goals (Safety, Utility, etc.)",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "usability-vs-ux",
+        "goals"
+      ],
+      "question": "How do Usability Goals fundamentally differ from User Experience (UX) Goals?",
+      "answer": "- Usability Goals: Objective, measurable performance benchmarks focused on productivity, error reduction, task speed, and functional capability (e.g., 'Can the user complete checkout in under 60 seconds with 0 errors?').\n- User Experience (UX) Goals: Subjective, qualitative criteria focused on human emotion, feelings, and psychological engagement during interaction (e.g., 'Is the interface satisfying, enjoyable, aesthetically pleasing, motivating, or engaging?').",
+      "explanation": "Objective usability vs subjective UX distinction from INS 202 Module 1.",
+      "why_wrong": {},
+      "source": "INS 202 Module 01 Slides 16-18"
+    },
+    {
+      "id": "ins202-hig-fc04",
+      "course": "INS 202",
+      "topic": "HCI Fundamentals & Core Goals (Safety, Utility, etc.)",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "safety",
+        "error-prevention"
+      ],
+      "question": "In the context of Usability Goals, how does a system designer ensure 'Safety'?",
+      "answer": "Safety is achieved through two complementary design strategies:\n1. Error Prevention: Designing interfaces that prevent destructive actions before they happen (e.g., graying out invalid options, clear constraints, destructive action confirmation prompts).\n2. Error Recovery: Providing safe, non-punitive escape mechanisms when mistakes occur, such as multi-level `Undo` (`Ctrl+Z`), auto-saved document drafts, and non-destructive trash/recycle bins.",
+      "explanation": "Safety principles in interface design from INS 202 Module 1, Slide 12.",
+      "why_wrong": {},
+      "source": "INS 202 Module 01 Slide 12"
+    },
+    {
+      "id": "ins202-hig-fc05",
+      "course": "INS 202",
+      "topic": "HCI Fundamentals & Core Goals (Safety, Utility, etc.)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "learnability-vs-memorability"
+      ],
+      "question": "Contrast Learnability with Memorability in user interface evaluation.",
+      "answer": "- Learnability: Measures how quickly and easily a brand-new or novice user can grasp an interface and achieve basic task proficiency without formal training.\n- Memorability: Measures how easily a casual or intermittent user remembers how to use the interface after being away from it for weeks or months, without having to relearn basic commands from scratch.",
+      "explanation": "Learnability vs memorability in usability metrics (INS 202 Module 1).",
+      "why_wrong": {},
+      "source": "INS 202 Module 01 Slides 14-15"
+    },
+    {
+      "id": "ins202-hig-fc06",
+      "course": "INS 202",
+      "topic": "HCI Fundamentals & Core Goals (Safety, Utility, etc.)",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "business-benefits",
+        "roi"
+      ],
+      "question": "What are the tangible financial and operational benefits of incorporating HCI and usability engineering into commercial software development?",
+      "answer": "1. Reduced Development & Maintenance Costs: Identifying design flaws during early wireframing is up to 100x cheaper than rewriting production code after deployment.\n2. Increased Employee Productivity: Streamlined workflows reduce keystrokes, task time, and operator fatigue.\n3. Decreased Training and Customer Support Costs: Intuitive self-explanatory UI slashes technical support calls and onboarding manuals.\n4. Increased Conversion & Customer Retention: Users abandon frustrating websites for competitors; usable systems foster brand loyalty and higher sales.",
+      "explanation": "The business ROI of usability from INS 202 Module 1, Slides 6-9.",
+      "why_wrong": {},
+      "source": "INS 202 Module 01 Slides 6-9"
+    },
+    {
+      "id": "ins202-hig-fc07",
+      "course": "INS 202",
+      "topic": "HCI Fundamentals & Core Goals (Safety, Utility, etc.)",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "poor-usability",
+        "consequences"
+      ],
+      "question": "What are the catastrophic consequences of poor usability in safety-critical systems?",
+      "answer": "In safety-critical domains (aviation cockpits, nuclear power control rooms, intensive care medical monitors, military defense systems), poor interface usability (such as ambiguous warning displays, confusing mode switches, or cluttered dials) induces cognitive overload, leading to fatal human operator error, vehicle crashes, and catastrophic loss of life (e.g., the Three Mile Island nuclear incident or Therac-25 radiation accidents).",
+      "explanation": "Safety-critical usability impacts covered in INS 202 Module 1.",
+      "why_wrong": {},
+      "source": "INS 202 Module 01 Slides 4-5"
+    },
+    {
+      "id": "ins202-hig-fc08",
+      "course": "INS 202",
+      "topic": "HCI Fundamentals & Core Goals (Safety, Utility, etc.)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "iterative-design",
+        "lifecycle"
+      ],
+      "question": "What is the Iterative Design Lifecycle in HCI, and why is single-pass waterfall design ineffective for interactive systems?",
+      "answer": "The Iterative Design Lifecycle is a continuous repeating loop of:\n1. Requirements Gathering (understanding user needs)\n2. Design (ideating alternative concepts)\n3. Prototyping (building low/high fidelity interactive models)\n4. Evaluation (testing with real users to discover defects)\nSingle-pass linear waterfall models fail for user interfaces because designers cannot anticipate emergent human behavioral nuances, cognitive limits, and subjective emotional reactions prior to physical interaction.",
+      "explanation": "The iterative cycle in HCI development (INS 202 Module 1 & 4).",
+      "why_wrong": {},
+      "source": "INS 202 Module 01 & 04"
     }
   ],
   "case_studies": [

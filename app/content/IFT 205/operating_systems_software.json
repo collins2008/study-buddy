@@ -535,6 +535,142 @@
       "source": "Software and Operating Systems Slide 16; Student Notebook Hint",
       "verified": true,
       "verified_output": "BIOS / UEFI firmware."
+    },
+    {
+      "id": "ift205-ops-fc01",
+      "course": "IFT 205",
+      "topic": "Operating Systems, System vs Application Software",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "system-vs-application",
+        "software"
+      ],
+      "question": "Contrast System Software with Application Software, giving two examples of each.",
+      "answer": "- System Software: Low-level programs designed to run, manage, and maintain computer hardware resources, providing a stable platform upon which application software can execute (e.g., Microsoft Windows 11, Linux kernel, device drivers, disk utilities).\n- Application Software: End-user programs designed to help humans perform specific productive, business, creative, or communication tasks (e.g., Microsoft Word, Google Chrome, Zoom, Adobe Illustrator).",
+      "explanation": "Software taxonomy in IFT 205 Lecture 1, Slide 14 & Software/OS Slide 3.",
+      "why_wrong": {},
+      "source": "IFT 205 Software and Operating Systems Slides 3-4"
+    },
+    {
+      "id": "ift205-ops-fc02",
+      "course": "IFT 205",
+      "topic": "Operating Systems, System vs Application Software",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "os-functions",
+        "management"
+      ],
+      "question": "List five primary resource management functions performed by an Operating System.",
+      "answer": "1. Processor Management: Allocating CPU time slices to active processes using scheduling algorithms.\n2. Memory Management: Allocating and tracking RAM blocks; swapping inactive pages to virtual memory.\n3. File System Management: Structuring, naming, locating, and securing files and folders on storage drives.\n4. Device / I/O Management: Communicating with hardware peripherals via dedicated device drivers.\n5. User Interface & Security: Providing CLI/GUI interfaces and managing user authentication and access control lists.",
+      "explanation": "Core responsibilities of an OS (IFT 205 Software & OS Slides 7-11).",
+      "why_wrong": {},
+      "source": "IFT 205 Software and Operating Systems Slides 7-11"
+    },
+    {
+      "id": "ift205-ops-fc03",
+      "course": "IFT 205",
+      "topic": "Operating Systems, System vs Application Software",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "device-drivers",
+        "hardware"
+      ],
+      "question": "What is a Device Driver, and what role does it serve between the OS and hardware?",
+      "answer": "A Device Driver is a specialized system software program that acts as a translator between the operating system and a specific hardware peripheral (e.g., graphics card, network card, printer).\nIt translates generic high-level OS commands (such as `read()` or `write()`) into the exact hardware-level electrical signals and register instructions understood by the device controller.",
+      "explanation": "Peripheral interfacing in IFT 205 Software and OS Slide 6.",
+      "why_wrong": {},
+      "source": "IFT 205 Software and Operating Systems Slide 6"
+    },
+    {
+      "id": "ift205-ops-fc04",
+      "course": "IFT 205",
+      "topic": "Operating Systems, System vs Application Software",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "gui-vs-cli",
+        "user-interface"
+      ],
+      "question": "Contrast a Graphical User Interface (GUI) with a Command-Line Interface (CLI).",
+      "answer": "- GUI (Graphical User Interface): Employs visual WIMP elements (Windows, Icons, Menus, Pointers). Highly intuitive and easy for beginners, but consumes significant RAM and GPU resources.\n- CLI (Command-Line Interface): Text-based prompt where users type exact command strings and arguments. Consumes minimal memory/CPU resources, enables rapid administrative scripting and automation, but requires memorizing syntax.",
+      "explanation": "UI paradigms in IFT 205 Software and OS Slide 8.",
+      "why_wrong": {},
+      "source": "IFT 205 Software and Operating Systems Slide 8"
+    },
+    {
+      "id": "ift205-ops-fc05",
+      "course": "IFT 205",
+      "topic": "Operating Systems, System vs Application Software",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "utilities",
+        "disk-maintenance"
+      ],
+      "question": "What is Utility Software, and what do Disk Defragmentation and Disk Cleanup utilities accomplish?",
+      "answer": "Utility Software consists of maintenance programs designed to analyze, configure, optimize, and maintain computer systems.\n- Disk Defragmentation: Rearranges non-contiguous file clusters on mechanical HDDs so that entire files reside in sequential sectors, minimizing read-head travel and improving file read speeds.\n- Disk Cleanup: Scans storage drives to identify and permanently delete temporary cache files, crash dumps, and recycle bin contents to free up storage space.",
+      "explanation": "System maintenance utilities in IFT 205 Software & OS Slide 12.",
+      "why_wrong": {},
+      "source": "IFT 205 Software and Operating Systems Slide 12"
+    },
+    {
+      "id": "ift205-ops-fc06",
+      "course": "IFT 205",
+      "topic": "Operating Systems, System vs Application Software",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "formatting",
+        "file-systems"
+      ],
+      "question": "What is Disk Formatting, and what is the difference between Low-Level and High-Level formatting?",
+      "answer": "- Disk Formatting: The process of preparing a storage medium for file storage.\n- Low-Level Formatting: Typically done at the factory; marks physical tracks, sectors, and sector boundaries on the disk surface.\n- High-Level Formatting: Performed by the operating system; writes a file system structure (e.g., NTFS, FAT32, ext4), initializes file allocation tables, and creates directory indexing structures.",
+      "explanation": "Storage preparation in IFT 205 Software & OS Slide 14.",
+      "why_wrong": {},
+      "source": "IFT 205 Software and Operating Systems Slide 14"
+    },
+    {
+      "id": "ift205-ops-fc07",
+      "course": "IFT 205",
+      "topic": "Operating Systems, System vs Application Software",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "file-paths",
+        "filesystem"
+      ],
+      "question": "Differentiate between an Absolute File Path and a Relative File Path.",
+      "answer": "- Absolute File Path: Specifies the complete, unambiguous location of a file or folder starting from the root directory or drive letter (e.g., `C:\\Users\\Student\\Documents\\project.docx` or `/home/student/project.py`). It points to the same file regardless of the current working directory.\n- Relative File Path: Specifies a file's location starting from the current active working directory (e.g., `../images/diagram.png` or `assets/style.css`).",
+      "explanation": "File path structures in IFT 205 Software & OS Slide 15.",
+      "why_wrong": {},
+      "source": "IFT 205 Software and Operating Systems Slide 15"
+    },
+    {
+      "id": "ift205-ops-fc08",
+      "course": "IFT 205",
+      "topic": "Operating Systems, System vs Application Software",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "licensing",
+        "open-source"
+      ],
+      "question": "Compare Proprietary Software, Open-Source Software (OSS), Freeware, and Shareware.",
+      "answer": "- Proprietary Software: Commercial software whose source code is private and copyrighted; users purchase a non-exclusive license to use the compiled binaries under EULA constraints (e.g., Windows, macOS).\n- Open-Source Software (OSS): Source code is publicly available under open licenses (GPL, MIT, Apache); users may inspect, modify, and redistribute it freely (e.g., Linux, Apache, Blender).\n- Freeware: Distributed free of monetary charge for use, but source code remains closed and proprietary.\n- Shareware: Trial software provided free for an evaluation period, requiring payment to unlock full features.",
+      "explanation": "Software licensing models in IFT 205 Software & OS Slides 17-19.",
+      "why_wrong": {},
+      "source": "IFT 205 Software and Operating Systems Slides 17-19"
     }
   ],
   "case_studies": [

@@ -440,6 +440,74 @@
         "Concludes that entrepreneurship requires an integrated multi-disciplinary perspective"
       ],
       "source": "Entrepreneurship Theories Deck, Slides 20, 22-23: Combining Theories"
+    },
+    {
+      "id": "ent211-thy-fc05",
+      "course": "ENT 211",
+      "topic": "Theories of Entrepreneurship (Schumpeter, Knight, Kirzner)",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "kirzner",
+        "alertness"
+      ],
+      "question": "How does Israel Kirzner's Theory of Entrepreneurial Alertness differ from Schumpeter's Theory of Innovation?",
+      "answer": "- Israel Kirzner: The entrepreneur is an 'alert arbitrageur' who spots existing market imperfections, price discrepancies, and unmet demands that others have overlooked, moving the market TOWARD equilibrium without necessarily inventing new technology.\n- Joseph Schumpeter: The entrepreneur is a 'dynamic disruptor' who introduces radical innovations (new goods, new methods, new markets), violently throwing the market OUT of equilibrium through Creative Destruction.",
+      "explanation": "Kirzner vs Schumpeter schools of entrepreneurship in ENT 211 Theories.",
+      "why_wrong": {},
+      "source": "ENT 211 Theories Slides; Kirzner (1973)"
+    },
+    {
+      "id": "ent211-thy-fc06",
+      "course": "ENT 211",
+      "topic": "Theories of Entrepreneurship (Schumpeter, Knight, Kirzner)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "mcclelland",
+        "nach"
+      ],
+      "question": "Explain David McClelland's Theory of Needs and the role of 'nAch' in entrepreneurship.",
+      "answer": "McClelland posited that human motivation is driven by three needs: Need for Affiliation (nAff), Need for Power (nPower), and Need for Achievement (nAch).\nEntrepreneurs are overwhelmingly characterized by high nAch: they possess an internal drive to excel, prefer calculated moderate risks over reckless gambles, take personal responsibility for problem-solving, and actively seek continuous feedback on their performance.",
+      "explanation": "David McClelland (1961) The Achieving Society in ENT 211.",
+      "why_wrong": {},
+      "source": "ENT 211 Theories Slides; McClelland (1961)"
+    },
+    {
+      "id": "ent211-thy-fc07",
+      "course": "ENT 211",
+      "topic": "Theories of Entrepreneurship (Schumpeter, Knight, Kirzner)",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "knight-profit",
+        "theories"
+      ],
+      "question": "Why did Frank Knight argue that economic profit is purely the reward for bearing uninsurable uncertainty?",
+      "answer": "In perfect competition with quantifiable risks, all predictable costs (labor, capital, insurance premiums) are factored into market prices, driving economic profit to zero.\nTherefore, true positive economic profit can only arise from navigating unpredictable, non-insurable events and unique uncertainties where the entrepreneur's superior judgment and foresight prove accurate.",
+      "explanation": "Knightian economic theory of profit from ENT 211 Theories.",
+      "why_wrong": {},
+      "source": "ENT 211 Theories Slides; Knight (1921)"
+    },
+    {
+      "id": "ent211-thy-fc08",
+      "course": "ENT 211",
+      "topic": "Theories of Entrepreneurship (Schumpeter, Knight, Kirzner)",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "weber",
+        "protestant-ethic"
+      ],
+      "question": "What was Max Weber's Sociological Perspective on the rise of entrepreneurship?",
+      "answer": "In 'The Protestant Ethic and the Spirit of Capitalism' (1905), Max Weber argued that modern entrepreneurship was catalyzed by cultural and religious values—specifically ascetic Protestantism (Calvinism), which promoted hard work, frugality, rational investment, worldly calling, and the reinvestment of wealth rather than hedonistic personal consumption.",
+      "explanation": "Sociological theories of entrepreneurship in ENT 211 Theories.",
+      "why_wrong": {},
+      "source": "ENT 211 Theories Slides; Weber (1905)"
     }
   ],
   "case_studies": [

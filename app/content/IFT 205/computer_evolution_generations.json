@@ -536,6 +536,142 @@
       "source": "Evolution_and_Classification_of_Computers Slide 32-35, 41",
       "verified": true,
       "verified_output": "(I) Supercomputer, (II) Mainframe, (III) Embedded System."
+    },
+    {
+      "id": "ift205-evo-fc01",
+      "course": "IFT 205",
+      "topic": "Evolution & Classification of Computers",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "history",
+        "babbage-lovelace"
+      ],
+      "question": "What was the significance of Charles Babbage's Analytical Engine and Ada Lovelace's contributions to computing?",
+      "answer": "- Charles Babbage: Designed the mechanical Analytical Engine (1837), widely regarded as the first conceptual design for a general-purpose programmable computer, featuring a Store (memory) and a Mill (CPU).\n- Ada Lovelace: Created the first published algorithm intended for implementation on the Analytical Engine, foreseeing that computers could process symbols and music rather than just numbers, making her the world's first computer programmer.",
+      "explanation": "Pioneers of computing history in IFT 205 Evolution Slides 4-6.",
+      "why_wrong": {},
+      "source": "IFT 205 Evolution Slides 4-6"
+    },
+    {
+      "id": "ift205-evo-fc02",
+      "course": "IFT 205",
+      "topic": "Evolution & Classification of Computers",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "von-neumann",
+        "stored-program"
+      ],
+      "question": "What is the Stored-Program Concept, and how did it change computer operation?",
+      "answer": "Introduced by John von Neumann in 1945, the Stored-Program Concept states that program instructions and data are stored together electronically in the same addressable read/write memory (RAM).\nBefore this, early computers (like ENIAC) had to be physically rewired and manually re-patched with patch cords to change programs. Stored-program computers can switch tasks instantaneously simply by loading a new program into RAM.",
+      "explanation": "Von Neumann architecture foundation in IFT 205 Evolution Slides 8-10.",
+      "why_wrong": {},
+      "source": "IFT 205 Evolution Slides 8-10"
+    },
+    {
+      "id": "ift205-evo-fc03",
+      "course": "IFT 205",
+      "topic": "Evolution & Classification of Computers",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "first-generation",
+        "vacuum-tubes"
+      ],
+      "question": "State the core electronic switching technology, memory media, and primary limitations of First-Generation computers (1940–1956).",
+      "answer": "- Electronic Technology: Vacuum tubes (thermionic valves) used as logic switches.\n- Memory / Storage: Magnetic drums, delay lines, and punched cards.\n- Programming: Pure machine code (binary 0s and 1s).\n- Limitations: Massive room-sized footprint, enormous electrical power consumption, generated extreme heat, and suffered frequent tube burnout breakdowns (e.g., ENIAC, UNIVAC I).",
+      "explanation": "First generation computing in IFT 205 Evolution Slide 12.",
+      "why_wrong": {},
+      "source": "IFT 205 Evolution Slide 12"
+    },
+    {
+      "id": "ift205-evo-fc04",
+      "course": "IFT 205",
+      "topic": "Evolution & Classification of Computers",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "second-generation",
+        "transistors"
+      ],
+      "question": "What major electronic invention characterized Second-Generation computers (1956–1963), and what programming advances occurred?",
+      "answer": "- Hardware Breakthrough: The Transistor replaced fragile vacuum tubes. Transistors were drastically smaller, faster, cheaper, produced far less heat, and were far more reliable.\n- Software Breakthrough: Introduced early high-level programming languages (FORTRAN for scientific computation, COBOL for business data), replacing low-level machine and assembly code.",
+      "explanation": "Second generation computing in IFT 205 Evolution Slide 14.",
+      "why_wrong": {},
+      "source": "IFT 205 Evolution Slide 14"
+    },
+    {
+      "id": "ift205-evo-fc05",
+      "course": "IFT 205",
+      "topic": "Evolution & Classification of Computers",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "third-generation",
+        "integrated-circuits"
+      ],
+      "question": "What technological innovation defined Third-Generation computers (1964–1971), and how did user interaction change?",
+      "answer": "- Innovation: The Integrated Circuit (IC), a miniature silicon semiconductor wafer combining thousands of transistors on a single chip.\n- Interaction & Software: Keyboards and monitor screens replaced punched cards; primitive Operating Systems emerged allowing multiple concurrent users to interact via time-sharing (e.g., IBM System/360).",
+      "explanation": "Third generation computing in IFT 205 Evolution Slide 16.",
+      "why_wrong": {},
+      "source": "IFT 205 Evolution Slide 16"
+    },
+    {
+      "id": "ift205-evo-fc06",
+      "course": "IFT 205",
+      "topic": "Evolution & Classification of Computers",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "fourth-generation",
+        "microprocessors"
+      ],
+      "question": "What invention sparked the Fourth Generation of computing (1971–Present), leading to the personal computer revolution?",
+      "answer": "The invention of the Microprocessor—an entire Central Processing Unit fabricated onto a single silicon chip using Very Large-Scale Integration (VLSI) and ULSI (pioneered by the Intel 4004 in 1971).\nThis extreme miniaturization made computers small and affordable enough for personal desktops, leading to home PCs (Apple II, IBM PC), laptops, and mobile smartphones.",
+      "explanation": "Fourth generation computing in IFT 205 Evolution Slide 18.",
+      "why_wrong": {},
+      "source": "IFT 205 Evolution Slide 18"
+    },
+    {
+      "id": "ift205-evo-fc07",
+      "course": "IFT 205",
+      "topic": "Evolution & Classification of Computers",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "fifth-generation",
+        "ai-quantum"
+      ],
+      "question": "What technologies and computational paradigms define Fifth-Generation computing?",
+      "answer": "Fifth-Generation computing focuses on Artificial Intelligence (AI), parallel processing, natural language processing, neural networks, and Quantum Computing.\nInstead of simple sequential arithmetic instructions, Fifth-Gen systems aim for automated reasoning, computer vision, voice recognition, and quantum qubits to solve previously intractable mathematical and scientific problems.",
+      "explanation": "Fifth generation computing in IFT 205 Evolution Slide 20.",
+      "why_wrong": {},
+      "source": "IFT 205 Evolution Slide 20"
+    },
+    {
+      "id": "ift205-evo-fc08",
+      "course": "IFT 205",
+      "topic": "Evolution & Classification of Computers",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "classification",
+        "supercomputer-mainframe-embedded"
+      ],
+      "question": "Compare Microcomputers, Mainframes, Supercomputers, and Embedded Systems by primary operational role.",
+      "answer": "- Microcomputer: Single-user personal computers designed for general individual productivity (desktops, laptops, tablets, smartphones).\n- Mainframe: High-end enterprise systems optimized for high-volume concurrent transaction processing and 24/7 reliability for banks and governments.\n- Supercomputer: Extreme performance multi-processor systems built to process complex mathematical simulations at quadrillions of FLOPS (weather modeling, nuclear physics).\n- Embedded System: Dedicated microcontrollers permanently built into non-computing machines (cars, microwaves, medical pacemakers) to perform a single dedicated control function.",
+      "explanation": "Computer classification taxonomy in IFT 205 Evolution Slides 24-28.",
+      "why_wrong": {},
+      "source": "IFT 205 Evolution Slides 24-28"
     }
   ],
   "case_studies": [

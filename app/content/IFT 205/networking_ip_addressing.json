@@ -520,6 +520,142 @@
       "source": "Week 6 Slide 5; IFT205_Week2 Slide 25",
       "verified": true,
       "verified_output": "False. PAN is personal ~10m range."
+    },
+    {
+      "id": "ift205-net-fc01",
+      "course": "IFT 205",
+      "topic": "Networking, Topologies & IPv4 Address Classes",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "networks",
+        "protocols"
+      ],
+      "question": "What is a Computer Network, and why are Network Protocols essential?",
+      "answer": "A Computer Network is an interconnection of two or more autonomous computing devices linked by communication media (cables, fiber, wireless radio) to share data, applications, and hardware resources.\nNetwork Protocols are formalized, agreed-upon sets of rules and standards (like TCP/IP and HTTP) governing data syntax, error checking, and transmission timing, ensuring heterogeneous devices can communicate reliably.",
+      "explanation": "Network foundations from IFT 205 Week 6, Slides 3-5.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 6 Slides 3-5"
+    },
+    {
+      "id": "ift205-net-fc02",
+      "course": "IFT 205",
+      "topic": "Networking, Topologies & IPv4 Address Classes",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "lan-man-wan",
+        "network-geography"
+      ],
+      "question": "Compare LAN, MAN, and WAN in geographical scope and typical administration.",
+      "answer": "- LAN (Local Area Network): Confined to a small geographical area (single room, building, home, or campus); typically owned and managed by a single organization; high data transfer rates (1–10 Gbps).\n- MAN (Metropolitan Area Network): Covers a city or metropolitan region (e.g., municipal Wi-Fi or city cable network); often run by a consortium or telecom utility.\n- WAN (Wide Area Network): Spans large geographical regions across countries or the globe (e.g., the Internet); connects multiple LANs using leased telecommunication lines and satellite links.",
+      "explanation": "Network classification by scale in IFT 205 Week 6, Slide 7.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 6 Slide 7"
+    },
+    {
+      "id": "ift205-net-fc03",
+      "course": "IFT 205",
+      "topic": "Networking, Topologies & IPv4 Address Classes",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "topologies",
+        "star-vs-bus"
+      ],
+      "question": "Contrast Star Topology with Bus Topology in layout, fault tolerance, and single points of failure.",
+      "answer": "- Star Topology: All nodes connect to a central hub or switch via individual dedicated cables. If one node's cable breaks, only that node is disconnected. However, the central switch is a single point of failure—if it dies, the whole network fails.\n- Bus Topology: All devices tap into a single shared linear backbone cable terminated at both ends. Inexpensive and uses minimal cabling, but a break anywhere along the central cable halts all communication, and cable troubleshooting is difficult.",
+      "explanation": "Network physical topologies in IFT 205 Week 6, Slide 10.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 6 Slide 10"
+    },
+    {
+      "id": "ift205-net-fc04",
+      "course": "IFT 205",
+      "topic": "Networking, Topologies & IPv4 Address Classes",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "switch-vs-router",
+        "hardware"
+      ],
+      "question": "How does a Network Switch (Layer 2) fundamentally differ from a Router (Layer 3)?",
+      "answer": "- Network Switch (Layer 2 - Data Link): Connects devices together within the SAME Local Area Network (LAN). It inspects physical hardware MAC addresses to forward data frames directly to the specific destination port, eliminating collisions.\n- Router (Layer 3 - Network): Connects DIFFERENT, separate networks together (e.g., linking a local office LAN to the Internet WAN). It inspects logical IP addresses and uses routing tables to forward packets across optimal internetwork paths.",
+      "explanation": "Networking hardware roles in IFT 205 Week 6, Slides 12-14.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 6 Slides 12-14"
+    },
+    {
+      "id": "ift205-net-fc05",
+      "course": "IFT 205",
+      "topic": "Networking, Topologies & IPv4 Address Classes",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "ipv4",
+        "netid-hostid"
+      ],
+      "question": "Explain the 32-bit structure of an IPv4 address and the roles of Network ID and Host ID.",
+      "answer": "An IPv4 address consists of 32 bits divided into four 8-bit octets, written in dotted-decimal notation (e.g., `192.168.1.100`).\n- Network ID (Net ID): Identifies the specific physical or logical network to which the host belongs. All devices on the same subnet share the exact same Network ID.\n- Host ID: Uniquely identifies an individual device or network interface on that network. The Subnet Mask determines where the Network ID ends and the Host ID begins.",
+      "explanation": "IPv4 addressing principles in IFT 205 Week 6, Slides 18-20.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 6 Slides 18-20"
+    },
+    {
+      "id": "ift205-net-fc06",
+      "course": "IFT 205",
+      "topic": "Networking, Topologies & IPv4 Address Classes",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "ipv4-classes",
+        "subnet-mask"
+      ],
+      "question": "State the first-octet range, default subnet mask, and capacity for IPv4 Classes A, B, and C.",
+      "answer": "- Class A: First octet `1–126`. Default Mask: `255.0.0.0` (`/8`). High host capacity: 126 networks, each supporting up to 16,777,214 hosts.\n- Class B: First octet `128–191`. Default Mask: `255.255.0.0` (`/16`). Medium capacity: 16,384 networks, each supporting up to 65,534 hosts.\n- Class C: First octet `192–223`. Default Mask: `255.255.255.0` (`/24`). Small networks: Over 2 million networks, each supporting up to 254 hosts.",
+      "explanation": "Classful IPv4 addressing architecture in IFT 205 Week 6, Slides 22-25.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 6 Slides 22-25"
+    },
+    {
+      "id": "ift205-net-fc07",
+      "course": "IFT 205",
+      "topic": "Networking, Topologies & IPv4 Address Classes",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "reserved-ip",
+        "loopback-apipa"
+      ],
+      "question": "What are the dedicated functions of the `127.0.0.1` and `169.254.x.x` IPv4 address ranges?",
+      "answer": "- `127.0.0.1` (Loopback / Localhost): Reserved within `127.0.0.0/8` to test a computer's internal TCP/IP software stack. Packets sent to this address loop back internally without leaving the network adapter.\n- `169.254.x.x` (APIPA - Automatic Private IP Addressing): A link-local address automatically self-assigned by Windows/macOS when a DHCP client fails to receive a response from a DHCP server, allowing local subnet communication only.",
+      "explanation": "Special reserved IPv4 address blocks in IFT 205 Week 6, Slide 26.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 6 Slide 26"
+    },
+    {
+      "id": "ift205-net-fc08",
+      "course": "IFT 205",
+      "topic": "Networking, Topologies & IPv4 Address Classes",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "client-server-vs-p2p",
+        "architecture"
+      ],
+      "question": "Contrast Client-Server network architecture with Peer-to-Peer (P2P) network architecture.",
+      "answer": "- Client-Server: Centralized powerful server systems manage files, user accounts, and security permissions, responding to service requests from client workstations. Highly secure, easy to back up centrally, and scalable, but expensive and reliant on server uptime.\n- Peer-to-Peer (P2P): Every connected computer (peer) operates as both a client and a server with equal privileges, sharing files directly. Low cost and simple for small setups, but difficult to secure and administer as network size grows.",
+      "explanation": "Network models in IFT 205 Week 6, Slide 8.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 6 Slide 8"
     }
   ],
   "case_studies": [

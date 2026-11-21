@@ -444,6 +444,74 @@
         "Emphasizes the iterative, evidence-based nature of the entrepreneurial screening process"
       ],
       "source": "Opportunity Identification & Evaluation Deck, Slides 21-26: Preliminary Feasibility & Decision Gates"
+    },
+    {
+      "id": "ent211-opp-fc05",
+      "course": "ENT 211",
+      "topic": "Opportunity Identification, Evaluation & Feasibility",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "pestel",
+        "environmental-scanning"
+      ],
+      "question": "What is the PESTEL Framework in entrepreneurial environmental opportunity scanning?",
+      "answer": "PESTEL analyzes external macro-environmental forces that create business opportunities or threats:\n- P: Political (tax policies, trade tariffs, government stability)\n- E: Economic (interest rates, inflation, consumer disposable income)\n- S: Social (demographics, cultural shifts, consumer lifestyle trends)\n- T: Technological (AI, automation, broadband adoption)\n- E: Environmental (climate change policies, sustainability)\n- L: Legal (consumer protection, labor laws, patents).",
+      "explanation": "Macro-environmental opportunity identification from ENT 211 Opportunity Slides.",
+      "why_wrong": {},
+      "source": "ENT 211 Opportunity Slides"
+    },
+    {
+      "id": "ent211-opp-fc06",
+      "course": "ENT 211",
+      "topic": "Opportunity Identification, Evaluation & Feasibility",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "porters-five-forces",
+        "industry-attractiveness"
+      ],
+      "question": "Name Michael Porter's Five Forces and explain how they evaluate industry attractiveness.",
+      "answer": "1. Threat of New Entrants: Ease of entry for new competitors.\n2. Bargaining Power of Buyers: Customers' ability to drive down prices.\n3. Bargaining Power of Suppliers: Key suppliers' control over input prices.\n4. Threat of Substitute Products: Availability of alternative ways to satisfy user needs.\n5. Intensity of Competitive Rivalry: Existing competition among incumbent firms.\nIndustries where all five forces are strong exhibit low profit margins; industries where forces are weak are highly attractive for new entrepreneurial entry.",
+      "explanation": "Porter (1979) industry structural analysis in ENT 211.",
+      "why_wrong": {},
+      "source": "ENT 211 Opportunity Slides"
+    },
+    {
+      "id": "ent211-opp-fc07",
+      "course": "ENT 211",
+      "topic": "Opportunity Identification, Evaluation & Feasibility",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "feasibility-analysis",
+        "four-pillars"
+      ],
+      "question": "What are the four pillars of a comprehensive Feasibility Analysis before launching a venture?",
+      "answer": "1. Product / Service Feasibility: Assessing product desirability, problem-solution fit, and willingness-to-buy via concept testing.\n2. Industry / Target Market Feasibility: Evaluating industry attractiveness, market growth rate, and target market niche accessibility.\n3. Organizational Feasibility: Determining whether the founding team possesses the management prowess, technical competence, and key resources needed.\n4. Financial Feasibility: Projecting total start-up cash needed, financial performance of similar businesses, and overall venture profitability.",
+      "explanation": "Feasibility analysis framework from ENT 211 Opportunity Slides.",
+      "why_wrong": {},
+      "source": "ENT 211 Opportunity Slides"
+    },
+    {
+      "id": "ent211-opp-fc08",
+      "course": "ENT 211",
+      "topic": "Opportunity Identification, Evaluation & Feasibility",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "lean-startup",
+        "mvp"
+      ],
+      "question": "What is the Minimum Viable Product (MVP) in the Lean Startup methodology?",
+      "answer": "An MVP is the simplest, most stripped-down version of a new product that enables a founding team to complete one full turn of the Build-Measure-Learn feedback loop with the minimum amount of effort and development time.\nIts purpose is to test fundamental business hypotheses and gather validated learning from early adopters, preventing teams from spending months building products nobody wants.",
+      "explanation": "Eric Ries (2011) Lean Startup framework in ENT 211.",
+      "why_wrong": {},
+      "source": "ENT 211 Opportunity Slides"
     }
   ],
   "case_studies": [

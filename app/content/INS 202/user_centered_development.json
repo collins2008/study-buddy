@@ -521,6 +521,142 @@
       "source": "Module 03 Slides 8-17; UCD Principles",
       "verified": true,
       "verified_output": "Composite archetype representing a target user segment."
+    },
+    {
+      "id": "ins202-ucd-fc01",
+      "course": "INS 202",
+      "topic": "User-Centered Development (UCD) & Prototyping",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "ucd",
+        "four-activities"
+      ],
+      "question": "What are the four core iterative activities that define User-Centered Development (UCD)?",
+      "answer": "1. Understanding Context & Establishing Requirements: Identifying who the users are, their environments, and their goals.\n2. Producing Design Alternatives: Ideating conceptual frameworks and interaction workflows.\n3. Building Interactive Prototypes: Creating low- and high-fidelity mockups for testing.\n4. Evaluating Designs Against Requirements: Conducting empirical user testing to validate usability and uncover problems.",
+      "explanation": "The 4 fundamental UCD activities from INS 202 Module 4, Slide 4.",
+      "why_wrong": {},
+      "source": "INS 202 Module 04 Slide 4"
+    },
+    {
+      "id": "ins202-ucd-fc02",
+      "course": "INS 202",
+      "topic": "User-Centered Development (UCD) & Prototyping",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "low-fi-vs-high-fi",
+        "prototyping"
+      ],
+      "question": "Contrast Low-Fidelity Prototyping with High-Fidelity Prototyping.",
+      "answer": "- Low-Fidelity Prototyping: Simple, low-cost representations using paper sketches, index cards, or post-it notes. Fast to create, encourages rapid exploration of concepts, and users feel comfortable critiquing rough work.\n- High-Fidelity Prototyping: Realistic, interactive digital mockups built in tools like Figma or HTML/CSS. Closely mimics final aesthetics and interactions, ideal for detailed user testing, but expensive and time-consuming to build.",
+      "explanation": "Prototyping fidelity trade-offs from INS 202 Module 4, Slide 8.",
+      "why_wrong": {},
+      "source": "INS 202 Module 04 Slide 8"
+    },
+    {
+      "id": "ins202-ucd-fc03",
+      "course": "INS 202",
+      "topic": "User-Centered Development (UCD) & Prototyping",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "horizontal-vs-vertical",
+        "prototyping"
+      ],
+      "question": "Differentiate between Horizontal Prototyping and Vertical Prototyping.",
+      "answer": "- Horizontal Prototype: Broad but shallow. Covers the full surface breadth of the interface (all top-level menus, screens, and navigation paths), but none of the deep operational functions work.\n- Vertical Prototype: Narrow but deep. Implements a single, specific feature or user workflow from the UI down to the database with full functionality, allowing thorough end-to-end performance testing of that slice.",
+      "explanation": "Prototyping scope dimensions in INS 202 Module 4, Slide 10.",
+      "why_wrong": {},
+      "source": "INS 202 Module 04 Slide 10"
+    },
+    {
+      "id": "ins202-ucd-fc04",
+      "course": "INS 202",
+      "topic": "User-Centered Development (UCD) & Prototyping",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "formative-vs-summative",
+        "evaluation"
+      ],
+      "question": "Contrast Formative Evaluation with Summative Evaluation in UCD.",
+      "answer": "- Formative Evaluation: Conducted continuously DURING the active design and development process. Its goal is diagnostic: to discover what is broken, why users struggle, and guide iterative redesign.\n- Summative Evaluation: Conducted at the CONCLUSION of development on the finished product. Its goal is judgmental: assessing whether the system meets contractual usability benchmarks, SLAs, and performance metrics.",
+      "explanation": "Evaluation stages in user-centered design (INS 202 Module 4 & 5).",
+      "why_wrong": {},
+      "source": "INS 202 Module 04 Slide 12"
+    },
+    {
+      "id": "ins202-ucd-fc05",
+      "course": "INS 202",
+      "topic": "User-Centered Development (UCD) & Prototyping",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "personas",
+        "requirements"
+      ],
+      "question": "What is a Persona in UCD, and what key elements should it contain?",
+      "answer": "A Persona is a fictional, realistic archetype representing a distinct user segment synthesized from real empirical user research data.\nIt typically includes:\n1. Demographic profile (name, age, photo, job role)\n2. Primary goals and core motivations\n3. Key frustrations, pain points, and technical limitations\n4. Environmental context and technical proficiency level.\nPersonas keep developers focused on real user needs rather than designing for themselves.",
+      "explanation": "User modeling with personas from INS 202 Module 4, Slide 14.",
+      "why_wrong": {},
+      "source": "INS 202 Module 04 Slide 14"
+    },
+    {
+      "id": "ins202-ucd-fc06",
+      "course": "INS 202",
+      "topic": "User-Centered Development (UCD) & Prototyping",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "scenarios",
+        "use-cases"
+      ],
+      "question": "What is a Scenario in user interface design, and how does it support UCD?",
+      "answer": "A Scenario is an informal narrative story describing a persona carrying out specific tasks within a real-world contextual setting to achieve a meaningful goal.\nScenarios humanize requirements, illustrating the physical environment, social context, time pressures, emotional state, and sequence of steps leading to interaction.",
+      "explanation": "Contextual narratives in UCD (INS 202 Module 4, Slide 16).",
+      "why_wrong": {},
+      "source": "INS 202 Module 04 Slide 16"
+    },
+    {
+      "id": "ins202-ucd-fc07",
+      "course": "INS 202",
+      "topic": "User-Centered Development (UCD) & Prototyping",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "wizard-of-oz",
+        "testing"
+      ],
+      "question": "What is the 'Wizard of Oz' testing methodology in HCI prototyping?",
+      "answer": "In Wizard of Oz testing, a user interacts with what appears to be a fully automated system (e.g., AI chatbot or voice assistant), but the complex backend intelligence is actually secretly operated by a hidden human experimenter (the 'Wizard') simulating computer responses in real time.\nThis enables teams to evaluate user reactions and conversational flows before investing months coding expensive backend logic.",
+      "explanation": "Rapid interactive prototyping techniques (INS 202 Module 4, Slide 18).",
+      "why_wrong": {},
+      "source": "INS 202 Module 04 Slide 18"
+    },
+    {
+      "id": "ins202-ucd-fc08",
+      "course": "INS 202",
+      "topic": "User-Centered Development (UCD) & Prototyping",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "participatory-design",
+        "co-design"
+      ],
+      "question": "What is Participatory Design, and how does it differ from traditional user testing?",
+      "answer": "- Traditional User Testing: Users are treated as passive evaluators who test prototypes already created by software engineers.\n- Participatory Design (Co-Design): End-users are included as full, active co-designers in workshops throughout the design process, sketching layouts, prioritizing features, and co-creating solutions directly with engineers.",
+      "explanation": "Collaborative design methodologies from INS 202 Module 4, Slide 20.",
+      "why_wrong": {},
+      "source": "INS 202 Module 04 Slide 20"
     }
   ],
   "case_studies": [

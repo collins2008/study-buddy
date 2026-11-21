@@ -526,6 +526,142 @@
       "source": "Week 5 Slide 30-31",
       "verified": true,
       "verified_output": "False. SSDs have no moving parts and cannot suffer head crashes."
+    },
+    {
+      "id": "ift205-hwd-fc01",
+      "course": "IFT 205",
+      "topic": "Hardware Components: Input, CPU, Memory & Storage",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "cpu",
+        "cu-vs-alu"
+      ],
+      "question": "What are the two primary functional units inside a Central Processing Unit (CPU), and what are their duties?",
+      "answer": "1. Control Unit (CU): Acts as the CPU's supervisor. It fetches binary instructions from RAM, decodes them, and manages the timing and data flow across all system buses and components.\n2. Arithmetic Logic Unit (ALU): Executes all mathematical arithmetic calculations (addition, subtraction, multiplication) and logical comparisons (AND, OR, NOT, `>`, `<`, `=`).",
+      "explanation": "Internal CPU architecture from IFT 205 Lecture 1, Slide 8.",
+      "why_wrong": {},
+      "source": "IFT 205 Lecture 1 Slide 8"
+    },
+    {
+      "id": "ift205-hwd-fc02",
+      "course": "IFT 205",
+      "topic": "Hardware Components: Input, CPU, Memory & Storage",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "machine-cycle",
+        "cpu"
+      ],
+      "question": "Explain the four steps of the CPU Machine Instruction Cycle.",
+      "answer": "1. Fetch: The Control Unit retrieves the next instruction from RAM into the instruction register.\n2. Decode: The CU interprets the opcode to determine what operation must be performed and locates required data operands.\n3. Execute: The ALU or CU carries out the requested operation (e.g., adding numbers or loading data).\n4. Store (Writeback): The result of the execution is saved back into an internal CPU register or main RAM address.",
+      "explanation": "Fetch-Decode-Execute cycle explained in IFT 205 Lecture 1.",
+      "why_wrong": {},
+      "source": "IFT 205 Lecture 1 Slides"
+    },
+    {
+      "id": "ift205-hwd-fc03",
+      "course": "IFT 205",
+      "topic": "Hardware Components: Input, CPU, Memory & Storage",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "ram-vs-rom",
+        "memory"
+      ],
+      "question": "Contrast RAM with ROM across volatility, speed, and typical use cases.",
+      "answer": "- RAM (Random Access Memory): Volatile primary memory; loses all data instantly when power is cut. High-speed read/write access used to hold active operating system components, open applications, and working data.\n- ROM (Read-Only Memory): Non-volatile permanent memory; retains stored contents indefinitely without power. Stores essential firmware (BIOS/UEFI) and hardware startup bootstrap routines; cannot be easily overwritten during normal operation.",
+      "explanation": "Primary memory classification in IFT 205 Lecture 1, Slide 9.",
+      "why_wrong": {},
+      "source": "IFT 205 Lecture 1 Slide 9"
+    },
+    {
+      "id": "ift205-hwd-fc04",
+      "course": "IFT 205",
+      "topic": "Hardware Components: Input, CPU, Memory & Storage",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "ssd-vs-hdd",
+        "storage"
+      ],
+      "question": "Contrast Solid-State Drives (SSDs) with Hard Disk Drives (HDDs) in physical mechanism, speed, and durability.",
+      "answer": "- SSD (Solid-State Drive): Utilizes non-volatile NAND flash memory chips with zero moving parts. Delivers near-instant access times (500–7,000+ MB/s), completely silent operation, low power consumption, and high resistance to physical shock.\n- HDD (Hard Disk Drive): Uses rotating magnetic platters and mechanical read/write actuator heads. Slower access speeds (80–200 MB/s), audible spinning noise, and highly susceptible to physical head crashes if dropped.",
+      "explanation": "Secondary storage technologies in IFT 205 Lecture 1, Slide 10 & Week 5.",
+      "why_wrong": {},
+      "source": "IFT 205 Lecture 1 Slide 10"
+    },
+    {
+      "id": "ift205-hwd-fc05",
+      "course": "IFT 205",
+      "topic": "Hardware Components: Input, CPU, Memory & Storage",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "motherboard",
+        "system-buses"
+      ],
+      "question": "What is the Motherboard, and what are the specific functions of the Address, Data, and Control buses?",
+      "answer": "The Motherboard is the central printed circuit board (PCB) connecting the CPU, RAM, expansion cards, and storage devices.\nIt links components using three system buses:\n- Data Bus: Bi-directional lines carrying the actual data being read or written.\n- Address Bus: Uni-directional lines carrying memory addresses from the CPU to identify specific physical memory cells.\n- Control Bus: Transmits synchronization clock pulses, read/write commands, and interrupt signals.",
+      "explanation": "System bus anatomy from IFT 205 Lecture 1, Slide 12.",
+      "why_wrong": {},
+      "source": "IFT 205 Lecture 1 Slide 12"
+    },
+    {
+      "id": "ift205-hwd-fc06",
+      "course": "IFT 205",
+      "topic": "Hardware Components: Input, CPU, Memory & Storage",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "cache",
+        "memory-hierarchy"
+      ],
+      "question": "What is Cache Memory, and why is it divided into levels (L1, L2, L3)?",
+      "answer": "Cache memory is ultra-fast Static RAM (SRAM) placed on or next to the CPU to store frequently accessed instructions and data, reducing the latency of accessing slower main DRAM.\n- L1 Cache: Smallest (32–128 KB), fastest, integrated directly into each CPU core running at full core clock speed.\n- L2 Cache: Slightly larger (512 KB–2 MB) and slightly slower than L1.\n- L3 Cache: Largest (8–64+ MB), shared across all CPU cores on the processor die.",
+      "explanation": "Memory hierarchy and cache performance in IFT 205 Lecture 1.",
+      "why_wrong": {},
+      "source": "IFT 205 Lecture 1 Slides"
+    },
+    {
+      "id": "ift205-hwd-fc07",
+      "course": "IFT 205",
+      "topic": "Hardware Components: Input, CPU, Memory & Storage",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "backup",
+        "3-2-1-rule"
+      ],
+      "question": "Explain the 3-2-1 Backup Rule for data protection and disaster recovery.",
+      "answer": "The 3-2-1 Backup Rule requires:\n- 3 total copies of critical data (1 primary working copy + 2 backup copies).\n- 2 different physical media types (e.g., internal SSD + external magnetic drive or local NAS).\n- 1 copy kept completely offsite (e.g., in a secure cloud repository or remote geographical facility) to survive fire, flood, or site theft.",
+      "explanation": "Disaster recovery strategy covered in IFT 205 Week 5 storage slides.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 5 Slides"
+    },
+    {
+      "id": "ift205-hwd-fc08",
+      "course": "IFT 205",
+      "topic": "Hardware Components: Input, CPU, Memory & Storage",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "backup-types",
+        "incremental-differential"
+      ],
+      "question": "Contrast Incremental Backups with Differential Backups in speed and restoration complexity.",
+      "answer": "- Incremental Backup: Copies only files created or modified since the last backup of any kind (Full or Incremental). Fastest to perform and uses the least storage, but restoration requires restoring the Full backup plus every consecutive incremental set in chronological order.\n- Differential Backup: Copies all files created or modified since the last Full backup. Takes longer to back up as time progresses, but restoration is simpler, requiring only two sets: the last Full backup and the latest Differential backup.",
+      "explanation": "Backup methodologies detailed in IFT 205 Week 5.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 5 Slides"
     }
   ],
   "case_studies": [

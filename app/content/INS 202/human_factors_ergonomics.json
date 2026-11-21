@@ -517,6 +517,141 @@
       "source": "Module 02 Slide 24-28",
       "verified": true,
       "verified_output": "Standardize dimensions, fonts, and styling for similarity."
+    },
+    {
+      "id": "ins202-hfe-fc01",
+      "course": "INS 202",
+      "topic": "Human Factors, Cognitive Psychology & Ergonomics",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "fitts-law",
+        "motor-control"
+      ],
+      "question": "State Fitts's Law and explain its direct practical implications for user interface and button design.",
+      "answer": "Fitts's Law models human motor movement time to a target:\n`MT = a + b * log2(2D / W)`\nWhere `D` is distance to the target and `W` is the target's width along the axis of motion.\nDesign Implications:\n1. Make critical buttons larger (increasing `W`) and locate them closer to the user's cursor (decreasing `D`).\n2. The corners and edges of a screen have effectively infinite width (`W = infinity`) because the mouse cursor cannot overshoot them, making screen corners ideal for menus (e.g., Windows Start button or macOS menu bar).",
+      "explanation": "Fitts's Law human motor performance model (INS 202 Module 3, Slide 8).",
+      "why_wrong": {},
+      "source": "INS 202 Module 03 Slide 8"
+    },
+    {
+      "id": "ins202-hfe-fc02",
+      "course": "INS 202",
+      "topic": "Human Factors, Cognitive Psychology & Ergonomics",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "hick-law",
+        "decision-time"
+      ],
+      "question": "State Hick-Hyman Law and its key lesson for menu navigation architecture.",
+      "answer": "Hick's Law states that the time taken to make a decision increases logarithmically with the number of alternatives:\n`T = b * log2(n + 1)`\nWhere `n` is the number of options.\nKey Design Lesson: Menus should not overwhelm users with dozens of unordered options. Designers should group options hierarchically or categorize items to minimize choice overload and reduce decision latency.",
+      "explanation": "Hick-Hyman Law in cognitive ergonomics (INS 202 Module 3, Slide 10).",
+      "why_wrong": {},
+      "source": "INS 202 Module 03 Slide 10"
+    },
+    {
+      "id": "ins202-hfe-fc03",
+      "course": "INS 202",
+      "topic": "Human Factors, Cognitive Psychology & Ergonomics",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "millers-law",
+        "working-memory"
+      ],
+      "question": "What is Miller's Magical Number 7 ± 2, and how does it relate to 'Chunking' in UI design?",
+      "answer": "George Miller (1956) demonstrated that human short-term working memory capacity is strictly limited to 7 ± 2 (5 to 9) chunks of information.\nIn UI design, 'Chunking' breaks long unbroken strings of data into smaller, manageable cognitive clusters (e.g., formatting a 10-digit phone number as `(123) 456-7890` or dividing a 16-digit credit card into blocks of 4), preventing cognitive overload.",
+      "explanation": "Cognitive psychology limits in HCI (INS 202 Module 3, Slide 12).",
+      "why_wrong": {},
+      "source": "INS 202 Module 03 Slide 12"
+    },
+    {
+      "id": "ins202-hfe-fc04",
+      "course": "INS 202",
+      "topic": "Human Factors, Cognitive Psychology & Ergonomics",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "gulf-execution-evaluation",
+        "action-cycle"
+      ],
+      "question": "Contrast Don Norman's Gulf of Execution with the Gulf of Evaluation.",
+      "answer": "- Gulf of Execution: The mental barrier a user faces when trying to translate their psychological goal into actual physical system actions ('How do I make the system do what I want?'). Bridged by clear signifiers, affordances, and natural mappings.\n- Gulf of Evaluation: The difficulty a user faces in assessing the system's state after taking action ('Did the system do what I intended? What is its state now?'). Bridged by immediate, unambiguous visual/auditory feedback.",
+      "explanation": "Norman's 7 stages of action (INS 202 Module 3, Slide 14).",
+      "why_wrong": {},
+      "source": "INS 202 Module 03 Slide 14"
+    },
+    {
+      "id": "ins202-hfe-fc05",
+      "course": "INS 202",
+      "topic": "Human Factors, Cognitive Psychology & Ergonomics",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "mental-models-vs-conceptual"
+      ],
+      "question": "Contrast a User's Mental Model with a Designer's Conceptual Model.",
+      "answer": "- User's Mental Model: The internal psychological representation and belief structure held by the user about how the system works, formed by prior life experiences and interface metaphors.\n- Designer's Conceptual Model: The actual formal blueprint, architecture, and logic devised by software engineers.\nUsability breakdowns occur when there is a mismatch between the conceptual model and the user's mental model.",
+      "explanation": "Mental models in cognitive ergonomics (INS 202 Module 3, Slide 16).",
+      "why_wrong": {},
+      "source": "INS 202 Module 03 Slide 16"
+    },
+    {
+      "id": "ins202-hfe-fc06",
+      "course": "INS 202",
+      "topic": "Human Factors, Cognitive Psychology & Ergonomics",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "color-blindness",
+        "contrast"
+      ],
+      "question": "Why must user interface designers never rely solely on color to convey information?",
+      "answer": "Approximately 8% of males and 0.5% of females experience color vision deficiency (most commonly red-green color blindness: deuteranopia and protanopia).\nIf an interface signals status using only red/green circles without redundant iconography (like checkmarks or warning crosses) or text labels, color-blind users cannot differentiate success from failure.\nWCAG requires a minimum contrast ratio of 4.5:1 for standard text.",
+      "explanation": "Visual perception and accessible ergonomics (INS 202 Module 3, Slide 18).",
+      "why_wrong": {},
+      "source": "INS 202 Module 03 Slide 18"
+    },
+    {
+      "id": "ins202-hfe-fc07",
+      "course": "INS 202",
+      "topic": "Human Factors, Cognitive Psychology & Ergonomics",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "physical-ergonomics",
+        "rsi"
+      ],
+      "question": "What is Physical Ergonomics, and how can workstation design prevent Repetitive Strain Injury (RSI)?",
+      "answer": "Physical Ergonomics studies human anatomical, physiological, and biomechanical characteristics as they relate to physical activity.\nWorkstation design prevents RSI and musculoskeletal disorders by:\n1. Positioning the top of the monitor screen at or slightly below eye level (preventing neck strain).\n2. Maintaining elbows, hips, and knees at 90° angles with feet flat on the floor.\n3. Keeping wrists straight in a neutral posture using wrist rests, avoiding sharp desk edges and prolonged claw grips.",
+      "explanation": "Physical workplace ergonomics from INS 202 Module 3, Slide 20.",
+      "why_wrong": {},
+      "source": "INS 202 Module 03 Slide 20"
+    },
+    {
+      "id": "ins202-hfe-fc08",
+      "course": "INS 202",
+      "topic": "Human Factors, Cognitive Psychology & Ergonomics",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "selective-attention",
+        "banner-blindness"
+      ],
+      "question": "What is 'Banner Blindness', and how does Cognitive Psychology explain it through Selective Attention?",
+      "answer": "Banner Blindness is a phenomenon where web users consciously or unconsciously ignore page elements that look like advertisements, promotional banners, or animations.\nCognitive Psychology explains this through Selective Attention: when users are focused on a goal-oriented task (such as researching an article), their cognitive filter suppresses peripheral visual clutter that shares visual characteristics with ads, even if the banner contains vital navigation information.",
+      "explanation": "Attention mechanisms and web ergonomics (INS 202 Module 3, Slide 22).",
+      "why_wrong": {},
+      "source": "INS 202 Module 03 Slide 22"
     }
   ],
   "case_studies": [

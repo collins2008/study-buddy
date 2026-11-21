@@ -444,6 +444,74 @@
         "Concludes that ARIA should be reserved for complex custom widgets where no native HTML5 element exists"
       ],
       "source": "W3C WAI-ARIA Authoring Guidelines & WCAG 2.1 Robust Principle"
+    },
+    {
+      "id": "ins202-eia-fc05",
+      "course": "INS 202",
+      "topic": "Accessibility, Universal Design & Emerging Interfaces",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "pour-principles",
+        "wcag"
+      ],
+      "question": "What are the four foundational POUR Principles of Web Accessibility (WCAG 2.1)?",
+      "answer": "1. Perceivable: Information and UI components must be presentable to users in ways they can perceive (e.g., text alternatives for images, captions for video).\n2. Operable: UI components and navigation must be operable via diverse inputs (e.g., full keyboard navigability, sufficient time to read).\n3. Understandable: Information and UI operation must be understandable (clear language, predictable layouts, input assistance).\n4. Robust: Content must be robust enough to be reliably interpreted by a wide variety of user agents, including assistive screen readers.",
+      "explanation": "W3C Web Content Accessibility Guidelines (WCAG 2.1) POUR framework.",
+      "why_wrong": {},
+      "source": "INS 202 Module 07 Slide 6"
+    },
+    {
+      "id": "ins202-eia-fc06",
+      "course": "INS 202",
+      "topic": "Accessibility, Universal Design & Emerging Interfaces",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "aria",
+        "screen-readers"
+      ],
+      "question": "What is WAI-ARIA, and why should semantic HTML elements always be preferred over ARIA roles?",
+      "answer": "WAI-ARIA (Accessible Rich Internet Applications) provides HTML attributes to communicate roles, states, and properties of dynamic widgets to screen readers.\nFirst Rule of ARIA: If an existing native HTML5 semantic element can handle the job (e.g., `<button>`, `<nav>`, `<dialog>`), use it instead of recreating the element using `<div role=\"button\">`.\nNative elements provide automatic keyboard handling, focus management, and accessibility APIs out of the box.",
+      "explanation": "Accessible web architecture from INS 202 Module 7, Slide 8.",
+      "why_wrong": {},
+      "source": "INS 202 Module 07 Slide 8"
+    },
+    {
+      "id": "ins202-eia-fc07",
+      "course": "INS 202",
+      "topic": "Accessibility, Universal Design & Emerging Interfaces",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "vui",
+        "voice-interfaces"
+      ],
+      "question": "What are Voice User Interfaces (VUIs), and what unique usability challenge arises from the absence of a visual screen?",
+      "answer": "VUIs (e.g., Apple Siri, Amazon Alexa) allow humans to interact with computers using natural spoken voice.\nKey Usability Challenge: The lack of visual persistence. Spoken audio is transient and serial—users cannot scan a spoken list as they would a visual webpage. If a voice assistant recites 8 choices, the user's working memory forgets the first options before the list finishes.",
+      "explanation": "Emerging conversational interfaces in INS 202 Module 7, Slide 14.",
+      "why_wrong": {},
+      "source": "INS 202 Module 07 Slide 14"
+    },
+    {
+      "id": "ins202-eia-fc08",
+      "course": "INS 202",
+      "topic": "Accessibility, Universal Design & Emerging Interfaces",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "haptics",
+        "tactile-feedback"
+      ],
+      "question": "What is Haptic Feedback, and how does it improve touchscreen accessibility and usability?",
+      "answer": "Haptic Feedback utilizes tactile actuator sensations (vibrations, force resistance, thermal pulses) to simulate physical touch on virtual interfaces.\nIt improves touchscreen usability by confirming button taps, keystrokes, and toggles through the skin, compensating for the lack of tactile mechanical click on flat glass and providing vital non-visual feedback for visually impaired users.",
+      "explanation": "Tactile sensory interfaces from INS 202 Module 7, Slide 16.",
+      "why_wrong": {},
+      "source": "INS 202 Module 07 Slide 16"
     }
   ],
   "case_studies": [

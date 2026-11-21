@@ -450,6 +450,91 @@
         "Concludes that both performance and preference measures must be established early and evaluated concurrently"
       ],
       "source": "Module 03 (Know Thy User), Slides 38-41: Usability Specifications Summary"
+    },
+    {
+      "id": "ins202-etl-fc04",
+      "course": "INS 202",
+      "topic": "UI Evaluation Techniques, Heuristics & Likert Scales",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "nielsen-heuristics",
+        "visibility-error-prevention"
+      ],
+      "question": "Explain Jakob Nielsen's Heuristics #1 (Visibility of System Status) and #5 (Error Prevention).",
+      "answer": "- Heuristic #1 (Visibility of System Status): The system should always keep users informed about what is going on, through appropriate and timely feedback within a reasonable time (e.g., progress bars, upload percentages).\n- Heuristic #5 (Error Prevention): A careful design that prevents a problem from occurring in the first place is even better than good error messages. Eliminate error-prone conditions or check for them and present users with a confirmation option before they commit to destructive actions.",
+      "explanation": "Nielsen's 10 usability heuristics (INS 202 Module 5, Slide 6).",
+      "why_wrong": {},
+      "source": "INS 202 Module 05 Slide 6"
+    },
+    {
+      "id": "ins202-etl-fc05",
+      "course": "INS 202",
+      "topic": "UI Evaluation Techniques, Heuristics & Likert Scales",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "cognitive-walkthrough",
+        "learnability"
+      ],
+      "question": "What is a Cognitive Walkthrough, and what four questions does an evaluator ask at each step?",
+      "answer": "A Cognitive Walkthrough is a task-oriented usability inspection method focusing on first-time learnability for novice users.\nAt each action step, evaluators ask:\n1. Will the user try to achieve the right effect?\n2. Will the user notice that the correct action is available?\n3. Will the user associate the correct action with the effect they are trying to achieve?\n4. If the correct action is performed, will the user see that progress is being made toward their goal?",
+      "explanation": "Wharton et al. cognitive walkthrough framework (INS 202 Module 5, Slide 10).",
+      "why_wrong": {},
+      "source": "INS 202 Module 05 Slide 10"
+    },
+    {
+      "id": "ins202-etl-fc06",
+      "course": "INS 202",
+      "topic": "UI Evaluation Techniques, Heuristics & Likert Scales",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "sus",
+        "system-usability-scale"
+      ],
+      "question": "What is the System Usability Scale (SUS), how is it scored, and what is the industry average benchmark?",
+      "answer": "The System Usability Scale (SUS) is a 10-item Likert-scale questionnaire giving a standardized view of subjective usability.\n- Items alternate between positive and negative statements (scored 1 to 5).\n- Total scores range from 0 to 100 via a specialized conversion formula.\n- Industry Average Benchmark: A score of 68 represents the 50th percentile (average). Scores above 80 indicate excellent usability.",
+      "explanation": "Brooke (1996) System Usability Scale from INS 202 Module 5, Slide 14.",
+      "why_wrong": {},
+      "source": "INS 202 Module 05 Slide 14"
+    },
+    {
+      "id": "ins202-etl-fc07",
+      "course": "INS 202",
+      "topic": "UI Evaluation Techniques, Heuristics & Likert Scales",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "think-aloud",
+        "usability-testing"
+      ],
+      "question": "What is the Think-Aloud Protocol, and why is it considered the 'gold standard' in usability testing?",
+      "answer": "In a Think-Aloud study, test participants are asked to verbalize their thoughts, expectations, confusions, and intentions continuously as they interact with an interface.\nIt is the gold standard because it directly reveals the user's mental model and internal reasoning in real time, exposing why a user made an error rather than just recording that an error occurred.",
+      "explanation": "Qualitative usability evaluation from INS 202 Module 5, Slide 16.",
+      "why_wrong": {},
+      "source": "INS 202 Module 05 Slide 16"
+    },
+    {
+      "id": "ins202-etl-fc08",
+      "course": "INS 202",
+      "topic": "UI Evaluation Techniques, Heuristics & Likert Scales",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "five-users-rule",
+        "nielsen"
+      ],
+      "question": "What is Jakob Nielsen's 'Rule of 5 Users' in empirical usability testing?",
+      "answer": "Jakob Nielsen and Thomas Landauer demonstrated mathematically that testing with 5 users uncovers approximately 75% to 85% of all usability problems in an interface.\nTesting additional users yields diminishing returns, as later users repeatedly encounter the same defects. The most cost-effective approach is testing 5 users, fixing the discovered defects, and testing another 5 users in the next iteration.",
+      "explanation": "Usability testing economics and sample size (INS 202 Module 5, Slide 18).",
+      "why_wrong": {},
+      "source": "INS 202 Module 05 Slide 18"
     }
   ],
   "case_studies": [

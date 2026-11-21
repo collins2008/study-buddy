@@ -522,6 +522,142 @@
       "source": "Week 5 Slide 6, 21",
       "verified": true,
       "verified_output": "40 bytes (320 bits)."
+    },
+    {
+      "id": "ift205-fnd-fc01",
+      "course": "IFT 205",
+      "topic": "IT Foundations: Hardware, Software & People",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "definition",
+        "building-blocks"
+      ],
+      "question": "What is Information Technology (IT), and what are its three fundamental sociotechnical building blocks?",
+      "answer": "Information Technology (IT) is the study, design, development, implementation, support, and management of computer-based information systems.\nIts three core building blocks are:\n1. Hardware: Physical electronic circuitry, processors, storage, and peripherals.\n2. Software: Programs, algorithms, and operating instructions directing hardware.\n3. People: End-users who supply data and IT professionals who design, secure, and maintain systems.",
+      "explanation": "Fundamental definition and sociotechnical model from IFT 205 Lecture 1, Slide 3-4.",
+      "why_wrong": {},
+      "source": "IFT 205 Lecture 1 Slides 3-4"
+    },
+    {
+      "id": "ift205-fnd-fc02",
+      "course": "IFT 205",
+      "topic": "IT Foundations: Hardware, Software & People",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "data-vs-information",
+        "context"
+      ],
+      "question": "How does raw Data fundamentally differ from Information?",
+      "answer": "- Data: Raw, unorganized, unprocessed facts, numbers, symbols, or observations lacking contextual meaning (e.g., `105.8`, `A+`, `404`).\n- Information: Data that has been processed, organized, structured, and contextualized so that it possesses meaning and utility for decision-making (e.g., `Patient Body Temperature: 105.8°F - Severe Hyperthermia`).",
+      "explanation": "Core DIKW hierarchy concept covered in IFT 205 Week 2 & Week 5.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 2 & Week 5 Slides"
+    },
+    {
+      "id": "ift205-fnd-fc03",
+      "course": "IFT 205",
+      "topic": "IT Foundations: Hardware, Software & People",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "ipos",
+        "cycle"
+      ],
+      "question": "Name and describe the four sequential stages of the Information Processing Cycle (IPOS).",
+      "answer": "1. Input: Capturing raw data from users or sensors via input devices (keyboard, barcode scanner, microphone).\n2. Processing: Manipulating, computing, and transforming input data within the CPU and memory.\n3. Output: Presenting processed information to humans in a usable format (monitors, printers, speakers).\n4. Storage: Persisting data, files, and programs permanently on secondary storage media for future retrieval.",
+      "explanation": "The foundational computing paradigm (IPOS) covered in IFT 205 Lecture 1, Slide 6.",
+      "why_wrong": {},
+      "source": "IFT 205 Lecture 1 Slide 6"
+    },
+    {
+      "id": "ift205-fnd-fc04",
+      "course": "IFT 205",
+      "topic": "IT Foundations: Hardware, Software & People",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "batch-vs-realtime",
+        "processing"
+      ],
+      "question": "Contrast Batch Processing with Real-Time Processing, providing an enterprise example of each.",
+      "answer": "- Batch Processing: Transactions are accumulated over a specific time window and processed together as a single batch during scheduled off-peak hours without user interaction (e.g., monthly university payroll calculation or utility bill generation).\n- Real-Time (OLTP) Processing: Transactions are validated, processed, and confirmed instantaneously as they occur, updating database records with zero latency (e.g., ATM cash withdrawals or airline flight reservations).",
+      "explanation": "Data processing paradigms detailed in IFT 205 Week 5 slides.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 5 Slides; Data Processing"
+    },
+    {
+      "id": "ift205-fnd-fc05",
+      "course": "IFT 205",
+      "topic": "IT Foundations: Hardware, Software & People",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "validation-vs-verification",
+        "data-quality"
+      ],
+      "question": "Distinguish between Data Validation and Data Verification.",
+      "answer": "- Data Validation: An automated, programmatic check performed by software to ensure entered data conforms to predefined constraints, formats, data types, and reasonable ranges (e.g., checking that an email contains `@` or age is between 1-120).\n- Data Verification: A procedure (human proofreading or double-entry comparison) checking that entered data exactly matches the authentic original source document.",
+      "explanation": "Input controls and data governance covered in IFT 205 Week 5.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 5 Slides"
+    },
+    {
+      "id": "ift205-fnd-fc06",
+      "course": "IFT 205",
+      "topic": "IT Foundations: Hardware, Software & People",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "data-quality",
+        "dimensions"
+      ],
+      "question": "List and define the four critical dimensions of Data Quality.",
+      "answer": "1. Accuracy: Data is correct, truthful, and reliably reflects real-world events.\n2. Completeness: All required data values and attributes are present without missing fields.\n3. Consistency: Data does not conflict across different tables, files, or departmental databases.\n4. Timeliness: Data is recorded, processed, and available quickly enough to remain relevant for decision-making.",
+      "explanation": "Core dimensions of data governance in IFT 205 Week 5.",
+      "why_wrong": {},
+      "source": "IFT 205 Week 5 Slides"
+    },
+    {
+      "id": "ift205-fnd-fc07",
+      "course": "IFT 205",
+      "topic": "IT Foundations: Hardware, Software & People",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "people-element",
+        "roles"
+      ],
+      "question": "Why is the 'People' component considered the most critical building block of an IT system?",
+      "answer": "Hardware and software are merely inert physical and logical tools. People supply the initial data, define business objectives, design the algorithms, interpret the output, and make executive decisions based on system results.\nAdditionally, human error (misconfiguration, weak passwords, accidental deletion) remains the leading cause of security breaches and operational failures.",
+      "explanation": "Sociotechnical perspectives in IFT 205 Lecture 1.",
+      "why_wrong": {},
+      "source": "IFT 205 Lecture 1 Slide 4"
+    },
+    {
+      "id": "ift205-fnd-fc08",
+      "course": "IFT 205",
+      "topic": "IT Foundations: Hardware, Software & People",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "terminology",
+        "networks"
+      ],
+      "question": "How does IFT 205 distinguish between a Network, the Internet, Networking, and Networkers?",
+      "answer": "- Computer Network: Two or more interconnected devices sharing hardware, data, and software resources.\n- The Internet: The global public network of interconnected computer networks communicating via standard TCP/IP protocols.\n- Networking: The engineering discipline and technical process of designing, configuring, and managing network communication links.\n- Networkers: The human administrators and network engineers who install and maintain network infrastructure.",
+      "explanation": "Core terminology taxonomy introduced in IFT 205 Lecture 1 & Week 6.",
+      "why_wrong": {},
+      "source": "IFT 205 Lecture 1 & Week 6 Slides"
     }
   ],
   "case_studies": [

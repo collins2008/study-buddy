@@ -448,6 +448,73 @@
         "Synthesizes that successful growing enterprises require both mindsets to survive and scale"
       ],
       "source": "ENT 211 Lecture Notes, Slide 8: Entrepreneur vs. Manager Matrix"
+    },
+    {
+      "id": "ent211-fnd-fc05",
+      "course": "ENT 211",
+      "topic": "Entrepreneurship Foundations: Value, Risk & Thinkers",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "risk-vs-uncertainty",
+        "knight"
+      ],
+      "question": "How did economist Frank Knight fundamentally distinguish between 'Risk' and 'Uncertainty' in entrepreneurship?",
+      "answer": "- Risk: Situations where future outcomes are unknown, but the mathematical probability distribution of possible outcomes can be calculated or insured against (e.g., life insurance or rolling a fair die).\n- True Uncertainty: Situations where outcomes are fundamentally unique and unprecedented, making mathematical probabilities impossible to compute.\nKnight argued that true entrepreneurship exists solely in bearing non-insurable uncertainty.",
+      "explanation": "Frank Knight (1921) Risk, Uncertainty and Profit from ENT 211 Lecture 1.",
+      "why_wrong": {},
+      "source": "ENT 211 Lecture 1 Slides; Knightian Uncertainty"
+    },
+    {
+      "id": "ent211-fnd-fc06",
+      "course": "ENT 211",
+      "topic": "Entrepreneurship Foundations: Value, Risk & Thinkers",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "intrapreneurship",
+        "corporate"
+      ],
+      "question": "What is Intrapreneurship, and how does it differ from traditional independent Entrepreneurship?",
+      "answer": "- Intrapreneurship (Corporate Entrepreneurship): The practice of acting like an entrepreneur while working inside an existing, established corporation, innovating new products or divisions using company funding and resources without risking personal capital.\n- Entrepreneurship: Founding and operating an independent new venture, assuming direct personal financial, career, and legal risks.",
+      "explanation": "Pinchot (1985) intrapreneurship concept in ENT 211.",
+      "why_wrong": {},
+      "source": "ENT 211 Lecture 1 Slides"
+    },
+    {
+      "id": "ent211-fnd-fc07",
+      "course": "ENT 211",
+      "topic": "Entrepreneurship Foundations: Value, Risk & Thinkers",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "value-creation-capture"
+      ],
+      "question": "Contrast Value Creation with Value Capture in entrepreneurial business models.",
+      "answer": "- Value Creation: The total utility, problem resolution, and economic benefit delivered to customers by a company's product or service.\n- Value Capture: The portion of that created value that the enterprise monetizes and retains as gross profit through pricing, monetization mechanics, and sustainable competitive advantage.\nA venture that creates immense value but cannot capture it will inevitably fail.",
+      "explanation": "Business model mechanics from ENT 211 Topic 1.",
+      "why_wrong": {},
+      "source": "ENT 211 Topic 1 Slides"
+    },
+    {
+      "id": "ent211-fnd-fc08",
+      "course": "ENT 211",
+      "topic": "Entrepreneurship Foundations: Value, Risk & Thinkers",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "schumpeter",
+        "creative-destruction"
+      ],
+      "question": "What did Joseph Schumpeter mean by the economic term 'Creative Destruction'?",
+      "answer": "Creative Destruction is the relentless process of industrial mutation that incessantly revolutionizes the economic structure from within, destroying obsolete industries, legacy companies, and technologies while creating innovative, superior replacements (e.g., digital streaming destroying video rental stores, or smartphones rendering standalone pocket calculators and GPS units obsolete).",
+      "explanation": "Schumpeterian economics from ENT 211 Lecture 1 & Theories.",
+      "why_wrong": {},
+      "source": "ENT 211 Lecture 1 Slides; Schumpeter (1942)"
     }
   ],
   "case_studies": [

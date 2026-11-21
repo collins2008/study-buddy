@@ -435,6 +435,72 @@
         "Concludes that entrepreneurship is the necessary vehicle to commercialize inventions into economic growth"
       ],
       "source": "ENT 211 Lecture Notes, Slides 9-11 & Entrepreneurship Theories, Slide 7"
+    },
+    {
+      "id": "ent211-inn-fc05",
+      "course": "ENT 211",
+      "topic": "Innovation vs Invention: Types, Sources & Strategy",
+      "type": "flashcard",
+      "difficulty": 1,
+      "tags": [
+        "flashcard",
+        "incremental-vs-radical"
+      ],
+      "question": "Contrast Incremental Innovation with Radical (Breakthrough) Innovation.",
+      "answer": "- Incremental Innovation: Continuous, small-scale improvements made to existing products, services, or manufacturing processes to enhance efficiency, reduce costs, or extend lifecycle (e.g., annual smartphone camera spec updates).\n- Radical Innovation: Groundbreaking technological paradigm shifts that create entirely new markets, establish new industries, and render existing products obsolete (e.g., the invention of the automobile or commercial personal computers).",
+      "explanation": "Innovation classification from ENT 211 Topic 2.",
+      "why_wrong": {},
+      "source": "ENT 211 Topic 2 Slides"
+    },
+    {
+      "id": "ent211-inn-fc06",
+      "course": "ENT 211",
+      "topic": "Innovation vs Invention: Types, Sources & Strategy",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "architectural-vs-modular"
+      ],
+      "question": "Differentiate between Architectural Innovation and Modular Innovation.",
+      "answer": "- Architectural Innovation: Reconfigures the way existing components are linked together without fundamentally changing the underlying core technologies (e.g., shrinking desktop computer parts into a portable laptop).\n- Modular Innovation: Significantly overhauls a core component's internal technology while leaving the overall system architecture unchanged (e.g., replacing an analog car dashboard gauge with a digital LCD cluster).",
+      "explanation": "Henderson and Clark (1990) innovation matrix in ENT 211.",
+      "why_wrong": {},
+      "source": "ENT 211 Topic 2 Slides"
+    },
+    {
+      "id": "ent211-inn-fc07",
+      "course": "ENT 211",
+      "topic": "Innovation vs Invention: Types, Sources & Strategy",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "drucker",
+        "seven-sources"
+      ],
+      "question": "List Peter Drucker's Seven Sources of Innovative Opportunity.",
+      "answer": "Internal Sources:\n1. The Unexpected (unexpected success or failure)\n2. Incongruities (gaps between reality and expectations)\n3. Process Need (bottlenecks in an existing workflow)\n4. Industry and Market Structure Changes.\nExternal Sources:\n5. Demographics (population shifts, aging, education)\n6. Changes in Perception and Meaning\n7. New Knowledge (scientific breakthroughs and patents).",
+      "explanation": "Peter Drucker (1985) Innovation and Entrepreneurship from ENT 211.",
+      "why_wrong": {},
+      "source": "ENT 211 Topic 2 Slides; Drucker (1985)"
+    },
+    {
+      "id": "ent211-inn-fc08",
+      "course": "ENT 211",
+      "topic": "Innovation vs Invention: Types, Sources & Strategy",
+      "type": "flashcard",
+      "difficulty": 2,
+      "tags": [
+        "flashcard",
+        "disruptive-innovation",
+        "christensen"
+      ],
+      "question": "Explain Clayton Christensen's Theory of Disruptive Innovation.",
+      "answer": "Disruptive Innovation describes a process whereby a smaller company with fewer resources successfully challenges established incumbent businesses.\nThe entrant targets overlooked, low-end market tiers or non-consumers with a simpler, cheaper, or more accessible solution. As the entrant's quality steadily improves, it moves upmarket, eventually displacing the market leaders who were focused solely on sustaining high-margin customers (e.g., Netflix displacing Blockbuster).",
+      "explanation": "Clayton Christensen (1997) The Innovator's Dilemma in ENT 211.",
+      "why_wrong": {},
+      "source": "ENT 211 Topic 2 Slides"
     }
   ],
   "case_studies": [

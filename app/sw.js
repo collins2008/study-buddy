@@ -1,6 +1,6 @@
-// Study Buddy Service Worker v2.5
-const CACHE_NAME = 'studybuddy-v2.5';
-const CONTENT_CACHE = 'studybuddy-content-v2.5';
+// Study Buddy Service Worker v2.6
+const CACHE_NAME = 'studybuddy-v2.6';
+const CONTENT_CACHE = 'studybuddy-content-v2.6';
 
 // App shell assets — relative paths for arbitrary base paths (e.g. GitHub Pages or subfolders)
 const SHELL_ASSETS = [
